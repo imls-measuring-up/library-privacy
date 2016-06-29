@@ -1,0 +1,6 @@
+# Analysis Notes
+
+* Retrieve Institution Name, Source, and Home Page URL and write into reference file
+* Build database based on tables.txt
+* Retrieve home pages and referenced external Javascript files (excluding known frameworks that aren't of interest - e.g. JQuery, Prototype, etc.)
+* 
