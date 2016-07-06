@@ -1,0 +1,63 @@
+<!doctype html><html lang="en" manifest="//assets.library.uq.edu.au/pages/index.appcache"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="description" content=""><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="generator" content="UQ Library"><title>Home Page | UQ Library</title><meta name="theme-color" content="#49075E"><link rel="manifest" href="//assets.library.uq.edu.au/pages/manifest.json"><meta name="msapplication-TileColor" content="##49075E"><meta name="msapplication-navbutton-color" content="#49075E"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="UQ Library"><link rel="icon" sizes="192x192" href="//assets.library.uq.edu.au/pages/images/touch/chrome-touch-icon-192x192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="UQ Library"><link rel="apple-touch-icon" href="//assets.library.uq.edu.au/pages/images/touch/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="76x76" href="//assets.library.uq.edu.au/pages/images/touch/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="120x120" href="//assets.library.uq.edu.au/pages/images/touch/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="152x152" href="//assets.library.uq.edu.au/pages/images/touch/apple-touch-icon-152x152.png"><meta name="msapplication-TileImage" content="//assets.library.uq.edu.au/pages/images/touch/ms-touch-icon-144x144-precomposed.png"><meta name="msapplication-square150x150logo" content="//assets.library.uq.edu.au/pages/images/touch/apple-touch-icon-152x152.png"><link rel="stylesheet" href="//assets.library.uq.edu.au/pages/styles/main-377a6ae01e.css"><script src="//www.library.uq.edu.au/js/ims.js"></script><script src="//assets.library.uq.edu.au/pages/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script><script src="//assets.library.uq.edu.au/pages/bower_components/uqlibrary-browser-supported/uqlibrary-browser-supported.js"></script><script>
+    //display browser update message for unsupported browsers,
+    //will be inserted by gulp task, do not remove
+      var $buoop = {
+    vs: {i: 10, f: 30, o: 15, s: 7, c: 36},  // browser versions to notify
+    reminder: 168,                    // after how many hours should the message reappear, 0 = show all the time
+    reminderClosed: 168,              // if the user closes message it reappears after x hours
+    test: false,                      // true = always show the bar (for testing)
+    text: "Your current browser is not on UQ Library's <a href=\"https://www.library.uq.edu.au/site-information/web-browser-compatibility\">list of supported browsers</a>. " +
+    "If you experience any problems with this site, please try using the site with a different browser, or <a href=\"http://browser-update.org/update.html\">upgrade your current browser</a> " +
+    "to the latest version.",         // custom notification html text
+    newwindow: true,                  // open link in new window/tab
+    url: 'https://www.library.uq.edu.au/site-information/web-browser-compatibility' // the url to go to after clicking the notification
+  };
+
+  function $buo_f(){
+    var e = document.createElement("script");
+    e.src = "//browser-update.org/update.min.js";
+    document.body.appendChild(e);
+  };
+
+  try {
+    document.addEventListener("DOMContentLoaded", $buo_f,false)
+  }
+  catch(e){
+    window.attachEvent("onload", $buo_f)
+  }
+
+  </script><link rel="import" href="//assets.library.uq.edu.au/pages/elements/elements-d862348168.html"><style is="custom-style" include="common-styles">
+
+    body {
+      background-color: var(--body-color);
+    }
+
+    .card-actions {
+      text-align: right;
+    }
+
+  </style></head><body><span id="browser-sync-binding"></span><uqlibrary-alerts ga-app-name="Alerts"></uqlibrary-alerts><uqlibrary-ga id="home-ga" app-name="Homepage"></uqlibrary-ga><uq-minimal-header show-search-button="true" show-menu-button="true"></uq-minimal-header><uql-menu></uql-menu><div id="content"><noscript>
+  <h1>JavaScript not detected</h1>
+  <p>The <a href="https://web.library.uq.edu.au/site-information/web-browser-compatibility">UQ Library site requires
+    JavaScript</a> to work correctly. Please <a href="http://enable-javascript.com/">enable JavaScript</a> to
+    proceed.</p>
+</noscript>
+
+<div id="preloader">
+
+  <!-- Preload spinner -->
+  <div id="preloader-loading" class="preloader-card">
+    <img src="//assets.library.uq.edu.au/pages/images/loading.svg" width="48" />
+    <p id="loadingTitle" class="text-center">Loading UQ Library...</p>
+  </div>
+
+  <!-- Unsupported browser -->
+  <div id="preloader-unsupported" class="preloader-card">
+    <h2>Unsupported browser detected</h2>
+    <p>
+      Your current browser is not on UQ Library's <a href="https://www.library.uq.edu.au/site-information/web-browser-compatibility">list of supported browsers</a>.
+      If you experience any problems with this site, please try using the site with a different browser, or <a href="http://browser-update.org/update.html">upgrade your current browser</a>
+      to the latest version.
+    </p>
+  </div>
+</div><template is="dom-bind" id="uqlFrontPage" unresolved=""><div id="layout"><div id="main"><div id="search"><paper-card heading="UQ Library Search"><div class="card-content"><uqlibrary-search ga-app-name="Homepage search"></uqlibrary-search></div><div class="card-actions"><template is="dom-repeat" items="[[selectedSearchSource.helpLinks]]"><paper-button class="button-secondary" tabindex="-1"><a href$="[[item.url]]">[[item.title]]</a></paper-button></template></div></paper-card></div><div id="spotlight"><paper-card><div class="card-content"><uqlibrary-spotlights></uqlibrary-spotlights></div></paper-card></div></div><div id="sidebar"><paper-card><paper-tabs id="sidebar-tabs" selected="{{selectedSidebarTab}}"><paper-tab>HOURS</paper-tab><paper-tab>COMPUTERS</paper-tab><paper-tab>TRAINING</paper-tab></paper-tabs><iron-pages selected="{{selectedSidebarTab}}"><div><div class="card-content"><uqlibrary-hours compact-view="true"></uqlibrary-hours></div><div class="card-actions"><paper-button class="button-colored-accent" tabindex="-1"><a href="https://www.library.uq.edu.au/fbs/ctrlpnl.php?">Book a room</a></paper-button></div></div><div><div class="card-content"><uqlibrary-computers compact-view="true"></uqlibrary-computers></div></div><div><div class="card-content training-container"><uqlibrary-training></uqlibrary-training></div><div class="card-actions"><paper-button class="button-colored-accent"><a href="https://www.library.uq.edu.au/training/index.phtml">View all training events</a></paper-button></div></div></iron-pages></paper-card></div></div></template></div><uql-connect-footer></uql-connect-footer><uq-minimal-footer></uq-minimal-footer><script src="//assets.library.uq.edu.au/pages/scripts/app-4f507e369b.js"></script></body></html>

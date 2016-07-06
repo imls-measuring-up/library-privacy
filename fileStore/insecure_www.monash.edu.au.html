@@ -1,0 +1,1825 @@
+ 
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <!--hellp-->
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="true" name="HandheldFriendly">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+
+<!-- Basic SEO //-->
+
+<!-- User Defined //-->
+<meta name="keywords" content="" />
+<meta name="description" content="Monash has achieved an enviable national and international reputation for research and teaching excellence in a short 50 years." />
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="robots" content="index,follow" />
+
+<!-- Open Graph //-->
+
+<!-- Required //-->
+<meta name="og:title" content="Monash University" />
+<meta name="og:type" content="website" />
+<meta name="og:url" content="http://www.monash.edu/library/home" />
+<meta name="og:image" content="" />
+
+<!-- Optional //-->
+<meta name="og:description" content="Monash has achieved an enviable national and international reputation for research and teaching excellence in a short 50 years." />
+<meta name="og:site_name" content="Library" />
+
+
+
+ 
+
+<title>Monash University - Library</title>
+
+<link media="all" href="http://www.monash.edu/__data/assets/css_file_folder/0012/204114/library.min.css" type="text/css" rel="stylesheet">   <!-- css file folder -->
+<link media="print" href="http://www.monash.edu/_globaldesigns/css/printing.css" type="text/css" rel="stylesheet"> <!-- print.css -->
+
+<!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://www.monash.edu/__data/assets/image/0018/13716/favicon-152.png">
+
+<!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.monash.edu/__data/assets/image/0019/13717/favicon-144.png">
+
+<!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://www.monash.edu/__data/assets/image/0020/13718/favicon-120.png">
+
+<!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.monash.edu/__data/assets/image/0003/13719/favicon-114.png">
+
+<!-- For first- and second-generation iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.monash.edu/__data/assets/image/0013/13720/favicon-72.png">
+
+<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon-precomposed" href="http://www.monash.edu/__data/assets/image/0015/13722/favicon-57.png">
+
+<link rel="shortcut icon" type="image/x-icon" href="http://www.monash.edu/__data/assets/file/0018/51156/favicon.ico" /><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="http://www.monash.edu/__data/assets/js_file_folder/0014/17321/js_head.min.js"></script> <!-- js_head.min.js --><!-- Analytics --><script>
+
+// monash_ga.js v1.8 RENJ 09-May-2013
+
+var jquery_src = '//monash.edu/assets-global/monash/js/current-jquery.js';
+var _gaq = _gaq || [];
+
+function loadScript(src, callback)
+{
+  var s, r;
+  r = false;
+  s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.src = src;
+  s.onload = s.onreadystatechange = function() {
+	if ( !r && (!this.readyState || this.readyState == 'complete') )
+	{
+	  r = true;
+	  callback();
+	}
+  };
+  document.getElementsByTagName('head')[0].appendChild(s);
+}
+
+function jquery_ready() {
+  ga_tracking();
+}
+
+if (typeof jQuery == 'undefined') {
+  loadScript(jquery_src, jquery_ready);
+} else {
+  jquery_ready();
+}
+
+function ga_tracking() {
+  $(document).ready(function(){
+
+  var link_adjustment = true; // Set to false to disable link adjustment feature.
+  var link_adjustment_exceptions = [
+    'https://applicant.connect.monash.edu',
+    'https://secure.monash.edu',
+    'http://jobs.monash.edu.au',                // INC000000482123
+    'https://careergateway.monash.edu.au',      // INC000000488391
+    'https://volunteergateway.monash.edu.au',   // INC000000488391
+    'https://community.monash.edu.au',          // INC000000488391
+    'http://ecommerce.gen.monash.edu.au',       // INC000000501650
+    'https://eplanner.adm.monash.edu.au',       // INC000000506404
+    'http://artsonline.monash.edu.au',          // INC000000518810
+    'https://allocate.timetable.monash.edu',    // INC000000520241
+    'http://readinglists.lib.monash.edu',       // INC000000522247
+    'http://ecommerce.law.monash.edu.au',       // INC000000565422
+    'https://studentplacements.monash.edu',     // INC000000750092
+    'https://eservices.monash.edu.au',          // INC000000583594
+    'http://workoncampus.monash.edu.au',        // INC000000753761
+    'http://ecommerce.buseco.monash.edu.au',    // INC800065/CRQ38619
+    'https://mmw.fsd.monash.edu.au',            // INC000000814399
+    'https://studentplacements.monash.edu'      // INC852610/CRQ42357
+  ];
+
+    // Test to see if existing tag is present
+	var global_ga_acct = 'UA-5404288-1';
+    $('script').each(function(){
+      if ($(this)[0].innerHTML.match(/UA-5404288-1/mi))
+	    global_ga_acct = 'UA-5404288-32';
+	});
+
+    var cookie_sync = true;
+	var sites = {
+	  'applicant.connect.monash.edu': {accounts: [global_ga_acct]},
+	  'artdes.monash.edu':            {accounts: [global_ga_acct]},
+	  'arts.monash.edu':              {accounts: [global_ga_acct]},
+	  'buseco.monash.edu':            {accounts: [global_ga_acct]},
+	  'education.monash.edu':         {accounts: [global_ga_acct]},
+	  'eng.monash.edu':               {accounts: [global_ga_acct]},
+	  'infotech.monash.edu':          {accounts: [global_ga_acct]},
+	  'law.monash.edu':               {accounts: [global_ga_acct]},
+	  'm.monash.edu':                 {accounts: [global_ga_acct]},
+	  'mars.mapa.monash.edu':         {accounts: [global_ga_acct]},
+	  'med.monash.edu':               {accounts: [global_ga_acct]},
+	  'monash.edu':                   {accounts: [global_ga_acct]},
+	  'monashcollege.edu':            {accounts: [global_ga_acct]},
+	  'my.monash.edu':                {accounts: [global_ga_acct]},
+	  'pharm.monash.edu':             {accounts: [global_ga_acct]},
+	  'platforms.monash.edu':         {accounts: [global_ga_acct]},
+	  'sci.monash.edu':               {accounts: [global_ga_acct]},
+	  'search.monash.edu':            {accounts: [global_ga_acct]},
+	  'staging-www.monash.edu':       {accounts: [global_ga_acct]},
+	  'register.monash.edu':       	  {accounts: [global_ga_acct]},
+	  'staging-register.monash.edu':  {accounts: [global_ga_acct]}
+	};
+	var user_journey_ids = [
+	  {name: 'Course Finder',       id: /\/study\/coursefinder/i},
+	  {name: 'Online Admission',    id: /\/connect\/webconnect/i},
+	  {name: 'Portal',              id: /my\.monash\.edu\.au/i},
+	  {name: 'Enquiry',             id: /register\.monash\.edu(\.au)?\/enquiry/i}
+	];
+
+	domain_key = document.location.hostname.replace(/(^www\.|\.au$)/gi, '');
+	if (sites[domain_key]!=undefined) {
+	  for (index in sites[domain_key].accounts) {
+		ga_track(index, sites[domain_key].accounts[index]);
+	  }
+	};
+
+	function ga_track(index, account) {
+	  tracker_prefix = index==0 ? 'tt.' : index+'.';
+	  _gaq.push([tracker_prefix+'_setAccount', account]);
+
+	  // Australian top level domain monash.edu.au
+	  if (document.location.hostname.match(/monash\.edu\.au$/)) {
+		var pd = 'monash.edu.au';
+		var sd = 'monash.edu';
+	  }
+	  // Global top level domain monash.edu
+	  else if (document.location.hostname.match(/monash\.edu$/)) {
+		var pd = 'monash.edu';
+		var sd = 'monash.edu.au';
+	  }
+	  // Assume cross domain tracking not required
+	  else {
+		var pd = document.location.hostname.replace(/(^www\.)/i, '');
+	  }
+	  _gaq.push([tracker_prefix+'_setDomainName', pd]);
+	  _gaq.push([tracker_prefix+'_setAllowLinker', true]);
+	  _gaq.push([tracker_prefix+'_trackPageview']);
+
+	  // Top level cross domain tracking
+	  //
+	  // We insert the cross domain tracking iframe into <div class='ga_xd'></div> when the following conditions are met
+	  //   1. The page is running on our domain
+	  //   2. The referrer is blank or does not contain our domain pattern
+	  if (sd!=undefined && cookie_sync) {
+		_gaq.push(function() {
+		  var t = _gat._getTrackerByName(tracker_prefix);
+		  if(document.URL.indexOf(pd) != -1) {
+			if((document.referrer == '') || (document.referrer.indexOf(pd) == -1)) {
+			  $('body').append('<iframe id="ga_proxy" style="display:none"/>');
+			  $('iframe#ga_proxy').attr('src', t._getLinkerUrl('//'+sd+'/assets-global/monash/js/ga_proxy.html'));
+			}
+		  }
+		});
+	  }
+
+	  // Adjust link href if not the same as the hostname
+	  // This adjustment reduces the visit duplication problem between the two monash top level domains
+	  // An array of exceptions is checked before the adjustments are made
+	  if (link_adjustment) {
+		$('a[href*="monash.edu"]').click(function(){
+			for (index in link_adjustment_exceptions) {
+				if (this.href.match(new RegExp('^'+link_adjustment_exceptions[index], 'i'))) {
+					link_adjustment = false;
+					break;
+				}
+			}
+
+
+			if (link_adjustment && location.hostname.match(/monash\.edu\.au$/) && this.href.match(/monash\.edu($|\/)/)) {
+//INC000000507398
+// Existing code is replacing monash.edu in links to googledocs
+//				this.href = this.href.replace(/monash\.edu(?!\.)/, 'monash.edu.au')
+					this.href = this.href.replace(/(:\/\/[^\/]*)monash\.edu(?!\.)/, '$1monash.edu.au');
+
+			}
+			if (link_adjustment && location.hostname.match(/monash\.edu$/) && this.href.match(/monash\.edu\.au($|\/)/)) {
+//INC000000507398INC000000507398
+// Existing code is replacing monash.edu in links to googledocs
+//				this.href = this.href.replace(/monash\.edu\.au/, 'monash.edu')
+					this.href = this.href.replace(/(:\/\/[^\/]*)monash\.edu\.au/, '$1monash.edu');
+
+			}
+		});
+	  }
+
+      $('form[id*="desktopSiteSearch"]').submit(function(){
+        this.action = (location.hostname.match(/\.au$/) ? 'http://search.monash.edu.au/' : 'http://search.monash.edu/');
+	  });
+
+
+	  // Internal promotion tracking
+	  $('a.promo').click(function(){
+		pn = this.dataset['campaign'];
+		_gaq.push([tracker_prefix+'_setCustomVar', 1, 'Internal Promotions', pn, 2]);
+		_gaq.push([tracker_prefix+'_trackEvent', 'Internal Promotions', 'Click', pn]);
+	  });
+
+	  // Online Application Tracking
+	  if (document.location.hostname.indexOf('applicant.connect.monash.edu.au')!=-1) {
+		if ($('font.label').text().indexOf('Please wait while next page loads...')==-1) {
+		  pn = $('font.highlight-step').text()+' '+$('title').text();
+		  _gaq.push([tracker_prefix+'_trackPageview', '/online-admissions/'+pn.replace(/(^\s*|\s*$|\c*)/, '')]);
+		}
+	  }
+
+	  // User journey tracking
+	  for (i in user_journey_ids) {
+		if ((document.referrer.match(user_journey_ids[i].id)==null) &&  document.URL.match(user_journey_ids[i].id))
+		  _gaq.push([tracker_prefix+'_trackEvent', 'User Journey', 'Interaction', user_journey_ids[i].name]);
+	  }
+
+	  // Audience segmentation tracking
+	  if (document.location.hostname.indexOf('my.monash.edu')!=-1) {
+		vt = $('meta[name=visitor-type]').attr('content');
+		if (vt!=undefined) {
+		  _gaq.push([tracker_prefix+'_setCustomVar', 2, 'Visitor Type', vt, 1]);
+		}
+	  }
+
+	  // Tabbed menu tracking
+	  $('ul.tab-controls a').click(function(){
+		_gaq.push([tracker_prefix+'_trackEvent', 'Navigation', 'Click', this.href.match(/\d$/)+'-'+this.innerText]);
+	  });
+
+	  // Course Finder tracking
+	  if (document.URL.indexOf('/study/coursefinder')!=-1) {
+		kw = document.URL.match(/query=([^$&]+)/);
+		if (kw!=undefined && kw.length==2) {
+		  _gaq.push([tracker_prefix+'_trackPageview', '/virtual/coursefinder/search?cat=course-finder&q='+kw[1]]);
+		}
+		if (document.URL.indexOf('/study/coursefinder/course')!=-1) {
+		  $('a.button[href*="/Enquiry/"]').click(function(){
+			_gaq.push([tracker_prefix+'_trackPageview', '/virtual/course-finder/enquiry']);
+		  });
+		  $('a.button[href*="/apply/"]').click(function(){
+			_gaq.push([tracker_prefix+'_trackPageview', '/virtual/course-finder/apply']);
+		  });
+		}
+	  }
+
+	};
+  });
+}
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script>
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+//_gaq.push(['monash._setAccount', 'UA-5404288-1']);
+//_gaq.push(['monash._trackPageview']);
+
+_gaq.push(['local._setAccount', 'UA-36385813-1']);
+_gaq.push(['local._trackPageview']);
+		
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><script>
+function placeholderSupported() {
+   return typeof document.createElement("input").placeholder !== 'undefined';
+}
+function placeholderFallback(self) {
+   if ( !placeholderSupported() ) {
+     var orgText = "Find books, articles, journals, databases and more ";
+     if (self.value === '') {
+        self.value= orgText;    
+     }
+   }
+}
+function clearTextArea(self){
+   //If placeholder is unsupported
+   //if ( !placeholderSupported() ) {
+   var orgText = "Find books, articles, journals, databases and more ";
+    
+   if (self.value === orgText) {
+       self.value= '';   
+    }
+
+   //}
+}
+
+function appendsub(self){
+   var subject = "any,contains,";
+   var returnval, queryInput = $(self).find(".query")[0]; //returns blank
+   var thisValue = $('#query').val();
+
+   //$("input[id=query]").val(id);
+   $('input[name=query]').val(thisValue);
+   
+   //$('input:hidden#texens').val('tinkumaster');
+   
+   returnval = true;
+   return returnval;
+}
+
+
+</script><script>
+
+/**
+ * SWFObject v1.5: Flash Player detection and embed - http://blog.deconcept.com/swfobject/
+ *
+ * SWFObject is (c) 2007 Geoff Stearns and is released under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ */
+
+
+if(typeof deconcept=="undefined"){var deconcept=new Object();}if(typeof deconcept.util=="undefined"){deconcept.util=new Object();}if(typeof deconcept.SWFObjectUtil=="undefined"){deconcept.SWFObjectUtil=new Object();}deconcept.SWFObject=function(_1,id,w,h,_5,c,_7,_8,_9,_a){if(!document.getElementById){return;}this.DETECT_KEY=_a?_a:"detectflash";this.skipDetect=deconcept.util.getRequestParameter(this.DETECT_KEY);this.params=new Object();this.variables=new Object();this.attributes=new Array();if(_1){this.setAttribute("swf",_1);}if(id){this.setAttribute("id",id);}if(w){this.setAttribute("width",w);}if(h){this.setAttribute("height",h);}if(_5){this.setAttribute("version",new deconcept.PlayerVersion(_5.toString().split(".")));}this.installedVer=deconcept.SWFObjectUtil.getPlayerVersion();if(!window.opera&&document.all&&this.installedVer.major>7){deconcept.SWFObject.doPrepUnload=true;}if(c){this.addParam("bgcolor",c);}var q=_7?_7:"high";this.addParam("quality",q);this.setAttribute("useExpressInstall",false);this.setAttribute("doExpressInstall",false);var _c=(_8)?_8:window.location;this.setAttribute("xiRedirectUrl",_c);this.setAttribute("redirectUrl","");if(_9){this.setAttribute("redirectUrl",_9);}};deconcept.SWFObject.prototype={useExpressInstall:function(_d){this.xiSWFPath=!_d?"expressinstall.swf":_d;this.setAttribute("useExpressInstall",true);},setAttribute:function(_e,_f){this.attributes[_e]=_f;},getAttribute:function(_10){return this.attributes[_10];},addParam:function(_11,_12){this.params[_11]=_12;},getParams:function(){return this.params;},addVariable:function(_13,_14){this.variables[_13]=_14;},getVariable:function(_15){return this.variables[_15];},getVariables:function(){return this.variables;},getVariablePairs:function(){var _16=new Array();var key;var _18=this.getVariables();for(key in _18){_16[_16.length]=key+"="+_18[key];}return _16;},getSWFHTML:function(){var _19="";if(navigator.plugins&&navigator.mimeTypes&&navigator.mimeTypes.length){if(this.getAttribute("doExpressInstall")){this.addVariable("MMplayerType","PlugIn");this.setAttribute("swf",this.xiSWFPath);}_19="<embed type=\"application/x-shockwave-flash\" src=\""+this.getAttribute("swf")+"\" width=\""+this.getAttribute("width")+"\" height=\""+this.getAttribute("height")+"\" style=\""+this.getAttribute("style")+"\"";_19+=" id=\""+this.getAttribute("id")+"\" name=\""+this.getAttribute("id")+"\" ";var _1a=this.getParams();for(var key in _1a){_19+=[key]+"=\""+_1a[key]+"\" ";}var _1c=this.getVariablePairs().join("&");if(_1c.length>0){_19+="flashvars=\""+_1c+"\"";}_19+="/>";}else{if(this.getAttribute("doExpressInstall")){this.addVariable("MMplayerType","ActiveX");this.setAttribute("swf",this.xiSWFPath);}_19="<object id=\""+this.getAttribute("id")+"\" classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" width=\""+this.getAttribute("width")+"\" height=\""+this.getAttribute("height")+"\" style=\""+this.getAttribute("style")+"\">";_19+="<param name=\"movie\" value=\""+this.getAttribute("swf")+"\" />";var _1d=this.getParams();for(var key in _1d){_19+="<param name=\""+key+"\" value=\""+_1d[key]+"\" />";}var _1f=this.getVariablePairs().join("&");if(_1f.length>0){_19+="<param name=\"flashvars\" value=\""+_1f+"\" />";}_19+="</object>";}return _19;},write:function(_20){if(this.getAttribute("useExpressInstall")){var _21=new deconcept.PlayerVersion([6,0,65]);if(this.installedVer.versionIsValid(_21)&&!this.installedVer.versionIsValid(this.getAttribute("version"))){this.setAttribute("doExpressInstall",true);this.addVariable("MMredirectURL",escape(this.getAttribute("xiRedirectUrl")));document.title=document.title.slice(0,47)+" - Flash Player Installation";this.addVariable("MMdoctitle",document.title);}}if(this.skipDetect||this.getAttribute("doExpressInstall")||this.installedVer.versionIsValid(this.getAttribute("version"))){var n=(typeof _20=="string")?document.getElementById(_20):_20;n.innerHTML=this.getSWFHTML();return true;}else{if(this.getAttribute("redirectUrl")!=""){document.location.replace(this.getAttribute("redirectUrl"));}}return false;}};deconcept.SWFObjectUtil.getPlayerVersion=function(){var _23=new deconcept.PlayerVersion([0,0,0]);if(navigator.plugins&&navigator.mimeTypes.length){var x=navigator.plugins["Shockwave Flash"];if(x&&x.description){_23=new deconcept.PlayerVersion(x.description.replace(/([a-zA-Z]|\s)+/,"").replace(/(\s+r|\s+b[0-9]+)/,".").split("."));}}else{if(navigator.userAgent&&navigator.userAgent.indexOf("Windows CE")>=0){var axo=1;var _26=3;while(axo){try{_26++;axo=new ActiveXObject("ShockwaveFlash.ShockwaveFlash."+_26);_23=new deconcept.PlayerVersion([_26,0,0]);}catch(e){axo=null;}}}else{try{var axo=new ActiveXObject("ShockwaveFlash.ShockwaveFlash.7");}catch(e){try{var axo=new ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");_23=new deconcept.PlayerVersion([6,0,21]);axo.AllowScriptAccess="always";}catch(e){if(_23.major==6){return _23;}}try{axo=new ActiveXObject("ShockwaveFlash.ShockwaveFlash");}catch(e){}}if(axo!=null){_23=new deconcept.PlayerVersion(axo.GetVariable("$version").split(" ")[1].split(","));}}}return _23;};deconcept.PlayerVersion=function(_29){this.major=_29[0]!=null?parseInt(_29[0]):0;this.minor=_29[1]!=null?parseInt(_29[1]):0;this.rev=_29[2]!=null?parseInt(_29[2]):0;};deconcept.PlayerVersion.prototype.versionIsValid=function(fv){if(this.major<fv.major){return false;}if(this.major>fv.major){return true;}if(this.minor<fv.minor){return false;}if(this.minor>fv.minor){return true;}if(this.rev<fv.rev){return false;}return true;};deconcept.util={getRequestParameter:function(_2b){var q=document.location.search||document.location.hash;if(_2b==null){return q;}if(q){var _2d=q.substring(1).split("&");for(var i=0;i<_2d.length;i++){if(_2d[i].substring(0,_2d[i].indexOf("="))==_2b){return _2d[i].substring((_2d[i].indexOf("=")+1));}}}return "";}};deconcept.SWFObjectUtil.cleanupSWFs=function(){var _2f=document.getElementsByTagName("OBJECT");for(var i=_2f.length-1;i>=0;i--){_2f[i].style.display="none";for(var x in _2f[i]){if(typeof _2f[i][x]=="function"){_2f[i][x]=function(){};}}}};if(deconcept.SWFObject.doPrepUnload){if(!deconcept.unloadSet){deconcept.SWFObjectUtil.prepUnload=function(){__flash_unloadHandler=function(){};__flash_savedUnloadHandler=function(){};window.attachEvent("onunload",deconcept.SWFObjectUtil.cleanupSWFs);};window.attachEvent("onbeforeunload",deconcept.SWFObjectUtil.prepUnload);deconcept.unloadSet=true;}}if(!document.getElementById&&document.all){document.getElementById=function(id){return document.all[id];};}var getQueryParamValue=deconcept.util.getRequestParameter;var FlashObject=deconcept.SWFObject;var SWFObject=deconcept.SWFObject;
+
+</script>
+<!-- End analytics --><!--
+
+-->    <!--
+<link rel="stylesheet" type="text/css" href="./?a=">
+-->
+
+<!-- Custom Site CSS:  -->
+
+<!--
+<link rel="stylesheet" type="text/css" href="">
+-->     
+
+<!--
+  Running Squiz Matrix
+  Developed by Squiz - http://www.squiz.net
+  Squiz, Squiz Matrix, MySource, MySource Matrix and Squiz.net are registered Trademarks of Squiz Pty Ltd
+  Page generated: 06 July 2016 08:17:06
+-->
+
+
+
+</head>
+
+<body id="content_page" class="no-js  204114 home library ">
+    <!--noindex-->
+    <script>
+dataLayer = [{'environment': 'production'}];
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TX9XZL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TX9XZL');</script>
+<!-- End Google Tag Manager -->
+    <p class="skip"><a href="#content">Skip to content</a></p>    <header>
+    <div class="header">
+        <div class="wrapper"><div class="headRight clearfix"><div class="mobileShow mobileNav"><div class="menuToggle ">
+    <a href="#"><span>Menu</span></a>
+</div>
+<div class="searchToggle">
+    <a href="#"><span class="icon">&nbsp;</span><span>Search</span></a>
+</div></div><ul class="utilities">
+	<li><a href="http://www.monash.edu">Monash University home</a></li>
+	<li><a href="https://my.monash.edu.au/">my.monash</a></li>
+	<li><a href="http://monash.edu.au/students/">Current Students</a></li>
+	<li><a href="https://my.monash.edu.au/staff/">Staff</a></li>
+	<li class="last"><a href="http://www.monash.edu/people/contact">Contact us</a></li>
+</ul>
+<div class="siteSearch">
+  <form id="desktopSiteSearch" name="searchbox_001621737867968046729:nsl4i5alcty" action="http://www.monash.edu/search">
+    <fieldset>
+      <legend>Search</legend>
+      <label for="txtSiteSearch">Search</label>
+      <input type="hidden" value="001621737867968046729:nsl4i5alcty" name="cx">
+      <input type="hidden" value="FORID:11" name="cof">
+      <input type="text" name="q" id="txtSiteSearch" class="txtSiteSearch" value="" placeholder="Search">
+      <input type="submit" class="btnSiteSubmit" value="Submit search" name="sa">
+    </fieldset>
+  </form>
+</div><div class="siteSearch mobileSiteSearch">
+  <form name="searchbox_001621737867968046729:nsl4i5alcty" id="mobSiteSearch" action="http://www.monash.edu/search">
+    <fieldset>
+      <legend>Search</legend>
+      <label for="txtMobileSiteSearch">Search</label>
+      <input type="hidden" name="cx" value="001621737867968046729:nsl4i5alcty">
+      <input type="hidden" name="cof" value="FORID:11">
+      <input type="text" placeholder="Search" value="" id="txtMobileSiteSearch" class="txtSiteSearch" name="q">
+      <input type="submit" name="sa" value="Submit search" class="btnSiteSubmit">
+    </fieldset>
+  </form>
+</div>
+<!-- /mobileSiteSearch --><div class="mobileNavigationPrimary ">
+    <nav><ul>
+    <li class=""><a href="http://www.monash.edu/library/about">About us</a></li><li class=""><a href="http://www.monash.edu/library/libraries">Libraries</a></li><li class=""><a href="http://www.monash.edu/library/collections">Collections</a></li><li class=""><a href="http://www.monash.edu/library/skills">Research and learning skills</a></li><li class=""><a href="http://www.monash.edu/library/researchdata">Managing research data</a></li><li class=""><a href="http://www.monash.edu/library/services">Services and facilities</a></li><li class=""><a href="http://www.monash.edu/library/community">Alumni and visitors</a></li>
+</ul>    </nav>
+</div><!-- /mobileNavigationPrimary --></div><div class="logo">
+    <a href="http://www.monash.edu">
+        <img src="http://www.monash.edu/__data/assets/image/0016/13813/monash-logo.png" alt="Monash University" />
+    </a>
+</div>
+<div class="site-name">
+    <h2><a href="http://www.monash.edu/library">Library</a></h2>
+</div>
+<div style="display:none">
+http://www.monash.edu/library
+http://www.monash.edu/library
+</div>        </div><!-- /wrapper -->
+    </div><!-- /header -->
+</header>    
+    <div class="outerWrapper">
+        <div class="navigationPrimary">
+            <div class="wrapper">
+                <nav>
+                                        <div class="hidden">
+    
+</div>                    							
+                        <ul class="">
+                             
+    <li class="nav-home no-children"><a href="http://www.monash.edu/library">Home<span></span></a></li>
+                                                             <li class="  ">
+                                    <a href="http://www.monash.edu/library/about">
+                                        About us                                    </a>
+                                </li>
+                                                            <li class="  ">
+                                    <a href="http://www.monash.edu/library/libraries">
+                                        Libraries                                    </a>
+                                </li>
+                                                            <li class="  ">
+                                    <a href="http://www.monash.edu/library/collections">
+                                        Collections                                    </a>
+                                </li>
+                                                            <li class="  ">
+                                    <a href="http://www.monash.edu/library/skills">
+                                        Research and learning skills                                    </a>
+                                </li>
+                                                            <li class="  ">
+                                    <a href="http://www.monash.edu/library/researchdata">
+                                        Managing research data                                    </a>
+                                </li>
+                                                            <li class="  ">
+                                    <a href="http://www.monash.edu/library/services">
+                                        Services and facilities                                    </a>
+                                </li>
+                                                            <li class="  ">
+                                    <a href="http://www.monash.edu/library/community">
+                                        Alumni and visitors                                    </a>
+                                </li>
+                                                    
+                        </ul>
+                    
+						
+                </nav>
+            </div>
+        </div><!-- /navigationPrimary -->
+
+        <div class="navigationDrop">
+    <nav>
+       <div class="wrapper ">
+           <!--
+<div class="megamenu megamenu2">
+-->
+
+ 
+<div class="megamenu megamenu1">
+ 
+
+	<div class="areas">
+		<ul>
+		    <li class="first "><a href="http://www.monash.edu/library/about">About the library home</a></li>
+            
+<li><a href="http://www.monash.edu/library/about/us">Who we are</a></li><li><a href="http://www.monash.edu/library/about/glance">Library at a glance</a></li><li><a href="http://www.monash.edu/library/about/reports">Reports</a></li><li><a href="http://www.monash.edu/library/about/initiatives">Initiatives</a></li><li><a href="http://www.monash.edu/library/about/contacts">Contact us</a></li>		</ul>
+	</div>
+        <div class="feature">
+            <div class="image" style="block">
+                
+                
+                    
+                
+                
+            </div>
+            <div class="caption">
+                <p class="mmTitle">
+     
+     
+     
+     
+     
+                </p>
+                <p></p>
+            </div>
+        </div>
+        <div class="close">
+            <a href="#">Close<span></span></a>
+        </div>
+</div><!--
+<div class="megamenu megamenu3">
+-->
+
+ 
+<div class="megamenu megamenu2">
+ 
+
+	<div class="areas">
+		<ul>
+		    <li class="first "><a href="http://www.monash.edu/library/libraries">Libraries home</a></li>
+            
+<li><a href="http://www.monash.edu/library/libraries/australia">Australian libraries</a></li><li><a href="http://www.monash.edu/library/libraries/overseas">Overseas libraries</a></li><li><a href="http://www.monash.edu/library/libraries/hospital">Hospital libraries</a></li><li><a href="http://www.monash.edu/library/libraries/affiliated">Affiliated libraries</a></li>		</ul>
+	</div>
+        <div class="feature">
+            <div class="image" style="block">
+                
+                
+                    
+                
+                
+            </div>
+            <div class="caption">
+                <p class="mmTitle">
+     
+     
+     
+     
+     
+                </p>
+                <p></p>
+            </div>
+        </div>
+        <div class="close">
+            <a href="#">Close<span></span></a>
+        </div>
+</div><!--
+<div class="megamenu megamenu4">
+-->
+
+ 
+<div class="megamenu megamenu3">
+ 
+
+	<div class="areas">
+		<ul>
+		    <li class="first "><a href="http://www.monash.edu/library/collections">Collections home</a></li>
+            
+<li><a href="http://www.monash.edu/library/collections/strengths">Collection strengths</a></li><li><a href="http://www.monash.edu/library/collections/build">Building the collection</a></li><li><a href="http://www.monash.edu/library/collections/special">Special collections</a></li><li><a href="http://www.monash.edu/library/collections/exhibitions">Exhibitions</a></li>		</ul>
+	</div>
+        <div class="feature">
+            <div class="image" style="block">
+                
+                
+                    
+                
+                
+            </div>
+            <div class="caption">
+                <p class="mmTitle">
+     
+     
+     
+     
+     
+                </p>
+                <p></p>
+            </div>
+        </div>
+        <div class="close">
+            <a href="#">Close<span></span></a>
+        </div>
+</div><!--
+<div class="megamenu megamenu5">
+-->
+
+ 
+<div class="megamenu megamenu4">
+ 
+
+	<div class="areas">
+		<ul>
+		    <li class="first "><a href="http://www.monash.edu/library/skills">Research and learning skills home</a></li>
+            
+<li><a href="http://www.monash.edu/library/skills/rsd">Skills development</a></li><li><a href="http://www.monash.edu/library/skills/resources">Resources and activities</a></li><li><a href="http://www.monash.edu/library/skills/contacts">Librarians and learning skills advisers</a></li>		</ul>
+	</div>
+        <div class="feature">
+            <div class="image" style="block">
+                
+                
+                    
+                
+                
+            </div>
+            <div class="caption">
+                <p class="mmTitle">
+     
+     
+     
+     
+     
+                </p>
+                <p></p>
+            </div>
+        </div>
+        <div class="close">
+            <a href="#">Close<span></span></a>
+        </div>
+</div><!--
+<div class="megamenu megamenu6">
+-->
+
+ 
+<div class="megamenu megamenu5">
+ 
+
+	<div class="areas">
+		<ul>
+		    <li class="first "><a href="http://www.monash.edu/library/researchdata">Managing research data home</a></li>
+            
+<li><a href="http://www.monash.edu/library/researchdata/about">About research data management</a></li><li><a href="http://www.monash.edu/library/researchdata/guidelines">Guidelines</a></li><li><a href="http://www.monash.edu/library/researchdata/advice">Advice and planning</a></li><li><a href="http://www.monash.edu/library/researchdata/skills">Skills development</a></li><li><a href="http://www.monash.edu/library/researchdata/resources">Resources and activities</a></li><li><a href="http://www.monash.edu/library/researchdata/figshare">monash.figshare</a></li><li><a href="http://www.monash.edu/library/researchdata/eln">Electronic Laboratory Notebooks</a></li>		</ul>
+	</div>
+        <div class="feature">
+            <div class="image" style="block">
+                
+                
+                    
+                
+                
+            </div>
+            <div class="caption">
+                <p class="mmTitle">
+     
+     
+     
+     
+     
+                </p>
+                <p></p>
+            </div>
+        </div>
+        <div class="close">
+            <a href="#">Close<span></span></a>
+        </div>
+</div><!--
+<div class="megamenu megamenu7">
+-->
+
+ 
+<div class="megamenu megamenu6">
+ 
+
+	<div class="areas">
+		<ul>
+		    <li class="first "><a href="http://www.monash.edu/library/services">Services and facilities home</a></li>
+            
+<li><a href="http://www.monash.edu/library/services/loans">Borrowing</a></li><li><a href="http://www.monash.edu/library/services/facilities">Study facilities</a></li><li><a href="http://www.monash.edu/library/services/users">Services by client group</a></li>		</ul>
+	</div>
+        <div class="feature">
+            <div class="image" style="block">
+                
+                
+                    
+                
+                
+            </div>
+            <div class="caption">
+                <p class="mmTitle">
+     
+     
+     
+     
+     
+                </p>
+                <p></p>
+            </div>
+        </div>
+        <div class="close">
+            <a href="#">Close<span></span></a>
+        </div>
+</div><!--
+<div class="megamenu megamenu8">
+-->
+
+ 
+<div class="megamenu megamenu7">
+ 
+
+	<div class="areas">
+		<ul>
+		    <li class="first "><a href="http://www.monash.edu/library/community">Alumni and visitors home</a></li>
+            
+<li><a href="http://www.monash.edu/library/community/services">Using the Library</a></li><li><a href="http://www.monash.edu/library/community/alumni">Alumni</a></li><li><a href="http://www.monash.edu/library/community/fellowships">Library Fellowships</a></li>		</ul>
+	</div>
+        <div class="feature">
+            <div class="image" style="block">
+                
+                
+                    
+                
+                
+            </div>
+            <div class="caption">
+                <p class="mmTitle">
+     
+     
+     
+     
+     
+                </p>
+                <p></p>
+            </div>
+        </div>
+        <div class="close">
+            <a href="#">Close<span></span></a>
+        </div>
+</div>
+       </div>
+       <div class="wrapper hidden">
+           
+       </div>
+    </nav>
+</div>        <div class="mobileShow mobileActions">
+    
+</div>
+        <a id="content"></a>
+        <div class="sectionTitle ">
+            <div class="wrapper">
+                <div class="section">
+                                                <p>Monash University</p>
+                                            <div class="arrow"></div>
+                    							
+
+                        <div class="mobileShow mobileSubNavToggle">
+                            <a href="#"><span>Sub menu</span></a>
+                        </div>
+                        <div class="mobileShow">
+                            <div class="mobileSubNavMenu">
+                                <nav>
+                                    <ul>
+                                                                                    							
+                                            
+                                                                                    							
+                                            
+                                                                                    							
+                                            
+                                                                                    							
+                                            
+                                                                                    							
+                                            
+                                                                                    							
+                                            
+                                                                                    							
+                                            
+                                                                            </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    
+						
+                </div><!-- /section -->
+            </div><!-- /wrapper -->
+        </div>
+    </div><!-- /outerWrapper -->
+
+    <!--endnoindex-->
+                    <div class="carousel ">
+    <div class="wrapper">
+        <section>
+            <div class="homeCarousel">
+                <ul class="bxslider">
+                    <li class="bx1 black  "> 
+        
+    <a href="http://librarymonash.blogspot.com.au/2016/07/uptodate-key-to-evidence-for-doctors.html?utm_source=monash-university-page-carousel&amp;utm_medium=Web-banner&amp;utm_campaign=uptodate---evidence-for-doctors">    	<img src="http://www.monash.edu/__data/assets/image/0007/539791/banner-uptodate.jpg" alt="UpToDate - evidence for doctors">
+    	<div class="caption black">
+        	<div>
+	            <h2>UpToDate - evidence for doctors</h2>
+	            <p>An invaluable medical tool</p>
+	        </div>
+	    </div>
+        </a>
+</li><li class="bx2 black hidden"> 
+        
+    <a href="http://guides.lib.monash.edu/gradres?utm_source=monash-university-page-carousel&amp;utm_medium=Web-banner&amp;utm_campaign=a-guide-for-the-research-degree-journey">    	<img src="http://www.monash.edu/__data/assets/image/0008/284651/hdr-libguide.jpg" alt="A guide for the research degree journey">
+    	<div class="caption black">
+        	<div>
+	            <h2>A guide for the research degree journey</h2>
+	            <p>Check out this important resource for research students</p>
+	        </div>
+	    </div>
+        </a>
+</li><li class="bx3 black hidden"> 
+        
+    <a href="http://www.publishing.monash.edu/books/sr-9781925377088.html?utm_source=monash-university-page-carousel&amp;utm_medium=Web-banner&amp;utm_campaign=monash-university-publishing-titles">    	<img src="http://www.monash.edu/__data/assets/image/0008/531755/save-to-remember-banner.png" alt="Monash University Publishing titles">
+    	<div class="caption black">
+        	<div>
+	            <h2>Monash University Publishing titles</h2>
+	            <p>Original and socially important works, including this compelling work</p>
+	        </div>
+	    </div>
+        </a>
+</li><li class="bx4 black hidden"> 
+        
+    <a href="http://librarymonash.blogspot.com.au/2015/12/all-you-need-to-know-about-reading.html?utm_source=monash-university-page-carousel&amp;utm_medium=Web-banner&amp;utm_campaign=reading-lists-for-your-teaching">    	<img src="http://www.monash.edu/__data/assets/image/0007/365308/reading-list-banner.jpg" alt="Reading lists for your teaching">
+    	<div class="caption black">
+        	<div>
+	            <h2>Reading lists for your teaching</h2>
+	            <p>Easy access to unit materials for students</p>
+	        </div>
+	    </div>
+        </a>
+</li><li class="bx5 black hidden"> 
+        
+    <a href="http://www.monash.edu/rlo?utm_source=monash-university-page-carousel&amp;utm_medium=Web-banner&amp;utm_campaign=research-&-learning-online">    	<img src="http://www.monash.edu/__data/assets/image/0008/411839/research-and-learning.png" alt="Research & Learning online">
+    	<div class="caption black">
+        	<div>
+	            <h2>Research & Learning online</h2>
+	            <p>Visit the Library's new site focused on student eLearning</p>
+	        </div>
+	    </div>
+        </a>
+</li>
+                </ul>
+                <div class="bx-prev"></div>
+                <div class="bx-next"></div>
+                 
+                <div class="overlay overlayLeft  
+"></div>
+                <div class="overlay overlayRight  
+"></div>
+            </div>
+            <!-- /homeCarousel -->
+            <div class="tabletShow">
+            </div>
+        </section>
+    </div>
+    <!-- /wrapper --> 
+</div>        
+    <!--noindex-->
+    
+
+        <div class="content contentTop hidden">
+            <div class="wrapper">
+                <div class="contentPanel">
+                    <ul class="breadcrumb ">
+                                                    <li><a href="http://www.monash.edu/library">Library</a></li>
+                                            </ul>
+
+                    <a name="content"></a>
+
+                    <h1>Monash University</h1>
+                </div><!-- /contentPanel -->
+            </div><!-- /wrapper -->
+        </div>
+
+        
+
+    <!--endnoindex-->
+
+        <div class="content">
+        <div class="wrapper">
+                    <div class="homeFirstRow homePods"><div class="topBorder hidden"><h2 class="sectionHead tabletHide hidden"></h2></div><ul class="pods row" >
+    <li style="display: list-item;" class="half    ">
+    <div class=" ">
+    
+                        <h2>
+                            Caulfield Library closure
+                          </h2>
+        
+        
+<div id="content_container_535402">
+<p>Caulfield Library will be closed on Saturday 9 July</p>
+</div>
+
+    </div>
+</li><li style="display: list-item;" class="half   noMargin">
+    <div class=" ">
+    
+                        <h2>
+                            Important notice
+                          </h2>
+        
+        
+<div id="content_container_463823">
+<p>Sir Louis Matheson Library &ndash; Closed 25 June to 18 July 2016. <a target="_blank" href="http://librarymonash.blogspot.com.au/2016/06/changes-to-matheson-library.html">More information</a></p>
+</div>
+
+    </div>
+</li>
+</ul>
+</div>
+<div class="homePods"><p><h2 class="sectionHead topBorder hidden"></h2><ul class="pods row" >
+    <li style="display: list-item;" class="half    ">
+    <div class="  feature ">
+            			<a href="http://www.monash.edu/library/refurbishments/"
+			   			   title="" 
+			   class="imgLink ">
+		        <img src="http://www.monash.edu/__data/assets/image/0010/284068/home-transforming.jpg" alt=""  >
+                </a>    
+    <div class="caption">                    <h2>
+                              <a href="http://www.monash.edu/library/refurbishments/"
+                                      title="">
+                            Transforming libraries
+              </a>            </h2>
+        
+        
+<div id="content_container_232977">
+<p>Our aim is to keep pace with the diverse and changing needs of a
+new generation of scholars and with new teaching and learning styles.</p>
+</div>
+
+    </div></div>
+</li><li style="display: list-item;" class="half bluePod  noMargin">
+    <div class=" ">
+    
+                        <h2>
+                              <a href="http://search.lib.monash.edu/primo_library/libweb/action/search.do?menuitem=0&vid=MON"
+                                      title="">
+                            Search
+              </a>            </h2>
+        
+        <div style="padding:5px;" class="parent-no-ellipsis">
+    <form id="simple" onsubmit="return appendsub(this); " target="_self" enctype="application/x-www-form-urlencoded; charset=utf-8" action="//search.lib.monash.edu/primo_library/libweb/action/dlSearch.do?mode=Basic&vid=MON&institution=MUA" method="GET" role="search" name="searchForm">
+        <input type="hidden" value="MUA" name="institution">
+        <input type="hidden" value="MON" name="vid">
+        <input id="search_scope" type="hidden" value="au_everything" name="search_scope">
+        <input id="tab" type="hidden" value="default_tab" name="tab">
+        <input id="indx" type="hidden" value="1" name="indx">
+        <input id="bulkSize" type="hidden" value="10" name="bulkSize">
+        <input id="dym" type="hidden" value="true" name="dym">
+        <input id="highlight" type="hidden" value="true" name="highlight">
+        <input id="displayField" type="hidden" value="title" name="displayField">
+       
+        <span style="width:80%;">
+<!-- onload="placeholderFallback(this)" onfocus="clearTextArea(this)" -->
+            <input id="query" type="hidden"  placeholder="Find books, articles, journals, databases and more " name="query" class="query" title="Search for resources" style="background-color:white;color:#808080;width:320px" size="30">
+
+<input id="query2" type="text" placeholder="Find books, articles, journals, databases and more " name="query2" class="query" title="Search for resources" style="background-color:white;color:#808080;width:320px" size="30">
+
+            <input id="go" class="searchbutton" type="submit" onmousedown="" onkeydown="" alt="Go" title="Go" value="Go" style="padding:10px;min-device-width:100%">
+        </span>
+    </form>
+</div>
+
+<p style="padding: 0 0 2px 50px;">
+<a href="http://search.lib.monash.edu/primo_library/libweb/action/login.do?loginFn=signin&targetURL=http://search.lib.monash.edu/primo_library/libweb/action/search.do?&vid=MON">Sign in</a>
+|
+<a href="http://search.lib.monash.edu/primo_library/libweb/action/search.do?menuitem=0&vid=MON&mode=Advanced">Advanced search</a>
+|
+<a href="//monash.edu/library/azjournals">eJournals A-Z </a>
+|
+<a href="//guides.lib.monash.edu/databases">Databases A-Z</a>
+</p><script>
+$('#query2').keyup(function() {
+    $('#query').val('any,contains,' + $(this).val()); //returns any,contains,keywords
+});
+
+</script>
+
+
+    </div>
+</li>
+</ul>
+<h2 class="sectionHead topBorder hidden"></h2><ul class="pods row" >
+    <li style="display: list-item;" class="quarter    ">
+    <div class=" ">
+    
+                        <h2>
+                              <a href="http://www.monash.edu/library/services/users/students"
+                                      title="">
+                            Students
+              </a>            </h2>
+        
+        
+<div id="content_container_232985">
+<p><br>Undergrad or postgrad?&nbsp;<br style="text-align: start;text-indent: 0px">See how the Library can make your journey to graduation easier.</p><ul class="podList"><li><a href="http://www.monash.edu/library/services/users/students">for students</a></li></ul>
+</div>
+
+    </div>
+</li><li style="display: list-item;" class="quarter    ">
+    <div class=" ">
+    
+                        <h2>
+                              <a href="http://www.monash.edu/library/services/users/research"
+                                      title="">
+                            Researchers
+              </a>            </h2>
+        
+        
+<div id="content_container_232989">
+<p><br>Data management, publishing, copyright advice, are just a few of the specialist services we offer.</p><ul class="podList"><li><a href="http://www.monash.edu/library/services/users/research">for researchers</a></li></ul>
+</div>
+
+    </div>
+</li><li style="display: list-item;" class="quarter    ">
+    <div class=" ">
+    
+                        <h2>
+                              <a href="http://www.monash.edu/library/services/users/teaching"
+                                      title="">
+                            Teaching staff
+              </a>            </h2>
+        
+        
+<div id="content_container_232993">
+<p><br>Explore Library services that can transform and enrich teaching and learning for staff and students.</p><ul class="podList"><li><a href="http://www.monash.edu/library/services/users/teaching">for teaching staff</a></li></ul>
+</div>
+
+    </div>
+</li><li style="display: list-item;" class="quarter   noMargin">
+    <div class=" ">
+    
+                        <h2>
+                            Information for
+                          </h2>
+        
+        
+<div id="content_container_232997">
+<ul class="podList"><li><a href="http://www.monash.edu/library/community/alumni">Alumni</a></li><li><a title="CAVAL or ULANZ" href="http://www.monash.edu/library/services/loans">CAVAL or ULANZ</a></li><li><a href="http://www.monash.edu/library/services">Visitors</a></li><li><a href="http://www.monash.edu/library/services/users/disability">Users with a disability</a></li></ul>
+</div>
+
+    </div>
+</li>
+</ul>
+<h2 class="sectionHead topBorder hidden"></h2><ul class="pods row" >
+    <li style="display: list-item;" class="third bluePod   ">
+    <div class="themeBlue ">
+    
+                        <h2>
+                            Rare books
+                          </h2>
+        
+        
+<div id="content_container_233001">
+<p><a href="http://monash.edu/library/collections/exhibitions/world-war-one/" target="_blank"><img alt="" src="http://www.monash.edu/__data/assets/image/0006/233925/man-with-flag-245x130.jpg"></a></p><p><a target="_blank" href="http://monash.edu.au/library/collections/exhibitions/world-war-one/">
+   Virtual Exhibition <br>A new nation goes to war</a></p>
+</div>
+
+    </div>
+</li><li style="display: list-item;" class="third bluePod   ">
+    <div class="themeBlue ">
+    
+                        <h2>
+                            Research repository
+                          </h2>
+        
+        
+<div id="content_container_233005">
+<p><a href="http://arrow.monash.edu/vital/access/manager/Index" target="_blank"><img alt="" src="http://www.monash.edu/__data/assets/image/0008/233891/ephemera-102-245x132.jpg"></a></p><p><a target="_blank" href="http://arrow.monash.edu/vital/access/manager/Index">Latest additions to the Monash University Research Repository</a></p>
+</div>
+
+    </div>
+</li><li style="display: list-item;" class="third bluePod  noMargin">
+    <div class="themeBlue ">
+    
+                        <h2>
+                            Monash publishing
+                          </h2>
+        
+        
+<div id="content_container_233009">
+<p><a target="_blank" href="http://www.publishing.monash.edu/new-titles.html"><img alt="Section of new titles" src="http://www.monash.edu/__data/assets/image/0012/287868/promo-publishing.jpg"></a></p><p><a target="_blank" href="http://www.publishing.monash.edu/new-titles.html">New titles from Monash University Publishing</a></p>
+</div>
+
+    </div>
+</li>
+</ul>
+<h2 class="sectionHead topBorder hidden"></h2><ul class="pods row" >
+    <li style="display: list-item;" class="quarter    ">
+    <div class=" ">
+    
+                        <h2>
+                            Quick links
+                          </h2>
+        
+        
+<div id="content_container_233013">
+<p>Resources</p><ul class="podList"><li><a title="online lectures" href="http://www.monash.edu/mulo">online lectures</a></li><li><a title="reading lists" href="http://readinglists.lib.monash.edu">reading lists</a></li><li><a href="http://www.monash.edu/library/collections/special">special collections</a></li></ul><p>Skills</p><ul class="podList"><li><a title="research and learning online" href="http://www.monash.edu/rlo">Research &amp; Learning <br />Online</a></li><li><a title="library guides" href="http://guides.lib.monash.edu/">library guides</a></li><li><a href="http://www.monash.edu/library/skills/resources/programs">programs &amp; drop-ins</a></li></ul><p>Services</p><ul class="podList"><li><a href="http://www.monash.edu/library/services/loans">borrowing</a></li><li><a href="http://www.monash.edu/library/services/docdel">document delivery</a></li><li><a target="_blank" href="http://workstations.lib.monash.edu/">find a library computer</a></li><li><a title="library room booking" href="http://monash.libcal.com/">library room booking</a></li><li><a target="_blank" href="http://monash.libcal.com/booking/atr">disability room booking</a></li></ul>
+</div>
+
+    </div>
+</li><li style="display: list-item;" class="half    ">
+    <div class="themeGrey ">
+    
+            
+           <style>
+		@font-face {
+			font-family: 'icomoon';
+			src:url('../fonts/icomoon/icomoon.eot?pvm5gj');
+			src:url('../fonts/icomoon/icomoon.eot?#iefixpvm5gj') format('embedded-opentype'),
+				url('../fonts/icomoon/icomoon.woff?pvm5gj') format('woff'),
+				url('../fonts/icomoon/icomoon.ttf?pvm5gj') format('truetype'),
+				url('../fonts/icomoon/icomoon.svg?pvm5gj#icomoon') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		} /* Icons created with icomoon.io/app */
+
+		.tabs {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			margin: 0 0 2em;
+			font-weight: 300;
+		}
+
+		/* Nav */
+		.tabs nav {
+			text-align: center;
+		}
+
+		.tabs nav ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: inline-block;
+		}
+
+		.tabs nav ul li {
+			border: 1px solid #becbd2;
+			border-bottom: none;
+			margin: 0 0.25em;
+			display: block;
+			float: left;
+			position: relative;
+		}
+
+		.tabs nav li.tab-current {
+			border: 1px solid #dd341e;
+			box-shadow: inset 0 2px #dd341e;
+			border-bottom: none;
+			z-index: 100;
+		}
+
+		.tabs nav li.tab-current:before,
+		.tabs nav li.tab-current:after {
+			content: '';
+			position: absolute;
+			height: 1px;
+			right: 100%;
+			bottom: 0;
+			width: 1000px;
+			background: #dd341e;
+		}
+
+		.tabs nav li.tab-current:after {
+			right: auto;
+			left: 100%;
+			width: 4000px;
+		}
+
+		.tabs nav a {
+			color: #becbd2;
+			display: block;
+			font-size: 1.45em;
+			line-height: 2;
+			padding: 0 1.68em;
+			white-space: nowrap;
+		}
+
+		.tabs nav a:hover {
+			color: #768e9d;
+		}
+
+		.tabs nav li.tab-current a {
+			color: #47a3da;
+		}
+
+		/* Icons */
+		.tabs nav a:before {
+			display: inline-block;
+			vertical-align: middle;
+			text-transform: none;
+			font-weight: normal;
+			font-variant: normal;
+			font-family: 'icomoon';
+			line-height: 1;
+			speak: none;
+			-webkit-font-smoothing: antialiased;
+			margin: -0.25em 0.4em 0 0;
+		}
+
+		.icon-food:before {
+			content: "\e600";
+		}
+
+		.icon-lab:before {
+			content: "\e601";
+		}
+
+		.icon-cup:before {
+			content: "\e602";
+		}
+
+		.icon-truck:before {
+			content: "\e603";
+		}
+
+		.icon-shop:before {
+			content: "\e603"; /*background-image: url("http://mon.clients.squiz.net/library/assets/images/homepage/sm-blog.png");*/
+		}
+
+		/* Content */
+		.content section {
+			font-size: 1.25em;
+			padding: 0.2em 1em;
+			display: none;
+			max-width: 1230px;
+			margin: 0 auto;
+		}
+
+		.content section:before,
+		.content section:after {
+			content: '';
+			display: table;
+		}
+
+		.content section:after {
+			clear: both;
+		}
+
+		/* Fallback example */
+		.no-js .content section {
+			display: block;
+			padding-bottom: 2em;
+			border-bottom: 1px solid #47a3da;
+		}
+
+		.content section.content-current {
+			display: block;
+		}
+
+		.mediabox {
+			/*float: left;
+			width: 33%;
+			padding: 0 25px;*/ 
+
+			
+		}
+
+		.mediabox img {
+			max-width: 100%;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.mediabox h3 {
+			margin: 0 0 0.5em;
+		}
+
+		.mediabox p {
+			padding: 0 0 1em 0;
+			margin: 0;
+			/*line-height: 1.3;*/
+		}
+
+		/* Example media queries */
+
+		@media screen and (max-width: 52.375em) {
+			.tabs nav a span {
+				display: none;
+			}
+
+			.tabs nav a:before {
+				margin-right: 0;
+			}
+
+			.mediabox {
+				float: none;
+				width: auto;
+				padding: 0 0 35px 0;
+				font-size: 90%;
+			}
+
+			.mediabox img {
+				float: left;
+				margin: 0 25px 10px 0;
+				max-width: 40%;
+			}
+
+			.mediabox h3 {
+				margin-top: 0;
+			}
+
+			.mediabox p {
+				margin-left: 5%;
+				/*margin-left: calc(40% + 25px);*/
+			}
+
+			.mediabox:before,
+			.mediabox:after {
+				content: '';
+				display: table;
+			}
+
+			.mediabox:after {
+				clear: both;
+			}
+		}
+
+		@media screen and (max-width: 32em) {
+			.tabs nav ul,
+			.tabs nav ul li a {
+				width: 100%;
+				padding: 0;
+			}
+
+			.tabs nav ul li {
+				width: 20%;
+				width: calc(20% + 1px);
+				margin: 0 0 0 -1px;
+			}
+
+			.tabs nav ul li:last-child {
+				border-right: none;
+			}
+
+			.mediabox {
+				text-align: center;
+			}
+
+			.mediabox img {
+				float: none;
+				margin: 0 auto;
+				max-width: 100%;
+			}
+
+			.mediabox h3 {
+				margin: 1.25em 0 1em;
+			}
+
+			.mediabox p {
+				margin: 0;
+			}
+		}
+
+		/* General Blueprint Style */
+		/*@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);*/
+
+		@font-face {
+			font-family: 'bpicons';
+			src:url('../fonts/bpicons/bpicons.eot');
+			src:url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'),
+				url('../fonts/bpicons/bpicons.woff') format('woff'),
+				url('../fonts/bpicons/bpicons.ttf') format('truetype'),
+				url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		} /* Made with http://icomoon.io/ */
+
+		*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+		body, html { /*font-size: 100%; */padding: 0; margin: 0;}
+
+		/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+		.clearfix:before, .clearfix:after { content: " "; display: table; }
+		.clearfix:after { clear: both; }
+
+		body {
+			/*font-family: 'Lato', Calibri, Arial, sans-serif;*/
+			color: #47a3da;
+		}
+
+		a {
+			color: #000; /*#ccc;*/
+			text-decoration: none;
+			outline: none;
+		}
+
+		a:hover {
+			color: #000;
+		}
+
+		.container > header {
+			width: 90%;
+			max-width: 69em;
+			margin: 0 auto;
+			padding: 2.875em 1.875em 1.875em;
+		}
+
+		.container > header h1 {
+			font-size: 2.125em;
+			line-height: 1.3;
+			margin: 0 0 0.6em 0;
+			float: left;
+			font-weight: 400;
+		}
+
+		.container > header > span {
+			display: block;
+			position: relative;
+			z-index: 9999;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.5em;
+			padding: 0 0 0.6em 0.1em;
+		}
+
+		.container > header > span span:after {
+			width: 30px;
+			height: 30px;
+			left: -12px;
+			font-size: 50%;
+			top: -8px;
+			font-size: 75%;
+			position: relative;
+		}
+
+		.container > header > span span:hover:before {
+			content: attr(data-content);
+			text-transform: none;
+			text-indent: 0;
+			letter-spacing: 0;
+			font-weight: 300;
+			font-size: 110%;
+			padding: 0.8em 1em;
+			line-height: 1.2;
+			text-align: left;
+			left: auto;
+			margin-left: 4px;
+			position: absolute;
+			color: #fff;
+			background: #47a3da;
+		}
+
+		.container > header nav {
+			float: right;
+			text-align: center;
+		}
+
+		.container > header nav a {
+			display: inline-block;
+			position: relative;
+			text-align: left;
+			width: 2.5em;
+			height: 2.5em;
+			background: #fff;
+			border-radius: 50%;
+			margin: 0 0.1em;
+			border: 4px solid #47a3da;
+		}
+
+		.container > header nav a > span {
+			display: none;
+		}
+
+		.container > header nav a:hover:before {
+			content: attr(data-info);
+			color: #47a3da;
+			position: absolute;
+			width: 600%;
+			top: 120%;
+			text-align: right;
+			right: 0;
+			pointer-events: none;
+		}
+
+		.container > header nav a:hover {
+			background: #47a3da;
+		}
+
+		.bp-icon:after {
+			font-family: 'bpicons';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			text-align: center;
+			color: #47a3da;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		.container > header nav .bp-icon:after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			line-height: 2;
+			text-indent: 0;
+		}
+
+		.container > header nav a:hover:after {
+			color: #fff;
+		}
+
+		.bp-icon-next:after {
+			content: "\e000";
+		}
+		.bp-icon-drop:after {
+			content: "\e001";
+		}
+		.bp-icon-archive:after {
+			content: "\e002";
+		}
+		.bp-icon-about:after {
+			content: "\e003";
+		}
+		.bp-icon-prev:after {
+			content: "\e004";
+		}
+
+		p.info {
+			text-align: center;
+			padding: 20px;
+		}
+
+		@media screen and (max-width: 55em) {
+
+			.container > header h1,
+			.container > header nav {
+				float: none;
+			}
+
+			.container > header > span,
+			.container > header h1 {
+				text-align: center;
+			}
+
+			.container > header nav {
+				margin: 0 auto;
+			}
+
+			.container > header > span {
+				text-indent: 30px;
+			}
+		}
+				</style>
+				<script>
+				/**
+		 * cbpFWTabs.js v1.0.0
+		 * http://www.codrops.com
+		 *
+		 * Licensed under the MIT license.
+		 * http://www.opensource.org/licenses/mit-license.php
+		 * 
+		 * Copyright 2014, Codrops
+		 * http://www.codrops.com
+		 */
+		;( function( window ) {
+			
+			'use strict';
+
+			function extend( a, b ) {
+				for( var key in b ) { 
+					if( b.hasOwnProperty( key ) ) {
+						a[key] = b[key];
+					}
+				}
+				return a;
+			}
+
+			function CBPFWTabs( el, options ) {
+				this.el = el;
+				this.options = extend( {}, this.options );
+				extend( this.options, options );
+				this._init();
+			}
+
+			CBPFWTabs.prototype.options = {
+				start : 0
+			};
+
+			CBPFWTabs.prototype._init = function() {
+				// tabs elemes
+				this.tabs = [].slice.call( this.el.querySelectorAll( 'nav > ul > li' ) );
+				// content items
+				this.items = [].slice.call( this.el.querySelectorAll( '.content > section' ) );
+				// current index
+				this.current = -1;
+				// show current content item
+				this._show();
+				// init events
+				this._initEvents();
+			};
+
+			CBPFWTabs.prototype._initEvents = function() {
+				var self = this;
+				this.tabs.forEach( function( tab, idx ) {
+					tab.addEventListener( 'click', function( ev ) {
+						ev.preventDefault();
+						self._show( idx );
+					} );
+				} );
+			};
+
+			CBPFWTabs.prototype._show = function( idx ) {
+				if( this.current >= 0 ) {
+					this.tabs[ this.current ].className = '';
+					this.items[ this.current ].className = '';
+				}
+				// change current
+				this.current = idx != undefined ? idx : this.options.start >= 0 && this.options.start < this.items.length ? this.options.start : 0;
+				this.tabs[ this.current ].className = 'tab-current';
+				this.items[ this.current ].className = 'content-current';
+			};
+
+			// add to global namespace
+			window.CBPFWTabs = CBPFWTabs;
+
+		})( window );
+		</script>
+		<div class="container">
+			<!--<header class="clearfix">
+				<h1>Responsive Full Width Tabs</h1>-->
+				<!--<nav>
+					<a href="http://tympanus.net/Blueprints/SplitLayout/" class="bp-icon bp-icon-prev" data-info="previous Blueprint"><span>Previous Blueprint</span></a>
+					<a href="http://tympanus.net/Blueprints/GridGallery/" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a>
+					<a href="http://tympanus.net/codrops/?p=18521" class="bp-icon bp-icon-drop" data-info="back to the Codrops article"><span>back to the Codrops article</span></a>
+					<a href="http://tympanus.net/codrops/category/blueprints/" class="bp-icon bp-icon-archive" data-info="Blueprints archive"><span>Go to the archive</span></a>
+				</nav>
+			</header>	 -->
+		<div id="tabs" class="tabs">
+				<nav>
+					<ul>
+						<li><a href="#section-1"><img style="height:26px;width:26px;" src="http://www.monash.edu/__data/assets/image/0003/156333/sm-blog.png" /></a></li>
+						<li><a href="#section-2"><img style="height:26px;width:26px;" src="http://www.monash.edu/__data/assets/image/0004/156505/sm-facebook.png" /></a></li>
+						<li><a href="#section-3"><img style="height:26px;width:28px;" src="http://www.monash.edu/__data/assets/image/0008/156482/sm-twitter.png" /></a></li>
+						<!-- <li><a href="#section-4"><img style="height:26px;width:26px;" src="https://www.monash.edu/__data/assets/image/0018/253044/sm-inst.png" /></a></li> -->
+					</ul>
+				</nav>
+			<div class="content">
+					<section id="section-1" style="background-color:#f5f6f6"> <!-- Blogger -->
+						<div class="mediabox">
+							<div style="border: 1px solid rgb(204, 204, 204)">
+							<a href="http://librarymonash.blogspot.com.au/2016/06/changes-to-matheson-library.html" target="_blank" ><img style="height:80px !important; width:80px !important;float:left;margin:0;" src="http://www.monash.edu/__data/assets/image/0005/373586/Matheson_Refurbishment-small.jpg"/></a>
+							<p style="vertical-align:middle;padding: 1em 0 1em 6em;font-size:12pt;height:80px;color:#000;background-color:#fff;">
+							<!--Featured post:--><a href="http://librarymonash.blogspot.com.au/2016/06/changes-to-matheson-library.html" target="_blank" >Changes to Matheson Library</a></p>
+							</div><br/>
+							<div>
+							
+							<!-- start feedwind code --><script type="text/javascript">document.write('\x3Cscript type="text/javascript" src="' + ('https:' == document.location.protocol ? 'https://' : 'http://') + 'feed.mikle.com/js/rssmikle.js">\x3C/script>');</script><script type="text/javascript">(function() {var params = {rssmikle_url: "http://librarymonash.blogspot.com.au/feeds/posts/default?alt=rss",rssmikle_frame_width: "100%",rssmikle_frame_height: "260",frame_height_by_article: "",rssmikle_target: "_blank",rssmikle_font: "Arial, Helvetica, sans-serif",rssmikle_font_size: "12",rssmikle_border: "off",responsive: "off",rssmikle_css_url: "",text_align: "left",text_align2: "left",corner: "off",scrollbar: "off",autoscroll: "on",scrolldirection: "up",scrollstep: "3",mcspeed: "20",sort: "New",rssmikle_title: "off",rssmikle_title_sentence: "",rssmikle_title_link: "",rssmikle_title_bgcolor: "#0066FF",rssmikle_title_color: "#FFFFFF",rssmikle_title_bgimage: "",rssmikle_item_bgcolor: "#FFFFFF",rssmikle_item_bgimage: "",rssmikle_item_title_length: "55",rssmikle_item_title_color: "#094C93",rssmikle_item_border_bottom: "on",rssmikle_item_description: "on",item_link: "off",rssmikle_item_description_length: "150",rssmikle_item_description_color: "#666666",rssmikle_item_date: "gl1",rssmikle_timezone: "Etc/GMT",datetime_format: "%b %e, %Y %l:%M:%S %p",item_description_style: "text",item_thumbnail: "full",article_num: "5",rssmikle_item_podcast: "off",keyword_inc: "",keyword_exc: ""};feedwind_show_widget_iframe(params);})();</script><div style="font-size:10px; text-align:center; width:300px;">
+						
+							<script src="http://widget.feed.mikle.com/js/rssmikle.js" type="text/javascript"></script>
+							<div style="float:left;color:#47a3da;font-family:'Lato',Calibri,Arial,sans-serif;font-size:12pt;">
+<ul class="podList" style="line-height:1.4;padding:5px;"><li><a href="http://librarymonash.blogspot.com.au" target="_blank" >More blog stories</a></li></ul></div></div>
+							</div>
+						</div>
+					</section>
+					<section id="section-2" style="background-color:#f5f6f6;width: 100% !important;"> <!-- Facebook -->
+						<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmonashuniversitylibrary&amp;width=400&amp;height=420&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=false" scrolling="yes" frameborder="0" style="border:none; overflow:scroll; width:100%; height:420px;" allowTransparency="true"></iframe>
+					</section>
+					<section id="section-3" style="background-color:#f5f6f6">  <!-- Twitter -->
+						            <a class="twitter-timeline"  href="https://twitter.com/monashunilib" data-widget-id="454045709277204480">Tweets by @monashunilib</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          
+					</section>
+				 <!--	<section id="section-4" style="background-color:#f5f6f6">   Instagram -->
+					<!-- SnapWidget 
+					<script src="//snapwidget.com/js/snapwidget.js"></script>
+					<iframe src="//snapwidget.com/in/?u=bW9uYXNodW5pbGlicmFyeXxpbnwxMjV8M3wzfHxub3w1fG5vbmV8b25TdGFydHx5ZXN8eWVz&ve=180615" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>-->
+					
+					<!-- INSTANSIVE WIDGET <script src="http://instansive.com/widget/js/instansive.js"></script><iframe src="http://instansive.com/widgets/ba4f1bef361f473fb7362b850967cf94d0143ba0.html" id="instansive_ba4f1bef36" name="instansive_ba4f1bef36"  scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+					</section>-->
+				</div><!-- /content -->
+			</div><!-- /tabs -->
+		</div>
+		<script src="http://users.monash.edu.au/~jsoohoo/squiz/cbpFWTabs.js"></script>
+		<script>
+			new CBPFWTabs( document.getElementById( 'tabs' ) );
+		</script>
+    </div>
+</li><li style="display: list-item;" class="quarter   noMargin">
+    <div class=" ">
+    
+                        <h2>
+                            Opening hours
+                          </h2>
+        
+        
+<div id="new_content_container_233060">
+<br/><div style="margin: 0 auto;"><iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23f3f3f3&amp;src=monash.edu_6bojcpoms693rssoe9p4158vgg%40group.calendar.google.com&amp;color=%23333333&amp;src=monash.edu_q14704ilooja32633mjluukgvo%40group.calendar.google.com&amp;color=%23113F47&amp;src=monash.edu_pnv0ie7fpohdat2gkejqvj2ie4%40group.calendar.google.com&amp;color=%2323164E&amp;src=monash.edu_20is8ku78344hjsciu9pt3a0q4%40group.calendar.google.com&amp;color=%236B3304&amp;src=monash.edu_9e52l7iml4ntjelncr11satljc%40group.calendar.google.com&amp;color=%232F6309&amp;src=monash.edu_b7cbtqv70rc4ehveqbo0ruufd0%40group.calendar.google.com&amp;color=%23060D5E&amp;src=monash.edu_01214dql5tgkrscglvocs67c5g%40group.calendar.google.com&amp;color=%23B1365F&amp;src=monash.edu_uqru3m7t244q9ftt91ml3babhg%40group.calendar.google.com&amp;color=%23691426&amp;ctz=Australia%2FSydney" style=" border-width:0 " width="100%" height="250" frameborder="0" scrolling="no"></iframe></div><br/>
+</div>
+
+<div id="content_container_233021">
+<ul style="line-height:1.4;padding:5px;" class="podList"><li><a href="http://www.monash.edu/library/libraries/australia/opening-hours">Text version&nbsp;</a></li><li><a target="_blank" href="http://www.monash.edu/library/libraries/australia/calendar">Full page view</a></li></ul>
+</div>
+
+    </div>
+</li>
+</ul>
+</p></div><!-- Feed boxes folder - no results -->
+            
+            <!--noindex-->
+            
+
+            		
+            		
+
+            </div><!--/wrapper-->
+    </div><!-- /content -->
+        
+    
+<div class="connect">
+    <div class="wrapper clearfix">
+        <ul class="links">
+    <li><a href="http://www.monash.edu/people/contact">Contacts</a></li>
+</ul>
+
+<div class="social">
+  <ul>
+    <li class="linkedin"><a href="http://linkedin.com/company/monash-university"><span>LinkedIn</span></a></li>
+    <li class="weibo"><a href="http://www.weibo.com/monashuniversityaust/"><span>Weibo</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/+monashuniversity"><span>Google Plus</span></a></li>
+    <li class="tumblr"><a href="http://monashuni.tumblr.com/"><span>Tumblr</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/MonashUni"><span>Twitter</span></a></li>
+    <li class="instagram"><a href="http://instagram.com/monash_uni"><span>Instagram</span></a></li>
+    <li class="facebook"><a href="https://www.facebook.com/Monash.University"><span>Facebook</span></a></li>
+    <li class="youtube"><a href="http://youtube.com/user/monashunivideo"><span>YouTube</span></a></li>
+  </ul>
+  <p>Join the conversation</p>
+</div>
+    </div>
+</div>
+<div class="footer">
+    <footer>
+        <div class="wrapper">
+            <div class="container"><ul class="pods mobileHide">
+    <li class="quarter">
+	<h2>Quick Links</h2>
+        <ul>
+	<li><a href="/students/dates/">Important dates</a></li>
+	<li><a href="/payments/">Pay online</a></li>
+	<li><a href="/library/">Library</a></li>
+	<li><a href="http://www.monash.edu/people/maps">Maps</a></li>
+	<li><a href="/jobs/">Jobs at Monash</a></li>
+        <li><a href="http://www.monash.edu/careers/employers/">Recruit a student</a></li>
+	<li><a href="http://www.monash.edu/about/indigenous">Indigenous Australians</a></li>
+</ul>
+</li><li class="quarter">
+	<h2>About Monash</h2>
+        <ul>
+	<li><a href="http://www.monash.edu/faculties">Faculties</a></li>
+	<li><a href="http://www.monash.edu/about/campuses">Campuses</a></li>
+	<li><a href="http://www.monash.edu/a-z">A - Z Index</a></li>
+	<li><a href="http://www.monash.edu/people/contact">Contact Monash</a></li>
+	<li><a href="http://www.monash.edu/news/releases">Media releases</a></li>
+</ul>
+</li><li class="quarter">
+	<h2>Library</h2>
+        <ul>
+	<li><a href="http://search.lib.monash.edu/primo_library/libweb/action/search.do?&amp;vid=MON" title="Search">Search</a></li>
+	<li><a href="http://www.monash.edu/library/about/contacts" title="Contacts">Library contacts</a></li>
+	<li><a href="http://ask.monash.edu/" title="Questions or feedback">Questions or feedback</a></li>
+</ul>
+</li><li class="quarter noMargin">
+    <h2>A member of</h2><a href="http://www.go8.edu.au/"><div class="go8"><img src="http://www.monash.edu/__data/assets/file/0007/42010/go8standard-grey.svg" alt="Monash University is a member of the Group of Eight Australian universities" /></div></a>
+</li>
+</ul><ul class="pods mobileShow">
+    <li class="full">
+	<h2>Quick Links</h2>
+        <ul>
+	<li><a href="/students/dates/">Important dates</a></li>
+	<li><a href="/payments/">Pay online</a></li>
+	<li><a href="/library/">Library</a></li>
+	<li><a href="/people/maps/">Maps</a></li>
+	<li><a href="/jobs/">Jobs at Monash</a></li>
+        <li><a href="http://www.monash.edu/careers/employers/">Recruit a student</a></li>
+	<li><a href="/about/glance/social-inclusion/indigenous/">Indigenous Australians</a></li>
+	<li><a href="https://my.monash.edu.au/">my.monash</a></li>
+	<li><a href="/connect/">Student services</a></li>
+	<li><a href="https://my.monash.edu.au/staff/">Staff</a></li>
+	<li><a href="/library/">Library</a></li>
+	<li><a href="/giving/">Giving to Monash</a></li>
+</ul>
+</li><li class="full">
+    <a href="http://www.go8.edu.au/"><div class="go8"><img src="http://www.monash.edu/__data/assets/file/0007/42010/go8standard-grey.svg" alt="Monash University is a member of the Group of Eight Australian universities" /></div></a>
+</li>
+</ul></div><!-- /container -->
+<div class="footerLinks">
+    
+</div>
+<div class="container footerNotes">
+    <p>Authorised by: University Librarian. Maintained by: <a href="mailto:libweb@monash.edu">Library Web Developers</a> Last updated: 23 June 2016</p><p>Copyright © 2016 <a href="http://www.monash.edu/">Library, Monash University</a>. ABN 12 377 614 012 <a href="http://www.monash.edu/accessibility">Accessibility</a> - <a href="http://www.monash.edu/disclaimer-copyright">Disclaimer and copyright</a> - <a href="http://www.monash.edu/privacy">Privacy</a>, Monash University CRICOS Provider Number: 00008C<!--% , Library CRICOS Provider Number: --></p><p>We acknowledge and pay respects to the Elders and Traditional Owners of the land on which our five Australian campuses stand. <a href="http://www.monash.edu/about/indigenous">Information for Indigenous Australians</a></p>            </div><!-- /footerNotes -->
+        </div><!-- /wrapper -->
+    </footer>
+</div><!-- /footer --> <script src="http://www.monash.edu/__data/assets/js_file_folder/0016/17323/js_footer.min.js"></script> <!-- js footer -->
+<script src="http://www.monash.edu/__data/assets/js_file/0011/59699/jwplayer.init.js"></script> <!-- jwplayer.init -->    <!-- footer additional -->  <!-- /footer additional -->
+    
+    <!--endnoindex-->
+    
+        
+
+
+</body>
+</html>

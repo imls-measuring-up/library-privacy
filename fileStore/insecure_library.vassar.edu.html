@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="no-js" dir="ltr" lang="en-us">
+<head>
+<title>Vassar College Libraries</title>
+<meta charset="utf-8"/>
+<meta content="Vassar College Libraries" name="keywords"/>
+<meta content="Vassar College Libraries" name="description"/>
+<script src="files/javascript/drop-down.js" type="text/javascript"></script>
+<script src="files/javascript/tabcontent.js" type="text/javascript"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" ></script>-->
+<script src="files/javascript/jquery.min.js" type="text/javascript"></script>
+<script src="files/javascript/slideshow-script.js" type="text/javascript"></script>
+<script src="files/javascript/slideshow.js" type="text/javascript"></script>
+<script src="files/javascript/simpletabs_1.3.js" type="text/javascript"></script>
+<link href="files/css/reset1.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+<link href="files/css/styles-home.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+<style>
+.js .tabcontent {
+    visibility:hidden;
+    position:absolute;
+}
+.fadeslidedescdiv, .descpanelfg {
+    z-index: 50000;
+}
+</style>
+<!--
+Site developed by Communications, Vassar College, Poughkeepsie, NY
+-->
+<script type="text/javascript">
+    (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-301357-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){   
+
+        if (!$.browser.opera) {
+    
+            // select element styling
+            $('select.select').each(function(){
+                var title = $(this).attr('title');
+                if( $('option:selected', this).val() != ''  ) title = $('option:selected',this).text();
+                $(this)
+                    .css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+                    .after('<span class="select">' + title + '</span>')
+                    .change(function(){
+                        val = $('option:selected',this).text();
+                        $(this).next().text(val);
+                        })
+            });
+
+        };
+        
+    });
+</script>
+
+</head>
+<body class="home">
+<header role="banner">
+  <div class="header">
+    <h1 class="masthead"><a href="/">Vassar College Libraries</a></h1>
+    <h2 class="vassar"><a href="http://vassar.edu/">Vassar College</a></h2>
+  </div>
+  <!-- end .header -->
+
+
+  <div class="library-hours">
+    <h2>Main Library Hours</h2>
+    <p><span><em>Today</em> 8:30 am to 4:30 pm</span> <a href="/about/hours.html">See All &raquo;</a></p>
+  </div>
+</header>
+<nav role="navigation">
+  <div class="nav">
+
+  <ul id="menu" class="menu">
+<li><a href="/about/index.html" class="menulink">About</a> 
+<ul>
+<li class="first"><a href="/about/hours.html">Hours</a></li>
+<li><a href="/about/fastfacts.html">Fast Facts</a></li>
+<li><a href="/about/accesspolicy.html">Information for Visitors</a></li>
+<li><a href="/about/map/index.html">Map/Locations Guide</a></li>
+<li><a href="/about/freshmen.html">Information for New Students</a></li>
+<li><a href="/about/departments/index.html">Staff Directory</a></li>
+<li><a href="/about/collections/index.html">Collections</a></li>
+<li><a href="/about/preservation/index.html">Preservation</a></li>
+<li><a href="/about/history/index.html">History of the Libraries</a></li>
+<li><a href="/about/missionstatement.html">Mission Statement</a></li>
+<li><a href="/about/spaces-services.html">Using Library Spaces &amp; Services</a></li>
+<li class="last"><a href="http://pages.vassar.edu/library">The Gargoyle Bulletin (Library Blog)</a></li>
+</ul>
+</li>
+<li><a href="/search/index.html" class="menulink">Search</a> 
+<ul>
+<li class="first"><a href="http://vaslib.vassar.edu/search/" class="extlink">Library Catalog</a></li>
+<li><a href="http://vassar.summon.serialssolutions.com/" class="extlink">Discover</a></li>
+<li><a href="/search/databases/index.html">Databases</a></li>
+<li><a href="http://pu6xa6xs3q.search.serialssolutions.com/">Journals</a></li>
+<li><a href="/search/crl.html">Center for Research Libraries (CRL)</a></li>
+<li><a href="/search/librarycatalogs.html">Other Libraries' Catalogs</a></li>
+<li><a href="http://www.connectny.info/screens/opacmenu.html" class="extlink">ConnectNY Catalog</a></li>
+<li><a href="http://libproxy.vassar.edu/login?url=http://library.vassar.edu" class="extlink">Off-campus Access</a></li>
+<li><a href="/search/searchsite.html">Search This Site</a></li>
+<li class="last"><a href="/search/sitemap/index.html">Site Map</a></li>
+</ul>
+</li>
+<li><a href="/research/index.html" class="menulink">Research Help</a> 
+<ul>
+<li class="first"><a href="/research/assistance.html">Ask a Librarian</a></li>
+<li><a href="/research/citingsources.html">Citing Sources</a></li>
+<li><a href="http://libguides.vassar.edu/" class="extlink">LibGuides</a></li>
+<li><a href="http://libguides.vassar.edu/content.php?pid=271539&amp;sid=2239662" class="extlink">Subject and Course Guides</a></li>
+<li><a href="http://libguides.vassar.edu/content.php?pid=271539&amp;sid=2239801" class="extlink">Research Guides by Course</a></li>
+<li class="last"><a href="/research/howtofind/index.html">How to find</a></li>
+</ul>
+</li>
+<li><a href="/services/index.html" class="menulink">Services</a> 
+<ul>
+<li class="first"><a href="/services/listofservices.html">Services A-Z</a></li>
+<li><a href="/services/accessibilty.html">Accessibility</a></li>
+<li><a href="/services/facultyservices/index.html">Faculty Services</a></li>
+<li><a href="/services/circ/index.html">Circulation & Reserves Desk</a></li>
+<li><a href="/services/interlibraryloan/index.html">Interlibrary Loan</a></li>
+<li><a href="http://libguides.vassar.edu/reserves" class="extlink">Reserves &amp; Art Digital Imaging Services</a></li>
+<li><a href="/services/computing.html">Computers and Laptops</a></li>
+<li><a href="/services/jyahelp.html">JYA, Services for Students Studying Abroad</a></li>
+<li><a href="/services/videos.html">Video Collection</a></li>
+<li><a href="/services/lockers.html">Senior Lockers and Carrels</a></li>
+<li><a href="/services/teachingfacilities/index.html">Teaching Facilities</a></li>
+<li class="last"><a href="/services/forms/index.html">Forms</a></li>
+</ul>
+</li>
+<li><a href="/announcements/index.html" class="menulink">News</a> 
+<ul>
+<li class="first"><a href="/announcements/index.html">Current</a></li>
+<li><a href="/announcements/archive/">Archive</a></li>
+<li><a href="/announcements/rss/">RSS</a></li>
+<li class="last"><a href="http://pages.vassar.edu/library">The Gargoyle Bulletin (Library Blog)</a></li>
+</ul>
+</li>
+<li class="my-accounts"><a href="#" class="menulink">My Accounts</a> 
+<ul>
+<li class="first"><a href="https://vaslib.vassar.edu/patroninfo%7eS0">My Circulation Record</a></li>
+<li><a href="https://vassar.illiad.oclc.org/illiad/logon.html">Interlibrary Loan</a></li>
+<li><a href="https://www.refworks.com/Refworks/login.asp?WNCLang=false">RefWorks</a></li>
+<li><a href="http://vaslib.vassar.edu/search/r">Course Reserves</a></li>
+<li class="last"><a href="http://moodle.vassar.edu">Moodle</a></li>
+</ul>
+</li>
+</ul> 
+
+
+  </div>
+  <!-- end .nav -->
+</nav>
+
+<div class="main" role="main">
+  <div class="content">
+    <div class="slideshow">
+      <div id="fadeshow"></div>
+    </div>
+  </div>
+  <!-- end .content -->
+</div>
+<!-- end .main -->
+<footer role="contentinfo">
+  <div class="footer">
+
+
+
+    <div class="quick-links">
+          <h2>Quick Links</h2>
+      <h3>About</h3>
+      <ul>
+        <li><a href="/about/hours.html">Hours</a></li>
+        <li><a href="/about/map/index.html">Locations &amp; Maps</a></li>
+      </ul>
+      <h3>Research Help</h3>
+      <ul>
+        <li><a href="/research/assistance.html">Ask a Librarian</a></li>
+        <li><a href="http://libguides.vassar.edu/">Subject &amp; Course Guides</a></li>
+        <li><a href="/research/citingsources.html">Citing Sources</a></li>
+      </ul>
+      <h3>Services</h3>
+      <ul>
+        <li><a href="/services/circ/index.html">Borrowing/Circulation</a></li>
+        <li><a href="/services/interlibraryloan/index.html">Interlibrary Loan</a></li>
+        <li><a href="/services/forms/index.html">Forms</a></li>
+        <li><a href="/services/facultyservices/index.html">Services for Faculty</a></li>
+      </ul>
+      <h3 class="ask-a-librarian"><a href="/research/assistance.html">Ask A Librarian</a></h3>
+    </div>
+    <!-- end .quick-links -->
+    <div class="search">
+          <ul class="tabs" persist="true">
+        <li class="catalog selected"><a href="#" rel="view1">Catalog &amp; Discover</a></li>
+        <li class="databases"><a href="#" rel="view2">Databases</a></li>
+        <li class="journals"><a href="#" rel="view3">Journals</a></li>
+      </ul>
+          <div class="tabcontents">
+            <div class="tabcontent" id="view1">
+          <div class="simpleTabs">
+            <ul class="simpleTabsNavigation">
+              <li class="catalog-sub selected"><a href="#">Catalog</a></li>
+              <li class="discover-sub"><a href="#">Discover</a></li>
+            </ul>
+                <div class="simpleTabsContent">
+              <div class="cd-left">
+                    <p><!-- style="border:1px solid #dc6610; text-align:center;padding:3px;" -->
+                    <strong>Search the catalog</strong> for books, journals, newspapers, musical scores, videos, and more owned by Vassar Libraries.
+                   <!-- <strong>System alert:</strong><br /> Library catalog downtime, May 29, 2013, beginning 8:30 a.m. <a href="http://library.vassar.edu/announcements/2012-2013/130523-CatalogMaintenance.html" style="color: #dc6610">Learn more &raquo;</a> -->
+                    </p>
+                <p class="quiet">
+                <a href="http://vaslibmobile.vassar.edu/" class="quiet" title="Mobile version of the catalog">Mobile Catalog &raquo;</a><br />
+                <a href="http://libweb.vassar.edu/recentacq/" class="quiet" title="View the most recent acquisitions available at the libraries">Recent Acquisitions &raquo;</a><br />
+                <a href="http://vaslib.vassar.edu/search/r/" class="quiet" title="Search course materials on reserve at the Library">Course Reserves &raquo;</a></p></p>
+              </div>
+              <div class="cd-right">
+                <form action="http://vaslib.vassar.edu/search/" class="formtext" dir="ltr" id="form1" method="get" name="form1">
+                  <div class="select-bg"><select id="srchindx" name="searchtype">
+                    <option value="t">Title</option>
+                    <option selected="selected" value="Y">Keyword</option>
+                    <option value="a">Author</option>
+                    <option value="d">Subject</option>
+                    <option value="c">LC Call Number</option>
+                    <option value="g">Gov Doc Number</option>
+                    <option value="m">Non-LC Call Number</option>
+                    <option value="i">ISBN/ISSN</option>
+                  </select></div>
+                  <div class="select-bg"><select name="searchscope">
+                    <option selected="selected" value="1">View Entire Collection</option>
+                    <option value="2">Journals</option>
+                    <option value="3">Videos</option>
+                    <option value="4">Government Documents</option>
+                    <option value="5">Exclude Government Documents</option>
+                    <option value="8">Music Library</option>
+                    <option value="9">Special Collections</option>
+                    <option value="6">Reference</option>
+                  </select>
+                  </div>
+                  <input autocomplete="on" class="search_collections_box" name="searcharg" placeholder="Enter search term" type="text"/>
+                  <input alt="Search" class="search-input" name="submit" src="/files/images/new/search_collections_go.png" type="image" value="Search"/>
+                </form>
+                <p class="quiet"><a href="http://vaslib.vassar.edu/search%7eS0/X" class="quiet">Advanced Search &raquo;</a></p>
+
+              </div>
+            </div>
+                <div class="simpleTabsContent">
+              <div class="cd-left">
+                <p><strong>Search Discover</strong> for books, articles, and more at the same time, through a single interface.</p>
+                <p class="quiet"><a href="/search/searchtools/index.html">Learn More &raquo;</a></p>
+              </div>
+              <div class="cd-right">
+                <form action="http://vassar.summon.serialssolutions.com/search" method="get" name="search">
+                  <input autocomplete="on" class="query search_collections_box" name="s.q" placeholder="Enter search term" type="text"/>
+                  <input alt="Search" class="search-input" name="submit" src="/files/images/new/search_collections_go.png" type="image" value="Go"/>
+                </form>
+                <p class="quiet"><a class="arrowlink" href="http://vassar.summon.serialssolutions.com/advanced" title="Open Advanced Search">Advanced Search &raquo;</a></p> 
+              </div>
+            </div>
+          </div>
+        </div>
+            <div class="tabcontent" id="view2">
+          <p class="quiet-database"><strong>Find</strong> databases by discipline (<a href="/search/databases/">see all</a>) or <a href="/search/databases/">content type</a></p>
+          <form action="/search/databases/department.html" class="database-form" method="get">
+            <div class="select-bg"><select id="journals" name="subject">
+              <option selected="selected" value="optvalue">Discipline...</option>
+              <option value="Africana Studies">Africana Studies</option>
+              <option value="American Culture">American Culture</option>
+              <option value="Anthropology">Anthropology</option>
+              <option value="Art/Architecture">Art/Architecture</option>
+              <option value="Asian Studies">Asian Studies</option>
+              <option value="Astronomy">Astronomy</option>
+              <option value="Biochemistry">Biochemistry</option>
+              <option value="Biology">Biology</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Chinese and Japanese">Chinese and Japanese</option>
+              <option value="Cognitive Science">Cognitive Science</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Drama">Drama</option>
+              <option value="Earth Sciences">Earth Sciences</option>
+              <option value="Economics">Economics</option>
+              <option value="Education">Education</option>
+              <option value="English">English</option>
+              <option value="Environmental Studies">Environmental Studies</option>
+              <option value="Film">Film</option>
+              <option value="French and Francophone Studies">French and Francophone Studies</option>
+              <option value="Gender and Sexuality">Gender and Sexuality</option>
+              <option value="Geography">Geography</option>
+              <option value="German Studies">German Studies</option>
+              <option value="Greek and Roman Studies">Greek and Roman Studies</option>
+              <option value="Hispanic Studies">Hispanic Studies</option>
+              <option value="History">History</option>
+              <option value="Italian">Italian</option>
+              <option value="International Studies">International Studies</option>
+              <option value="Jewish Studies">Jewish Studies</option>
+              <option value="Latin American and Latino/a Studies">Latin American and Latino/a Studies</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Media Studies">Media Studies</option>
+              <option value="Medieval and Renaissance Studies">Medieval and Renaissance Studies</option>
+              <option value="Music">Music</option>
+              <option value="Neuroscience and Behavior">Neuroscience and Behavior</option>
+              <option value="Philosophy">Philosophy</option>
+              <option value="Physics">Physics</option>
+              <option value="Political Science">Political Science</option>
+              <option value="Psychology">Psychology</option>
+              <option value="Religion">Religion</option>
+              <option value="Russian Studies">Russian Studies</option>
+              <option value="Science Technology and Society">Science Technology and Society</option>
+              <option value="Sociology">Sociology</option>
+              <option value="Urban Studies">Urban Studies</option>
+              <option value="Victorian Studies">Victorian Studies</option>
+              <option value="Women's Studies">Women's Studies</option>
+            </select></div>
+            <input alt="Search" class="database-search" name="submit" src="/files/images/new/search_collections_go_small.png" type="image" value="Search"/>
+          </form>
+          <hr/>
+          <p class="quiet-database"><a class="full-list" href="/search/databases/"><strong>Browse</strong> databases by title</a><br/>
+            <span><a class="alpha_list" href="/search/databases/titles.html?alpha=">All</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=1">1</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=2">2</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=A">A</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=B">B</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=C">C</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=D">D</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=E">E</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=F">F</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=G">G</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=H">H</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=I">I</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=J">J</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=K">K</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=L">L</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=M">M</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=N">N</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=O">O</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=P">P</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=R">R</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=S">S</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=T">T</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=U">U</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=V">V</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=W">W</a></span> <span><a class="alpha_list" href="/search/databases/titles.html?alpha=Z">Z</a></span> <span><a class="alpha_list" href="/search/databases/databasetrials.html">Trials</a></span></p>
+          <hr/>
+          <p class="quiet-database"><strong>Find</strong> databases by title</p>
+          <form action="/search/databases/titles.html" method="get">
+            <input class="search_collections_box input-database" name="title" placeholder="Enter search term" type="text"/>
+            <input alt="Search" class="database-search-submit" name="submit" src="/files/images/new/search_collections_go_small.png" type="image" value="Search"/>
+          </form>
+        </div>
+            <div class="tabcontent" id="view3">
+
+<!--
+<p class="quiet-database">Find journals in the catalog:</p>
+
+<form action="http://vaslib.vassar.edu/search/" class="formtext" dir="ltr" id="form1" method="get" name="form1">
+
+<div class="select-bg"><select id="srchindx" name="searchtype">
+<option selected="selected" value="t">Journal Title</option>
+<option value="Y">Keyword</option>
+<option value="d">Subject</option>
+<option value="c">LC Call Number</option>
+<option value="g">Government Document Number</option>
+<option value="m">Non-LC Call Number</option>
+<option value="i">ISSN</option>
+</select></div>
+
+<input name="searchscope" type="hidden" value="2"/>
+
+<div class="search-wrap">
+
+            <input class="search_collections_box input-database" name="searcharg" placeholder="Enter search term" type="text"/>
+            <input alt="Search" class="database-search-submit" name="submit" src="/files/images/new/search_collections_go_small.png" type="image" value="Search"/>
+</div>
+</form>
+           <hr/>       <p class="quiet"><a href="http://pu6xa6xs3q.search.serialssolutions.com/">Go to Journals A-Z</a></p>
+
+-->
+
+<p class="quiet">
+<a class="alpha_list" href="http://pu6xa6xs3q.search.serialssolutions.com/?SS_Page=refiner&SS_RefinerEditable=yes&rfr_id=info%3Asid%2Fsersol%3ARefinerQuery&SS_sid=info%3Asid%2Fsummon.serialssolutions.com&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&rft.genre=book&SS_LibHash=PU6XA6XS3Q&sid=sersol%3ARefinerQuery&CitationSubmit=Look%20Up&CitationClear=Clear&SS_ReferentFormat=JournalFormat&SS_formatselector=radio">Search for a specific article &raquo;</a>
+<!--
+<br />Use this link if you have a citation to an article already.
+-->
+</p>
+<hr />
+<p class="quiet"><a href="http://pu6xa6xs3q.search.serialssolutions.com">Browse journals by subject or title &raquo;</a>
+<hr />
+<p class="quiet-database" style="padding:5px 0px 0px">Find journals by title or ISSN:</p>
+<form method="get" action="http://pu6xa6xs3q.search.serialssolutions.com" id="form1" name="SS_EJPSearchForm">
+    <div class="select-bg">
+                <input value="1.0" name="V" type="hidden" />
+                <input value="100" name="N" type="hidden" />
+                <input type="hidden" name="L" value="PU6XA6XS3Q" />
+                <select id="select_searchTypes" name="S">
+                  <option value="AC_T_B" selected="selected">Title begins with</option>
+                  <option value="AC_T_M">Title equals</option>
+                  <option value="T_W_A">Title contains all words</option>
+                  <option value="I_M">ISSN equals</option>
+                </select>
+    </div>
+    <div class="search-wrap">
+                <input id="SS_CFocusTag" name="C" class="search_collections_box input-database" placeholder="Search for a journal" type="text "/>
+                <!-- <input onclick="javascript:document.getElementById('SS_CFocusTag').value=''" value="Clear" type="button" /> -->
+    <input alt="Search" class="database-search-submit" name="submit" src="http://library.vassar.edu/files/images/new/search_collections_go_small.png" value="Search" type="image" />
+                <div class="tagline">If title is not listed here, check the <a href="http://vaslib.vassar.edu/search~S2/">catalog</a>.  Order via <a href="https://vassar.illiad.oclc.org/illiad/illiad.dll">ILL</a> if not available.</div>
+    </div>
+              </form>
+
+
+        </div>
+      </div>
+          <div class="additional-resources">
+        <ul>
+          <li class="add-resources">Additional Resources</li>
+          <li class="worldcat"><a href="http://libproxy.vassar.edu/login?url=http://newfirstsearch.oclc.org/done=referer;dbname=WorldCat;FSIP">WorldCat</a></li>
+          <li class="research-libraries"><a href="http://catalog.crl.edu/">Center for Research Libraries</a></li>
+          <li class="connectny"><a href="http://connectny.info/screens/opacmenu.html">ConnectNY Catalog</a></li>
+          <li class="other-libraries"><a href="/search/librarycatalogs.html">Other Libraries’ Catalogs</a></li>
+          <li class="this-website"><a href="/search/">Search this Website</a></li>
+        </ul>
+        <div class="connect">
+          <h2>Off Campus?</h2>
+          <p><a href="http://libproxy.vassar.edu/login?url=http://library.vassar.edu">Connect</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- end .search -->
+
+    <div id="announcements">
+      <h2>Announcements</h2>
+      <p class="headline"></p>
+ <ul class="news-annos"><li><a href="/announcements/announcements/2015-2016/160427-SummerEmergencyRenovation.html">Archives and Special Collections Library emergency shutdown beginning May 15, 2016</a></li><li><a href="/announcements/announcements/2014-2015/150727-press-release-libraries-director-ashton.html">Andrew Ashton named the new Director of the Libraries </a></li><li><a href="/announcements/announcements/2012-2013/121001-gargoylebulletin.html">Stay current! Follow the library's blog, The Gargoyle Bulletin</a></li></ul>     </div>
+    <!-- end #announcements -->
+    <div class="our-libraries">
+
+
+
+      <h2>Our Libraries</h2>
+      <ul>
+        <li><a href="http://specialcollections.vassar.edu/">Archives &amp; Special Collections Library</a></li>
+        <li><a href="http://artlibrary.vassar.edu/">Art Library</a></li>
+        <li><a href="http://digitallibrary.vassar.edu/">Digital Library</a></li>
+        <li><a href="http://musiclibrary.vassar.edu/">Music Library</a></li>
+      </ul>
+  
+
+    </div>
+    <!-- end .our-libraries -->
+
+
+    <div class="supp">
+      <p><a href="http://www.vassar.edu/">Vassar Home</a> | <a href="http://mediacloisters.vassar.edu/">Digital Media Zone</a> | <a href="http://ltrc.vassar.edu/">Learning, Teaching &amp; Research Center</a><br />
+        Vassar College Libraries, Box 20, 124 Raymond Ave., Poughkeepsie, NY, 12604-0020<br />
+        845.437.5760 | <a href="http://www.vassar.edu/contact.html?n=Library%20from%20website&amp;e=librarysitemgr">librarysitemgr@vassar.edu</a></p>
+    </div>
+
+  </div>
+  <!-- end .footer -->
+</footer>
+<script src="files/javascript/ticker.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var menu=new menu.dd("menu");
+    menu.init("menu","menuhover");
+</script>
+</body>
+</html>

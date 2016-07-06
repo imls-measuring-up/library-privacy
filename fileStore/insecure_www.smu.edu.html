@@ -1,0 +1,645 @@
+
+
+<!DOCTYPE html>     
+<html lang="en">
+<head><meta charset="utf-8">
+<title>SMU Libraries - SMU</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SMU Libraries support the Mission of Southern Methodist University.">
+<meta name="keywords" content="SMU Library, SMU Libraries">
+<meta name="classification" content="">
+<meta name="subject" content="">
+<meta name="abstract" content="">
+<meta property="fb:page_id" content="7714241430"><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Le styles -->
+<script src="/bootstrap/js/jquery.js"></script>
+
+<link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+<link href="/style/prodo/smu.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700" rel="stylesheet" type="text/css">
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><style type="text/css">
+
+#libSrch {
+    box-shadow: none; 
+    padding: 10px 19px; 
+    margin-top: 0px;
+}
+
+#libSrch p {
+    margin: 7px 0px 17px 17px;
+}
+
+#libSrch p label {
+    margin-left: 0px;
+}
+
+#libSrch input[type=radio] {
+    margin-left: -5px;
+}
+
+@media (min-width: 768px) {
+    #searchBox {width: 75%}
+}
+
+@media (min-width: 888px) and (max-width: 979px) {
+   #libSrch {width: 450px}
+
+}
+
+@media (min-width: 768px) and (max-width: 887px) {
+   #libSrch {width: 362px}
+
+}
+
+@media (max-width: 480px) {
+    #searchBox {width: 180px}
+}
+
+/* styles associated with new Libraries page */
+
+/* - - THIS SETS THE first column to 2/3 width instead of 3/4
+ - - - - and the right column to 1/3 instead of 1/4 - - - */
+
+@media (min-width: 768px) {
+
+    #smuContentWrapper .span9 {width: 56% !important; padding-right: 20px}
+    #smuContentWrapper .span3 {width: 41% !important}
+}
+
+
+#carousel-digital {
+    margin-top: 10px;
+    max-width: 350px;
+    display: none;
+}
+#carousel-digital .carousel-caption {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    line-height: 18px;
+    padding: 5px 40px 10px;
+    color: white;
+    min-height: 35px;
+}
+#carousel-digital .carousel-caption a {
+    color: white;
+}
+#carousel-digital .item {
+    background: none repeat scroll 0 0 rgba(3, 43, 102, 0.9);
+    height: 225px;
+}
+#carousel-digital .carousel-control {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    color: white;
+    font-size: 36px;
+    padding: 5px 0;
+    width: 30px;
+}
+#carousel-digital .carousel-control:hover {
+    color: #5e84be;
+}
+#carousel-digital .carousel-control.right {
+    right: 5px;
+}
+#carousel-digital .carousel-control.left {
+    left: 5px;
+}
+.library {
+    border-bottom: 1px dashed #cccccc;
+    clear: both;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.library.other {
+    height: 82px;
+}
+
+.library.main {
+    height: 118px;
+}
+
+.library:hover {
+    background-color: #efefef;
+}
+.library img {
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #ccc;
+    margin: 10px !important;
+}
+
+.library.main img {
+    padding: 5px;
+    width: 98px;
+}
+
+.library.other img {
+    padding: 3px;
+    width: 65px;
+}
+
+.library h4 {
+    padding-top: 9px;
+}
+.library.main h4, .library.main p {
+    margin-left: 136px;
+}
+.library.other h4, .library.other p {
+    margin-left: 95px;
+}
+
+#smuContentWrapper .span3 h3 {
+    padding: 10px 0px;
+}
+
+#smuContentWrapper .span3 h3:first-of-type {
+    padding-top: 0px;
+}
+
+@media (min-width: 980px) {
+#carousel-digital .carousel-caption {
+    top: 175px;
+}
+}
+
+@media (max-width: 979px) {
+#carousel-digital .carousel-caption, #carousel-digital .item {
+    background: none repeat scroll 0 0 rgba(3, 43, 102, 1);
+}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+#carousel-digital .carousel-caption {
+    background: none repeat scroll 0 0 rgba(3, 43, 102, 1);
+}
+#carousel-digital .item {
+    height: 190px;
+}
+}
+
+@media (max-width: 767px) {
+.library {
+    border-bottom: 1px dashed #cccccc;
+}
+}
+@media (min-width: 481px) and (max-width: 767px) {
+#carousel-digital .carousel-caption {
+    top: 175px;
+}
+}
+@media (max-width: 480px) {
+
+.library.main {
+    height: 82px;
+}
+
+.library.main h4, .library.main p {
+    margin-left: 95px;
+}
+
+.library.main img {
+    padding: 3px;
+    width: 73px !important;
+    height: auto !important;
+}
+
+#carousel-digital .carousel-caption {
+    background: none repeat scroll 0 0 rgba(3, 43, 102, 1);
+    position: absolute !important;
+}
+#carousel-digital .item {
+    height: 196px;
+}
+}
+
+</style><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1964337-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<style type="text/css"></style><title>
+
+</title></head>
+<!--Do not remove body id or runat, CG 01/25/2015-->
+<body id="PageBody">
+
+<form method="post" action="/Libraries" id="mainform">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEyOTczODk5ODkPFgIeE1ZhbGlkYXRlUmVxdWVzdE1vZGUCAWRkKP5mLrE9iELNr9Ss1IGchgmtjBbm+wjr1SZilrx8PwI=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="64BAD3D1" />
+</div>
+
+<div class="smuFixedTop" id="ctl3">
+  <div class="container-fluid masthead" id="ctl4">
+    <div class="row-fluid" id="ctl5">
+       <!-- <div class="span6 smuLogo">
+<a href="/"><img width="50" height="50" style="border: medium none;" src="/-/media/Images/Structure/Logo-SMU-World.ashx?la=en&amp;hash=930A9054247C4523217DBAF5DD92F7DE130F6C84" alt="SMU Logo" /><img width="81" height="50" style="border: medium none;" src="/-/media/Images/Structure/Logo-SMU-type.ashx?la=en&amp;hash=E40923B959E08494D74D2079D1A00EA0D455D48D" alt="SMU" /><img width="174" height="50" class="hidden-phone" style="border: medium none;" src="/-/media/Images/Structure/Logo-SMU-Tagline.ashx?la=en&amp;hash=9676A5CA4DCAC955160A04FC0F386A2F83BBE227" alt="World Changers Shaped Here" /></a>  -->
+<div class="span6 smuLogo">
+<a href="/"><img width="296" height="50" alt="SMU: World Changers Shaped Here" src="/-/media/Site/Home/Structure/Logo-2016-WCSH-RW-Web-2x.ashx?la=en&amp;hash=56152509CEFA74FB24A0852E03A847851BC27DE6" /></a><!-- end mc field--></div><div class="span6 searchSocial" id="smus1">
+  <div class="smuSearch input-append">
+    <div class="form-search pull-right searchposition"><input onKeyDown="return SubmitSearch(this.value, 'default_collection', event)" id="q2" onFocus="if(this.value=='Search')this.value=''" value="Search" type="text" name="q2" class="input-small search-query"><button type="button" class="btn" id="sa2"  name="sa2"  value="Search" onclick="if(q2.value=='Search')q2.value='';location.href='http://search.smuext.net/search?proximity=rank&amp;suffixproc=min&amp;client=SMU_default&amp;proxystylesheet=SMU_default&amp;site=default_collection&amp;output=xml_no_dtd&amp;q=' + this.form.q2.value">    <i class="icon-search"></i></button>  
+</div>
+  </div><div class="smuSocialMedia" id="smusm1">
+<a href="http://facebook.com/smudallas" target="_blank" title="Facebook"><i class="icon-facebook"></i></a>&#160; <a href="http://twitter.com/smu/" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>&#160; <a href="http://www.instagram.com/smudallas" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>&#160; <a href="http://www.linkedin.com/company/5515" target="_blank" title="LinkedIn"><i class="icon-linkedin"></i></a>&#160; <a href="http://www.youtube.com/user/SMUVideo" target="_blank" title="YouTube"><i class="icon-youtube-play"></i></a>&#160; <a href="http://www.smu.edu/AboutSMU/SocialMediaDirectory" title="Social Media Directory"><i class="icon-ellipsis-horizontal"></i></a>&nbsp; &nbsp; <a href="http://www.smu.edu/admission/apply/?utm_source=masthead&utm_medium=banner&utm_campaign=MastheadApply"><img alt="" src="/-/media/Site/Home/Structure/IconApply56x29.ashx?la=en&amp;hash=A4E5B8D0197B98EF8BE7F413A6CF23596661964C" width="56" height="29" style="margin-top: -6px;" /></a>&nbsp; <a href="https://link.smu.edu/giving/smugiving/?utm_source=masthead&utm_medium=banner&utm_campaign=MastheadGiveNow&sc=DMEGNCALLALL1SLW1502"><img width="56" height="29" style="margin-top: -6px;" alt="Give Now" src="/-/media/Site/Home/Structure/IconGiveNow56x29.ashx?la=en&amp;hash=89FD43E9EA71ECD797AE95C7E8EDD5762D08BCC7" /></a>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-fixed-top" id="ctl8">
+  <div class="navbar-inner" id="ctl9">
+       <!--Legacy Section Page is {4E4FB963-CB3C-4480-A6CD-294B77227601}--><!--Legacy Settings Item is {7820BBDA-0ABB-4D7E-B4B0-0C883B4F44E6}--><!--Legacy Dropdown Items is {0DDF5DB8-AA9D-425F-824E-27BE1D4041FF}|{CFD24155-60F9-4A22-9E9B-FB89C98768EA}|{4520C347-9B57-41A3-8AB5-AC89C7077898}|{DD82E7F9-C2EA-4DF0-B691-198618DA4D2A}--><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container-fluid smuTopNav"><div class="mini-nav visible-phone visible-tablet"><ul class="nav"><li class="dropdown"><a href="#" data-target=".nav-collapse" data-toggle="collapse"><span>Navigate<strong class="caret"></strong></span></a></li><li class="dropdown"><a href="#" style="position: relative;" class="dropdown-toggle" data-toggle="dropdown"><span>Search</span></a><ul class="dropdown-menu search"><li class="dropdown"><div class="form-search search-query"><input onkeydown="return SubmitSearch(this.value, 'default_collection', event)" id="q" class="input-medium search-query" onfocus="if(this.value=='Search')this.value=''" name="q" value="Search" type="text"></div></li></ul></li><li class="dropdown"><a href="#" style="position: relative;" class="dropdown-toggle" data-toggle="dropdown"><span>Social</span></a><ul class="dropdown-menu social pull-right"><li><a href="http://facebook.com/smudallas" title="Facebook" target="_blank"><em class="icon-facebook-sign"></em></a> <a href="http://twitter.com/smu/" title="Twitter" target="_blank"><em class="icon-twitter"></em></a> <a href="http://www.youtube.com/user/SMUVideo" title="YouTube" target="_blank"><em class="icon-facetime-video"></em></a> <a href="http://feeds.feedburner.com/smunews" title="SMU News Feed" target="_blank"><em class="icon-rss"></em></a> <a href="https://plus.google.com/110354444100293121796/" title="Google +" target="_blank"><em class="icon-google-plus"></em></a> <a href="http://smu.edu/itunes/" title="iTunes U" target="_blank"><em class="icon-music"></em></a> <a href="http://www.smu.edu/AboutSMU/SocialMediaDirectory" title="Social Media Directory"><em class="icon-list-ul"></em></a></li></ul></li></ul></div><div class="nav-collapse"><ul class="nav"><li><a href="/Libraries"><i class="icon-home"></i> 
+SMU Libraries</a></li><li class="dropdown"><a href="/Bridwell">Bridwell Library<span></span></a></li><li class="dropdown"><a href="http://www.smu.edu/Cox/CurrentStudents/BusinessLibrary/">Business Library<span></span></a></li><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Central University Libraries<strong class="caret"></strong></a><ul class="dropdown-menu"><li class="firstItem"><a href="https://sites.smu.edu/cul/">Central University Libraries<span></span></a></li><li><a href="https://sites.smu.edu/cul/degolyer/">DeGolyer Library</a></li><li><a href="https://sites.smu.edu/cul">Fondren Library Center</a></li><li><a href="https://sites.smu.edu/cul/hamon/">Hamon Arts Library</a></li><li><a href="https://sites.smu.edu/cul/libraries/plano/">SMU-in-Plano Library Resource Room</a></li><li><a href="https://sites.smu.edu/cul/libraries/burgwin/">SMU-in-Taos Fort Burgwin Library</a></li></ul></li><li class="dropdown"><a href="http://library.law.smu.edu/">Underwood Law Library<span></span></a></li></ul></div></div></div></div>
+  </div>
+</div>
+<div class="row-fluid" id="smuHomeTop">
+       
+</div>
+<div id="smuContentWrapper">
+<div class="container-fluid" id="ctl14">
+                                                <!--TOP -->
+	<div class="row-fluid" id="titleWrapper"><p class="departmentName"><!--Item is Libraries-->SMU Libraries</p><img src="/-/media/Site/Libraries/smu-lib-header-01.ashx?h=137&amp;la=en&amp;w=980&amp;hash=ABC85A31CFDF92C161F659A8B105BF425FA0E384" class="headerBar" alt="SMU Libraries" width="980" height="137" /><ul class="breadcrumb"><li><a href="/">Southern Methodist University</a>
+           <span class="divider">/</span></li><li class="active">SMU Libraries</li></ul></div>
+  <div class="row-fluid">
+      <div class="span9"> 
+       <!--ONE COLUMN --> 
+       	<h3>Campus Libraries</h3>
+<div class="library main">
+<a href="https://sites.smu.edu/cul/" class="pull-left">
+<img style="height: 86px; width: 98px;" src="/-/media/Site/Libraries/tiles/fondren.ashx?la=en&amp;h=86&amp;w=98&amp;hash=82D3749C70A53E7FB3F6E938AE4C5BBBD77495E6" alt="Fondren Library Center entrance" height="86" width="98"></a>
+<a href="https://sites.smu.edu/cul/">
+<h4>Fondren Library Center (Main Library)</h4>
+</a>
+<p>Central University Libraries</p>
+</div>
+<!--/.library-->
+<div class="library clear other">
+<a href="/Bridwell" class="pull-left">
+<img style="height: 62px; width: 73px;" src="/-/media/Site/Libraries/tiles/bridwell.ashx?la=en&amp;h=62&amp;w=73&amp;hash=AAAF6D38062893A46DA9639FD3A485F6912BCBF3" alt="Bridwell Library" height="62" width="73"></a>
+<a href="/Bridwell">
+<h4>Bridwell Library</h4>
+</a>
+<p>Perkins School of Theology</p>
+</div>
+<!--/.library-->
+<div class="library clear other">
+<a href="/Cox/Departments/BusinessLibrary" class="pull-left">
+<img style="height: 62px; width: 73px;" src="/-/media/Site/Libraries/tiles/business.ashx?la=en&amp;h=62&amp;w=73&amp;hash=F9E5F2562111D224F649F0FF2B6C785552C2D2EE" alt="Business Library entrance" height="62" width="73"></a>
+<a href="/Cox/Departments/BusinessLibrary">
+<h4>Business Library</h4>
+</a>
+<p>Cox School of Business</p>
+</div>
+<!--/.library-->
+<div class="library clear other">
+<a href="https://sites.smu.edu/cul/degolyer/" class="pull-left">
+<img style="height: 62px; width: 73px;" src="/-/media/Site/Libraries/tiles/degolyer.ashx?la=en&amp;h=62&amp;w=73&amp;hash=3450447168351287B7650F1498C08582FB99F8C0" alt="DeGolyer Library" height="62" width="73"></a>
+<a href="https://sites.smu.edu/cul/degolyer/">
+<h4>DeGolyer Library Special Collections</h4>
+</a>
+<p>Central University Libraries</p>
+</div>
+<!--/.library-->
+<div class="library clear other">
+<a href="https://sites.smu.edu/cul/hamon/" class="pull-left">
+<img style="height: 62px; width: 73px;" src="/-/media/Site/Libraries/tiles/hamon.ashx?la=en&amp;h=62&amp;w=73&amp;hash=4CC5576A1020E631ADB52CDA3758B9795BEF7BF0" alt="Hamon Arts Library" height="62" width="73"></a>
+<a href="https://sites.smu.edu/cul/hamon/">
+<h4>Hamon Arts Library</h4>
+</a>
+<p>Central University Libraries</p>
+</div>
+<!--/.library-->
+<div class="library clear other">
+<a href="http://library.law.smu.edu/" class="pull-left">
+<img style="height: 62px; width: 73px;" src="/-/media/Site/Libraries/tiles/underwood.ashx?la=en&amp;h=62&amp;w=73&amp;hash=95DE790A738CF838BBE35D64143A31D629B20D57" alt="Underwood Law Library" height="62" width="73"></a>
+<a href="http://library.law.smu.edu/">
+<h4>Underwood Law Library</h4>
+</a>
+<p>Dedman School of Law</p>
+</div>
+<!--/.library-->
+<h3>Off-Campus Libraries</h3>
+<div class="library clear other">
+<a href="https://sites.smu.edu/cul/libraries/plano/" class="pull-left">
+<img style="height: 62px; width: 73px;" src="/-/media/Site/Libraries/tiles/smu-in-plano.ashx?la=en&amp;h=62&amp;w=73&amp;hash=B9361C42B0FB3A20A2679522544BDDE03E5D7750" alt="SMU-in-Plano facade" height="62" width="73"></a>
+<a href="https://sites.smu.edu/cul/libraries/plano/">
+<h4>SMU-in-Plano Library Resource Room</h4>
+</a>
+<p>Central University Libraries</p>
+</div>
+<!--/.library-->
+<div class="library clear other">
+<a href="https://sites.smu.edu/cul/libraries/burgwin/" class="pull-left">
+<img style="height: 62px; width: 73px;" src="/-/media/Site/Libraries/tiles/smu-in-taos.ashx?la=en&amp;h=62&amp;w=73&amp;hash=A61ABCD37328D4EEC1B52F7FD5AC15BA01E518DC" alt="SMU-in-Taos Fort Burgwin Library"></a>
+<a href="https://sites.smu.edu/cul/libraries/burgwin/">
+<h4>SMU-in-Taos: Fort Burgwin Library</h4>
+</a>
+<p>Central University Libraries</p>
+</div>
+<!--/.library-->
+
+      </div>
+      <!-- /span9 -->
+      
+        
+      <div class="span3"> 
+      <!--SIDEBAR--> 
+      <h3>Digital Collections</h3>
+<div id="carousel-digital" class="carousel slide">
+<!-- Carousel items -->
+
+<div class="carousel-inner">
+<div class="item">
+<img width="350" height="175" alt="Dinky Streetcar; Dallas Hall in Background" src="/-/media/Site/Libraries/slideshow-responsive/18-dinkyjpg.ashx?la=en&amp;hash=B3112C7444F9DE2AD309CFC677D4AE4BE4BCD488" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/cdm/ref/collection/bim/id/657">Southern Methodist University Campus Memories, SMU Archives</a>
+</div><!--/carousel-caption-->
+</div><!--/item-->
+
+<div class="item">
+<img width="350" height="175" alt="Dallas Skyline, 1914" src="/-/media/Site/Libraries/slideshow-responsive/09_Dallas_Skyline.ashx?la=en&amp;hash=E7A837F65202C1FC37711A419D558AEC2AA084CC" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/cul/gcd/">George W. Cook Dallas/Texas Image Collection, DeGolyer Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Octavio Medellin - Hummingbird" src="/-/media/Site/Libraries/slideshow-responsive/17-hummingbird.ashx?la=en&amp;hash=0A86A3C33AAAF821C2363D345B2C66B103A06CC0" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/cul/tar/">Texas Artists: Paintings, Sculpture, and Works on Paper</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Durer Philip" src="/-/media/Site/Libraries/slideshow-responsive/02_DurerPhilip_350.ashx?la=en&amp;hash=6E3C835A6137A548D87546E4A9FE53C9778B0C1F" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/bridwell/ald/index.asp">Albrecht D&uuml;rer Prints, Bridwell Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="John Wesley Preaching on His Father's Grave" src="/-/media/Site/Libraries/slideshow-responsive/03_John_Wesley_Preaching_on_His_Fathers_Grave_tinted_350.ashx?la=en&amp;hash=A3047C6CED1D8558BF61E49E964B21B60985059F" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/cdm/search/collection/jwl">John Wesley Letters, Bridwell Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Muse Lantern Slide" src="/-/media/Site/Libraries/slideshow-responsive/04_Muse_Box13_SlideJ41_350.ashx?la=en&amp;hash=EFB7D5A8C4EF082B77D6CCA7B3B751EEE05C656A" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/bridwell/muse/index.asp">William E. Muse Lantern Slides, Bridwell Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Passenger's Track Chart" src="/-/media/Site/Libraries/slideshow-responsive/05_PassengersTrackChart_350.ashx?la=en&amp;hash=4FEDA35F1AA5B1BCB75986F5D09840143A058E87" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/bridwell/jhv/index.asp">John Heyl Vincent Documents and Images, Bridwell Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Perkin's Transferring Books, 1924" src="/-/media/Site/Libraries/slideshow-responsive/06_Perkins1924TransferringBooks_350.ashx?la=en&amp;hash=7E4F0B065CE5A85087DAECA7F8F3F0411FE1FAC7" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/bridwell/perkins/index.asp">Perkins School of Theology Documents and Images, Bridwell Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Perkins Field Lab" src="/-/media/Site/Libraries/slideshow-responsive/07_PerkinsFieldLab_350.ashx?la=en&amp;hash=5E5DA15AD5A848E91421FDAA967BDCBA92CAC0AA" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/bridwell/perkins/index.asp">Perkins School of Theology Documents and Images, Bridwell Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Tea Ceremony - Muse Lantern Slide" src="/-/media/Site/Libraries/slideshow-responsive/08_TeaCeremony_Muse_350.ashx?la=en&amp;hash=A065E6D22994A62C17340FDB4E9240CAEFBAE323" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/bridwell/muse/index.asp">William E. Muse Lantern Slides, Bridwell Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Birds on the Beach" src="/-/media/Site/Libraries/slideshow-responsive/16-birds-on-the-beach.ashx?la=en&amp;hash=3C90F74F51A5041B1BDABB0C9634C59008329B19" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/cul/wsw/">Archives of Women of the Southwest, DeGolyer Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Vista de la Bahia - Mexico Collection" src="/-/media/Site/Libraries/slideshow-responsive/15-vista-de-la-bahia.ashx?la=en&amp;hash=D9FE8D31015AEFEFA95618D6D1E5065EE3AA18EA" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/cul/mex/">Mexico: Photographs, Manuscripts, and Imprints, DeGolyer Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Tyler Texas Black Film Collection" src="/-/media/Site/Libraries/slideshow-responsive/14-tyler-texas.ashx?la=en&amp;hash=EABABE20619EC4912C68E58B3B2333A594476E17" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/cul/ttb/">Tyler, Texas Black Film Collection, G. William Jones Film and Video Collection</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Henry Potter Fire Screen Rendering" src="/-/media/Site/Libraries/slideshow-responsive/13-potter-fire-screen.ashx?la=en&amp;hash=73DA709214517EDC2C287485812F0852B7AB25EC" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/cul/ptr/">Potter Art Iron Studios Collection, Bywaters Special Collections, Hamon Arts Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Abraham Lincoln" src="/-/media/Site/Libraries/slideshow-responsive/12-lincoln.ashx?la=en&amp;hash=E0EE3945F9B9864BE73E0C726ADFFA67182CECD7" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/cul/civ/">Civil War: Photographs, Manuscripts, and Imprints, DeGolyer Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Fair Park Aerial, 1930" src="/-/media/Site/Libraries/slideshow-responsive/11-fair-park.ashx?la=en&amp;hash=87296698A1D6D8E369128922219A7DC605A1DD71" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/cul/dmp/">Dallas Historic Aerial Photographs, 1930 Fairchild Survey, Edwin J. Foscue Map Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Victory Garden pamphlet, 1944" src="/-/media/Site/Libraries/slideshow-responsive/10-victory-garden.ashx?la=en&amp;hash=286A900FD3AD5068036498A36B141C82DE6242D5" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/cul/hgp/">Historic Government Publications from World War II, Government Information Resources</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+<div class="item">
+<img width="350" height="175" alt="Koberger Noah's Ark" src="/-/media/Site/Libraries/slideshow-responsive/01_6173-KobergerNoahsArk_350.ashx?la=en&amp;hash=423344C16444362486B84D9DE3C0C411096B2999" />
+<div class="carousel-caption">
+<a href="http://digitalcollections.smu.edu/all/bridwell/brinc/index.asp">Fifteenth-Century Printed Books, Bridwell Library</a>
+</div>
+<!--/carousel-caption-->
+</div>
+<!--/item-->
+</div>
+<!--/carousel-inner-->
+<a class="carousel-control left" href="#carousel-digital" data-slide="prev">&lsaquo;</a>
+<a class="carousel-control right" href="#carousel-digital" data-slide="next">&rsaquo;</a>
+</div>
+<!--/carousel--><!--<h3>Upcoming Events</h3>
+<p><strong>Dec. 9</strong> <a href="https://blog.smu.edu/culnews/2015/12/07/paws-and-take-a-break-therapy-dogs-at-the-libraries-dec-9-dec-14/">Therapy Dogs</a></p>-->
+
+<h3>Exhibitions</h3>
+<p><a href="http://www.smu.edu/Bridwell/SpecialCollectionsandArchives/Exhibitions/Asbury">Francis Asbury (1745–1816)</a><br>
+Bridwell Library through May 14, 2016</p>
+
+<p><a href="https://sites.smu.edu/cul/hamon/exhibitions/">
+Travels in Ithaca by Scott Gleeson</a><br>
+Hamon Arts Library through May 16, 2016</p>
+
+<p><a href="http://www.smu.edu/Bridwell/SpecialCollectionsandArchives/Exhibitions/Asbury">Highlights from the Ruth and Lyle Sellers Medical Collection</a><br>
+Bridwell Library through July 1, 2016</p>
+
+<p><a href="https://sites.smu.edu/cul/hamon/exhibitions/">Octavio Medellin: Maya-Toltec Temples and Carvings, 1938</a><br>
+Hamon Arts Library through midsummer 2016</p>
+
+<p><a href="https://sites.smu.edu/cul/hamon/exhibitions/">
+Paper Dolls by Colleen Shull and Justin Shull</a><br>
+Hamon Arts Library through December 2016</p><h3>Support the Libraries</h3>
+<p><a href="http://smu.edu/friends/"><img style="height: 81px; width: 80px; margin-top: 0px" alt="Love Your Library" src="/-/media/Site/Libraries/love-library.ashx?la=en&amp;h=81&amp;w=80&amp;hash=A58661F97D6C670BEB1227AA505C195073ED9254" class="pull-left" height="81" width="80"></a><a href="http://smu.edu/friends/">Join the Friends!</a><br>
+The Friends of the SMU Libraries cultivate alumni and community involvement in the SMU Libraries and support the academic mission by funding library resources and technology.</p>
+
+
+      </div>
+      <!--/span3--> 
+    </div>
+    <!--/row-fluid--> 
+    <div class="row-fluid">
+    <div class="span12">
+     	<!--BOTTOM --> 
+	
+
+	</div><!-- /span12 -->
+    
+    </div><!--/row-fluid-->
+</div><!--/container-fluid-->
+</div>
+
+                                <footer>
+                                                <!--BEGIN FOOTER-->
+                                                <div class="container-fluid">
+<div id="smuFooter">
+<div class="row-fluid">
+<div class="span6 identity">
+<div id="copyright"><a href="http://www.smu.edu/"><strong>&copy; Southern Methodist University</strong></a><br />
+PO Box 750100
+| Dallas, Texas | 75275-0100 | 214-768-2000<br />
+<a href="/AboutSMU/ContactSMU">Contact Us</a> | <a href="http://smu.edu/legal/">Legal Disclosures</a> | <a href="http://smu.edu/siteindex/">Site Index</a> | <a href="http://www.smu.edu/BusinessFinance/HR/WorkingatSMU">Working at SMU</a>  | <a href="http://smu.bncollege.com/" target="_blank">SMU Bookstore</a><br />
+<a href="http://facebook.com/smudallas" target="_blank" title="Facebook"><i class="icon-facebook"></i></a>&nbsp; <a href="http://twitter.com/smu/" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>&#160; <a href="http://www.instagram.com/smudallas" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>&#160; <a href="http://www.linkedin.com/company/5515" target="_blank" title="LinkedIn"><i class="icon-linkedin"></i></a>&#160; <a href="http://www.youtube.com/user/SMUVideo" target="_blank" title="YouTube"><i class="icon-youtube-play"></i></a>&#160; <a href="http://www.smu.edu/AboutSMU/SocialMediaDirectory" title="Social Media Directory"><i class="icon-ellipsis-horizontal"></i></a>
+</div>
+<!-- /copyright -->
+</div>
+<!-- /span6 identity -->
+<div class="span6">
+<div id="links">
+<ul id="footerListRight">
+    <li> <a href="/InfoFor/Students">Students</a></li>
+    <li><a href="http://link.smu.edu/alumni">Alumni</a></li>
+    <li><a href="http://blog.smu.edu/forum">Faculty &amp; Staff</a></li>
+    <li><a href="http://blog.smu.edu/parents">Parents</a></li>
+</ul>
+<ul id="footerListLeft">
+    <li><a href="/InfoFor/Visitors">Visitors &amp; Community</a></li>
+    <li><a href="/News">News Media</a></li>
+    <li><a href="/Admission/EnEspanol">En Espa&ntilde;ol</a></li>
+    <li><a href="/Admission/Mandarin">中國語言網站</a></li>
+</ul>
+</div>
+<!-- /links -->
+</div>
+<!-- /span6 -->
+<div class="clearfix"></div>
+<!-- /clearfix -->
+</div>
+<!-- /row-fluid -->
+</div>
+<!-- /smuFooter -->
+</div>
+<!-- /container-fluid -->          
+                                </footer>
+                                <!--BEGIN FOOTERSCRIPTS-->
+                                <!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="/bootstrap/js/bootstrap.js"></script>
+
+<script language="javascript">
+$('.form-search input').click(function(e) {
+	e.stopPropagation();
+});
+$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
+</script>
+
+<script type="text/javascript" src="https://www.smu.edu/js/blueprint/smusearch.js"></script>
+<script src="/bootstrap/js/bootstrap-scrollspy.js"></script> 
+<script language="javascript">
+		  $('.carousel').carousel({
+    interval: 6000
+    });
+	</script><script type="text/javascript">
+
+$(function () {
+    // randomize slide show element order
+    var parent = $(".carousel-inner");
+    var divs = parent.children();
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+  
+    // add class .active to first element in slide show
+  
+    $(".carousel-inner .item").first().addClass("active");
+
+    // display slide show
+    $("#carousel-digital").css("display", "block");
+});
+
+</script>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+});
+//]]>
+</script>
+</form></body>
+</html>

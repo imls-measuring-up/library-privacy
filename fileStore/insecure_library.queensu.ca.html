@@ -1,0 +1,1472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script type="text/javascript">
+		// <![CDATA[
+		// Date: August 2012
+		// Developer: Andrew DaCosta - Queens University Library, Discover Systems
+		// Description:
+		// If mobile device detected, prompt user to use mobile site
+		// Expected behaviours:
+		// 1. First time landing on library main page from any where;
+		//		- prompt re mobile site
+		//		- remember choice 
+		// 2. Navigating to main page from outside Queens Library site
+		//		- if cookie set and has not expired, navigate to preference (main page/mobile page)
+		//		- if cookie expired or does not exist, prompt and respond accordingly
+		// 3. Navigating to library main page from library mobile site
+		//		- land on main page
+		// 3. Navigating to library main page from library mobile site front page
+		//		- prompt to remeber or forget site preference
+		//		- land on main page
+
+		function display_sitePreference() {
+			var site_preference_cookie_name = "LIBmobileredirect" ;
+			var d_str_mobile = 'mobile_like' ;
+			var d_str_desktop = 'desktop_like';
+			var d_myTextField = document.getElementById('ad_display_field');
+			var d_site_pref = get_sitePreference(site_preference_cookie_name) ;
+			
+			if ((d_site_pref!="") && (d_site_pref!=null)){
+				if (d_site_pref == d_str_mobile) {
+					d_myTextField.value = d_str_mobile ;
+				}
+				else {	
+					d_myTextField.value = d_str_desktop ;
+				}
+			}
+			else
+			{
+				// Site preference not set
+				d_myTextField.value = 'Not Set' ;
+			}
+		}
+		
+		// check if mobile/full site option already recorded for user		
+		function get_sitePreference(cookie_name)
+		{
+			var i,x,y,LIBcookies=document.cookie.split(";");
+			//alert("getSitePreference(" +cookie_name+") " + LIBcookies.length + "; " + LIBcookies);
+			for (i=0;i<LIBcookies.length;i++)
+			{
+				x=LIBcookies[i].substr(0,LIBcookies[i].indexOf("="));
+				y=LIBcookies[i].substr(LIBcookies[i].indexOf("=")+1);
+				x=x.replace(/^\s+|\s+$/g,"");
+				
+				if (x==cookie_name)
+				{
+					return unescape(y);
+				}
+			}
+			return "undefined" ;
+		}
+		
+		// set preference in session cookie
+		function set_sitePrefCookie(cookie_name,cookie_value,exp_days)
+		{
+			var expdate=new Date();
+			expdate.setDate(expdate.getDate() + exp_days);
+			var c_value=escape(cookie_value) + ((exp_days==null) ? "" : "; expires="+expdate.toUTCString()) + ";path=/;" + "domain=library.queensu.ca;" ;
+			// Set the lib redirect cookie
+			document.cookie=cookie_name + "=" + c_value;
+		}
+		
+		function delete_sitePreference () {
+			var site_preference_cookie_name = "LIBmobileredirect" ;
+			var site_preference = get_sitePreference(site_preference_cookie_name);
+			
+			// To clear cookie for testing. - REMOVE AND TEST PRIOR TO RELEASE TO PRODUCTION
+			if (site_preference!=="" && site_preference!==null)
+			{
+				var testPromptString = "TEST CODE: Delete cookie\n\n" + site_preference_cookie_name + ' (' + site_preference + ')\n'
+				+ '\nOk to delete and re-set test. ' 
+				+ '\nCancel to continue with test.';
+				var test_result = confirm(testPromptString);
+				if (test_result == true){
+					set_sitePrefCookie(site_preference_cookie_name,"",-1);
+					//document.write('<pre><h4 style="color: red">Cookie deleted. Re-run test!</h4></pre>') ;
+				}
+			}
+			//document.location = "http://library.queensu.ca/index1.htm";
+			document.location = "http://www.google.ca";
+		}
+		
+		//function check_for_mobile_device() {
+		// Start check for mobile and site preference
+		var str_referring_url = document.referrer ;
+		var str_mobile_page = "m.library.queensu.ca" ;
+		var str_mobile_location = "http://m.library.queensu.ca";
+		var str_mobile_like = "mobile_like" ;
+		var str_desktop_like = "desktop_like" ;
+		
+		var n_result_from_mobile_site = str_referring_url.search(str_mobile_page);
+		
+		var ad_screen_style = "" ;
+		var ad_screen_width = screen.width ;
+		var exp_in_num_days = 1;
+		var min_screen_width = 800 ;
+		
+		var site_preference_cookie_name = "LIBmobileredirect" ;
+		var site_preference = get_sitePreference(site_preference_cookie_name);
+		
+		if ((site_preference=="" || site_preference==null || site_preference=="undefined") && (screen.width < min_screen_width) && (n_result_from_mobile_site < 0))
+		{	// site preference cookie not set and screen size lte to 800  , prompt user for preference
+			var promptString = 	"Queen's Library provides a site optimized for mobile devices."
+			+ "\n\nSelect Ok to proceed to the mobile site or Cancel to continue to the full site." ;
+			
+			var ad_result = confirm(promptString);
+			
+			// If user select Ok preceed to mobile site
+			if ( ad_result == true )
+			{	// set cookie to mobile preference
+				ad_screen_style = str_mobile_like ; 
+				set_sitePrefCookie(site_preference_cookie_name,ad_screen_style,exp_in_num_days);
+			}
+			else
+			{	// set cookie to desktop preference
+				ad_screen_style = str_desktop_like ;
+				set_sitePrefCookie(site_preference_cookie_name,ad_screen_style,exp_in_num_days);
+			}
+			site_preference = ad_screen_style;
+		}
+		// Check if User has site_preference cookie set for mobile redirect, if they are navigating to the main library page (this page)
+		// and they are not coming from the mobile site (m.library.queensu.ca), then redirect to the mobile site
+		// else continue on to desired page.
+		if ((site_preference == str_mobile_like) && (n_result_from_mobile_site < 0) && (screen.width < min_screen_width))
+		{
+			document.location = str_mobile_location ; 
+		}
+		//}
+		// ]]>
+	</script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="verify-v1" content="D4KjtfaDyp4F2h5KGfrcnNYgi1D4opupyw4xwUa1sgs=" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=8" /> -->
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="keywords" content="Queen's University Library, University, Education, Research, Libraries, Queen's University, Queen's, Kingston, Ontario" />
+<link rel="icon" href="http://library.queensu.ca/images/mickey/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://library.queensu.ca/images/mickey/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="http://library.queensu.ca/css/mickey/queens/queens_common.css" /><!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="http://www.queensu.ca/style/css/queensDefault/queens_common_ie6.css"/>
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="http://www.queensu.ca/style/css/queensDefault/queens_common_ie7.css"/>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="http://library.queensu.ca/css/mickey/qul_common.css" />
+<link rel="stylesheet" type="text/css" href="http://library.queensu.ca/css/mickey/qul-static.css" />
+<link rel="stylesheet" type="text/css" media="print" href="http://library.queensu.ca/css/mickey/print.css" /><!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="http://library.queensu.ca/css/mickey/ie6.css"/>
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="http://library.queensu.ca/css/mickey/ie7.css"/>
+<![endif]-->
+
+<!-- does this need to be here -->
+
+
+<!-- BEGIN CUSTOM HEAD: INSERT YOUR HEAD CONTENT BELOW -->
+<title>Home | Queen's University Library</title>
+
+<!-- Google Analytics Content Experiment code -->
+<script>function utmx_section(){}function utmx(){}(function(){var
+k='6531598-0',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->
+
+
+
+<!-- START: vertical tabs -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/vtabs/js/jquery-jvert-tabs-1.1.3.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/vtabs/css/vtabs.css" />
+
+<!-- initialize vertical tabs -->
+<script type="text/javascript"> 
+$(document).ready(function(){ 
+$("#vtabs1").jVertTabs(); 
+}); 
+</script> 
+<!-- END: vertical tabs -->        
+
+<!-- START: tabs -->
+<script type="text/javascript" src="http://library.queensu.ca/js/tabs/ui.core.js"></script>
+<script type="text/javascript" src="http://library.queensu.ca/js/tabs/ui.tabs.js"></script>
+<link rel="stylesheet" href="http://library.queensu.ca/js/tabs/ui.tabs.css" type="text/css" media="print, projection, screen" />
+
+<!-- initialize tabs -->
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){ $("#tabs-search > ul").tabs(); });
+//]]>
+</script>
+<!-- END: tabs -->       
+
+<!-- START: spotlight -->
+<link rel="stylesheet" media="all" type="text/css" href="/css/stepcarousel.css" />
+<script type="text/javascript" src="/js/stepcarousel.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+<!--                        
+function stopError() {
+return true;
+}
+window.onerror = stopError;
+
+// -->
+//]]>
+</script>
+
+<!-- END: spotlight -->
+
+	<!-- Home page and individual Library page hours styles -->
+	<link rel="stylesheet" type="text/css" href="/qul_hours/css/qul_hourswidget.css"/>
+
+<link rel="stylesheet" type="text/css" href="/css/mickey/2010.css" />
+<link rel="stylesheet" type="text/css" href="/css/mickey/home.css"/>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+
+(function($){$.fn.hoverIntent=function(f,g){var cfg={sensitivity:7,interval:100,timeout:0};cfg=$.extend(cfg,g?{over:f,out:g}:f);var cX,cY,pX,pY;var track=function(ev){cX=ev.pageX;cY=ev.pageY;};var compare=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);if((Math.abs(pX-cX)+Math.abs(pY-cY))<cfg.sensitivity){$(ob).unbind("mousemove",track);ob.hoverIntent_s=1;return cfg.over.apply(ob,[ev]);}else{pX=cX;pY=cY;ob.hoverIntent_t=setTimeout(function(){compare(ev,ob);},cfg.interval);}};var delay=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);ob.hoverIntent_s=0;return cfg.out.apply(ob,[ev]);};var handleHover=function(e){var p=(e.type=="mouseover"?e.fromElement:e.toElement)||e.relatedTarget;while(p&&p!=this){try{p=p.parentNode;}catch(e){p=this;}}if(p==this){return false;}var ev=jQuery.extend({},e);var ob=this;if(ob.hoverIntent_t){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);}if(e.type=="mouseover"){pX=ev.pageX;pY=ev.pageY;$(ob).bind("mousemove",track);if(ob.hoverIntent_s!=1){ob.hoverIntent_t=setTimeout(function(){compare(ev,ob);},cfg.interval);}}else{$(ob).unbind("mousemove",track);if(ob.hoverIntent_s==1){ob.hoverIntent_t=setTimeout(function(){delay(ev,ob);},cfg.timeout);}}};return this.mouseover(handleHover).mouseout(handleHover);};})(jQuery);
+
+$(document).ready(function() {
+
+function addMega(){
+$(this).addClass("hovering");
+}
+
+function removeMega(){
+$(this).removeClass("hovering");
+}
+
+var megaConfig = {
+interval: 100,
+sensitivity: 8,
+over: addMega,
+timeout: 300,
+out: removeMega
+};
+
+$("li.dropitem").hoverIntent(megaConfig)
+
+});
+
+
+//]]>
+</script>
+
+
+<!-- END: custom head -->
+</head>
+<body id="queenspage" class="webpublish square" onload="display_sitePreference();">
+
+<!-- BEGIN QUEENS BAR -->
+<!-- BEGIN QUEEN'S UNIVERSITY UTILITY BAR -->
+    <div id="utilitybar">
+      <h1 class="accessibility">Queen's University - Utility Bar</h1>
+      <ul>
+        <li class="accessibility">
+          <a href="http://transcoder.usablenet.com/tt/referrer">Text Only Version</a>
+        </li>
+        <li class="accessibility">
+          <a href="#prinav">Skip to Navigation</a>
+        </li>
+        
+        <li class="accessibility">
+          <a href="http://library.queensu.ca/websrs/">Library Services for Students with Disabilities</a>
+        </li>
+        
+        <li class="accessibility">
+          <a href="http://www.queensu.ca/www/wsaguide">Web Standards and Accessibility Guide</a>
+        </li>
+
+
+        <li class="wordmark">
+          <a href="http://www.queensu.ca/">Queen's University</a>
+        </li>
+      </ul>
+    </div>
+<!-- END QUEEN'S UNIVERSITY UTILITY BAR -->
+<!-- END QUEENS BAR -->
+
+<div id="queenscontent">
+<img class="print" src="http://library.queensu.ca/images/mickey/logo.png" alt="Queen's University Library" />
+<div id="queensleft"><!-- space --></div>
+<div id="queensright">
+<h1 class="print">Queen's University Library</h1>
+
+<!-- BEGIN QUL HEADER -->
+<div id="queensheader">
+
+<!-- BEGIN BANNER: CUSTOM INCLUDE FILE -->
+<h1 id="bannertitle" ><a href="/" title="Queen's University Library Home">Queen's University Library</a></h1>
+
+<a id="logo" href="http://www.queensu.ca" title="Queen's University Home">Queen's University</a> 
+<!-- END BANNER -->
+
+<div id="sitemenu" class="clearfix">
+
+	<div id="search-menu" class="plain-links">
+	<p><a href="http://proxy.queensu.ca/">Connect from Off-Campus</a> &nbsp; <span style="color: white;">|</span> &nbsp;
+	<a href="http://library.queensu.ca/library/contact">Contact Us</a> &nbsp; <span style="color: white;">|</span> &nbsp;
+	<a href="http://library.queensu.ca/library/site/search">Site Search</a></p>
+	</div>
+	
+	<h2 class="accessibility">Site/Page Navigation</h2>
+	<div class="accessibility"><a href="#queensbody">Skip to Content</a></div>
+	
+</div>
+
+
+</div>
+<!-- END QUL HEADER -->
+
+<!-- BEGIN PAGE BODY -->
+<div id="queensbody">
+
+<style>
+ul#dropmenu a.drop-heading {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px 8px 15px; 
+    margin-left: 0px;
+    font-size: 100%;
+    color: rgb(0, 75, 132);
+}
+</style>
+
+<ul id="dropmenu">
+
+<!-- Find Information -->
+<li class="dropitem" >
+    <a href="http://library.queensu.ca/research/overview" class="drop-heading" >Find Information <img src="http://library.queensu.ca/files/icons/dropmenu_down.png"/></a>
+    <div class="dropcontent" style="left: 0px;" >
+        <div class="dropcontent-inner">
+
+            <div style="width: 180px; float: left; margin-right: 20px;">
+                <a href="http://library.queensu.ca/summon">Summon</a><br />
+                <a href="https://qcat.library.queensu.ca/vwebv/searchBasic">QCAT Library Catalogue</a><br />
+                <a href="http://library.queensu.ca/research/databases/">Databases</a><br />
+                <a href="http://library.queensu.ca/research/course-material">Course Reserves &amp; Exams</a><br />
+                <a href="http://library.queensu.ca/research/catalogues">Other Library Catalogues</a><br />
+                <a href="http://library.queensu.ca/research/all">How to Find &raquo;</a>
+            </div>
+                
+            <div style="width: 230px; float: left; ">                
+                <a href="http://library.queensu.ca/research/articles/">Articles</a><br />
+                <a href="http://library.queensu.ca/research/ejournals/">Journals</a> |
+                <a href="http://library.queensu.ca/research/guide/news-resources">Newspapers</a><br />
+                <a href="http://library.queensu.ca/research/ebooks/">Books &amp; E-Books</a><br />
+                <a href="http://library.queensu.ca/research/format/finding-theses">Theses &amp; Dissertations</a><br />
+                <a href="http://library.queensu.ca/data">Data &amp; Statistics</a><br />
+                <a href="http://library.queensu.ca/gov">Government Information</a><br />
+                <a href="http://library.queensu.ca/geo">Maps &amp; Geospatial Data</a><br />
+            </div>
+                
+            <div class="clearboth"></div>
+
+            <div style="border-top: 1px solid #bbb; margin-top: 15px; padding: 10px 0 0 0; ">
+                <a href="http://library.queensu.ca/research/overview"  style="float: right;">More &raquo;</a>        
+                <a href="http://library.queensu.ca/research/subjects">Browse Subjects</a> to find your area of study.
+            </div>
+
+        </div>
+    </div>
+</li>
+
+<!-- How-to & Help -->
+<li class="dropitem">
+    <a href="http://library.queensu.ca/help/overview"  class="drop-heading" >How-to &amp; Help <img src="http://library.queensu.ca/files/icons/dropmenu_down.png" /></a>
+    <div class="dropcontent" style="left: -125px;" >
+        <div class="dropcontent-inner">
+
+            <div style="width: 210px; float: left; margin-right: 20px;">
+                <a href="http://library.queensu.ca/research/subjects">Research by Subject</a>
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://library.queensu.ca/research/courses">Course Guides</a>
+                </div>
+                <a href="http://library.queensu.ca/help/faq" title="Frequently Asked Questions about borrowing, library research, services, etc.">Frequently Asked Questions</a><br />
+                <a href="http://library.queensu.ca/help/guides">How-To Guides</a><br />
+                <a href="http://library.queensu.ca/help/cite-sources" title="How to Cite Sources: Citation and Style Guides">How to Cite Sources</a>
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://guides.library.queensu.ca/citation-management">Citation Management</a>
+                </div>
+            </div>
+
+            <div style="width: 210px; float: left; ">
+                <a href="http://library.queensu.ca/help/ask">Ask Us</a>
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://library.queensu.ca/help/ask">Email</a> | 
+                    <a href="http://library.queensu.ca/library/contact/reference">Phone</a> | 
+                    <a href="http://library.queensu.ca/library/hours">In-Person</a>
+                </div>
+                <a href="http://library.queensu.ca/services/workshops">Workshops</a><br />
+                <a href="http://www.queensu.ca/qlc/">Queen's Learning Commons</a><br />
+                <a href="http://www.queensu.ca/its/" title="Queen's Information Technology Help">Queen's IT Help</a><br />
+                <a href="http://library.queensu.ca/examsearch/">Exambank</a>
+            </div>
+
+            <div class="clearboth"></div>
+
+            <div style="border-top: 1px solid #bbb; margin-top: 15px; padding: 10px 0 0 0; ">
+                <a href="http://library.queensu.ca/help/overview" style="float: right;" >More &raquo;</a>
+                Need more help?  Contact your <a href="http://library.queensu.ca/research/librarians">Subject Librarian</a>.
+            </div>
+        </div>
+    </div>
+</li>
+
+<!-- Services -->
+<li class="dropitem" style="width: 100px;">
+    <a href="http://library.queensu.ca/services/overview" class="drop-heading">Services <img src="http://library.queensu.ca/files/icons/dropmenu_down.png"/></a>
+    <div class="dropcontent" style="left: -180px;" >
+
+        <div class="dropcontent-inner">
+
+            <div style="width: 220px; float: left; margin-right: 20px;">
+                <a href="http://library.queensu.ca/services/rooms" title="Book group study rooms online">Group Study Rooms</a><br />
+                <a href="http://library.queensu.ca/research/course-material">Course Reserves &amp; Exams</a><br />
+                <a href="http://library.queensu.ca/services/borrowing" title="Circulation and borrowing policies">Borrow from QUL</a><br />
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://library.queensu.ca/services/borrowing/loan-periods">Loan Periods</a> | 
+                    <a href="http://library.queensu.ca/services/borrowing/paying-fines">Fines</a>
+                </div>     
+                <a href="http://library.queensu.ca/services/interlibrary">Borrow from Other Libraries</a>
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://library.queensu.ca/services/interlibrary/racer">RACER</a> | 
+                    <!--<a href="http://library.queensu.ca/librequest/br_article">Bracken Document Services</a>-->
+                </div>
+                <a href="http://library.queensu.ca/services/computers">Computers</a> 
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://library.queensu.ca/services/computers/laptop-internet">Wireless</a> | 
+                    <a href="http://library.queensu.ca/services/computers/printing">Print</a> | 
+                    <a href="http://library.queensu.ca/services/photocopying">Photocopy</a>
+                </div>
+                <a href="http://library.queensu.ca/services/offcampus" title="">Off-Campus Access</a>
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://proxy.queensu.ca/">WebProxy</a> | 
+                    <a href="http://library.queensu.ca/services/offcampus/vpn">VPN</a> 
+                </div>
+            </div>
+
+            <div style="width: 210px; float: left;">
+                <a href="http://library.queensu.ca/academic-services">Academic Services</a><br />
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://library.queensu.ca/data">Data Services</a><br />
+                    <a href="http://library.queensu.ca/gov">Government Information</a><br />
+                    <a href="http://queensu.ca/atc/library-services-students-disabilities">Library Services for Students with Disabilities</a><br />
+                    <a href="http://library.queensu.ca/geo">Maps &amp; Geospatial Data</a><br />
+                    <a href="http://www.queensu.ca/qlc/">Queen's Learning Commons</a><br />
+                    <a href="http://library.queensu.ca/scholcomm">Scholarly Communications</a><br />
+                    <a href="http://library.queensu.ca/services/teaching-learning-support">Teaching & Learning</a><br />
+                </div>
+                <a href="http://library.queensu.ca/copyright">Copyright Advisory Office</a><br />
+                <!-- <a href="http://library.queensu.ca/services/digital-humanities-queens">Digital Humanities @ Queen’s</a><br /> -->
+                For you: <br />
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://library.queensu.ca/services/undergrads">Undergrads</a> &amp; 
+                    <a href="http://library.queensu.ca/services/grads">Grad Students</a> <br />
+                    <a href="http://library.queensu.ca/services/faculty">Faculty &amp; Instructors</a><br />
+                    <a href="http://library.queensu.ca/services/alumni">Alumni &amp; Visitors</a>
+                </div>       
+            </div>
+
+            <div class="clearboth"></div>
+
+            <div style="border-top: 1px solid #bbb; margin-top: 15px; padding: 10px 0 0 0; ">
+                <a href="http://library.queensu.ca/services/overview" style="float: right;" >More &raquo;</a>
+                Browse <a href="http://library.queensu.ca/services/request">All Request Forms</a>.
+            </div>
+        </div>
+    </div>
+</li>
+
+<!-- Locations & Hours -->
+<li class="dropitem">
+    <a href="http://library.queensu.ca/locations-hours"  class="drop-heading" > Locations &amp; Hours<img src="http://library.queensu.ca/files/icons/dropmenu_down.png" /></a>
+    <div class="dropcontent"  style="left: -150px; width: 500px;">
+        <div class="dropcontent-inner" style="width: 480px;">
+
+            <div style="width: 200px; float: left;  margin-right: 20px;">
+                <a  href="http://library.queensu.ca/health/">Bracken Health Sciences Library</a><br />
+                Douglas Library<br />
+                <div style="margin-left: 10px; ">
+                    <a  href="http://library.queensu.ca/webeng/">Engineering &amp; Science Library</a><br />
+                    <a  href="http://library.queensu.ca/webmus/">W.D. Jordan Special Collections <br /> &amp; Music Library</a><br />
+                </div>
+                <a  href="http://library.queensu.ca/webedu/">Education Library</a><br />
+                <a  href="/law/">Lederman Law Library</a><br />
+            </div>
+
+            <div style="width: 220px; float: left;">
+                Stauffer Library<br />
+                <div style="margin-left: 10px; ">
+                    <a  href="http://queensu.ca/atc/">Adaptive Technology Centre</a><br />
+                    <a href="http://library.queensu.ca/data">Data Services</a><br />
+                    <a  href="http://library.queensu.ca/gov">Government Information</a><br />
+                    <a  href="http://library.queensu.ca/stauffer/">Humanities &amp; Social Sciences</a><br />
+                    <!--<a  href="http://www.queensu.ca/qlc/">Queen's Learning Commons</a><br />-->
+                    <a  href="http://library.queensu.ca/geo">Maps &amp; Geospatial Data</a><br />
+                    <br />
+                </div>
+                <a href="http://library.queensu.ca/library/qulhours">Library Hours</a>
+            </div>
+
+            <div class="clearboth"></div>
+
+            <div style="border-top: 1px solid #bbb; margin-top: 15px; padding: 10px 0 0 0; ">
+                Browse all <a href="http://library.queensu.ca/locations-hours">Campus Libraries</a>.
+            </div>
+
+        </div>
+    </div>
+</li>
+
+<!-- Giving -->
+<li class="dropitem" style="width: 50px;" >
+    <a href="http://library.queensu.ca/giving/index.htm"  class="drop-heading" >Giving</a>
+</li> 
+
+<!-- About Us -->
+<li class="dropitem">
+    <a href="http://library.queensu.ca/about"  class="drop-heading">About Us<img src="http://library.queensu.ca/files/icons/dropmenu_down.png" /></a>
+    <div class="dropcontent"  style="left: -100px; width: 340px;">
+
+        <div class="dropcontent-inner" style="width: 320px;">
+
+            <div style="width: 300px; float: left;  margin-right: 20px;">
+                Overview<br />
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://library.queensu.ca/about/quick-facts">Quick Facts</a> |
+                    <a href="http://library.queensu.ca/about/administration-governance">Administration and Governance</a> |
+                    <a href="http://library.queensu.ca/about/history-timeline">History</a>  |    
+                    <a href="http://library.queensu.ca/about/policies">Policies</a>
+                </div>
+                Our Vision<br />
+                <div style="margin-left: 10px; font-size: 11px;">    
+                    <a href="http://library.queensu.ca/about/vision-mission">Vision and Mission</a> | 
+                    <a href="http://library.queensu.ca/about/planning-assessment">Planning and Assessment</a> |
+                    <a href="http://library.queensu.ca/about-us/service-philosophy">Service Philosophy</a>
+                </div>        
+                <a href="http://library.queensu.ca/news/">News & Events</a><br />
+                <a href="http://library.queensu.ca/about/jobs">Work With Us</a><br />
+                Our People<br />
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://library.queensu.ca/library/contact/staffdirectory/all">Staff Directory</a> | 
+                    <a href="http://library.queensu.ca/research/librarians">Subject Liaison Librarians</a> |
+                    <a href="http://library.queensu.ca/services/overview">Services</a> |
+                    <a href="http://library.queensu.ca/about/administration-governance/oul">Office of the University Librarian</a>
+                </div>
+                <a href="http://library.queensu.ca/webcoll/index.htm">Our Collections</a><br />
+                Our Spaces<br />
+                <div style="margin-left: 10px; font-size: 11px;">
+                    <a href="http://library.queensu.ca/locations-hours">Locations & Hours</a> | 
+                    <a href="http://library.queensu.ca/about/visitor-information">Visit Us</a>
+                </div>
+            </div>
+
+            <div style="width: 180px; float: left;">
+                
+            </div> 
+
+            <div class="clearboth"></div>
+
+        </div>
+    </div>
+</li>
+
+<!-- My Account -->
+<li class="dropitem" >
+    <a href="http://library.queensu.ca/account/overview"  class="drop-heading" >My Account <img src="http://library.queensu.ca/files/icons/dropmenu_down.png" /></a>
+    <div class="dropcontent" style="left: -225px; width: 390px;">
+
+        <div class="dropcontent-inner" style="width: 370px;">
+
+            <div style="width: 280px; float: left;">
+
+                <a href="https://qcat.library.queensu.ca/vwebv/login">My Library Account</a>
+                <div style="margin-left: 10px; font-size: 11px;" >
+                    Renew books, view loans &amp; fines, place holds...
+                </div>
+
+                <a href="http://library.queensu.ca/services/interlibrary/racer">RACER</a> 
+
+                <div style="margin-left: 10px; font-size: 11px;"  >
+                    Borrow from other libraries (interlibrary loan)
+                </div>
+
+                <a href="https://ereserves.library.queensu.ca/ares/">Library e-Reserves</a>
+                <div style="margin-left: 10px; font-size: 11px;" >
+                    Access electronic course readings
+                </div>
+
+                <a href="http://guides.library.queensu.ca/citation-management">Citation Management</a>
+                <div style="margin-left: 10px; font-size: 11px;" >
+                    Manage citations, create bibliographies
+                </div>
+
+                <a href="http://proxy.queensu.ca/">Connect from Off-Campus &nbsp;(Web Proxy)</a>
+                <div style="margin-left: 10px; font-size: 11px;"  >
+                    Access online library content from any location
+                </div>
+
+            </div>
+
+            <div style="padding: 10px; float: left; width: 70px; border: 1px solid #ccc; padding: 8px; margin-top: 10px;">
+                <a href="https://my.queensu.ca/">MyQueen's</a><br />
+                <a href="https://office365.queensu.ca">Office 365</a><br />
+                <a href="https://qshare.queensu.ca/">QShare</a><br />
+                <a href="https://moodle.queensu.ca/">Moodle</a><br />
+            </div>
+
+            <div class="clearboth"></div>
+
+            <div style="border-top: 1px solid #bbb; margin-top: 15px; padding: 10px 0 0 0; ">
+                <a href="http://library.queensu.ca/account/overview" style="float: right;" >More &raquo;</a>
+                All about <a href="http://library.queensu.ca/services/borrowing">Borrowing from the Library</a>
+            </div>
+
+        </div>
+    </div>
+</li>
+</ul>
+
+<!-- BEGIN PAGE CONTENT -->
+<div id="page-content" class="clearboth" >
+
+<!-- BEGIN LEFT COLUMN -->
+<div id="left-column">
+
+
+<!-- START: search tabs-->
+<div id="tabs-search" class="flora search-tabs">
+<ul>
+<li><a href="#fragment-a" title=""><span>Summon</span></a></li>
+<li><a href="#fragment-b" title=""><span>QCAT Catalogue</span></a></li>
+<li><a href="#fragment-c" title=""><span>Databases</span></a></li>
+<li><a href="#fragment-d" title=""><span>Journals A-Z</span></a></li>
+<li><a href="#fragment-e" title=""><span>Library Website</span></a></li>
+</ul>
+<div id="fragment-a" class="search-box-content" >
+
+<p>
+<!-- MV - 2012/05/31 - removed BETA and new badge 
+<img style="float: right; margin-right: 0px; width: 48px;" alt="[new]" title="2010 New Search Tool: Summon" src="/images/mickey/new-green-48.png" />
+-->
+Search <strong>Summon</strong> for <a href="/research/articles/">articles</a>, <a href="/research/ebooks/">books</a>, media &amp; more:</p> 
+<!--<p>
+<font color="red">Summon searching will have limited functionality today during the server upgrade.</font>
+</p>-->
+
+<div style="padding: 5px 0;">
+<form method="get" action="http://queensu.summon.serialssolutions.com/search" >
+<input name="s.q" value="" size="25" maxlength="255" style="width: 350px; margin-left: 10px; font-size: 110%;" />
+<input name="submit" value="Search" type="submit" style="font-size: 110%; border: 1px solid #aaa; padding: 2px 8px;" /> 
+</form>    
+
+</div>
+
+<div style="margin-top: 10px; padding: 0;" >
+<div style="float: right; width: 250px; text-align: right;" class="smaller">
+<a href="/summon">What is Summon?</a> 
+&nbsp;|&nbsp; 
+<a href="/librequest/qul_quest.htm">Send Feedback</a>
+</div>
+
+<a href="http://queensu.summon.serialssolutions.com/advanced/">Advanced Search &raquo;</a>
+
+</div>     
+                                                     
+
+</div>
+<div id="fragment-b" class="search-box-content" >
+
+<p>
+Search the <strong>QCAT Library Catalogue</strong>: 
+</p>
+<!-- QUL Use space below to display temp message in QCAT search box -->
+<!-- <p>QCAT is currently being updated and is not available. While QCAT is down, Summon is still available.</p> -->
+
+
+<div style="padding: 5px 0;">
+
+<form name="querybox" action="https://qcat.library.queensu.ca/vwebv/search" method="get">
+<input name="searchArg" style="width: 225px; margin-left: 10px; font-size: 110%;"  maxlength="150" />
+
+<select name="searchCode" size="1" style="width: 160px; font-size: 110%; padding: 2px; border: 1px solid #aaa;" >
+<option selected="selected" value="GKEY^">
+Keyword
+</option>
+<option value="CMD">
+Keyword Boolean
+</option>
+<option value="TKEY^">
+Title Keyword
+</option>
+<option value="TALL">
+Title Exact
+</option>
+<option value="JALL">
+Journal Title Exact
+</option>
+<option value="NAME+">
+Author
+</option>
+<option value="SUBJ+">
+Subject Heading
+</option>
+<option value="CALL">
+Call Number
+</option>
+</select> 
+
+<input value="25" name="recCount"  type="hidden" />
+<input value="1" name="searchType"  type="hidden" />
+<input value="Search" type="submit"  style="font-size: 110%; border: 1px solid #aaa; padding: 2px 8px;" />
+</form>
+
+</div>
+
+<div style=" margin-top: 10px; " >
+<a href="https://qcat.library.queensu.ca/vwebv/searchBasic">Full Catalogue &raquo;</a>
+&nbsp; | &nbsp;
+<a href="https://qcat.library.queensu.ca/vwebv/searchAdvanced">Advanced Search &raquo;</a>
+&nbsp; | &nbsp;
+<a href="https://qcat.library.queensu.ca/vwebv/enterCourseReserve.do">Course Reserves &raquo;</a>        
+</div>
+
+</div>
+
+<div id="fragment-c" class="search-box-content">
+
+
+<p>Find a specific <strong>database</strong>:</p>  
+
+<div style="padding: 5px 0" >
+<form action="http://library.queensu.ca/research/databases/title-search" accept-charset="UTF-8" method="get" id="views-filters" name="views-filters">
+<select name="op0" id="edit-op0" style="margin-left: 10px; width: 160px; font-size: 110%; border: 1px solid #aaa; padding: 2px;">
+<option value="allwords">
+Title contains
+</option>
+<option value="starts">
+Title begins with
+</option>
+</select>                                                 
+<input style="width: 225px; font-size: 110%;" name="filter0" id="edit-filter0" maxlength="150" value="" />
+<input id="edit-submit" value="Search" type="submit" style="font-size: 110%; border: 1px solid #aaa; padding: 2px 8px;" /> 
+
+<br />
+<!--
+<div class="grey italic" style="margin-top: 10px; margin-left: 10px; font-size: 12px;">
+e.g. <a href="http://library.queensu.ca/research/databases/record/2690" class="grey">web of science</a>, 
+<a href="http://library.queensu.ca/research/databases/record/2852" class="grey" >psycinfo</a>, 
+<a href="http://library.queensu.ca/research/databases/record/2929" class="grey" >jstor</a>, 
+<a href="http://library.queensu.ca/research/databases/record/2850" class="grey" >medline</a>, 
+<a href="http://library.queensu.ca/research/databases/title-search?op0=allwords&filter0=proquest" class="grey" >proquest</a>, 
+<a href="http://library.queensu.ca/research/databases/record/2921" class="grey" >ebsco</a>
+</div>
+-->
+</form>
+</div>
+
+<div style="margin-top: 10px;">
+<a href="/research/databases/" style="white-space: nowrap;">More Database Options &raquo;</a>
+</div>
+
+
+</div>
+
+<div id="fragment-d" class="search-box-content">
+
+<p>Find a specific <strong>journal</strong>, <strong>newspaper</strong> or <strong>magazine</strong>:</p>
+
+<div style="padding: 5px 0;">
+<form  action="http://library.queensu.ca/search/journal-search-qcat7.php?" method="post" >
+
+<select name="search_code" style="margin-left: 10px; width: 160px; font-size: 110%; border: 1px solid #aaa; padding: 2px;">
+<option selected="selected" value="t_c">
+Title contains
+</option>
+<option value="t_b_w">
+Title begins with
+</option>
+<option value="issn">
+ISSN
+</option>
+</select>        
+<input name="search_field" maxlength="150" style="width: 225px; font-size: 110%;" value="" /> 
+
+<input type="submit" value="Search" style="font-size: 110%; border: 1px solid #aaa; margin-bottom: 5px; padding: 2px 8px;" />
+
+<div style="margin-top: 5px; margin-left: 10px;">
+<input type="radio" name="search_type" value="online_print" checked="checked" />online and print &nbsp; <input type="radio" name="search_type" value="online" />online only
+</div>
+</form>
+</div>
+
+
+<div style=" margin-top: 10px;" >
+<a href="/research/ejournals/" title="">More Journal Options &raquo;</a> 
+&nbsp; | &nbsp;
+<a href="/research/articles/">Search for Articles &raquo;</a>                                                                        
+</div>
+
+</div>
+
+<div id="fragment-e" class="search-box-content">
+
+<p>Search <strong>library.queensu.ca</strong>:</p>
+
+<div style="padding: 5px 0;">
+<!-- Google site search -->
+<form action="http://www.google.com/cse">
+<input name="cx" value="018246517638986865597:y0v3nr-ofnc" type="hidden" />
+<input name="ie" value="UTF-8" type="hidden" />
+<label for="googlesearch" style="display: none;">Search site:</label>
+<input name="q" id="googlesearch" style="width: 350px; margin-left: 10px; font-size: 110%;" />
+<input name="sa" value="Search" style="display: inline; margin-right: 25px; font-size: 110%; border: 1px solid #aaa; padding: 2px 8px;" type="submit" />
+</form>
+</div>
+
+<div style=" margin-top: 10px;" >
+<a href="/help/faq">Library Frequently Asked Questions &gt;&gt;</a> 
+</div>
+</div>                  
+
+</div>
+<!-- END: search tabs-->
+
+
+<!-- START: middle links -->
+<div class="plain-links" id="middle-links">  
+
+<table>
+<tr>
+<td style="text-align: center; width: 35%; padding-bottom: 0;" >
+<img src="http://library.queensu.ca/files/icons/lightbulb.png" alt="" />
+<a href="/research/course-material">Course Reserves &amp; Exams</a>
+</td>
+<td style="text-align: center; width: 30%">
+<img src="http://library.queensu.ca/files/icons/folder_page.png" alt="" />
+<a href="http://guides.library.queensu.ca/citation-management">Citation Management</a>
+</td>
+<td style="text-align: center; width: 35%">
+<!-- <img src="http://library.queensu.ca/files/icons/building_go.png"  /> -->
+<!-- <img src="ILL_icon.bmp"  /> -->
+<img src="http://library.queensu.ca/files/icons/building_go.png" alt="" />
+<a href="/services/interlibrary/racer">RACER (Interlibrary Loan)</a>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- END: middle links -->
+
+
+<!-- START: subject tabs -->
+<div id="subject-browse" style="margin-bottom:5px;">
+
+<h3><img src="http://library.queensu.ca/files/icons/book_open.png" class="icon" alt="icon" /> <a href="http://library.queensu.ca/research/subjects">Research by Subject</a></h3>
+<p class="grey">Specialized and recommended research tools.</p>
+
+<!-- START: vertical tabs -->
+<div id="vtabs1" style="height:260px;">
+<div>
+<ul>
+<li class="vtabs-first">
+<a href="#vtabs-content-h">Formats</a></li>
+<li><a href="#vtabs-content-a">Social Sciences</a></li>
+<li><a href="#vtabs-content-b">Arts &amp; Humanities</a></li>
+<li><a href="#vtabs-content-c">Engineering &amp; Science</a></li>
+<li><a href="#vtabs-content-d">Health Sciences</a></li>
+<li><a href="#vtabs-content-e">Education</a></li>
+<li><a href="#vtabs-content-f">Law</a></li>
+<li><a href="#vtabs-content-g">Other</a></li>
+<li style="background-color: #bbb;">
+<a href="#" rel="http://library.queensu.ca/research/subjects">All Subjects A-Z</a>
+</li>
+</ul>
+</div>
+<div>
+
+<div id="vtabs-content-h">
+
+<div class="browse-list plain-links">
+<table>
+<tr>
+<td style="width: 50%;">
+        <ul>
+                <li><a href="/research/articles/">Articles</a></li>
+                <li><a href="/research/ebooks/">Books &amp; E-Books</a></li>
+                <li><a href="http://guides.library.queensu.ca/bookreviews">Book Reviews</a></li>
+                <li><a href="/data">Data &amp; Statistics</a></li>
+                <li><a href="/research/guide/dictionaries-and-thesauri">Dictionaries &amp; Thesauri</a></li>
+                <li><a href="/gov">Government Information</a></li>
+                <li><a href="/research/guide/finding-images">Images</a></li>                
+                <li><a href="/research/ejournals/">Journals</a></li>
+                <li><a href="/law/cdsub.htm">Legal Information</a></li>
+                <li><a href="/geo">Maps &amp; Geospatial Data</a></li>
+                <li><a href="/inforef/microfilm/">Microfilm</a></li>
+        </ul>
+</td>
+<td style="width: 50%;">                
+               
+        <ul>      
+                 
+                <li><a href="/research/guide/music">Music</a></li>
+                <li><a href="http://guides.library.queensu.ca/newspapers">Newspapers</a></li>
+                <li><a href="/research/databases/subject/dictionaries-and-encyclopedias">Online Dictionaries &amp; Encyclopedias</a></li>
+                <li><a href="/research/guide/patents">Patents</a></li>
+                <li><a href="/research/guide/primary-sources">Primary Sources</a></li>
+                <li><a href="/webmus/sc/collections.htm">Rare Books</a></li>
+		<li><a href="http://guides.library.queensu.ca/standards">Standards &amp; Codes</a></li>
+                <li><a href="http://guides.library.queensu.ca/technical-reports">Technical Reports</a></li>
+                <li><a href="/research/format/finding-theses">Theses &amp; Dissertations</a></li>
+                <li><a href="/research/databases/t/852">Video Collections</a></li>
+        </ul>        
+</td>
+</tr>
+</table>
+</div>     
+
+</div>
+
+<div id="vtabs-content-a">
+
+<div class="browse-list plain-links">
+<table>
+<tbody><tr>
+<td style="width: 50%" >
+
+<ul>
+<li><a href="/research/guide/asian-studies">Asian Studies</a></li>
+<li><a href="http://guides.library.queensu.ca/business">Business</a></li>
+<li><a href="/research/guide/canadian-studies">Canadian Studies</a></li>
+<li><a href="/research/guide/communication-and-mass-media">Communications and Mass Media</a></li>
+<li><a href="/research/guide/cultstud">Cultural Studies</a> </li>
+<li><a href="/research/guide/economics">Economics</a></li>
+<li><a href="http://guides.library.queensu.ca/entrepreneurship">Entrepreneurship</a></li>
+<li><a href="/research/guide/environmental-studies">Environmental Studies</a></li>
+<li><a href="/research/guide/womens-and-gender-studies">Gender Studies</a></li>
+<li><a href="/research/guide/geography">Geography</a></li>
+<li><a href="/research/guide/global-development-studies">Global Development Studies</a></li>
+<li><a href="/gov">Government Information</a></li>
+<li><a href="http://guides.library.queensu.ca/healthstudies">Health Studies</a></li>
+<li><a href="/research/guide/history">History</a></li>
+</ul>
+
+</td>
+<td style="width: 50%">
+
+<ul>
+<li><a href="/research/guide/indigenous-studies">Indigenous Studies</a></li>
+<li><a href="/research/guide/industrial-relations">Industrial Relations</a></li>
+<li><a href="/research/guide/jewish-studies">Jewish Studies</a></li>
+<li><a href="http://guides.library.queensu.ca/kinesiology">Kinesiology and Physical Health Education</a></li>
+<li><a href="/research/guide/latin-american-studies">Latin American Studies</a></li>
+<li><a href="/research/guide/middle-east">Middle East and Islamic Studies</a></li>
+<li><a href="/databases/interdisciplinary-databases">Multidisciplinary</a></li>
+<li><a href="http://guides.library.queensu.ca/subject/politicalstudies">Political Studies</a></li>
+<li><a href="http://guides.library.queensu.ca/psychology">Psychology</a></li>
+<li><a href="/research/guide/public-administration">Public Administration</a></li>
+<li><a href="http://guides.library.queensu.ca/relstudies">Religious Studies & Theology</a></li>
+<li><a href="http://guides.library.queensu.ca/sociology">Sociology</a></li>
+<li><a href="/research/guide/urban-and-regional-planning">Urban and Regional Planning</a></li>
+</ul>
+
+</td></tr>
+</tbody></table>                                        
+</div>
+
+<p>
+<img src="http://library.queensu.ca/files/icons/building.png" alt="" />
+<strong><a href="http://library.queensu.ca/stauffer/">Visit Stauffer Library</a></strong>
+</p>
+
+</div>                
+
+<div id="vtabs-content-b">
+
+<div class="browse-list plain-links">
+<table>
+<tbody><tr>
+<td style="width: 50%" >
+
+<ul>
+<li><a href="/research/guide/art">Art</a></li>
+<li><a href="http://guides.library.queensu.ca/art-conservation">Art Conservation</a></li>
+<li><a href="http://guides.library.queensu.ca/canadian-literature">Canadian Literature</a></li>
+<li><a href="/research/guide/canadian-studies">Canadian Studies</a></li>
+<li><a href="http://guides.library.queensu.ca/classical-studies">Classical Studies</a></li>
+<li><a href="/research/guide/cultstud">Cultural Studies</a> </li>
+<li><a href="http://guides.library.queensu.ca/drama">Drama</a></li>
+<li><a href="http://guides.library.queensu.ca/english">English Language and Literature</a></li>
+<li><a href="http://guides.library.queensu.ca/film-media">Film and Media</a></li>
+<li><a href="/research/guide/french-language-and-literature">French Language and Literature</a></li>
+<li><a href="/research/guide/geography">Geography</a></li>
+</ul>
+
+</td>
+<td style="width: 50%">
+
+<ul>
+<li><a href="/research/guide/german-language-and-literature">German Language and Literature</a></li>
+<li><a href="/research/guide/history">History</a></li>
+<li><a href="/research/guide/italian-language-and-literature">Italian Language and Literature</a></li>
+<li><a href="/research/guide/language-and-linguistics">Languages and Linguistics</a></li>
+<li><a href="/databases/interdisciplinary-databases">Multidisciplinary</a></li>
+<li><a href="/research/guide/music">Music</a></li>
+<li><a href="http://guides.library.queensu.ca/philosophy">Philosophy</a></li>
+<li><a href="http://guides.library.queensu.ca/relstudies">Religious Studies & Theology</a></li>
+<li><a href="/research/guide/spanish-language-and-literature">Spanish Language and Literature</a></li>
+</ul>
+
+</td></tr>
+</tbody></table>
+
+
+
+
+
+</div>
+
+<p>
+<img src="http://library.queensu.ca/files/icons/building.png" alt="" />
+<strong><a href="http://library.queensu.ca/stauffer/">Visit Stauffer Library</a></strong>
+</p> 
+
+</div>
+
+<div id="vtabs-content-c">
+
+<div class="browse-list plain-links">
+<table>
+<tbody><tr>
+<td style="width: 50%" >
+
+
+<ul>
+<li><a href="http://guides.library.queensu.ca/astronomy">Astronomy &amp; Astrophysics</a></li>
+<li><a href="/research/guide/biological-sciences">Biological Sciences</a></li>
+<li><a href="/research/guide/biomedical-engineering">Biomedical Engineering</a></li>
+<li><a href="/research/guide/chemical-engineering">Chemical Engineering</a></li>
+<li><a href="/research/guide/chemistry">Chemistry</a></li>
+<li><a href="http://guides.library.queensu.ca/civil">Civil Engineering</a></li>
+<li><a href="http://guides.library.queensu.ca/computing">Computing and Information Sciences</a></li>
+<li><a href="http://guides.library.queensu.ca/ece">Electrical and Computer Engineering</a></li>
+<li><a href="/research/guide/engineering-disasters">Engineering Disasters</a></li>
+<li><a href="/research/guide/ensc-201">Engineering and Sciences</a></li>
+<li><a href="http://guides.library.queensu.ca/entrepreneurship">Entrepreneurship</a></li>
+<li><a href="http://guides.library.queensu.ca/environmental-studies">Environmental Studies</a></li>
+
+</ul>
+
+</td>
+<td style="width: 50%">
+
+<ul>
+
+
+<li><a href="http://guides.library.queensu.ca/apsc">First Year Engineering</a></li>
+<li><a href="/research/guide/fuel-cells">Fuel Cells</a></li>
+<li><a href="/research/guide/geological-sciences">Geological Sciences</a></li>
+<li><a href="http://guides.library.queensu.ca/history-science-technology">History of Science and Technology</a></li>
+<li><a href="/research/guide/jobs-engineering">Jobs in Engineering</a></li>
+<li><a href="http://guides.library.queensu.ca/math">Mathematics and Statistics</a></li>
+<li><a href="http://guides.library.queensu.ca/mech">Mechanical and Materials Engineering</a></li>
+<li><li><a href="http://guides.library.queensu.ca/minex">Mineral Exploration</a></li>
+<li><a href="http://guides.library.queensu.ca/mining">Mining Engineering</a></li>
+
+<li><em><strong><a href="/research/engineering-science">View full list &raquo;</a></strong></em></li>
+
+</ul>
+
+</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>
+<img src="http://library.queensu.ca/files/icons/building.png" alt="" />
+<strong><a href="http://library.queensu.ca/webeng/">Visit the Engineering &amp; Science Library</a></strong>
+</p> 
+
+</div>
+<div id="vtabs-content-d">
+
+<div class="browse-list plain-links">
+<table>
+<tbody><tr>
+<td style="width: 80%" >
+
+<ul>
+<li><a href="/research/databases/subject/health-and-life-sciences">All Health Sciences Databases</a></li>
+<li><a href="/research/guide/evidence-based-practice-resources">Evidence Based Practice Resources</a></li>
+<li><a href="/research/guide/healthcare-quality-program">Healthcare Quality Program</a></li>
+<!--<li><a href="/health/life-sciences">Life Sciences</a></li>-->
+<li><a href="http://guides.library.queensu.ca/medicine">Medicine</a></li>
+<li><a href="/research/guide/health-sciences-multimedia">Multimedia  Resources</a></li>
+<li><a href="/research/guide/nursing">Nursing</a></li>
+<li><a href="/research/guide/medicine-phase-one-pharmacology-literature">Pharmacology Resources</a></li>
+<li><a href="http://guides.library.queensu.ca/publichealth">Public Health</a></li>
+<li><a href="http://guides.library.queensu.ca/rehabtherapy">Rehabilitation Therapy</a></li>
+</ul>
+
+
+</td>
+<td style="width: 20%">
+
+
+</td></tr>
+</tbody></table>
+</div>
+
+<p>
+<img src="http://library.queensu.ca/files/icons/building.png" alt="" />
+<strong><a href="http://library.queensu.ca/health/">Visit the Bracken Health Sciences Library</a></strong>
+</p> 
+
+</div>
+<div id="vtabs-content-e">
+
+<div class="browse-list plain-links">
+<table>
+<tbody><tr>
+<td style="width: 50%" >
+
+<ul>
+    <li><a href="/research/databases/subject/education-core">Recommended Education Databases </a></li>
+    <li><a href="/webedu/pj/index.html">Teacher Candidates - PJ</a></li>
+    <li><a href="/webedu/is/index.html">Teacher Candidates - IS</a></li>
+    <li><a href="/webedu/cte/index.html">Continuing Teacher Education</a></li>
+    <li><a href="/webedu/faculty">Faculty &amp; Researchers</a></li>
+    <li><a href="/webedu/grad/index.html">Graduate Students</a></li>
+    <li><a href="http://guides.library.queensu.ca/GraduateDiploma-in-ProfessionalInquiry">GDPI/PME</a></li>
+    <li><a href="/webedu/tl/index.htm">Teacher-Librarians</a></li>
+    <li><a href="http://guides.library.queensu.ca/english-language-learners">School of English / ELL</a></li>
+</ul>
+
+
+</td>
+<td style="width: 50%">
+
+
+</td></tr>
+</tbody></table>
+
+
+
+
+
+</div>
+
+<p>
+<img src="http://library.queensu.ca/files/icons/building.png" alt= "" />
+<strong><a href="http://library.queensu.ca/webedu/">Visit the Education Library</a></strong>
+</p> 
+
+</div>  
+<div id="vtabs-content-f">
+
+<div class="browse-list plain-links">
+<!-- virtual="research/law/guides.htm"-->    
+</div>
+
+<p>
+<img src="http://library.queensu.ca/files/icons/building.png" alt="" />
+<strong><a href="http://library.queensu.ca/law/">Visit the Lederman Law Library</a></strong>
+</p> 
+
+</div>  
+<div id="vtabs-content-g">
+
+<div class="browse-list plain-links">                                
+<table>
+<tbody><tr>
+<td style="width: 70%">
+<ul>
+<li><a href="/research/guide/biography">Biographical Resources</a></li>
+<li><a href="/research/courses">Course Guides</a></li>
+<li><a href="/research/guide/canadian-studies">Canadian Studies</a></li>
+<li><a href="/research/guide/crl">Center for Research Libraries</a></li>
+<li><a href="http://library.queensu.ca/copyright">Copyright Information</a></li>
+<li><a href="/webdoc/gov/countries_other">Country Information</a></li>
+<li><a href="/research/guide/genealogy">Genealogy</a></li>
+<li><a href="/research/guide/research-strategy-guide">Introduction to Research</a></li>
+<li><a href="/research/guide/search-web">Search the Web</a></li>
+</ul>
+<br />
+<br />
+<br />
+</td>
+<td style="width: 20%">
+
+</td></tr>
+</tbody></table>
+     
+</div>     
+
+</div>   
+</div>
+</div> 
+<!-- end of vtabs --> 
+
+
+</div>
+<!-- END: subject tabs -->
+
+<!-- TODO - maybe this can go?? </div> -->
+
+<!-- START: qlc banner -->
+<div id="qlc-banner-long" style="margin-top:10px;">
+
+<!-- QLC home link -->
+<a id="qlc-banner-logo-long" href="http://www.queensu.ca/qlc/"><!-- &nbsp; --></a>
+
+</div>
+<!-- END: qlc banner -->
+
+<div id="accessibility-stmt">
+<em>Queen&apos;s University Library is committed to an inclusive library community with accessible goods, services, and facilities that respect the dignity and independence of persons with disabilities.</em>
+</div>
+
+</div><!-- END LEFT COLUMN -->
+<!-- BEGIN RIGHT COLUMN -->
+<div id="right-sidebar">
+
+<!-- START: home sidebox -->
+<div class="home-sidebox">
+
+<!-- START: news -->
+
+    <script type="text/javascript">
+stepcarousel.setup({
+	galleryid: 'mygallery', // id of carousel DIV
+	beltclass: 'belt', // class of inner "belt" DIV containing all the panel DIVs
+	panelclass: 'panel', // class of panel DIVs each holding content
+	panelbehavior: {speed:200, wraparound:true, persist:false},
+	defaultbuttons: {enable: true, moveby: 1, leftnav: ['/images/leftnav.png', 278, 150], rightnav: ['/images/rightnav.png', -25, 150]},
+	statusvars: ['statusA', 'statusB', 'statusC'], // Register 3 "status" variables
+	contenttype: ['inline'] // content type - No comma following the very last parameter, always!
+})
+</script> <script type="text/javascript">
+function rusearch(){
+	var url="http://proxy.queensu.ca/login?url=http://refuniv.odyssi.com/cgi-bin/member/search/r?dbs+ruprime:@and+@syn1+";
+	var searchInputEl = document.getElementById("ruSearchInput");
+	document.location=url + '@w15 + (+' + encodeURIComponent(searchInputEl.value) + '+)';
+}
+</script> <script type="text/javascript">
+function getKeyValue(e,form){
+	var key=e.keyCode || e.which;
+	if (key==13){
+		rusearch();
+	}
+}
+</script>
+<div class="stepcarousel" id="mygallery">
+<div class="belt">
+
+<!--
+<div class="panel" id="panel1"><img src="http://library.queensu.ca/images/dataday2016-rotating.jpg" onclick="location.href='http://library.queensu.ca/dataday2016';" alt="Data Day 2016" />
+<p class="slideText"><a href="http://library.queensu.ca/dataday2016">Data Day 2016</a></p>
+</div>
+-->
+
+
+
+<div class="panel" id="panel1"><img src="http://staff.library.queensu.ca/sites/default/files/lamp.jpg" onclick="location.href='http://www.queensu.ca/connect/lamp/';" alt="Library and Archives Master Plan" />
+<p class="slideText"><a href="http://www.queensu.ca/connect/lamp/">Library and Archives Master Plan</a></p>
+</div>
+
+<!--
+
+<div class="panel" id="panel3"><img src="http://library.queensu.ca/images/QCAT-to-sms.png" onclick="location.href='http://library.queensu.ca/news/archives/5091';" alt="SMS message" />
+<p class="slideText"><a href="http://library.queensu.ca/news/archives/5091">New QCAT Feature!</a></p>
+</div>
+
+-->
+
+</div>
+</div>
+<div id="news">
+
+	<!-- START: hours -->
+	<div id="homepage-hours">
+     
+<div class="hours-widget">
+<H3 style="margin-top:10px;"><a href="/library/qulhours" >Library Building Hours Today</a></H3>
+<table class="hours-table"><tr class="even"><td class="hours-lib-name plain-links"><a href="http://library.queensu.ca/library/qulhours#view-BHS6">Bracken Health Sciences Library</a>: </td><td class="hours-lib-status">8:30 am - 4:30 pm</td></tr><tr class="odd"><td class="hours-lib-name plain-links"><a href="http://library.queensu.ca/library/qulhours#view-EDU8">Education Library</a>: </td><td class="hours-lib-status">8:00 am - 7:00 pm</td></tr><tr class="even"><td class="hours-lib-name plain-links"><a href="http://library.queensu.ca/library/qulhours#view-ENG10">Engineering &amp; Science Library</a>: </td><td class="hours-lib-status">8:30 am - 4:30 pm</td></tr><tr class="odd"><td class="hours-lib-name plain-links"><a href="http://library.queensu.ca/library/qulhours#view-JSC19">Jordan Special Collections and Music Library</a>: </td><td class="hours-lib-status">8:30 am - 4:30 pm</td></tr><tr class="even"><td class="hours-lib-name plain-links"><a href="http://library.queensu.ca/library/qulhours#view-LAW15">Lederman Law Library</a>: </td><td class="hours-lib-status">8:30 am - 4:30 pm</td></tr><tr class="odd"><td class="hours-lib-name plain-links"><a href="http://library.queensu.ca/library/qulhours#view-QUA30">Queen&apos;s University Archives</a>: </td><td class="hours-lib-status">8:30 am - 4:30 pm</td></tr><tr class="even"><td class="hours-lib-name plain-links"><a href="http://library.queensu.ca/library/qulhours#view-JSS17">Stauffer Library</a>: </td><td class="hours-lib-status">8:30 am - 8:00 pm</td></tr><tr> <td class="hours-lib-status" colspan="2" style="text-align:right;"><a href="http://library.queensu.ca/library/qulhours">Hours  / Location details</a></td></tr>
+</table></div></div>
+	<!-- END hours -->
+	
+	<!-- START: pc gate counter :: People Counter -->
+	<!-- QUL Apr 14 2014 Hidden while investigate loss of camera 1 (QUL Solution 42,353) -->
+	<!-- QUL May 22 2014 Re-enabled widget (QUL Solution 42,353) -->	
+	<!-- QUL May 03 2016 Dissabled widget ::  reported HACK (QUL Solutions 49,293) -->	
+	<!-- <div id="homepage-pc-widget">
+    <style type="text/css">
+.people-counter-widget {
+  width:100%;
+  /*height:34px;*/
+  /*background-color:#D1E0FF;*/
+  background-color: rgb(255, 255, 255);
+  border:0px solid;
+  /*position:relative;*/
+}
+</style>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// call back to the server - hiding org key
+var $flonomics_widget_url = '/people-counter/pc-local-lookup.php' ;
+
+$.ajax({
+	type: 'GET',
+	url: $flonomics_widget_url,
+	success: function(data) {
+		//$pcdata = '<div id="people-counter-results" class="people-counter-widget">'+data+'</div>';
+                $pcdata = data;
+		$('#people-counter-results').html($pcdata);
+	},
+	error: function(xhr, stringStatus, thrownError) {
+		var $pcdata = '<div id="people-counter-results" class="people-counter-widget">' ;
+		$pcdata = $pcdata + "ERROR: xhr.status: " + xhr.status ; 
+		$pcdata = $pcdata + "<br />xhr.statusText" + xhr.statusText ;
+		$pcdata = $pcdata + "<br />xhr.response: " + xhr.getResponseHeader("status");
+		$pcdata = $pcdata + '<br />terror: ' + xhr.responseText; 
+		$pcdata = $pcdata + '</div>';
+		//$('#people-counter-results').html($pcdata);
+		$('#people-counter-results').html("Hello..? Anybody there..?");
+	},
+}); // end ajax post
+
+}) ; // end document ready
+
+$(document).ajaxComplete(function(event, request, settings) {
+          //var $message = "<div><br />Request Complete<br /></div>" ;
+          //$("#people-counter-results").append( $message );
+});
+
+</script>
+
+<div id="people-counter-results" class="people-counter-widget"></div></div> -->
+	<!-- END pc gate counter -->
+	
+<!-- poll links Nov 2012 -->
+
+<!--<div id="newpoll" style="border:solid; border-width:2px ; border-color:#DCDCDC; padding:.5em">
+<h2>Thank you for voting!</h2>
+<p>51% felt all hours for today should be displayed regardless of whether the library is open or closed at the moment.
+</p>-->
+<!--<p>For our next poll: <a href="http://library.queensu.ca/research/polls.htm">Help us decide on the design...</a></p>-->
+<!--</div>-->
+
+
+<h3 style="margin-top:20px;"><a href="/news/">Library News</a></h3>
+
+<style type="text/css">
+      .rss-date {font-size: 9px; font-weight : normal; color: #F60;}
+      </style><ul><li><a href="http://library.queensu.ca/news/?p=6133" title="Launch of new website July 27, 2016">Launch of new website July 27, 2016</a> </li><li><a href="http://library.queensu.ca/news/?p=6130" title="Union Gallery Fall Silent Auction - Call for Submissions">Union Gallery Fall Silent Auction - Call for Submissions</a> </li><li><a href="http://library.queensu.ca/news/?p=6117" title="Web Redesign – New Design">Web Redesign – New Design</a> </li></ul>
+
+<p><a href="/news/archives/category/new-resources/">New Databases</a> &nbsp;|&nbsp; <a href="https://qcat.library.queensu.ca/vwebv/newBooks.cgi">New Books</a> &nbsp;|&nbsp; <a href="http://proxy.queensu.ca/login?url=http://library.queensu.ca/research/queens-only/trials">Trial Databases</a></p>
+</div>
+<!-- END: news -->
+
+</div>
+<!-- END: home sidebox -->
+
+
+
+
+</div>
+<!-- END RIGHT COLUMN -->
+
+
+
+</div>
+<!-- END PAGE CONTENT -->
+
+<!-- BEGIN QUL FOOTER -->
+<div class="span-16 clearfix" >
+&nbsp;<br />
+</div>
+
+<div class="clearboth"><!-- to prevent collapse in IE --></div>
+</div> 
+<!-- END PAGE BODY -->
+
+<div id="queensfooter" class="clearfix">
+        <h3 class="accessibility">Footer Links</h3>
+        <div id="links">
+                <ul>
+                <li><a href="/">Library Home</a></li>
+                <li><a href="http://m.library.queensu.ca">Mobile Site</a></li>
+                <li><a href="/locations-hours">Library Locations</a></li>
+                <li><a href="/library/contact">Contact Us</a></li>
+                <li><a href="/librequest/qul_quest">Website Feedback</a></li>
+                <li><a href="/about">About Us</a></li>   
+                <li><a href="/library/site/search">Site Search</a></li>
+                </ul>
+        </div>
+        <div id="colophon">
+                <p class="copyright">Copyright &#xA9; <a href="http://www.queensu.ca/">Queen's University</a></p>
+                <p class="address">Kingston, Ontario, Canada.</p>
+                
+        </div>
+</div>
+
+</div>
+</div>
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3353292-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Crazy Egg -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0017/7363.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<!-- Hotjar
+<script>
+    (function(f,b){
+        var c;
+        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
+        f._hjSettings={hjid:25048, hjsv:3};
+        c=b.createElement("script");c.async=1;
+        c.src="//static.hotjar.com/c/hotjar-25048.js?sv=3";
+        b.getElementsByTagName("head")[0].appendChild(c); 
+    })(window,document);
+</script>
+-->
+<!-- END QUL FOOTER -->
+
+</body>
+</html>

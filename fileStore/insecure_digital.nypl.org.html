@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NYPL Digital Collections</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"f8d2b656b5","applicationID":"2541497","transactionName":"dl4MQUJaXV4EFBsDAVtUEFRcGlldDAM=","queueTime":0,"applicationTime":22,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQGUlVXGwEFUFBWDgY="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(12),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,-1!==o.indexOf("dev")&&(c.dev=!0),-1!==o.indexOf("nr_dev")&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{l?l-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f?f.apply(this,a(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(13),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,l=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(d){"stack"in d&&(t(5),t(4),"addEventListener"in window&&t(3),s.xhrWrappable&&t(6),u=!0)}c.on("fn-start",function(t,e,n){u&&(l+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&l>0&&(l-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,l],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(14)(a),s=t("gos"),f=XMLHttpRequest,u="addEventListener",l="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=s(n,"nr@wrapped",function(){return c(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&c.inPlace(n,["handleEvent"],"fn-")}}),a.on(l+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],4:[function(t,e,n){var r=t("ee").get("raf"),o=t(14)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],5:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(14)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",l="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+l),a.inPlace(window,[s],s+l),a.inPlace(window,[f,"clearImmediate"],f+l),i.on(s+u,r),i.on(c+u,o)},{}],6:[function(t,e,n){function r(t,e){l.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),l.inPlace(t,v,"fn-",c)}function i(t){y.push(t),h&&(g=-g,x.data=g)}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(3);var f=t("ee"),u=f.get("xhr"),l=t(14)(u),d=NREUM.o,p=d.XHR,h=d.MO,m="readystatechange",v=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var w=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,w),w.prototype=p.prototype,l.inPlace(w.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,x=document.createTextNode(g);new h(a).observe(x,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],7:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;l>r;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(8),f=t("ee"),u=["load","error","abort","timeout"],l=u.length,d=t("id"),p=t(11),h=t(10),m=window.XMLHttpRequest;a.features.xhr=!0,t(6),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||10>p)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;l>a;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],8:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],9:[function(t,e,n){function r(t,e){return function(){o(t,[(new Date).getTime()].concat(a(arguments)),null,e)}}var o=t("handle"),i=t(12),a=t(13);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var c=["setPageViewName","setCustomAttribute","finished","addToTrace","inlineHit"],s=["addPageAction"],f="api-";i(c,function(t,e){newrelic[e]=r(f+e,"api")}),i(s,function(t,e){newrelic[e]=r(f+e)}),e.exports=newrelic,newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),o("err",[t,(new Date).getTime()])}},{}],10:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],11:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],12:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],13:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],14:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(13),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){l([u,"",[r,a,o],c])}f(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw f(e+"err",[r,a,d],c),d}finally{f(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<n.length;s++)c=n[s],a=t[c],r(a)||(t[c]=e(a,f?c+o:o,i,c))}function f(e,n,r){if(!s){s=!0;try{t.emit(e,n,r)}catch(o){l([o,e,n,r])}s=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?c(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=d(n),c=a.length,s=0;c>s;s++)a[s].apply(i,r);var u=f[v[n]];return u&&u.push([y,n,r,i]),i}function l(t,e){m[t]=d(t).concat(e)}function d(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){s(t,function(t,n){e=e||"feature",v[n]=e,e in f||(f[e]=[])})}var m={},v={},y={on:l,emit:n,get:p,listeners:d,context:e,buffer:h};return y}function i(){return new r}var a="nr@context",c=t("gos"),s=t(12),f={},u={},l=e.exports=o();l.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=w.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(v,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;w.proto=n?"https://":"http://",c("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=w.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(12),f=window,u=f.document,l="addEventListener",d="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(9);var m=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-952.min.js"},y=p&&h&&h[l]&&!/CriOS/.test(navigator.userAgent),w=e.exports={offset:a(),origin:m,features:{},xhrWrappable:y};u[l]?(u[l]("DOMContentLoaded",i,!1),f[l]("load",r,!1)):(u[d]("onreadystatechange",o),f[d]("onload",r)),c("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,7]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-1420324-116']);
+  _gaq.push(['_setDomainName', 'nypl.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  <link href="/assets/application-27d9f48e526adb8319011be679bf151a.css" media="all" rel="stylesheet" type="text/css" />
+  <script src="/assets/application-3c0e6d511273596a47fa171e6f8f85f3.js" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="hjGcNcvOxGSXqKS9gI5j9qsM++7uf8z19pV1hZ80uTA=" name="csrf-token" />
+
+      <script src="/assets/home-f23f3932b58bdc1ff6f0e3569a3df3ec.js" type="text/javascript"></script>
+    <link href="/assets/home-848a1687a25174ef73025133098cef04.css" media="all" rel="stylesheet" type="text/css" />
+
+    <meta name="google-site-verification" content="_shbOK1otHA_eFNFgJsOwITZrWQwRg4wr8nmrJPNVDM" />
+    <meta property="og:image" content="http://digitalcollections.nypl.org/featured_items/ps_mss_831.jpg" />
+    <meta property="og:title" content="NYPL Digital Collections" />
+    <meta property="og:description" content="Explore hundreds of thousands of digital items from The New York Public Library." />
+    <meta property="og:url" content="http://digitalcollections.nypl.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NYPL Digital Collections"/>
+
+    <link rel="image_src" href="http://digitalcollections.nypl.org/featured_items/ps_mss_831.jpg" />
+
+    <meta name="twitter:url" content="http://digitalcollections.nypl.org/">
+    <meta name="twitter:title" content="NYPL Digital Collections">
+    <meta name="twitter:description" content="Explore hundreds of thousands of digital items from The New York Public Library.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="http://digitalcollections.nypl.org/featured_items/ps_mss_831.jpg">
+    <meta name="twitter:creator" content="@nypl">
+    <meta name="twitter:site" content="@nypl">
+
+
+
+</head>
+<body class="general home">
+
+
+
+<div id="container">
+
+
+
+
+  <noscript>
+  <style type="text/css">#home-wrapper { background-image: url(http://digitalcollections.nypl.org/featured_items/ps_mss_831.jpg); }</style>
+  </noscript>
+
+  <script type="text/javascript">
+  var bg_images = [{"title":"Penn Station, Interior, Manhattan.","name":"482603.jpg","collection_id":"changing-new-york","collection_name":"Changing New York","target_url":"/items/item_uuid/b9660070-c60c-012f-111b-58d385a7bc34"},{"title":"Watuppa, from water front, Brooklyn, Manhattan.","name":"482815.jpg","collection_id":"changing-new-york","collection_name":"Changing New York","target_url":"/items/item_uuid/c71b4f40-c60c-012f-56c3-58d385a7bc34"},{"title":"Single-horned Rhinoceros.","name":"T000725.jpg","collection_id":"zoological-lectures-delivered-at-the-royal-institution-in-the-years-1806","collection_name":"Zoological lectures delivered at the Royal institution in the years 1806 and 1807, by George Shaw.","target_url":"/items/item_uuid/96d0b7e0-c6b7-012f-c958-58d385a7bc34"},{"title":"An illustration of writing brushes.","name":"1221632.jpg","collection_id":"kokushi-daijiten","collection_name":"Kokushi daijiten","target_url":"/items/item_uuid/07caacb0-c6cc-012f-af8d-58d385a7bc34"},{"title":"Portales of Market","name":"5164274.jpg","collection_id":"cabinet-card-views-of-mexico","collection_name":"Cabinet card views of Mexico","target_url":"/items/item_uuid/88c24e80-fbec-0131-90cb-58d385a7bbd0"},{"title":"Plan of the city of New-York : the greater part from actual survey made expressly for the purpose (the rest from authentic documents)","name":"434110.jpg","collection_id":"maps-of-new-york-city-and-state","collection_name":"Maps of New York City and State","target_url":"/items/item_uuid/eff10eb0-c5aa-012f-eace-58d385a7bc34"},{"title":"Latona Giving Birth to Apollo and Diana on the Island of Delos","name":"5273165.jpg","collection_id":"diana-scultori-engravings","collection_name":"Diana Scultori: engravings","target_url":"/items/item_uuid/3a2cced0-12ca-0133-7a6d-58d385a7bbd0"},{"title":"Ward out at third, opening the season in new Yank[ee] Stadium.","name":"405476.jpg","collection_id":"the-pageant-of-america-collection","collection_name":"\"The Pageant of America\" Collection","target_url":"/items/item_uuid/ef8fb510-c619-012f-c578-58d385a7bc34"},{"title":"Panorama of the Borough of the Bronx issued by the Bronx Home News.","name":"5082781.jpg","collection_id":"maps-of-new-york-city-and-state","collection_name":"Maps of New York City and State","target_url":"/items/item_uuid/9be39330-f948-0130-6115-58d385a7b928"},{"title":"Immigrants seated on long benches, Main Hall, U.S. Immigration Station.","name":"417074.jpg","collection_id":"photographs-of-ellis-island-1902-1913","collection_name":"Photographs of Ellis Island, 1902-1913.","target_url":"/items/item_uuid/39da9ad0-c6da-012f-44dc-58d385a7bc34"},{"title":"[Photograph of a drawing of the Statue of Liberty in Upper New York Bay.]","name":"1161044.jpg","collection_id":"album-de-la-construction-de-la-statue-de-la-libert","collection_name":"Album de la construction de la Statue de la Liberté.","target_url":"/items/item_uuid/0d815b10-c62b-012f-fe1b-58d385a7bc34"},{"title":"Pine Street - Pearl Street (looking northwest)","name":"1558053.jpg","collection_id":"collection-of-photographs-of-new-york-city","collection_name":"Collection of photographs of New York City","target_url":"/items/item_uuid/548a4900-c5ed-012f-8fc5-58d385a7bc34"},{"title":"Cygne sauvage","name":"105196.jpg","collection_id":"animal-dans-la-dcoration","collection_name":"animal dans la décoration","target_url":"/items/item_uuid/82f8bd00-c6d8-012f-fc66-3c075448cc4b"},{"title":"Panorama du Lauberhorn","name":"5164631.jpg","collection_id":"lake-como-to-stelvio-pass-1895-alps","collection_name":"Lake Como to Stelvio Pass, 1895 (Alps)","target_url":"/items/item_uuid/3f867810-fbed-0131-38cf-58d385a7bbd0"},{"title":"Scene 6a","name":"psnypl_spn_610.jpg","collection_id":"genji-monogatari-emaki","collection_name":"Genji Monogatari Emaki","target_url":"/items/item_uuid/da8ea570-c6df-012f-34c0-58d385a7bc34"},{"title":"A plan of the city of New-York, reduced from actual survey","name":"53926.jpg","collection_id":"i-n-phelps-stokes-collection-of-american-historical-prints","collection_name":"I. N. Phelps Stokes Collection of American Historical Prints.","target_url":"/items/item_uuid/3949a160-c5ed-012f-fd0b-58d385a7bc34"},{"title":"Great Sphinx of Gizeh, the Largest Royal Potrait ever Hewn, Egypt.","name":"1657176.jpg","collection_id":"stereograph-collection","collection_name":"Stereograph collection.","target_url":"/items/item_uuid/6bdb7bc0-c5eb-012f-a788-58d385a7bc34"},{"title":"Sadie Pfeifer, 48 inches tall..., November 1908","name":"464341.jpg","collection_id":"series-of-photographic-documents-of-social-conditions-1905-1939","collection_name":"Series of photographic documents of social conditions, 1905-1939","target_url":"/items/item_uuid/dc7ab8f0-c608-012f-5550-58d385a7bc34"},{"title":"Momoyogusa = Flowers of a Hundred Generations.","name":"1269908.jpg","collection_id":"momoyogusa-flowers-of-a-hundred-generations","collection_name":"Momoyogusa = Flowers of a Hundred Generations.","target_url":"/items/item_uuid/872cb400-c6d0-012f-da3f-58d385a7bc34"},{"title":"Harlem River Bridges","name":"5179778.jpg","collection_id":"works-progress-administration-wpa-art","collection_name":"Works Progress Administration (WPA) Art","target_url":"/items/item_uuid/01460d00-d569-0131-7317-58d385a7bbd0"},{"title":"[Unidentified woman reading a book.]","name":"1536861.jpg","collection_id":"schwimmer-lloyd-collection-1852-1980-bulk-1890-1960","collection_name":"Schwimmer-Lloyd collection, 1852-1980, bulk (1890-1960)","target_url":"/items/item_uuid/b18de770-c5dc-012f-bcd1-58d385a7bc34"},{"title":"A raisin in the sun [1959], original cast. ","name":"5013067.jpg","collection_id":"friedman-abeles-photograph-collection","collection_name":"Friedman-Abeles photograph collection","target_url":"/items/item_uuid/66373400-d439-012f-62f2-58d385a7bbd0"},{"title":"Head of the Statue of Liberty on display in a park in Paris.","name":"1161045.jpg","collection_id":"album-de-la-construction-de-la-statue-de-la-libert","collection_name":"Album de la construction de la Statue de la Liberté.","target_url":"/items/item_uuid/10ac5050-c62b-012f-54a4-58d385a7bc34"},{"title":"Roadside sandwich shop. Ponchatoula, Louisiana","name":"5164604.jpg","collection_id":"farm-security-administration-photographs","collection_name":"Farm Security Administration Photographs","target_url":"/items/item_uuid/33d788c0-ffc2-0131-e551-58d385a7b928"},{"title":"Chordaria flagelliformis.","name":"419720.jpg","collection_id":"photographs-of-british-algae-cyanotype-impressions","collection_name":"Photographs of British algae: cyanotype impressions","target_url":"/items/item_uuid/3b9df360-c612-012f-33f8-58d385a7bc34"},{"title":"View of High Bridge and the Harlem River.]","name":"54795.jpg","collection_id":"i-n-phelps-stokes-collection-of-american-historical-prints","collection_name":"I. N. Phelps Stokes Collection of American Historical Prints.","target_url":"/items/item_uuid/cfd3ac90-c5ed-012f-4b69-58d385a7bc34"},{"title":"Lighthouse","name":"5180605.jpg","collection_id":"works-progress-administration-wpa-art","collection_name":"Works Progress Administration (WPA) Art","target_url":"/items/item_uuid/f91aa2d0-d568-0131-c8a3-58d385a7bbd0"},{"title":"[Student pages with the banner 'International Woman Suffrage Alliance' at the Congress, Stockholm 1911.]","name":"1536497.jpg","collection_id":"schwimmer-lloyd-collection-1852-1980-bulk-1890-1960","collection_name":"Schwimmer-Lloyd collection, 1852-1980, bulk (1890-1960)","target_url":"/items/item_uuid/6774d360-c5dc-012f-724f-58d385a7bc34"},{"title":"Isadora Duncan with students by sea","name":"psnypl_dan_1757.jpg","collection_id":"jerome-robbins-dance-division-photograph-files","collection_name":"Jerome Robbins Dance Division Photograph files","target_url":"/items/item_uuid/b574de10-c5fd-012f-b16c-58d385a7bc34"},{"title":"Automat, 977 Eighth Avenue, Manhattan.","name":"482752.jpg","collection_id":"changing-new-york","collection_name":"Changing New York","target_url":"/items/item_uuid/97bb0a30-c60c-012f-72f0-58d385a7bc34"},{"title":"Atop Empire State- in construction; Chrysler Bldg & [Daily] News in middle foreground.","name":"79849.jpg","collection_id":"photographs-of-the-empire-state-building-under-construction","collection_name":"Photographs of the Empire State Building under construction.","target_url":"/items/item_uuid/663b39d0-c6db-012f-8e1a-58d385a7bc34"},{"title":"Atterrissage d'un ballon libre. Estampe de Pierre Gatier.","name":"1693502.jpg","collection_id":"aronautique-des-origines-1922","collection_name":"aéronautique des origines à 1922","target_url":"/items/item_uuid/9f7fa290-c6c7-012f-6e22-58d385a7bc34"},{"title":"La lyre, le cygne, le lezard, le renard.","name":"1108684.jpg","collection_id":"atlas-celeste-de-flamsteed-publie-en-1776","collection_name":"Atlas celeste de Flamsteed, publie en 1776","target_url":"/items/item_uuid/941c7be0-c6c1-012f-83d8-58d385a7bc34"},{"title":"[Da un manoscritto trovato unitamente a una mummia.]","name":"1549431.jpg","collection_id":"atlante-del-basso-ed-alto-egitto","collection_name":"Atlante del basso ed alto Egitto","target_url":"/items/item_uuid/fc094b80-c6b9-012f-db9b-58d385a7bc34"},{"title":"Canyon de Chelly (pronounced De Shay).","name":"433223.jpg","collection_id":"indian-photographs","collection_name":"Indian photographs","target_url":"/items/item_uuid/3c141c60-c6cf-012f-a147-58d385a7bc34"},{"title":"Messenger boy","name":"79781.jpg","collection_id":"street-views-of-new-york-city","collection_name":"Street views of New York City.","target_url":"/items/item_uuid/8e8dc6a0-c6eb-012f-7a58-58d385a7bc34"},{"title":"Tower Falls and Sulphur Mountain, Yellowstone National Park","name":"5150304.jpg","collection_id":"yellowstone-national-park-and-the-mountain-regions-of-portions-of-idaho-nevada","collection_name":"Yellowstone National Park, and the mountain regions of portions of Idaho, Nevada, Colorado and Utah","target_url":"/items/item_uuid/ff0e1fb0-f66d-0131-062f-58d385a7b928"},{"title":"Mike Nichols, Elaine May, James Naughton and Swoosie Kurtz in the New Haven stage production Who's Afraid of Virginia Woolfe?","name":"5086214.jpg","collection_id":"martha-swope-photographs","collection_name":"Martha Swope photographs","target_url":"/items/item_uuid/33268540-69d8-0131-471b-58d385a7bbd0"},{"title":"Oiseaux et glycines, tenture. Lézards et lierre, bordure.","name":"105224.jpg","collection_id":"animal-dans-la-dcoration","collection_name":"animal dans la décoration","target_url":"/items/item_uuid/ee61ff20-c6d8-012f-7320-3c075448cc4b"},{"title":"Flood refugee camp, Forrest City, Ark.","name":"1260009.jpg","collection_id":"farm-security-administration-collection","collection_name":"Farm Security Administration Collection.","target_url":"/items/item_uuid/88345c90-c612-012f-4d86-58d385a7bc34"},{"title":"Sepia photograph of a Library Lion in Potter's studio in Connecticut.","name":"ps_mss_831.jpg","collection_id":"edward-clark-potter-papers-1866-1890-1923","collection_name":"Edward Clark Potter papers, 1866, 1890-1923.","target_url":"/items/item_uuid/e8e0ede0-c625-012f-2e2e-58d385a7bc34"},{"title":"Greetings from Staten Island","name":"105180.jpg","collection_id":"staten-island-post-cards","collection_name":"Staten Island post cards","target_url":"/items/item_uuid/6265a5c0-c5ef-012f-687c-58d385a7bc34"},{"title":"Document [fair copy of the Declaration of Independence]","name":"psnypl_mss_1228.jpg","collection_id":"thomas-addis-emmet-collection-1483-1876-bulk-1700-1800","collection_name":"Thomas Addis Emmet collection, 1483-1876, bulk (1700-1800)","target_url":"/items/item_uuid/cc022cf0-c52e-012f-bf39-58d385a7bc34"},{"title":"Hell Gate Bridge, inverted, Astoria, Queens.","name":"482599.jpg","collection_id":"changing-new-york","collection_name":"Changing New York","target_url":"/items/item_uuid/ed1039f0-c60c-012f-6c64-58d385a7bc34"},{"title":"Scene  #19. Building the world of tomorrow to shatter the isolations.","name":"nypl_mss_901.jpg","collection_id":"new-york-worlds-fair-1939-1940-records","collection_name":"New York World's Fair 1939-1940 records","target_url":"/items/item_uuid/892b0c10-c531-012f-3fec-58d385a7bc34"},{"title":"First, to me, come the People","name":"M_1260849.jpg","collection_id":"oscar-lion-collection","collection_name":"Oscar Lion Collection","target_url":"/items/item_uuid/6928acc0-c5d9-012f-ef23-58d385a7bc34"},{"title":"[Flying raven] Ex libris.","name":"483644.jpg","collection_id":"corbeau-the-raven","collection_name":"corbeau (The raven).","target_url":"/items/item_uuid/24395600-c6b9-012f-11b9-58d385a7bc34"},{"title":"Scene in Omar, West Virginia","name":"5339958.jpg","collection_id":"farm-security-administration-photographs","collection_name":"Farm Security Administration Photographs","target_url":"/items/item_uuid/d0836dc0-00a2-0133-aea7-58d385a7bbd0"},{"title":"Isothermal chart, or, View of climates & productions","name":"465012.jpg","collection_id":"maps-of-the-world","collection_name":"Maps of the World","target_url":"/items/item_uuid/69e66b20-c6b6-012f-ddc1-58d385a7bc34"},{"title":"Scrap iron","name":"ps_prn_cd31_456.jpg","collection_id":"united-states-work-projects-administration-wpa-collection-of-prints","collection_name":"United States Work Projects Administration (WPA) collection of prints","target_url":"/items/item_uuid/28ab3b40-c6c9-012f-37a2-3c075448cc4b"},{"title":"To His Excellency Sr. Henry Moore, Bart., captain general and governour in chief in & over the province of New York & the territories depending thereon in America, chancellor & vice admiral of the same, this plan of the city of New York is most humbly ins","name":"434408.jpg","collection_id":"lawrence-h-slaughter-collection-of-english-maps-charts-globes-books-and-atlases","collection_name":"Lawrence H. Slaughter Collection of English maps, charts, globes, books and atlases","target_url":"/items/item_uuid/8b2b3160-c5d5-012f-d95c-58d385a7bc34"},{"title":"Dixon crossing Niagara below the Great Cantilever Bridge, U.S.A.","name":"G91F075_038F.jpg","collection_id":"robert-n-dennis-collection-of-stereoscopic-views","collection_name":"Robert N. Dennis collection of stereoscopic views","target_url":"/items/item_uuid/b01d0aa0-c55d-012f-3667-58d385a7bc34"},{"title":"Snake charmers, 3 men and 1 woman","name":"5104191.jpg","collection_id":"indian-coloured-drawings-a-collection-of-177-original-paintings-on-talc-etc","collection_name":"Indian coloured drawings : a collection of 177 original paintings on \"talc,\" etc., with 17 engravings, illustrating costume, vehicles and trades in India.","target_url":"/items/item_uuid/ecf8af10-4bc0-0131-378c-58d385a7b928"},{"title":"City Hall Subway Station, New York.","name":"836151.jpg","collection_id":"mid-manhattan-picture-collection","collection_name":"Mid-Manhattan Picture Collection","target_url":"/items/item_uuid/50a8a9f0-c560-012f-9b64-58d385a7bc34"},{"title":"Small Town Harlem","name":"5179798.jpg","collection_id":"works-progress-administration-wpa-art","collection_name":"Works Progress Administration (WPA) Art","target_url":"/items/item_uuid/22ad0c00-fbcf-0131-f553-58d385a7bbd0"},{"title":"An oasis in the Badlands","name":"433221.jpg","collection_id":"indian-photographs","collection_name":"Indian photographs","target_url":"/items/item_uuid/3b2a61a0-c6cf-012f-b70d-58d385a7bc34"},{"title":"Bronx: 161st Street - River Avenue: Yankee Stadium","name":"700179F.jpg","collection_id":"photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2","collection_name":"Photographic views of New York City, 1870's-1970's, from the collections of the New York Public Library","target_url":"/items/item_uuid/e6ea23e0-c52e-012f-d0be-58d385a7bc34"},{"title":"Aigles.","name":"105226.jpg","collection_id":"animal-dans-la-dcoration","collection_name":"animal dans la décoration","target_url":"/items/item_uuid/f9e2e780-c6d8-012f-264e-3c075448cc4b"},{"title":"Closing time","name":"ps_prn_cd32_461.jpg","collection_id":"united-states-work-projects-administration-wpa-collection-of-prints","collection_name":"United States Work Projects Administration (WPA) collection of prints","target_url":"/items/item_uuid/435d6c40-c6c9-012f-85a8-3c075448cc4b"},{"title":"Palisades.","name":"54528.jpg","collection_id":"i-n-phelps-stokes-collection-of-american-historical-prints","collection_name":"I. N. Phelps Stokes Collection of American Historical Prints.","target_url":"/items/item_uuid/880ecc10-c5ed-012f-454c-58d385a7bc34"},{"title":"Car and homemade trailer on U.S. 101 near King City, California. Man and wife middle-aged, from Wisconsin. \"Old Man Depression sent us out on the road ... You don't know anything about how many people are living in trailers till you 'hit' Florida.","name":"4000175.jpg","collection_id":"farm-security-administration-photographs","collection_name":"Farm Security Administration Photographs","target_url":"/items/item_uuid/02f9f0a0-c5da-012f-f460-58d385a7bc34"},{"title":"Brooklyn - 112 Schermerhorn Street","name":"1557804.jpg","collection_id":"collection-of-photographs-of-new-york-city","collection_name":"Collection of photographs of New York City","target_url":"/items/item_uuid/731b44a0-c5ec-012f-636c-58d385a7bc34"}];
+  var bg_image = bg_images[Math.floor(Math.random() * bg_images.length)];
+  document.write('<style type="text/css">#home-wrapper { background-image: url(/featured_items/' + bg_image.name + '); }</style>');
+  </script>
+
+  <div id="home-wrapper">
+    <div class="gradient-overlay"></div>
+    <div id="home-content" class="content no-sticky">
+      <div class="dc-logo-wrapper inverse">
+        <a href="http://www.nypl.org/" class="nypl-logo">
+          <div class="nypl-logo-callout">
+            Click to visit the main New York Public Library Homepage
+          </div>
+</a>
+        <a href="/" class="dc-logo" title="The New York Public Library Digital Collections">
+          <h4>The New York Public Library</h4>
+          <h2>Digital Collections</h2>
+</a>      </div>
+      <p class="lead">
+        Explore 680,695
+         items digitized from <a href="http://www.nypl.org/" target="_blank">The New York Public Library</a>'s collections.
+      </p>
+      <p>This site is a living database with new materials added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.</p>
+
+      <div id="subhead-wrapper">
+  <div id="subhead" class="no-sticky inverse">
+
+    <div class="not-mobile">
+
+      <div class="dc-logo-wrapper inverse">
+        <a href="http://www.nypl.org/" class="nypl-logo">
+          <div class="nypl-logo-callout">
+            Click to visit the main New York Public Library Homepage
+          </div>
+</a>
+        <a href="/" class="dc-logo" title="The New York Public Library Digital Collections Homepage">
+          <h4>The New York Public Library</h4>
+          <h2>Digital Collections</h2>
+</a>      </div>
+
+      <a href="/about" class="info-button" title="About Digital Collections">
+
+      </a>
+
+      <form accept-charset="UTF-8" action="/search/index" class="controls" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+        <div class="search-input">
+          <input autocomplete="off" class="textfield frm-search-textfield" id="frm-search-textfield" name="keywords" placeholder="Search keyword(s)" type="text" />
+          <button type="submit" id="frm-search-button" class="button"></button>
+        </div>
+
+        <a href="#" class="browse-button">Browse </a>
+
+        <div class="search-overlay overlay">
+          <div class="overlay-tabs">
+            <a class="overlay-tab" data-checkbox=".filters_rights">Search only public domain materials</a>
+          </div>
+        </div>
+
+        <div class="browse-overlay overlay">
+          <ul class="browse-list">
+            <li><a href="/search/index?utf8=%E2%9C%93&amp;keywords=">Items</a></li>
+            <li><a href="/collections">Collections</a></li>
+            <li><a href="/divisions">Divisions</a></li>
+          </ul>
+        </div>
+
+        <div style="display: none"><input class="filters_rights" id="filters_rights" name="filters[rights]" type="checkbox" value="pd" /></div>
+
+</form>
+    </div>
+
+    <div class="mobile">
+      <div class="dc-logo-wrapper inverse">
+        <a href="/" class="nypl-logo">
+</a>      </div>
+      <div class="buttons">
+        <a href="#mobile-search" class="button content-button initial" id="mobile-search-button">Search</a>
+        <a href="#mobile-browse" class="button content-button">Browse</a>
+        <a href="#mobile-about" class="button content-button">About</a>
+      </div>
+      <div class="buttons-content">
+        <div id="mobile-search" class="button-content initial">
+
+          <form accept-charset="UTF-8" action="/search/index" class="controls" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+            <div class="search-input">
+              <input autocomplete="off" class="textfield frm-search-textfield" id="frm-search-textfield" name="keywords" placeholder="Search keyword(s)" type="text" />
+              <button type="submit" id="frm-search-button" class="button"></button>
+            </div>
+
+            <div class="search-overlay overlay">
+              <div class="overlay-tabs">
+                <a class="overlay-tab" data-checkbox=".filters_rights">Search only public domain materials</a>
+              </div>
+            </div>
+
+            <div style="display: none"><input class="filters_rights" id="filters_rights" name="filters[rights]" type="checkbox" value="pd" /></div>
+
+</form>
+        </div>
+        <div id="mobile-browse" class="button-content">
+          <div class="buttons">
+            <a href="/search/index?utf8=%E2%9C%93&amp;keywords=" class="button">Items</a>
+            <a href="/collections" class="button">Collections</a>
+            <a href="/divisions" class="button">Divisions</a>
+          </div>
+        </div>
+        <div id="mobile-about" class="button-content">
+          <div class="buttons buttons-small">
+            <a href="/about#about" class="button">Digital Collections</a>
+            <a href="/about#use" class="button">Using Images</a>
+            <a href="/about#data" class="button">Using Data</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+      <div class="caption secondary">
+        Featured Collections:
+        <ul>
+          <li><a href="/dancevideo">Jerome Robbins Dance Division Moving Image Archive</a></li>
+          <li><a href="/american-jewish-committee">American Jewish Committee Oral History Collection</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="featured-description">
+      <script type="text/javascript">
+        document.write([
+          'Featured: ',
+          '<a id="featured-link" title="' + bg_image.title + '" href="' + bg_image.target_url + '">' + bg_image.title + '</a>',
+          ', ',
+          '<a title="' + bg_image.collection_name + '" href="/collections/' + bg_image.collection_id + '">' + bg_image.collection_name + '</a>'
+        ].join("\n"));
+      </script>
+
+    </div>
+  </div>
+
+<div id="home-lanes-main" class="home-lanes">
+
+    <div class="lane item-lane inverse">
+  <h4>Recently Digitized Items <a href="/search/index?"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/items/1c6840d0-321d-0133-533b-58d385a7b928?featured=true" class="lane-item" title="John E. Wool">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5548786&amp;t=t" />
+        </div>
+        <p class="caption">John E. Wool</p>
+</a>      <a href="/items/053a54f0-2260-0133-32f2-58d385a7b928?featured=true" class="lane-item" title="John E. Wool. Brigadier-General">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5548775&amp;t=t" />
+        </div>
+        <p class="caption">John E. Wool. Brigadier-General</p>
+</a>      <a href="/items/020c7ce0-2273-0133-676d-58d385a7b928?featured=true" class="lane-item" title="Maj. Gen. John E. Wool">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5548789&amp;t=t" />
+        </div>
+        <p class="caption">Maj. Gen. John E. Wool</p>
+</a>      <a href="/items/e1ed1770-3217-0133-e35a-58d385a7b928?featured=true" class="lane-item" title="W. Woodwille, médin. de L&#x27;Hôpital des Inoculés à Londres....">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5548763&amp;t=t" />
+        </div>
+        <p class="caption">W. Woodwille, médin. de L&#x27;Hôpital des Inoculés à Londres....</p>
+</a>      <a href="/items/047db870-21a6-0133-f278-58d385a7b928?featured=true" class="lane-item" title="Timothy L. Woodruff, Lieutenant Governor of the State of New York. Timothy L. Woodruff, A.M. Yale, &#x27;79.">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5548752&amp;t=t" />
+        </div>
+        <p class="caption">Timothy L. Woodruff, Lieutenant Governor of the State of New York. Timothy L. Woodruff, A.M. Yale, &#x27;79.</p>
+</a>      <a href="/items/04c638a0-1457-0133-d80a-58d385a7b928?featured=true" class="lane-item" title="The repudiation of Aminadab Sleek...">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5532853&amp;t=t" />
+        </div>
+        <p class="caption">The repudiation of Aminadab Sleek...</p>
+</a>      <a href="/items/04db74f0-12e3-0133-9695-58d385a7bbd0?featured=true" class="lane-item" title="Wolsey">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5532801&amp;t=t" />
+        </div>
+        <p class="caption">Wolsey</p>
+</a>      <a href="/items/014e72a0-095f-0133-954d-58d385a7b928?featured=true" class="lane-item" title="General Wolfe 1727-1759">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5532669&amp;t=t" />
+        </div>
+        <p class="caption">General Wolfe 1727-1759</p>
+</a>      <a href="/items/02821ac0-0e15-0133-555e-58d385a7b928?featured=true" class="lane-item" title="Portrait by Allan Ramsay by courtesy of Messrs. T. Agnew and Sons">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5532701&amp;t=t" />
+        </div>
+        <p class="caption">Portrait by Allan Ramsay by courtesy of Messrs. T. Agnew and Sons</p>
+</a>      <a href="/items/042e2120-0943-0133-4217-58d385a7bbd0?featured=true" class="lane-item" title="Catherine [i.e. Catharine] Lorillard Wolfe.--From a photograph by Kurtz.--[See page 278]">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5532657&amp;t=t" />
+        </div>
+        <p class="caption">Catherine [i.e. Catharine] Lorillard Wolfe.--From a photograph by Kurtz.--[See page 278]</p>
+</a>      <a href="/items/046662d0-0942-0133-2b2f-58d385a7bbd0?featured=true" class="lane-item" title="Revd. Charles Wolfe, M.A. From a drawing by I.I. Russell">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5532659&amp;t=t" />
+        </div>
+        <p class="caption">Revd. Charles Wolfe, M.A. From a drawing by I.I. Russell</p>
+</a>      <a href="/items/057e7330-f1d3-0132-e2d5-58d385a7b928?featured=true" class="lane-item" title="George Withers. From a scarce print by Payne prefixed to his Emblems">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5526462&amp;t=t" />
+        </div>
+        <p class="caption">George Withers. From a scarce print by Payne prefixed to his Emblems</p>
+</a>      <a href="/items/02798cd0-e79b-0132-8464-58d385a7b928?featured=true" class="lane-item" title="John Winthrop">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5526382&amp;t=t" />
+        </div>
+        <p class="caption">John Winthrop</p>
+</a>      <a href="/items/05f2c9e0-e784-0132-e2aa-58d385a7bbd0?featured=true" class="lane-item" title="Wm. Winterbotham">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5526368&amp;t=t" />
+        </div>
+        <p class="caption">Wm. Winterbotham</p>
+</a>      <a href="/items/0228ceb0-e6d6-0132-11fd-58d385a7bbd0?featured=true" class="lane-item" title="Revd. Richd. Winter, B.D. late of London">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5526360&amp;t=t" />
+        </div>
+        <p class="caption">Revd. Richd. Winter, B.D. late of London</p>
+</a>      <a href="/items/0505a920-d7f3-0132-ffa1-58d385a7bbd0?featured=true" class="lane-item" title="Wm. Paulet, 1st Marquis of Winchester. Servant to Henry 7th &amp; for 30 years treasurer to Henry 8th, Edwd. 6th Queen Mary &amp; Queen Elizabeth. Obit 1572. Et 97. From an ancient painting in King&#x27;s College, Cambridge">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5526291&amp;t=t" />
+        </div>
+        <p class="caption">Wm. Paulet, 1st Marquis of Winchester. Servant to Henry 7th &amp; for 30 years treasurer to Henry 8th, Edwd. 6th Queen Mary &amp; Queen Elizabeth. Obit 1572. Et 97. From an ancient painting in King&#x27;s College, Cambridge</p>
+</a>      <a href="/items/05c925c0-c9b9-0132-3087-58d385a7b928?featured=true" class="lane-item" title="Dr. William R.A. Wilson, author of &quot;A rose of Normandy.&quot; Photograph by Rockwood">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5248894&amp;t=t" />
+        </div>
+        <p class="caption">Dr. William R.A. Wilson, author of &quot;A rose of Normandy.&quot; Photograph by Rockwood</p>
+</a>      <a href="/items/0298b680-c515-0132-9b4e-58d385a7b928?featured=true" class="lane-item" title="Dr. Grove Herrick Wilson">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5248818&amp;t=t" />
+        </div>
+        <p class="caption">Dr. Grove Herrick Wilson</p>
+</a>      <a href="/items/03014a40-beb3-0132-9152-58d385a7bbd0?featured=true" class="lane-item" title="N.P. Willis">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5248784&amp;t=t" />
+        </div>
+        <p class="caption">N.P. Willis</p>
+</a>      <a href="/items/5e264640-d4ad-0132-401c-58d385a7b928?featured=true" class="lane-item" title="Chas. Willing [signature]. Mayor of Philadelphia. 1748 &amp; 1754">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5248768&amp;t=t" />
+        </div>
+        <p class="caption">Chas. Willing [signature]. Mayor of Philadelphia. 1748 &amp; 1754</p>
+</a>      <a href="/items/a319d790-e84e-0132-b38a-58d385a7b928?featured=true" class="lane-item" title="Landmark to religious liberty in America--Historic old Williams House now standing in Roger Williams Park, in Providence, Rhode Island, where the plantation was founded in 1636 which established freedom of conscience and speech on the western continent">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5248975&amp;t=t" />
+        </div>
+        <p class="caption">Landmark to religious liberty in America--Historic old Williams House now standing in Roger Williams Park, in Providence, Rhode Island, where the plantation was founded in 1636 which established freedom of conscience and speech on the western continent</p>
+</a>      <a href="/items/03730920-b556-0132-6e99-58d385a7bbd0?featured=true" class="lane-item" title="Kaiser Wilhem II. Mit Genehmigung des kgl preuss. Hofphotographischen W. Niederastroth (Selle u. Kuntze), Potsdam">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5237893&amp;t=t" />
+        </div>
+        <p class="caption">Kaiser Wilhem II. Mit Genehmigung des kgl preuss. Hofphotographischen W. Niederastroth (Selle u. Kuntze), Potsdam</p>
+</a>      <a href="/items/0620ced0-a41c-0132-99b6-58d385a7bbd0?featured=true" class="lane-item" title="J.L. Williams [signature]">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5248690&amp;t=t" />
+        </div>
+        <p class="caption">J.L. Williams [signature]</p>
+</a>      <a href="/items/01107660-a0cd-0132-ba31-58d385a7bbd0?featured=true" class="lane-item" title="Archibald Williams [signature] U.S. attorney for Illinois">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5248667&amp;t=t" />
+        </div>
+        <p class="caption">Archibald Williams [signature] U.S. attorney for Illinois</p>
+</a>      <a href="/items/04af25d0-83e5-0132-93ee-58d385a7b928?featured=true" class="lane-item" title="Emperor William II. of Germany">
+        <div class="lane-item-image">
+          <img alt="Index" src="http://images.nypl.org/index.php?id=5237752&amp;t=t" />
+        </div>
+        <p class="caption">Emperor William II. of Germany</p>
+</a>  </div>   
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>      
+</div>
+
+
+  <div id="collections" class="collections">
+
+    <div class="lane inverse">
+  <h4>Recently Digitized Collections </h4>
+  <div class="lane-items">
+      <a href="/collections/birds-of-america-from-drawings-made-in-the-united-states-and-their-territories" class="lane-item" title="birds of America, from drawings made in the United States and their territories. By John James Audubon">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=108275&amp;t=r" />
+        </div>
+        <h5>birds of America, from drawings made in the United States and their territories. By John James Audubon</h5>
+          <span class="item-count">506 items</span>
+</a>      <a href="/collections/album-of-photographs-of-japan" class="lane-item" title="[Album of photographs of Japan.]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=114278&amp;t=r" />
+        </div>
+        <h5>[Album of photographs of Japan.]</h5>
+          <span class="item-count">67 items</span>
+</a>      <a href="/collections/sophia-peabody-hawthorne-collection-of-papers-1775-1949-bulk-1822-1871" class="lane-item" title="Sophia Peabody Hawthorne collection of papers, 1775-1949 bulk (1822-1871).">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5061734&amp;t=r" />
+        </div>
+        <h5>Sophia Peabody Hawthorne collection of papers, 1775-1949 bulk (1822-1871).</h5>
+          <span class="item-count">1,560 items</span>
+</a>      <a href="/collections/photographs-of-the-catskill-water-supply-system-in-process-of-construction" class="lane-item" title="Photographs of the Catskill water supply system in process of construction.]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=435324&amp;t=r" />
+        </div>
+        <h5>Photographs of the Catskill water supply system in process of construction.]</h5>
+          <span class="item-count">310 items</span>
+</a>      <a href="/collections/pervaia-vystavka-rossiiskago-narodnago-uzornago-shitia-ustroennaia-v-1883-1884-g" class="lane-item" title="Pervaia vystavka rossiiskago narodnago uzornago shit&#x27;ia, ustroennaia v 1883-1884 g. K. Dalmatovym v S. Peterburgie.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1500523&amp;t=r" />
+        </div>
+        <h5>Pervaia vystavka rossiiskago narodnago uzornago shit&#x27;ia, ustroennaia v 1883-1884 g. K. Dalmatovym v S. Peterburgie.</h5>
+          <span class="item-count">20 items</span>
+</a>      <a href="/collections/mikhail-baryshnikov-archive" class="lane-item" title="Mikhail Baryshnikov Archive">
+        <div class="lane-item-image">
+          <img src="http://brightcove04.o.brightcove.com/1684477502001/1684477502001_2144874717001_th-51117f9de4b09514f4e40085-110954964001.jpg?pubId=1684477502001" />
+        </div>
+        <h5>Mikhail Baryshnikov Archive</h5>
+          <span class="item-count">497 items</span>
+</a>      <a href="/collections/magazin-dp" class="lane-item" title="Magazin DP.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1598715&amp;t=r" />
+        </div>
+        <h5>Magazin DP.</h5>
+          <span class="item-count">1,360 items</span>
+</a>      <a href="/collections/de-la-bataille-judaque" class="lane-item" title="De la bataille judaïque.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=4015183&amp;t=r" />
+        </div>
+        <h5>De la bataille judaïque.</h5>
+          <span class="item-count">534 items</span>
+</a>      <a href="/collections/caucasus-an-album-of-photographs" class="lane-item" title="Caucasus : an album of photographs.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=50525&amp;t=r" />
+        </div>
+        <h5>Caucasus : an album of photographs.</h5>
+          <span class="item-count">274 items</span>
+</a>      <a href="/collections/buttolph-collection-of-menus" class="lane-item" title="Buttolph collection of menus">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=3967760&amp;t=r" />
+        </div>
+        <h5>Buttolph collection of menus</h5>
+          <span class="item-count">18,964 items</span>
+</a>      <a href="/collections/american-anti-slavery-almanac" class="lane-item" title="American anti-slavery almanac">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=485524&amp;t=r" />
+        </div>
+        <h5>American anti-slavery almanac</h5>
+          <span class="item-count">55 items</span>
+</a>      <a href="/collections/albom-ofitserskikh-polkovykh-grupp-gvardeiskii-korpus" class="lane-item" title="Al&#x27;bom ofitserskikh polkovykh grupp. Gvardeiskii korpus.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1406254&amp;t=r" />
+        </div>
+        <h5>Al&#x27;bom ofitserskikh polkovykh grupp. Gvardeiskii korpus.</h5>
+          <span class="item-count">28 items</span>
+</a>      <a href="/collections/tragedy-of-the-negro-in-america-a-condensed-history-of-the-enslavment" class="lane-item" title="tragedy of the Negro in America : a condensed history of the enslavment, sufferings, emancipation, present condition and progress of the Negro race in the United States of America.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1232538&amp;t=r" />
+        </div>
+        <h5>tragedy of the Negro in America : a condensed history of the enslavment, sufferings, emancipation, present condition and progress of the Negro race in the United States of America.</h5>
+          <span class="item-count">14 items</span>
+</a>      <a href="/collections/thomas-addis-emmet-collection-1483-1876-bulk-1700-1800" class="lane-item" title="Thomas Addis Emmet collection, 1483-1876, bulk (1700-1800)">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=3977103&amp;t=r" />
+        </div>
+        <h5>Thomas Addis Emmet collection, 1483-1876, bulk (1700-1800)</h5>
+          <span class="item-count">4,576 items</span>
+</a>      <a href="/collections/isadora-duncan-studies" class="lane-item" title="Isadora Duncan : studies.]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=ISADORA_0001VB&amp;t=r" />
+        </div>
+        <h5>Isadora Duncan : studies.]</h5>
+          <span class="item-count">11 items</span>
+</a>      <a href="/collections/weltchronik" class="lane-item" title="Weltchronik.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=427558&amp;t=r" />
+        </div>
+        <h5>Weltchronik.</h5>
+          <span class="item-count">14 items</span>
+</a>      <a href="/collections/the-pilgrimage-of-the-soul" class="lane-item" title="The Pilgrimage of the soul.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=427318&amp;t=r" />
+        </div>
+        <h5>The Pilgrimage of the soul.</h5>
+          <span class="item-count">33 items</span>
+</a>      <a href="/collections/les-voeux-du-paon" class="lane-item" title="Les Voeux du Paon">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=427250&amp;t=r" />
+        </div>
+        <h5>Les Voeux du Paon</h5>
+          <span class="item-count">17 items</span>
+</a>      <a href="/collections/seiro-bijin-awase-sugata-kagami" class="lane-item" title="Seiro Bijin awase sugata kagami ">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1504255&amp;t=r" />
+        </div>
+        <h5>Seiro Bijin awase sugata kagami </h5>
+          <span class="item-count">17 items</span>
+</a>      <a href="/collections/vignettes-titres-frontispieces" class="lane-item" title="Vignettes, titres, frontispieces.]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1158083&amp;t=r" />
+        </div>
+        <h5>Vignettes, titres, frontispieces.]</h5>
+          <span class="item-count">25 items</span>
+</a>      <a href="/collections/savage-africa-being-the-narrative-of-a-tour-in-equatorial-southwestern" class="lane-item" title="Savage Africa; being the narrative of a tour in equatorial, southwestern and northwestern Africa; with notes on the habits of  the gorilla; on the existence of unicorns and tailed men; on the   slave-trade; on the origin, character and capabilities of the">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1245551&amp;t=r" />
+        </div>
+        <h5>Savage Africa; being the narrative of a tour in equatorial, southwestern and northwestern Africa; with notes on the habits of  the gorilla; on the existence of unicorns and tailed men; on the   slave-trade; on the origin, character and capabilities of the</h5>
+          <span class="item-count">11 items</span>
+</a>      <a href="/collections/music-and-some-highly-musical-people-containing-brief-chapters-on-1" class="lane-item" title="Music and some highly musical people; containing brief chapters on 1. A description of music. 2. The music of nature. 3. A glance at the history of music. 4. The power, beauty, and uses of music. Following which are given sketches of the lives of remarkab">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1231380&amp;t=r" />
+        </div>
+        <h5>Music and some highly musical people; containing brief chapters on 1. A description of music. 2. The music of nature. 3. A glance at the history of music. 4. The power, beauty, and uses of music. Following which are given sketches of the lives of remarkab</h5>
+          <span class="item-count">11 items</span>
+</a>      <a href="/collections/traite-des-ngres-et-la-croisade-africaine-comprenant-la-lettre-encyclique" class="lane-item" title="traite des négres et la croisade africaine, comprenant la lettre encyclique de Leon XIII sur l&#x27;esclavage, le discours du cardinal Lavigerie, les temoignages des grands explorateurs: Livingstone, Cameron, Stanley, des missionnaires francais, etc. ainsi que">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1153168&amp;t=r" />
+        </div>
+        <h5>traite des négres et la croisade africaine, comprenant la lettre encyclique de Leon XIII sur l&#x27;esclavage, le discours du cardinal Lavigerie, les temoignages des grands explorateurs: Livingstone, Cameron, Stanley, des missionnaires francais, etc. ainsi que</h5>
+          <span class="item-count">12 items</span>
+</a>      <a href="/collections/projet-de-deux-toiletes-rpresentant-toutes-les-pices-qui-en-dpendent-ornes" class="lane-item" title="Projet de deux toiletes répresentant toutes les pièces qui en dépendent ornées de figures, de sujets allégoriques et des attributs qui leurs sont propres. Ces toiletes peuvent être éxécutées en or, en argent et en porcelaine; cette collection formera une ">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1581046&amp;t=r" />
+        </div>
+        <h5>Projet de deux toiletes répresentant toutes les pièces qui en dépendent ornées de figures, de sujets allégoriques et des attributs qui leurs sont propres. Ces toiletes peuvent être éxécutées en or, en argent et en porcelaine; cette collection formera une </h5>
+          <span class="item-count">12 items</span>
+</a>      <a href="/collections/new-testament-of-ovr-lord-iesvs-christ-translated-out-of-greeke-by-theod-beza" class="lane-item" title="New Testament Of Ovr Lord Iesvs Christ, Translated out of Greeke by Theod. Beza: With briefe Summaries and expositions vpon the hard places by the said Auctor, Ioac. Camerar. and P. Loseler Villerius. Englished by L. Tomson. Together with the Annotations ">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=ps_rbk_398&amp;t=r" />
+        </div>
+        <h5>New Testament Of Ovr Lord Iesvs Christ, Translated out of Greeke by Theod. Beza: With briefe Summaries and expositions vpon the hard places by the said Auctor, Ioac. Camerar. and P. Loseler Villerius. Englished by L. Tomson. Together with the Annotations </h5>
+          <span class="item-count">12 items</span>
+</a>      <a href="/collections/description-des-crmonies-et-des-ftes-qui-ont-eu-lieu-pour-le-couronnement" class="lane-item" title="Description des cérémonies et des fêtes qui ont eu lieu pour le couronnement de leurs majestés Napoléon, empereur des Français et roi d&#x27;Italie, et Joséphine, son auguste épouse : recueil de décorations exécutées dans l&#x27;église de Notre-Dame de Paris èt au ">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1552820&amp;t=r" />
+        </div>
+        <h5>Description des cérémonies et des fêtes qui ont eu lieu pour le couronnement de leurs majestés Napoléon, empereur des Français et roi d&#x27;Italie, et Joséphine, son auguste épouse : recueil de décorations exécutées dans l&#x27;église de Notre-Dame de Paris èt au </h5>
+          <span class="item-count">13 items</span>
+</a>      <a href="/collections/collection-of-world-war-i-photographs-issued-by-the-division-of-pictures" class="lane-item" title="Collection of World War I photographs issued by the Division of Pictures of the Committee on Public Information of the United States. Collection of World War I photographs issued by the Division of Pictures of the Committee on Public Information of the Un">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5111973&amp;t=r" />
+        </div>
+        <h5>Collection of World War I photographs issued by the Division of Pictures of the Committee on Public Information of the United States. Collection of World War I photographs issued by the Division of Pictures of the Committee on Public Information of the Un</h5>
+          <span class="item-count">13 items</span>
+</a>      <a href="/collections/fifty-years-in-the-gospel-ministry-twenty-seven-years-in-the-pastorate-sixteen" class="lane-item" title="Fifty years in the gospel ministry; twenty-seven years in the pastorate; sixteen years&#x27; active service as chaplain in the U.S. army; seven years professor in Wilberforce university; two trips to Europe; a trip in Mexico. In two parts,with appropriate illu">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1232746&amp;t=r" />
+        </div>
+        <h5>Fifty years in the gospel ministry; twenty-seven years in the pastorate; sixteen years&#x27; active service as chaplain in the U.S. army; seven years professor in Wilberforce university; two trips to Europe; a trip in Mexico. In two parts,with appropriate illu</h5>
+          <span class="item-count">14 items</span>
+</a>      <a href="/collections/story-of-my-life-or-the-sunshine-and-shadow-of-seventy-years-by-mary-a-livermore" class="lane-item" title="story of my life: or, The sunshine and shadow of seventy years, by Mary A. Livermore ... with hitherto unrecorded incidents and recollections of three years&#x27; experience as an army nurse in the great Civil War, and reminiscences of twenty-five years&#x27; exper">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1232869&amp;t=r" />
+        </div>
+        <h5>story of my life: or, The sunshine and shadow of seventy years, by Mary A. Livermore ... with hitherto unrecorded incidents and recollections of three years&#x27; experience as an army nurse in the great Civil War, and reminiscences of twenty-five years&#x27; exper</h5>
+          <span class="item-count">15 items</span>
+</a>      <a href="/collections/the-present-state-of-the-cape-of-good-hope-or-a-particular-account" class="lane-item" title="The present state of the Cape of Good Hope: or, A particular account of the several nations of the Hottentots: their religion, government, laws, customs, ceremonies, and opinions; their art of war, professions, language, genius, &amp;c. Together with a short ">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1248294&amp;t=r" />
+        </div>
+        <h5>The present state of the Cape of Good Hope: or, A particular account of the several nations of the Hottentots: their religion, government, laws, customs, ceremonies, and opinions; their art of war, professions, language, genius, &amp;c. Together with a short </h5>
+          <span class="item-count">15 items</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane promo-lane inverse">
+
+  <noscript>
+    <style type="text/css">
+      #promo-item-79 { display: block; }
+    </style>
+  </noscript>
+  <script type="text/javascript">
+    var promo_item_ids = [79,80];
+    var random_promo_item_id = promo_item_ids[Math.floor(Math.random() * promo_item_ids.length)];
+    document.write('<style type="text/css">#promo-item-' + random_promo_item_id + ' { display: block; } </style>');
+  </script>
+
+
+    <div class="promo-item" id="promo-item-79">
+      <div class="promo-item-image">
+        <a href="http://publicdomain.nypl.org">
+          <img src="/assets/pd_banner.png" />
+</a>      </div>
+      <div class="promo-item-text">
+        <h2>FEATURED</h2>
+        <h1><a href="http://publicdomain.nypl.org">Spotlight on the Public Domain</a></h1>
+          <p>The New York Public Library recently enhanced access to all public domain items in Digital Collections so that everyone has the freedom to enjoy and reuse these materials in almost limitless ways.</p>
+        <div class="promo-links">
+          <div>
+              <a href="http://publicdomain.nypl.org" class="button">Learn more</a>
+          </div>
+          <div>
+            <a href="#digital-services" class="more-link scroll-to-link">Explore more ways you can access and engage with digital content at NYPL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="promo-item" id="promo-item-80">
+      <div class="promo-item-image">
+        <a href="http://nypl.artehouse.com/perl/home.pl">
+          <img src="/assets/service-artehouse.jpg" />
+</a>      </div>
+      <div class="promo-item-text">
+        <h2>FEATURED</h2>
+        <h1><a href="http://nypl.artehouse.com/perl/home.pl">Digital Collections Print Store</a></h1>
+          <p>Decorative prints for purchase: choose from archival prints, framed art, stretched canvas, vintage wood, and wall murals.</p>
+        <div class="promo-links">
+          <div>
+              <a href="http://nypl.artehouse.com/perl/home.pl" class="button">Visit Store</a>
+          </div>
+          <div>
+            <a href="#digital-services" class="more-link scroll-to-link">Explore more ways you can access and engage with digital content at NYPL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Photography Collections <a href="/collections/lane/photography-collections"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/bill-barvin-location-photograph-archive" class="lane-item" title="Bill Barvin Location Photograph Archive">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5209999&amp;t=r" />
+        </div>
+        <h5>Bill Barvin Location Photograph Archive</h5>
+          <span class="item-count">213 items</span>
+</a>      <a href="/collections/morris-rosenfeld-photographs" class="lane-item" title="Morris Rosenfeld Photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5226259&amp;t=r" />
+        </div>
+        <h5>Morris Rosenfeld Photographs</h5>
+          <span class="item-count">260 items</span>
+</a>      <a href="/collections/walter-silver-photographs" class="lane-item" title="Walter Silver photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5147009&amp;t=r" />
+        </div>
+        <h5>Walter Silver photographs</h5>
+          <span class="item-count">2,431 items</span>
+</a>      <a href="/collections/dinanda-nooney-brooklyn-photograph-collection" class="lane-item" title="Dinanda Nooney Brooklyn photograph collection">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1563467&amp;t=r" />
+        </div>
+        <h5>Dinanda Nooney Brooklyn photograph collection</h5>
+          <span class="item-count">576 items</span>
+</a>      <a href="/collections/new-york-subways" class="lane-item" title="New York Subways">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5038726&amp;t=r" />
+        </div>
+        <h5>New York Subways</h5>
+          <span class="item-count">42 items</span>
+</a>      <a href="/collections/martha-swope-photographs" class="lane-item" title="Martha Swope photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5031652&amp;t=r" />
+        </div>
+        <h5>Martha Swope photographs</h5>
+          <span class="item-count">27,714 items</span>
+</a>      <a href="/collections/outer-boroughs-new-york-beyond-manhattan" class="lane-item" title="Outer Boroughs: New York beyond Manhattan">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5209068&amp;t=r" />
+        </div>
+        <h5>Outer Boroughs: New York beyond Manhattan</h5>
+          <span class="item-count">86 items</span>
+</a>      <a href="/collections/billy-rose-theatre-collection-photograph-file" class="lane-item" title="Billy Rose Theatre Collection photograph file">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=59796&amp;t=r" />
+        </div>
+        <h5>Billy Rose Theatre Collection photograph file</h5>
+          <span class="item-count">49,107 items</span>
+</a>      <a href="/collections/photographs-from-the-american-country-woman-series" class="lane-item" title="Photographs from the American country woman series">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1615128&amp;t=r" />
+        </div>
+        <h5>Photographs from the American country woman series</h5>
+          <span class="item-count">46 items</span>
+</a>      <a href="/collections/variety-vaudeville-burlesque" class="lane-item" title="Variety, vaudeville &amp; burlesque.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=variety_0001va&amp;t=r" />
+        </div>
+        <h5>Variety, vaudeville &amp; burlesque.</h5>
+          <span class="item-count">189 items</span>
+</a>      <a href="/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2" class="lane-item" title="Photographic views of New York City, 1870&#x27;s-1970&#x27;s, from the collections of the New York Public Library">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=700016F&amp;t=r" />
+        </div>
+        <h5>Photographic views of New York City, 1870&#x27;s-1970&#x27;s, from the collections of the New York Public Library</h5>
+          <span class="item-count">34,748 items</span>
+</a>      <a href="/collections/new-york-public-library-photographs" class="lane-item" title="New York Public Library photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5033487&amp;t=r" />
+        </div>
+        <h5>New York Public Library photographs</h5>
+          <span class="item-count">30 items</span>
+</a>      <a href="/collections/friedman-abeles-photograph-collection" class="lane-item" title="Friedman-Abeles photograph collection">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=4039018&amp;t=r" />
+        </div>
+        <h5>Friedman-Abeles photograph collection</h5>
+          <span class="item-count">27,396 items</span>
+</a>      <a href="/collections/drugstore-photographs-or-a-trip-along-the-yangtze-river-1999-by-dylan-stone" class="lane-item" title="Drugstore Photographs, Or, A Trip Along the Yangtze River, 1999, by Dylan Stone">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=500001&amp;t=r" />
+        </div>
+        <h5>Drugstore Photographs, Or, A Trip Along the Yangtze River, 1999, by Dylan Stone</h5>
+          <span class="item-count">25,428 items</span>
+</a>      <a href="/collections/the-middle-east-in-early-prints-and-photographs" class="lane-item" title="The Middle East in Early Prints and Photographs">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/179_large.jpg" />
+        </div>
+        <h5>The Middle East in Early Prints and Photographs</h5>
+          <span class="item-count">9,194 items</span>
+</a>      <a href="/collections/kenn-duncan-photograph-archive-ca-1960-1986" class="lane-item" title="Kenn Duncan Photograph Archive, ca. 1960-1986">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=2023685&amp;t=r" />
+        </div>
+        <h5>Kenn Duncan Photograph Archive, ca. 1960-1986</h5>
+          <span class="item-count">6,959 items</span>
+</a>      <a href="/collections/russia-and-eastern-europe-in-rare-photographs-1860-1945" class="lane-item" title="Russia and Eastern Europe in Rare Photographs, 1860- 1945">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/193_large.jpg" />
+        </div>
+        <h5>Russia and Eastern Europe in Rare Photographs, 1860- 1945</h5>
+          <span class="item-count">5,086 items</span>
+</a>      <a href="/collections/vandamm-theatrical-photographs-1900-1957" class="lane-item" title="Vandamm theatrical photographs, 1900-1957.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=psnypl_the_4222&amp;t=r" />
+        </div>
+        <h5>Vandamm theatrical photographs, 1900-1957.</h5>
+          <span class="item-count">3,137 items</span>
+</a>      <a href="/collections/photographs-of-indonesia" class="lane-item" title="Photographs of Indonesia">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=477086&amp;t=r" />
+        </div>
+        <h5>Photographs of Indonesia</h5>
+          <span class="item-count">1,841 items</span>
+</a>      <a href="/collections/white-studio-theatrical-photographs" class="lane-item" title="White Studio theatrical photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=G99F613_001&amp;t=r" />
+        </div>
+        <h5>White Studio theatrical photographs</h5>
+          <span class="item-count">1,620 items</span>
+</a>      <a href="/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-new" class="lane-item" title="Photographic views of New York City, 1870&#x27;s-1970&#x27;s, from the collections of the New York Public Library. Supplement.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1509415&amp;t=r" />
+        </div>
+        <h5>Photographic views of New York City, 1870&#x27;s-1970&#x27;s, from the collections of the New York Public Library. Supplement.</h5>
+          <span class="item-count">1,569 items</span>
+</a>      <a href="/collections/dance-in-photographs-and-prints" class="lane-item" title="Dance in Photographs and Prints">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/216_large.jpg" />
+        </div>
+        <h5>Dance in Photographs and Prints</h5>
+          <span class="item-count">1,501 items</span>
+</a>      <a href="/collections/photographic-views-of-the-united-states" class="lane-item" title="Photographic views of the United States">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1629218&amp;t=r" />
+        </div>
+        <h5>Photographic views of the United States</h5>
+          <span class="item-count">1,327 items</span>
+</a>      <a href="/collections/asia-and-the-eastern-pacific-rim-in-early-prints-and-photographs" class="lane-item" title="Asia and the Eastern Pacific Rim in Early Prints and Photographs">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/169_large.jpg" />
+        </div>
+        <h5>Asia and the Eastern Pacific Rim in Early Prints and Photographs</h5>
+          <span class="item-count">1,156 items</span>
+</a>      <a href="/collections/photographs-taken-by-inspectors-of-the-new-york-city-tenement-house-department" class="lane-item" title="Photographs taken by inspectors of the New York City Tenement House Department">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=3984306&amp;t=r" />
+        </div>
+        <h5>Photographs taken by inspectors of the New York City Tenement House Department</h5>
+          <span class="item-count">1,102 items</span>
+</a>      <a href="/collections/farm-security-administration-photographs" class="lane-item" title="Farm Security Administration Photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=4001311&amp;t=r" />
+        </div>
+        <h5>Farm Security Administration Photographs</h5>
+          <span class="item-count">2,581 items</span>
+</a>      <a href="/collections/collection-of-photographs-of-new-york-city" class="lane-item" title="Collection of photographs of New York City">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1557745&amp;t=r" />
+        </div>
+        <h5>Collection of photographs of New York City</h5>
+          <span class="item-count">813 items</span>
+</a>      <a href="/collections/photographs-of-general-motors-and-chrysler-car-and-truck-models-1902-1938" class="lane-item" title="Photographs of General Motors and Chrysler car and truck models, 1902 - 1938.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=481873&amp;t=r" />
+        </div>
+        <h5>Photographs of General Motors and Chrysler car and truck models, 1902 - 1938.</h5>
+          <span class="item-count">734 items</span>
+</a>      <a href="/collections/metropolis-new-york-city-water-and-transit-infrastructure-in-photographs" class="lane-item" title="Metropolis: New York City Water and Transit Infrastructure in Photographs">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/186_large.jpg" />
+        </div>
+        <h5>Metropolis: New York City Water and Transit Infrastructure in Photographs</h5>
+          <span class="item-count">669 items</span>
+</a>      <a href="/collections/the-luso-hispanic-new-world-in-early-prints-and-photographs" class="lane-item" title="The Luso-Hispanic New World in Early Prints and Photographs">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/208_large.jpg" />
+        </div>
+        <h5>The Luso-Hispanic New World in Early Prints and Photographs</h5>
+          <span class="item-count">651 items</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Public Domain Picks <a href="/collections/lane/public-domain-picks"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/italian-master-prints" class="lane-item" title="Italian master prints">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5255228&amp;t=r" />
+        </div>
+        <h5>Italian master prints</h5>
+          <span class="item-count">288 items</span>
+</a>      <a href="/collections/german-master-prints" class="lane-item" title="German master prints">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5251817&amp;t=r" />
+        </div>
+        <h5>German master prints</h5>
+          <span class="item-count">283 items</span>
+</a>      <a href="/collections/william-blake-illuminated-books" class="lane-item" title="William Blake: Illuminated Books">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/156_large.jpg" />
+        </div>
+        <h5>William Blake: Illuminated Books</h5>
+          <span class="item-count">89 items</span>
+</a>      <a href="/collections/farm-security-administration-photographs" class="lane-item" title="Farm Security Administration Photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=4001311&amp;t=r" />
+        </div>
+        <h5>Farm Security Administration Photographs</h5>
+          <span class="item-count">2,581 items</span>
+</a>      <a href="/collections/charrington-set-a-collection-of-prints-by-giovanni-battista-piranesi" class="lane-item" title="Charrington set : a collection of prints by Giovanni Battista Piranesi.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1694234&amp;t=r" />
+        </div>
+        <h5>Charrington set : a collection of prints by Giovanni Battista Piranesi.</h5>
+          <span class="item-count">104 items</span>
+</a>      <a href="/collections/the-green-book" class="lane-item" title="The Green Book">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5206210&amp;t=r" />
+        </div>
+        <h5>The Green Book</h5>
+          <span class="item-count">22 items</span>
+</a>      <a href="/collections/changing-new-york" class="lane-item" title="Changing New York">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=482849&amp;t=r" />
+        </div>
+        <h5>Changing New York</h5>
+          <span class="item-count">344 items</span>
+</a>      <a href="/collections/indian-coloured-drawings-a-collection-of-177-original-paintings-on-talc-etc" class="lane-item" title="Indian coloured drawings : a collection of 177 original paintings on &quot;talc,&quot; etc., with 17 engravings, illustrating costume, vehicles and trades in India.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5104173&amp;t=r" />
+        </div>
+        <h5>Indian coloured drawings : a collection of 177 original paintings on &quot;talc,&quot; etc., with 17 engravings, illustrating costume, vehicles and trades in India.</h5>
+          <span class="item-count">178 items</span>
+</a>      <a href="/collections/works-progress-administration-wpa-art" class="lane-item" title="Works Progress Administration (WPA) Art">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5179776&amp;t=r" />
+        </div>
+        <h5>Works Progress Administration (WPA) Art</h5>
+          <span class="item-count">95 items</span>
+</a>      <a href="/collections/farm-security-administration-collection" class="lane-item" title="Farm Security Administration Collection.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1260007&amp;t=r" />
+        </div>
+        <h5>Farm Security Administration Collection.</h5>
+          <span class="item-count">219 items</span>
+</a>      <a href="/collections/renaissance-and-medieval-manuscripts-collection-ca-850-ca-1600" class="lane-item" title="Renaissance and medieval manuscripts collection, ca. 850-ca. 1600.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1261794&amp;t=r" />
+        </div>
+        <h5>Renaissance and medieval manuscripts collection, ca. 850-ca. 1600.</h5>
+          <span class="item-count">1,537 items</span>
+</a>      <a href="/collections/a-g-spalding-baseball-collection" class="lane-item" title="A. G. Spalding Baseball Collection">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=55685&amp;t=r" />
+        </div>
+        <h5>A. G. Spalding Baseball Collection</h5>
+          <span class="item-count">572 items</span>
+</a>      <a href="/collections/pictorial-description-of-broadway" class="lane-item" title="Pictorial description of Broadway">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1627859&amp;t=r" />
+        </div>
+        <h5>Pictorial description of Broadway</h5>
+          <span class="item-count">94 items</span>
+</a>      <a href="/collections/album-de-la-construction-de-la-statue-de-la-libert" class="lane-item" title="Album de la construction de la Statue de la Liberté.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1161050&amp;t=r" />
+        </div>
+        <h5>Album de la construction de la Statue de la Liberté.</h5>
+          <span class="item-count">15 items</span>
+</a>      <a href="/collections/photographs-of-ellis-island-1902-1913" class="lane-item" title="Photographs of Ellis Island, 1902-1913.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=416750&amp;t=r" />
+        </div>
+        <h5>Photographs of Ellis Island, 1902-1913.</h5>
+          <span class="item-count">49 items</span>
+</a>      <a href="/collections/american-popular-songs" class="lane-item" title="American popular songs.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1152926&amp;t=r" />
+        </div>
+        <h5>American popular songs.</h5>
+          <span class="item-count">4,724 items</span>
+</a>      <a href="/collections/walt-whitman-papers-1854-1892" class="lane-item" title="Walt Whitman papers, 1854-1892">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5102809&amp;t=r" />
+        </div>
+        <h5>Walt Whitman papers, 1854-1892</h5>
+          <span class="item-count">658 items</span>
+</a>      <a href="/collections/robert-n-dennis-collection-of-stereoscopic-views" class="lane-item" title="Robert N. Dennis collection of stereoscopic views">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=G92F208_001F&amp;t=r" />
+        </div>
+        <h5>Robert N. Dennis collection of stereoscopic views</h5>
+          <span class="item-count">42,202 items</span>
+</a>      <a href="/collections/anne-wagner-album-1795-1834" class="lane-item" title="Anne Wagner album, 1795-1834">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=480055&amp;t=r" />
+        </div>
+        <h5>Anne Wagner album, 1795-1834</h5>
+          <span class="item-count">168 items</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Collections About New York City <a href="/collections/lane/collections-about-new-york-city"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2" class="lane-item" title="Photographic views of New York City, 1870&#x27;s-1970&#x27;s, from the collections of the New York Public Library">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=700016F&amp;t=r" />
+        </div>
+        <h5>Photographic views of New York City, 1870&#x27;s-1970&#x27;s, from the collections of the New York Public Library</h5>
+          <span class="item-count">34,748 items</span>
+</a>      <a href="/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-new" class="lane-item" title="Photographic views of New York City, 1870&#x27;s-1970&#x27;s, from the collections of the New York Public Library. Supplement.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1509415&amp;t=r" />
+        </div>
+        <h5>Photographic views of New York City, 1870&#x27;s-1970&#x27;s, from the collections of the New York Public Library. Supplement.</h5>
+          <span class="item-count">1,569 items</span>
+</a>      <a href="/collections/new-york-worlds-fair-1939-1940-records" class="lane-item" title="New York World&#x27;s Fair 1939-1940 records">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=2015710&amp;t=r" />
+        </div>
+        <h5>New York World&#x27;s Fair 1939-1940 records</h5>
+          <span class="item-count">13,598 items</span>
+</a>      <a href="/collections/atlases-of-new-york-city" class="lane-item" title="Atlases of New York City">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1516805&amp;t=r" />
+        </div>
+        <h5>Atlases of New York City</h5>
+          <span class="item-count">11,685 items</span>
+</a>      <a href="/collections/photographs-taken-by-inspectors-of-the-new-york-city-tenement-house-department" class="lane-item" title="Photographs taken by inspectors of the New York City Tenement House Department">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=3984306&amp;t=r" />
+        </div>
+        <h5>Photographs taken by inspectors of the New York City Tenement House Department</h5>
+          <span class="item-count">1,102 items</span>
+</a>      <a href="/collections/streetscape-and-townscape-of-metropolitan-new-york-city1860-1942" class="lane-item" title="Streetscape and Townscape of Metropolitan New York City,1860-1942">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/243_large.jpg" />
+        </div>
+        <h5>Streetscape and Townscape of Metropolitan New York City,1860-1942</h5>
+          <span class="item-count">1,382 items</span>
+</a>      <a href="/collections/doors-nyc" class="lane-item" title="Doors, NYC.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=colmer_001_0001&amp;t=r" />
+        </div>
+        <h5>Doors, NYC.</h5>
+          <span class="item-count">3,122 items</span>
+</a>      <a href="/collections/the-eno-collection-of-new-york-city-views" class="lane-item" title="The Eno collection of New York City views">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1650604&amp;t=r" />
+        </div>
+        <h5>The Eno collection of New York City views</h5>
+          <span class="item-count">708 items</span>
+</a>      <a href="/collections/changing-new-york" class="lane-item" title="Changing New York">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=482849&amp;t=r" />
+        </div>
+        <h5>Changing New York</h5>
+          <span class="item-count">344 items</span>
+</a>      <a href="/collections/collection-of-photographs-of-new-york-city-1931-1942" class="lane-item" title="Collection of photographs of New York City, 1931-1942]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=485770&amp;t=r" />
+        </div>
+        <h5>Collection of photographs of New York City, 1931-1942]</h5>
+          <span class="item-count">335 items</span>
+</a>      <a href="/collections/metropolis-new-york-city-water-and-transit-infrastructure-in-photographs" class="lane-item" title="Metropolis: New York City Water and Transit Infrastructure in Photographs">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/186_large.jpg" />
+        </div>
+        <h5>Metropolis: New York City Water and Transit Infrastructure in Photographs</h5>
+          <span class="item-count">669 items</span>
+</a>      <a href="/collections/fifth-avenue-new-york-from-start-to-finish" class="lane-item" title="Fifth Avenue, New York, from start to finish">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1113263&amp;t=r" />
+        </div>
+        <h5>Fifth Avenue, New York, from start to finish</h5>
+          <span class="item-count">84 items</span>
+</a>      <a href="/collections/new-york-worlds-fair-1964-1965-corporation-records" class="lane-item" title="New York World&#x27;s Fair 1964-1965 Corporation records">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=ps_mss_803&amp;t=r" />
+        </div>
+        <h5>New York World&#x27;s Fair 1964-1965 Corporation records</h5>
+          <span class="item-count">86 items</span>
+</a>      <a href="/collections/photographic-negatives-of-the-new-york-city-tenement-house-department-1902-1914" class="lane-item" title="Photographic negatives of the New York City Tenement House Department, 1902-1914">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1576427&amp;t=r" />
+        </div>
+        <h5>Photographic negatives of the New York City Tenement House Department, 1902-1914</h5>
+          <span class="item-count">69 items</span>
+</a>      <a href="/collections/street-views-of-new-york-city" class="lane-item" title="Street views of New York City.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=79810&amp;t=r" />
+        </div>
+        <h5>Street views of New York City.</h5>
+          <span class="item-count">69 items</span>
+</a>      <a href="/collections/new-york-city-museum-of-modern-art-photographs" class="lane-item" title="New York (City) Museum of Modern Art photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=MOMA_0045V&amp;t=r" />
+        </div>
+        <h5>New York (City) Museum of Modern Art photographs</h5>
+          <span class="item-count">72 items</span>
+</a>      <a href="/collections/album-of-photographs-showing-construction-of-the-cable-road-on-broadway-new-york" class="lane-item" title="Album of photographs showing construction of the cable road on Broadway, New York City, in 1891.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=446764&amp;t=r" />
+        </div>
+        <h5>Album of photographs showing construction of the cable road on Broadway, New York City, in 1891.</h5>
+          <span class="item-count">56 items</span>
+</a>      <a href="/collections/photographic-views-of-the-construction-of-the-new-york-city-subway-system" class="lane-item" title="Photographic views of the construction of the New York City subway system, 1901-1905.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=2040724&amp;t=r" />
+        </div>
+        <h5>Photographic views of the construction of the New York City subway system, 1901-1905.</h5>
+          <span class="item-count">31 items</span>
+</a>      <a href="/collections/album-of-photographs-depicting-the-construction-of-the-broadway-line-new-york" class="lane-item" title="Album of photographs depicting the construction of the Broadway line, New York City Subway.]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1113651&amp;t=r" />
+        </div>
+        <h5>Album of photographs depicting the construction of the Broadway line, New York City Subway.]</h5>
+          <span class="item-count">27 items</span>
+</a>      <a href="/collections/classic-six-new-york-city-apartment-building-living-1880s-1910s" class="lane-item" title="&quot;Classic Six:&quot; New York City Apartment Building Living, 1880s-1910s">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/151_large.jpg" />
+        </div>
+        <h5>&quot;Classic Six:&quot; New York City Apartment Building Living, 1880s-1910s</h5>
+          <span class="item-count">1,444 items</span>
+</a>      <a href="/collections/portraits-of-immigrants-at-ellis-island-new-york" class="lane-item" title="Portraits of immigrants at Ellis Island, New York.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=79877&amp;t=r" />
+        </div>
+        <h5>Portraits of immigrants at Ellis Island, New York.</h5>
+          <span class="item-count">14 items</span>
+</a>      <a href="/collections/staten-island-post-cards" class="lane-item" title="Staten Island post cards">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=104425&amp;t=r" />
+        </div>
+        <h5>Staten Island post cards</h5>
+          <span class="item-count">766 items</span>
+</a>      <a href="/collections/collection-of-photographs-of-east-river-and-hudson-river-piers-manhattan" class="lane-item" title="Collection of photographs of East River and Hudson River piers, Manhattan">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=2040832&amp;t=r" />
+        </div>
+        <h5>Collection of photographs of East River and Hudson River piers, Manhattan</h5>
+          <span class="item-count">99 items</span>
+</a>      <a href="/collections/new-york-city-theater-marquees-1997" class="lane-item" title="New York City theater marquees, 1997- .">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=400436&amp;t=r" />
+        </div>
+        <h5>New York City theater marquees, 1997- .</h5>
+          <span class="item-count">80 items</span>
+</a>      <a href="/collections/drugstore-photographs-or-a-trip-along-the-yangtze-river-1999-by-dylan-stone" class="lane-item" title="Drugstore Photographs, Or, A Trip Along the Yangtze River, 1999, by Dylan Stone">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=500001&amp;t=r" />
+        </div>
+        <h5>Drugstore Photographs, Or, A Trip Along the Yangtze River, 1999, by Dylan Stone</h5>
+          <span class="item-count">25,428 items</span>
+</a>      <a href="/collections/collection-of-photographs-of-new-york-city" class="lane-item" title="Collection of photographs of New York City">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1557745&amp;t=r" />
+        </div>
+        <h5>Collection of photographs of New York City</h5>
+          <span class="item-count">813 items</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Fashion Collections <a href="/collections/lane/fashion-collections"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/andr-fashion-illustrations-from-nypls-picture-collection" class="lane-item" title="André Fashion Illustrations from NYPL&#x27;s Picture Collection">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1948588&amp;t=r" />
+        </div>
+        <h5>André Fashion Illustrations from NYPL&#x27;s Picture Collection</h5>
+          <span class="item-count">1,246 items</span>
+</a>      <a href="/collections/creators-studios-fashion-illustrations" class="lane-item" title="Creators Studios fashion illustrations">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5231730&amp;t=r" />
+        </div>
+        <h5>Creators Studios fashion illustrations</h5>
+          <span class="item-count">1,067 items</span>
+</a>      <a href="/collections/modes-fminines-du-xixe-sicle-interprtes-en-cent-pointes-sches-aquarelles-au" class="lane-item" title="modes féminines du XIXe siècle, interprétées en cent pointes sèches aquarellées au pinceau, 1801-1900">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=118364&amp;t=r" />
+        </div>
+        <h5>modes féminines du XIXe siècle, interprétées en cent pointes sèches aquarellées au pinceau, 1801-1900</h5>
+          <span class="item-count">105 items</span>
+</a>      <a href="/collections/ladies-dress-shoes-of-the-nineteenth-century" class="lane-item" title="Ladies&#x27; dress shoes of the nineteenth century">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=105978&amp;t=r" />
+        </div>
+        <h5>Ladies&#x27; dress shoes of the nineteenth century</h5>
+          <span class="item-count">24 items</span>
+</a>      <a href="/collections/the-history-of-the-feminine-costume-of-the-world-from-the-year-5318-bc" class="lane-item" title="The history of the feminine costume of the world, from the year 5318 B.C. to our century">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=83218&amp;t=r" />
+        </div>
+        <h5>The history of the feminine costume of the world, from the year 5318 B.C. to our century</h5>
+          <span class="item-count">234 items</span>
+</a>      <a href="/collections/mordant-dyestuffs-of-the-farbenfabriken-vorm-friedr-bayer-co-elberfeld" class="lane-item" title="mordant dyestuffs of the farbenfabriken vorm. Friedr. Bayer &amp; Co., Elberfeld, and their application to printing and dyeing.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1130293&amp;t=r" />
+        </div>
+        <h5>mordant dyestuffs of the farbenfabriken vorm. Friedr. Bayer &amp; Co., Elberfeld, and their application to printing and dyeing.</h5>
+          <span class="item-count">52 items</span>
+</a>      <a href="/collections/spring-book-of-b-kuppenheimer-co-illustrating-a-new-century" class="lane-item" title="spring book of B. Kuppenheimer &amp; Co. : illustrating a new century of clothing-radically different from the old-and incidentally depicting the more striking changes in men&#x27;s wear during the past one hundred years.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1159616&amp;t=r" />
+        </div>
+        <h5>spring book of B. Kuppenheimer &amp; Co. : illustrating a new century of clothing-radically different from the old-and incidentally depicting the more striking changes in men&#x27;s wear during the past one hundred years.</h5>
+          <span class="item-count">30 items</span>
+</a>      <a href="/collections/enter-wash-dress-fabrics-mdcccciiii" class="lane-item" title="Enter. Wash dress fabrics, MDCCCCIIII.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1159594&amp;t=r" />
+        </div>
+        <h5>Enter. Wash dress fabrics, MDCCCCIIII.</h5>
+          <span class="item-count">14 items</span>
+</a>      <a href="/collections/imported-french-fabrics-e-meyer-co-paris-fall-1930-1931" class="lane-item" title="Imported French fabrics, E. Meyer &amp; Co., Paris; fall, 1930-1931.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1159032&amp;t=r" />
+        </div>
+        <h5>Imported French fabrics, E. Meyer &amp; Co., Paris; fall, 1930-1931.</h5>
+          <span class="item-count">12 items</span>
+</a>      <a href="/collections/newest-styles-for-men" class="lane-item" title="Newest styles for men.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1159816&amp;t=r" />
+        </div>
+        <h5>Newest styles for men.</h5>
+          <span class="item-count">95 items</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Collections for Designers <a href="/collections/lane/collections-for-designers"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/ornament-and-pattern-pre-victorian-to-art-deco" class="lane-item" title="Ornament and Pattern: Pre-Victorian to Art Deco">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/163_large.jpg" />
+        </div>
+        <h5>Ornament and Pattern: Pre-Victorian to Art Deco</h5>
+          <span class="item-count">3,607 items</span>
+</a>      <a href="/collections/pictures-of-science-700-years-of-scientific-and-medical-illustration" class="lane-item" title="Pictures of Science: 700 Years of Scientific and Medical Illustration">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/197_large.jpg" />
+        </div>
+        <h5>Pictures of Science: 700 Years of Scientific and Medical Illustration</h5>
+          <span class="item-count">299 items</span>
+</a>      <a href="/collections/classic-illustrated-zoologies-and-related-works-1550-1900" class="lane-item" title="Classic Illustrated Zoologies and Related Works, 1550-1900">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/183_large.jpg" />
+        </div>
+        <h5>Classic Illustrated Zoologies and Related Works, 1550-1900</h5>
+          <span class="item-count">7,956 items</span>
+</a>      <a href="/collections/insectes-vingt-planches-en-phototypie-colories-au-patron-donnant-quatre-vingts" class="lane-item" title="Insectes: vingt planches en phototypie coloriées au patron, donnant quatre-vingts insectes et seize compositions décoratives.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=73757&amp;t=r" />
+        </div>
+        <h5>Insectes: vingt planches en phototypie coloriées au patron, donnant quatre-vingts insectes et seize compositions décoratives.</h5>
+          <span class="item-count">22 items</span>
+</a>      <a href="/collections/kaleidoscope-ornements-abstraits-quatre-vingt-sept-motifs-en-vingt-planches" class="lane-item" title="Kaleidoscope : ornements abstraits : quatre-vingt-sept motifs en vingt planches">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=101740&amp;t=r" />
+        </div>
+        <h5>Kaleidoscope : ornements abstraits : quatre-vingt-sept motifs en vingt planches</h5>
+          <span class="item-count">21 items</span>
+</a>      <a href="/collections/suggestions-pour-toffes-et-tapis-60-motifs-en-couleur" class="lane-item" title="Suggestions pour étoffes et tapis : 60 motifs en couleur.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=96546&amp;t=r" />
+        </div>
+        <h5>Suggestions pour étoffes et tapis : 60 motifs en couleur.</h5>
+          <span class="item-count">22 items</span>
+</a>      <a href="/collections/collection-of-book-jackets" class="lane-item" title="[Collection of book jackets]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=489965&amp;t=r" />
+        </div>
+        <h5>[Collection of book jackets]</h5>
+          <span class="item-count">2,505 items</span>
+</a>      <a href="/collections/holiday-postcards" class="lane-item" title="Holiday postcards">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1585122&amp;t=r" />
+        </div>
+        <h5>Holiday postcards</h5>
+          <span class="item-count">1,862 items</span>
+</a>      <a href="/collections/william-blake-illuminated-books" class="lane-item" title="William Blake: Illuminated Books">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/156_large.jpg" />
+        </div>
+        <h5>William Blake: Illuminated Books</h5>
+          <span class="item-count">89 items</span>
+</a>      <a href="/collections/scrap-book-of-russian-bookjackets-1917-1942" class="lane-item" title="[Scrap book of Russian bookjackets, 1917-1942].">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1556316&amp;t=r" />
+        </div>
+        <h5>[Scrap book of Russian bookjackets, 1917-1942].</h5>
+          <span class="item-count">656 items</span>
+</a>      <a href="/collections/monumenti-dellegitto-e-della-nubia-disegnati-dalla-spedizione" class="lane-item" title="monumenti dell&#x27;Egitto e della Nubia disegnati dalla spedizione scientifico-letteraria toscana in Egitto; distribuiti in ordine di materie interpretati ed illustrati dal dottore Ippolito Rosellini.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=425635&amp;t=r" />
+        </div>
+        <h5>monumenti dell&#x27;Egitto e della Nubia disegnati dalla spedizione scientifico-letteraria toscana in Egitto; distribuiti in ordine di materie interpretati ed illustrati dal dottore Ippolito Rosellini.</h5>
+          <span class="item-count">407 items</span>
+</a>      <a href="/collections/dress-fashion-design-manufacture" class="lane-item" title="Dress &amp; Fashion: Design &amp; Manufacture">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/215_large.jpg" />
+        </div>
+        <h5>Dress &amp; Fashion: Design &amp; Manufacture</h5>
+          <span class="item-count">566 items</span>
+</a>      <a href="/collections/playing-cards-engineering" class="lane-item" title="Playing cards: Engineering.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1126250&amp;t=r" />
+        </div>
+        <h5>Playing cards: Engineering.</h5>
+          <span class="item-count">52 items</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Nature Collections <a href="/collections/lane/nature-collections"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/viviparous-quadrupeds-of-north-america" class="lane-item" title="viviparous quadrupeds of North America">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=400014&amp;t=r" />
+        </div>
+        <h5>viviparous quadrupeds of North America</h5>
+          <span class="item-count">153 items</span>
+</a>      <a href="/collections/natural-history-of-the-amphibious-carnivora-including-the-walrus-and-seals-also" class="lane-item" title="natural history of the amphibious carnivora, including the walrus and seals, also of the herbivorous cetacea, &amp;c.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=400612&amp;t=r" />
+        </div>
+        <h5>natural history of the amphibious carnivora, including the walrus and seals, also of the herbivorous cetacea, &amp;c.</h5>
+          <span class="item-count">33 items</span>
+</a>      <a href="/collections/pigeons-par-madame-knip-nee-pauline-de-courcelles-paintre-dhistoire-naturelle" class="lane-item" title="pigeons, par Madame Knip, nee Pauline de Courcelles paintre d&#x27;histoire naturelle ... Le texte par ... Themminck.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=113875&amp;t=r" />
+        </div>
+        <h5>pigeons, par Madame Knip, nee Pauline de Courcelles paintre d&#x27;histoire naturelle ... Le texte par ... Themminck.</h5>
+          <span class="item-count">88 items</span>
+</a>      <a href="/collections/livre-de-divers-animaux-pour-dessus-de-portes-par-les-meilleurs-maitres" class="lane-item" title="Livre de divers animaux pour dessus de portes par les meilleurs maitres.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1221504&amp;t=r" />
+        </div>
+        <h5>Livre de divers animaux pour dessus de portes par les meilleurs maitres.</h5>
+          <span class="item-count">12 items</span>
+</a>      <a href="/collections/moths-and-butterflies-of-the-united-states-east-of-the-rocky-mountains-with-over" class="lane-item" title="Moths and butterflies of the United States east of the Rocky Mountains; with over 400 photographic illustrations in the text and many transfers of species from life, by Sherman F. Denton">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=106223&amp;t=r" />
+        </div>
+        <h5>Moths and butterflies of the United States east of the Rocky Mountains; with over 400 photographic illustrations in the text and many transfers of species from life, by Sherman F. Denton</h5>
+          <span class="item-count">163 items</span>
+</a>      <a href="/collections/botanique-mise-la-porte-de-tout-le-monde-ou-collection-des-plantes-dusage-dans" class="lane-item" title="botanique mise à la porteé de tout le monde; ou, Collection des plantes d&#x27;usage dans la médecine, dans les alimens et dans les arts.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1101872&amp;t=r" />
+        </div>
+        <h5>botanique mise à la porteé de tout le monde; ou, Collection des plantes d&#x27;usage dans la médecine, dans les alimens et dans les arts.</h5>
+          <span class="item-count">474 items</span>
+</a>      <a href="/collections/photographs-of-british-algae-cyanotype-impressions" class="lane-item" title="Photographs of British algae: cyanotype impressions">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=419696&amp;t=r" />
+        </div>
+        <h5>Photographs of British algae: cyanotype impressions</h5>
+          <span class="item-count">285 items</span>
+</a>      <a href="/collections/birds-of-america-from-drawings-made-in-the-united-states-and-their-territories" class="lane-item" title="birds of America, from drawings made in the United States and their territories. By John James Audubon">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=108275&amp;t=r" />
+        </div>
+        <h5>birds of America, from drawings made in the United States and their territories. By John James Audubon</h5>
+          <span class="item-count">506 items</span>
+</a>      <a href="/collections/the-birds-of-europe" class="lane-item" title="The birds of Europe">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=401590&amp;t=r" />
+        </div>
+        <h5>The birds of Europe</h5>
+          <span class="item-count">463 items</span>
+</a>      <a href="/collections/birds-of-eastern-north-america-with-original-descriptions-of-all-the-species" class="lane-item" title="birds of eastern North America; with original descriptions of all the species which occur east of the Mississippi River, between the Arctic circle and the Gulf of Mexico, with full notes upon their habits, etc.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=107667&amp;t=r" />
+        </div>
+        <h5>birds of eastern North America; with original descriptions of all the species which occur east of the Mississippi River, between the Arctic circle and the Gulf of Mexico, with full notes upon their habits, etc.</h5>
+          <span class="item-count">33 items</span>
+</a>      <a href="/collections/butterflies-of-the-eastern-united-states-and-canada-with-special-reference" class="lane-item" title="Butterflies of the eastern United States and Canada, with special reference to New England. By Samuel Hubbard Scudder.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=438693&amp;t=r" />
+        </div>
+        <h5>Butterflies of the eastern United States and Canada, with special reference to New England. By Samuel Hubbard Scudder.</h5>
+          <span class="item-count">99 items</span>
+</a>      <a href="/collections/common-objects-of-the-sea-shore-including-hints-for-an-aquarium-2" class="lane-item" title="common objects of the sea shore : including hints for an aquarium">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=434175&amp;t=r" />
+        </div>
+        <h5>common objects of the sea shore : including hints for an aquarium</h5>
+          <span class="item-count">13 items</span>
+</a>      <a href="/collections/common-objects-of-the-sea-shore-including-hints-for-an-aquarium" class="lane-item" title="common objects of the sea shore : including hints for an aquarium.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=416997&amp;t=r" />
+        </div>
+        <h5>common objects of the sea shore : including hints for an aquarium.</h5>
+          <span class="item-count">13 items</span>
+</a>      <a href="/collections/deer-of-all-lands-a-history-of-the-family-cervidae-living-and-extinct-by-r" class="lane-item" title="deer of all lands; a history of the family Cervidae living and extinct, by R. Lydekker.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=102477&amp;t=r" />
+        </div>
+        <h5>deer of all lands; a history of the family Cervidae living and extinct, by R. Lydekker.</h5>
+          <span class="item-count">28 items</span>
+</a>      <a href="/collections/fishes-of-north-america-that-are-captured-on-hook-and-line-with-eighty-colored" class="lane-item" title="fishes of North America that are captured on hook and line. With eighty colored plates made from oil portraits of living fishes before their color tints had faded. By William C. Harris ... Volume I.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=477135&amp;t=r" />
+        </div>
+        <h5>fishes of North America that are captured on hook and line. With eighty colored plates made from oil portraits of living fishes before their color tints had faded. By William C. Harris ... Volume I.</h5>
+          <span class="item-count">44 items</span>
+</a>      <a href="/collections/the-natural-history-of-carolina-florida-and-the-bahama-islands2nd-ed" class="lane-item" title="The natural history of Carolina, Florida, and the Bahama Islands...2nd ed.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=400639&amp;t=r" />
+        </div>
+        <h5>The natural history of Carolina, Florida, and the Bahama Islands...2nd ed.</h5>
+          <span class="item-count">227 items</span>
+</a>      <a href="/collections/natural-history-of-washington-territory-and-oregon-with-much-relating" class="lane-item" title="natural history of Washington territory and Oregon, with much relating to Minnesota, Nebraska, Kansas, Utah, and California ... being those parts of the final reports on the survey of the Northern Pacific Railroad route, relating to the natural history of">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=429021&amp;t=r" />
+        </div>
+        <h5>natural history of Washington territory and Oregon, with much relating to Minnesota, Nebraska, Kansas, Utah, and California ... being those parts of the final reports on the survey of the Northern Pacific Railroad route, relating to the natural history of</h5>
+          <span class="item-count">60 items</span>
+</a>      <a href="/collections/natural-history-of-fishes-of-the-perch-family" class="lane-item" title="natural history of fishes of the perch family.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=495182&amp;t=r" />
+        </div>
+        <h5>natural history of fishes of the perch family.</h5>
+          <span class="item-count">36 items</span>
+</a>      <a href="/collections/new-and-heretofore-unfigured-species-of-birds-of-north-america" class="lane-item" title="new and heretofore unfigured species of birds of North America.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=402405&amp;t=r" />
+        </div>
+        <h5>new and heretofore unfigured species of birds of North America.</h5>
+          <span class="item-count">75 items</span>
+</a>      <a href="/collections/new-natural-history-by-richard-lydekker" class="lane-item" title="new natural history, by Richard Lydekker ...">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=NNH-001&amp;t=r" />
+        </div>
+        <h5>new natural history, by Richard Lydekker ...</h5>
+          <span class="item-count">114 items</span>
+</a>      <a href="/collections/zoology-of-captain-beecheys-voyage" class="lane-item" title="zoology of Captain Beechey&#x27;s voyage">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=408314&amp;t=r" />
+        </div>
+        <h5>zoology of Captain Beechey&#x27;s voyage</h5>
+          <span class="item-count">46 items</span>
+</a>      <a href="/collections/zoology-of-the-voyage-of-hms-samarang-under-the-command-of-captain-sir-edward" class="lane-item" title="zoology of the voyage of H.M.S. Samarang; under the command of Captain Sir Edward Belcher ... during the years 1843-46. By John Edward Gray ... Sir John Richardson ... Arthur Adams ... Published under the authority of the Lords&#x27; Commissioners of the Admir">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=410877&amp;t=r" />
+        </div>
+        <h5>zoology of the voyage of H.M.S. Samarang; under the command of Captain Sir Edward Belcher ... during the years 1843-46. By John Edward Gray ... Sir John Richardson ... Arthur Adams ... Published under the authority of the Lords&#x27; Commissioners of the Admir</h5>
+          <span class="item-count">2 items</span>
+</a>      <a href="/collections/thesaurus-imaginum-piscium-testaceorum-quales-sunt-cancri-echini-echinometra" class="lane-item" title="Thesaurus imaginum piscium testaceorum; quales sunt cancri, echini, echinometra, stellae marinae, &amp;c. ut et cochlearum ... quibus accedunt conchylia, ut nautilus, cornu Ammonis, &amp; conchae univalviae et bivalviae ... denique mineralia ...">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=563173&amp;t=r" />
+        </div>
+        <h5>Thesaurus imaginum piscium testaceorum; quales sunt cancri, echini, echinometra, stellae marinae, &amp;c. ut et cochlearum ... quibus accedunt conchylia, ut nautilus, cornu Ammonis, &amp; conchae univalviae et bivalviae ... denique mineralia ...</h5>
+          <span class="item-count">63 items</span>
+</a>      <a href="/collections/voyage-autour-du-monde-sur-la-fregate-la-venus-pendant-les-annees-1836-1839" class="lane-item" title="Voyage autour du monde sur la fregate la Venus, pendant les annees 1836-1839 : publie par ordre du roi, sous les auspices du ministre de la marine">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=402535&amp;t=r" />
+        </div>
+        <h5>Voyage autour du monde sur la fregate la Venus, pendant les annees 1836-1839 : publie par ordre du roi, sous les auspices du ministre de la marine</h5>
+          <span class="item-count">112 items</span>
+</a>      <a href="/collections/wild-animals-and-birds-their-haunts-and-habits" class="lane-item" title="Wild animals and birds: their haunts and habits">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1268404&amp;t=r" />
+        </div>
+        <h5>Wild animals and birds: their haunts and habits</h5>
+          <span class="item-count">48 items</span>
+</a>      <a href="/collections/zoological-researches-in-java-and-the-neighbouring-islands" class="lane-item" title="Zoological researches in Java, and the neighbouring islands.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=478293&amp;t=r" />
+        </div>
+        <h5>Zoological researches in Java, and the neighbouring islands.</h5>
+          <span class="item-count">74 items</span>
+</a>      <a href="/collections/zoology-of-new-york-or-the-new-york-fauna-series-natural-history-of-new-york" class="lane-item" title="Zoology of New York; or, The New York fauna [Series: Natural history of New York]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=113508&amp;t=r" />
+        </div>
+        <h5>Zoology of New York; or, The New York fauna [Series: Natural history of New York]</h5>
+          <span class="item-count">336 items</span>
+</a>      <a href="/collections/butterflies-of-north-america" class="lane-item" title="Butterflies of North America.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=105552&amp;t=r" />
+        </div>
+        <h5>Butterflies of North America.</h5>
+          <span class="item-count">161 items</span>
+</a>      <a href="/collections/cabinet-du-petit-naturaliste-par-mad-d" class="lane-item" title="Cabinet du petit naturaliste, par Mad. D*** ...">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=119045&amp;t=r" />
+        </div>
+        <h5>Cabinet du petit naturaliste, par Mad. D*** ...</h5>
+          <span class="item-count">14 items</span>
+</a>      <a href="/collections/catalogue-of-the-chiroptera-by-ge-dobson" class="lane-item" title="Catalogue of the chiroptera. By G.E. Dobson.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=563142&amp;t=r" />
+        </div>
+        <h5>Catalogue of the chiroptera. By G.E. Dobson.</h5>
+          <span class="item-count">31 items</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Gay &amp; Lesbian History <a href="/collections/lane/gay-lesbian-history"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/diana-davies-photographs" class="lane-item" title="Diana Davies photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1581999&amp;t=r" />
+        </div>
+        <h5>Diana Davies photographs</h5>
+          <span class="item-count">366 items</span>
+</a>      <a href="/collections/particular-voices-portraits-of-gay-and-lesbian-writers" class="lane-item" title="Particular Voices: Portraits of Gay and Lesbian Writers">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1661010&amp;t=r" />
+        </div>
+        <h5>Particular Voices: Portraits of Gay and Lesbian Writers</h5>
+          <span class="item-count">203 items</span>
+</a>      <a href="/collections/barbara-gittings-and-kay-tobin-lahusen-gay-history-papers-and-photographs" class="lane-item" title="Barbara Gittings and Kay Tobin Lahusen gay history papers and photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1605695&amp;t=r" />
+        </div>
+        <h5>Barbara Gittings and Kay Tobin Lahusen gay history papers and photographs</h5>
+          <span class="item-count">914 items</span>
+</a>      <a href="/collections/international-gay-information-center-collection" class="lane-item" title="International Gay Information Center collection">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=Y_MSS_212&amp;t=r" />
+        </div>
+        <h5>International Gay Information Center collection</h5>
+          <span class="item-count">255 items</span>
+</a>      <a href="/collections/mattachine-society-inc-of-new-york-records" class="lane-item" title="Mattachine Society, Inc. of New York records">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=ps_mss_875&amp;t=r" />
+        </div>
+        <h5>Mattachine Society, Inc. of New York records</h5>
+          <span class="item-count">4 items</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Acclaimed Theatrical Photographers <a href="/collections/lane/acclaimed-theatrical-photographers"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/martha-swope-photographs" class="lane-item" title="Martha Swope photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5031652&amp;t=r" />
+        </div>
+        <h5>Martha Swope photographs</h5>
+          <span class="item-count">27,714 items</span>
+</a>      <a href="/collections/kenn-duncan-photograph-archive-ca-1960-1986" class="lane-item" title="Kenn Duncan Photograph Archive, ca. 1960-1986">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=2023685&amp;t=r" />
+        </div>
+        <h5>Kenn Duncan Photograph Archive, ca. 1960-1986</h5>
+          <span class="item-count">6,959 items</span>
+</a>      <a href="/collections/friedman-abeles-photograph-collection" class="lane-item" title="Friedman-Abeles photograph collection">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=4039018&amp;t=r" />
+        </div>
+        <h5>Friedman-Abeles photograph collection</h5>
+          <span class="item-count">27,396 items</span>
+</a>      <a href="/collections/vandamm-theatrical-photographs-1900-1957" class="lane-item" title="Vandamm theatrical photographs, 1900-1957.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=psnypl_the_4222&amp;t=r" />
+        </div>
+        <h5>Vandamm theatrical photographs, 1900-1957.</h5>
+          <span class="item-count">3,137 items</span>
+</a>      <a href="/collections/white-studio-theatrical-photographs" class="lane-item" title="White Studio theatrical photographs">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=G99F613_001&amp;t=r" />
+        </div>
+        <h5>White Studio theatrical photographs</h5>
+          <span class="item-count">1,620 items</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Poster Collections <a href="/collections/lane/poster-collections"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/turn-of-the-century-posters" class="lane-item" title="Turn of the Century Posters">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/212_large.jpg" />
+        </div>
+        <h5>Turn of the Century Posters</h5>
+          <span class="item-count">2,027 items</span>
+</a>      <a href="/collections/posters-arranged-by-artists-2" class="lane-item" title="Posters : arranged by artists.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1258753&amp;t=r" />
+        </div>
+        <h5>Posters : arranged by artists.</h5>
+          <span class="item-count">836 items</span>
+</a>      <a href="/collections/magazine-posters" class="lane-item" title="Magazine posters">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1543484&amp;t=r" />
+        </div>
+        <h5>Magazine posters</h5>
+          <span class="item-count">275 items</span>
+</a>      <a href="/collections/posters-american-book-posters" class="lane-item" title="Posters: American book posters.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1543264&amp;t=r" />
+        </div>
+        <h5>Posters: American book posters.</h5>
+          <span class="item-count">220 items</span>
+</a>      <a href="/collections/posters-of-the-russian-civil-war-1918-1922" class="lane-item" title="Posters of the Russian Civil War, 1918-1922">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/195_large.jpg" />
+        </div>
+        <h5>Posters of the Russian Civil War, 1918-1922</h5>
+          <span class="item-count">213 items</span>
+</a>      <a href="/collections/posters-new-york-1890s-1907" class="lane-item" title="Posters. New York, 1890s-1907.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1131181&amp;t=r" />
+        </div>
+        <h5>Posters. New York, 1890s-1907.</h5>
+          <span class="item-count">115 items</span>
+</a>      <a href="/collections/harold-m-fleming-papers" class="lane-item" title="Harold M. Fleming papers">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=416746&amp;t=r" />
+        </div>
+        <h5>Harold M. Fleming papers</h5>
+          <span class="item-count">109 items</span>
+</a>      <a href="/collections/newspaper-posters" class="lane-item" title="Newspaper posters.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1541034&amp;t=r" />
+        </div>
+        <h5>Newspaper posters.</h5>
+          <span class="item-count">108 items</span>
+</a>      <a href="/collections/collection-of-russian-and-ukrainian-posters-1917-1921" class="lane-item" title="Collection of Russian and Ukrainian posters, 1917-1921.]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1216125&amp;t=r" />
+        </div>
+        <h5>Collection of Russian and Ukrainian posters, 1917-1921.]</h5>
+          <span class="item-count">103 items</span>
+</a>      <a href="/collections/commercial-posters" class="lane-item" title="Commercial posters">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1541666&amp;t=r" />
+        </div>
+        <h5>Commercial posters</h5>
+          <span class="item-count">74 items</span>
+</a>      <a href="/collections/posters-exhibition-exposition-calendar" class="lane-item" title="Posters: exhibition, exposition, calendar.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1543209&amp;t=r" />
+        </div>
+        <h5>Posters: exhibition, exposition, calendar.</h5>
+          <span class="item-count">51 items</span>
+</a>      <a href="/collections/posters-from-the-new-york-sunday-herald-1895-1896" class="lane-item" title="Posters from the New York Sunday Herald, 1895-1896.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1543090&amp;t=r" />
+        </div>
+        <h5>Posters from the New York Sunday Herald, 1895-1896.</h5>
+          <span class="item-count">39 items</span>
+</a>      <a href="/collections/posters-by-will-bradley" class="lane-item" title="Posters, by Will Bradley.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1541547&amp;t=r" />
+        </div>
+        <h5>Posters, by Will Bradley.</h5>
+          <span class="item-count">28 items</span>
+</a>      <a href="/collections/magazine-posters-2" class="lane-item" title="Magazine posters.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1540911&amp;t=r" />
+        </div>
+        <h5>Magazine posters.</h5>
+          <span class="item-count">19 items</span>
+</a>      <a href="/collections/magic-scrapbooks-separated-posters" class="lane-item" title="Magic Scrapbooks: separated posters">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=3989726&amp;t=r" />
+        </div>
+        <h5>Magic Scrapbooks: separated posters</h5>
+          <span class="item-count">20 items</span>
+</a>      <a href="/collections/circus-and-magic-posters" class="lane-item" title="Circus and magic posters">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=G98F774&amp;t=r" />
+        </div>
+        <h5>Circus and magic posters</h5>
+          <span class="item-count">17 items</span>
+</a>      <a href="/collections/billy-rose-theatre-division-posters" class="lane-item" title="Billy Rose Theatre Division posters">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=ps_the_cd66_1035&amp;t=r" />
+        </div>
+        <h5>Billy Rose Theatre Division posters</h5>
+          <span class="item-count">12 items</span>
+</a>      <a href="/collections/posters-for-books-and-magazines" class="lane-item" title="Posters for books and magazines.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1543049&amp;t=r" />
+        </div>
+        <h5>Posters for books and magazines.</h5>
+          <span class="item-count">2 items</span>
+</a>      <a href="/collections/broadsides-posters-and-playbills" class="lane-item" title="Broadsides, posters and playbills">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=485629&amp;t=r" />
+        </div>
+        <h5>Broadsides, posters and playbills</h5>
+          <span class="item-count">1 item</span>
+</a>      <a href="/collections/posters-arranged-by-artists" class="lane-item" title="Posters: arranged by artists.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1541965&amp;t=r" />
+        </div>
+        <h5>Posters: arranged by artists.</h5>
+          <span class="item-count">1 item</span>
+</a>      <a href="/collections/posters-by-jacob-kazaks" class="lane-item" title="[Posters by Jacob Kazaks.]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1556183&amp;t=r" />
+        </div>
+        <h5>[Posters by Jacob Kazaks.]</h5>
+          <span class="item-count">1 item</span>
+</a>      <a href="/collections/exhibition-and-retail-shop-poster-collection" class="lane-item" title="Exhibition and Retail Shop Poster Collection">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5036055&amp;t=r" />
+        </div>
+        <h5>Exhibition and Retail Shop Poster Collection</h5>
+          <span class="item-count">2 items</span>
+</a>      <a href="/collections/poster-collection" class="lane-item" title="Poster Collection">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5119508&amp;t=r" />
+        </div>
+        <h5>Poster Collection</h5>
+          <span class="item-count">10 items</span>
+</a>      <a href="/collections/true-history-of-deacon-giles-distillery-reported-for-the-benefit-of-posterity" class="lane-item" title="true history of Deacon Giles&#x27; distillery. Reported for the benefit of posterity ...">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=2038963&amp;t=r" />
+        </div>
+        <h5>true history of Deacon Giles&#x27; distillery. Reported for the benefit of posterity ...</h5>
+          <span class="item-count">1 item</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Maps &amp; Atlases <a href="/collections/lane/maps-atlases"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/atlases-of-new-york-city" class="lane-item" title="Atlases of New York City">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1516805&amp;t=r" />
+        </div>
+        <h5>Atlases of New York City</h5>
+          <span class="item-count">11,685 items</span>
+</a>      <a href="/collections/atlases-of-the-united-states" class="lane-item" title="Atlases of the United States">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=433879&amp;t=r" />
+        </div>
+        <h5>Atlases of the United States</h5>
+          <span class="item-count">3,805 items</span>
+</a>      <a href="/collections/maps-of-asia" class="lane-item" title="Maps of Asia">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=psnypl_map_241&amp;t=r" />
+        </div>
+        <h5>Maps of Asia</h5>
+          <span class="item-count">64 items</span>
+</a>      <a href="/collections/charting-america-maps-from-the-lawrence-h-slaughter-collection-and-others" class="lane-item" title="Charting America: Maps from the Lawrence H. Slaughter Collection and Others">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/149_large.jpg" />
+        </div>
+        <h5>Charting America: Maps from the Lawrence H. Slaughter Collection and Others</h5>
+          <span class="item-count">3,411 items</span>
+</a>      <a href="/collections/maps-of-africa" class="lane-item" title="Maps of Africa">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1690373&amp;t=r" />
+        </div>
+        <h5>Maps of Africa</h5>
+          <span class="item-count">2 items</span>
+</a>      <a href="/collections/picturing-america-1497-1899-prints-maps-and-drawings-bearing-on-the-new-world" class="lane-item" title="Picturing America, 1497-1899: Prints, Maps, and Drawings bearing on the New World Discoveries and on the Development of the Territory that is now the United States">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/190_large.jpg" />
+        </div>
+        <h5>Picturing America, 1497-1899: Prints, Maps, and Drawings bearing on the New World Discoveries and on the Development of the Territory that is now the United States</h5>
+          <span class="item-count">1,832 items</span>
+</a>      <a href="/collections/maps-of-europe" class="lane-item" title="Maps of Europe">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=3979932&amp;t=r" />
+        </div>
+        <h5>Maps of Europe</h5>
+          <span class="item-count">40 items</span>
+</a>      <a href="/collections/printed-maps-of-russia-and-neighboring-lands-including-city-plans-of-saint" class="lane-item" title="Printed maps of Russia and neighboring lands, including city plans of Saint Petersburg, from the 17th to the early20th century].">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=2003589&amp;t=r" />
+        </div>
+        <h5>Printed maps of Russia and neighboring lands, including city plans of Saint Petersburg, from the 17th to the early20th century].</h5>
+          <span class="item-count">1 item</span>
+</a>      <a href="/collections/history-of-greece-from-the-earliest-records-of-that-country-to-the-time-in-which" class="lane-item" title="History of Greece: from the earliest records of that country, to the time in which it was reduced to a Roman province. Illustrated with maps and portraits. For the use of young persons. By Edward Baldwin, Esq., author of Fables, ancient and modern.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1802523&amp;t=r" />
+        </div>
+        <h5>History of Greece: from the earliest records of that country, to the time in which it was reduced to a Roman province. Illustrated with maps and portraits. For the use of young persons. By Edward Baldwin, Esq., author of Fables, ancient and modern.</h5>
+          <span class="item-count">8 items</span>
+</a>      <a href="/collections/maps-used-by-general-butterfield-on-the-battlefields-of-the-civil-war-1861-1865" class="lane-item" title="Maps used by General Butterfield on the battlefields of the Civil War, 1861-1865">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=5139745&amp;t=r" />
+        </div>
+        <h5>Maps used by General Butterfield on the battlefields of the Civil War, 1861-1865</h5>
+          <span class="item-count">3 items</span>
+</a>      <a href="/collections/history-of-the-colonization-of-africa-by-alien-races-by-sir-harry-h-johnston" class="lane-item" title="history of the colonization of Africa by alien races, by Sir Harry H. Johnston ... With eight maps by the author and J.G. Bartholomew.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1261020&amp;t=r" />
+        </div>
+        <h5>history of the colonization of Africa by alien races, by Sir Harry H. Johnston ... With eight maps by the author and J.G. Bartholomew.</h5>
+          <span class="item-count">6 items</span>
+</a>      <a href="/collections/maps-arctic-regions" class="lane-item" title="Maps, Arctic regions">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=3977545&amp;t=r" />
+        </div>
+        <h5>Maps, Arctic regions</h5>
+          <span class="item-count">1 item</span>
+</a>      <a href="/collections/maps-of-south-america" class="lane-item" title="Maps of South America">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=2020761&amp;t=r" />
+        </div>
+        <h5>Maps of South America</h5>
+          <span class="item-count">4 items</span>
+</a>      <a href="/collections/f-w-putzgers-historischer-schul-atlas-zur-alten-mittleren-und-neuen-geschichte" class="lane-item" title="F. W. Putzger&#x27;s Historischer Schul-Atlas zur alten, mittleren und neuen Geschichte : in 66 Haupt- und 63 Nebenkarten">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=psnypl_grd_712&amp;t=r" />
+        </div>
+        <h5>F. W. Putzger&#x27;s Historischer Schul-Atlas zur alten, mittleren und neuen Geschichte : in 66 Haupt- und 63 Nebenkarten</h5>
+          <span class="item-count">1 item</span>
+</a>      <a href="/collections/military-and-topographical-atlas-of-the-united-states-including-the-british" class="lane-item" title="military and topographical atlas of the United States; including the British possessions &amp; Florida.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=psnypl_rbk_830&amp;t=r" />
+        </div>
+        <h5>military and topographical atlas of the United States; including the British possessions &amp; Florida.</h5>
+          <span class="item-count">1 item</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+            <div class="lane inverse">
+  <h4>Book Art and Illustrations <a href="/collections/lane/book-art-and-illustrations"><small>See More</small></a></h4>
+  <div class="lane-items">
+      <a href="/collections/ehon-the-artist-and-the-book-in-japan" class="lane-item" title="Ehon: the artist and the book in Japan">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/443_large.jpg" />
+        </div>
+        <h5>Ehon: the artist and the book in Japan</h5>
+          <span class="item-count">1,969 items</span>
+</a>      <a href="/collections/bookbinding-books-bequeathed-by-william-augustus-spencer" class="lane-item" title="Bookbinding : books bequeathed by William Augustus Spencer.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=491453&amp;t=r" />
+        </div>
+        <h5>Bookbinding : books bequeathed by William Augustus Spencer.</h5>
+          <span class="item-count">705 items</span>
+</a>      <a href="/collections/genji-monogatari-emaki" class="lane-item" title="Genji Monogatari Emaki">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=psnypl_spn_580&amp;t=r" />
+        </div>
+        <h5>Genji Monogatari Emaki</h5>
+          <span class="item-count">33 items</span>
+</a>      <a href="/collections/collection-of-book-jackets" class="lane-item" title="[Collection of book jackets]">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=489965&amp;t=r" />
+        </div>
+        <h5>[Collection of book jackets]</h5>
+          <span class="item-count">2,505 items</span>
+</a>      <a href="/collections/sonan-gafu-the-sonan-album" class="lane-item" title="Sonan gafu = The Sonan album.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1401308&amp;t=r" />
+        </div>
+        <h5>Sonan gafu = The Sonan album.</h5>
+          <span class="item-count">32 items</span>
+</a>      <a href="/collections/childrens-book-illustrations" class="lane-item" title="Children&#x27;s book illustrations">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1701845&amp;t=r" />
+        </div>
+        <h5>Children&#x27;s book illustrations</h5>
+          <span class="item-count">115 items</span>
+</a>      <a href="/collections/horae-2" class="lane-item" title="Horae.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=427186&amp;t=r" />
+        </div>
+        <h5>Horae.</h5>
+          <span class="item-count">39 items</span>
+</a>      <a href="/collections/tokaido-gojusan-tsugi-no-uchi" class="lane-item" title="Tōkaido gojūsan tsugi no uchi">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1699652&amp;t=r" />
+        </div>
+        <h5>Tōkaido gojūsan tsugi no uchi</h5>
+          <span class="item-count">57 items</span>
+</a>      <a href="/collections/scrap-book-of-russian-bookjackets-1917-1942" class="lane-item" title="[Scrap book of Russian bookjackets, 1917-1942].">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1556316&amp;t=r" />
+        </div>
+        <h5>[Scrap book of Russian bookjackets, 1917-1942].</h5>
+          <span class="item-count">656 items</span>
+</a>      <a href="/collections/posters-american-book-posters" class="lane-item" title="Posters: American book posters.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1543264&amp;t=r" />
+        </div>
+        <h5>Posters: American book posters.</h5>
+          <span class="item-count">220 items</span>
+</a>      <a href="/collections/icons-and-images-of-cultures-plate-books-from-the-russian-empire-early-soviet" class="lane-item" title="Icons and Images of Cultures: Plate Books from the Russian Empire, Early Soviet Russia, and Eastern Europe, 1730-1935">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/194_large.jpg" />
+        </div>
+        <h5>Icons and Images of Cultures: Plate Books from the Russian Empire, Early Soviet Russia, and Eastern Europe, 1730-1935</h5>
+          <span class="item-count">11,629 items</span>
+</a>      <a href="/collections/william-blake-illuminated-books" class="lane-item" title="William Blake: Illuminated Books">
+        <div class="lane-item-image">
+          <img src="/dg_collection_images/156_large.jpg" />
+        </div>
+        <h5>William Blake: Illuminated Books</h5>
+          <span class="item-count">89 items</span>
+</a>      <a href="/collections/kaishien-gaden-the-mustard-seed-garden-painting-manual" class="lane-item" title="Kaishien gaden = The mustard seed garden painting manual.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1402605&amp;t=r" />
+        </div>
+        <h5>Kaishien gaden = The mustard seed garden painting manual.</h5>
+          <span class="item-count">164 items</span>
+</a>      <a href="/collections/siyar-i-nab-life-of-the-prophet" class="lane-item" title="Siyar-i Nabî = Life of the Prophet">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1642441&amp;t=r" />
+        </div>
+        <h5>Siyar-i Nabî = Life of the Prophet</h5>
+          <span class="item-count">133 items</span>
+</a>      <a href="/collections/ise-monogatari-emaki-tales-of-ise" class="lane-item" title="Ise Monogatari Emaki = Tales of Ise">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=ps_spn_cd2_15&amp;t=r" />
+        </div>
+        <h5>Ise Monogatari Emaki = Tales of Ise</h5>
+          <span class="item-count">109 items</span>
+</a>      <a href="/collections/cleres-et-nobles-femmes" class="lane-item" title="cleres et nobles femmes.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=427462&amp;t=r" />
+        </div>
+        <h5>cleres et nobles femmes.</h5>
+          <span class="item-count">78 items</span>
+</a>      <a href="/collections/momoyogusa-flowers-of-a-hundred-generations" class="lane-item" title="Momoyogusa = Flowers of a Hundred Generations.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1269894&amp;t=r" />
+        </div>
+        <h5>Momoyogusa = Flowers of a Hundred Generations.</h5>
+          <span class="item-count">76 items</span>
+</a>      <a href="/collections/minch-shiken-the-colored-inkstone-of-the-ming-period" class="lane-item" title="Minchô shiken (The Colored Inkstone of the Ming Period).">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=ps_spn_374&amp;t=r" />
+        </div>
+        <h5>Minchô shiken (The Colored Inkstone of the Ming Period).</h5>
+          <span class="item-count">65 items</span>
+</a>      <a href="/collections/tsuki-hyakushi-100-aspects-of-the-moon" class="lane-item" title="Tsuki hyakushi = 100 Aspects of the Moon.">
+        <div class="lane-item-image">
+          <img src="http://images.nypl.org/index.php?id=1269867&amp;t=r" />
+        </div>
+        <h5>Tsuki hyakushi = 100 Aspects of the Moon.</h5>
+          <span class="item-count">56 items</span>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+
+
+  </div>
+
+</div>
+
+  <div class="home-lanes-wrapper">
+
+    <div class="home-lanes">
+      <div class="lane service-lane ">
+  <h4><a id="digital-services" name="digital-services"></a>Explore Further</h4>
+  <p>Here are some other ways you can access and engage with digital content at NYPL and beyond</p>
+  <div class="lane-items">
+      <a href="http://nypl.artehouse.com/perl/home.pl" class="lane-item" title="Digital Collections Print Store">
+        <div class="lane-item-image">
+          <img alt="Service-artehouse" src="/assets/service-artehouse-6d4b88c2153f6632c7116dbf46ce9031.jpg" />
+        </div>
+        <div class="caption">
+          <h5>Digital Collections Print Store</h5>
+          <p>Decorative prints for purchase: choose from archival prints, framed art, stretched canvas, vintage wood, and wall murals.</p>
+        </div>
+</a>      <a href="http://archives.nypl.org/" class="lane-item" title="NYPL Archives and Manuscripts">
+        <div class="lane-item-image">
+          <img alt="Service-archives" src="/assets/service-archives-94997d95c99dc5188e79090d2610e046.jpg" />
+        </div>
+        <div class="caption">
+          <h5>NYPL Archives and Manuscripts</h5>
+          <p>Contains finding aids for over 10,000 unique collections (digitized and non-digitized) in almost every conceivable format.</p>
+        </div>
+</a>      <a href="http://wallachprintsandphotos.nypl.org/" class="lane-item" title="Prints &amp; Photographs Catalog">
+        <div class="lane-item-image">
+          <img alt="Service-wallach" src="/assets/service-wallach-cbe38be84cf8d70bfefe83c7c353dd92.jpg" />
+        </div>
+        <div class="caption">
+          <h5>Prints &amp; Photographs Catalog</h5>
+          <p>The online catalog of The Miriam and Ira D. Wallach Division of Art, Prints and Photographs.</p>
+        </div>
+</a>      <a href="http://api.repo.nypl.org/" class="lane-item" title="NYPL Digital Collections API">
+        <div class="lane-item-image">
+          <img alt="Service-api" src="/assets/service-api-a077407ab31cce49b7f4fccecb2d735b.jpg" />
+        </div>
+        <div class="caption">
+          <h5>NYPL Digital Collections API</h5>
+          <p>The Library&#x27;s digitized collections are available as machine-readable data: over 1 million objects and records for you to search, crawl and compute.</p>
+        </div>
+</a>      <a href="http://dp.la/" class="lane-item" title="Digital Public Library of America">
+        <div class="lane-item-image">
+          <img alt="Service-dpla" src="/assets/service-dpla-82c63c077b796fc9c67fae6e9e54e06e.jpg" />
+        </div>
+        <div class="caption">
+          <h5>Digital Public Library of America</h5>
+          <p>Brings together the riches of America&#x27;s libraries, archives, and museums, and makes them freely available to the world.</p>
+        </div>
+</a>      <a href="http://maps.nypl.org/" class="lane-item" title="NYPL Map Warper">
+        <div class="lane-item-image">
+          <img alt="Service-warper" src="/assets/service-warper-b5a44bd75a7cbc5533c6fb19fca216bb.jpg" />
+        </div>
+        <div class="caption">
+          <h5>NYPL Map Warper</h5>
+          <p>Browse and download NYPL&#x27;s digital maps, and align historic maps with the geography of today.</p>
+        </div>
+</a>      <a href="http://buildinginspector.nypl.org/" class="lane-item" title="Building Inspector">
+        <div class="lane-item-image">
+          <img alt="Service-buildinginspector" src="/assets/service-buildinginspector-8f47cf667ebb10fe187703aa0dd43195.jpg" />
+        </div>
+        <div class="caption">
+          <h5>Building Inspector</h5>
+          <p>A tool where you can help unlock New York City&#x27;s past by identifying buildings and other details on beautiful old maps.</p>
+        </div>
+</a>      <a href="http://stereo.nypl.org/" class="lane-item" title="Stereogranimator">
+        <div class="lane-item-image">
+          <img alt="Service-stereo" src="/assets/service-stereo-c100a9bf52e0d8d92650bf8a182b6d5c.jpg" />
+        </div>
+        <div class="caption">
+          <h5>Stereogranimator</h5>
+          <p>A tool for creating and sharing 3D images from stereograph collections.</p>
+        </div>
+</a>      <a href="http://menus.nypl.org/" class="lane-item" title="What&#x27;s On The Menu?">
+        <div class="lane-item-image">
+          <img alt="Service-menus" src="/assets/service-menus-1748bc70813c6b7534129eb00fc11f7b.jpg" />
+        </div>
+        <div class="caption">
+          <h5>What&#x27;s On The Menu?</h5>
+          <p>A tool for transcribing historical restaurant menus.</p>
+        </div>
+</a>      <a href="http://oralhistory.nypl.org/" class="lane-item" title="Community Oral History Project">
+        <div class="lane-item-image">
+          <img alt="Service-oralhistory" src="/assets/service-oralhistory-cceabd0e2c7de823961cc85f763ee4b9.jpg" />
+        </div>
+        <div class="caption">
+          <h5>Community Oral History Project</h5>
+          <p>An initiative underway at NYPL branch libraries that aims to document, preserve, and celebrate the rich history of the New York&#x27;s unique neighborhoods.</p>
+        </div>
+</a>      <a href="http://ensemble.nypl.org/" class="lane-item" title="Ensemble">
+        <div class="lane-item-image">
+          <img alt="Service-ensemble" src="/assets/service-ensemble-b1d4a9190018ec875afc6847ed7d8653.jpg" />
+        </div>
+        <div class="caption">
+          <h5>Ensemble</h5>
+          <p>Help reconstruct theater history by transcribing old New York City playbills.</p>
+        </div>
+</a>      <a href="http://andrestudios.nypl.org/" class="lane-item" title="Andre Studios 1930-1941">
+        <div class="lane-item-image">
+          <img alt="Service-andrestudios" src="/assets/service-andrestudios-fa1fa5f2b0c81e13a8702ab566d64474.jpg" />
+        </div>
+        <div class="caption">
+          <h5>Andre Studios 1930-1941</h5>
+          <p>Fashion Drawings &amp; Sketches in the Collections of FIT and the New York Public Library.</p>
+        </div>
+</a>      <a href="http://www.hathitrust.org/" class="lane-item" title="HathiTrust Digital Library">
+        <div class="lane-item-image">
+          <img alt="Service-hathi" src="/assets/service-hathi-08100e6fd58ae0b1a2309c33731ed10f.jpg" />
+        </div>
+        <div class="caption">
+          <h5>HathiTrust Digital Library</h5>
+          <p>A partnership of academic &amp; research institutions, offering a collection of millions of titles digitized from libraries around the world.</p>
+        </div>
+</a>  </div>
+  <a href="#left" class="lane-button left"></a>
+  <a href="#right" class="lane-button right"></a>
+</div>
+
+    </div>
+
+  </div>
+
+
+</div>
+<div id="feedback" class="preload"></div>
+<script type="text/javascript">
+  var feedback_form = "\n  <div id=\'feedback-toggle\'>\n    <a href=\"javascript:void(0)\" class=\"open visible\">Feedback<\/a>\n    <a href=\"javascript:void(0)\" class=\"close\">Close<\/a>\n  <\/div>\n  <form method=\"post\" id=\"feedback-form\" data-remote=\"true\" onsubmit=\"this.action=\'/feedback/save_spreadsheet\'\" accept-charset=\"UTF-8\">\n\n      <input id=\"frompage\" name=\"frompage\" type=\"hidden\" value=\"/\" />\n      <h2 id=\'feedback-title\'>\n        <span class=\'step1\'>Feedback<\/span>\n        <span class=\'step2\'>Thank you!<\/span>\n      <\/h2>\n      <ul class=\'step1\'>\n        <li>\n          <input id=\'feedback-1\' type=\'radio\' value=\'1\' name=\'type\' checked=\'checked\'>\n          <label for=\'feedback-1\'>Comment<\/label>\n        <\/li>\n        <li>\n          <input id=\'feedback-2\' type=\'radio\' value=\'2\' name=\'type\'>\n          <label for=\'feedback-2\'>Correction<\/label>\n        <\/li>\n        <li>\n          <input id=\'feedback-3\' type=\'radio\' value=\'3\' name=\'type\'>\n          <label for=\'feedback-3\'>Bug<\/label>\n        <\/li>\n      <\/ul>\n\n      <textarea id=\'feedback-text\' name=\'feedback_text\' data-placeholder=\'We want to hear from you! Enter your feedback here.\' data-error=\'Please leave a comment.\' maxlength=\'400\' class=\'step1\'><\/textarea>\n      <div id=\'feedback-counter\' class=\'step1\'>400<\/div>\n      <div class=\'controls step1\'>\n        <a href=\'javascript:void(0)\' class=\'button\' id=\'feedback-send\'>Send<\/a>\n      <\/div>\n\n      <div id=\'feedback-wait\'>\n        <span>Please wait...<\/span>\n      <\/div>\n\n      <p id=\'feedback-thanks\' class=\'step2\'>Thank you for helping the Library.<\/p>\n      <div class=\'controls step2\'>\n        <a href=\'javascript:void(0)\' class=\'button\' id=\'feedback-close\'>Close<\/a>\n      <\/div>\n  <\/form>\n";
+</script>
+
+
+<div id="footer">
+	<div class="content">
+
+		<ul>
+			<li><a href="http://www.nypl.org/help/about-nypl">About NYPL</a></li>
+			<li><a href="http://www.nypl.org/help/about-nypl/president-and-leadership">President and Leadership</a></li>
+			<li><a href="http://www.nypl.org/spacerental">Space Rental</a></li>
+			<li><a href="http://www.nypl.org/help/about-nypl/careers-nypl">Careers at NYPL</a></li>
+			<li><a href="http://www.nypl.org/help/getting-oriented/resources-teachers">Resources for Teachers</a></li>
+		</ul>
+		
+		<ul>
+			<li><a href="http://www.nypl.org/eNews">E-Newsletters</a></li>
+			<li><a href="http://www.nypl.org/help/about-nypl/media-center">Media Center</a></li>
+			<li><a href="http://www.nypl.org/voices/connect-nypl">Connect with NYPL</a></li>
+			<li><a href="http://www.nypl.org/mobile-help">Mobile Apps</a></li>
+			<li><a href="http://www.nypl.org/help/computers-internet-and-wireless-access/reserving-computer">Reserve a PC</a></li>
+		</ul>
+		
+		<ul>
+			<li><a href="http://shop.nypl.org/">The Library Shop</a></li>
+			<li><a href="http://www.nypl.org/help/about-nypl/legal-notices/privacy-policy">Privacy Policy</a></li>
+			<li><a href="http://www.nypl.org/help/about-nypl/legal-notices/rules-and-regulations">Rules and Regulations</a></li>
+			<li><a href="http://www.nypl.org/help/computers-internet-and-wireless-access/a-safety-net-for-the-internet">Using the Internet</a></li>
+			<li><a href="http://www.nypl.org/help/about-nypl/legal-notices/website-terms-and-conditions">Website Terms and Conditions</a></li>
+			<li><a href="http://www.nypl.org/help/about-nypl/legal-notices/policy-gifts-materials">Gifts of Materials to NYPL</a></li>
+		</ul>
+		
+		<ul>
+			<li><a href="http://www.nypl.org/node/57438">Español</a></li>
+			<li><a href="http://www.nypl.org/node/107747">中文</a></li>
+			<li><a href="http://www.nypl.org/node/107749">русский</a></li>
+		</ul>
+		
+		<ul class="copyright"><li><span title="Copyright" class="copyright">&copy; The New York Public Library, 2016</span></li></ul>
+	</div>
+</div>
+
+<script src="//d1j7p8l83ye5e9.cloudfront.net/js/nypl-digital-collections-widget-alert.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+var _analytics_scr = document.createElement('script');
+_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=2977d8d74f63d7f8fedbea018b7a1d05&ns=1';
+var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
+})();
+// ]]>
+</script></body>
+</html>

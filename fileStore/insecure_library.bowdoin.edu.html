@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width,user-scalable=YES,initial-scale=1" name="viewport" />
+    <title>Bowdoin College Library</title>
+    <script src="/libr/sdks/jquery/1.11/jquery.min.js" type="text/javascript"></script>
+    <script src="/libr/sdks/html5shiv.js"></script>
+    <style media="all" type="text/css">
+@import "/libr/themes/bwdn3_0_acad-lib/campus-base-styles.css";
+@import "/libr/themes/bwdn3_0_acad-lib/layout-main.css";
+@import "/includes/library/css/font-awesome-min.css";
+@import "/includes/library/css/lib-base.css";
+</style>
+
+<!--[if lt IE 11.]>
+<style type="text/css">
+@import "/includes/library/css/lib-IE-repairs-2015.css"; 
+</style>
+<![endif]-->
+<!--[if lt IE 8.]>
+<style type="text/css">
+@import "/includes/library/css/ie-7.css"; 
+</style>
+<![endif]-->
+
+
+<script type="text/javascript">
+//to make sure mobile styles are loaded last
+
+$(document).ready(function() {
+    $("head style:last-of-type").after($("<link rel=\"stylesheet\" href=\"/includes/library/css/oth.css\" media=\"screen and (max-width: 991px)\">"));
+});
+</script>
+
+
+<script>
+//mobile menu
+
+$(document).ready(function() {
+    $("#menu-icon").click(function() {
+        $("div#site-nav").toggle(slow);
+    });
+});
+</script>
+
+<!--mail addresses hidden from bots-->
+<script src="/includes/library/scripts/jmail.js"></script>
+
+<script>
+/*This function looks for a change in the hash (activation of an in-page link) and sets focus to and 
+    highlights the target element. This is necessary because webkit does not set focus as it should. If 
+	the hash is empty (the user hit the back button after activating an in-page link) focus is set to body.
+	http://webaim.org/media/scripts/main.js
+*/
+$(window).bind('hashchange', function() {
+    var hash = "#" + window.location.hash.replace(/^#/, '');
+    if (hash != "#") {
+        $(hash).attr('tabindex', -1).on('blur focusout', function() {
+            $(this).removeAttr('tabindex');
+        }).focus();
+    } else {
+        $("#header").attr('tabindex', -1).on('blur focusout', function() {
+            $(this).removeAttr('tabindex');
+        }).focus();
+    }
+});
+</script>
+    <link rel="alternate" type="application/rss+xml" title="Bowdoin Library News &raquo; Feed" href="http://library.bowdoin.edu/news/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Bowdoin Reads &raquo; Feed" href="http://library.bowdoin.edu//bowdoinreads/rss.xml" />
+<style type="text/css">
+@import "/libr/sdks/jquery-ui/themes/base/jquery.ui.tabs.css";
+@import "/libr/sdks/jquery-ui/themes/base/jquery.ui.core.css";
+@import "/libr/sdks/jquery-ui/themes/base/jquery.ui.theme.css";
+html {
+    width: 100%;
+}
+
+body {
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+select {
+    border: 1px solid #969191;
+}
+
+select.shift {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#site-nav ul.nav li {
+    width: 25%;
+}
+
+ul.nav li#help-masthead {
+    display: none;
+}
+
+.js #tabs,
+.js #slideshow1 {
+    display: none;
+}
+
+#region-1 {
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+#container-1 {
+    width: 75%;
+    overflow: hidden;
+    float: left;
+}
+
+#homepage-search {
+    width: 100%;
+    margin: 0;
+    height: 250px;
+    border-radius: 5px;
+    border: 1px solid #898989;
+    border-top: 0;
+}
+
+#homepage-search h2 {
+    padding: 8px 0 6px 58px;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 100;
+    margin: 0;
+    background: url(/images/home/search.png) no-repeat 0 0 #A03B27;
+    font-family: "Chaparral Pro";
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 34px;
+}
+
+#tabs {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.ui-tabs ul.ui-tabs-nav {
+    border: 0;
+}
+
+.ui-tabs .ui-tabs-nav {
+    padding: 0;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-state-active {
+    background: none;
+}
+
+.ui-tabs .ui-tabs-nav li {
+    margin: 0;
+    border-radius: 0;
+    background-color: #C4BEB7;
+    font-size: .9em;
+    width: 20%;
+    text-align: center;
+    border-left: 1px solid #efefef;
+}
+
+.ui-tabs .ui-tabs-nav li.first {
+    border-left: 0;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+    color: #000;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 0 10px 0;
+}
+
+.ui-state-default a:hover {
+    background: #F5F4F1;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: 25px 10px 38px 15px;
+}
+
+.catHide {
+    display: none;
+}
+
+.homepage-form-message {
+    float: right;
+    margin: 10px 5px 0 0;
+    font-size: 10px;
+}
+
+.homepage-form-message a {
+    color: #fff;
+    padding: 7px;
+    background: #121212;
+    border-radius: 5px;
+}
+
+.homepage-form-message a:hover {
+    background: #a8a8a8;
+    color: #404040;
+    text-decoration: none;
+}
+
+#catalogForm {
+    margin: 0 0 20px 0;
+}
+
+#catalogForm fieldset {
+    border:0;
+}
+
+#catalogForm input {
+    margin-left: 10px;
+}
+
+.form-item {
+    position: absolute;
+    top: 147px;
+    overflow: hidden;
+    left: 15px;
+}
+
+input.search {
+    height: 35px;
+    padding-left: 10px;
+    border: 1px solid #727272;
+    float: left;
+}
+
+button.submit {
+    border: 1px solid #727272;
+    background: #A03B27;
+    padding: 0 8px;
+    color: #fff;
+    float: left;
+    cursor: pointer;
+    height: 35px
+}
+
+.advanced {
+    position: absolute;
+    top: 188px;
+    font-size: .8em;
+}
+
+.advanced a:nth-child(2) {
+    margin-left: 25px;
+}
+
+#container-2 {
+    width: 25%;
+    float: left;
+}
+
+#get-help {
+    float: right;
+    width: 85%;
+    height: 250px;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    border: 1px solid #898989;
+    border-top: 0;
+}
+
+#get-help h2 {
+    padding: 8px 0 6px 58px;
+    background: url(/images/get-help.gif) no-repeat 0 0 #A03B27;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 100;
+    margin: 0;
+    letter-spacing: 0.05em;
+    font-family: "Chaparral Pro";
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 34px;
+}
+
+#get-help ul {
+    padding: 10px 0 0 0;
+    margin: 0;
+    width: 90%;
+}
+
+#get-help ul li {
+    border-bottom: 1px dotted #b3b4b5;
+    list-style-type: none;
+    padding: 4px 0 2px 0;
+    margin-left: 13px;
+}
+
+#get-help ul li.last {
+    border-bottom: none;
+}
+
+#get-help a:link,
+#get-help a:visited {
+    font-size: 12px;
+}
+
+#libchat_btn_widget {
+    position: relative;
+    background: transparent;
+    top: 15px;
+    width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alert {
+    background: rgb(236, 242, 247);
+    width: 95%;
+    border: 1px solid #A03B27;
+    display: block;
+    margin: 0 auto 40px auto;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 13px;
+    position: relative;
+}
+
+.alert a.fa {
+    position:absolute;
+    top: -17px;
+    right: -10px;
+    background: rgb(236, 242, 247);
+    border-radius:5px;
+    padding: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+#region-2 {
+    margin: 0;
+    padding: 15px 0 25px 0;
+    overflow: hidden;
+}
+
+#sub-col-1,
+#sub-col-2,
+#sub-col-3 {
+    position: relative;
+    float: left;
+    display: inline;
+    margin: 0;
+    height: auto;
+    padding: 0;
+}
+
+#sub-col-1 {
+    width: 300px;
+}
+
+#sub-col-2 {
+    width: 260px;
+    height: auto;
+    margin-left: 60px;
+}
+
+#sub-col-3 {
+    width: 285px;
+    margin: 0 0 0 45px;
+}
+
+#container-3,
+#container-4,
+#container-5,
+#container-6 {
+    border-top: 1px dotted #b3b4b5;
+    padding: 0;
+}
+
+#container-4 {
+    margin-bottom: 40px;
+}
+
+#container-3 h2,
+#container-4 h2,
+#container-5 h2,
+#container-6 h2 {
+    color: #00557c;
+    font-size: 18px;
+    background-color: #F5F4F1;
+    margin: -9px 0 12px 0;
+    display: block;
+    padding-right: 5px;
+    font-weight: normal;
+    float: left;
+    font-family: "Chaparral Pro";
+    text-transform: uppercase;
+}
+
+.view-more {
+    font-size: 12px;
+    background: #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 2px 4px;
+    position: relative;
+    top: 26px;
+}
+
+#sub-col-1 .view-more {
+    left: 45%;
+}
+
+#sub-col-3 .view-more {
+    left: 60%;
+}
+
+#beauty {
+    height: 278px;
+    width: 302px;
+    display: inline-block;
+}
+
+#slideshow1 {
+    height: 182px;
+    width: 302px;
+    border: 1px solid #000;
+}
+
+.label {
+    height: 30px;
+    position: relative;
+    border-bottom: 1px solid #363636;
+    background: gray; /* fallback */
+    background: #5a5957;
+    width: 300px;
+    color: #fff;
+    margin: 0;
+    font-size: 14px;
+    padding: 5px 0 0 10px;
+}
+
+.slidebody img {
+    width: 300px;
+}
+
+#slideshow1 p {
+    text-align: center;
+    margin-top: 30px;
+    font-size:12px;
+}
+
+#slideshow-nav {
+    width: 100%;
+    font-size: 10px;
+    color: #cdcec1;
+    height: 30px;
+    padding: 8px 0 16px 0;
+    position: relative;
+    text-align: center;
+    z-index: 99;
+}
+
+.slideshow-nav-txt {
+    font-size: 110%;
+    color: #cdcec1;
+    margin: 0 0 0 0;
+}
+
+#slideshow-nav a:visited {
+    color: #cdcec1;
+    text-decoration: none;
+}
+
+#slideshow-nav a,
+#slideshow-nav a:link {
+    background: transparent url(/images/slideshow-nav-dot.png) no-repeat left -8px;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    margin: 5px 15px;
+    line-height: 100px;
+    overflow: hidden;
+}
+
+#slideshow-nav a.activeSlide {
+    color: #dc5d26;
+    background-position: left top;
+}
+
+ul#quicklinks {
+    list-style-type: none;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+ul#quicklinks li {
+    padding: 5px 0 5px 0;
+    border-bottom: 1px dotted #b3b4b5;
+    margin: 0;
+    font-size: 12px;
+}
+
+ul#quicklinks li a:link,
+#quicklinks li a:visited {
+    /*color: #404040;*/
+    font-size: 12px;
+}
+
+table.hours-today {
+    display: inline-block;
+}
+
+table.hours-today td {
+    font-size: 12px;
+    padding: 5px 0 5px 0;
+    border: none;
+    border-bottom: 1px dotted #b3b4b5;
+}
+
+table.hours-today td.hours-col-loc {
+    width: 60%;
+}
+
+table.hours-today td.hours-col-time {
+    text-align: right;
+}
+
+ul#services {
+    list-style-type: none;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+ul#services li {
+    color: #404040;
+    padding: 5px 0 5px 0;
+    border-bottom: 1px dotted #b3b4b5;
+    margin: 0;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 991px) {
+    .alert {
+        margin: 10px auto 10px auto;
+    }
+    #region-1,
+    #region-2 {
+        padding: 0;
+        margin: 0;
+    }
+    #container-1,
+    #container-2,
+    #container-3,
+    #container-4,
+    #container-5,
+    #container-6 {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        float: none;
+        border-top: 0;
+        border-bottom: 1px solid #ccc;
+    }
+    #homepage-search,
+    #get-help {
+        width: 100%;
+        border: 0;
+        height: 100%;
+        float: none;
+    }
+    #container-4 a,
+    #container-5 a {
+        display: inline-block;
+        width: 100%
+    }
+    #get-help a:link {
+        display: inline-block;
+        width: 100%;
+    }
+    #get-help li.first a:link {
+        display: inline;
+    }
+    #get-help ul li {
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 10px;
+    }
+    #get-help a:link,
+    ul#services li,
+    ul#quicklinks li a:link,
+    table.hours-today td {
+        font-size: 1.2em;
+        line-height: 1.9em;
+    }
+    #homepage-search h2,
+    #get-help h2,
+    #container-3 h2,
+    #container-4 h2,
+    #container-5 h2,
+    #container-6 h2 {
+        color: #00557c;
+        background: none;
+        padding: 17px 0;
+        cursor: pointer;
+        font-weight: normal;
+        font-size: 19px;
+        font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        float: none;
+        text-transform: initial;
+    }
+    h2 span {
+        font-size: .7em;
+    }
+    h2 + div {
+        padding-bottom: 15px;
+    }
+    h2:after {
+        content: "\f196";
+        font-family: FontAwesome;
+        margin: 2px 0 0 0;
+        float: right;
+        font-size: x-large;
+        color: #B5B4E5;
+    }
+    h2.active:after {
+        content: "\f00d";
+        font-family: FontAwesome;
+        margin: 2px 0 0 0;
+        float: right;
+        font-size: x-large;
+        color: #B5B4E5;
+    }
+    .ui-tabs ul.ui-tabs-nav {
+        margin-bottom: 25px;
+        display: inline;
+    }
+    .ui-tabs .ui-tabs-nav li {
+        background: transparent;
+        padding: 2px;
+        white-space: normal;
+        height: 62px;
+        max-width: 20%;
+    }
+    .ui-tabs .ui-tabs-nav li a {
+        color: #6B6B6B;
+    }
+    .ui-tabs .ui-tabs-nav li.ui-state-active {
+        border: 1px solid #f00;
+    }
+    .ui-tabs .ui-tabs-nav li.ui-state-active a {
+        color: black;
+    }
+    .ui-tabs .ui-tabs-panel {
+        text-align: center;
+        border: 1px solid #f00;
+        margin-top: 15px;
+    }
+    .homepage-form-message {
+        float: none;
+        margin: 5px 0 15px 0;
+    }
+    .homepage-form-message a {
+        color: #000;
+        background: #A6B7C5;
+    }
+    .form-item {
+        position: relative;
+        top: 20px;
+        left: 0;
+    }
+    select.shift {
+        margin-top: 25px;
+    }
+    input.search {
+        float: none;
+        font-size: .8em;
+    }
+    button.submit {
+        float: none;
+        margin: 10px 0;
+        background: #A03B27;
+        width: 50%;
+    }
+    img#oneSearch {
+        display: none;
+    }
+    .advanced {
+        display: none;
+    }
+    #sub-col-1,
+    #sub-col-2,
+    #sub-col-3 {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+    #beauty {
+        width: 100%;
+    }
+    .label {
+        width: 100%;
+    }
+    .slideshow {
+        width: 100%;
+    }
+    #slideshow-nav {
+        text-align: left;
+    }
+    ul#services li,
+    ul#quicklinks li {
+        padding-left: 10px;
+    }
+    table.hours-today tr {
+        padding-left: 5px;
+    }
+    table.hours-today td.hours-col-time {
+        text-align: left;
+    }
+    table.hours-today td.hours-col-loc {
+        font-weight: bold;
+    }
+    .arrow-down {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #f00;
+        position: absolute;
+        top: 60px;
+        left: 38%;
+        display: none;
+    }
+    .ui-tabs .ui-tabs-nav li.ui-state-active .arrow-down {
+        display: block;
+    }
+}
+
+@media print {
+    .ui-tabs-nav {
+        display: none;
+    }
+    .ui-tabs .ui-tabs-hide {
+        display: block !important;
+    }
+    .ui-tabs .ui-tabs-nav li a {
+        display: block !important;
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .ui-tabs ul.ui-tabs-nav li {
+        text-align: left;
+        height: inherit;
+        max-width: 100%;
+    }
+    .ui-tabs ul.ui-tabs-nav li a {
+        height: inherit;
+    }
+    .arrow-down {
+        top: 37px;
+        left: 85%;
+    }
+}
+</style>
+<!--[if lt IE 8.]>
+<style type="text/css">
+#site-nav ul.nav {
+    max-width:984px;
+}
+section.content {
+    padding: 18px 0 3px 0;
+}
+#homepage-search {
+    width:99%;
+}
+#homepage-search h2, #get-help h2 {
+    height:20px;
+    padding:4px 0 10px 58px;
+}
+.ui-tabs .ui-tabs-nav li {
+    width:19.9%;
+    height:36px;
+}
+button.submit {
+    height:39px;
+}
+select.shift {
+    margin-top: 0;
+}
+#beauty, #slideshow1 {
+    width:300px;
+}
+.view-more {
+    display:inline;
+}
+</style>
+<![endif]-->
+<script src="/libr/sdks/jquery-ui/ui/1.11/jquery-ui.min.js"></script>
+<script src="/includes/library/scripts/home.js" type="text/javascript"></script>
+<script src="/includes/scripts/jquery/jquery.cycle.all.js-2.54" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+    $('#slideshow1')
+        .after('<div id="slideshow-nav"><span class="slideshow-nav-txt"><\/span><\/div>')
+        .cycle({
+            fx: 'fade',
+            speed: 300,
+            timeout: 6500,
+            pause: 1,
+            random: 1,
+            pager: '#slideshow-nav',
+            pagerAnchorBuilder: function(index, el) {
+                return '<a href="#">&bull;<span class="hide">Select for Next Image</span></a>'; // whatever markup you want
+            }
+        });
+});
+</script>
+<script>
+//minimize flash of unstyled content
+$('html').addClass('js');
+$(document).ready(function() {
+    $('#tabs').show();
+    $('#slideshow1').show();
+});
+</script>
+<script src="/includes/library/scripts/jmail.js"></script>
+<script>
+function bye() {
+    $(".alert").css("display", "none");
+}
+</script>
+
+<script>
+//change to responsive
+$(document).ready(function() {
+    // run test on initial page load
+    checkSize();
+
+    // run test on resize of the window
+    //$(window).resize(checkSize);
+});
+
+//Function to the css rule instead of to viewport size
+function checkSize() {
+    if ($(".hours-col-time").css("text-align") == "left") {
+        $(document).ready(function() {
+            $(".alert").insertBefore("#viewa");
+            $("h2:contains('Search')").replaceWith("<h2>Search Catalogs, Databases &hellip;</span></h2>");
+            $("h2:contains('Information')").replaceWith("<h2>Students, Faculty &amp; Guests<br><span>Services and Support</span></h2>");
+            $("h2:contains('Quick')").replaceWith("<h2>Quick Links<br><span>My CBBcat, Book a Room, ILL &hellip;</span></h2>");
+            $("h2:contains('Today')").replaceWith("<h2>Hours</h2>");
+            $(".fold > div").hide();
+            $('.fold h2').click(function() {
+                $(this).next().toggle('fast');
+                $(this).toggleClass("active");
+                return false;
+            }).next().hide();
+        });
+    }
+}
+</script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-272220-6', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+    <header>
+        <div id="header" role="banner">
+<div id="skip2main"><a href="#viewa">Skip to main content</a></div>
+    <div id="wordmark-lib">
+        <a href="http://www.bowdoin.edu/"><img alt="Bowdoin College" height="45" longdesc="www.bowdoin.edu" src="/images/bowdoin-college.gif" width="137" /></a>
+    </div>
+    <div id="site-header-lib">
+        <div id="site-name">
+            <h1><a href="/index.shtml">Library</a></h1>
+        </div>
+        <a href="#" id="menu-icon"><span class="hide">Menu</span></a>
+        <div id="site-nav">
+            <div id="libsearch">
+    <form action="https://search.bowdoin.edu/search" id="s" method="get" name="s">
+    <label for="lib-search-field" class="hide">Search Library Site</label>
+        <input placeholder="Search Library Site" id="lib-search-field" maxlength="255" name="q" type="text">
+        <button type="submit" id="lib-search-button">
+            <span class="fa-search fa fa-2x">
+                    <span class="hide">Search</span>
+            </span>
+        </button>
+        <input name="site" type="hidden" value="library">
+        <input name="client" type="hidden" value="bowdoin-www-root">
+        <input name="proxystylesheet" type="hidden" value="bowdoin-www-root">
+        <input name="output" type="hidden" value="xml_no_dtd">
+    </form>
+</div>
+
+            <nav role="navigation">
+                <ul class="nav">
+                    <li class="dropdown first">
+                        <a href="/find/index.shtml">Research 
+                                
+                                <img src="/images/nav-down.gif" alt="dropdown menu" />
+                            </a>
+                        <ul id="slow">
+                            <li>
+                                <a href="/find/">Starting Your Research</a>
+                            </li>
+                            <li>
+                                <a href="/find/quick-reference.shtml">Quick Reference</a>
+                            </li>
+                            <li>
+                                <a href="http://libguides.bowdoin.edu/az.php">Databases by Subject &amp; Title</a>
+                            </li>
+                            <li>
+                                <a href="/help/research-help/evaluating-sources.shtml">Evaluating Resources</a>
+                            </li>
+                            <li>
+                                <a href="http://www.bowdoin.edu/studentaffairs/academic-honesty/how-to-cite.shtml">How To Cite</a>
+                            </li>
+                            <li>
+                                <a href="/find/index.shtml" title="More Research Options">More <span class="hide">Research Options</span>&rsaquo;&rsaquo;</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/services/index.shtml">Services 
+                                
+                                <img src="/images/nav-down.gif" alt="dropdown menu" />
+                            </a>
+                        <ul>
+                            <li>
+                                <a href="/services/order-forms.shtml">Request a Purchase</a>
+                            </li>
+                            <li>
+                                <a href="/services/borrow-from-bowdoin-and-beyond.shtml#tabs-2">Borrow From Bowdoin &amp; Beyond</a>
+                            </li>
+                            <li>
+                                <a href="http://libcal.bowdoin.edu/">Book a Study Room</a>
+                            </li>
+                            <li>
+                                <a href="/services/reserves/index.shtml">Reserves</a>
+                            </li>
+                            <li>
+                                <a href="http://www.bowdoin.edu/data-services/">Data Services</a>
+                            </li>
+                            <li>
+                                <a href="http://www.bowdoin.edu/academic-technology/">Academic Technology &amp; Consulting</a>
+                            </li>
+                            <li>
+                                <a href="/services/index.shtml" title="More Services">More <span class="hide">Services</span>&rsaquo;&rsaquo;</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/about-the-library/index.shtml">About the Library 
+                                
+                                <img src="/images/nav-down.gif" alt="dropdown menu" />
+                            </a>
+                        <ul>
+                            <li>
+                                <a href="/about-the-library/staff.shtml">Staff</a>
+                            </li>
+                            <li>
+                                <a href="/about-the-library/hours.shtml">Hours</a>
+                            </li>
+                            <li>
+                                <a href="/about-the-library/collections-and-services.shtml">Locations of Library Collections &amp; Services</a>
+                            </li>
+                            <li>
+                                <a href="/about-the-library/">Policies &amp; Guidelines</a>
+                            </li>
+                            <li>
+                                <a href="/about-the-library/index.shtml" title="More About the Library">More <span class="hide">About the Library</span>&rsaquo;&rsaquo;</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a id="branches" href="/branches/index.shtml">Branches &amp;<br />Special Collections 
+                                
+                                <img src="/images/nav-down.gif" alt="dropdown menu" />
+                            </a>
+                        <ul>
+                            <li>
+                                <a href="/branches/beckwith-music-library/index.shtml">Beckwith Music Library</a>
+                            </li>
+                            <li>
+                                <a href="/arch/index.shtml">George J. Mitchell Department of Special Collections &amp; Archives</a>
+                            </li>
+                            <li>
+                                <a href="/branches/government-documents/index.shtml">Government Documents</a>
+                            </li>
+                            <li>
+                                <a href="/branches/hatch-science-library/index.shtml">Hatch Science Library</a>
+                            </li>
+                            <li>
+                                <a href="/media-commons/index.shtml">Media Commons</a>
+                            </li>
+                            <li>
+                                <a href="/branches/pierce-art-library/index.shtml">Pierce Art Library</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="help-masthead">
+                        <a href="http://libanswers.bowdoin.edu">
+                            <img src="/images/get-help.gif" alt="Get Help" />Help
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+    </header>
+    <section id="viewa" role="main">
+        <section id="contains">
+            <article>
+                <section class="content">
+                    <div id="region-1">
+                        <div id="container-1">
+                            <div id="homepage-search" class="fold">
+                                <h2>Search</h2>
+                                <div>
+                                    <div class="ui-tabs" id="tabs">
+                                        <ul>
+                                            <li class="first">
+                                                <a href="#tabs-1" onclick="ga('send', 'pageview', '/index.shtml#catalogs');">Catalogs</a><span class="arrow-down">&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <a href="#tabs-2" onclick="ga('send', 'pageview', '/index.shtml#onesearch');">OneSearch</a><span class="arrow-down">&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <a href="#tabs-3" onclick="ga('send', 'pageview', '/index.shtml#databases');">Articles &amp; Databases</a><span class="arrow-down">&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <a href="#tabs-4" onclick="ga('send', 'pageview', '/index.shtml#reserves');">Reserves</a><span class="arrow-down">&nbsp;</span>
+                                            </li>
+                                            <li>
+                                                <a href="#tabs-5" onclick="ga('send', 'pageview', '/index.shtml#journals');">Journals A-Z</a><span class="arrow-down">&nbsp;</span>
+                                            </li>
+                                        </ul>
+                                        <!--begin catalogs tab-->
+                                        <div class="ui-tabs-hide" id="tabs-1">
+                                            <form action="#" id="catalogForm" method="get" name="catalogForm">
+                                                <fieldset>
+                                                    <legend class="hide">Select a Catalog:</legend>
+                                                    <span>
+                                                
+                                                <input checked="checked" id="cat1" name="catalog" onclick="mySearch(this)" type="radio" value="1"/>
+                                                <label title="Colby, Bates & Bowdoin libraries" for="cat1">CBBcat</label>
+                                                
+                                            
+                                            <input id="cat2" name="catalog" onclick="mySearch(this)" type="radio" value="2" />
+                                            <label title="Colby, Bates, Bowdoin, Williams, Middlebury, Wellesley libraries" for="cat2">NExpress</label>
+                                            
+                                            
+                                            <input id="cat3" name="catalog" onclick="mySearch(this)" type="radio" value="3" />
+                                            <label title="Maine libraries" for="cat3">MaineCat</label>
+                                           <!-- <input id="cat4" name="catalog" onclick="mySearch(this)" value="4" type="radio" />
+                                                <label for="cat4">WorldCat</label>
+                                                <span id="m4"></span>-->
+                                                    </span>
+                                                </fieldset>
+                                            </form>
+                                            <div id="dID1">
+                                                <!-- CBBcat-->
+                                                <form action="https://cbbcat.net/search/" id="search-cbbcat" method="get" name="search-cbbcat" onsubmit="return iiiSearchValidate();">
+                                                    <input id="iiiFormHandle_1" type="hidden" />
+                                                    <div class="formEntryArea">
+                                                        <label for="select-cbbcat-searchtype" class="hide">Select Search Type</label>
+                                                        <select id="select-cbbcat-searchtype" name="searchtype">
+                                                            <option selected="selected" value="X">Keyword</option>
+                                                            <option value="t">Title</option>
+                                                            <option value="a">Author</option>
+                                                            <option value="d">Subject</option>
+                                                            <option value="j">Genre</option>
+                                                            <option value="s">Series</option>
+                                                            <option value="c">Call no.</option>
+                                                            <option value="h">Alt. Call no.</option>
+                                                            <option value="g">Govt Doc no.</option>
+                                                            <option value="i">ISBN/ISSN</option>
+                                                            <option value="i">Publisher No.</option>
+                                                        </select>
+                                                        &#160;&#160;in:&#160;&#160;
+                                                        <label for="select-cbbcat-searchscope" class="hide">Select Search Scope</label>
+                                                        <select id="select-cbbcat-searchscope" name="searchscope">
+                                                            <option selected="selected" value="19">Search Entire CBB Collection</option>
+                                                            <option value="20">Books</option>
+                                                            <option value="21">e-Books</option>
+                                                            <option value="22">Books and e-Books</option>
+                                                            <option value="18">Journals (Print and Online)</option>
+                                                            <option value="13">Sound Recordings (CD/LP/Tape/Streaming)</option>
+                                                            <option value="17">Audio books/Spoken Word</option>
+                                                            <option value="14">Music CDs</option>
+                                                            <option value="15">Scores</option>
+                                                            <option value="11">Video/DVD/Streaming</option>
+                                                            <option value="16">DVDs</option>
+                                                            <option value="10">Federal Government Publications</option>
+                                                            <option value="12">Online</option>
+                                                            <option value="1">Bates</option>
+                                                            <option value="4">- Bates Archives and Special Collections</option>
+                                                            <option value="2">Bowdoin</option>
+                                                            <option value="23">- Bowdoin Art</option>
+                                                            <option value="24">- Bowdoin Main Libr</option>
+                                                            <option value="27">- Bowdoin Media Commons</option>
+                                                            <option value="25">- Bowdoin Music</option>
+                                                            <option value="26">- Bowdoin Science</option>
+                                                            <option value="5">- Bowdoin Special Coll/Archives</option>
+                                                            <option value="3">Colby</option>
+                                                            <option value="6">- Colby Bixler</option>
+                                                            <option value="7">- Colby Miller</option>
+                                                            <option value="8">- Colby Olin</option>
+                                                            <option value="9">- Colby Special Coll</option>
+                                                        </select>
+                                                        <div class="form-item">
+                                                            <input name="SORT" type="hidden" value="D" />
+                                                            <input id="cbbcat-search" size="60" class="search" maxlength="250" name="searcharg" type="text" placeholder="Search Colby, Bates &amp; Bowdoin" />
+                                                            <label for="cbbcat-search" class="hide">Search Colby, Bates and Bowdoin</label>
+                                                            <button class="submit" name="cbbcatsubmit" type="submit" value="Search">Search</button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- formEntryArea -->
+                                                </form>
+                                                <div class="advanced">
+                                                    <a href="http://cbbcat.net/search/X">Advanced Search</a>
+                                                    <a href="http://libguides.bowdoin.edu/cbbcathelp">CBBcat Help</a>
+                                                </div>
+                                            </div>
+                                            <div class="catHide" id="dID2">
+                                                <!--NExpress-->
+                                                <form action="https://nexpress.iii.com/search/a?a" id="NEXsearch" method="post" name="NEXsearch" target="_top">
+                                                    <label for="select-nexpress-searchtype" class="hide">Select Search Type</label>
+                                                    <select id="select-nexpress-searchtype" name="searchtype">
+                                                        <option selected="selected" value="Y">Keyword</option>
+                                                        <option value="t">Title</option>
+                                                        <option value="a">Author</option>
+                                                        <option value="d">Subject</option>
+                                                        <option value="c">LC Call Number</option>
+                                                        <option value="e">Dewey Call Number</option>
+                                                        <option value="g">Gov Doc Call Number</option>
+                                                        <option value="l">Alt Call Number</option>
+                                                        <option value="i">Standard Number</option>
+                                                        <option value="m">Publisher Number</option>
+                                                        <option value="o">OCLC Number</option>
+                                                    </select>
+                                                    in:
+                                                    <label for="select-nexpress-searchscope" class="hide">Select Search Scope</label>
+                                                    <select name="searchscope" id="select-nexpress-searchscope">
+                                                        <option selected="selected" value="3">Entire Collection</option>
+                                                        <option value="1">Videos/DVDs</option>
+                                                        <option value="2">Sound Recordings</option>
+                                                    </select>
+                                                    <div class="form-item">
+                                                        <label for="nexpress-search" class="hide">Search 6 regional academic libraries, including CBB</label>
+                                                        <input id="nexpress-search" size="60" class="search" maxlength="175" name="searcharg" type="text" placeholder="Search 6 regional academic libraries, including CBB" />
+                                                        <input name="SORT" type="hidden" value="D" />
+                                                        <button class="submit" name="nexpresssubmit" type="submit" value="Search">Search</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="catHide" id="dID3">
+                                                <!-- MaineCat-->
+                                                <form action="https://mainecat.maine.edu/search/" id="mainecat" method="get" name="mainecat">
+                                                    <input type="hidden" />
+                                                    <label for="select-mainecat-searchtype" class="hide">Select Search Type</label>
+                                                    <select id="select-mainecat-searchtype" name="searchtype">
+                                                        <option selected="selected" value="X">Keyword</option>
+                                                        <option value="t">Title</option>
+                                                        <option value="a">Author (Last, First)</option>
+                                                    </select>
+                                                    <div class="form-item">
+                                                        <input name="SORT" type="hidden" value="D" />
+                                                        <label for="mainecat-search" class="hide">Search Maine libraries, including CBB</label>
+                                                        <input id="mainecat-search" size="60" class="search" maxlength="175" name="searcharg" type="text" placeholder="Search Maine libraries, including CBB" />
+                                                        <span class="nowrap">
+                                                        <button class="submit" type="submit" value="Search">Search</button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="catHide" id="dID4">
+                                                <!--WorldCat -->
+                                                <form action="https://bowdoincollege.on.worldcat.org/external-search" id="searchForm" method="get">
+                                                    <div class="form-item">
+                                                        <label for="worldcat-search" class="hide">Search libraries worldwide</label>
+                                                        <input id="worldcat-search" size="60" class="search" maxlength="175" name="queryString" type="text" placeholder="Search libraries worldwide" />
+                                                        <button class="submit" name="worldcatsubmit" type="submit" value="Search">Search</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!--close tabs-1 -->
+                                        <!--begin OneSearch tab -->
+                                        <div class="ui-tabs-hide" id="tabs-2">
+                                            <img alt="OneSearch Logo" id="oneSearch" src="/images/home/OneSearchLogo.png" />
+                                            <div class="homepage-form-message">
+                                                <a href="#" onclick="window.open('http://libguides.bowdoin.edu/onesearch','','width=1000,height=450,left=300,scrollbars=yes,resizable=yes')">What is OneSearch?</a>
+                                            </div>
+                                            <form action="https://bowdoin.summon.serialssolutions.com/search" method="get">
+                                                <div class="form-item">
+                                                    <label for="summon-search" class="hide">Search articles, books, media, and more</label>
+                                                    <input id="summon-search" size="60" class="search" name="s.q" type="text" placeholder="Search articles, books, media, and more" />
+                                                    <input name="s.fvf[]" type="hidden" value="ContentType,Newspaper Article,t" />
+                                                    <input name="keep_r" type="hidden" value="true" />
+                                                    <button class="submit" name="onesearchsubmit" type="submit" value="Search">Search</button>
+                                                </div>
+                                            </form>
+                                            <div class="advanced">
+                                                <a href="http://bowdoin.summon.serialssolutions.com/advanced">Advanced Search</a>
+                                            </div>
+                                        </div>
+                                        <!--close tabs-2 -->
+                                        <!--begin databases tab-->
+                                        <div class="ui-tabs-hide" id="tabs-3">
+                                            <div class="homepage-form-message">
+                                                <a href="http://libguides.bowdoin.edu/az.php">Browse all databases A-Z (including trials)</a>
+                                            </div>
+                                            <form action="#" method="get" name="databaseBySubject">
+                                                <label for="select-subject-databases" class="hide">Select Databases by Subject</label>
+                                                <select id="select-subject-databases" class="shift" name="subject" onchange="MM_jumpMenu('parent',this,0)">
+                                                    <option selected="selected" value="#">Select a subject&#8230;</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=55351">General / Multidisciplinary</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=51923">Africana Studies</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=51924">Anthropology</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=51926">Arctic Studies</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=51927">Art History</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=51928">Asian Studies</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=51929">Astronomy</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=79742">Audiobooks</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52178">Biochemistry</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52179">Biography</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52180">Biology</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52181">Book Reviews</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52182">Chemistry</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52183">Cinema Studies</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52184">Classics</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52185">Computer Science</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52186">Dance</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52187">Earth and Oceanographic Science</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=44656">Economics</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52188">Education</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52189">English</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52190">Environmental Studies</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52191">Francophone Studies</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=55346">Gender, Sexuality, &amp; Women's Studies</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52194">German</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52195">GIS</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52196">Government</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52220">Hispanic Studies</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52197">History-African</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52198">History-American</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52199">History-Asian</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52200">History-European</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52201">History-Maine</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52202">International Relations</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52203">Italian Studies</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52204">Latin American Studies</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52205">Law</option>
+                                                    <option value="http://bowdo.in/lynda">Lynda.com</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52206">Mathematics</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52207">Medicine</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52208">Music - Audio &amp; Video</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52209">Music - Indexes &amp; Reference</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52210">Neuroscience</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52211">Newspapers - Current</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52212">Newspapers - Historical</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52213">Philosophy</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52214">Physics</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52215">Psychology</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52216">Religion</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52217">Russian</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52218">Science, General</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52219">Sociology</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52221">Statistics</option>
+                                                    <option value="http://libguides.bowdoin.edu/az.php?s=52222">Theater</option>
+                                                </select>
+                                            </form>
+                                            <form name="databases" id="databases" role="form">
+<label for="select-database" class="hide">Select Database</label>
+<select id="select-database" name="menu1" onchange="MM_jumpMenu('parent',this,0)">
+<option selected value="">Select a database...</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306997" >Abstracts in Anthropology</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306998" >Academic Search Complete</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307001" >Access World News</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306999" >Accessible Archives</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307000" >AccessUN</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=16810323" >ACLS Humanities E-Book</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307002" >ACM Digital Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307004" >ACS Legacy Archives</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=10096670" >Africa Bibliography</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306991" >Africa Development Indicators</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307005" >African American Music Reference</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306995" >African American Newspapers, 1827-1998</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307006" >African American Periodicals, 1825-1995</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307007" >African Newspapers, 1800-1922</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307008" >Afro-American Imprints</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306960" >AgEcon Search: Research in Agricultural and Applied Economics</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306961" >Agricola</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307009" >Agricola - EBSCOhost</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307011" >Alternative Press Index: 1969 - 1990</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307010" >Alternative Press Index: 1991 - Present</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307012" >Aluka</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307076" >America's Historical Newspapers, 1690-1922</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307013" >America: History and Life</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306958" >American Book Prices Current</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307014" >American Civil War Collection, 1860-1922</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306962" >American Factfinder</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307020" >American National Biography</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307015" >American Pamphlets, Series I, 1820-1922</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307017" >American Periodicals Series Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307016" >American Slavery Collection, 1820-1922</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307019" >American Song</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307018" >American State Papers 1789-1837</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307021" >Ancestry Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307022" >Annee Philologique/DCB (old interface)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307266" >Annual Reviews ...</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307023" >Anthropology Plus</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307024" >AnthroSource</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307025" >Applied Social Sciences Index and Abstracts</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307026" >Aquatic Sciences and Fisheries Abstracts</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307027" >Arctic and Antarctic Regions</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307028" >Art Abstracts</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307030" >Art Index Retrospective</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307029" >ARTFL</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11064686" >Artic Bibliography</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307031" >ARTstor</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307211" >ATLA Religion Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307032" >Avery Index to Architectural Periodicals Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307042" >Balance of Payments Statistics</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307225" >BBC Shakespeare Plays (Video)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306963" >BHA (Bibliography of the History of Art), 1975-2007</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307034" >Bibliography of Asian Studies</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306964" >Bibliography of Chinese Art</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307040" >Bibliography of Native North Americans</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307262" >Biography Index (1946-1997)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307035" >BioMed Central</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307036" >BioOne</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307033" >Biosis Previews</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307037" >Birds of North America</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307202" >Black Freedom Struggle</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307038" >Black Literature Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307039" >Black Studies Center</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11065083" >Book Review Digest</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307041" >Book Review Digest Plus</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11065121" >Book Review Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307103" >Boston Globe Archive, 1872-1981</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306956" >Bowdoin College Library Catalog</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306982" >Bowdoin Orient, 1871-1921</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307043" >Bridgeman Education Image Collection</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307079" >British Periodicals</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307045" >Business Insights: Essentials</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307046" >Business Source Complete</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307050" >Cambridge Companions Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306965" >Catalog of U.S. Government Publications</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307274" >Century of lawmaking for a new nation</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307052" >Chicago Defender</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307051" >China Data Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=16389480" >Chinese Newspapers Collection</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307053" >Choice Reviews Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307067" >Christian Science Monitor (1988 - current)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307066" >Christian Science Monitor Archive (1908 - 1997)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306968" >Christian Science Monitor Web Edition</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306966" >Chronicling America: Historic American Newspapers</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307054" >CIAO: Columbia International Affairs Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306967" >CiteSeerX</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307055" >Classical Music in Video</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307059" >Classical Music Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307056" >Classical Music Reference Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307058" >Classical Scores, v. 1</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307057" >Classical Scores, v. 2</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307062" >Contemporary Women's Issues</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307068" >Contemporary World Music</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307063" >CQ Almanac</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307064" >CQ Researcher</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307065" >CQ Magazine (formerly CQ Weekly)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307254" >Credo Reference</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=10096684" >Current Bibliography on African Affairs</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307069" >Dance in Video, v. 1</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307074" >Database of Recorded American Music (DRAM)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307070" >Declassified Documents Reference System</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306959" >Direction of Trade  Statistics (1948-1980)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307073" >Direction of Trade Statistics (1980-present)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306969" >Directory of Open Access Journals (DOAJ)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307071" >Dissertations and Theses Full Text: The Humanities and Social Sciences Collection</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307265" >Download Library (Overdrive e-books and audio books)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307092" >Early American Imprints, Series I: Evans, 1639-1800 w/ suppl.</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307077" >Early American Imprints, Series II: Shaw-Shoemaker, 1801-1819 w/ suppl.</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307083" >Early English Books Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307080" >Ebrary</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307082" >EconLit</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8327791" >Economics Research Network (via the Social Sciences Research Network)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307081" >Eighteenth Century Collections Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11070805" >Elenchus of Biblica</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=10908330" >Encyclopaedia Britannica Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307271" >Encyclopedia of Archaeology</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307270" >Encyclopedia of Neuroscience</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307087" >Encyclopedia of Philosophy (Macmillan, 2nd ed.)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307212" >Encyclopedia of Philosophy (Routledge)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307085" >Encyclopedia of Religion</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=10908345" >English Short Title Catalogue</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307086" >Entertainment Industry Magazine Archive</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307084" >Environment Complete</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=10908421" >Environment Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=10908452" >Environmental Issues and Policy Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=10908466" >Environmental Sciences and Pollution Management</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307089" >ERIC (Ebsco)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307088" >ERIC (ProQuest)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11065981" >Essay and General Literature (1900-1994)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307090" >Ethnic Newswatch</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307091" >Europa World Plus</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=10908536" >European Literature, 1790-1840: The Corvey Collection</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307093" >FBIS Full Text, 1941 - 1996</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306974" >FDsys</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307096" >Film and Television Literature Index with Full Text</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307094" >Film Index International</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306971" >Film Literature Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11065185" >Film Literature Index (Print)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11065206" >Film Review Annual</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307097" >Filmakers Library Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307095" >Films on Demand</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306973" >First Nations Periodical Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307098" >Forest Science</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=10908622" >Foundations</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307099" >Gender Studies Database</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307100" >General Science Abstracts (1984- )</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11065060" >General Science Index (1978-1997)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307101" >GeoRef</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307108" >GeoScienceWorld</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307277" >Google News Archive</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307268" >Google Scholar</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307102" >Government Finance Statistics</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307104" >Grant Advisor Plus</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307105" >GreenFile</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307109" >Guardian (1821-2003) and The Observer (1791-2003)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306977" >Handbook of Latin American Studies</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307110" >HAPI - Hispanic American Periodicals Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306976" >HathiTrust Digital Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307112" >Health Source: Consumer Edition</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307111" >Health Source: Nursing/Academic Edition</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307113" >HeinOnline</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307114" >Hispanic American Newspapers, 1808-1980</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307115" >Historical Abstracts</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307116" >Historical Statistics of the United States</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306978" >Homeland Security Digital Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307223" >House and Senate Journals, Series I, 1789-1817</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307117" >HRAF Archaeology</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307118" >HRAF World Cultures</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307119" >Humanities and Social Sciences Index Retrospective</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307122" >ICPSR</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306979" >IMF Data Sources</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307127" >IMF eLibrary</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307128" >Index Islamicus</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307121" >Index of Christian Art</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=10096692" >Index to Black Periodicals</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307263" >Index to Book Reviews in the Humanities</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307264" >Index to Dance Periodicals</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307282" >Index to House of Commons Parliamentary Papers</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307143" >Index to Legal Periodicals and Books (1982- )</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307142" >Index to Legal Periodicals Retrospective, 1908-1981</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307129" >IngentaConnect</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306980" >INSPIRE</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307120" >International Bibliography of Art</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307130" >International Bibliography of the Social Sciences</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306990" >International Debt Statistics</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307123" >International Financial Statistics Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307124" >International Historical Statistics, 1750-</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307131" >International Index to Black Periodicals</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11065215" >International Index to Film Periodicals</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307125" >Int'l Index to Music Periodicals - See Music Database</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307126" >International Medieval Bibliography Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307132" >ITER (Middle Ages and Renaissance Studies)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307133" >JapanKnowledge</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307134" >Jazz Music Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307136" >JSTOR</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307135" >JSTOR Global Plants</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307137" >Kanopy Video</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307140" >Latin American Newspapers, 1805-1922</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307141" >Left Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307144" >LexisNexis-Academic</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306981" >Library, Information Science and Technology Abstracts</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307145" >Linguistics and Language Behavior Abstracts</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307148" >Literature Resource Center</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307146" >Loeb Classical Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307139" >Los Angeles Times Archive, 1881 - 1988</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307138" >Los Angeles Times, 1996-</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=20204419">Maine Infonet</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307275" >Maine News Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306957" >Maine Newspapers (historical) in Special Collections</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307149" >Maine Newsstand</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307273" >Maine State Databases</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11067047" >Maine Times Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307150" >Mango Languages</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307247" >Marquis Who's Who</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307151" >Masterfile Premier</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307152" >MathSciNet</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307154" >Medline - EBSCO</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307208" >Medline - PubMed</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307153" >Middle English Compendium</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307155" >MLA International Bibliography</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11070116" >Music Article Guide</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307125" >Music Database</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11070139" >Music Index, 1949-1994</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307157" >Music Index, 1973-Present</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307003" >Music Industry Data</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307203" >NAACP Papers: The NAACP's Major Campaigns ...</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307276" >National Center for Education Statistics</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307172" >National Climatic Data Center</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307160" >Naxos Music Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307161" >Naxos Music Library Jazz</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307159" >Naxos Video Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307162" >NBER Working Papers</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307166" >NCCO (Nineteenth Century Collections Online)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307163" >NCCO: Asia and the West: Diplomacy and Cultural Exchange</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307165" >NCCO: British Politics and Society</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307168" >NCCO: British Theatre, Music and Literature</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307167" >NCCO: Europe and Africa: Commerce, Christianity, Civilization, and Conquest</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307164" >NCCO: European Literature, 1790-1840: The Corvey Collection</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307169" >NCCO: Photography: The World through the Lens</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307170" >NCCO: Science, Technology, and Medicine: 1780-1925</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307171" >NCCO: Women: Transnational Networks</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11065228" >New Film Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11070789" >New Testament Abstracts</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307174" >New York Amsterdam News Archive</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307176" >New York Times (1980-Present)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307175" >New York Times Archive, 1851-2009</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307047" >Nineteenth Century</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306994" >Nineteenth Century U.S. Newspapers</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306993" >Nineteenth-century British Newspapers</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307173" >NoveList</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=14964953" >OECD iLibrary</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307177" >OECD.Stat</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11070794" >Old Testament Abstracts</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307259" >Open J-Gate</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=17627280" >openICPSR</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307179" >Opera in Video</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306996" >Oxford African American Studies Center</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307106" >Oxford Art Online (includes Grove Art Online)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307180" >Oxford Biblical Studies</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307181" >Oxford Classical Dictionary - 3rd ed.</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=21956313" >Oxford Classical Dictionary - 4th ed.</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307182" >Oxford Dictionary of National Biography</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307178" >Oxford English Dictionary</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307185" >Oxford Islamic Studies Center</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307107" >Oxford Music Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307183" >Oxford Reference</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307184" >Oxford Scholarship Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307186" >PAIS International (1915-Present)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307187" >Periodicals Archive Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307189" >Philosopher's Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307190" >PhilPapers: Philosophical Research Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307195" >Physical Review Online Archive (PROLA)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306983" >Physics and Math e-Print ArXiv</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307191" >PILOTS</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307192" >Play Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307194" >Polling the Nations</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11066842" >Poole's Index to Periodical Literature</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=21989723">Popular Music Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306984" >Population Index (1986-2000)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306985" >PrimateLit</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307156" >Project Muse</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307075" >Projekt Dyabola</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307061" >ProQuest Congressional</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307196" >ProQuest Education Journals</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307197" >ProQuest Environmental Science Collection</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307201" >ProQuest Historical Newspapers</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307193" >ProQuest Newspapers</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307198" >ProQuest Political Science</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307199" >ProQuest Social Science Journals</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307200" >ProQuest Sociology</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307234" >Proquest Statistical Insight</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307206" >PsycArticles</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307205" >PsycINFO</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306986" >Rambi</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307210" >Readers' Guide Retrospective, 1890-1982</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307209" >Readers' Guide to Periodical Literature, 1983-</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307272" >RePEc: Research Papers in Economics</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307213" >RILM: Abstracts of Music Literature</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307214" >RIPM e-Library</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307215" >RIPM: Index and Full Text</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307216" >RISM: International Inventory of Musical Sources after 1600</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307217" >Rock’s Back Pages</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307218" >Roper Center Public Opinion Archives</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307219" >Sanborn Maps: Maine, 1867-1970</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307258" >Science Citation Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306987" >Science.gov</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307220" >ScienceDirect</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307256" >SciFinder Scholar</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307221" >Scopus</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307222" >Senate Executive Journals, Series I, 1789-1866</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307044" >Seventeenth and Eighteenth Century Burney Collection Newspapers</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11066011" >Short Story Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307260" >Siku Quanshu</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307226" >Smithsonian Global Sound</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307227" >Snow Index to Brunswick Newspapers</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307228" >Social Explorer</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307257" >Social Sciences Citation Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307233" >Social Services Abstracts</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307229" >Sociological Abstracts</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307230" >South Asian Newspapers, 1864-1922</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307232" >SPIN (scientific literature)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307231" >SPIN (sponsored research sources)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307267" >SpringerLink</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307269" >Statistical Abstract of the United States</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307261" >Statistical Abstract of the United States (1886-2012 )</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307236" >Thesaurus Linguae Graecae</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307235" >Thesaurus Linguae Latinae</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307147" >Times (London) Archive (1785-2006)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11070277" >Times (London) Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11070284" >Times (London) Index</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307280" >TOXNET</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307224" >U.S. Congressional Serial Set</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307281" >U.S. Dept. of Education</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306975" >U.S. Government Publications Catalog</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307237" >Ulrich's Periodicals Directory</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306988" >UNData</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307238" >United Nations Treaty Collection</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=11066318" >United States Government Documents on Women</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307255" >USA Trade Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307239" >ValueLine</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307252" >Wall Street Journal (1984-Current)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307251" >Wall Street Journal Archive (1889-1995)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307241" >Washington Post (1987 - Current)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307240" >Washington Post Archive (1877-1996)</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307049" >WebCSD</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307244" >Wellesley Index to Victorian Periodicals, 1824-1900</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307245" >WestlawNext</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307246" >Wildlife and Ecology Studies Worldwide</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307243" >Women and Social Movements in the United States</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307242" >Women and Social Movements International</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307253" >Women Writers Online</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=19482446">Women's Magazine Archive</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8306989" >World Development Indicators</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307248" >World News Connection Archive</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307249" >WorldCat</option>
+<option value="http://libguides.bowdoin.edu/go.php?c=8307204" >Worldwide Political Science Abstracts</option>
+</select>
+</form>
+                                        </div>
+                                        <!--close tabs-3 -->
+                                        <!--begin Reserves tab-->
+                                        <div class="ui-tabs-hide" id="tabs-4">
+                                            <div class="homepage-form-message">
+                                                <a href="/services/reserves/index.shtml">Place an item on reserve</a>
+                                            </div>
+                                            <form action="https://cbbcat.net/search/a?a" id="res_search" method="get" name="res_search">
+                                                <label for="select-reserves" class="hide">Select Reserve Type</label>
+                                                <select id="select-reserves" class="shift" name="searchtype">
+                                                    <option selected="selected" value="r">Course</option>
+                                                    <option value="p">Instructor</option>
+                                                </select>
+                                                <div class="form-item">
+                                                    <label for="reserves-search" class="hide">Search for course reserves</label>
+                                                    <input id="reserves-search" class="search" maxlength="75" name="searcharg" size="60" type="text" placeholder="Search for course reserves" />
+                                                    <input name="searchscope" type="hidden" value="2" />
+                                                    <input name="SORT" type="hidden" value="D" />
+                                                    <button class="submit" name="reservessubmit" type="submit" value="Search">Search</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!--close tabs-4 -->
+                                        <!--begin journals a-z tab-->
+                                        <div class="ui-tabs-hide" id="tabs-5">
+                                            <div class="homepage-form-message">
+                                                <a href="http://rp3yk7jm6a.search.serialssolutions.com/">Browse Journal Titles by Subject</a>
+                                            </div>
+                                            <div class="SS_TitleSearchForm">
+                                                <form action="/cgi-bin/bouncejt" method="get" name="SS_EJPSearchForm">
+                                                    <input name="tab" type="hidden" value="JOURNALS" />
+                                                    <input name="V" type="hidden" value="1.0" />
+                                                    <input name="N" type="hidden" value="100" />
+                                                    <input name="L" type="hidden" value="rp3yk7jm6a" />
+                                                    <label for="select-journal-searchtype" class="hide">Select Journal Search Type</label>
+                                                    <select class="shift" id="select-journal-searchtype" name="S">
+                                                        <option value="AC_T_B">Title begins with</option>
+                                                        <option value="AC_T_M">Title equals</option>
+                                                        <option value="T_W_A">Title contains all words</option>
+                                                        <option value="I_M">ISSN equals</option>
+                                                    </select>
+                                                    <div class="form-item">
+                                                        <label for="journal-search" class="hide">Search for a specific magazine, journal, or newspaper title</label>
+                                                        <input id="journal-search" size="60" class="search" id="SS_CFocusTag" name="C" type="text" placeholder="Search for a specific magazine, journal, or newspaper title" />
+                                                        <button class="submit" name="journalssubmit" type="submit" value="Search">Search</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!--close tabs-5 -->
+                                    </div>
+                                </div>
+                                <!--close tabs -->
+                            </div>
+                        </div>
+                        <!--close homepage-search -->
+                        <div id="container-2">
+                            <div id="get-help" class="fold">
+                                <h2>Help</h2>
+                                <div>
+                                    <ul>
+                                        <li class="first">
+                                            <a href="#" onclick="window.open('http://libanswers.bowdoin.edu/ask','','width=790,height=600,left=300,scrollbars=yes,resizable=yes')">E-mail</a> &#183;
+                                            <a href="/about-the-library/phone.shtml" title="">Phone</a> &#183;
+                                            <a href="/about-the-library/campus-map.shtml">Visit</a>
+                                        </li>
+                                        <li>
+                                            <a href="/help/appointment.shtml" title="Make an appointment with a subject specialist">Research Appointment</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://libanswers.bowdoin.edu/search" title="Browse a list of FAQs">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://libguides.bowdoin.edu" title="Consult guides for courses and subjects">Research Guides</a>
+                                        </li>
+                                        <li class="last">
+                                            <a href="/help/librarian-liaisons.shtml" title="Get help with your research">Librarian Liaisons by Subject</a>
+                                        </li>
+                                    </ul>
+                                    <div id="libchat_btn_widget">
+                                        <div id="libchat_1b45fe4e475a7bceee4a99f67dcfe4ef"></div>
+                                    </div>
+                                    <script src="//v2.libanswers.com/load_chat.php?hash=1b45fe4e475a7bceee4a99f67dcfe4ef" type="text/javascript">
+                                    // <![CDATA[
+
+                                    // ]]>
+                                    </script>
+                                </div>
+                            </div>
+                            <!--close get-help -->
+                        </div>
+                        <!--close container-2 -->
+                    </div>
+                    
+<div class="alert">PLEASE NOTE:  The Media Commons will be closed through the end of July due to construction. Staff at the H-L circulation desk will be glad to retrieve films for your use. Please contact Carmen Greenlee (725-3286;  <a href="mailto:cgreenle@bowdoin.edu">cgreenle@bowdoin.edu</a>) for more information.
+<a class="fa fa-times fa-2x" href="#" onclick="bye()"></a>
+</div>
+                    <!--close region-1 -->
+                    <div id="region-2">
+                        <div id="sub-col-1">
+                            <div id="container-3" class="fold">
+                                <h2>News and Events</h2>
+                                <div>
+                                    <div id="beauty">
+    <div id="slideshow1">
+    <div class="slide" id="slide-1">
+            <div class="label">
+              Audubon <em>Birds of America</em>
+            </div>
+            <div class="slidebody">
+                <a title="Audubon Page Turning" href="http://www.bowdoin.edu/calendar/event.jsp?bid=836283&rid=97770">
+                    <img alt="May Fly Catcher" height="150" src="/images/home/audubon-page-turning-2.jpg" width="300" />
+                </a>
+            </div>
+            <p><a href="http://www.bowdoin.edu/calendar/event.jsp?bid=836283&rid=97770">Audubon <em>Birds of America</em> page-turning</a><br>Friday, July 1, 12:30 PM<br>3rd floor, H-L Library</p>
+        </div>    
+    <div class="slide" id="slide-2">
+            <div class="label">
+              Newspaper Archive
+            </div>
+            <div class="slidebody">
+                <a title="Japan Times Archive" href="https://login.ezproxy.bowdoin.edu/login?url=http://ipm-archives.japantimes.co.jp/">
+                    <img alt="Japan Times Archive" height="150" src="/images/home/japan-times.gif" width="300" />
+                </a>
+            </div>
+            <p>Now available: The digital archive of <a href="https://login.ezproxy.bowdoin.edu/login?url=http://ipm-archives.japantimes.co.jp/">The Japan Times</a> (in English) back to 1897.</p>
+        </div>    
+    <div class="slide" id="slide-3">
+            <div class="label">
+              New England Journal of Medicine Archive
+            </div>
+            <div class="slidebody">
+                <a title="New England Journal of Medicine Digital Archive" href="http://login.ezproxy.bowdoin.edu/login?url=http://www.nejm.org/medical-index">
+                    <img alt="New England Journal of Medicine Digital Archive" height="150" src="/images/home/nejm.jpg" width="300" />
+                </a>
+            </div>
+            <p>Search the <a href="http://login.ezproxy.bowdoin.edu/login?url=http://www.nejm.org/medical-index">New England Journal of Medicine</a> and its earlier incarnation, the Boston Medical and Surgical Journal, back to 1812</p>
+        </div>    
+    
+         <div class="slide" id="slide-4">
+            <div class="label">
+                Bowdoin Reads
+            </div>
+            <div class="slidebody">
+                <a title="What's Prof. Morrison Reading?" href="https://library.bowdoin.edu/bowdoinreads/2016/06/23/professor-morrison/">
+                    <img alt="Bowdoin Reads" height="150" src="/images/home/robert-morrison.jpg" width="300" />
+                </a>
+            </div>
+            <p><a href="https://library.bowdoin.edu/bowdoinreads/2016/06/23/professor-morrison/">What's Prof. Morrison Reading?</a></p>
+        </div>
+              
+    </div>
+    <!--close slideshow 1 -->
+</div>
+<!--close beauty -->
+<div class="view-more">
+    <a href="http://library.bowdoin.edu/news">-More News &amp; Events-</a>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sub-col-2">
+                            <div id="container-4" class="fold">
+                                <h2>Information For</h2>
+                                <div>
+                                    <ul id="services">
+                                        <li>
+                                            <a href="/services/services-for-students.shtml">Students</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/services-for-faculty/index.shtml">Faculty</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/services-for-guests.shtml">Guests</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="container-5" class="fold">
+                                <h2>Quick Links</h2>
+                                <div>
+                                    <ul id="quicklinks">
+                                        <li>
+                                            <a href="https://cbbcat.net/patroninfo">My CBBcat (View Account/Renew)</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://libcal.bowdoin.edu/">Book a Study Room</a>
+                                        </li>
+                                        <li>
+                                            <a href="/help/citationguides-a-z.shtml">Citing Sources</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/borrow-from-bowdoin-and-beyond.shtml#tabs-2">Borrow From Bowdoin &amp; Beyond</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://digitalcommons.bowdoin.edu/">Bowdoin Digital Commons</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--close sub-col-2 -->
+                        <div id="sub-col-3">
+                            <div id="container-6" class="fold">
+                                <h2>Today's Hours</h2>
+                                <div>
+                                    <div id="api_hours_today_iid3062_lid0"></div>
+                                    <script src="https://api3.libcal.com/api_hours_today.php?iid=3062&amp;lid=0&amp;format=js&amp;context=object" type="text/javascript">
+                                    // <![CDATA[
+
+                                    // ]]>
+                                    </script>
+                                    <div class="view-more">
+                                        <a href="/about-the-library/hours.shtml">-More Hours-</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--close sub-col-3 -->
+                    </div>
+                    <!--close region-2-->
+                </section>
+            </article>
+        </section>
+    </section>
+    <div id="footer-container" role="contentinfo">
+    <div id="library-footer" class="clearfix">
+        <div id="footer-first">
+            <h3><a href="/find/index">Research</a></h3>
+            <ul class="footer-menu">
+                <li>
+                    <a href="/find/">Starting Your Research</a>
+                </li>
+                <li>
+                    <a href="/find/quick-reference.shtml">Quick Reference</a>
+                </li>
+                <li>
+                    <a href="http://libguides.bowdoin.edu/az.php">Databases by Subject &amp; Title</a>
+                </li>
+                <li>
+                    <a href="/help/research-help/evaluating-sources.shtml">Evaluating Resources</a>
+                </li>
+                <li>
+                    <a href="http://www.bowdoin.edu/studentaffairs/academic-honesty/how-to-cite.shtml">How To Cite</a>
+                </li>
+                <li>
+                    <a href="/find/index.shtml" title="More Research Options">More <span class="hide">Research Options</span>&rsaquo;&rsaquo;</a>
+                </li>
+            </ul>
+        </div>
+        <div id="footer-second">
+            <h3><a href="/services/index">Services</a></h3>
+            <ul class="footer-menu">
+                <li>
+                    <a href="/services/order-forms.shtml">Request a Purchase</a>
+                </li>
+                <li>
+                    <a href="/services/borrow-from-bowdoin-and-beyond.shtml">Borrow From Bowdoin &amp; Beyond</a>
+                </li>
+                <li>
+                    <a href="http://libcal.bowdoin.edu/">Book a Study Room</a>
+                </li>
+                <li>
+                    <a href="/services/reserves/index.shtml">Reserves</a>
+                </li>
+                <li>
+                    <a href="http://www.bowdoin.edu/data-services/">Data Services</a>
+                </li>
+                <li><a href="http://www.bowdoin.edu/academic-technology/">Academic Technology &amp; Consulting</a>
+                </li>
+                <li>
+                    <a href="/services/index.shtml" title="More Services">More <span class="hide">Services</span>&rsaquo;&rsaquo;</a>
+                </li>
+            </ul>
+        </div>
+        <div id="footer-third">
+            <h3><a href="/about-the-library/index">About the Library</a></h3>
+            <ul class="footer-menu">
+                <li>
+                    <a href="/about-the-library/staff.shtml">Staff</a>
+                </li>
+                <li>
+                    <a href="/about-the-library/hours.shtml">Hours</a>
+                </li>
+                <li>
+                    <a href="/about-the-library/collections-and-services.shtml">Locations of Library Collections &amp; Services</a>
+                </li>
+                <li>
+                    <a href="/about-the-library/">Policies &amp; Guidelines</a>
+                </li>
+                <li>
+                    <a href="/about-the-library/index.shtml" title="More About the Library">More <span class="hide">About the Library</span>&rsaquo;&rsaquo;</a>
+                </li>
+            </ul>
+        </div>
+        <div id="footer-fourth">
+            <div id="lib-address">
+                <h3><a href="/">Bowdoin College Library</a></h3>
+                <div class="social-media">
+                    <a href="http://www.facebook.com/BowdoinLibrary" title="Friend us on Facebook"><img alt="facebook" height="16" src="/images/facebook.png" width="16" /></a>&nbsp;&nbsp;
+                    <a href="http://twitter.com/bowdoinlibrary"><img alt="twitter" src="/images/twitter.png" height="16" width="16" /></a>&nbsp;&nbsp;
+                    <a href="/branches/government-documents"><img class="fdlplogo" alt="U.S. Government Depository Library logo" height="16" width="16" src="/branches/images/fdlp.gif" title="U.S. Government Depository Library" /></a>&nbsp;&nbsp;
+                    <a href="http://instagram.com/bowdoinlibrary"><img alt="Instagram logo" height="16" width="16" src="/images/instagram.png" title="Bowdoin Library Instagram" /></a>
+                </div>
+                <address>
+                    3000 College Station
+                    <br /> Brunswick ME 04011-8421
+                    <br /> 207-725-3280
+                    <br />
+                    <a href="mailto:ask@bowdoin.libanswers.com">ask@bowdoin.libanswers.com</a>
+                </address>
+            </div>
+            <br />
+            <span><a href="http://libanswers.bowdoin.edu/technical-support/">Send Feedback/Report a Problem</a></span>
+        </div>
+    </div>
+</div>
+
+    <script>
+    $(window).bind("pageshow", function() { // reset Select a Database form on back button
+        $('#databases')[0].reset();
+    });
+    </script>
+</body>
+
+</html>

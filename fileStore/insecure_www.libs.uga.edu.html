@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8 />
+
+<title>University of Georgia Libraries</title>
+<link rel="stylesheet" href="/homepage/homepage2015_5.css" type="text/css" />
+<link rel="stylesheet" href="/homepage/scrollable-horizontal.css" type="text/css" />
+<link rel="stylesheet" href="/homepage/scrollable-buttons.css" type="text/css" />
+
+<script language="javascript" src="/homepage/mobile.js" type="text/javascript"></script>
+<script language="javascript" src="/homepage/homepage2011_guides.js" type="text/javascript"></script>
+<script type="text/JavaScript">
+<!--
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+//-->
+</script>
+
+<script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js"></script>
+
+<script type="text/JavaScript">
+
+// execute your scripts when the DOM is ready. this is mostly a good habit
+$(function() {
+
+var images = [
+
+{
+    link: "/homepage/featured/reflectors/twitter.html",
+    image: "/homepage/featured/graphics/twitter.gif",
+	alt: "UGA Libraries on Twitter"
+  },
+    {
+    link: "/homepage/featured/reflectors/tumblr.html",
+    image: "/homepage/featured/graphics/tumblr_dog.gif",
+	alt:"New Featured Books at the Main Library"
+  },
+  {
+    link: "/homepage/featured/reflectors/browzine.html",
+    image: "/homepage/featured/graphics/browzinelogo.gif",
+	alt:"New Special Collections building"
+  },
+  {
+    link: "/homepage/featured/reflectors/ipad.html",
+    image: "/homepage/featured/graphics/ipad.gif",
+	alt:"Check out an iPad at the Main or Science Libraries or the Miller Learning Center"
+  },
+   {
+    link: "/homepage/featured/reflectors/galileo.html",
+    image: "/homepage/featured/graphics/new_galileo3.gif",
+	alt:"GALILEO@UGA has a new look and added research help"
+  }
+  
+// keep adding images like above, and don't forget to omit the comma after the last one
+];
+images.sort(function() {return 0.5 - Math.random()});
+for (var i = 0; i < images.length; i++) {
+ $(".scrollable > .items").append('<div><a href="' + images[i].link +
+'"><img src="' + images[i].image + '" alt="' + images[i].alt +
+'"/></a></div>');
+
+}
+
+	// initialize scrollable
+
+
+var scrollable = $(".scrollable").scrollable({
+ onSeek: function() {
+   this.getIndex() != 0 && this.getItemWrap().animate({left:
+this.getItemWrap().position().left + 80});
+ }
+});
+scrollable.scrollable().seekTo(1);
+
+});
+
+
+</script>
+
+<!-- Google Analytics code -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11233791-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+<div id="container">
+<div id="wrapper">
+<div id="textonly"><a href="text_only.shtml">Text Only</a></div>
+<div id="mobile"><a href="http://www.libs.uga.edu/mobile/"
+onclick="setCookie('__set', '')">View Mobile Site</a></div>
+
+
+<div id="black"><a href="http://www.uga.edu">UNIVERSITY OF GEORGIA</a></div>
+
+<!--<div id="searchbox">
+<div id="cse" style="width: 200px;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('010498116250932703096:bruv3jhgjfg');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+</div>
+-->
+
+<div id="searchbox">
+
+
+<form action="/search/" id="cse-search-box">
+  <div>
+   <label for="sitesearch" style="visibility:hidden">Site Search</label> 
+   <span style="font-family:Arial, Helvetica, sans-serif;"><strong>SITE SEARCH:</strong></span>
+   
+    <input type="hidden" name="cof" value="FORID:11" />
+    <input type="hidden" name="searchtype" value="google-coop">
+    <input type="text" name="term" size="20" id="sitesearch" />
+    <input type="image" name="sa" src="/homepage/graphics/gogray.jpg" align="absmiddle" value="Search" alt="search button" />
+  </div>
+</form>
+</div>
+
+
+<div id="banner">
+
+
+
+</div>
+
+<div id="selections">
+<div id="menu">
+
+<ul>
+<li><span id="quick1" onClick="insertquicklinks1()">SEARCH TOOLS</span>
+<div id="quicklinks1"></div></li>
+
+<li><img src="/homepage/graphics/whitepipe.gif" alt="divider" align="absmiddle"/></li>
+
+<li><span id="quick2" onClick="insertquicklinks2()">SERVICES</span>
+<div id="quicklinks2"></div></li>
+
+<li><img src="/homepage/graphics/whitepipe.gif" alt="divider" align="absmiddle"/></li>
+
+<li><span id="quick3" onClick="insertquicklinks3()">LIBRARIES & COLLECTIONS</span>
+<div id="quicklinks3"></div></li> 
+
+<li><img src="/homepage/graphics/whitepipe.gif" alt="divider" align="absmiddle"/></li>
+
+<li><span id="quick4" onClick="insertquicklinks4()">RESEARCH HELP</span>
+<div id="quicklinks4"></div></li>
+
+<li><img src="/homepage/graphics/whitepipe.gif" alt="divider" align="absmiddle"/></li>
+
+<li><span id="quick5" onClick="insertquicklinks5()">ABOUT US</span>
+<div id="quicklinks5"></div></li>
+
+<li><img src="/homepage/graphics/whitepipe.gif" alt="divider" align="absmiddle"/></li>
+
+<li><span id="quick6" onClick="window.location.href='http://www.libs.uga.edu/askaquestion/index.html'">CONTACT US</span>
+<div id="quicklinks6"></div></li>
+</ul>
+</div><!-- close menu-->
+</div><!-- close selections-->
+
+<div id="background">
+<div id="page">
+
+<div id="leftcolumn">
+
+
+
+<div id="popular">Popular Links</div>
+<div class="leftmenu">
+<ul>
+<li><a href="/password.html">My Library Account</a></li>
+<li><a href="http://www.libs.uga.edu/research/">GALILEO@UGA</a></li>
+<li><a href="/galileologin.html">GALILEO Login</a></li>
+<li><a href="http://www.libs.uga.edu/gilfind.html" title="GIL-Find">GIL Catalog</a> | <a href="http://www.libs.uga.edu/gil.html" style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size: 0.8em;"> GIL Classic</a></li>  
+
+<li><a href="/access_services/reserves.html">Course Reserves</a></li>
+<li><a href="/access_services/borrowing/index.html">Borrowing &amp; Renewing</a></li>
+<li><a href="/googlescholar.html">Google Scholar</a></li>
+<li><a href="/staff_directory/index.html">Staff Directory</a></li>
+<li><a href="/ref/citation.html">Citation Style Guides</a></li>
+<li><a href="/citeman/index.html">Endnote &amp; Refworks</a></li>
+<li><a href="/athens/index.html">Athens Information</a></li>
+</ul>
+</div><!-- close leftmenu-->
+
+
+
+<div class="borrowandinfo">Can't Find it at UGA?</div>
+
+<div class="leftmenu">
+<ul>
+<li><a href="/access_services/gilexpress.html">About GIL Express</a></li>
+<li><a href="http://www.libs.uga.edu/gilfinduc.html">Search GIL Express</a></li>
+<li><a href="/ill/index.html">Interlibrary Loan</a></li>
+</ul>
+</div><!--close leftmenu-->
+
+<div class="borrowandinfo">Information For...</div>
+
+<div class="leftmenu">
+<ul>
+<li><a href="/faculty/index.html">Faculty</a></li>
+<li><a href="/graduates/index.html">Graduate Students</a></li>
+<li><a href="/undergraduates/index.html">Undergraduates</a></li>
+<li><a href="/ref/dl/index.html">Distance Learners</a></li>
+<li><a href="/ref/disabilities.html">Patrons with Disabilities</a></li>
+<li><a href="/visitors/index.html">Visitors</a></li>
+<li><a href="/staff/index.html">Library Staff</a></li>
+</ul>
+
+</div><!--close leftmenu-->
+
+</div><!-- close leftcolumn-->
+
+<div id="rightcolumn">
+
+<div id="chat">
+
+<div id="hours"><a href="/access_services/hours.html"><img src="graphics/clock3.jpg" alt="library hours" /></a></div>
+
+
+<div class="needs-js">
+JavaScript disabled or chat unavailable
+</div>
+<div class="libraryh3lp" style="display: none;" jid="uga-askalibrarian@chat.refchatter.net">
+<iframe src="http://refchatter.net/chat/uga-askalibrarian@chat.refchatter.net?skin=584&amp;theme=jsf-text&amp;title=Ask+Us&amp;identity=Librarian" frameborder="1" style="height: 300px; border: 2px solid #C0C0C0; width:100%; overflow:hidden;"></iframe>
+</div>
+<div class="libraryh3lp" style="display: none;">
+<div id="chatoffline">Chat is currently unavailable<div>&nbsp;</div> <a href="http://www.libs.uga.edu/askaquestion/index.html">Other ways to contact us</a><div>&nbsp;</div></div>
+
+</div>
+
+<div id="chatabout"><a href="http://www.libs.uga.edu/chat/">More about Chat Reference</a></div>
+<div id="phone">Main Library<br>(706) 542-3251<br>
+<br>
+Science Library<br>(706) 542-0698
+</div>
+
+</div>
+
+
+<div id="research">
+
+<div id="tabbox">
+<div id="tabs">
+<ul>
+<li id="T5" class="selected" onClick="swap_selected(this)" style="color:#FFFFFF"><a href="#">Multi-Search</a></li>
+<li id="T2" class="" onClick="swap_selected(this)"><a href="#">Articles &amp; Databases</a></li>
+<li id="T1" class="" onClick="swap_selected(this)"><a href="#">Books &amp; More</a></li>
+<li id="T3" class="" onClick="swap_selected(this)"><a href="#">Journals</a></li>
+<li id="T4" class="" onClick="swap_selected(this)"><a href="#">Guides</a></li>
+</ul>
+</div>  <!--end tabs!-->
+
+
+
+<div id="tabcontent"><!--begin tabcontent!-->
+
+<div id="C1" style="display: none">
+<div class="colorblock">
+<div class="searchblurb">GIL@UGA Libraries Catalog: find books, journals, media, primary sources and more</div> 
+<div class="help"><a href="/bookshelp.html">Help</a></div>
+</div>
+
+<div class="gosearch" style="padding-top: 1em">
+
+<div class="tagline">SEARCH LIBRARY CATALOG:</div>
+
+<div id="classic_search" style="display:none">
+<form name=multisearch action=/search/ style="float:left; margin-left:48px; margin-top:1px"> 
+<label for="term" style="visibility:hidden; font-size:3px">Search Catalog</label>
+             
+<input name="term" type="text" size="25" maxlength="60" class="textboxstyle">
+
+&nbsp;
+                  <input name="submit2" type="submit" value="Search" align="top" style="font-size:10pt; float:right; margin-left:5px">
+                  
+                  <select name="searchtype" id="select" class="searchboxstyle" >
+
+                    <option value=gil-title>Title
+                    <option value=gil-journal>Journal Title
+<option value=gil-author>Author
+<option value=gil-subject>Subject
+<option value=gil-keyword>Keyword
+                  </select>
+                 
+</form>
+</div>
+
+<div id="gilfind_search">
+<form method="get" action="http://gilfind.uga.edu/vufind/Search/Results" name="searchForm" id="searchForm" target="_parent">
+          
+          <label for="SearchTerm" style="visibility:hidden; font-size:3px">Search Catalog</label>
+              
+           <input type="text" id="SearchTerm" size="25" maxlength="60" name="lookfor"/>
+           <select name="type">
+              <option value="AllFields">All Fields</option>
+              <option value="Title">Title</option>
+
+              <option value="TitleSubject">Title+Subject</option>
+              <option value="JournalTitle">Journal Title</option>
+              <option value="Author">Author</option>
+              <option value="Subject">Subject</option>
+              <option value="CallNumber">Call Number</option>
+              <option value="sudoc">Sudoc Number</option>
+
+              <option value="ISN">ISBN/ISSN</option>
+              <option value="tag">Tag</option>
+           </select>
+           <input type="submit" value="Search" style="font-size:10pt" />
+        </form>
+</div>
+
+
+
+<div id="radiobuttons">
+  <form id="choosesearch" name="form1" method="post" action="">
+
+    <table width="300px">
+      <tr>
+        <td>
+          <input name="gil" type="radio" value="gilfind" checked />
+        <label>  GIL-Find Catalog</label></td>
+ <td>
+          <input type="radio" name="gil" value="classic" />
+       <label>   GIL Classic Catalog</label></td>
+
+     </tr>
+    </table>
+  </form>
+  </div>
+  <script type="text/javascript">
+    $(document.forms.choosesearch.gil[0]).click(choosesearch);
+    $(document.forms.choosesearch.gil[1]).click(choosesearch);
+    function choosesearch() {
+      var choices = document.forms.choosesearch.gil;
+        var choice = null;
+        for (var i = 0; i < choices.length; i++) {
+           if (choices[i].checked) {
+                choice = choices[i].value;
+				
+                break;
+            }
+        }
+        if (choice == "classic") {
+            document.getElementById("classic_search").style.display = "block";
+            document.getElementById("gilfind_search").style.display = "none";
+        } else {
+            document.getElementById("classic_search").style.display = "none";
+            document.getElementById("gilfind_search").style.display = "block";
+        }
+    }
+</script>
+
+</div><!-- end gosearch -->
+
+
+
+<div class="aboutbox">
+
+<div id="leftabout">
+<div class="aboutheader">Related Links:</div>
+<div class="aboutlink"><a href="http://www.libs.uga.edu/gil.html">GIL Classic Catalog</a></div>
+<div class="aboutlink"><a href="http://www.libs.uga.edu/gilfind.html">GIL-Find Catalog</a></div>
+<div class="aboutlink"><a href="http://www.libs.uga.edu/gilfinduc.html">GIL Universal Catalog (USG)</a></div>
+<div class="aboutlink"><a href="https://gil.uga.edu/cgi-bin/Pwebrecon.cgi?DB=local&PAGE=rbSearch">Course Reserves Catalog</a></div>
+</div>
+
+<div id="rightabout">
+<div class="aboutheader">&nbsp;</div>
+<div class="rightaboutlink"><a href="http://www.galileo.usg.edu/express?link=zowc">WorldCat</a></div>
+<div class="rightaboutlink"><a href="http://guides.libs.uga.edu/e-books">E-Books</a></div>
+<div class="rightaboutlink"><a href="/mediadept/media_catalog.html">Media Desk Catalog</a></div>
+<div class="rightaboutlink"><a href="/researchcentral/choosing/primary/index.html">Primary Sources</a></div>
+<div class="rightaboutlink"><a href="/etd/">Theses &amp; Dissertations</a></div>
+</div>
+
+</div><!--end aboutbox!-->
+
+</div> <!--end C1!-->
+
+
+
+ 
+<div id="C2" style="display: none">
+<div class="colorblock">
+<div class="searchblurb">GALILEO@UGA: find articles, online encyclopedias, company profiles,
+digital images, primary sources, and other information</div> 
+<div class="help"><a href="/articlesdatabaseshelp.html">Help</a></div>
+</div>
+
+<div class="gosearch">
+<form name="subjects" id="selectsubject"><div class="tagline">DATABASES BY SUBJECT:</div>
+<label for="selectsubject" style="visibility:hidden; font-size:3px">Select Subject</label>
+  <select name="sub" class="searchboxstyle" style="width: 20em; margin:0; padding:0;" onChange="MM_jumpMenu('parent',this,0)">
+   
+    
+         
+    <!-- Subject Options -->
+    
+<option value="#">- select subject -</option>	
+<option value="http://guides.libs.uga.edu/accounting-databases">Accounting</option>
+<option value="http://guides.libs.uga.edu/advertising-databases">Advertising & PR</option>
+<option value="http://guides.libs.uga.edu/african-american-studies-databases">African-American Studies</option>
+<option value="http://guides.libs.uga.edu/african-studies-databases">African Studies</option>
+<option value="http://guides.libs.uga.edu/agricultural-and-applied-econ-databases">Agricultural & Applied Econ</option>
+<option value="http://guides.libs.uga.edu/alec-databases">Agricultural Leadership, Education, and Communication</option>
+<option value="http://guides.libs.uga.edu/american-literature-databases">American Literature </option>
+<option value="http://guides.libs.uga.edu/animal-and-dairy-science-databases">Animal & Dairy Science</option>
+
+<option value="http://guides.libs.uga.edu/anthropology-databases">Anthropology</option>
+<option value="http://guides.libs.uga.edu/art-and-architecture-databases">Art & Architecture</option>
+<option value="http://guides.libs.uga.edu/artificial-intelligence-databases">Artificial Intelligence</option>
+<option value="http://guides.libs.uga.edu/banking-and-finance-databases">Banking & Finance </option>
+
+<option value="http://guides.libs.uga.edu/biochemistry-databases">Biochemistry </option>
+<option value="http://guides.libs.uga.edu/biography-databases">Biography</option>
+<option value="http://guides.libs.uga.edu/biology-databases">Biological Sciences</option>
+<option value="http://guides.libs.uga.edu/business-databases">Business</option>
+<option value="http://guides.libs.uga.edu/cellular-biology-databases">Cellular Biology</option>
+
+
+<option value="http://guides.libs.uga.edu/chemistry-databases">Chemistry</option>
+<option value="http://guides.libs.uga.edu/classics-databases">Classics</option>
+<option value="http://guides.libs.uga.edu/communication-sciences-databases">Communication Sciences</option>
+<option value="http://guides.libs.uga.edu/communication-studies-databases">Communication Studies</option>
+<option value="http://guides.libs.uga.edu/company-information-databases">Company Information</option>
+<option value="http://guides.libs.uga.edu/comparative-literature-databases">Comparative Literature</option>
+<option value="http://guides.libs.uga.edu/computer-science-databases">Computer Science</option>
+<option value="http://guides.libs.uga.edu/consumer-sciences-databases">Consumer Sciences</option>
+<option value="http://guides.libs.uga.edu/criminal-justice-databases">Criminal Justice</option>
+<option value="http://guides.libs.uga.edu/crop-and-soil-sciences-databases">Crop & Soil Sciences</option>
+<option value="http://guides.libs.uga.edu/ecology-databases">Ecology</option>
+<option value="http://guides.libs.uga.edu/economics-databases">Economics</option>
+<option value="http://guides.libs.uga.edu/education-adult-databases">Education - Adult</option>
+<option value="http://guides.libs.uga.edu/education-k-16-databases">Education - K-16</option>
+<option value="http://guides.libs.uga.edu/engineering-databases">Engineering</option>
+<option value="http://guides.libs.uga.edu/english-databases">English Literature</option>
+<option value="http://guides.libs.uga.edu/telecommunications-databases">Entertainment & Media Studies</option>
+<option value="http://guides.libs.uga.edu/entomology-databases">Entomology</option>
+<option value="http://guides.libs.uga.edu/environmental-health-science-databases">Environmental Health Sci</option>
+<option value="http://guides.libs.uga.edu/film-databases">Film Studies</option>
+<option value="http://guides.libs.uga.edu/food-science-and-technology-databases">Food Science & Technology</option>
+<option value="http://guides.libs.uga.edu/foods-and-nutrition-databases">Foods & Nutrition</option>
+<option value="http://guides.libs.uga.edu/forestry-databases">Forestry & Natural Resources</option>
+<option value="http://guides.libs.uga.edu/french-databases">French</option>
+<option value="http://guides.libs.uga.edu/genetics-databases">Genetics</option>
+<option value="http://guides.libs.uga.edu/geography-databases">Geography</option>
+<option value="http://guides.libs.uga.edu/geology-databases">Geology</option>
+<option value="http://guides.libs.uga.edu/georgia-databases">Georgia</option>
+<option value="http://guides.libs.uga.edu/german-databases">German</option>
+<option value="http://guides.libs.uga.edu/gerontology-databases">Gerontology</option>
+        
+<option value="http://guides.libs.uga.edu/govt-info-census-databases">Govt Info: Census</option>
+<option value="http://guides.libs.uga.edu/govt-info-foreign-and-intergovernmental-databases">Govt Info: Foreign & Intergovernmental</option>
+<option value="http://guides.libs.uga.edu/govt-info-state-and-local-databases">Govt Info: State & Local</option>
+<option value="http://guides.libs.uga.edu/govt-info-us-congressional-databases">Govt Info: US Congressional </option>
+<option value="http://guides.libs.uga.edu/govt-info-us-general-databases">Govt Info: US General </option>
+<option value="http://guides.libs.uga.edu/govt-info-us-statistics-databases">Govt Info: US Statistics</option>
+<option value="http://guides.libs.uga.edu/health-promotion-and-behavior-databases">Health Promotion & Behavior</option>
+<option value="http://guides.libs.uga.edu/historic-preservation-databases">Historic Preservation</option>
+<option value="http://guides.libs.uga.edu/history-databases">History </option>
+<option value="http://guides.libs.uga.edu/horticulture-databases">Horticulture </option>
+<option value="http://guides.libs.uga.edu/human-development-and-family-science-databases">Human Development & Family Science</option>
+<option value="http://guides.libs.uga.edu/instructional-technology-databases">Instructional Technology & Design</option>
+<option value="http://guides.libs.uga.edu/insurance-databases">Insurance</option><br>
+
+<option value="http://guides.libs.uga.edu/international-affairs-databases">International Affairs</option>
+<option value="http://guides.libs.uga.edu/italian-databases">Italian</option>
+<option value="http://guides.libs.uga.edu/journalism-and-mass-media-databases">Journalism & Mass Media </option>
+<option value="http://guides.libs.uga.edu/kinesiology-databases">Kinesiology</option>
+<option value="http://guides.libs.uga.edu/landscape-architecture-databases">Landscape Architecture/Environment & Design</option>
+<option value="http://guides.libs.uga.edu/latin-american-studies-databases">Latin American Studies</option>
+<option value="http://guides.libs.uga.edu/law-databases">Law</option>
+<option value="http://guides.libs.uga.edu/linguistics-databases">Linguistics</option>
+<option value="http://guides.libs.uga.edu/management-databases">Management</option>
+<option value="http://guides.libs.uga.edu/mis-databases">Management Info Systems</option>
+<option value="http://guides.libs.uga.edu/marine-sciences-databases">Marine Sciences</option>
+<option value="http://guides.libs.uga.edu/marketing-and-distribution-databases">Marketing & Distribution</option>
+<option value="http://guides.libs.uga.edu/mathematics-databases">Mathematics</option>
+<option value="http://guides.libs.uga.edu/medicine-databases">Medicine</option>
+<option value="http://guides.libs.uga.edu/microbiology-databases">Microbiology</option>
+<option value="http://guides.libs.uga.edu/music-databases">Music</option>
+<option value="http://guides.libs.uga.edu/news-databases">News</option>
+<option value="http://guides.libs.uga.edu/nursing-databases">Nursing</option>
+<option value="http://guides.libs.uga.edu/pharmacy-databases">Pharmacy</option>
+<option value="http://guides.libs.uga.edu/philosophy-databases">Philosophy</option>
+<option value="http://guides.libs.uga.edu/physics-and-astronomy-databases">Physics & Astronomy</option>
+<option value="http://guides.libs.uga.edu/plant-biology-databases">Plant Biology </option>
+<option value="http://guides.libs.uga.edu/plant-pathology-databases">Plant Pathology</option>
+
+<option value="http://guides.libs.uga.edu/political-science-databases">Political Science</option>
+<option value="http://guides.libs.uga.edu/poultry-science-databases">Poultry Science</option>
+<option value="http://guides.libs.uga.edu/psychology-databases">Psychology</option>
+<option value="http://guides.libs.uga.edu/public-administration-policy-databases">Public Administration/Policy</option>
+<option value="http://guides.libs.uga.edu/public-health-databases">Public Health</option>
+<option value="http://guides.libs.uga.edu/real-estate-databases">Real Estate</option>
+<option value="http://guides.libs.uga.edu/recreation-and-leisure-studies-databases">Recreation & Leisure Studies</option>
+<option value="http://guides.libs.uga.edu/reference-databases">Reference Tools</option>
+<option value="http://guides.libs.uga.edu/religion-databases">Religion </option>
+<option value="http://guides.libs.uga.edu/slavic-databases">Russian & Slavic Studies</option>
+<option value="http://guides.libs.uga.edu/social-work-databases">Social Work</option>
+<option value="http://guides.libs.uga.edu/sociology-databases">Sociology</option>
+<option value="http://guides.libs.uga.edu/spanish-and-portuguese-databases">Spanish & Portuguese</option>
+<option value="http://guides.libs.uga.edu/sports-studies-databases">Sport Management </option>
+<option value="http://guides.libs.uga.edu/statistics-databases">Statistics</option>
+<option value="http://guides.libs.uga.edu/textiles-databases">Textiles</option>
+<option value="http://guides.libs.uga.edu/theatre-databases">Theatre</option>
+<option value="http://guides.libs.uga.edu/veterinary-medicine-databases">Veterinary Medicine</option>
+<option value="http://guides.libs.uga.edu/weather-climatology-databases">Weather/Climatology</option>
+<option value="http://guides.libs.uga.edu/womens-and-gender-studies-databases">Women's & Gender Studies</option>
+  </select>
+</form>
+ 
+					
+	<!--end subjects !-->
+	<div class="atoz" align="center">
+	<div class="tagline">DATABASES BY NAME:</div>
+	<div align="center">
+	 <a href="http://www.libs.uga.edu/research/resources/0-9">0-9</a>
+     <a href="http://www.libs.uga.edu/research/portal_browse.php?key=A">A</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=B">B</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=C">C</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=D">D</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=E">E</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=F">F</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=G">G</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=H">H</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=I">I</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=J">J</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=K">K</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=L">L</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=M">M</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=N">N</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=O">O</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=P">P</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=Q">Q</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=R">R</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=S">S</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=T">T</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=U">U</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=V">V</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=W">W</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=X">X</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=Y">Y</a>
+	<a href="http://www.libs.uga.edu/research/portal_browse.php?key=Z">Z</a>
+       </div>
+</div><!--end atoz-->	
+</div><!--END gosearch-->
+
+<div class="aboutbox">	
+<div class="aboutheader">Related Links:</div>
+<div class="aboutlink"><a href="/galileologin.html">GALILEO Login for Off-Campus Access</a></div>
+<div class="aboutlink"><a href="http://www.libs.uga.edu/research/">Go Directly to GALILEO@UGA</a></div>
+<div class="aboutlink"><a href="/googlescholar.html">GOOGLE Scholar</a></div>
+</div>
+
+
+</div><!--END C2-->
+
+
+
+<div id="C3" style="display: none">
+<div class="colorblock">
+<div class="searchblurb">Find fulltext journals online or in print - FINDIT@UGA</div> 
+<div class="help"><a href="/ejlhelp.html">Help</a></div>
+</div>
+
+<div class="gosearch" style="padding-top: 3px">
+
+  
+
+        <!--ADDITION for v.3-->
+<form name=OpenURL target="SFXmenu" action="http://sfx.galib.uga.edu/sfx_uga1/cgi/core/citation-linker.cgi" onSubmit="OpenWindow('','SFXmenu');">
+
+<input type=hidden name="url_ver" value="Z39.88-2004">
+<input type=hidden name="url_ctx_fmt" value="info:ofi/fmt:kev:mtx:ctx">
+<input type=hidden name="ctx_ver" value="Z39.88-2004">
+<input type=hidden name="rfr_id" value="info:sid/sfxit.com:citation">
+<input type=hidden name="rft_val_fmt" value="info:ofi/fmt:kev:mtx:article">
+<input type=hidden name="rft.genre" value="article">
+<input type=hidden name="__base_url" value="/sfx_uga1">
+<input type=hidden name="__citation_form" value="article">
+
+<!--END v.3 addition-->
+
+
+
+<table>
+<tr>
+
+<td><label for="journalname" style="visibility:visible; font-size:0.7em; font-weight:bold; text-align:left; margin:0; color:860000; width:auto">JOURNAL NAME:</label></td>
+<td><input type=text name="rft.jtitle" size="30" maxlength="70" value="" id="journalname"></td>
+            
+<td style="font-family:tahoma; font-size: 0.8em; text-align: left; padding-left: 15px; color:#000000"> Omit <em>a</em>, <em>an</em>, or <em>the</em> at beginning of title</td>
+</tr>
+
+<tr><td colspan=3 style="font-family:tahoma; font-size: 0.8em; text-align:center; padding-left:15px; padding-bottom:15px; color:#000000;"><input type=radio name="sfx.title_search" value="begins" checked id="radio">
+Begins with
+<input type=radio name="sfx.title_search" value="contains" id="radio">
+Contains
+<input type=radio name="sfx.title_search" value="exact" id="radio">
+Exact match
+</td>
+</tr>
+
+<tr>
+<td><label for="ISSN" style="visibility:visible; font-size:0.7em; font-weight:bold; text-align:left; margin:0; color:860000; width:auto">or ISSN:</label></td><td align="left" style="font-family:tahoma; font-size: 0.8em; color:#000000;">
+
+<input type=text name="rft.issn" id="ISSN" size="10" maxlength="9" value="">&nbsp;&nbsp;&nbsp;XXXX-XXXX</td><td>&nbsp;</td>
+</tr>
+</table>	
+
+
+<table width="100%"><tr align="left"><td style="font-size:0.8em; font-family:Tahoma; color:#000000; padding-top:15px; font-weight:bold; padding-left:15px; padding-bottom:10px;">Narrow your search (optional):</td></tr></table>
+
+
+<table width="100%">
+<tr>
+<td>
+ 
+<!--ADDED for v.3-->
+<label for="year" style="visibility:visible; font-size:0.7em; font-weight:bold; text-align:left; margin:0; color:860000">Year:</label>
+          <input
+                                            type=text
+                                            name="rft.date"
+                                            id="year"
+                                            size="10"
+                                            value="">
+         
+          <!--END ADDITION for v.3-->
+</td>    
+ <td>  
+          <!--ADDED for v.3-->
+<label for="volume" style="visibility:visible; font-size:0.7em; font-weight:bold; text-align:left; margin:0; color:860000">Volume:</label>
+          <input
+                                            type=text
+                                            name="rft.volume"
+                                            id="volume"
+                                            size="2"
+                                            maxlength="5"
+                                            value="">
+          <!--END ADDITION for v.3-->
+</td>
+<td>
+
+  <!--ADDITION for v.3-->
+<label for="issue" style="visibility:visible; font-size:0.7em; font-weight:bold; text-align:left; margin:0; color:860000">Issue:</label>
+  <input
+                                                type=text
+                                                name="rft.issue"
+                                                id="issue"
+                                                size="2"
+                                                value="">
+  <!--END ADDITION for v.3-->
+</td>
+<td>
+ 
+  <!--ADDITION for v.3-->
+<label for="start" style="visibility:visible; font-size:0.7em; font-weight:bold; text-align:left; margin:0; color:860000">Start Page:</label>
+  <input
+                                            type=text
+                                            name="rft.spage"
+                                            id="start"
+                                            size="2"
+                                            value="">
+ </td>
+ </tr> 
+ 
+</table>
+
+
+
+<table width="90%" align="center" style="padding-top:5px">
+<tr><td>&nbsp;</td><td width="40%" align="right"><INPUT type="image" name="__submit" src="/homepage/graphics/sfx.gif" style="border:none" alt="submit"></td><td id="clear"><INPUT type="reset" value="Clear form" name="reset" >
+</td></tr>
+</table>		
+
+</form>
+
+
+</div> <!-- end gosearch -->
+
+
+
+<div class="aboutbox">
+<div id="leftabout">
+<div class="aboutheader">Related Links:</div>
+<div class="aboutlink"><a href="/galileologin.html">GALILEO Login for Off-Campus Access</a></div>
+<div class="aboutlink"><a href="http://sfx.galib.uga.edu/sfx_uga1/az">A-Z List of E-Journals</a></div>
+<div class="aboutlink"><a href="/proxy_url.html">Direct URLs for Databases and E-Journals</a></div>
+</div>
+
+<div id="rightabout">
+<div class="aboutheader">&nbsp;</div>
+<div class="rightaboutlink"><a href="http://ow.ly/zc6uL">BrowZine Mobile</a></div>
+<div class="rightaboutlink"><a href="http://www.browzine.com/libraries/446">BrowZine Web</a></div>
+<div class="rightaboutlink"><a href="http://guides.libs.uga.edu/browzine">BrowZine Guide</a></div>
+</div>
+
+</div><!-- end aboutbox-->
+
+</div>  <!-- end C3 -->
+
+
+
+<div id="C4" style="display: none">
+<div class="colorblock">
+<div class="searchblurb">Guides for Research</div> 
+<!--<div class="help"><a href="/ejlhelp.html">Help</a></div>-->
+</div>
+
+<div class="gosearch" style="padding-top: 20px">
+
+<div class="tagline" style="padding-bottom:5px">CLASS-SPECIFIC GUIDES:</div>
+
+<!--<div id="classguides"><div id='api_search_tags_iid4071' style="overflow:auto; max-height:65px; padding: 0 5px 5px 5px; width:450px; border:1px solid #000; background-color:#fff;"></div><script type='text/javascript' src='http://api.libguides.com/api_search.php?iid=4071&type=tags&search=class-guide&more=false&target=_self&context=object&format=js'> </script>
+</div>-->
+
+<div id="classguides">
+<script>
+springshare_widget_config_1438355573587 = { path: 'guides' };
+</script>
+<div id="s-lg-widget-1438355573587" style="overflow:auto; max-height:65px; padding: 0 5px 5px 5px; max-width:450px; border:1px solid #000; background-color:#fff; list-style:none;"></div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://lgapi.libapps.com/widgets.php?site_id=6370&widget_type=1&search_terms=&search_match=2&sort_by=name&list_format=0&drop_text=Select+a+Guide...&output_format=1&load_type=2&enable_description=0&enable_group_search_limit=0&enable_subject_search_limit=0&tag_ids%5B0%5D=257712&widget_title=Guide+List&widget_height=250&widget_width=100%25&widget_link_color=2954d1&widget_embed_type=1&num_results=0&enable_more_results=0&window_target=1&config_id=1438355573587";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","s-lg-widget-script-1438355573587");</script>
+</div>
+
+
+
+ <div class="gosearch">
+<form name="subjects" id="selectsubject"><div class="tagline" style="padding-bottom:5px;">GUIDES BY SUBJECT:</div>
+<label for="selectsubject" style="visibility:hidden; font-size:3px">Select Subject</label>
+  <select name="sub" class="searchboxstyle" style="width: 460px; margin:0 0 0 -27px; padding-left:4px; border:#000000 1px solid" size="4" onChange="MM_jumpMenu('parent',this,0)">
+   
+      
+         
+    <!-- Subject Options -->
+    
+<option value="http://guides.libs.uga.edu/accounting-databases">Accounting</option>
+<option value="http://guides.libs.uga.edu/advertising-databases">Advertising & PR</option>
+<option value="http://guides.libs.uga.edu/african-american-studies-databases">African-American Studies</option>
+<option value="http://guides.libs.uga.edu/african-studies-databases">African Studies</option>
+<option value="http://guides.libs.uga.edu/agricultural-and-applied-econ-databases">Agricultural & Applied Econ</option>
+<option value="http://guides.libs.uga.edu/alec-databases">Agricultural Leadership, Education, and Communication</option>
+<option value="http://guides.libs.uga.edu/american-literature-databases">American Literature </option>
+<option value="http://guides.libs.uga.edu/animal-and-dairy-science-databases">Animal & Dairy Science</option>
+
+<option value="http://guides.libs.uga.edu/anthropology-databases">Anthropology</option>
+<option value="http://guides.libs.uga.edu/art-and-architecture-databases">Art & Architecture</option>
+<option value="http://guides.libs.uga.edu/artificial-intelligence-databases">Artificial Intelligence</option>
+<option value="http://guides.libs.uga.edu/banking-and-finance-databases">Banking & Finance </option>
+
+<option value="http://guides.libs.uga.edu/biochemistry-databases">Biochemistry </option>
+<option value="http://guides.libs.uga.edu/biography-databases">Biography</option>
+<option value="http://guides.libs.uga.edu/biology-databases">Biological Sciences</option>
+<option value="http://guides.libs.uga.edu/business-databases">Business</option>
+<option value="http://guides.libs.uga.edu/cellular-biology-databases">Cellular Biology</option>
+
+<option value="http://guides.libs.uga.edu/chemistry-databases">Chemistry</option>
+<option value="http://guides.libs.uga.edu/classics-databases">Classics</option>
+<option value="http://guides.libs.uga.edu/communication-sciences-databases">Communication Sciences</option>
+<option value="http://guides.libs.uga.edu/communication-studies-databases">Communication Studies</option>
+
+<option value="http://guides.libs.uga.edu/company-information-databases">Company Information</option>
+<option value="http://guides.libs.uga.edu/comparative-literature-databases">Comparative Literature</option>
+<option value="http://guides.libs.uga.edu/computer-science-databases">Computer Science</option>
+<option value="http://guides.libs.uga.edu/consumer-sciences-databases">Consumer Sciences</option>
+<option value="http://guides.libs.uga.edu/criminal-justice-databases">Criminal Justice</option>
+<option value="http://guides.libs.uga.edu/crop-and-soil-sciences-databases">Crop & Soil Sciences</option>
+<option value="http://guides.libs.uga.edu/ecology-databases">Ecology</option>
+<option value="http://guides.libs.uga.edu/economics-databases">Economics</option>
+<option value="http://guides.libs.uga.edu/education-adult-databases">Education - Adult</option>
+<option value="http://guides.libs.uga.edu/education-k-16-databases">Education - K-16</option>
+<option value="http://guides.libs.uga.edu/engineering-databases">Engineering</option>
+<option value="http://guides.libs.uga.edu/english-databases">English</option>
+
+<option value="http://guides.libs.uga.edu/entomology-databases">Entomology</option>
+<option value="http://guides.libs.uga.edu/environmental-health-science-databases">Environmental Health Sci</option>
+<option value="http://guides.libs.uga.edu/exercise-science-databases">Exercise Science</option>
+<option value="http://guides.libs.uga.edu/film-databases">Film Studies</option>
+<option value="http://guides.libs.uga.edu/food-science-and-technology-databases">Food Science & Technology</option>
+<option value="http://guides.libs.uga.edu/foods-and-nutrition-databases">Foods & Nutrition</option>
+<option value="http://guides.libs.uga.edu/forestry-databases">Forestry & Natural Resources</option>
+<option value="http://guides.libs.uga.edu/french-databases">French</option>
+<option value="http://guides.libs.uga.edu/genetics-databases">Genetics</option>
+<option value="http://guides.libs.uga.edu/geography-databases">Geography</option>
+<option value="http://guides.libs.uga.edu/geology-databases">Geology</option>
+<option value="http://guides.libs.uga.edu/georgia-databases">Georgia</option>
+<option value="http://guides.libs.uga.edu/german-databases">German</option>
+<option value="http://guides.libs.uga.edu/gerontology-databases">Gerontology</option>
+        
+<option value="http://guides.libs.uga.edu/govt-info-census-databases">Govt Info: Census</option>
+<option value="http://guides.libs.uga.edu/govt-info-foreign-and-intergovernmental-databases">Govt Info: Foreign & Intergovernmental</option>
+<option value="http://guides.libs.uga.edu/govt-info-state-and-local-databases">Govt Info: State & Local</option>
+<option value="http://guides.libs.uga.edu/govt-info-us-congressional-databases">Govt Info: US Congressional </option>
+<option value="http://guides.libs.uga.edu/govt-info-us-general-databases">Govt Info: US General </option>
+<option value="http://guides.libs.uga.edu/govt-info-us-statistics-databases">Govt Info: US Statistics</option>
+<option value="http://guides.libs.uga.edu/health-promotion-and-behavior-databases">Health Promotion & Behavior</option>
+<option value="http://guides.libs.uga.edu/historic-preservation-databases">Historic Preservation</option>
+<option value="http://guides.libs.uga.edu/history-databases">History </option>
+<option value="http://guides.libs.uga.edu/horticulture-databases">Horticulture </option>
+<option value="http://guides.libs.uga.edu/human-development-and-family-science-databases">Human Development & Family Science</option>
+<option value="http://guides.libs.uga.edu/instructional-technology-databases">Instructional Technology & Design</option>
+<option value="http://guides.libs.uga.edu/insurance-databases">Insurance</option><br>
+
+<option value="http://guides.libs.uga.edu/international-affairs-databases">International Affairs</option>
+<option value="http://guides.libs.uga.edu/italian-databases">Italian</option>
+<option value="http://guides.libs.uga.edu/journalism-and-mass-media-databases">Journalism & Mass Media </option>
+<option value="http://guides.libs.uga.edu/landscape-architecture-databases">Landscape Architecture/Environment & Design</option>
+<option value="http://guides.libs.uga.edu/latin-american-studies-databases">Latin American Studies</option>
+<option value="http://guides.libs.uga.edu/law-databases">Law</option>
+<option value="http://guides.libs.uga.edu/linguistics-databases">Linguistics</option>
+<option value="http://guides.libs.uga.edu/management-databases">Management</option>
+<option value="http://guides.libs.uga.edu/mis-databases">Management Info Systems</option>
+<option value="http://guides.libs.uga.edu/marine-sciences-databases">Marine Sciences</option>
+<option value="http://guides.libs.uga.edu/marketing-and-distribution-databases">Marketing & Distribution</option>
+<option value="http://guides.libs.uga.edu/mathematics-databases">Mathematics</option>
+<option value="http://guides.libs.uga.edu/medicine-databases">Medicine</option>
+<option value="http://guides.libs.uga.edu/microbiology-databases">Microbiology</option>
+<option value="http://guides.libs.uga.edu/music-classical-databases">Music, Classical </option>
+<option value="http://guides.libs.uga.edu/music-popular-databases">Music, Popular</option>
+<option value="http://guides.libs.uga.edu/news-databases">News</option>
+<option value="http://guides.libs.uga.edu/nursing-databases">Nursing</option>
+<option value="http://guides.libs.uga.edu/pharmacy-databases">Pharmacy</option>
+<option value="http://guides.libs.uga.edu/philosophy-databases">Philosophy</option>
+<option value="http://guides.libs.uga.edu/physics-and-astronomy-databases">Physics & Astronomy</option>
+<option value="http://guides.libs.uga.edu/plant-biology-databases">Plant Biology </option>
+<option value="http://guides.libs.uga.edu/plant-pathology-databases">Plant Pathology</option>
+
+<option value="http://guides.libs.uga.edu/political-science-databases">Political Science</option>
+<option value="http://guides.libs.uga.edu/poultry-science-databases">Poultry Science</option>
+<option value="http://guides.libs.uga.edu/psychology-databases">Psychology</option>
+<option value="http://guides.libs.uga.edu/public-administration-policy-databases">Public Administration/Policy</option>
+<option value="http://guides.libs.uga.edu/public-health-databases">Public Health</option>
+<option value="http://guides.libs.uga.edu/real-estate-databases">Real Estate</option>
+<option value="http://guides.libs.uga.edu/recreation-and-leisure-studies-databases">Recreation & Leisure Studies</option>
+<option value="http://guides.libs.uga.edu/reference-databases">Reference Tools</option>
+<option value="http://guides.libs.uga.edu/religion-databases">Religion </option>
+<option value="http://guides.libs.uga.edu/slavic-databases">Russian & Slavic Studies</option>
+<option value="http://guides.libs.uga.edu/social-work-databases">Social Work</option>
+<option value="http://guides.libs.uga.edu/sociology-databases">Sociology</option>
+<option value="http://guides.libs.uga.edu/spanish-and-portuguese-databases">Spanish & Portuguese</option>
+<option value="http://guides.libs.uga.edu/sports-studies-databases">Sport Management </option>
+<option value="http://guides.libs.uga.edu/statistics-databases">Statistics</option>
+<option value="http://guides.libs.uga.edu/telecommunications-databases">Telecommunications</option>
+<option value="http://guides.libs.uga.edu/textiles-databases">Textiles</option>
+<option value="http://guides.libs.uga.edu/theatre-databases">Theatre</option>
+<option value="http://guides.libs.uga.edu/veterinary-medicine-databases">Veterinary Medicine</option>
+<option value="http://guides.libs.uga.edu/weather-climatology-databases">Weather/Climatology</option>
+<option value="http://guides.libs.uga.edu/womens-and-gender-studies-databases">Women's & Gender Studies</option>
+  </select>
+</form>
+
+					
+<!--
+  
+    
+ <form name="subjects" action="">
+<p>
+<select name="subject" size="3" id="sub_select" style="width:460px; border:#666 1px solid; font-size:0.9em;" onChange="location.href=subjects.subject.value;">
+	        <option value=''>Accounting</option>
+        <option value='http://guides.libs.uga.edu/advertising-databases'>Advertising & PR</option>
+        <option value='http://guides.libs.uga.edu/african-american-studies-databases'>African-American Studies</option>
+        <option value='http://guides.libs.uga.edu/african-studies-databases'>African Studies</option>
+        <option value='http://guides.libs.uga.edu/agricultural-and-applied-econ-databases'>Agricultural & Applied Econ</option>
+        <option value='http://guides.libs.uga.edu/alec-databases'>Agricultural Leadership, Education, and Communication</option>
+        <option value='http://guides.libs.uga.edu/american-literature-databases'>American Literature</option>
+        <option value='http://guides.libs.uga.edu/animal-and-dairy-science-databases'>Animal & Dairy Science</option>
+        <option value='http://guides.libs.uga.edu/anthropology-databases'>Anthropology</option>
+        <option value='http://guides.libs.uga.edu/art-and-architecture-databases'>Art & Architecture</option>
+        <option value='http://guides.libs.uga.edu/artificial-intelligence-databases'>Artificial Intelligence</option>
+        <option value='http://guides.libs.uga.edu/banking-and-finance-databases'>Banking & Finance </option>
+        <option value='http://guides.libs.uga.edu/biochemistry-databases'>Biochemistry </option>
+        <option value='http://guides.libs.uga.edu/biography-databases'>Biography</option>
+        <option value='http://guides.libs.uga.edu/biology-databases'>Biological Sciences</option>
+        <option value='http://guides.libs.uga.edu/business-databases'>Business</option>
+        <option value='http://guides.libs.uga.edu/cellular-biology-databases'>Cellular Biology</option>
+        <option value='http://guides.libs.uga.edu/chemistry-databases'>Chemistry</option>
+        <option value='http://guides.libs.uga.edu/child-and-family-development-databases'>Child & Family Development</option>
+        <option value='http://guides.libs.uga.edu/classics-databases'>Classics</option>
+        <option value='http://guides.libs.uga.edu/communication-sciences-databases'>Communication Sciences</option>
+        <option value='http://guides.libs.uga.edu/communication-studies-databases'>Communication Studies</option>
+        <option value='http://guides.libs.uga.edu/company-information-databases'>Company Information</option>
+        <option value='http://guides.libs.uga.edu/comparative-literature-databases'>Comparative Literature</option>
+        <option value='http://guides.libs.uga.edu/computer-science-databases'>Computer Science</option>
+        <option value='http://guides.libs.uga.edu/consumer-sciences-databases'>Consumer Sciences</option>
+        <option value='http://guides.libs.uga.edu/criminal-justice-databases'>Criminal Justice</option>
+        <option value='http://guides.libs.uga.edu/crop-and-soil-sciences-databases'>Crop & Soil Sciences</option>
+        <option value='http://guides.libs.uga.edu/ecology-databases'>Ecology</option>
+        <option value='http://guides.libs.uga.edu/economics-databases'>Economics</option>
+        <option value='http://guides.libs.uga.edu/education-adult-databases'>Education - Adult</option>
+        <option value='http://guides.libs.uga.edu/education-k-16-databases'>Education - K-16</option>
+        <option value='http://guides.libs.uga.edu/engineering-databases'>Engineering</option>
+        <option value='http://guides.libs.uga.edu/english-databases'>English</option>
+        <option value='http://guides.libs.uga.edu/entomology-databases'>Entomology</option>
+        <option value='http://guides.libs.uga.edu/environmental-health-science-databases'>Environmental Health Sci</option>
+        <option value='http://guides.libs.uga.edu/exercise-science-databases'>Exercise Science</option>
+        <option value='http://guides.libs.uga.edu/film-databases'>Film Studies</option>
+        <option value='http://guides.libs.uga.edu/food-science-and-technology-databases'>Food Science & Technology</option>
+        <option value='http://guides.libs.uga.edu/foods-and-nutrition-databases'>Foods & Nutrition</option>
+        <option value='http://guides.libs.uga.edu/forestry-databases'>Forestry & Natural Resources</option>
+        <option value='http://guides.libs.uga.edu/french-databases'>French</option>
+        <option value='http://guides.libs.uga.edu/genetics-databases'>Genetics</option>
+        <option value='http://guides.libs.uga.edu/geography-databases'>Geography</option>
+        <option value='http://guides.libs.uga.edu/geology-databases'>Geology</option>
+        <option value='http://guides.libs.uga.edu/georgia-databases'>Georgia</option>
+        <option value='http://guides.libs.uga.edu/german-databases'>German</option>
+        <option value='http://guides.libs.uga.edu/gerontology-databases'>Gerontology</option>
+        <option value='http://guides.libs.uga.edu/govt-info-census-databases'>Govt Info: Census</option>
+        <option value='http://guides.libs.uga.edu/govt-info-foreign-and-intergovernmental-databases'>Govt Info: Foreign & Intergovernmental</option>
+        <option value='http://guides.libs.uga.edu/govt-info-state-and-local-databases'>Govt Info: State & Local</option>
+        <option value='http://guides.libs.uga.edu/govt-info-us-congressional-databases'>Govt Info: US Congressional </option>
+        <option value='http://guides.libs.uga.edu/govt-info-us-general-databases'>Govt Info: US General </option>
+        <option value='http://guides.libs.uga.edu/govt-info-us-statistics-databases'>Govt Info: US Statistics</option>
+        <option value='http://guides.libs.uga.edu/health-promotion-and-behavior-databases'>Health Promotion & Behavior</option>
+        <option value='http://guides.libs.uga.edu/historic-preservation-databases'>Historic Preservation</option>
+        <option value='http://guides.libs.uga.edu/history-databases'>History </option>
+        <option value='http://guides.libs.uga.edu/horticulture-databases'>Horticulture </option>
+        <option value='http://guides.libs.uga.edu/instructional-technology-databases'>Instructional Technology & Design</option>
+        <option value='http://guides.libs.uga.edu/insurance-databases'>Insurance</option>
+        <option value='http://guides.libs.uga.edu/international-affairs-databases'>International Affairs</option>
+        <option value='http://guides.libs.uga.edu/italian-databases'>Italian</option>
+        <option value='http://guides.libs.uga.edu/journalism-and-mass-media-databases'>Journalism & Mass Media </option>
+        <option value='http://guides.libs.uga.edu/landscape-architecture-databases'>Landscape Architecture/Environment & Design</option>
+        <option value='http://guides.libs.uga.edu/latin-american-studies-databases'>Latin American Studies</option>
+        <option value='http://guides.libs.uga.edu/law-databases'>Law</option>
+        <option value='http://guides.libs.uga.edu/linguistics-databases'>Linguistics</option>
+        <option value='http://guides.libs.uga.edu/management-databases'>Management</option>
+        <option value='http://guides.libs.uga.edu/mis-databases'>Management Info Systems</option>
+        <option value='http://guides.libs.uga.edu/marine-sciences-databases'>Marine Sciences</option>
+        <option value='http://guides.libs.uga.edu/marketing-and-distribution-databases'>Marketing & Distribution</option>
+        <option value='http://guides.libs.uga.edu/mathematics-databases'>Mathematics</option>
+        <option value='http://guides.libs.uga.edu/medicine-databases'>Medicine</option>
+        <option value='http://guides.libs.uga.edu/microbiology-databases'>Microbiology</option>
+        <option value='http://guides.libs.uga.edu/music-classical-databases'>Music, Classical </option>
+        <option value='http://guides.libs.uga.edu/music-popular-databases'>Music, Popular</option>
+        <option value='http://guides.libs.uga.edu/news-databases'>News</option>
+        <option value='http://guides.libs.uga.edu/nursing-databases'>Nursing</option>
+        <option value='http://guides.libs.uga.edu/pharmacy-databases'>Pharmacy</option>
+        <option value='http://guides.libs.uga.edu/philosophy-databases'>Philosophy</option>
+        <option value='http://guides.libs.uga.edu/physics-and-astronomy-databases'>Physics & Astronomy</option>
+        <option value='http://guides.libs.uga.edu/plant-biology-databases'>Plant Biology </option>
+        <option value='http://guides.libs.uga.edu/plant-pathology-databases'>Plant Pathology</option>
+        <option value='http://guides.libs.uga.edu/political-science-databases'>Political Science</option>
+        <option value='http://guides.libs.uga.edu/poultry-science-databases'>Poultry Science</option>
+        <option value='http://guides.libs.uga.edu/psychology-databases'>Psychology</option>
+        <option value='http://guides.libs.uga.edu/public-administration-policy-databases'>Public Administration/Policy</option>
+        <option value='http://guides.libs.uga.edu/public-health-databases'>Public Health</option>
+        <option value='http://guides.libs.uga.edu/real-estate-databases'>Real Estate</option>
+        <option value='http://guides.libs.uga.edu/recreation-and-leisure-studies-databases'>Recreation & Leisure Studies</option>
+        <option value='http://guides.libs.uga.edu/reference-databases'>Reference Tools</option>
+        <option value='http://guides.libs.uga.edu/religion-databases'>Religion </option>
+        <option value='http://guides.libs.uga.edu/slavic-databases'>Russian & Slavic Studies</option>
+        <option value='http://guides.libs.uga.edu/social-work-databases'>Social Work</option>
+        <option value='http://guides.libs.uga.edu/sociology-databases'>Sociology</option>
+        <option value='http://guides.libs.uga.edu/spanish-and-portuguese-databases'>Spanish & Portuguese</option>
+        <option value='http://guides.libs.uga.edu/sports-studies-databases'>Sport Management </option>
+        <option value='http://guides.libs.uga.edu/statistics-databases'>Statistics</option>
+        <option value='http://guides.libs.uga.edu/telecommunications-databases'>Telecommunications</option>
+        <option value='http://guides.libs.uga.edu/textiles-databases'>Textiles</option>
+        <option value='http://guides.libs.uga.edu/theatre-databases'>Theatre</option>
+        <option value='http://guides.libs.uga.edu/veterinary-medicine-databases'>Veterinary Medicine</option>
+        <option value='http://guides.libs.uga.edu/weather-climatology-databases'>Weather/Climatology</option>
+        <option value='http://guides.libs.uga.edu/womens-and-gender-studies-databases'>Women's & Gender Studies</option>
+</select>
+</p>
+</form>
+   
+  
+    -->
+    
+</div>
+
+<div class="gosearch" style="padding-top: 10px">
+<div class="tagline" style="padding-bottom:5px;">TOOLS & TUTORIALS:</div>
+
+<!--
+<div id='api_search_category_iid4071'></div><script type='text/javascript' src='http://api.libguides.com/api_search.php?iid=4071&type=category&search=tools&more=false&target=_self&break=menu&context=object&format=js'> </script>
+</div>
+
+
+<div id="classguides">
+<div id='api_search_category_iid4071' style="overflow:auto; max-height:45px; padding: 0 5px 5px 5px; width:450px; border:1px solid #000; background-color:#fff;"></div><script type='text/javascript' src='http://api.libguides.com/api_search.php?iid=4071&type=category&search=tools&more=false&target=_self&context=object&format=js'> </script>
+</div>
+-->
+
+<div id="classguides">
+<script>
+springshare_widget_config_1438696811625 = { path: 'guides' };
+</script>
+<div id="s-lg-widget-1438696811625" style="overflow:auto; max-height:65px; padding: 0 5px 5px 5px; max-width:450px; border:1px solid #000; background-color:#fff; list-style:none;"></div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://lgapi.libapps.com/widgets.php?site_id=6370&widget_type=1&search_terms=&search_match=1&sort_by=name&list_format=0&drop_text=Select+a+Guide...&output_format=1&load_type=2&enable_description=0&enable_group_search_limit=0&enable_subject_search_limit=0&subject_ids%5B0%5D=70663&widget_title=Guide+List&widget_height=250&widget_width=100%25&widget_link_color=2954d1&widget_embed_type=1&num_results=0&enable_more_results=0&window_target=1&config_id=1438696811625";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","s-lg-widget-script-1438696811625");</script>
+</div>
+
+
+
+<div class="aboutbox">
+<div class="aboutheader"  style="padding-top:30px;">Related Links:</div>
+<div class="aboutlink">Browse all guides <a href="http://guides.libs.uga.edu/browse/atoz" style="text-decoration:underline;">alphabetically</a>, by <a href="http://guides.libs.uga.edu//browse/subject" style="text-decoration:underline;">subject grouping</a>, or by <a href="http://guides.libs.uga.edu/browse/librarian" style="text-decoration:underline;">librarian</a>.</div>
+
+</div>
+
+
+</div><!-- end aboutbox-->
+</div>
+</div>  <!-- end C4 -->
+
+
+
+
+
+<div id="C5" style="display: block">
+
+<div class="colorblock">
+<div class="searchblurb">Search approximately 130 GALILEO databases plus the GIL@UGA Libraries Catalog to find full-text articles, books and more</div> 
+<div class="help"><a href="/multisearch.html">Help</a></div>
+</div>
+<!-- start query form -->
+
+<div class="gosearch" style="padding-top: 1.2em">  
+
+<!-- EBSCOhost Custom Search Box Begins -->
+
+<script src="http://supportforms.epnet.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+<form id="multi-search" action="" onSubmit="return ebscoHostSearchGo(this);" method="post">
+<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="0" />
+<input id="ebscohosturl" name="ebscohosturl" type="hidden"
+value="http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&custid=uga1&groupid=main&profid=eds&mode=and&authtype=ip,guest"
+/>
+<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+AND+" />
+<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+<div style="height:50px;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9pt;font-weight:bold;color:#353535;">
+	<div style="padding-top:15px;padding-left:40px;padding-right:40px;">
+	
+		
+		<div>
+        <label for="ebscohostsearchtext" style="visibility:hidden; font-size:3px">enter search terms</label>
+			<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="40" style="font-size:10pt;padding-left:5px; margin-left:0px;float:left;" />
+
+			<input type="submit" value="Search" style="font-size:10pt; padding-left:5px; float:left; margin-left:5px" />
+			
+		<div id="includeFT">
+				<input type="checkbox" id="chkFullText" name="chkFullText" style="margin-left:0px; float:left; clear:left; margin-top:9px;"/><label for="chkFullText" style="float:left; margin-top:10px">Full Text Online</label> 
+			</div>	
+		</div>
+	</div>
+	</div>
+</form>
+
+<!-- EBSCOhost Custom Search Box Ends -->
+
+</div> <!-- end gosearch -->
+
+<div class="aboutbox">
+<div>&nbsp;</div>
+<div class="aboutheader">Related Links:</div>
+<div class="aboutlink"><a href="/galileologin.html">GALILEO Login for Off-Campus Access</a></div>
+<div class="aboutlink"><a href="/multisearch/index.html">Go Directly to Multi-Search</a></div>
+<div class="aboutlink"><a href="/multisearch.html">About Multi-Search</a></div>
+</div><!-- end aboutbox-->
+</div> <!-- end C5 -->
+</div><!--end tabcontent-->
+</div>  <!--end tabbox-->
+
+
+
+<div id="bloglist">
+<span id="newsev"><a href="http://www.libs.uga.edu/blog/">News & Events</a></span>
+<a href="http://www.libs.uga.edu/blog/?feed=rss2"><img src="graphics/rssfeed.gif" style="border: none; width:15px; height:15px" title="Subscribe to this Feed" alt="subscribe to this RSS feed"></a>
+<ul><li><a href="http://www.libs.uga.edu/blog/?p=10709" class=rssfeed>From Tarzan to John Carter: The Epic Adventure Novels of Edgar Rice Burroughs</a></li><li><a href="http://www.libs.uga.edu/blog/?p=10713" class=rssfeed>Russell Special Collections Libraries closed for July 4</a></li><li><a href="http://www.libs.uga.edu/blog/?p=10705" class=rssfeed>MLC Closed 7/2-7/4</a></li><li><a href="http://www.libs.uga.edu/blog/?p=10703" class=rssfeed>Main and Science Libraries &#8211; Fourth of July Holiday Hours</a></li><li><a href="http://www.libs.uga.edu/blog/?p=10699" class=rssfeed>Family Day: Bugs and Butterflies</a></li><li><a href="http://www.libs.uga.edu/blog/?p=10696" class=rssfeed>Holiday Hours in the CML</a></li></ul>
+
+<div id="newslink"><a href="http://www.libs.uga.edu/blog/">more news and events...</a></div>
+</div>
+
+<div id="speccoll">
+
+<div id="speccollmenu">
+<div id="speccollheader"><a href="http://www.libs.uga.edu/scl">SPECIAL COLLECTIONS</a></div>
+<ul style="text-align:left; padding-left:10px; padding-top:5px">
+<li><a href="http://www.libs.uga.edu/scl">Special Collections Libraries:</a>
+<ul>
+<li style="padding-left:15px"><a href="/hargrett/index.shtml">Hargrett Library</a></li>
+<li style="padding-left:15px"><a href="/russell/">Richard B. Russell Library</a></li>
+<li style="padding-left:15px"><a href="/media/index.html">Brown Media Archives/<br>&nbsp;Peabody Awards Collection</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="dlg"><a href="/dlg.html"><img src="/homepage/graphics/dlg.jpg" alt="digital library of georgia"/></a></div>
+
+
+
+</div>  <!--end research-->
+
+
+</div><!--end rightcolumn-->
+
+</div><!-- end page-->
+
+<div id="footer">
+
+<div id="footerright">
+<ul>
+<li><script src="/shared/lastupdate.js" language="javascript" type="text/javascript"></script></li>
+<li>Copyright &copy; University of Georgia. All rights reserved</li>
+<li>URL = http://www.libs.uga.edu/index.shtml</li>
+<li><a href="http://www.libs.uga.edu/comments.html">Send us your comments about this site</a></li>
+</ul>
+<div id="gift"><a href="/development/making.html"><img src="/homepage/graphics/gift.jpg" style="margin:auto" alt="making a gift to the libraries"></a></div>
+
+</div>
+
+<div id="social_media">
+<a href="/facebookredirect.html"><img src="homepage/graphics/fb.gif" alt="our facebook page"></a>
+<a href="/flickr.html"><img src="homepage/graphics/flk.gif" alt="our Flickr page"></a>
+<a href="http://www.libs.uga.edu/rss/"><img src="homepage/graphics/rss1.gif" alt="see a list of our RSS feeds"></a>
+<a href="/twitter.html"><img src="homepage/graphics/twitter.jpg" alt="our Twitter account"></a>
+<a href="/youtube.html"><img src="homepage/graphics/ytube.gif" alt="our YouTube account"></a>
+<a href="/tumblr.html"><img src="homepage/graphics/tumblr.png" alt="our Tumblr account"></a>
+
+</div>
+
+
+<div id="footerleft">
+<ul>
+<li>University of Georgia Libraries,</li>
+<li>University of Georgia</li>
+<li>Athens, Georgia 30602-1641</li>
+<li>(706) 542-3251</li> 
+<li>Dr. P. Toby Graham, University Librarian and</li> 
+<li>Associate Provost</li>
+</ul> 
+<a href="/magil/index.html"><img src="/homepage/graphics/fdlp-rgb-91px-wide.jpg" height="54" width="56" align="left" border="none" alt="federal depository library program logo"></a>
+<div id="caption"><a href="/magil/index.html">Federal Depository<br />Library Program</a></div>
+</div>
+
+
+</div>  <!--end footer!-->
+
+
+</div><!-- end background-->
+
+</div><!-- close wrapper-->
+</div><!-- close container-->
+
+
+
+<!-- Place this script as near to the end of your BODY as possible. -->
+<script type="text/javascript" src="http://refchatter.net/js/libraryh3lp.js?multi"></script>
+
+</body>
+</html>

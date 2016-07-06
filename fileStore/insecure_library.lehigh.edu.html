@@ -1,0 +1,680 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Lehigh University Library Services</title>
+	<meta http-equiv="content-language" content="en" />
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" type="application/rss+xml" title="Lehigh University Library Services RSS" href="http://library.lehigh.edu/rss.xml" />
+<link rel="shortcut icon" href="/sites/default/files/library_favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/ldaphelp/ldaphelp.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/aggregator/aggregator.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/poll/poll.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/cck/theme/content-module.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/date/date.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/date/date_popup/themes/datepicker.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/date/date_popup/themes/jquery.timeentry.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/fckeditor/fckeditor.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/filefield/filefield.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/img_assist/img_assist.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/lightbox2/css/lightbox.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/cck/modules/fieldgroup/fieldgroup.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views/css/views.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/image/contrib/image_attach/image_attach.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/quicktabs/css/quicktabs.css?J" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/quicktabs/tabstyles/library/library.css?J" />
+<link type="text/css" rel="stylesheet" media="screen" href="/sites/default/files/render/sifr3-screen.css?J" />
+<link type="text/css" rel="stylesheet" media="screen,projection" href="/sites/all/themes/blueprint/blueprint/blueprint/screen.css?J" />
+<link type="text/css" rel="stylesheet" media="screen,projection" href="/sites/all/themes/blueprint/css/blueprint.css?J" />
+<link type="text/css" rel="stylesheet" media="screen,projection" href="/sites/all/themes/blueprint/css/style.css?J" />
+<link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/blueprint/blueprint/blueprint/print.css?J" />
+<link type="text/css" rel="stylesheet" media="screen, projection" href="/sites/all/themes/library/library.css?J" />
+<link rel="stylesheet" href="/sites/all/themes/library/sifr/css/sifr.css" type="text/css" media="screen, projection">
+  <!--[if lte IE 7]>
+    <link rel="stylesheet" href="/sites/all/themes/library/blueprint/blueprint/ie.css" type="text/css" media="screen, projection">
+  	<link href="/sites/all/themes/library/css/ie.css" rel="stylesheet"  type="text/css"  media="screen, projection" />
+  <![endif]-->  
+  <!--[if lte IE 6]>
+  	<link href="/sites/all/themes/library/css/ie6.css" rel="stylesheet"  type="text/css"  media="screen, projection" />
+  <![endif]-->
+
+<style type="text/css" media="screen">
+h3#slider a {
+background: transparent url(http://library.lehigh.edu/sites/all/themes/library/assets/h3-slider_up.jpg) no-repeat 50% 5px;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+	//toggle search box
+	$(document).ready(function(){
+		$("h3#slider a").click(function(){
+        sliderhead = document.getElementById("slider").childNodes[0];
+        if(typeof arrowPoint=="undefined"||arrowPoint==1)
+        {
+            sliderhead.style.backgroundImage = "url(http://"+window.location.host+"/sites/all/themes/library/assets/h3-slider.jpg)";
+            arrowPoint=0;
+        }
+        else
+        {
+            sliderhead.style.backgroundImage = "url(http://"+window.location.host+"/sites/all/themes/library/assets/h3-slider_up.jpg)";
+            arrowPoint=1;
+        }
+
+			$("#search-slider").slideToggle("slow");
+			return false;
+		})
+	})
+
+</script>
+
+</head>
+
+<body id="home" class="front not-logged-in page-node two-sidebars col-3 ">
+<div class="container showgrid">
+  <div id="header">
+    <h1 id="logo">
+      <a title="Lehigh University Library Services" href="http://www.lehigh.edu/">Lehigh University Library Services</a>
+    </h1>
+              <ul id="nav" class="links"><li class="menu-449 active-trail first active"><a href="/" title="Lehigh University Library Services Home" class="active">Home</a></li>
+<li class="menu-450"><a href="/collections" title="">Collections</a></li>
+<li class="menu-455"><a href="/teaching_support" title="">Teaching Support</a></li>
+<li class="menu-454"><a href="/about" title="">About</a></li>
+<li class="menu-453"><a href="/help" title="">Help</a></li>
+<li class="menu-452"><a href="/services_and_forms" title="">Services and Forms</a></li>
+<li class="menu-451 last"><a href="http://www.lehigh.edu/lts/" title="Lehigh University Library and Technology Services Home">LTS Home</a></li>
+</ul>                      
+  </div>
+
+      <div class="col-left"><div id="block-menu-menu-quick-links" class="block block-menu region-odd odd region-count-1 count-1">
+
+  <h3>Quick Links</h3>
+
+  <div class="content quicklinks"><ul class="menu"><li class="leaf first"><a href="http://www.lehigh.edu/help" title="" class="menu-458">Get Help</a></li>
+<li class="leaf"><a href="https://library.lehigh.edu/asa2.0/MyResearch/Home" title="" class="menu-460">My Account</a></li>
+<li class="leaf"><a href="https://login.ezproxy.lib.lehigh.edu/login?url=https://www.refworks.com/refworks/?groupcode=RWLEHIGHUN" title="" class="menu-457">RefWorks</a></li>
+<li class="leaf"><a href="/content/citation_linker" title="" class="menu-459">Lehigh SFX Links</a></li>
+<li class="leaf"><a href="http://www.worldcat.org/" title="" class="menu-5093">WorldCat</a></li>
+<li class="leaf"><a href="/ill" title="" class="menu-461">Inter Library Loan</a></li>
+<li class="leaf"><a href="/collections/special_collections" title="" class="menu-4930">Special Collections</a></li>
+<li class="collapsed"><a href="/content/digital_library" title="" class="menu-4929">Digital Library</a></li>
+<li class="leaf"><a href="http://preserve.lehigh.edu/" title="" class="menu-6386">Lehigh Preserve</a></li>
+<li class="leaf last"><a href="http://mylehigh.lehigh.edu/Lulibrary" title="" class="menu-5181">Make a Gift</a></li>
+</ul></div>
+  
+</div>
+<div id="block-block-9" class="block block-block region-even even region-count-2 count-2">
+
+  <h3>Services For</h3>
+
+  <div class="content"><div class="item-list">
+<ul>
+<li class="views-row">
+<div class="views-field-title"><span class="field-content"><a href="http://library.lehigh.edu/students/">Students</a></span></div>
+</li>
+<li class="views-row">
+<div class="views-field-title"><span class="field-content"><a href="http://library.lehigh.edu/facultystaff/">Faculty/Staff</a></span></div>
+</li>
+<li class="views-row">
+<div class="views-field-title"><span class="field-content"><a href="http://library.lehigh.edu/alumni/">Alumni</a></span></div>
+</li>
+</ul>
+</div>
+</div>
+  
+</div>
+<div id="block-menu-menu-social" class="block block-menu region-odd odd region-count-3 count-3">
+
+
+  <div class="content"><ul class="menu"><li class="leaf first"><a href="https://www.facebook.com/LehighLTS" title="" class="menu-486">Find us on Facebook</a></li>
+<li class="leaf"><a href="http://twitter.com/LehighLTS" title="" class="menu-1156">Follow us on Twitter</a></li>
+<li class="leaf last"><a href="http://library.lehigh.edu/news/archive/all/feed" title="" class="menu-5032">Library News RSS Feed</a></li>
+</ul></div>
+  
+</div>
+</div>
+    
+  <div class="col-center">
+    
+	<div class="col-center">
+		<div class="search_header">
+		<div id="block-quicktabs-1" class="block block-quicktabs region-odd odd region-count-1 count-9">
+
+  <h3 id="slider"><a href="#search-slider">Search</a></h3>
+
+  <div id="search-slider" class="content"><div id="quicktabs-1" class="quicktabs_wrapper quicktabs-style-library"><ul class="quicktabs_tabs quicktabs-style-library"><li class="qtab-0 active first"><a href="http://library.lehigh.edu/content/nbsp_0?quicktabs_1=0" id="quicktabs-tab-1-0" class="qt_tab">Library Catalog</a></li><li class="qtab-1"><a href="http://libraryguides.lehigh.edu/az.php" target="_blank" id="quicktabs-tab-1-1" class="qt_tab">Database Finder</a></li><li class="qtab-2"><a href="http://library.lehigh.edu/content/e_journal_browse?quicktabs_1=2&letter=A" id="quicktabs-tab-1-2" class="qt_tab">E-Journals</a></li><li class="qtab-3 last"><a href="http://libraryguides.lehigh.edu/" target="_blank" id="quicktabs-tab-1-3" class="qt_tab">Research Guides</a></li></ul><div id="quicktabs_container_1" class="quicktabs_main quicktabs-style-library"><div id="quicktabs_tabpage_1_0" class="quicktabs_tabpage"><div id="node-104" class="node clear-block">
+
+  <div class="content clear-block">
+    <div class="picture">
+  </div>
+    <form id="audiosearch" method="get" action="https://library.lehigh.edu/asa2.0/Search/Results" name="audiosearch">
+<table border="0">
+<tbody>
+<tr>
+<td nowrap="nowrap" style="padding-right: 0px; margin-right: 0px"><a href="https://library.lehigh.edu/asa2.0/AlphaBrowse/Home"><strong>Browse Alphabetically</strong></a> | <a href="https://library.lehigh.edu/asa2.0/Search/Advanced"><strong>Advanced Search</strong></a></td>
+</tr>
+<tr>
+<td><input type="text" maxlength="255" size="40" name="lookfor" /></td>
+</tr>
+<tr>
+<td><input type="submit" alt="[word(s) or phrase]" name="type" value="AllFields" /> <input type="submit" alt="[author]" name="type" value="Author" /> <input type="submit" alt="[title]" name="type" value="Title" /> <input type="submit" alt="[subject]" name="type" value="Subject" /> <input type="submit" alt="[journal title]" name="type" value="JournalTitle" /></td>
+</tr>
+</tbody>
+</table>
+</form>
+<form id="videosearch" method="post" action="https://library.lehigh.edu/vidsearch.php" name="videosearch">
+<p><label>Find Videos &amp; DVDs in the Media Collection</label><br />
+    <input type="text" size="35" name="search1" /> <input type="submit" name="submit" value="Search Videos" /></p>
+<select name="search2">
+    <option value="any" selected="selected">Any Topic</option><br />
+    <option value="&quot;VIDEOS AFRICAN&quot;">AFRICA</option><br />
+    <option value="&quot;VIDEOS ANTHROPOLOGY&quot;">ANTHROPOLOGY</option><br />
+    <option value="&quot;VIDEOS ARCHAEOLOGY&quot;">ARCHAEOLOGY</option><br />
+    <option value="&quot;VIDEOS ART AND ARCHITECTURE&quot;">ART AND ARCHITECTURE</option><br />
+    <option value="&quot;VIDEOS BIOGRAPHIES&quot;">BIOGRAPHIES</option><br />
+    <option value="&quot;VIDEOS BIOLOGY&quot;">BIOLOGY</option><br />
+    <option value="&quot;VIDEOS BLACK STUDIES&quot;">BLACK STUDIES</option><br />
+    <option value="&quot;VIDEOS BUSINESS&quot;">BUSINESS</option><br />
+    <option value="&quot;VIDEOS CHEMISTRY&quot;">CHEMISTRY</option><br />
+    <option value="&quot;VIDEOS COMMUNICATIONS&quot;">COMMUNICATIONS</option><br />
+    <option value="&quot;VIDEOS COMPUTER SCIENCE&quot;">COMPUTER SCIENCE</option><br />
+    <option value="&quot;VIDEOS DANCE&quot;">DANCE</option><br />
+    <option value="&quot;VIDEOS DRAMATIC ARTS&quot;">DRAMATIC ARTS</option><br />
+    <option value="&quot;VIDEOS DRUGS AND ALCOHOL&quot;">DRUGS AND ALCOHOL</option><br />
+    <option value="&quot;VIDEOS ECONOMICS&quot;">ECONOMICS</option><br />
+    <option value="&quot;VIDEOS EDUCATION&quot;">EDUCATION</option><br />
+    <option value="&quot;VIDEOS ENGLISH&quot;">ENGLISH</option><br />
+    <option value="&quot;VIDEOS ENVIRONMENTAL STUDIES&quot;">ENVIRONMENTAL STUDIES</option><br />
+    <option value="&quot;VIDEOS ETHICS&quot;">ETHICS</option><br />
+    <option value="&quot;VIDEOS FEATURE FILMS&quot;">FEATURE FILMS</option><br />
+    <option value="&quot;VIDEOS FILM STUDY&quot;">FILM STUDY</option><br />
+    <option value="&quot;VIDEOS GENETICS&quot;">GENETICS</option><br />
+    <option value="&quot;VIDEOS GEOGRAPHY&quot;">GEOGRAPHY</option><br />
+    <option value="&quot;VIDEOS GEOLOGY&quot;">GEOLOGY</option><br />
+    <option value="&quot;VIDEOS HEALTH&quot;">HEALTH</option><br />
+    <option value="&quot;VIDEOS HISTORY&quot;">HISTORY</option><br />
+    <option value="&quot;VIDEOS JEWISH STUDIES&quot;">JEWISH STUDIES</option><br />
+    <option value="&quot;VIDEOS LAW&quot;">LAW</option><br />
+    <option value="&quot;VIDEOS LIBRARY SCIENCE&quot;">LIBRARY SCIENCE</option><br />
+    <option value="&quot;VIDEOS LITERATURE&quot;">LITERATURE</option><br />
+    <option value="&quot;VIDEOS MATHEMATICS&quot;">MATHEMATICS</option><br />
+    <option value="&quot;VIDEOS MEDICINE&quot;">MEDICINE</option><br />
+    <option value="&quot;VIDEOS MUSIC&quot;">MUSIC</option><br />
+    <option value="&quot;VIDEOS MYSTERIES&quot;">MYSTERIES</option><br />
+    <option value="&quot;VIDEOS NUCLEAR ISSUES&quot;">NUCLEAR ISSUES</option><br />
+    <option value="&quot;VIDEOS NURSING&quot;">NURSING</option><br />
+    <option value="&quot;VIDEOS PHILOSOPHY&quot;">PHILOSOPHY</option><br />
+    <option value="&quot;VIDEOS PHYSICAL EDUCATION&quot;">PHYSICAL EDUCATION</option><br />
+    <option value="&quot;VIDEOS PHYSICS&quot;">PHYSICS</option><br />
+    <option value="&quot;VIDEOS POETRY&quot;">POETRY</option><br />
+    <option value="&quot;VIDEOS POLITICAL SCIENCE&quot;">POLITICAL SCIENCE</option><br />
+    <option value="&quot;VIDEOS PSYCHOLOGY&quot;">PSYCHOLOGY</option><br />
+    <option value="&quot;VIDEOS RECREATION&quot;">RECREATION</option><br />
+    <option value="&quot;VIDEOS RELIGION STUDIES&quot;">RELIGION STUDIES</option><br />
+    <option value="&quot;VIDEOS SCIENCE&quot;">SCIENCE</option><br />
+    <option value="&quot;VIDEOS SHAKESPEARE&quot;">SHAKESPEARE</option><br />
+    <option value="&quot;VIDEOS SOCIAL WORK&quot;">SOCIAL WORK</option><br />
+    <option value="&quot;VIDEOS SOCIOLOGY&quot;">SOCIOLOGY</option><br />
+    <option value="&quot;VIDEOS SPORTS&quot;">SPORTS</option><br />
+    <option value="&quot;VIDEOS TAIWANESE&quot;">TAIWAN</option><br />
+    <option value="&quot;VIDEOS THIRD WORLD&quot;">THIRD WORLD</option><br />
+    <option value="&quot;VIDEOS WATER TRANSPORTATION&quot;">WATER TRANSPORTATION</option><br />
+    <option value="&quot;VIDEOS WOMEN'S STUDIES&quot;">WOMEN'S STUDIES</option><br />
+    </select>
+<select name="search3">
+    <option value="any" selected="selected">Any Language</option><br />
+    <option value="&quot;VIDEOS ARABIC&quot;">ARABIC</option><br />
+    <option value="&quot;VIDEOS ARMENIAN&quot;">ARMENIAN</option><br />
+    <option value="&quot;VIDEOS BALINESE&quot;">BALINESE</option><br />
+    <option value="&quot;VIDEOS BENGALI&quot;">BENGALI</option><br />
+    <option value="&quot;VIDEOS BOSNIAN&quot;">BOSNIAN</option><br />
+    <option value="&quot;VIDEOS CANTONESE&quot;">CANTONESE</option><br />
+    <option value="&quot;VIDEOS CASTILIAN&quot;">CASTILIAN</option><br />
+    <option value="&quot;VIDEOS CHINESE&quot;">CHINESE</option><br />
+    <option value="&quot;VIDEOS CREE&quot;">CREE</option><br />
+    <option value="&quot;VIDEOS CZECH&quot;">CZECH</option><br />
+    <option value="&quot;VIDEOS DANISH&quot;">DANISH</option><br />
+    <option value="&quot;VIDEOS DUTCH&quot;">DUTCH</option><br />
+    <option value="&quot;VIDEOS FARSI&quot;">FARSI</option><br />
+    <option value="&quot;VIDEOS FRENCH&quot;">FRENCH</option><br />
+    <option value="&quot;VIDEOS GERMAN&quot;">GERMAN</option><br />
+    <option value="&quot;VIDEOS GREEK&quot;">GREEK</option><br />
+    <option value="&quot;VIDEOS HAUSA&quot;">HAUSA</option><br />
+    <option value="&quot;VIDEOS HEBREW&quot;">HEBREW</option><br />
+    <option value="&quot;VIDEOS HINDI&quot;">HINDI</option><br />
+    <option value="&quot;VIDEOS ICELANDIC&quot;">ICELANDIC</option><br />
+    <option value="&quot;VIDEOS ITALIAN&quot;">ITALIAN</option><br />
+    <option value="&quot;VIDEOS JAPANESE&quot;">JAPANESE</option><br />
+    <option value="&quot;VIDEOS KHMER&quot;">KHMER</option><br />
+    <option value="&quot;VIDEOS KOREAN&quot;">KOREAN</option><br />
+    <option value="&quot;VIDEOS KURDISH&quot;">KURDISH</option><br />
+    <option value="&quot;VIDEOS MANDARIN&quot;">MANDARIN</option><br />
+    <option value="&quot;VIDEOS NORWEGIAN&quot;">NORWEGIAN</option><br />
+    <option value="&quot;VIDEOS PASHTU&quot;">PASHTU</option><br />
+    <option value="&quot;VIDEOS POLISH&quot;">POLISH</option><br />
+    <option value="&quot;VIDEOS PORTUGUESE&quot;">PORTUGUESE</option><br />
+    <option value="&quot;VIDEOS RUSSIAN&quot;">RUSSIAN</option><br />
+    <option value="&quot;VIDEOS SERBO-CROATIAN&quot;">SERBO-CROATIAN</option><br />
+    <option value="&quot;VIDEOS SINO-TIBETAN&quot;">SINO-TIBETAN</option><br />
+    <option value="&quot;VIDEOS SLOVENE&quot;">SLOVENE</option><br />
+    <option value="&quot;VIDEOS SPANISH&quot;">SPANISH</option><br />
+    <option value="&quot;VIDEOS SWAHILI&quot;">SWAHILI</option><br />
+    <option value="&quot;VIDEOS SWEDISH&quot;">SWEDISH</option><br />
+    <option value="&quot;VIDEOS THAI&quot;">THAI</option><br />
+    <option value="&quot;VIDEOS TIBETAN&quot;">TIBETAN</option><br />
+    <option value="&quot;VIDEOS TURKISH&quot;">TURKISH</option><br />
+    <option value="&quot;VIDEOS VIETNAMESE&quot;">VIETNAMESE</option><br />
+    <option value="&quot;VIDEOS ZULU&quot;">ZULU</option><br />
+    </select>
+</form>
+
+
+  </div>
+
+<div class="node-links"><ul class="links inline"><li class="comment_forbidden first last"></li>
+</ul></div>
+</div></div><div id="quicktabs_tabpage_1_1" class="quicktabs_tabpage quicktabs-hide"><div id="node-148" class="node clear-block">
+
+  <div class="content clear-block">
+    <div class="picture">
+  </div>
+    <form style="float:left;" id="databasebrowse" name="databasebrowse" method="get" action="http://library.lehigh.edu/content/database_finder">
+    <input type="hidden" name="quicktabs_1" value="1" />
+    <p><label>Browse</label><br />
+    <select name="query2" onchange="if(this.value!=''){document.databasebrowse.submit();}">
+    <option value="0">Select a category</option>
+    <option value="0">All Databases</option>
+<option value="1">New Databases</option>
+<option value="2">Full Text Databases</option>
+<option value="3">General Databases</option>
+<option value="4">Newspapers</option>
+<option value="5">Statistical Information</option>
+<option value="6">Business and Economics</option>
+<option value="7">Education</option>
+<option value="8">Engineering</option>
+<option value="9">Humanities</option>
+<option value="10">Life and Physical Sciences</option>
+<option value="11">Social Science</option>
+<option value="12">eBooks</option>
+<option value="13">eJournals</option>
+<option value="14">Trials</option>
+ </select><noscript><input type="submit" value="GO" name="submit" /></noscript></p>
+</form>
+<form style="float:left;" id="databasesearch" name="databasesearch" method="get" action="http://library.lehigh.edu/content/database_finder">
+    <p><label>Or Search</label><br />
+    <input type="hidden" name="quicktabs_1" value="1" />     <input type="text" name="query" value="" size="25" gtbfieldid="383" /><input type="hidden" name="query1" value="0" /><input type="submit" value="Search" name="submit" /></p>
+</form>
+<div style="clear:both;">&nbsp;</div>
+
+  </div>
+
+
+</div></div><div id="quicktabs_tabpage_1_2" class="quicktabs_tabpage quicktabs-hide"><div id="node-105" class="node clear-block">
+
+  <div class="content clear-block">
+    <div class="picture">
+  </div>
+    <form id="journalbrowse" name="journalbrowse" method="get" action="http://library.lehigh.edu/content/e_journal_browse">
+    <input type="hidden" name="quicktabs_1" value="2" />
+    <p><label>Browse</label><br />
+    <select name="letter" onchange="if(this.value!=''){document.journalbrowse.submit();}">
+    <option value="A">Select an A-Z range</option>
+    <option value="A">A</option>
+<option value="B">B</option>
+<option value="C">C</option>
+<option value="D">D</option>
+<option value="E">E</option>
+<option value="F">F</option>
+<option value="G">G</option>
+<option value="H">H</option>
+<option value="I">I</option>
+<option value="J">J</option>
+<option value="K">K</option>
+<option value="L">L</option>
+<option value="M">M</option>
+<option value="N">N</option>
+<option value="O">O</option>
+<option value="P">P</option>
+<option value="Q">Q</option>
+<option value="R">R</option>
+<option value="S">S</option>
+<option value="T">T</option>
+<option value="U">U</option>
+<option value="V">V</option>
+<option value="W">W</option>
+<option value="X">X</option>
+<option value="Y">Y</option>
+<option value="Z">Z</option>
+<option value="0">0-9</option>
+ </select><noscript><input type="submit" value="GO" name="submit" /></noscript></p>
+</form>
+<form id="journalsearch" name="journalsearch" method="get" action="http://library.lehigh.edu/content/e_journal_search">
+    <input type="hidden" name="quicktabs_1" value="2" />
+    <p><label>Or Search</label><br />
+    <input type="text" name="query" value="" size="35" gtbfieldid="383" />  <select name="terms"> <option value="starts">Starts with</option>
+<option value="exact">Exactly</option>
+<option value="all">Contains All Terms</option>
+<option value="any">Contains Any Term</option>
+<option value="phrase">Contains Phrase</option>
+ </select> <input type="submit" value="Search" name="journalsearch" /></p>
+</form>
+
+  </div>
+
+
+</div></div><div id="quicktabs_tabpage_1_3" class="quicktabs_tabpage quicktabs-hide"><div id="node-149" class="node clear-block">
+
+  <div class="content clear-block">
+    <div class="picture">
+  </div>
+    <div class="clear" id="subj-guides">
+<h5 style="padding-bottom: 0px; margin-bottom: 0px;">Browse and Search Library Research Guides:</h5>
+<form>
+			<select name="cid" onchange="if (this.value != '') { window.open(this.value); this.selectedIndex = 0; }">
+			<option value="">Choose a subject...</option><option value="http:///cat.php?cid=14692">Accounting</option>
+<option value="http:///cat.php?cid=19475">Anthropology</option>
+<option value="http:///cat.php?cid=14693">Art & Architecture</option>
+<option value="http:///cat.php?cid=14694">Bioengineering</option>
+<option value="http:///cat.php?cid=14695">Biology</option>
+<option value="http:///cat.php?cid=16392">Business & Economics</option>
+<option value="http:///cat.php?cid=14696">Business Information Systems</option>
+<option value="http:///cat.php?cid=14697">Chemical Engineering</option>
+<option value="http:///cat.php?cid=14698">Chemistry</option>
+<option value="http:///cat.php?cid=14699">Civil & Environmental Engineering</option>
+<option value="http:///cat.php?cid=14700">Computer Science & Engineering</option>
+<option value="http:///cat.php?cid=26606">Course Guides</option>
+<option value="http:///cat.php?cid=14701">Earth & Environmental Sciences</option>
+<option value="http:///cat.php?cid=14702">Economics</option>
+<option value="http:///cat.php?cid=14703">Education</option>
+<option value="http:///cat.php?cid=14704">Electrical & Computer Engineering</option>
+<option value="http:///cat.php?cid=12845">Engineering</option>
+<option value="http:///cat.php?cid=14705">English</option>
+<option value="http:///cat.php?cid=14706">Finance</option>
+<option value="http:///cat.php?cid=14707">Global Studies</option>
+<option value="http:///cat.php?cid=14708">History</option>
+<option value="http:///cat.php?cid=14709">Industrial & Systems Engineering</option>
+<option value="http:///cat.php?cid=14710">International Relations</option>
+<option value="http:///cat.php?cid=14711">Journalism</option>
+<option value="http:///cat.php?cid=20491">Languages</option>
+<option value="http:///cat.php?cid=30891">Lehigh University</option>
+<option value="http:///cat.php?cid=30892">Local History</option>
+<option value="http:///cat.php?cid=19471">Management</option>
+<option value="http:///cat.php?cid=14713">Marketing</option>
+<option value="http:///cat.php?cid=14714">Materials Science</option>
+<option value="http:///cat.php?cid=14715">Mathematics</option>
+<option value="http:///cat.php?cid=14716">Mechanical Engineering</option>
+<option value="http:///cat.php?cid=14717">Modern Languages</option>
+<option value="http:///cat.php?cid=14718">Music</option>
+<option value="http:///cat.php?cid=14719">Philosophy</option>
+<option value="http:///cat.php?cid=14720">Physics</option>
+<option value="http:///cat.php?cid=14721">Political Science</option>
+<option value="http:///cat.php?cid=14722">Psychology</option>
+<option value="http:///cat.php?cid=14723">Religion Studies</option>
+<option value="http:///cat.php?cid=14724">Research Guides</option>
+<option value="http:///cat.php?cid=14725">Sociology</option>
+<option value="http:///cat.php?cid=24847">Special Collections</option>
+<option value="http:///cat.php?cid=70103">Subject Guides</option>
+<option value="http:///cat.php?cid=14727">Theatre</option>
+</select></form> <form target="_blank"><select name="url" onchange="if (this.value != '') { window.open(this.value); this.selectedIndex = 0; }"
+				><option value="">Choose a guide for a specific course...</option><option value="http:///Anth106?hs=a">ANTH 106: Cultural Study and Globalization</option><option value="http:///Anth160?hs=a">ANTH 160: Health, Illness and Healing</option><option value="http:///ANTH183?hs=a">ANTH 183 :Peoples and Cultures of Africa</option><option value="http:///ANTH320?hs=a">ANTH 320: Global Capitalism</option><option value="http:///Anth324?hs=a">ANTH 324 :Globalization & Development in Africa</option><option value="http:///Anth396?hs=a">ANTH/REL 396: Anthropology of the Muslim World</option><option value="http:///content.php?hs=a&pid=296889">ART/WS121: Women in Art, Columbian Exposition</option><option value="http:///content.php?hs=a&pid=441184">ART295: Art & Architecture Across the Medieval Mediterranean</option><option value="http:///walk-about?hs=a">ARTS 098: Sesquicentennial Walk-About</option><option value="http:///china?hs=a">ASIA/CGP/MLL 90: Love and Revolution in Shanghai /...</option><option value="http:///bioe20?hs=a">BIOE 20: Research Proposal</option><option value="http:///bios235?hs=a">BIOS 235: Human Physiology</option><option value="http:///bios276?hs=a">BIOS 276: Central Nervous System and Behavior  Fall...</option><option value="http:///bios277?hs=a">BIOS 277: Spring 2013</option><option value="http:///bios315?hs=a">BIOS 315</option><option value="http:///bis111?hs=a">BIS 111: Business Information Systems</option><option value="http:///cee203?hs=a">CEE 203: Professional Development</option><option value="http:///CEE398/498?hs=a">CEE 398/498: Physical Hydrology</option><option value="http:///che179?hs=a">CHE 179: Chemical Engineering Professional Development</option><option value="http:///che374?hs=a">CHE 374: Environmental Catalysis</option><option value="http:///che376?hs=a">CHE 376: Energy: Issues & Technology</option><option value="http:///che380?hs=a">CHE 380: Design Projects</option><option value="http:///che413?hs=a">CHE 413: Heterogeneous Catalysis</option><option value="http:///chem343?hs=a">CHEM 343</option><option value="http:///chem455?hs=a">CHEM 455 Fall 2011</option><option value="http:///chem497summer2010?hs=a">CHEM 497 Summer 2010</option><option value="http:///chem497summer2012?hs=a">CHEM 497 Summer 2012</option><option value="http:///Comm30?hs=a">COMM 30 : Media and Society</option><option value="http:///cse090?hs=a">CSE 090: Intelligent Machines</option><option value="http:///ece257?hs=a">ECE 257: Senior Lab</option><option value="http:///ece333?hs=a">ECE 333: Medical Electronics</option><option value="http:///ece339?hs=a">ECE 339: Graphical Signal Processing</option><option value="http:///ece350?hs=a">ECE 350/450 018: Principles of Advanced Optical Imaging...</option><option value="http:///eco323?hs=a">ECO 323: Evolution of Business Strategies</option><option value="http:///martindale?hs=a">ECO 362: Martindale Scholars Research Guide</option><option value="http:///eco415?hs=a">ECO 415: Econometrics</option><option value="http:///edl470?hs=a">EDL 470: Special Topics in Educational Leadership:...</option><option value="http:///edl479?hs=a">EDL 479: School Law & Ethics</option><option value="http:///educ403?hs=a">EDUC 403: Research</option><option value="http:///ees100spring2010?hs=a">EES 100 Spring 2010</option><option value="http:///content.php?hs=a&pid=97630">EES 223 Spring 2010</option><option value="http:///ees23spring2012?hs=a">EES 23: Weather & Climate Spring 2012</option><option value="http:///ees334?hs=a">EES 334: Geosphere Structure and Evolution Fall 2013</option><option value="http:///ees379?hs=a">EES/CEE 379: Environmental Case Studies</option><option value="http:///content.php?hs=a&pid=504193">ENGL 11: American Historical Fictions and the Fictions of...</option><option value="http:///content.php?hs=a&pid=275836">ENGL 1:Education in Popular Culture</option><option value="http:///ENGL2Environment?hs=a">ENGL 2: Human Impact on Environments</option><option value="http:///content.php?hs=a&pid=197903">ENGL 2: Review of Selected News Sources</option><option value="http:///ENGLISH376?hs=a">ENGL 376 : Roots of American Exceptionalism</option><option value="http:///English5?hs=a">ENGL 5</option><option value="http:///PoliticsofFood?hs=a">ENGL 90-11: The Politics of Food</option><option value="http:///masculinity?hs=a">ENGL/WS 398: Theories of Masculinity</option><option value="http:///content.php?hs=a&pid=418629">ENGL124: American Literature II, Spring 2013</option><option value="http:///engr5?hs=a">ENGR 5: Introduction to Engineering Practice</option><option value="http:///Entp_398?hs=a">ENTP 398: International Entrepreneurial Symposium 2009</option><option value="http:///ES125?hs=a">ES 125: Environment, the Public and the Media</option><option value="http:///ES1?hs=a">ES 1: Intro to Environmental Studies</option><option value="http:///content.php?hs=a&pid=309652">ESLP 002/ESLP 004 :  Academic Library research</option><option value="http:///evol2013?hs=a">EvoLUtion 2013</option><option value="http:///exploration?hs=a">HIST 090: Maps & Voyages of Exploration</option><option value="http:///History197?hs=a">HIST 197: Introduction to Latin American Studies</option><option value="http:///revolutions?hs=a">HIST 202:  Revolutions</option><option value="http:///American_Biographies?hs=a">HIST 202: American Biographies</option><option value="http:///content.php?hs=a&pid=302192">HIST 202: American War and Memory</option><option value="http:///mccarthy?hs=a">HIST 202: Era of McCarthyism</option><option value="http:///gender?hs=a">HIST 202: Gender and the University</option><option value="http:///NewYorkSpace?hs=a">HIST 202: The Creation and Role of Space in the History of...</option><option value="http:///History202?hs=a">HIST 202: US History  1840-1870</option><option value="http:///greatdepression?hs=a">HIST 303: The Great Depression and the New Deal</option><option value="http:///public_history?hs=a">HIST 305: Public History</option><option value="http:///family?hs=a">HIST 325: History of Sexuality and the Family in the...</option><option value="http:///gangsofnyc?hs=a">HIST 351: Gangs of New York</option><option value="http:///oldsouth?hs=a">HIST 367: Rise and Fall of the Old South</option><option value="http:///History398?hs=a">HIST 398: The Battle of Gettysburg Civil War Guide</option><option value="http:///hms396?hs=a">HMS 396/WS 396: The Psychology of Body Image and Eating...</option><option value="http:///ie334?hs=a">IE 334: Organizational Planning & Control</option><option value="http:///ie442?hs=a">IE 442: Manufacturing Management</option><option value="http:///ipd211?hs=a">IPD 211: Integrated Product Development</option><option value="http:///IR_132?hs=a">IR 132: Nationalism and Ethnic Conflict </option><option value="http:///IR_197?hs=a">IR 197: Foreign Policy Research Assignment</option><option value="http:///IR322?hs=a">IR 322: Poverty and Development</option><option value="http:///IR_334?hs=a">IR 334: Prospects for Peace in the 21st Century</option><option value="http:///ir335?hs=a">IR 335: Intervention</option><option value="http:///IR90Violence?hs=a">IR 90: Political Violence Research</option><option value="http:///Journalism125?hs=a">JOUR 125 / ES 125: Environment, the Public and the...</option><option value="http:///free_speech?hs=a">JOUR 325: Freedoms of Speech and Press</option><option value="http:///StepUp1?hs=a">Library Information for Step Up Students</option><option value="http:///lumac?hs=a">LUMAC</option><option value="http:///mse_energy?hs=a">M. E. in Energy Systems Engineering Information Sources</option><option value="http:///mse_structural?hs=a">M. E. in Structural Engineering Information Sources</option><option value="http:///techentre?hs=a">M. E. in Technical Entrepreneurship</option><option value="http:///mat101?hs=a">MAT 101: Professional Development</option><option value="http:///mat203?hs=a">MAT 203: Materials Structure at the Nanoscale</option><option value="http:///mat218?hs=a">MAT 218: Research Tools for Mechanical Behavior of...</option><option value="http:///me424?hs=a">ME 424: Unsteady and Turbulent Flows</option><option value="http:///History_Day?hs=a">Middle School History Guide</option><option value="http:///mkt371?hs=a">MKT 371: Special Topic in European Marketing: Meeting the...</option><option value="http:///mse438?hs=a">MSE 438: Agile Organizations and Manufacturing Systems</option><option value="http:///mse446?hs=a">MSE 446: International Supply Chain Management</option><option value="http:///mse482?hs=a">MSE 482: Aspects of Sustainable Systems Design</option><option value="http:///mse497?hs=a">MSE 497: Global Competitive Environment</option><option value="http:///PGSET?hs=a">Pennsylvania Governor's School for Engineering and...</option><option value="http:///psge?hs=a">Pennsylvania School for Global Entrepreneurship</option><option value="http:///phys90?hs=a">PHY 90</option><option value="http:///psyc196?hs=a">PSYC 196 Fall 2013</option><option value="http:///psyc210?hs=a">PSYC 210</option><option value="http:///psyc210fall2012a?hs=a">PSYC 210 Fall 2012 (Prof. Barrett)</option><option value="http:///psyc210fall2012b?hs=a">PSYC 210 Fall 2012 (Prof. Malt) </option><option value="http:///psyc210fall2013?hs=a">PSYC 210 Fall 2013</option><option value="http:///psyc210spring2012?hs=a">PSYC 210 Spring 2012</option><option value="http:///psyc304?hs=a">PSYC 304</option><option value="http:///psyc363?hs=a">PSYC 363</option><option value="http:///psyc367?hs=a">PSYC 367</option><option value="http:///psyc369?hs=a">PSYC 369</option><option value="http:///psyc391?hs=a">PSYC 391</option><option value="http:///psyc90?hs=a">PSYC 90</option><option value="http:///content.php?hs=a&pid=276240">REL 120: Newish Jewish</option><option value="http:///REUmaterials?hs=a">REU Materials Science & Engineering</option><option value="http:///REUstructural?hs=a">REU Structural Engineering</option><option value="http:///content.php?hs=a&pid=188403">SOAN 112: Development of Social Theory</option><option value="http:///SSP105?hs=a">SSP 105: Social Origins of Terrorism</option><option value="http:///content.php?hs=a&pid=559031">SSP 322: Global Health Issues</option><option value="http:///StepUp_ESL?hs=a">Step Up ESL Library Guide</option><option value="http:///TRAC?hs=a">TRAC Tools</option><option value="http:///WGSS365?hs=a">WGSS 365/465 Inequalities at Work</option></select></form> <form target="_blank"><select name="url" onchange="if (this.value != '') { window.open(this.value); this.selectedIndex = 0; }"
+				><option value="">Choose a guide for a special research topic...</option><option value="http:///anteplagiarism?hs=a">Ante Plagiarism</option><option value="http:///searching?hs=a">Basic Search Techniques</option><option value="http:///buyers?hs=a">Buyers Guides</option><option value="http:///content.php?hs=a&pid=74953">Citation Studies Using Web of Science</option><option value="http:///citing-cited?hs=a">Cited/Citing Resources: Building Bibliographies and...</option><option value="http:///microform_colonial_newspapers?hs=a">Colonial and Early American Newspapers on Microfilm</option><option value="http:///biodata?hs=a">Data Curation in Biology</option><option value="http:///chemdata?hs=a">Data Curation in Chemistry</option><option value="http:///cisedata?hs=a">Data Curation in Computer and Information Science and...</option><option value="http:///eesdata?hs=a">Data Curation in Earth and Environmental Sciences</option><option value="http:///ehrdata?hs=a">Data Curation in Education</option><option value="http:///engdata?hs=a">Data Curation in Engineering</option><option value="http:///materialsdata?hs=a">Data Curation in Materials Research</option><option value="http:///mathdata?hs=a">Data Curation in Mathematics</option><option value="http:///physicsdata?hs=a">Data Curation in Physics</option><option value="http:///sbedata?hs=a">Data Curation in Social, Behavioral, Economic Sciences</option><option value="http:///SSdata?hs=a">Datasets for the Social Sciences</option><option value="http:///ebrary?hs=a">eBrary</option><option value="http:///alertingsvcs?hs=a">Email Alerting Services</option><option value="http:///dissertations?hs=a">Finding and Obtaining Dissertations and Theses</option><option value="http:///styleguide?hs=a">Footnote and Citation Style Guides</option><option value="http:///formatting?hs=a">Formatting Citations in a Bibliography</option><option value="http:///genealogy?hs=a">Genealogical Research Suggestions</option><option value="http:///mapguide?hs=a">Geologic, Topographic, and Other Miscellaneous Maps</option><option value="http:///copies?hs=a">Getting Copies</option><option value="http:///grants?hs=a">GrantsPersonShip</option><option value="http:///author?hs=a">Guide to Author's Rights and Publishing</option><option value="http:///census?hs=a">Guide to United States Census of Population & Housing</option><option value="http:///content.php?hs=a&pid=157585">Historical Newspaper Resources at Lehigh</option><option value="http:///languageresources?hs=a">Language Resources</option><option value="http:///refmanagers?hs=a">Managing References</option><option value="http:///openaccess?hs=a">Open Access</option><option value="http:///patents?hs=a">Patents</option><option value="http:///powder?hs=a">Powder Diffraction File</option><option value="http:///public_opinion?hs=a">Public Opinion Poll Data and Survey Resources Guide</option><option value="http:///refworksuse?hs=a">RefWorks: Set-up and Use</option><option value="http:///content.php?hs=a&pid=503859">Regional Libraries</option><option value="http:///remote?hs=a">Remote Access to Library Resources</option><option value="http:///lehighdata?hs=a">Research Data Management at Lehigh University</option><option value="http:///sfx?hs=a">SFX FAQ</option><option value="http:///standards?hs=a">Standards & Specifications</option><option value="http:///propertydata?hs=a">Substances Property Data</option><option value="http:///techrept?hs=a">Technical Reports</option><option value="http:///content.php?hs=a&pid=44570">Visual Resources</option><option value="http:///specialcollections?hs=a">What's So Special About Special Collections?</option></select></form><p style="padding-bottom: 0px; margin-bottom: 0px;">Search <a target="_blank" href="http://libraryguides.lehigh.edu/">LibGuides</a> by keyword:</p>
+<form id="lg_search_form" method="GET" target="_blank" action="http:///search.php?"><input type="hidden" name="gid" value="0" /><input type="text" name="search" id="lg_search_box"  style="background:#FFFFFF url(http://lgimages.s3.amazonaws.com/search_back.gif) left no-repeat;" onclick="this.style.background = '#FFFFFF';" onblur="if (this.value=='') { this.style.background = '#FFFFFF url(http://lgimages.s3.amazonaws.com/search_back.gif) left no-repeat'; }" /><input type="submit" id="lg_search_btn" value="Search" style="font-size:12px;" /></form></div>
+
+
+
+  </div>
+
+
+</div></div></div></div></div>
+  
+</div>		</div>
+	</div>
+
+	<div id="col-center-home" class="col-center">
+	<div class="col-content_left col-center-half">
+		<div id="block-block-10" class="block block-block region-odd even region-count-1 count-10">
+
+  <h3>Blog: Sages of the Pages</h3>
+
+  <div class="content"><div style="float: left; padding-left: 2px;"><img src="http://library.lehigh.edu/sagespages/sages_logo.jpg" width="100" height="100" alt="Sages of the Pages" title="Sages of the Pages" /></div>
+<div class="views-field-title">
+  <p class="news-title"><a href="http://library.lehigh.edu/sagespages/?p=1631">History of Petroleum in the United States, 1876</a></p>
+</div>
+<div class="views-field-teaser">
+    <p>&#160; Following last week&#8217;s post about the city of Pithole and the mid-nineteenth century oil boom in Pennsylvania, William J Buck&#8217;s 1876 publication Early Accounts of Petroleum in the United States has been digitized and made available to read or download in Lehigh&#8217;s Digital Library. In this book, the author establishes a timeline describing the [&#8230;]</p>
+</div>
+<p style="margin-left:10px;"><a href="http://library.lehigh.edu/sagespages/?m=2014">More entries</a>...</p>
+
+</div>
+  
+</div>
+	</div>
+
+	<div class="col-content_right col-center-half last">
+		<div id="block-views-news_views-block_1" class="block block-views region-odd odd region-count-1 count-11">
+
+  <h3>News &amp; Views</h3>
+
+  <div class="content"><div class="view view-news-views view-id-news_views view-display-id-block_1 view-dom-id-5">
+    
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field-title">
+                <span class="field-content"><p class="news-title"><a href="/content/meet_trees_lehigh_ewfm_library_exhibit">Meet the Trees of Lehigh! EWFM Library exhibit</a></p></span>
+  </div>
+  
+  <div class="views-field-teaser">
+                <div class="field-content"><p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 11px; font-style: normal; white-space: pre-wrap; background-color: rgb(247, 245, 240);">Do you know the oldest tree on campus? The newest? Have you ever heard of the Tangled Bank? How about the Sacred Grove? Come to the E.W. Fairchild Martindale Library lobby to learn about the significant trees of Lehigh, the history of our trees, and current campus efforts to manage and develop these irreplaceable natural resources. </span></p></div>
+  </div>
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field-title">
+                <span class="field-content"><p class="news-title"><a href="/content/public_computing_sites_be_upgraded_windows_10_and_office_2016">Public Computing Sites to be upgraded to Windows 10 and Office 2016</a></p></span>
+  </div>
+  
+  <div class="views-field-teaser">
+                <div class="field-content"><p><span style="color: rgb(51, 51, 51); font-family: helvetica, arial, sans-serif; font-size: 13px; font-style: normal;">This summer, Library and Technology Services will upgrade public computing sites to Windows 10 and Microsoft Office 2016.</span></p></div>
+  </div>
+  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field-title">
+                <span class="field-content"><p class="news-title"><a href="/content/sternberg_and_gurnani_awarded_library_prize">Sternberg and Gurnani awarded Library Prize</a></p></span>
+  </div>
+  
+  <div class="views-field-teaser">
+                <div class="field-content"><p>Lehigh undergraduate students Rachel Sternberg and Shaan Gurnani will share the Libraries Student Research Prize for 2016. Sponsored by Library and Technology Services and the Friends of the Libraries, the Prize recognizes excellence in undergraduate scholarship and the use of library and research resources.</p></div>
+  </div>
+  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field-title">
+                <span class="field-content"><p class="news-title"><a href="/content/faculty_can_now_reserve_virtual_public_site_seats_classes">Faculty can now reserve Virtual Public Site seats for classes</a></p></span>
+  </div>
+  
+  <div class="views-field-teaser">
+                <div class="field-content"><p>Library and Technology Services now offers a service that allows faculty to reserve access to Virtual Public Site (VPS) seats for classes. Reserving these seats is like reserving a computer lab for your class.</p></div>
+  </div>
+  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <p><a href="/about/News_Archive">More news</a>...</p>
+    </div>
+  
+  
+</div> </div>
+  
+</div>
+	</div>
+	</div>
+	
+	<div class="col-center">
+		<div class="content_bottom">
+				</div>
+	</div>
+
+    
+  </div>
+
+      <div class="col-right last"><div id="block-views-template_image-block_1" class="block block-views region-odd even region-count-1 count-4">
+
+
+  <div class="content"><div class="view view-template-image view-id-template_image view-display-id-block_1 view-dom-id-1">
+    
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field-field-image-fid">
+                <span class="field-content"><img src="http://library.lehigh.edu/sites/default/files/imagecache/250-width/template_images/bridges_0.jpg" alt="" title="" width="240" height="240" class="imagecache imagecache-250-width imagecache-default imagecache-250-width_default"/></span>
+  </div>
+  
+  <div class="views-field-body">
+                <div class="field-content"><span class="caption small"><p>&quot;Digital Bridges&quot;. Part of Lehigh Libraries' <a href="http://library.lehigh.edu/content/digital_library/">Digital Library Collection</a>.&nbsp;</p>
+</span></div>
+  </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div>
+  
+</div>
+<div id="block-block-1" class="block block-block region-even odd region-count-2 count-5">
+
+  <h3>Today&#039;s Hours</h3>
+
+  <div class="content"><p><strong>Fairchild-Martindale:8AM-10PM</strong> <strong>Linderman:8AM-5PM</strong><br /><strong><a href="/content/library_hours">Full Calendar</a></strong></p></div>
+  
+</div>
+<div id="block-views-site_search-block_1" class="block block-views region-odd even region-count-3 count-6">
+
+
+  <div class="content"><div class="view view-site-search view-id-site_search view-display-id-block_1 view-dom-id-2">
+        <div class="view-header">
+      <h3>Site Search</h3>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field-body">
+                <div class="field-content"><form id="websearch" name="websearch" method="get" action="http://library.lehigh.edu/search.php">
+<p><input type="text" name="query" value="" size="25" /><br />
+    <input type="submit" value="Search" name="websearch" /></p>
+</form></div>
+  </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div>
+  
+</div>
+<div id="block-views-new_resources-block_1" class="block block-views region-even odd region-count-4 count-7">
+
+  <h3>Featured</h3>
+
+  <div class="content"><div class="view view-new-resources view-id-new_resources view-display-id-block_1 view-dom-id-3">
+    
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field-teaser">
+                <div class="field-content"><p><a href="http://library.lehigh.edu/content/new_books_asa"><img src="http://library.lehigh.edu/sites/all/themes/library/assets/quick-links-icons/New_Books.jpg" alt="" /></a></p>
+<p><a href="http://library.lehigh.edu/content/new_videos_asa"> <img alt="" src="http://library.lehigh.edu/sites/all/themes/library/assets/quick-links-icons/New_Videos.jpg" /></a></p>
+<p><a href="https://library.lehigh.edu/asa2.0/Search/Reserves"> <img alt="" src="http://library.lehigh.edu/sites/all/themes/library/assets/quick-links-icons/Course_Reserves.jpg" /></a></p></div>
+  </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div>
+  
+</div>
+</div>
+    
+
+	    <div id="footer" class="clear">
+              <div id="footer-message"><p>Copyright &#169; 2002-2016</p>
+		<p><p>Copyright, Terms of Use, and Privacy Policy applicable to this site. | <a href="http://library.lehigh.edu/user?destination=node">Admin Login</a></p></p></div>
+                   <div style="text-align:center;"><div id="block-mobileplugin-0" class="block block-mobileplugin region-odd even region-count-1 count-8">
+
+
+  <div class="content"><a href="/mobileplugin/switch?destination=node">Show mobile version</a></div>
+  
+</div>
+</div>
+      
+    </div>
+  
+  <script type="text/javascript" src="/misc/jquery.js?J"></script>
+<script type="text/javascript" src="/misc/drupal.js?J"></script>
+<script type="text/javascript" src="/misc/progress.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/img_assist/img_assist.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/lightbox2/js/lightbox.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/render/sifr/sifr.js?J"></script>
+<script type="text/javascript" src="/sites/default/files/render/sifr3-rules.js?J"></script>
+<script type="text/javascript" src="/misc/collapse.js?J"></script>
+<script type="text/javascript" src="/misc/tableheader.js?J"></script>
+<script type="text/javascript" src="/sites/all/modules/quicktabs/js/quicktabs.js?J"></script>
+<script type="text/javascript" src="/sites/all/themes/blueprint/scripts/general.js?J"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "lightbox2": { "rtl": 0, "file_path": "/(\\w\\w/)sites/default/files", "default_image": "/sites/all/modules/lightbox2/images/brokenimage.jpg", "border_size": 10, "font_color": "000", "box_color": "fff", "top_position": "", "overlay_opacity": "0.8", "overlay_color": "000", "disable_close_click": true, "resize_sequence": 0, "resize_speed": 400, "fade_in_speed": 400, "slide_down_speed": 600, "use_alt_layout": false, "disable_resize": false, "disable_zoom": false, "force_show_nav": false, "show_caption": true, "loop_items": false, "node_link_text": "View Image Details", "node_link_target": false, "image_count": "Image !current of !total", "video_count": "Video !current of !total", "page_count": "Page !current of !total", "lite_press_x_close": "press \x3ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\x3e\x3ckbd\x3ex\x3c/kbd\x3e\x3c/a\x3e to close", "download_link_text": "", "enable_login": false, "enable_contact": false, "keys_close": "c x 27", "keys_previous": "p 37", "keys_next": "n 39", "keys_zoom": "z", "keys_play_pause": "32", "display_image_size": "", "image_node_sizes": "()", "trigger_lightbox_classes": "", "trigger_lightbox_group_classes": "", "trigger_slideshow_classes": "", "trigger_lightframe_classes": "", "trigger_lightframe_group_classes": "", "custom_class_handler": 0, "custom_trigger_classes": "", "disable_for_gallery_lists": true, "disable_for_acidfree_gallery_lists": true, "enable_acidfree_videos": true, "slideshow_interval": 5000, "slideshow_automatic_start": true, "slideshow_automatic_exit": true, "show_play_pause": true, "pause_on_next_click": false, "pause_on_previous_click": true, "loop_slides": false, "iframe_width": 600, "iframe_height": 400, "iframe_border": 1, "enable_video": false }, "quicktabs": { "qt_1": { "tabs": [ 0, 0, 0, 0 ] } } });
+//--><!]]>
+</script>
+  
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5M7K36"
+height="0" width="0"
+style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f
+);
+})(window,document,'script','dataLayer','GTM-5M7K36');</script>
+<!-- End Google Tag Manager -->
+
+
+</div>
+
+</body>
+</html>

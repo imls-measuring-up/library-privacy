@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+        <head>
+<meta name="EZproxyRewriting" content="disable"/>
+            <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+            <meta http-equiv="content-language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- force IE out of compatibility mode -->
+            <title>University of Manitoba: Libraries</title>
+<link rel="stylesheet" type="text/css" href="/libraries/includes/css/screen_20121025.min.css?v=2" media="screen"/>
+<link rel="stylesheet" type="text/css" href="/libraries/includes/css/print_20100801.min.css" media="print"/>
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="/libraries/includes/css/ie_20100801.min.css" media="screen" />
+<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="/libraries/includes/css/ie_lt9_20131029.min.css" media="screen" />
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="/libraries/includes/css/ie_7_20100801.min.css?v=1" media="screen" />
+<![endif]-->
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="/libraries/includes/css/ie_6_20100801.min.css?v=1" media="screen"/>
+<script type="text/javascript">var runningIE6 = true;</script>
+<![endif]-->
+<!-- survey stylesheets-->
+<!-- <link rel="stylesheet" href="/libraries/survey-invitation/assets/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/libraries/survey-invitation/assets/css/invitation.css" type="text/css" media="screen" /> -->
+<!-- end survey stylesheets -->
+<link rel="stylesheet" type="text/css" href="/libraries/includes/css/mobile_20120710.min.css" media="handheld, screen and (max-width: 650px), screen and (max-device-width: 480px)"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="includes/java/ui.core.js"></script>
+<script type="text/javascript" src="includes/java/ui.tabs.js"></script>
+<script type="text/javascript" src="includes/java/primo_standard.js"></script>
+<script> 
+$(function(){
+	//IST updates this header which updates all library pages that aren't part of RedDot
+	$("#libraries_header").load("/libraries/media/libraries_header.html");
+	//rotating image banner in lower right corner of http://umanitoba.ca/libraries/
+	$('.slideshow').cycle({
+		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+		speed: 2000, // speed of the transition (any valid fx speed value)
+		timeout: 6000 // milliseconds between slide transitions (0 to disable auto advance) 
+	});
+});
+</script>
+        </head>
+        <body>
+        <!--Begin canvas--><div id="canvas" class="libr">
+            <!-- targeted by jQuery (includes librares header file) -->
+            <div id="libraries_header"></div>
+            <div id="content">
+							<div class="page">
+
+<div class="flexHolder">
+
+    <div id="first-row" class="flexHolder left-border" style="border: none;">
+    <!-- begin #first-row -->
+
+    <div id="tabbed_search_box">
+    <!-- begin: tabbed_search_box -->
+
+        <ul id="tabSet">
+            <li><a href="#panel1">One Stop Search</a></li>
+            <li><a href="#panel2">Catalogue</a></li>
+            <li><a href="#panel3">Course Reserves</a></li>
+            <li><a onclick="window.location.href = 'http://libguides.lib.umanitoba.ca/'" href="#panel4">Subject Guides</a></li>
+        </ul>
+
+        <div id="panel1">
+
+            <!-- Searches One Stop Search -->
+            <form id="simple"
+            	  class="tabbed_search_form"
+            	  name="searchForm1"
+                  method="get"
+                  target="_self"
+                  action="http://primo-pmtna01.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do"
+                  enctype="application/x-www-form-urlencoded; charset=utf-8"
+                  onSubmit="searchPrimo(this.tab_number.value)">
+
+                <!-- Customizable Parameters -->
+                <input type="hidden" name="institution" value="UMB">
+                <input type="hidden" name="vid" value="UMB">
+                <input type="hidden" name="tab" value="default_tab">
+                <!-- <input type="hidden" name="search_scope" value="University of Manitoba"> -->
+                <input type="hidden" name="search_scope" value="UManitoba">
+                <input type="hidden" name="mode" value="Basic">
+                <input type="hidden" id="tab_number1" name="tab_number" value="1">
+
+                <!-- Fixed parameters  -->
+                <input type="hidden" name="group" value="GUEST">
+                <input type="hidden" name="onCampus" value="true">
+                <input type="hidden" name="displayMode" value="full">
+                <input type="hidden" id="primoQuery1" name="query">
+                <input type="hidden" name="highlight" value="true">
+                <input type="hidden" name="displayField" value="all">
+                <input id="primoQueryTemp1" class="search_query" onKeyPress="return searchPrimoEvent(event)" type="text" name="queryTemp" value="" size="35">
+
+                <!-- Search Button  -->
+                <input id="go" class="submit_button gradient" title="Search" type="submit" value="Search" alt="Search">
+
+            </form>
+
+            <div id="tabbed_search_box_advanced_search_link"><a href="http://primo-pmtna01.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&ct=AdvancedSearch&dscnt=2&fromLogin=true&dstmp=1386972144846&vid=UMB">Advanced search</a></div>
+
+        </div>
+
+        <div id="panel2">
+
+            <!-- Searches Catalog -->
+            <form id="simple"
+            	  class="tabbed_search_form"
+            	  name="searchForm2"
+                  method="get"
+                  target="_self"
+                  action="http://primo-pmtna01.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do"
+                  enctype="application/x-www-form-urlencoded; charset=utf-8"
+                  onSubmit="searchPrimo(this.tab_number.value)">
+
+                <!-- Customizable Parameters -->
+                <input type="hidden" name="institution" value="UMB">
+                <input type="hidden" name="vid" value="UMB">
+                <input type="hidden" name="tab" value="umb_opac">
+                <input type="hidden" name="search_scope" value="UML_Catalogue">
+                <input type="hidden" name="mode" value="Basic">
+                <input type="hidden" id="tab_number2" name="tab_number" value="2">
+
+                <!-- Fixed parameters  -->
+                <input type="hidden" name="group" value="GUEST">
+                <input type="hidden" name="onCampus" value="true">
+                <input type="hidden" name="displayMode" value="full">
+                <input type="hidden" id="primoQuery2" name="query">
+                <input type="hidden" name="highlight" value="true">
+                <input type="hidden" name="displayField" value="all">
+                <input id="primoQueryTemp2" class="search_query" onKeyPress="return searchPrimoEvent(event)" type="text" name="queryTemp" value="" size="35">
+
+                <!-- Search Button  -->
+                <input id="go" class="submit_button gradient" title="Search" type="submit" value="Search" alt="Search">
+
+            </form>
+
+            <div id="tabbed_search_box_advanced_search_link"><a href="http://primo-pmtna01.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&ct=AdvancedSearch&dscnt=2&fromLogin=true&dstmp=1386972144846&vid=UMB">Advanced search</a></div>
+
+        </div>
+
+        <div id="panel3">
+
+            <!-- Searches Course Reserves -->
+            <form id="simple"
+            	  class="tabbed_search_form"
+            	  name="searchForm3"
+                  method="get"
+                  target="_self"
+                  action="http://primo-pmtna01.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do"
+                  enctype="application/x-www-form-urlencoded; charset=utf-8"
+                  onSubmit="searchPrimo(this.tab_number.value)">
+
+                <!-- Customizable Parameters -->
+                <input type="hidden" name="institution" value="UMB">
+                <input type="hidden" name="vid" value="UMB">
+                <input type="hidden" name="tab" value="umb_cr">
+                <input type="hidden" name="search_scope" value="UMB_CR">
+                <input type="hidden" name="mode" value="Basic">
+                <input type="hidden" id="tab_number3" name="tab_number" value="3">
+
+                <!-- Fixed parameters  -->
+                <input type="hidden" name="group" value="GUEST">
+                <input type="hidden" name="onCampus" value="true">
+                <input type="hidden" name="displayMode" value="full">
+                <input type="hidden" id="primoQuery3" name="query">
+                <input type="hidden" name="highlight" value="true">
+                <input type="hidden" name="displayField" value="all">
+                <input id="primoQueryTemp3" class="search_query" onKeyPress="return searchPrimoEvent(event)" type="text" name="queryTemp" value="" size="35">
+
+                <!-- Search Button  -->
+                <input id="go" class="submit_button gradient" title="Search" type="submit" value="Search" alt="Search">
+
+            </form>
+
+            <div id="tabbed_search_box_advanced_search_link"><a href="http://primo-pmtna01.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&ct=AdvancedSearch&dscnt=2&fromLogin=true&dstmp=1386972144846&vid=UMB">Advanced search</a></div>
+
+        </div>
+
+        <div id="panel4"></div>
+
+        </div>
+        <!-- end: tabbed_search_box -->
+
+        <div class="rightSideBar main">
+            <script type="text/javascript" src="/libraries/includes/php/chat_switch.php"></script>
+        </div>
+
+    </div>
+    <!-- end #first-row -->
+
+</div><!--flexHolder-->
+
+            <div id="second-row" class="flexHolder">
+							<div class="box wider">
+								<h3 class="box-heading">Find</h3>
+								<ul class="box-list">
+									<!-- <li class="box-list-item"><a href="http://libguides.lib.umanitoba.ca/articlesdatabases">Databases A-Z</a></li> -->
+                                    <li class="box-list-item"><a href="http://libguides.lib.umanitoba.ca/az.php">Databases A-Z</a></li>
+                                    <li class="box-list-item"><a href="/libraries/course_resources.html">Course reserves</a></li>
+									<li class="box-list-item"><a href="http://libguides.lib.umanitoba.ca/statistics">Statistics &amp; data</a></li>
+                                    <li class="box-list-item"><a href="http://proxycheck.lib.umanitoba.ca/libraries/online/proxy.php?http://primo-pmtna01.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UMB&vid=UMB&query=facet_atoz%2cexact%2cA&indx=1&bulkSize=30&dym=false&loc=local%2cscope%3a(AZUMB)&fn=goAlmaAz&sortField=stitle&almaAzSearch=true&azSearch=true&selectedAzAlmaLetter=A">E-Journals</a></li>
+                                    <li class="box-list-item"><a href="/libraries/online/proxy.php?http://scholar.google.com/">U of M Google Scholar</a></li>
+                                    <li class="box-list-item"><a href="/libraries/help/locating_license_information.html">License information</a></li>
+            		</ul>
+                <span class="more"><a href="find_articles.html">&gt;&gt; more</a></span>
+							</div><!--box-->
+							<div class="box wider">
+                <h3 class="box-heading">Services</h3>
+								<ul class="box-list">
+                                    <li class="box-list-item"><a href="https://primo-pmtna01.hosted.exlibrisgroup.com/pds?func=load-login&institute=UMB&calling_system=primo&lang=eng&isMobile=false&url=http://primo-pmtna01.hosted.exlibrisgroup.com:80/primo_library/libweb/action/login.do?targetURL=http%3a%2f%2fprimo-pmtna01.hosted.exlibrisgroup.com%2fprimo_library%2flibweb%2faction%2fsearch.do%3fdscnt%3d0%26amp%3bdstmp%3d1421947453132%26amp%3bvid%3dUMB%26amp%3binitializeIndex%3dtrue">Sign In to My Account</a></li>
+									<li class="box-list-item"><a href="/libraries/services/borrowing.html">Borrow</a></li>
+									<li class="box-list-item"><a href="http://libguides.lib.umanitoba.ca/researchhelp">Research help</a></li>
+                                    <li class="box-list-item"><a href="http://libguides.lib.umanitoba.ca/aecontent.php?pid=339895">Refworks, Citing &amp; Writing</a></li>
+                                    <li class="box-list-item"><a href="http://libguides.lib.umanitoba.ca/Offcampuslibraryservices">Off-campus services</a></li>
+									<li class="box-list-item"><a href="/libraries/services/docdel.html">Document delivery</a></li>
+	      				</ul>
+		     				<span class="more"><a href="/libraries/services/" title="Services">&gt;&gt; more</a></span>
+							</div><!--box-->
+							<div class="box wider">
+								<h3 class="box-heading">Collections</h3>
+								<ul class="box-list">
+									<li class="box-list-item"><a href="/libraries/archives.shtml">Archives</a></li>
+									<li class="box-list-item"><a href="/libraries/digital_collections.html">Digital collections</a> (Libraries)</li>
+                                    <li class="box-list-item"><a href="http://digitalcollections.lib.umanitoba.ca/">UM Digital Collections</a></li>
+									<li class="box-list-item"><a href="http://mspace.lib.umanitoba.ca/">Theses &amp; MSpace</a></li>
+									<li class="box-list-item"><a href="http://manitobia.ca/">Manitobia</a> (historical newspapers)</li>
+									<li class="box-list-item"><a href="/libraries/services/recommend.php">Recommend a book</a></li>
+								</ul>
+                                <span class="more"><a href="/libraries/collections.html" title="Services">&gt;&gt; more</a></span>
+							</div><!--box-->
+							<div class="box wider">
+        				<h3 class="box-heading">About Us</h3>
+								<ul class="box-list">
+								    <!-- <li class="box-list-item"><a onclick="javascript: _gaq.push(['_trackPageview', '/libraries/directors_office/images/LibraryHours.pdf']);" href="http://umanitoba.ca/libraries/directors_office/images/LibraryHours.pdf" title="Library Hours">Hours (PDF)</a></li> -->
+                                    <li class="box-list-item"><a href="http://libguides.lib.umanitoba.ca/libraryhours" title="Library Hours">Hours</a></li>
+                                    <li class="box-list-item"><a href="http://libguides.lib.umanitoba.ca/content.php?pid=491389" title="Libraries">Libraries & Departments</a></li>
+                                    <li class="box-list-item"><a href="http://libguides.lib.umanitoba.ca/aecontent.php?pid=409757" title="Librarians">Librarians</a></li>
+									<li class="box-list-item"><a href="/libraries/about/map.php" title="Locations/maps">Locations/maps</a></li>
+                                    <li class="box-list-item"><a href="/libraries/about/shouldsignin.html" title="Contact us">Why Should I Sign In?</a> </li>
+									<li class="box-list-item"><a href="/libraries/contact_us.html" title="Contact us">Contact us</a> </li>
+								</ul>
+							</div><!--box-->
+						</div><!--flexHolder-->
+
+						<div id="third-row" class="flexHolder">
+							<div id="news">
+								<h3 class="box-heading"><a class="box-heading-link" title="More Libraries news" href="http://myuminfo.umanitoba.ca/index.asp?sec=13&amp;too=100&amp;eve=">Latest News</a></h3>
+								<noscript>
+									<p style="padding-left: 10px;">News requires Javascript to be enabled.</p>
+								</noscript>
+								<ul id="news_items" ><li></li></ul>
+							</div><!--news-->
+
+							<div id="events">
+                                                                <h3 class="box-heading"><a class="box-heading-link" title="More Libraries events" href="http://events.umanitoba.ca/EventList.aspx">Upcoming Events</a></h3>
+								<noscript>
+									<p style="padding-left: 10px;">Events requires Javascript to be enabled.</p>
+								</noscript>
+								<ul id="event_items" ><li></li></ul>
+							</div><!--events-->
+                        <!--div-->
+
+                        <div id="marketing" class="box">
+                        	<!--
+                            <p class="margin"><strong>Need help with our new system?</strong></p>
+                            <p class="margin"><a href="/libraries/services/new_system_help.html">Here's what’s new and changed...</a></p>
+                            <p class="margin" style="font-size: .75em;">The Eckhardt-Gramatt&#233; Music Library is closed while we move to our new home in Tach&#233; Hall. Check http://libguides.lib.umanitoba.ca/music for photos and updates!  Exact opening date TBA.  We look forward to serving you in our new space!</p>
+                            -->
+                            <p class="slideshow">
+                            	<a href="http://news.umanitoba.ca/protecting-our-university-community-against-ransomware-attacks" 
+                                   target="_blank"><img src="/libraries/images/IST_Security_Alert_button-FNL.png" 
+                                   						alt="IST Security Alert"
+                                                        class="slideshow_image"></a>
+                            	<a href="http://lib.umanitoba.libcal.com/calendar/researcherworkshops" 
+                                   target="_blank"><img src="/libraries/images/researcher_workshops.jpg" 
+                                   						alt="Researcher Workshops"
+                                                        class="slideshow_image"></a>
+                            	<a href="http://news.umanitoba.ca/copyright-changes-action-required" 
+                                   target="_blank"><img src="/libraries/images/copyright_changes.jpg" 
+                                   						alt="Copyright Changes.jpg"
+                                                        class="slideshow_image"></a>
+                            </p>
+                        </div>
+
+						</div><!--flexHolder-->
+					</div><!--page-->
+				</div><!--content-->
+
+                <div id="footer">
+
+                    <div id="address">
+                    	<span class="address-name">University of Manitoba Libraries</span>
+                        <span class="address-city_prov">Winnipeg, Manitoba Canada</span>
+                        <span class="address-pcode">R3T 2N2</span>
+                        <span class="address-phone">1-204-474-9881</span>
+                    </div><!--address-->
+
+                    <div id="copyright">
+
+                    	<div id="social" style="text-align: right;">
+                            <a href="http://libguides.lib.umanitoba.ca/content.php?pid=377058"><img src="/media/you_tube.gif" alt="Facebook Presence" border="0"></a>
+                            <a href="http://libguides.lib.umanitoba.ca/content.php?pid=377058"><img src="/media/tweet.gif" alt="Twitter Presence" border="0"></a>
+                            <a href="http://libguides.lib.umanitoba.ca/content.php?pid=377058"><img src="/media/facebook.gif" alt="YouTube Presence" border="0"></a>
+                        </div>
+
+                        <div><a href="http://umanitoba.ca/copyright/" class="footer-link">Copying Guidelines under<br/>Fair Dealing and Access Copyright</a></div>
+
+                    </div>
+
+                    <!-- begin: uncomment Jan 2 -->
+                    <div class="footerLinks" style="margin-right: 75px;">
+                        <ul class="footerLinks-list">
+                            <li><a class="footer-link" href="http://staff.lib.umanitoba.ca/alma">Alma Documentation</a> | <a class="footer-link" href="http://umanitoba.ca/libraries/staff">Staff Resources</a> | &copy; 2013 University of Manitoba</li>
+                            <li style="clear: both;">&nbsp;</li>
+                            <li><a class="footer-link" href="http://www.umanitoba.ca/libraries/elibrary/collection_of_personal_information.html">Notice Regarding Collection, Use, and Disclosure of Personal Information by the University</a></li>
+                            <li><a class="footer-link" href="http://www.umanitoba.ca/libraries/elibrary/storage_of_personal_information.html">Notice Regarding the Storage of Personal Information Outside of Canada</a></li>
+                        </ul>
+                    </div>
+                    <!-- begin: uncomment Jan 2 -->
+
+                </div><!--footer-->
+
+          </div><!--canvas-->
+						<script type="text/javascript" src="/libraries/includes/java/jquery.cycle.all.min.js"></script>
+						<script type="text/javascript" src="/libraries/includes/java/dateformat.min.js"></script>
+						<script type="text/javascript" src="/libraries/includes/java/menu_faq_20120710.min.js"></script>
+						<script type="text/javascript" src="/libraries/includes/php/chat_switch.php?sm=1"></script>
+						<script type="text/javascript">
+						<!--
+							try {
+								jQuery(document).ready(init);
+							} catch (err){}
+
+              function init() {
+								//doMenu();
+								loadNewsEvents();
+								jQuery()
+
+							}
+							 var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-12532930-1']);
+ _gaq.push(['_setDomainName', 'umanitoba.ca']);
+ _gaq.push(['_setAllowHash', false]);
+ _gaq.push(['_setAllowLinker', true]);
+ _gaq.push(['_trackPageview']);
+ _gaq.push(['_trackPageLoadTime']);
+(function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+ function recordOutboundLink(link, category, action) {
+    _gat._getTrackerByName()._trackEvent(category, action);
+    setTimeout('document.location = "' + link.href + '"', 100);
+ }
+
+						//-->
+						</script>
+
+            <script type="text/javascript">
+            setTimeout(function(){var a=document.createElement("script");
+            var b=document.getElementsByTagName('script')[0];
+            a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0012/0567.js?"+Math.floor(new Date().getTime()/3600000);
+            a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+            </script>
+
+        </body>
+    </html>

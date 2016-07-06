@@ -1,0 +1,873 @@
+
+    
+      
+      <!doctype html>
+      <!--[if lt IE 7]>             <html class="lt-ie10 lt-ie9 lt-ie8 lt-ie7 no-js"> <![endif]-->
+      <!--[if IE 7]>                <html class="lt-ie10 lt-ie9 lt-ie8 no-js">        <![endif]-->
+      <!--[if IE 8]>                <html class="lt-ie10 lt-ie9 no-js">               <![endif]-->
+      <!--[if IE 9]>                <html class="lt-ie10 no-js">               <![endif]-->
+      <!--[if gt IE 9]><!-->  <html class="no-js">                      <!--<![endif]-->
+    <head>
+	  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+	<meta charset="utf-8"/>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+   <title> Library | Vanderbilt University</title>
+   <meta name="viewport" content="initial-scale=1,user-scalable=no"/>
+   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png"/>
+    
+    <meta name="Description"
+         content="Jean and Alexander Heard Library, Vanderbilt University"/>
+    <meta name="Keywords"
+         content="vanderbilt university, nashville, tennessee, vanderbilt, vanderbilt libraries, jean and alexander heard library"/>
+    
+  <link href="http://fonts.googleapis.com/css?family=Roboto:500,700|Roboto+Condensed:400,700"
+         rel="stylesheet"
+         type="text/css"/>
+   <link rel="stylesheet" type="text/css" href="/assets/css/plugins.css"/>
+   <link rel="stylesheet" type="text/css" href="/assets/css/screen.css"/>
+        <script src="/assets/js/vendor/modernizr-2.6.2.js" type="text/javascript"></script>
+      
+<script id="search-results-tmpl" type="text/x-handlebars-template">
+{{#if results}}
+    {{#each results}}
+      <p class="search-result-item"><a href="{{link}}" target="_blank" class="title-link"><strong>{{title}}</strong></a> {{{description}}} <a href="{{link}}" class="more-link-simple">more &raquo;</a></p>
+    {{/each}}
+    {{#if total_link}}
+      <a href="{{total_link}}" class="more-link-large">See All results</a>
+    {{/if}}
+  {{else}}
+    <p class="search-result-item no-results">No results found</p>
+  {{/if}}
+</script>
+<script id="researcher-results-tmpl" type="text/x-handlebars-template">
+{{#if result}}
+    <div class="search-result-item">
+      <img src="https://www.library.vanderbilt.edu/headshots/vulogo_57_57.png" data-width="57" data-headshot="{{result.image}}" class="staff-photo researcher-photo" />
+      <div class="researcher-info">
+        <p>
+          <a href="/staffmember.php?staff_id={{result.id}}" class="title-link"><strong>{{{result.name}}}</strong><a/> is a liaison in {{result.subject}}.
+        </p>
+        <p>
+          {{result.phone}} | <a href="mailto:{{result.email}}">email</a>
+        </p>
+      </div>
+    </div>
+  {{else}}
+    <p class="search-result-item no-results">No results found</p>
+  {{/if}}
+</script>
+<script id="database-results-tmpl" type="text/x-handlebars-template">
+{{#if results}}
+    {{#if results.category}}
+      <h2 class="results-header">Research Databases in <strong>{{results.category}}</strong></h2>
+    {{/if}}
+    {{#if results.keyResults}}
+      <div class="key-results">
+        <h4 class="section-header">Key databases</h4>
+        <ul class="results-list list-unstyled well">
+            {{#each results.keyResults}}
+              <li class="single-result">
+                {{#if url}}
+                  <h4><a href="http://www.library.vanderbilt.edu/eres?id={{id}}">{{databaseName}}</a></h4>
+                {{else}}
+                  <h4>{{databaseName}}</h4>
+                {{/if}}
+                <ul class="results-info list-unstyled list-horizontal">
+                  {{#if resourceType}}
+                    <li class="border">{{resourceType}}</li>
+                  {{/if}}
+                  {{#if access.oncampus}}
+                    <li class="border"><strong>OnCampus:</strong> {{join access.oncampus ', '}}</li>
+                  {{/if}}
+                  {{#if access.offcampus}}
+                    <li><strong>OffCampus:</strong> {{join access.offcampus ', '}}</li>
+                  {{/if}}
+                </ul>
+                <p class="results-description">{{truncate description 250}} <a href="{{infoLink}}" class="more-link">Info</a></p>
+              </li>
+            {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+    {{#if results.fullResults}}
+      <div class="full-results">
+	    {{#if results.keyResults}}
+          {{#if_complete_list this}}
+          <h4 class="section-header">More databases in {{results.category}}</h4>
+          {{/if_complete_list}}
+		{{/if}}
+
+        <ul class="results-list list-unstyled">
+          {{#each results.fullResults}}
+            <li class="single-result">
+              {{#if url}}
+                <h4><a href="http://www.library.vanderbilt.edu/eres?id={{id}}">{{databaseName}}</a></h4>
+              {{else}}
+                <h4>{{databaseName}}</h4>
+              {{/if}}
+              <ul class="results-info list-unstyled list-horizontal">
+                {{#if resourceType}}
+                  <li class="border">{{resourceType}}</li>
+                {{/if}}
+                {{#if access.oncampus}}
+                  <li class="border"><strong>OnCampus:</strong> {{join access.oncampus ', '}}</li>
+                {{/if}}
+                {{#if access.offcampus}}
+                  <li><strong>OffCampus:</strong> {{join access.offcampus ', '}}</li>
+                {{/if}}
+              </ul>
+              <p class="results-description">{{truncate description 250}} <a href="{{infoLink}}" class="more-link">Info</a></p>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+  {{else}}
+    <p class="search-result-item no-results">No results found</p>
+  {{/if}}
+</script>
+
+  <script type="text/javascript">
+ 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  	ga('create', 'UA-333143-4', 'auto');
+  	ga('send', 'pageview');
+
+  </script>
+
+    <!-- Put any css files that you want loaded in the header here -->
+  </head>
+<body class="page sidebar home feature-slider">
+   <header id="header-primary">
+      <div class="wrap relative">
+
+<ul id="nav-utilities">
+  <li class="upper nav-home">
+    <a href="http://vanderbilt.edu">VU Home</a>
+  </li>
+  <li class="upper nav-peoplefinder">
+    <a href="https://phonedirectory.vanderbilt.edu/cdb/index.jsp">People Finder</a>
+  </li>
+  <li class="upper nav-email">
+    <a href="http://www.vanderbilt.edu/email/">Email</a>
+  </li>
+  <!-- <li class="login">
+    <a href="https://login.mis.vanderbilt.edu/?service=http://www.library.vanderbilt.edu/">Log in</a>
+  </li> -->
+	
+	
+</ul>
+
+<div class="branding library-heard">
+  <h1 class="logo-vandy-library">
+    <a href="/">Vanderbilt Library</a>
+    <a href="/" class="location-link"></a>
+  </h1>
+</div>
+
+<nav id="nav-primary">
+  <ul class="nav-mobile">
+    <li class="hours">
+      <a href="/hours.php">Hours</a>
+    </li>
+    <li class="locations">
+    <a href="/about/contact.php">Locations</a>
+    </li>
+  </ul>
+
+  <ul class="nav-tablet">
+    <li class="search dropdown">
+      <a href="/search.php" class="dropdown-toggle">Search Library</a>
+
+      <div class="dropdown-pane">
+        <h1>Search the Vanderbilt Libraries</h1>
+
+        <div class="tabbable"> <!-- Only required for left/right tabs -->
+          <ul class="nav nav-tabs">
+            <li class="search-all-tab active"><a href="#search-dropdown-all" data-toggle="tab">All</a></li>
+            <li><a href="#search-dropdown-catalogs" data-toggle="tab">Catalogs</a></li>
+            <li><a href="#search-dropdown-databases" data-toggle="tab">Databases</a></li>
+            <li><a href="#search-dropdown-ejournals" data-toggle="tab">Ejournals</a></li>
+            <li><a href="#search-dropdown-research-guides" data-toggle="tab">Research Guides</a></li>
+                          <li><a href="#search-dropdown-site" data-toggle="tab">Site Search</a></li>
+                        			                      </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="search-dropdown-all">
+              <form method="get" action="/search.php" id="all-search" class="all-search">
+                <fieldset>
+                  <input type="text" name="all_query" placeholder="Search for articles, books, Research Guides, and more" class="all-search-query search-query-field input-mega" tabindex="1" autocapitalize="off" autocorrect="off" />
+                  <button type="submit" class="btn-search-large">Search</button>
+                </fieldset>
+              </form>
+
+				
+			  				
+       
+            </div>
+
+            <div class="tab-pane" id="search-dropdown-catalogs">
+              <form method="post" action="http://discoverlibrary.vanderbilt.edu/primo_library/libweb/action/search.do" class="form-discoverlibrary">
+                <fieldset>
+                  <input type="text" name="vl(freeText0)" placeholder="Search DiscoverLibrary" class="search-query-field input-mega" tabindex="1" autocapitalize="off" autocorrect="off" />
+                  <button type="submit" class="btn-search-large">Search</button>
+
+                  <input type="hidden" name="scp.scps" value="scope:(GMA),scope:(tvnews),scope:(vanunicorn),scope:(usserial),scope:(ACT),scope:(discoverarchive),primo_central_multiple_fe" />
+                  <input type="hidden" name="tab" value="local" />
+                  <input type="hidden" name="dstmp" value="1370462347573" />
+                  <input type="hidden" name="srt" value="rank" />
+                  <input type="hidden" name="ct" value="search" />
+                  <input type="hidden" name="mode" value="Basic" />
+                  <input type="hidden" name="dum" value="true" />
+                  <input type="hidden" name="indx" value="1" />
+                  <input type="hidden" name="tb" value="t" />
+                  <input type="hidden" name="vid" value="VANDERBILT" />
+                  <input type="hidden" name="fn" value="search" />
+                </fieldset>
+              </form>
+
+              <form method="get" action="http://acorn.library.vanderbilt.edu/uhtbin/cgisirsi/LExsd5urq3/0/0/123" class="form-acorn hide">
+                <fieldset>
+                  <input type="text" name="searchdata1" placeholder="Search Acorn" class="search-query-field input-mega" tabindex="1" autocapitalize="off" autocorrect="off" />
+                  <input type="hidden" name="library" value="ALL" />
+                  <button type="submit" class="btn-search-large">Search</button>
+                </fieldset>
+
+                <select name="srchfield1" class="srchfield1" size="1">
+                  <option value="GENERAL^SUBJECT^GENERAL^^words+anywhere">WORDS anywhere</option>
+                  <option value="AU^AUTHOR^AUTHORS^Author+Processing^author">AUTHOR keyword</option>
+                  <option value="AU^AUTHOR^AUTHORS^Author+Processing^author" data-query-type="term">AUTHOR (last name first)</option>
+                  <option value="TI^TITLE^SERIES^Title+Processing^title">TITLE keyword</option>
+                  <option value="TI^TITLE^SERIES^Title+Processing^title" data-query-type="term">TITLE begins with (omit first article)</option>
+                  <option value="PER^PERTITLE^SERIES^Title+Processing^periodical+title">PERIODICAL TITLE keyword</option>
+                  <option value="PER^PERTITLE^SERIES^Title+Processing^periodical title" data-query-type="term">PERIODICAL TITLE begins with</option>
+                  <option value="SU^SUBJECT^SUBJECTS^^subject">SUBJECT keyword</option>
+                  <option value="SU^SUBJECT^SUBJECTS^^subject" data-query-type="term">SUBJECT begins with</option>
+                  <option value="MESH^MESH^MESH^Phrase+Processing^medical+subject">MEDICAL SUBJECT keyword</option>
+                  <option value="MESH^MESH^MESH^Phrase+Processing^medical+subject" data-query-type="term">MEDICAL SUBJECT begins with</option>
+                  <option value="SER^SERIES^SERIES^Title+Processing^series">SERIES keyword</option>
+                  <option value="SER^SERIES^SERIES^Title+Processing^series" data-query-type="term">SERIES begins with</option>
+                </select>
+
+                <input type="hidden" name="query_type" class="acorn-query-type" value="" />
+              </form>
+
+              <form method="get" action="https://secureforms.library.vanderbilt.edu/forms/worldcat.phtml" class="form-worldcat hide">
+                <fieldset>
+                  <input type="text" name="q" placeholder="Search WorldCat" class="search-query-field input-mega" tabindex="1" autocapitalize="off" autocorrect="off" />
+                  <input type="hidden" name="qt" value="worldcat_org_all" />
+                  <button type="submit" class="btn-search-large">Search</button>
+                </fieldset>
+              </form>
+
+			<label class="radio inline">
+        <input type="radio" name="search-source" value="discoverlibrary" checked="checked" />DiscoverLibrary
+      </label>
+
+      <label class="radio inline">
+        <input type="radio" name="search-source" value="acorn" />Acorn
+      </label>
+
+      <label class="radio inline">
+        <input type="radio" name="search-source" value="worldcat" data-placeholder="Search WorldCat" />WorldCat
+      </label>
+		&nbsp; <hr/> 
+		<label class="inline"> Go to:  <a href="http://discoverlibrary.vanderbilt.edu">DiscoverLibrary</a> ,  <a href="http://acorn.library.vanderbilt.edu ">Acorn</a>, or  <a href="https://secureforms.library.vanderbilt.edu/forms/worldcat.phtml">WorldCat</a>  </label>
+				
+             
+            </div>
+
+            <div class="tab-pane" id="search-dropdown-databases">
+              <form method="get" action="/search.php">
+                <fieldset>
+                  <input type="text" name="db_query" placeholder="Search for databases by name or keyword" class="search-query-field input-mega" tabindex="1" autocapitalize="off" autocorrect="off" />
+                  <button type="submit" class="btn-search-large">Search</button>
+                </fieldset>
+              </form>
+				
+
+
+				
+            </div>
+
+            <div class="tab-pane" id="search-dropdown-ejournals">
+              <form method="get" action="http://sfx.library.vanderbilt.edu/vu/a-z/default">
+                <fieldset>
+                  <input type="text" name="param_pattern_value" placeholder="Search by e-journal title" class="search-query-field input-mega" tabindex="1" autocapitalize="off" autocorrect="off" />
+                  <button type="submit" class="btn-search-large">Search</button>
+                </fieldset>
+
+                <label class="radio inline">
+                  <input type="radio" name="source" value="ejournals" data-placeholder="Search by e-journal title" data-action="http://sfx.library.vanderbilt.edu/vu/a-z/default" data-name="param_pattern_value" checked="checked" /> <a href="http://sfx.library.vanderbilt.edu/vu/a-z/default">E-Journals Locator</a>
+                </label>
+
+                <label class="radio inline">
+                  <input type="radio" name="source" value="google" data-placeholder="Search Google Scholar" data-action="http://scholar.google.com.proxy.library.vanderbilt.edu/scholar" data-name="q" /> <a href="http://scholar.google.com.proxy.library.vanderbilt.edu">Google Scholar</a>
+                </label>
+
+                <input type="hidden" name="param_perform_value" value="searchTitle" />
+                <input type="hidden" name="param_jumpToPage_value" value="" />
+                <input type="hidden" name="param_type_value" value="textSearch" />
+                <input type="hidden" name="param_chinese_checkbox_active" value="1" />
+              </form>
+            </div>
+
+            <div class="tab-pane" id="search-dropdown-research-guides">
+              <form method="get" action="http://researchguides.library.vanderbilt.edu/search.php">
+                <fieldset>
+                  <input type="text" name="search" placeholder="Search for research and course guides" class="search-query-field input-mega" tabindex="1" autocapitalize="off" autocorrect="off" />
+                  <button type="submit" class="btn-search-large">Search</button>
+                </fieldset>
+                <ul class="list-unstyled">
+                  <li>
+                                          <a href="http://researchguides.library.vanderbilt.edu/">Research Guides</a>
+                                      </li>
+                </ul>
+              </form>
+            </div>
+
+                          <div class="tab-pane" id="search-dropdown-site">
+                <form method="get" action="http://searchvu.vanderbilt.edu/search">
+                  <fieldset>
+                    <input type="text" name="q" placeholder="Search the Heard Library web site" class="search-query-field input-mega" tabindex="1" autocapitalize="off" autocorrect="off" />
+                    <button type="submit" class="btn-search-large">Search</button>
+
+                    <input type="hidden" name="site" value="default_collection" />
+                    <input type="hidden" name="client" value="default_frontend" />
+                    <input type="hidden" name="proxystylesheet" value="default_frontend" />
+                    <input type="hidden" name="output" value="xml_no_dtd" />
+                    <input type="hidden" name="as_dt" value="i" />
+                    <input type="hidden" name="as_sitesearch" value="library.vanderbilt.edu" />
+                  </fieldset>
+                </form>
+              </div>
+            
+            
+		                          </div>
+        </div>
+      </div> <!-- dropdown-pane -->
+    </li>
+
+    <li class="students dropdown">
+      <a href="/students/" class="dropdown-toggle">Students</a>
+
+      <ul class="dropdown-pane">
+        <li>
+			<a href="https://acorn.library.vanderbilt.edu/login/login.phtml?page=myaccount">My Account</a>
+          	<a href="/services/studyrooms.php">Reserve a Study Room</a>
+          	<a href="/services/ipads.php">Available iPads and Laptops</a>
+		  	<!-- link to individual library researchguide group page --> 	
+			             	<a href="http://researchguides.library.vanderbilt.edu/">Research and Course Guides</a>
+					   	<a href="/students/">Student Services at Heard</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="faculty-staff dropdown">
+      <a href="/faculty-staff/" class="dropdown-toggle">Faculty &amp; Staff</a>
+
+      <ul class="dropdown-pane">
+        <li>
+		  <a href="https://acorn.library.vanderbilt.edu/login/login.phtml?page=myaccount">My Account</a>
+          <a href="/ill/facdev.php">Faculty Delivery</a>
+          <a href="/services/placingreserves.php">Place Items on Reserve</a>
+          <a href="/subject-specialists.php">Subject Liaisons</a>
+       <!--   <a href="/scholarly/index.php">Scholarly Communications</a>-->
+          <a href="/faculty-staff/">Faculty Services at Heard</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="alumni dropdown">
+      <a href="/alumni/" class="dropdown-toggle">Alumni</a>
+
+      <ul class="dropdown-pane">
+        <li>
+		  <a href="https://acorn.library.vanderbilt.edu/login/login.phtml?page=myaccount">My Account</a>
+          <a href="/alumni/databases.php">E-Resources for Alumni</a>
+          <a href="/policies/accessuse.php">Borrowing Card</a>
+          <a href="/about/mapsparking.php">Maps and Parking</a>
+		  <a href="/giving/">Giving to the Library</a>
+          <a href="/alumni/">Alumni Services at Heard</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="visitors dropdown">
+      <a href="/visitors/" class="dropdown-toggle">Visitors</a>
+
+      <ul class="dropdown-pane">
+        <li>
+          <a href="http://exhibits.library.vanderbilt.edu/">Exhibits</a>
+          <a href="/about/mapsparking.php">Maps and Parking</a>
+		  <a href="/giving/">Giving to the Library</a>	
+          <a href="/visitors/">Visitor Services at Heard</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="campus-libraries dropdown">
+    <a href="/about/contact.php" class="dropdown-toggle">Campus Libraries</a>
+
+      <ul class="dropdown-pane">
+        <li>
+          <a href="http://www.mc.vanderbilt.edu/diglib/">Biomedical</a>
+        </li>
+        <li>
+          <a href="/central/">Central</a>
+        </li>
+        <li>
+          <a href="/divinity/">Divinity</a>
+        </li>
+        <li>
+          <a href="/law/">Law</a>
+        </li>
+        <li>
+          <a href="/management/">Management</a>
+        </li>
+        <li>
+          <a href="/music/">Music</a>
+        </li>
+        <li>
+          <a href="/peabody/">Peabody</a>
+        </li>
+        <li>
+          <a href="/science/">Science &amp; Engineering</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="hours">
+      <a href="/hours.php">Hours</a>
+    </li>
+  </ul>
+</nav>
+         <form method="get" action="/search.php" class="mobile-search">
+            <input type="text"
+                   name="all_query"
+                   placeholder="Search"
+                   class="all-search-query search-query-field input-mega"
+                   tabindex="1"
+                   autocapitalize="off"
+                   autocorrect="off"/>
+            <button type="submit" class="btn-search-large">Go</button>
+         </form>
+      </div>
+   </header>
+   <div id="content-page">
+      <div class="wrap">
+         <div class="feature-piece">
+           
+            <div class="slider slider-full" id="slider-home">
+
+		
+
+	  	  	  	     <div class="slide" id="slide-1">
+                  <div class="slide-body">
+                     <h6>University</h6>
+	  			               <h1>Valerie Hotchkiss
+named new University Librarian</h1>
+				                 <br/> 
+				                 <h3> </h3>
+
+                     <a href="http://news.vanderbilt.edu/2016/04/valerie-hotchkiss-named-vanderbilts-university-librarian/"
+                        class="more-link-large">Learn more</a> 
+		                </div>
+			               <div class="slide-image"
+                       style="background-image: url('http://www.library.vanderbilt.edu/webimages/slides/heard/hotchkiss.png')"> </div>
+			 
+               </div>
+	  			  	  	  	  <div class="slide" id="slide-2">
+                  <div class="slide-body">
+                     <h6>Students</h6>
+			                  <h1>Congratulations to the class of 2016!</h1>
+                  </div>
+                  <div class="slide-image"
+                       style="background-image: url('http://www.library.vanderbilt.edu/webimages/slides/heard/mortar.jpg')"> </div>
+               </div>	  
+  
+	  
+	  	           <div class="slide" id="slide-3">
+                  <div class="slide-body">
+                     <h6>Working Groups</h6>
+			                  <h1>Semantic Web, GIS &amp; XQuery</h1>
+                     <br/>
+                     <br/>
+                     <br/>
+                     <br/>
+                     <br/>
+			                  <a href="http://library.vanderbilt.edu/scholarly/working-groups.php"
+                        class="more-link-large">Join a technology working group.</a>			  
+                  </div>
+                  <div class="slide-image"
+                       style="background-image: url('http://www.library.vanderbilt.edu/webimages/slides/heard/workinggroups.png')"> </div>
+               </div>	 
+	  
+	              <div class="slide" id="slide-4">
+                  <div class="slide-body">
+                     <h6>Video</h6>
+			                  <h1>Take 2 minutes:</h1>
+			                  <h1>Learn about copyright. </h1>
+                     <br/>
+                     <br/>
+                     <br/>
+			                  <a href="http://www.library.vanderbilt.edu/copyright/"
+                        class="more-link-large">Watch a video</a>			  
+                  </div>
+                  <div class="slide-image"
+                       style="background-image: url('http://www.library.vanderbilt.edu/webimages/slides/heard/copyright.png')"> </div>
+               </div>	   
+	    
+	  			  		     <div class="slide" id="slide-5">
+                  <div class="slide-body">
+                     <h6>Students</h6>
+			                  <h1>Ask a Librarian</h1>
+
+			                  <h3> <br/>The library can help you succeed at Vanderbilt.
+			 </h3>
+                     <br/>
+                     <br/>
+			                  <a href="http://youtu.be/DWuhJcsqV0M" class="more-link-large">Learn More</a>	
+                     <br/>	
+			                  <a href="http://www.library.vanderbilt.edu/ask-librarian.php"
+                        class="more-link-large"> Ask a Librarian</a>
+                  </div>
+				              <a href="http://youtu.be/DWuhJcsqV0M">
+                     <div class="slide-image"
+                          style="background-image: url('http://www.library.vanderbilt.edu/webimages/slides/heard/succeedvideo.png')"> </div>
+                  </a>
+               </div>	   
+	  
+               <!--		   <div class="slide" id="slide-4">
+          <div class="slide-body">
+            <h6>Research Services</h6>
+			  <h1>Ask a Librarian</h1>
+
+			  <h5>This is Pam Morgan.<br />She can help you be a better researcher. 
+			 </h5><br /><br />
+			  <a href="ask-librarian.php" class="more-link-large">Ask a librarian for research help </a>			  
+          </div>
+          <div class="slide-image" style="background-image: url('http://www.library.vanderbilt.edu/webimages/slides/heard/pam.jpg')">&nbsp;</div>
+        </div>	   
+-->
+	  
+	  
+	  	  	  	     <div class="slide" id="slide-6">
+                  <div class="slide-body">
+                     <h6>Vanderbilt Community</h6>
+				
+			                  <h1>The Future <br/>of the Libraries</h1>
+                     <br/>
+
+				                 <h5>
+                        <br/> 
+                     </h5>
+                     <a href="http://www.library.vanderbilt.edu/future/"
+                        class="more-link-large">Report available</a> 
+		                </div>
+			               <div class="slide-image"
+                       style="background-image: url('http://www.library.vanderbilt.edu/webimages/slides/heard/centralabovecafe.jpg')"> </div>
+			 
+               </div>
+	  
+	  	  	        <div class="slide" id="slide-7">
+                  <div class="slide-body">
+                     <h6>Student Art Exhibit</h6>
+				
+				                 <h3>The Campus Curates:
+				Illumination, Enlightenment and Discovery
+				</h3>
+                     <br/>
+				                 <h5>At Central Library Through March 2017 </h5> 
+                     <p>   </p>
+                     <a href="http://gallery.library.vanderbilt.edu/exhibits/sensuality-and-textuality"
+                        class="more-link-large">Sensuality and Textuality</a> 
+                     <br/>
+			                  <a href="http://gallery.library.vanderbilt.edu/exhibits/medieval-modern"
+                        class="more-link-large">The Book as Art</a> 	  
+				              </div>
+			               <div class="slide-image"
+                       style="background-image: url('http://www.library.vanderbilt.edu/webimages/slides/heard/HART.jpg')"> </div>
+			 
+               </div>	
+
+				
+	
+               <!--	  <div class="slide" id="slide-9">
+            <div class="slide-body">
+               <h6>Students</h6>
+				
+			  <h1>Become a Library
+				  <br />Dean's Fellow.</h1>
+				  <br /> 
+				  <br />
+				<br /> 
+			  <br />
+				<br /> 
+
+            <a href="http://library.vanderbilt.edu/about/deans_fellows/df_applications.php" class="more-link-large">Find out more and apply</a> 
+		    </div>
+			 <div class="slide-image" style="background-image: url('http://www.library.vanderbilt.edu/webimages/slides/heard/df16.png')">&nbsp;</div>
+			 
+          </div>	
+	-->  
+
+	  
+
+	  
+	  		   
+               <!--		   		   <div class="slide" id="slide-5">
+                    <div class="slide-body">
+						<h6>Go Mobile</h6>
+           <h1>24/7 Library</h1>
+						  <h3>Access the library from your tablet or smartphone.</h3>
+         <h5>Get the Vanderbilt Library App!</h5>
+						<a href="/technology/mobile.php" class="more-link-large">Learn More</a>
+                </div>
+          <div class="slide-image" style="background-image: url('http://www.library.vanderbilt.edu/webimages/Slides/Heard/boopsie.png');">&nbsp;</div>
+        </div>
+	  -->
+		   
+               <!--		   	  	  <div class="slide" id="slide-6">
+            <div class="slide-body">
+               <h6>Resource</h6>
+				
+			  <h1>BrowZine</h1><br/><h3>Thousands of academic journals delivered to your tablet or smartphone.</h3>
+
+				<h5><br/> </h5>
+            <a href="http://researchguides.library.vanderbilt.edu/browzine" class="more-link-large">Learn More</a> 
+		    </div>
+			  <div class="slide-image" style="background-image: url('http://www.library.vanderbilt.edu/webimages/slides/heard/browzine_heard.jpg')">&nbsp;</div>
+			 
+          </div>
+-->	
+		   
+		   
+		   
+
+		
+
+
+	           </div>	  
+
+
+            <div class="carousel pager" id="carousel-home">
+		 
+		 		 		 		 	 <div class="slide selected" id="thumb-1">
+                  <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/hotchkissthumb.jpg"/>
+               </div>
+			 		 		 	    <div class="slide" id="thumb-2">
+                  <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/mortarthumb.jpg"/>
+               </div>	 
+	 
+		 		          <div class="slide" id="thumb-3">
+                  <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/workinggroupsthumb.png"/>
+               </div>
+		 
+		 		          <div class="slide" id="thumb-4">
+                  <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/copyrightthumb.png"/>
+               </div> 
+		 		 
+		 		          <div class="slide" id="thumb-5">
+                  <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/succeedvideothumb.png"/>
+               </div>
+
+
+		 
+		             <div class="slide" id="thumb-6">
+                  <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/centralabovecafethumb.jpg"/>
+               </div> 		 
+		 
+		 		 	        <div class="slide" id="thumb-7">
+                  <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/HARTthumb.jpg"/>
+               </div>
+
+		 
+               <!--		 		 		 	 <div class="slide" id="thumb-9">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/df16thumb.png" />
+        </div>
+-->		 
+               <!--		 		 		 	 <div class="slide" id="thumb-7">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/libqual2015thumb.jpg" />
+        </div>
+-->
+		 
+               <!--		 		 		  <div class="slide selected" id="thumb-4">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/pamthumb.jpg" />
+        </div> -->		 
+		 
+               <!--		  <div class="slide" id="thumb-5">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/dmp_toolthumb.jpg" />
+        </div>		
+-->		 
+               <!--		 		 <div class="slide" id="thumb-5">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/boopsiethumb.jpg" />
+        </div>-->
+               <!--		 	 
+ <div class="slide" id="thumb-6">
+       <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/browzinethumb.jpg" />
+        </div> 
+		 
+-->
+		 
+		 
+		 
+               <!--		<div class="slide" id="thumb-8">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/artistsbooksthumb.jpg" />
+        </div>
+-->		
+               <!--	
+<div class="slide" id="thumb-7">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/MetStageCurtainThumb.jpg" />
+        </div>
+		   <div class="slide" id="thumb-8">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/test/carolynthumb.jpg" />
+        </div>
+-->
+
+	
+		             <!--  <div class="slide" id="thumb-3">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/poetrythumb.jpg" />
+        </div>-->
+		             <!--	  <div class="slide" id="thumb-6">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/tvnewsvideo2thumb.png" />
+        </div> -->
+    
+		
+		             <!-- <div class="slide" id="thumb-6">
+          <img src="http://www.library.vanderbilt.edu/webimages/slides/heard/jeffersonthumb.jpg" />
+        </div>-->
+
+   	
+            </div>
+
+            <button class="prev nav-pager">Prev</button>
+            <button class="next nav-pager">Next</button>
+            
+         </div>
+         <aside id="sidebar-primary">
+<nav class="widget nav-widget" id="nav-use-library">
+  <h4 class="widget-title">Use the Library</h4>
+
+  <ul>  
+	  
+    <li class="ask-librarian">
+      <a href="/ask-librarian.php">Ask a Librarian</a>
+    </li>
+	<li class="research-guides">
+              <a href="http://researchguides.library.vanderbilt.edu/">Research Guides</a>
+          </li>
+	  <li class="search">
+      <a href="/search.php">Search</a>
+    </li>
+	<li class="technology">
+      <a href="/technology/">Technology</a>
+    </li>
+	    <li class="study-rooms">
+              <a href="/services/studyrooms.php">Study Rooms/Carrels</a>
+          </li>
+    <li class="oak">
+	        <a href="http://www.vanderbilt.edu/oak/">Blackboard</a>
+          </li> 
+    <li class="interlibrary-loan">
+              <a href="https://illiad.library.vanderbilt.edu/illiad/ill/">Interlibrary Loan</a>
+          </li>   
+  </ul>
+</nav>
+
+</aside>
+         <div class="content-primary">
+    
+  
+<div class="widget widget-teaser">
+  <h4 class="widget-title">Services</h4>
+<a href="/services/index.php" > <img src="/images/website/handsbooks.png" /></a>
+  <h6 class="widget-subhead">Access essential library services</h6>
+  <p>The Jean and Alexander Heard Libraries provide library services to the Vanderbilt community.<a href="/services/index.php" class="more-link">More</a></p>
+</div>
+
+<div class="widget widget-teaser">  <h4 class="widget-title">News &amp; Events</h4> <a href="http://newsonline.library.vanderbilt.edu/?cat=28">  <img src="http://www.library.vanderbilt.edu/images/website/star.png"></a>  <h6 class="widget-subhead"><a href="http://newsonline.library.vanderbilt.edu/2016/05/divinity-professor-bruce-morrill-on-participation-in-roman-catholic-mass/">Divinity Professor Bruce Morrill on Participation in Roman Catholic Mass</a></h6>  <p>Listen to Bruce Morrill talk about his recent article “Good Table Manners? The Presence and Partic... <a href="http://newsonline.library.vanderbilt.edu/?cat=28" class="more-link">More News</a></p></div>
+<div class="widget widget-teaser">
+	 <h4 class="widget-title">Special Collections</h4>
+	<a href="special-collections"> <img src="/images/website/floatingbook.png" /></a>
+  <h6 class="widget-subhead">Exhibits and Unique Collections</h6>
+  <p>The Jean and Alexander Heard Libraries house many materials of special interest to researchers and scholars. <a href="special-collections" class="more-link">More</a></p>
+</div>
+
+</div>
+      </div>
+   </div>
+   <footer id="footer-primary">
+      <div class="wrap">
+<div class="footer-top">
+  <div id="footer-callout">
+    <a href="https://webapp.mis.vanderbilt.edu/olga/pub/landing?appealCode=Q13A8" class="give-now">Give Now</a>
+
+    <div class="callout-block">
+	  <div class="callout-title">Support the Jean and Alexander Heard Library</div>
+      <p>Gifts to the  Library support the learning and research needs of the entire Vanderbilt community.</p>
+		<a href="/giving/" class="btn-more">Learn More</a>
+    </div> <!-- /callout-block -->
+  </div> <!-- /footer-callout -->
+
+  <nav id="nav-footer-social">
+    <span class="nav-title">Follow Us</span>
+    <ul>
+      <li class="twitter">
+        <a href="https://twitter.com/VandyLibraries">Twitter</a>
+      </li>
+      <li class="facebook">
+        <a href="http://www.facebook.com/vulibrary">Facebook</a>
+      </li>
+      <li class="rss">
+        <a href="http://newsonline.library.vanderbilt.edu/?feed=rss2">RSS</a>
+      </li>
+    </ul>
+  </nav>
+</div> <!-- /footer-top -->
+
+<div class="footer-bottom">
+  <ul id="library-address">
+    <li>Jean and Alexander Heard Library</li>
+    <li>419 21st Avenue South</li>
+    <li>Nashville, TN 37203</li>
+  </ul>
+
+  <ul id="nav-footer-tools">
+    <li class="hours">
+      <a href="/hours.php">Hours</a>
+    </li>
+    <li class="about">
+		<a href="/about/index.php">About</a>
+    </li>
+    <li class="employment">
+		<a href="/about/employment.php">Employment</a>
+    </li>
+    <li class="staff">
+      <a href="/staff.php">Staff</a>
+    </li>
+    <li class="contact">
+		<a href="/about/contact.php">Contact</a>
+    </li>
+  </ul>
+</div>
+<script type="text/javascript" src="/assets/js/validate.js"></script>
+<!-- testing -->
+<!-- /footer-bottom -->
+</div>
+   </footer>
+
+      <!-- ### Scripts ### -->
+      <!--[if IE 8]>
+        <script src="/assets/js/ie8.min.js" type="text/javascript"></script>
+      <![endif]-->
+      <script type="text/javascript" src="/assets/js/plugins.min.js"></script>
+      <script type="text/javascript" src="/assets/js/app.js"></script>
+    
+    <!-- Put any js files that you want loaded at the bottom of the page here -->
+  <a href="http://a.cms.omniupdate.com/10?skin=vanderbilt&amp;account=Library&amp;site=library&amp;action=de&amp;path=/index.pcf" target="_top"><img src="http://a.cms.omniupdate.com/servlet/OX/vanderbilt/ob.gif?user=Library&amp;site=library&amp;date=1464991324990" alt="OmniUpdate" style="border:0" /></a></body>
+      </html>
+    

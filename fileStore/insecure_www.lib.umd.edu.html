@@ -1,0 +1,1249 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="//www.lib.umd.edu/unify-1.7/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//www.lib.umd.edu/unify-1.7/assets/css/style.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="//www.lib.umd.edu/unify-1.7/assets/css/headers/header-v1.css">
+    <link rel="stylesheet" href="//www.lib.umd.edu/unify-1.7/assets/css/footers/footer-v1.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="//www.lib.umd.edu/unify-1.7/assets/plugins/font-awesome/css/font-awesome.min.css">
+
+    <!-- CSS from hst.headContributions -->
+<script type="text/javascript">
+//<![CDATA[
+if (typeof a276611763 === 'undefined') {
+    a276611763 = {};
+}
+if (typeof a276611763.b276611763 === 'undefined') {
+    a276611763.b276611763 = {};
+}
+
+a276611763.b276611763.AsyncPage = {
+
+    load : function() {
+        var result, divs, i, length;
+        result = [];
+
+        if (document.getElementsByClassName) {
+            result = document.getElementsByClassName('c276611763Async');
+        } else {
+            divs = document.getElementsByTagName('div');
+            for (i = 0, length = divs.length; i < length; i++) {
+                if (divs[i].className === 'c276611763Async') {
+                    result.push(divs[i]);
+                }
+            }
+        }
+
+        /**
+         * Identify if the <code>script</code> node contains executable scripts.
+         * @param script
+         * @returns {boolean}
+         */
+        function isExecutableScript(script) {
+            var TEXT_JAVASCRIPT = "text/javascript",
+                APP_JAVASCRIPT = "application/javascript",
+                supportedScripts = [TEXT_JAVASCRIPT, APP_JAVASCRIPT],
+                scriptType = TEXT_JAVASCRIPT;
+
+            // default script type is text/javascript in HTML5
+            if (script.hasAttribute('type')) {
+                scriptType = script.getAttribute('type').toLowerCase();
+            }
+            // find the script type in the list (case insensitive)
+            if (Array.prototype.indexOf){
+                return supportedScripts.indexOf(scriptType) > -1;
+            } else { // IE8 or less
+                for (var i = 0, length = supportedScripts.length; i < length; i++) {
+                    if (scriptType === supportedScripts[i]){
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        // Find all script elements, extract them from the fragment and store
+        // them into a new array. Cloning the nodes does not work as the script
+        // will not be executed that way, so we have to clone them manually.
+        function extractScriptNodes(fragment) {
+            var i, j, length, node, nodes, script, scripts, atts;
+
+            atts = ['async', 'charset', 'defer', 'src', 'type'];
+            scripts = fragment.querySelectorAll('script');
+            nodes = [];
+
+            for (i = 0, length = scripts.length; i < length; i++) {
+                script = scripts[i];
+                // Only extract executable scripts, i.e "text/javascript"
+                if (isExecutableScript(script)) {
+                    node = document.createElement('script');
+                    if (window.addEventListener) {
+                        node.appendChild(document.createTextNode(script.innerHTML));
+                    } else { // IE8 or less
+                        node.text = script.innerHTML;
+                    }
+                    for (j = 0; j < atts.length; j++) {
+                        if (script.hasAttribute(atts[j])) {
+                            node.setAttribute(atts[j], script.getAttribute(atts[j]));
+                        }
+                    }
+                    script.parentNode.removeChild(script);
+                    nodes.push(node);
+                }
+            }
+            return nodes;
+        }
+
+        // If next is undefined, simply append the nodes to the parent,
+        // otherwise insert the nodes before the reference node
+        function insertScriptNodes(nodes, parent, reference) {
+            var i, length;
+            for (i = 0, length = nodes.length; i < length; i++) {
+                if (reference) {
+                    parent.insertBefore(nodes[i], reference);
+                } else {
+                    parent.appendChild(nodes[i]);
+                }
+            }
+        }
+
+        for (i = 0, length = result.length; i < length; i++) {
+            (function(element) {
+                this.sendRequest(element.id, function(xmlHttp) {
+                    var fragment, tmpDiv, parent, scriptNodes, next;
+
+                    // Convert the responseText into HTML nodes
+                    tmpDiv = document.createElement('div');
+                    if (window.addEventListener) {
+                        tmpDiv.innerHTML = xmlHttp.responseText;
+                    } else { // IE8 or less
+                        // If firstChild is a script/style element IE will
+                        // ignore it, so we add a textNode first, then 
+                        // immediately remove it again and IE will show the 
+                        // script/style elements 
+                        tmpDiv.innerHTML = '<span>&#160;</span>' + xmlHttp.responseText;
+                        tmpDiv.removeChild(tmpDiv.firstChild);
+                    }
+
+                    // Move the nodes into a fragment
+                    fragment = document.createDocumentFragment();
+                    while (tmpDiv.firstChild) {
+                        fragment.appendChild(tmpDiv.firstChild);
+                    }
+
+                    // Extract the script nodes so we can re-insert and execute
+                    // them after the DOM has been updated with the new HTML
+                    scriptNodes = extractScriptNodes(fragment);
+
+                    // Save a reference to the parent and the next sibling
+                    parent = element.parentNode;
+                    next = element.nextSibling;
+
+                    // Update the DOM
+                    parent.replaceChild(fragment, element);
+
+                    // Insert the script nodes
+                    insertScriptNodes(scriptNodes, parent, next);
+                });
+            }).call(this, result[i]);
+        }
+    },
+
+    sendRequest : function(url, callback) {
+        var xmlHttpRequest;
+        try {
+            xmlHttpRequest = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+            xmlHttpRequest.open("GET", url, true);
+            xmlHttpRequest.onreadystatechange = function () {
+                if (xmlHttpRequest.readyState !== 4) {
+                    return;
+                }
+                if (xmlHttpRequest.status !== 200 && xmlHttpRequest.status !== 304) {
+                    return;
+                }
+                callback(xmlHttpRequest);
+            };
+
+            xmlHttpRequest.send();
+        } catch (e) {
+            if (typeof window.console !== 'undefined') {
+                if (typeof console.error !== 'undefined') {
+                    console.error(e.name + ": " + e.message);
+                } else if (typeof console.log !== 'undefined') {
+                    console.log(e.name + ": " + e.message);
+                }
+            }
+        }
+    }
+};
+
+//]]>
+</script>
+<title>University of Maryland Libraries</title>
+<link rel="stylesheet" href="//www.lib.umd.edu/unify-1.7/assets/css/pages/profile.css"/>
+<link rel="stylesheet" href="//www.lib.umd.edu/unify-1.7/assets/css/pages/page_search.css"/>
+
+    <!-- CSS Background Images -->
+
+<!-- Background Image CSS for Home Page Search -->
+
+
+  <style type="text/css">
+
+  /* In case media tag is not supported by browser */
+  .lib-search-block {
+    background: url("/binaries/content/gallery/public/system/rwd/header/mck1.jpg") no-repeat fixed top rgba(247, 247, 247, 1);
+  }
+  /* LG IMAGE, SCREEN WIDTH: 1200px+ */
+  @media (min-width: 1200px) {
+    .lib-search-block {
+      background-image: url("/binaries/content/gallery/public/system/rwd/header/mck1.jpg/mck1.jpg/public%3Alg");
+    }
+  }
+  /* MD IMAGE, SCREEN WIDTH: 992px - 1199px */
+  @media (max-width: 1199px) {
+    .lib-search-block {
+      background-image: url("/binaries/content/gallery/public/system/rwd/header/mck1.jpg/mck1.jpg/public%3Amd");
+    }
+  }
+  /* SM IMAGE, SCREEN WIDTH: 571px - 991px */
+  @media (max-width: 991px) {
+    .lib-search-block {
+      background-image: url("/binaries/content/gallery/public/system/rwd/header/mck1.jpg/mck1.jpg/public%3Asm");
+    }
+  }
+  /* XS IMAGE, SCREEN WIDTH: 480px - 570px */
+  @media (max-width: 570px) {
+    .lib-search-block {
+      background-image: url("/binaries/content/gallery/public/system/rwd/header/mck1.jpg/mck1.jpg/public%3Axs");
+    }
+  }
+  /* NO IMAGE, SCREEN WIDTH: 0px - 479px */
+  @media (max-width: 479px) {
+    .lib-search-block {
+      background: #fff;
+    }
+  }
+  </style>
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="/css/rwd/umd-red.css" />
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="/css/rwd/custom.css"/>  
+
+    <!-- CSS Print -->
+    <link rel="stylesheet" href="/css/rwd/print.css" media="print"/>  
+
+</head> 
+
+<body>    
+<!-- JS Global Compulsory -->           
+<script type="text/javascript" src="//www.lib.umd.edu/unify-1.7/assets/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="//www.lib.umd.edu/unify-1.7/assets/plugins/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="//www.lib.umd.edu/unify-1.7/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Google Analytics -->
+  <!-- Google Universal Analytics --> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-27696465-1', 'auto');
+    ga('require', 'linkid');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Universal Analytics --> 
+  
+  <!-- Google Analytics Download/External Link Tracking--> 
+  <script>
+    /* Attach tracking to all download & external links */
+    function _gaLt(event){
+      var el = event.srcElement || event.target;
+    
+      /* Loop up the tree through parent elements if clicked element is not a link (eg: an image in a link) */
+      while(el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
+        el = el.parentNode;
+      }
+    
+      if(ga && el && el.href) {
+        var href = el.href;
+        
+          /* Download tracking */
+          var filetypes = /\.(zip|exe|pdf|doc*|xls*|ppt*|mp3|htm)$/i;
+          if (href && href.match(filetypes)) {
+            var extension = (/[.]/.exec(href)) ? /[^.]+$/.exec(href) : undefined;
+            var filePath = href;
+            
+            ga('send', {
+                hitType: 'event',
+                eventCategory: 'General Download Category',
+                eventAction: 'homepage',
+                eventLabel: 'homepage' + ' ' + filePath
+            });
+          }
+      
+          if (typeof console != "undefined") {
+            console.log("File downloaded :" + filePath);
+          }
+    
+        if(el.href.indexOf(location.host) == -1) {
+          /* External link  tracking
+           *
+           * Following code largely drawn
+           * 
+           *from https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits
+           */
+          ga('send', {
+              hitType: 'event',
+              eventCategory: 'Outgoing Links',
+              eventAction: el.href,
+              eventLabel: (document.location.pathname + document.location.search),
+          });
+    
+          /* if target not set then delay opening of window by 0.5s to allow tracking */
+          if(!el.target || el.target.match(/^_(self|parent|top)$/i)){
+            setTimeout(function(){
+            document.location.href = el.href;
+          }.bind(el),500);
+            /* Prevent standard click */
+            event.preventDefault ? event.preventDefault() : event.returnValue = !1;
+          }
+        }
+      }
+    }
+    
+    /* Attach the event to all clicks in the document after page has loaded */
+    var w = window;
+    w.addEventListener ? w.addEventListener("load",function(){document.body.addEventListener("click",_gaLt,!1)},!1)
+      : w.attachEvent && w.attachEvent("onload",function(){document.body.attachEvent("onclick",_gaLt)});
+  </script>
+  <!-- End Google Analytics Download/External Link Tracking--> 
+<!-- End Google Analytics -->
+
+<div class="wrapper">
+
+<!-- Global Header Alert LIBWEB-2557 -->
+<!-- END of Global Header Alert -->
+
+<div class="container">
+  <!-- Header with mega menu -->
+  <div class="header-v1">
+    <div class="navbar navbar-default mega-menu" role="navigation">
+      <div class="container">
+        <!-- UMD brand and toggle button grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="fa fa-bars"></span>
+          </button> 
+          <a href="/">
+            <img id="logo-header" class="img-responsive" src="/images/wrapper/liblogo.png" width="170" alt="University of Maryland Libraries">
+          </a>
+        </div>
+        <!-- Mega Menu -->
+        <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+
+
+<ul class="nav navbar-nav"><!-- ============== Libraries & Spaces  ============= -->
+	<li class="dropdown mega-menu-2col"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Libraries &amp; Spaces </a>
+
+	<ul class="dropdown-menu">
+		<li>
+		<div class="mega-menu-content disable-icons">
+		<div class="container">
+		<div class="row equal-height"><!-- first column -->
+		<div class="col-md-6 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li><a href="/mckeldin"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'mck');">McKeldin Library (Main Library) </a></li>
+			<li><a href="/architecture"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'arch');">Architecture Library </a></li>
+			<li><a href="/art"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'art');">Art Library </a></li>
+			<li><a href="/epsl"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'epsl');">Engineering &amp; Physical Science Library </a></li>
+			<li><a href="/hornbake"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'hornbake');">Hornbake Library</a></li>
+			<li><a href="/mspal"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'mspal');">Michelle Smith Performing Arts Library </a></li>
+			<li><a href="http://shadygrove.umd.edu/library" onclick="ga('send', 'event', 'navigation', 'main-menu', 'priddy');" target="_blank">Priddy Library (Universities at Shady Grove) </a></li>
+			<li><a href="/severn"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'severn');">Severn Library</a></li>
+			<li><a href="/chemistry"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'chem');">White Memorial Chemistry Library </a></li>
+		</ul>
+		</div>
+		<!-- 2nd column -->
+
+		<div class="col-md-6 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li><a href="/tlc"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'tlc');">Terrapin Learning Commons (TLC) </a></li>
+			<li><a href="/tlc/makerspace"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'makerspace');">Makerspace </a></li>
+			<li><a href="/lms"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'lms');">Library Media Services</a></li>
+			<li><a href="/rc"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'rc');">Research Commons </a></li>
+			<li class="divider">.</li>
+			<li><a href="/services/reserve-a-room"  onclick="ga('send', 'event', 'navigation', 'main-menu', 'room-res');">Reserve a Room/Carrel </a></li>
+		</ul>
+		</div>
+		<!-- end of 2nd coumn --></div>
+		</div>
+		</div>
+		</li>
+	</ul>
+	</li>
+	<!-- ============== Find & Cite ============= -->
+	<li class="dropdown mega-menu-3col"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Find &amp; Cite </a>
+	<ul class="dropdown-menu">
+		<li>
+		<div class="mega-menu-content disable-icons">
+		<div class="container">
+		<div class="row equal-height"><!-- first column -->
+		<div class="col-md-4 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li>
+			<h3>Catalogs &amp; Databases</h3>
+			</li>
+			<li><a href="https://umaryland.on.worldcat.org/discovery" target="_blank">WorldCat UMD </a>
+			<ul class="menu-des">
+				<li>for books, articles, videos &amp; more</li>
+			</ul>
+			</li>
+			<li><a href="/access/uborrow">UBorrow</a>
+			<ul class="menu-des">
+				<li>Request directly from Big Ten libraries</li>
+			</ul>
+			</li>
+			<li><a href="/dbfinder">Database Finder</a><a href="http://www.lib.umd.edu/dbfinder-rwd"> </a></li>
+			<li><a href="https://umaryland.on.worldcat.org/atoztitles/search#journal" target="_blank">Journal Finder</a></li>
+			<li><a href="/info"  target="_blank">Classic Catalog</a></li>
+		</ul>
+		</div>
+		<!-- 2nd column -->
+
+		<div class="col-md-4 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li>
+			<h3>Library Collections</h3>
+			</li>
+			<li><a href="/special">Special Collections &amp; University Archives</a></li>
+			<li><a href="http://digital.lib.umd.edu/" target="_blank">Digital Collections</a></li>
+			<li><a href="http://drum.lib.umd.edu/" target="_blank">DRUM </a></li>
+			<li><a href="/gov-info-gis">Government Documents</a></li>
+			<li><a href="http://lib.guides.umd.edu/patent_tm" target="_blank">Patents &amp; Trademarks </a></li>
+		</ul>
+		</div>
+		<!-- end of 2nd coumn -->
+
+		<div class="col-md-4 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li>
+			<h3>Tools &amp; Guides</h3>
+			</li>
+			<li><a href="https://umaryland.on.worldcat.org/atoztitles/search#article" target="_blank">Citation Finder</a></li>
+			<li><a href="/rc/citation-tools">Citation Tools </a></li>
+			<li><a href="/tl/welcome/library-skills-guides">Intro to Library Research</a></li>
+			<li><a href="http://lib.guides.umd.edu/" target="_blank">Research Guides </a></li>
+		</ul>
+		</div>
+		<!-- end of 3nd coumn --></div>
+		</div>
+		</div>
+		</li>
+	</ul>
+	</li>
+	<!-- ============== Services ============= -->
+	<li class="dropdown mega-menu-3col"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Services</a>
+	<ul class="dropdown-menu">
+		<li>
+		<div class="mega-menu-content disable-icons">
+		<div class="container">
+		<div class="row equal-height"><!-- first column -->
+		<div class="col-md-4 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li>
+			<h3>Borrowing</h3>
+			</li>
+			<li><a href="/access/access-privileges">Privileges</a></li>
+			<li><a href="/access/fines">Billing &amp; Fines</a></li>
+			<li><a href="/access/renew">Check Due Date &amp; Renew </a></li>
+			<li><a href="/access/reserves">Course Reserves</a></li>
+			<li><a href="/access/ill">Interlibrary Loan &amp; UBorrow</a></li>
+			<li><a href="/access/borrow-policies">Policies</a></li>
+		</ul>
+		</div>
+		<!-- 2nd column -->
+
+		<div class="col-md-4 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li>
+			<h3>Technology</h3>
+			</li>
+			<li><a href="/services/copying-and-printing/home">Copy, Print, Scan</a></li>
+			<li><a href="http://helpdesk.umd.edu/" target="_blank">Division of IT Help Desk</a></li>
+			<li><a href="/tlc/equipment">Equipment Loan </a></li>
+			<li><a href="/access/laptops">Use Your Laptop in the Libraries </a></li>
+			<li><a href="/services/library-computer-availability">Library Computer Availability</a></li>
+			<li><a href="/services/remote-access">Off-Campus Access to Library Resources</a></li>
+		</ul>
+		</div>
+		<!-- end of 2nd coumn -->
+
+		<div class="col-md-4 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li>
+			<h3>Research Support</h3>
+			</li>
+			<li><a href="/rc">Research Services </a></li>
+			<li><a href="/publish">Digital Scholarship &amp; Publishing</a></li>
+			<li><a href="http://www.english.umd.edu/academics/writingcenter/undergraduate/hours" target="_blank">Undergraduate Writing Center</a></li>
+			<li><a href="http://umdwritingfellows.wordpress.com/" target="_blank">Graduate School Writing Center</a></li>
+			<li><a href="/rc/meet-your-librarian">Meet Your Subject Specialist</a></li>
+			<li><a href="/tl/instruction">Instruction at the UMD Libraries</a></li>
+		</ul>
+		</div>
+		<!-- end of 3nd coumn --></div>
+		</div>
+		</div>
+		</li>
+	</ul>
+	</li>
+	<!-- ============== I am a  ============= -->
+	<li class="dropdown mega-menu-2col"><a class="dropdown-toggle" data-toggle="dropdown" href="#">I am a... </a>
+	<ul class="dropdown-menu">
+		<li>
+		<div class="mega-menu-content disable-icons">
+		<div class="container">
+		<div class="row equal-height"><!-- first column -->
+		<div class="col-md-6 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li><a href="/tl/welcome">Undergraduate </a></li>
+			<li><a href="/rc">Researcher</a>
+			<ul class="menu-des">
+				<li>e.g. faculty, graduate student, upper level undergraduate</li>
+			</ul>
+			</li>
+			<li><a href="/alumniandfriends">Alumnus/Alumna </a></li>
+		</ul>
+		</div>
+		<!-- 2nd column -->
+
+		<div class="col-md-6 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li><a href="/about/visitors">Visitor/Community Member</a></li>
+			<li><a href="/alumniandfriends/friends-of-the-libraries">Friend of the Libraries</a></li>
+			<li><a href="/services/disabilities">Patron with Disabilities </a></li>
+		</ul>
+		</div>
+		<!-- end of 2nd coumn --></div>
+		</div>
+		</div>
+		</li>
+	</ul>
+	</li>
+	<!-- ============== Help  ============= -->
+	<li class="dropdown mega-menu-2col"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Help </a>
+	<ul class="dropdown-menu">
+		<li>
+		<div class="mega-menu-content disable-icons">
+		<div class="container">
+		<div class="row equal-height"><!-- first column -->
+		<div class="col-md-6 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li><a href="http://umd.libanswers.com/" target="_blank">Ask Us!</a></li>
+			<li><a href="/rc/meet-your-librarian">Meet Your Subject Specialist</a></li>
+			<li><a href="http://lib.guides.umd.edu/" target="_blank">Explore Our Guides</a></li>
+		</ul>
+		</div>
+		<!-- 2nd column -->
+
+		<div class="col-md-6 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li><a href="/about/contact-us/tech">Report a Problem </a></li>
+			<li><a href="/services/remote-access">Off-Campus Access to Library Resources</a></li>
+			<li><a href="/collections/book-request-form">Suggest a Purchase</a></li>
+			<li><a href="/researchport"><img alt="research port"  src="/binaries/content/gallery/public/common/research-port.png" style="width:130px"/>Where's Research Port?</a></li>
+		</ul>
+		</div>
+		<!-- end of 2nd coumn --></div>
+		</div>
+		</div>
+		</li>
+	</ul>
+	</li>
+	<!-- ============== About  ============= -->
+	<li class="dropdown mega-menu-2col"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About </a>
+	<ul class="dropdown-menu">
+		<li>
+		<div class="mega-menu-content disable-icons">
+		<div class="container">
+		<div class="row equal-height"><!-- first column -->
+		<div class="col-md-6 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li>
+			<h3>About Us</h3>
+			</li>
+			<li><a href="/about">Fast Facts</a></li>
+			<li><a href="/hr/employment-opportunities/home">Jobs </a></li>
+			<li><a href="/about/deans-office/deans-welcome">Office of the Dean</a></li>
+			<li><a href="http://www.lib.umd.edu/news" title="News &amp; Events">News &amp; Events</a></li>
+			<li><a href="/about/policies">Policies &amp; Safety</a></li>
+			<li><a href="/mckeldin/directions">Directions</a></li>
+			<li><a href="/about/deans-office/partners">Partnerships &amp; Collaborations</a>
+			<ul class="menu-des">
+				<li><a href="http://mith.umd.edu" target="_blank">MITH</a></li>
+			</ul>
+
+			<ul class="menu-des">
+				<li><a href="http://www.it.umd.edu/" target="_blank">Division of IT</a></li>
+			</ul>
+			</li>
+		</ul>
+		</div>
+		<!-- 2nd column -->
+
+		<div class="col-md-6 equal-height-in">
+		<ul class="list-unstyled equal-height-list">
+			<li>
+			<h3>Contact Us</h3>
+			</li>
+			<li><a href="/about/contact-us/phone">Phone Numbers - branches &amp; departments </a></li>
+			<li><a href="http://umd.libanswers.com/" target="_blank">Ask Us!</a></li>
+			<li><a href="/rc/meet-your-librarian">Subject Specialists </a></li>
+			<li><a href="http://www.lib.umd.edu/directory">Staff Directory </a></li>
+			<li><a href="/about/contact-us/services">Circulation, Reserves, Billing &amp; Interlibrary Loan</a></li>
+			<li><a href="/about/contact-us/tech">Technical Support</a></li>
+			<li><a href="/suggestions">Suggestions</a></li>
+		</ul>
+		</div>
+		<!-- end of 2nd coumn --></div>
+		</div>
+		</div>
+		</li>
+	</ul>
+	</li>
+</ul>
+        </div>
+        <!--End of Mega Menu-->
+      </div>
+    </div>
+  </div>
+  <!-- End of Header with Mega Menu -->
+
+<!-- the gray info bar -->
+<div class="row info-bar" id="the-gray-info-bar">
+  <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 lib-info-bar-left">
+
+<!-- Today's Hours -->
+    Today:<strong> McKeldin</strong> <span class="info-bar-hours-attributes">08:00AM - 10:00PM</span>
+  </div>
+  <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 lib-info-bar-right">
+    <div class="row">
+      <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12 lib-info-bar-btns">
+        <!-- Hours button group -->
+        <div class="btn-group btn-group-justified lib-btn-group-justified">
+          <div class="btn-group lib-btn-group">
+            <a class="btn btn-xs btn-default btn-gray-color" data-toggle="dropdown" id="info-bar-hours-dropdown">
+              <i class="fa fa-clock-o"></i> 
+              Hours 
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="border-bottom">
+                <a href="/hours"><i class="fa fa-clock-o"></i><strong> Hours</strong><br> All libraries. All days </a>
+              </li> 
+                    <li class="border-bottom">
+                      <a href="/hours#mckeldin"><strong>McKeldin</strong><br/>08:00AM - 10:00PM</a>
+                    </li>
+                    <li class="border-bottom">
+                      <a href="/hours#architecture"><strong>Architecture</strong><br/>11:00AM - 04:00PM</a>
+                    </li>
+                    <li class="border-bottom">
+                      <a href="/hours#art"><strong>Art</strong><br/>11:00AM - 03:00PM</a>
+                    </li>
+                    <li class="border-bottom">
+                      <a href="/hours#chemistry"><strong>White Memorial Chemistry</strong><br/>08:00AM - 09:00PM</a>
+                    </li>
+                    <li class="border-bottom">
+                      <a href="/hours#epsl"><strong>Engineering and Physical Sciences</strong><br/>08:00AM - 05:00PM</a>
+                    </li>
+                    <li class="border-bottom">
+                      <a href="/hours#mspal"><strong>Michelle Smith Performing Arts</strong><br/>09:00AM - 05:00PM</a>
+                    </li>
+                    <li class="border-bottom">
+                      <a href="/hours#lms"><strong>Media Services in Hornbake</strong><br/>08:00AM - 10:00PM</a>
+                    </li>
+                    <li class="border-bottom">
+                      <a href="/hours#special"><strong>Special Collections in Hornbake</strong><br/>10:00AM - 05:00PM</a>
+                    </li>
+                    <li>
+                      <a href="http://shadygrove.umd.edu/library"><strong>Shady Grove</strong> <br> See here for hours </a>
+                    </li>
+            </ul>
+          </div>
+
+
+<!-- My Account button group -->
+<div class="btn-group lib-btn-group"><a aria-expanded="false" class="btn btn btn-xs btn-warning" data-toggle="dropdown"> <i class="fa fa-user"></i> My Accounts <i class="fa fa-caret-down"></i> </a>
+
+<ul class="dropdown-menu" role="menu">
+	<li><a href="http://catalog.umd.edu/patron=go" target="_blank"><i class="fa fa-user"></i> My Account</a></li>
+	<li class="menu-description">- For UMCP &amp; USMAI books, equipment, and other items</li>
+	<li class="menu-description">- Check due date and renew books online</li>
+	<li class="divider">&nbsp;</li>
+	<li><a href="http://docdel.umd.edu/illiad/" target="_blank"><i class="fa fa-user"></i> ILL Services Account</a></li>
+	<li class="menu-description">- For Interlibrary Loan, UBorrow, &amp; Article Express requests</li>
+	<li class="menu-description">- Check due date, renew items online, and download articles</li>
+	<li class="divider">&nbsp;</li>
+	<li><a href="http://aeon.lib.umd.edu/" target="_blank"><i class="fa fa-user"></i> Special Collections Account (Aeon)</a></li>
+	<li class="menu-description">- Request special collections materials for use in our reading room</li>
+	<li class="menu-description">- Manage photocopy and scanning requests online</li>
+</ul>
+</div>
+<!-- End of My Account button group -->
+          <div class="btn-group lib-btn-group">
+            <a class="btn btn-xs btn-default btn-gray-color" href="http://umd.libanswers.com/" target="_blank"><i class="fa fa-comment-o"></i> Ask Us!</a>
+          </div>
+        </div>
+      </div>
+      <!-- google custom search box in lg, md sm view -->
+      <div class="col-lg-6 col-md-5 col-sm-6 col-xs-12 lib-info-bar-searchbox">
+        <div class="lib-margin-top">
+          <form id="custgooglesearch" method="get" accept-charset="UTF-8" style="margin:0;" action="http://lib.umd.edu/search">
+            <div class="input-group">
+              <input id="googlesearch" class="form-control" placeholder="Search UMD Libraries website" autocomplete="on" required="" name="q" data-stat-name="Primary Search Box" data-stat-page-section="Header" data-action="autocomplete" data-autocomplete-query="term" data-autocomplete-source="/ajax/searchsuggest" value="" type="text">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-xs btn-danger lib-googlesearch-btn" title="Search" alt="Search" name="Search"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
+          <!-- End google custom search box -->
+        </div>
+      </div> <!-- End of google search -->
+    </div>
+  </div>
+</div> <!-- end of the gray info bar -->
+</div>
+    
+
+    <h1 style="display:none">University of Maryland Libraries</h1>
+
+
+
+<!--=== Main content area ===-->
+<div class="container">
+    
+  <!--=== Content Blocks  ===-->   
+
+    <div class="row">
+
+
+
+
+<!-- search box area with Give Now button -->
+<div class="lib-search-block">
+  <!-- start tab search box  -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-7 col-md-6 col-lg-6">
+
+
+
+<!-- search box area with Give Now button -->
+<div class="tab-v1 lib-searchbox">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#getStarted" data-toggle="tab">Get Started</a></li>
+    <li><a href="#databases" data-toggle="tab">Databases</a></li>
+  </ul>                
+  <div class="tab-content">
+    <!-- Get started tab --> 
+    <div class="tab-pane fade in active" id="getStarted">
+      <div class="radiobuttons">
+        <label><input type="radio" name="getStarted" value="worldCat" checked="true" autocomplete="off">&nbsp;WorldCat</label>&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="getStarted" value="uborrow" autocomplete="off">&nbsp;UBorrow</label>&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" name="getStarted" value="classic" autocomplete="off">&nbsp;Classic Catalog</label>
+      </div>
+      <!--  Start of WorldCat -->
+      <div class="worldCat">
+        <form id="worldcatsearch_all" method="get" accept-charset="UTF-8" style="margin:0;" action="http://umaryland.on.worldcat.org/search" target="_blank">
+          <fieldset>
+            <label for="all" style="display: none">Find books, e-books, articles, media & more.</label>
+            <input id="dbList" type="hidden" value="" name="databaseList">
+            <div class="input-group">
+              <input id="worldcatquery" class="form-control lib-searching-box-width"
+              placeholder="Find books, journals, articles, media & more"
+              type="text" autocomplete="off" required="" name="queryString"
+              data-stat-name="Primary Search Box" data-stat-page-section="Header"
+              data-action="autocomplete" data-autocomplete-query="term"
+              data-autocomplete-source="/ajax/searchsuggest" value="">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-sm btn-danger" title="Search" alt="Search" name="umdlib">Search</button>
+              </span>
+            </div>
+          </fieldset>
+        </form>
+        <div class="lib-search-text-hidden-xs">
+          <div class="pull-left">
+            <a href="/mckeldin/info/catalogs">What is this searching?</a>
+          </div>
+          <div class="pull-right margin-left-10">
+            <a href="http://umaryland.on.worldcat.org/" target="_blank"> <img src="http://www.lib.umd.edu/images/worldCatlocal.gif" alt="WorldCat logo"
+              title="Search with WorldCat" /></a>
+            </div>
+            <div class="pull-right">
+              <a href="http://umaryland.on.worldcat.org/advancedsearch" target="_blank">Advanced Search </a>
+            </div>
+          </div>
+          <div class="lib-search-text-visible-xs hidden-print">
+            <a href="/mckeldin/info/catalogs">What is this searching?</a> | <a href="http://umaryland.on.worldcat.org/advancedsearch" target="_blank">Advanced Search</a><br/>
+            <a href="http://umaryland.on.worldcat.org/" target="_blank"><img src="http://www.lib.umd.edu/images/worldCatlocal.gif" alt="WorldCat logo" title="Search with WorldCat"/></a>
+          </div>
+        </div>  <!--  end of WorldCat -->             
+        <!-- Start of UBorrow  -->
+        <div class="uborrow">
+          <form id="uborrow" action="http://uborrow.relaisd2d.com/service-proxy/"  accept-charset="UTF-8" method="get" target="_blank">
+            <input type="hidden" name="command" value="mkauth" >
+            <input type="hidden" name="LS" value="UMARYLAND" >
+            <input type="hidden" name="PI" value="UMARYLAND" >
+            <div class="input-group">
+              <input name="query" id="uborrowquery" class="form-control" placeholder="Find books from the Big Ten university libraries" type="text">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-sm btn-danger" title="Search" alt="Search" name="Search">Search</button>
+              </span>
+            </div>
+          </form>
+          <div class="lib-search-text-hidden-xs">
+            <div class="pull-left">
+              <a href="/mckeldin/info/catalogs#uborrow">What is this searching?</a>
+            </div>
+            <div class="pull-right margin-left-10">
+              <a href="http://ter.ps/uborrow" target="_blank"><img src="http://www.lib.umd.edu/images/uborrow.jpg" alt="UBorrow logo" width="70" height="15"  title="Search with UBorrow" /></a>
+            </div>
+            <div class="pull-right">
+              <a href="http://ter.ps/uborrow" target="_blank"> Go to UBorrow </a>
+            </div>
+          </div>
+          <div class="lib-search-text-visible-xs hidden-print">
+            <a href="/mckeldin/info/catalogs#uborrow">What is this searching?</a> | <a href="http://ter.ps/uborrow" target="_blank"> Go to UBorrow </a><br />
+            <a href="http://ter.ps/uborrow" target="_blank"><img src="http://www.lib.umd.edu/images/uborrow.jpg" alt="UBorrow logo" width="70" height="15"  title="Search with UBorrow" /></a>
+          </div>
+        </div>  <!-- end of UBorrow -->
+        <!-- start of Classic Catalog -->
+        <div class="classic">
+          <form  name="search" action="http://catalog.umd.edu/cgi-bin/direct" method="get" target="_blank">
+            <input name="searchtype" value="F1_WRD" type="hidden">
+            <input name="base" value="CP" type="hidden">
+            <div class="input-group">
+              <input name="searchrequest" id="classicquery" class="form-control" placeholder="Search for items held at UMD" type="text">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-sm btn-danger" title="Search" alt="Search" name="search">Search</button>
+              </span>
+            </div>
+          </form>
+          <div class="lib-search-text-hidden-xs">
+            <div class="pull-left">
+              <a href="/mckeldin/info/catalogs#classic">What is this searching?</a>
+            </div>
+            <div class="pull-right">
+              <a href="http://catalog.umd.edu/search=basic&base=cp" target="_blank">Classic Catalog</a>
+            </div>
+          </div>
+          <div class="lib-search-text-visible-xs hidden-print" style="margin-bottom: -15px;">
+            <a href="/mckeldin/info/catalogs#classic">What is this searching?</a> | <a href="http://catalog.umd.edu/search=basic&base=cp" target="_blank">Classic Catalog</a>
+          </div>
+          
+        </div>  <!-- end of Classic catalog -->
+        
+        <br>
+
+<!-- Single block of html -->
+  <div class="html-block">
+<p style="display:inline;"><a href="/researchport"><img alt="research port"  src="/binaries/content/gallery/public/common/research-port.png" style="padding-top: 10px; width:130px"/></a><span><a href="/researchport">Where's Research Port?</a></span></p>  </div>
+
+      </div>  <!-- End of Get started tab --> 
+      
+      <!-- Database Tab -->
+      <div class="tab-pane fade in" id="databases" >
+
+
+ <div id="search-navigation">
+     Database name starts with:
+     <div id="db-search" class="db-az">
+
+      <a class="active" href="/dbfinder/list/facet/initial/A?query=">A</a>
+      <a class="active" href="/dbfinder/list/facet/initial/B?query=">B</a>
+      <a class="active" href="/dbfinder/list/facet/initial/C?query=">C</a>
+      <a class="active" href="/dbfinder/list/facet/initial/D?query=">D</a>
+      <a class="active" href="/dbfinder/list/facet/initial/E?query=">E</a>
+      <a class="active" href="/dbfinder/list/facet/initial/F?query=">F</a>
+      <a class="active" href="/dbfinder/list/facet/initial/G?query=">G</a>
+      <a class="active" href="/dbfinder/list/facet/initial/H?query=">H</a>
+      <a class="active" href="/dbfinder/list/facet/initial/I?query=">I</a>
+      <a class="active" href="/dbfinder/list/facet/initial/J?query=">J</a>
+      <a class="active" href="/dbfinder/list/facet/initial/K?query=">K</a>
+      <a class="active" href="/dbfinder/list/facet/initial/L?query=">L</a>
+      <a class="active" href="/dbfinder/list/facet/initial/M?query=">M</a>
+      <a class="active" href="/dbfinder/list/facet/initial/N?query=">N</a>
+      <a class="active" href="/dbfinder/list/facet/initial/O?query=">O</a>
+      <a class="active" href="/dbfinder/list/facet/initial/P?query=">P</a>
+      <a class="active" href="/dbfinder/list/facet/initial/Q?query=">Q</a>
+      <a class="active" href="/dbfinder/list/facet/initial/R?query=">R</a>
+      <a class="active" href="/dbfinder/list/facet/initial/S?query=">S</a>
+      <a class="active" href="/dbfinder/list/facet/initial/T?query=">T</a>
+      <a class="active" href="/dbfinder/list/facet/initial/U?query=">U</a>
+      <a class="active" href="/dbfinder/list/facet/initial/V?query=">V</a>
+      <a class="active" href="/dbfinder/list/facet/initial/W?query=">W</a>
+      <span class="font-gray">X</span>
+      <span class="font-gray">Y</span>
+      <a class="active" href="/dbfinder/list/facet/initial/Z?query=">Z</a>
+  <a class="active" href="/dbfinder/list?query=">All</a>
+     </div>
+     <form id="search-navigation-form" action="/dbfinder/list" method="get" class="db-form form-inline">
+            <div class="form-group">
+              <label class="sr-only">Query</label>
+              <input class="form-control" type="text"
+                     title="Find Databases ..." value=""
+                     placeholder="Find Databases ..."
+                     name="query" id="databasesquery"/>
+            </div>
+	            <div class="form-group">
+	              <label class="sr-only">Query Scope</label>                  
+	              <select name="queryScope" class="form-control"> 
+	                <option value="all"  > All Fields</option>
+	                <option value="tle"  >Title</option>
+	                <option value="vdp"  >Vendor/Publisher</option>
+	              </select>
+	            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-sm btn-default" title="Search" alt="Search">Search</button>
+            </div>
+     </form>          
+     	<br>
+
+<!-- Single block of html -->
+  <div class="html-block">
+<p><a href="/dbfinder">Browse Database by Subject Category</a></p>
+
+<p><span class="display:inline"><a href="/researchport"><img alt="research port"  src="/binaries/content/gallery/public/common/research-port.png" style="padding-top: 10px; width:130px"/></a></span><span><a href="/researchport">Where's Research Port?</a></span></p>  </div>
+</div>      </div>  <!-- end of database tab -->
+    </div>  <!-- end of tab content -->
+  </div>    </div>
+  </div>
+  <!-- 2nd column: GIVING, action zone -->
+  <div class="give-now">  
+    <span class="btn btn-xs btn-default rounded">
+    	<a href="http://giving.umd.edu/giving/showSchool.php?name=libraries" target="_blank">Give Now</a>
+    </span>
+  </div>
+</div>
+    </div>
+      
+
+    <div class="row">
+
+
+<!-- Available Now -->
+<div class="col-md-7 col-sm-7">
+  <div class="margin-top-20">
+  	<div class="headline">
+    	<h2 class="heading-sm">Available Now</h2>
+  	</div> 
+
+  </div>
+<div id="/_hn:component-rendering%7Cr72_r1_r1_r2_r1" style="display:none;" class="c276611763Async"></div><!-- End Available Now -->                 
+</div>
+<!-- Quick Links -->
+<div class="col-md-5 col-sm-5">
+
+
+
+<div class="magazine-sb-categories margin-top-20 margin-bottom-40 ">
+<div class="headline">
+<h2 class="heading-sm">Useful Links</h2>
+</div>
+
+<div class="row">
+<ul class="list-unstyled col-xs-6">
+	<li><a href="/services/copying-and-printing/home"  onclick="ga('send', 'event', 'navigation', 'quick links', 'copy');">Copy, Print, and Scan</a></li>
+	<li><a href="/access/ill"  onclick="ga('send', 'event', 'navigation', 'quick links', 'ILL');">Interlibrary Loan &amp; UBorrow</a></li>
+	<li><a href="http://lib.guides.umd.edu/" onclick="ga('send', 'event', 'navigation', 'quick links', 'lib guides');" target="_blank">Research Guides</a></li>
+</ul>
+
+<ul class="list-unstyled col-xs-6">
+	<li><a href="/hr/employment-opportunities/home"  onclick="ga('send', 'event', 'navigation', 'quick links', 'jobs');">Jobs</a></li>
+	<li><a href="/access/top-fifty-textbooks"  onclick="ga('send', 'event', 'navigation', 'quick links', 'top 50');">Top 50 Textbooks </a></li>
+	<li><a href="/access/fines"  onclick="ga('send', 'event', 'navigation', 'quick links', 'billing');">Billing &amp; Fines</a></li>
+</ul>
+</div>
+</div>
+
+</div>     
+<!-- End Quick Links -->
+    </div>
+      
+
+    <div class="row">
+
+<!-- News slider column -->
+<div class="col-md-7"> 
+  <!-- News Slider -->
+  <div class="carousel slide carousel-v1 margin-bottom-40" id="newsCarousel" data-ride="carousel">
+   
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#newsCarousel" data-slide-to="0" class=" active"></li>      
+        <li data-target="#newsCarousel" data-slide-to="1" class=""></li>      
+        <li data-target="#newsCarousel" data-slide-to="2" class=""></li>      
+    </ol> <!-- End of Indicators -->
+    
+     <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <a href="http://www.lib.umd.edu/plantpatents" target="_blank"><img alt="Plant Patents" src="/binaries/content/gallery/public/news/2016/strawberry.jpg"></a>
+            <div class="carousel-caption">
+              <p><b>PATENTLY PERFECT</b>&nbsp&nbsp Did you know plants have patents? A new UMD database includes color images and links to the U.S. Patent and Trademark Office.</p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="https://umaryland.worldcat.org/profiles/thackman@umd.edu/lists/3099224" target="_blank"><img alt="Summer Reading" src="/binaries/content/gallery/public/news/2016/mallreader3.jpg"></a>
+            <div class="carousel-caption">
+              <p><b>READ FOR FUN</b>&nbsp&nbsp Summer is here! Looking for some lighter fare? Click to view a selection of graphic novels or visit the McKeldin Library lobby to find current bestsellers.</p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="http://www.lib.umd.edu/alice150" target="_blank"><img alt="Online Exhibition of Alice's Adventures in Wonderland" src="/binaries/content/gallery/public/news/2016/fallingalicecloud3.jpg"></a>
+            <div class="carousel-caption">
+              <p><b>FALLING FOR ALICE</b>&nbsp&nbsp View an online exhibition celebrating the 150th anniversary of the publication of Lewis Carroll's timeless classic Alice in Wonderland</p>
+            </div>
+          </div>
+    </div>
+    
+
+  <!-- nav buttons -->
+  <div class="carousel-arrow">
+    <a data-slide="prev" href="#newsCarousel" class="left carousel-control">
+      <i class="fa fa-angle-left"></i>
+    </a>
+    <a data-slide="next" href="#newsCarousel" class="right carousel-control">
+      <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+  </div>                
+</div> 
+<!-- End News slider column -->
+
+<!-- News headlines -->
+
+
+<div class="col-md-5 profile">
+  <!-- News headlines content -->
+  <div class="panel panel-profile profile-body">
+    <div class="panel-heading overflow-h">
+      <h2 class="panel-title pull-left">Library News &amp; Events</h2>
+      <a href="/news" class="btn-u btn-u-dark btn-u-xs pull-right">View All</a>
+    </div>
+    <div class="panel-body no-padding" data-mcs-theme="minimal-dark">
+        <div class="comment">
+          <a href="/news/2016/05/epsl" target="_self">
+            <img class="rounded-x" src="/binaries/thumbnail/content/gallery/public/news/generic1.jpg" alt="EPSL will reopen Tuesday, July 5">
+          </a>
+          <div class="overflow-h">
+            <a href="/news/2016/05/epsl" target="_self">EPSL will reopen Tuesday, July 5</a>
+            <p>The Engineering and Physical Sciences Library, which since May has been temporarily closed for renovations, is scheduled to reopen in early July.</p>
+          </div>
+        </div>
+        <div class="comment">
+          <a href="http://lyndatraining.umd.edu/" target="_blank">
+            <img class="rounded-x" src="/binaries/thumbnail/content/gallery/public/news/2014/lynda.jpg" alt="Learn something new">
+          </a>
+          <div class="overflow-h">
+            <a href="http://lyndatraining.umd.edu/" target="_blank">Learn something new</a>
+            <p>Teach yourself business, creative or technology skills on your own time. Take advantage of online tutorials presented by experts.</p>
+          </div>
+        </div>
+      <!-- Extra links to calendar and RSS feed -->
+      <div class="pull-right news-events">
+        <a href="/news/feed"><img align="middle" alt="RSS" src="/images/news_feed.png"></a>
+        <a href="/news/feed">RSS</a> |
+        <a href="/calendar">Calendar of Events</a>
+      </div>
+    </div>
+  </div>
+  <!-- End of News headlines content -->
+</div>
+
+<!-- End News headlines -->
+    </div>
+      
+
+    <div class="row">
+
+
+    </div>
+      
+      
+</div> 
+<!--== End Container, main content area ====-->
+
+
+<!--=== Footer Version 1 ===-->
+<div class="footer-v1 margin-top-20">
+
+
+
+<div class="footer">
+<div class="container">
+<div class="row"><!-- About -->
+<div class="col-md-3 md-margin-bottom-40">
+<div class="headline">
+<h2>Our Libraries</h2>
+</div>
+
+<ul class="list-unstyled link-list">
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'mck');" href="/mckeldin">McKeldin Library (Main Library) </a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'arch');" href="/architecture">Architecture Library </a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'art');" href="/art">Art Library </a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'epsl');" href="/epsl">Engineering &amp; Physical Science Library </a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'hornbake');" href="/hornbake">Hornbake Library</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'mspal');" href="/mspal">Michelle Smith Performing Arts Library </a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'priddy');" href="http://shadygrove.umd.edu/library" target="_blank">Priddy Library (Universities at Shady Grove) </a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'severn');" href="/severn"  target="_blank">Severn Library</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'chem');" href="/chemistry">White Memorial Chemistry Library </a></li>
+</ul>
+</div>
+<!--/col-md-3 --><!-- End About --><!-- Latest -->
+
+<div class="col-md-3 md-margin-bottom-40">
+<div class="headline">
+<h2>I am a...</h2>
+</div>
+
+<ul class="list-unstyled link-list">
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'I am under-grad');" href="/tl/welcome">Undergraduate </a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'I am rc');" href="/rc">Researcher</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'I am alumna');" href="/alumniandfriends">Alumnus/Alumna </a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'I am visitor');" href="/about/visitors">Visitor/Community Member</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'I am friend');" href="/alumniandfriends/friends-of-the-libraries">Friend of the Libraries</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'I am disable');" href="/services/disabilities">Patron with Disabilities</a></li>
+</ul>
+</div>
+<!--/col-md-3--><!-- End Latest --><!-- Link List -->
+
+<div class="col-md-3 md-margin-bottom-40">
+<div class="headline">
+<h2>Useful Links</h2>
+</div>
+
+<ul class="list-unstyled link-list">
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'computer ava');" href="/services/library-computer-availability">Computer Availability</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'copy');" href="/services/copying-and-printing/home">Copy, Print, and Scan</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'equipment loan');" href="/tlc/equipment">Equipment for Loan</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'ILL');" href="/access/ill">Interlibrary Loan &amp; UBorrow</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'lib guides');" href="http://lib.guides.umd.edu/" target="_blank">Research Guides</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'room-res');" href="/services/reserve-a-room">Room Reservations </a></li>
+</ul>
+</div>
+<!--/col-md-3--><!-- End Link List --><!-- Address -->
+
+<div class="col-md-3 map-img md-margin-bottom-40">
+<div class="headline">
+<h2>Contact Us</h2>
+</div>
+
+<ul class="list-unstyled link-list">
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'ask us');" href="http://umd.libanswers.com/" target="_blank">Ask Us!</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'directions');" href="/mckeldin/directions">Directions</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'hours');" href="http://www.lib.umd.edu/hours">Hours</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'jobs');" href="/hr/employment-opportunities/home">Jobs</a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'phone');" href="/about/contact-us/phone">Phone Numbers </a></li>
+	<li><a onclick="ga('send', 'event', 'navigation', 'footer', 'suggestions');" href="/suggestions">Suggestions</a></li>
+</ul>
+
+<address class="md-margin-bottom-40">Address: McKeldin Library, 7649 Library Lane, College Park, MD 20742-7011<br />
+Phone: <a href="tel:+301-405-0800">(301) 405-0800</a></address>
+</div>
+<!--/col-md-3--><!-- End Address --></div>
+</div>
+<!--/footer--></div>
+
+<div class="copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p>© 2016 University Libraries, University of Maryland.</p>
+</div>
+
+<div class="col-md-4">
+<p class="footer-socials"><a href="/about/privacy">Privacy Policy</a> | <a href="http://giving.umd.edu/giving/showSchool.php?name=libraries" onclick="ga('send', 'event', 'navigation', 'footer', 'give now');">Give Now</a> | <a href="/feedback">Website Feedback</a></p>
+</div>
+
+<div class="col-md-4">
+<ul class="footer-socials list-inline">
+	<li><a class="tooltips" data-original-title="Twitter" data-placement="top" data-toggle="tooltip" href="/about/connect"><i class="fa fa-twitter fa-lg"></i> </a></li>
+	<li><a class="tooltips" data-original-title="Instagram" data-placement="top" data-toggle="tooltip" href="/about/connect"><i class="fa fa-instagram fa-lg"></i> </a></li>
+	<li><a class="tooltips" data-original-title="Facebook" data-placement="top" data-toggle="tooltip" href="/about/connect"><i class="fa fa-facebook fa-lg"></i> </a></li>
+	<li><a class="tooltips" data-original-title="YouTube" data-placement="top" data-toggle="tooltip" href="/about/connect"><i class="fa fa-youtube-play fa-lg"></i> </a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>     
+<!--=== End Footer Version 1 ===-->
+</div><!--/wrapper-->
+
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="//www.lib.umd.edu/unify-1.7/assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="//www.lib.umd.edu/unify-1.7/assets/plugins/smoothScroll.js"></script>
+
+<!-- Hours Page -->           
+<script type="text/javascript" src="//www.lib.umd.edu/unify-1.7/assets/js/app.js"></script>
+
+<!-- JS Customization -->
+<script type="text/javascript">
+//<![CDATA[
+a276611763.b276611763.AsyncPage.load();
+//]]>
+</script>
+<script src="/js/rwd/search.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+initSearch();
+//]]>
+</script>
+
+<script src="//s3.amazonaws.com/umdheader.umd.edu/app/js/main.min.js"></script>
+
+<script> umdHeader.init({ news: false }); </script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        $('[data-toggle="tooltip"]').tooltip();
+		        });
+    /**
+     * LIBWEB-2704 Open the UMD header in collapsed mode by default
+     */
+    window.onload = function(){
+      $('body').css('paddingTop', '31px');
+      $('#umh-cont').addClass('collapsed');
+      $('#umh-main').hide();
+    };
+</script>
+<!--[if lt IE 9]>
+    <script src="//www.lib.umd.edu/unify-1.7/assets/plugins/respond.js"></script>
+    <script src="//www.lib.umd.edu/unify-1.7/assets/plugins/html5shiv.js"></script>
+    <script src="//www.lib.umd.edu/unify-1.7/assets/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
+
+</body>
+</html> 

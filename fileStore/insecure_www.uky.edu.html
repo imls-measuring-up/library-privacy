@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+	<link rel="icon" type="image/ico" href="favicon.ico"/>
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link href="webfonts/ss-pika.css" rel="stylesheet" />	
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+
+	<!-- Travel Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="css/tab.css" type="text/css" />
+	<link rel="stylesheet" href="css/datepicker.css" type="text/css" />
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	
+
+    <!--[if lt IE 9]>
+		<script src="js/respond.js"></script>
+	<![endif]-->
+	
+	<link rel="stylesheet" href="css/colors.php?color=005dab" type="text/css" />
+	<link rel="stylesheet" href="css/uk.css" type="text/css" />
+
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script> 
+	<script type="text/javascript" src="js/plugins.js"></script>
+	
+
+    <script src="//use.typekit.net/fgf8yzr.js"></script>
+    <!-- Chat Code. Place this script as near to the end of your BODY as possible. -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-4968268-10']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<script type="text/javascript"> 
+  	(function() {
+    	var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
+    	x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "us.libraryh3lp.com/js/libraryh3lp.js?multi,poll";    
+    	var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);    	
+  	})();
+	</script>
+	<script type="text/javascript">		
+		function styleChat() {
+			document.getElementById('chat_icon').style.color='#005dab';
+			document.getElementById('chat_icon_link').style.color='#005dab';
+		}
+	</script>
+	<!-- Script that converts the query string into dlSearch.do valid parameter -->
+	<script type="text/javascript">
+		function searchPrimo() {
+			document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+			document.forms["searchForm"].submit();
+		}
+		function searchPrimoMobile() {
+			document.getElementById("primoQueryMobile").value = "any,contains," + document.getElementById("primoQueryTempMobile").value.replace(/[,]/g, " ");
+			document.forms["searchFormMobile"].submit();
+		}
+		function searchPrimoCatalog() {
+			document.getElementById("primoQueryCatalog").value = "any,contains," + document.getElementById("primoQueryTempCatalog").value.replace(/[,]/g, " ");
+			document.forms["searchFormCatalog"].submit();
+		}
+		function searchPrimoCatalogMobile() {
+			document.getElementById("primoQueryCatalogMobile").value = "any,contains," + document.getElementById("primoQueryTempCatalogMobile").value.replace(/[,]/g, " ");
+			document.forms["searchFormCatalogMobile"].submit();
+		}		
+		function searchPrimoLocal() {
+			document.getElementById("primoQueryLocal").value = "any,contains," + document.getElementById("primoQueryTempLocal").value.replace(/[,]/g, " ");
+			document.forms["searchFormLocal"].submit();
+		}
+		function searchPrimoLocalMobile() {
+			document.getElementById("primoQueryLocalMobile").value = "any,contains," + document.getElementById("primoQueryTempLocalMobile").value.replace(/[,]/g, " ");
+			document.forms["searchFormLocalMobile"].submit();
+		}
+		function searchPrimoJournal() {			
+			document.forms["searchFormJournal"].submit();
+		}
+		function searchPrimoJournalMobile() {			
+			document.forms["searchFormJournalMobile"].submit();
+		}								
+										
+	</script>
+	<script>
+	$(document).ready(function(){
+		$("#close_plan_b").click(function(){
+	    	$("plan_b").hide();
+	    	document.getElementById("plan_b").style.display = 'none';
+		});
+
+		$("#show_plan_b").click(function(){
+	    	$("plan_b").show();
+	    	document.getElementById("plan_b").style.display = 'block';
+		});  
+	});	    
+	/*$(document).ready(function() {
+		  // If the 'hide cookie is not set we show the message
+		  if (!readCookie('hide_plan_b')) {
+		    $('#popupDiv').show();
+		    document.getElementById("popupDiv").style.display = 'block';
+		  } else {
+			  document.getElementById("popupDiv").style.display = 'none';
+		  }
+
+		  // Add the event that closes the popup and sets the cookie that tells us to
+		  // not show it again until one day has passed.
+		  $('#close').click(function() {
+		    $('#popupDiv').hide();
+		    createCookie('hide_plan_b', true, 1)
+		    return false;
+		  });
+
+		});
+
+		// ---
+		// And some generic cookie logic
+		// ---
+		function createCookie(name,value,days) {
+		  if (days) {
+		    var date = new Date();
+		    date.setTime(date.getTime()+(days*1*60*60*1000));
+		    var expires = "; expires="+date.toGMTString();
+		  }
+		  else var expires = "";
+		  document.cookie = name+"="+value+expires+"; path=/";
+		}
+
+		function readCookie(name) {
+		  var nameEQ = name + "=";
+		  var ca = document.cookie.split(';');
+		  for(var i=0;i < ca.length;i++) {
+		    var c = ca[i];
+		    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		  }
+		  return null;
+		}
+
+		function eraseCookie(name) {
+		  createCookie(name,"",-1);
+		}*/
+		</script>		
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<!-- Document Title
+	============================================= -->	
+	<title>Homepage of  University of Kentucky Libraries</title>
+</head><body class="stretched no-transition" onload="styleChat()" >
+<!-- <div id="popupDiv">
+   Welcome to our new website and our new search! Please <a title="How are we doing? Give us your Feedback" onclick="window.open('feedback.php','welcome','width=500,height=530,menubar=no,status=yes,location=yes,toolbar=no,scrollbars=yes')" href="javascript:void(0)">let us know what you think</a>. If you have trouble finding anything you need, just <a href="Ask">Ask Us</a>. <br /> The <a target="_blank" href="http://libwasrv3.uky.edu/">old site</a> will be available until Feb. 19. <a href="JavaScript:void(0)" id="close" title="(will not show again for 72 hours, sets a cookie)">[close]</a>
+</div>
+ -->
+<!-- Our Plan B DIV -->
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header dark" data-sticky-class="not-dark" data-responsive-class="not-dark">
+			<div id="header-wrap">
+				<div id="top-bar" class="transparent-topbar dark">
+					<div class="container clearfix">
+						<div class="row">
+							<div class="col-sm-2 fleft nobottommargin clearfix mast-link">
+								<a href="http://www.uky.edu/" onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'UK Home']);"><strong>UK HOME</strong></a>
+							</div>
+							<div class="col-sm-10 fright col_last clearfix nobottommargin">
+								<!-- Top Links
+								============================================= -->
+								<div class="top-links fright">
+									<ul>
+										<li id="top-search">
+										<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+			                            <form action="http://cse.google.com/cse/publicurl" method="GET">
+			                            	<input type="hidden" name="cx" value="011074635507661051225:WMX1540519659">			                			                          
+			                                <input type="text" name="q" class="form-control" value="" placeholder="Search">
+			                            </form>
+										</li>
+																				<li><a onclick="_gaq.push(['_trackEvent', 'Internal Links', 'Click', 'Ask Us']);"  href="Ask" title="Ask Us for help"><i class="icon-ask"><img src="images/ask.png" /></i><span class="hidden-xs">&nbsp;ASK US</span></a></li>
+																				<!--  CHAT PIECE -->
+																				
+										<li class="libraryh3lp" style="background-color: #fff; color: #005dab; display: none;" id="chat_icon" jid="youngreference@libraryh3lp.com"  onmouseover="this.style.backgroundColor='#383838'; this.style.color='#fff'" onmouseout="this.style.backgroundColor='#fff'; this.style.color='#005dab'"><a id="chat_icon_link" onmouseover="this.style.backgroundColor='#383838'; this.style.color='#fff'" onmouseout="this.style.backgroundColor='#fff'; this.style.color='#005dab'" title="Live Chat is Available" href="#" onclick="window.open('https://us.libraryh3lp.com/chat/youngreference@libraryh3lp.com','chat', 'resizable=1,width=320,height=200'); return false;"><i class="icon-comment-alt"></i><span class="hidden-xs">&nbsp;CHAT</span></a></li>
+																				<li><a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'IKD My Account']);" href="http://libraries.uky.edu/MyAccount"><i class="icon-guest"></i><span class="hidden-xs">&nbsp;MY ACCOUNT</span></a></li>
+									</ul>
+								</div><!-- .top-links end -->								 								
+							</div>
+						</div>
+					</div>
+				</div><!-- #top-bar end -->
+ 
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="/" class="standard-logo" data-dark-logo="images/libraries-white.png"><img src="images/libraries-white.png" alt="UK Libraries Logo"></a>
+						<a href="/" class="retina-logo" data-dark-logo="images/libraries-white.png"><img src="images/libraries-white.png" alt="UK Libraries Logo"></a>
+					</div><!-- #logo end -->
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu" class="style-4">
+						<ul>
+							<li><a href="CampusLibraries" title="Links for All UK Libraries locations" data-toggle="tooltip" data-placement="bottom"><div>Campus Libraries</div></a></li>
+							<!-- <li><a href="#"><div>Research & Collections</div></a></li>  -->
+														<li><a href="Services" title="UK Libraries Services" data-toggle="tooltip" data-placement="bottom"><div>Services</div></a></li>
+																					<li><a href="ILL" title="UK Libraries Interlibrary Loan" data-toggle="tooltip" data-placement="bottom"><div>Interlibrary Loan</div></a></li>
+														<li><a href="Access" title="Information about Using Online Resources at UK" data-toggle="tooltip" data-placement="bottom"><div>E-Resource Access</div></a></li>
+														<li><a href="Hours" title="Hours for all UK Libraries Locations" data-toggle="tooltip" data-placement="bottom"><div>Hours</div></a></li>
+													</ul>
+					</nav><!-- #primary-menu end -->
+				</div>
+			</div>
+		</header><!-- #header end -->
+		
+ 
+		<section id="slider" class="slider-parallax swiper_wrapper clearfix">
+			<div class="fslider" data-speed="3000" data-pause="7500" data-animation="fade" data-arrows="false" data-pagi="false" style="position: absolute; width: 100%;">
+				<div class="flexslider">
+					<div class="slider-wrap">
+						<div class="slide full-screen" style="background: url('images/slider/bg-header.jpg') top center;width: 100%; background-size: 100%!important;"></div>
+					</div>
+				</div>
+			</div>
+		
+
+			<div id="travel-slider-overlay">
+				<div class="vertical-middle" style="top:65%!important;">
+					<div class="container clearfix">
+						<div class="tabs travel-organiser-tabs clearfix">
+							<ul class="tab-nav clearfix">
+								<li><a href="#tab-search"><span class="hidden-xs">SEARCH</span></a></li>
+								<li><a href="#tab-catalog"><span class="hidden-xs">LIBRARY CATALOG</span></a></li>
+								<li><a href="#tab-journals"><span class="hidden-xs">E-JOURNALS</span></a></li>
+								<li><a href="#tab-databases"><span class="hidden-xs">DATABASES</span></a></li>
+								<li><a href="#tab-guides"><span class="hidden-xs">RESEARCH GUIDES</span></a></li>
+								<li><a href="#tab-local"><span class="hidden-xs">LOCAL COLLECTIONS</span></a></li>
+							</ul>
+							<div class="tab-container">
+								<div class="tab-content clearfix" id="tab-search">
+									<div class="heading-block nobottomborder bottommargin-sm clearfix">
+										<h4 class="fleft">SEARCH</h4>
+									</div>									
+									<form class="nobotommargin" id="simple" name="searchForm" method="get" target="_self" action="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()">
+										<!-- Customizable Parameters -->
+										<input type="hidden" name="institution" value="UKY">
+										<input type="hidden" name="vid" value="UKY">
+										<!-- input type="hidden" name="tab" value="<TAB CODE>" -->
+										<input type="hidden" name="search_scope" value="default_scope">
+										<input type="hidden" name="mode" value="Basic">
+
+										<!-- Fixed parameters -->
+										<input type="hidden" name="displayMode" value="full">
+										<input type="hidden" name="bulkSize" value="10">
+										<input type="hidden" name="highlight" value="true">
+										<input type="hidden" name="dum" value="true">
+										<input type="hidden" name="query" id="primoQuery">
+										<input type="hidden" name="displayField" value="all">
+
+										<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+										<input type="hidden" name="pcAvailabiltyMode" value="false">
+										
+										<div class="row">
+											<div class="col-sm-9 col-md-9 col-xs-12 bottommargin-sm">
+												<input id="primoQueryTemp" type="text" value="" class="sm-form-control" placeholder="Search InfoKat Discovery">
+											</div>
+											<div class="col-sm-3 col-md-3 col-xs-12 bottommargin-sm">
+												<button onclick="searchPrimo()" class="button button-3d nomargin rightmargin-sm">Search &rsaquo;</button>
+											</div>
+										</div>
+										<div class="row searchopt">
+											<div class="col-sm-8 col-md-8 col-xs-12 nobottommargin">
+												<a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'IKD Advanced Search']);" href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&ct=AdvancedSearch&vid=UKY" title="InfoKat Discovery Advanced Search">Advanced Search</a>
+												<!-- <form action="">
+													<input type="radio" name="search" value="onesearch">&nbsp;One Search&nbsp;&nbsp;&nbsp;
+													<input type="radio" name="search" value="classicsearch">&nbsp;Classic Search
+												</form> -->											
+											</div>
+											
+											 <div class="col-sm-4 col-md-4 col-xs-12 nobottommargin">
+											 	&nbsp;
+											 </div>
+										</div>
+									</form>
+									<div style="position: absolute; right: 12px; bottom: 5px;"><a class="ss-help" data-toggle="tooltip" data-placement="top" title="What's this searching?" href="http://libguides.uky.edu/c.php?g=457383&p=3126835"></a></div>
+								</div>
+								<div class="tab-content clearfix" id="tab-catalog">
+									<div class="heading-block nobottomborder bottommargin-sm clearfix">
+										<h4 class="fleft">LIBRARY CATALOG</h4>
+									</div>
+									<form action="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do" id="simpleCatalog" name="searchFormCatalog" method="get" class="nobottommargin" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoCatalog()">
+										<!-- Customizable Parameters -->
+										<input type="hidden" name="institution" value="UKY">
+										<input type="hidden" name="vid" value="UKY">
+										<input type="hidden" name="tab" value="alma_tab">
+										<input type="hidden" name="search_scope" value="alma_scope">
+										<input type="hidden" name="mode" value="Basic">
+
+										<!-- Fixed parameters -->
+										<input type="hidden" name="displayMode" value="full">
+										<input type="hidden" name="bulkSize" value="20">
+										<input type="hidden" name="highlight" value="true">
+										<input type="hidden" name="dum" value="true">
+										<input type="hidden" name="query" id="primoQueryCatalog">
+										<input type="hidden" name="displayField" value="all">
+										
+										<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+										<input type="hidden" name="pcAvailabiltyMode" value="true">
+									
+										<div class="row">
+											<div class="col-sm-9 col-md-9 col-xs-12 bottommargin-sm">
+												<input id="primoQueryTempCatalog" type="text" value="" class="sm-form-control" placeholder="Search UK Libraries holdings">
+											</div>
+											<div class="col-sm-3 col-md-3 col-xs-12 bottommargin-sm">
+												<button onclick="searchPrimoCatalog()" class="button button-3d nomargin rightmargin-sm">Search &rsaquo;</button>
+											</div>
+										</div>
+										<div class="row searchopt">
+											<div class="col-sm-8 col-md-8 col-xs-12 nobottommargin">
+												<a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'IKD Library Catalog Advanced Search']);" href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&ct=AdvancedSearch&vid=UKY&tab=alma_tab&dscnt=0&dstmp=1454006534229" title="InfoKat Discovery Library Catalog Advanced Search">Advanced Search</a>												
+											</div>
+											<div class="col-sm-4 col-md-4 col-xs-12 nobottommargin">
+												&nbsp;
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="tab-content clearfix" id="tab-journals">
+									<div class="heading-block nobottomborder bottommargin-sm clearfix">
+										<h4 class="fleft">E-JOURNALS</h4>
+									</div>
+									
+									<form id="simpleJournal" name="searchFormJournal" method="get" target="_self" action="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoJournal()">
+										<!-- Customizable Parameters -->
+										<!-- <input type="hidden" name="institution" value="UKY">
+										<input type="hidden" name="vid" value="UKY">
+										<input type="hidden" name="tab" value="alma_tab">
+										<input type="hidden" name="search_scope" value="alma_scope">
+										<input type="hidden" name="mode" value="Basic">
+										<input type="hidden" name="indx" value="1">
+										<input type="hidden" name="query" value="facet_atoz%2cexact%2cA">
+										<input type="hidden" name="dym" value="false">
+										<input type="hidden" name="loc" value="local%2cscope%3a(AZUKY)">
+										<input type="hidden" name="fn" value="goAlmaAz">
+										<input type="hidden" name="sortField" value="stitle">
+										<input type="hidden" name="almaAzSearch" value="true">
+										<input type="hidden" name="azSearch" value="true">
+										<input type="hidden" name="selectedAzAlmaLetter" value="A">
+										<input type="hidden" name="bulkSize" value="30"> -->
+
+										<!-- Fixed parameters -->
+										<!-- <input type="hidden" name="displayMode" value="full">
+										<input type="hidden" name="bulkSize" value="30">
+										<input type="hidden" name="highlight" value="true">
+										<input type="hidden" name="dum" value="true">
+										<input type="hidden" name="query" id="primoQueryJournal">
+										<input type="hidden" name="displayField" value="all">-->
+										
+										<input type="hidden" name="institution" value="UKY" />
+										<input type="hidden" name="vid" value="UKY" />
+										<input type="hidden" name="indx" value="1" />
+										<input type="hidden" name="bulkSize" value="30" />
+										<input type="hidden" name="dym" value="false" />
+										<input type="hidden" name="loc" value="local,scope:(AZUKY)" />
+										<input type="hidden" name="fn" value="goAlmaAz" />
+										<input type="hidden" name="almaAzSearch" value="true" />
+										<input id="initialSearch" type="hidden" value="true" name="initialSearch">
+
+										<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+										<!--  <input type="hidden" name="pcAvailabiltyMode" value="true">-->
+
+										
+										<div class="row">
+											<div class="col-sm-9 col-md-9 col-xs-12 bottommargin-sm">
+												<input name="vl(freeText0)" id="search_field" type="text" value="" class="sm-form-control" placeholder="Search for E-Journals by Title">
+											</div>
+											<div class="col-sm-3 col-md-3 col-xs-12 bottommargin-sm">
+												<button onclick="searchPrimoJournal()" class="button button-3d nomargin rightmargin-sm">Search &rsaquo;</button>
+											</div>
+										</div>
+										<div class="row searchopt">
+											<div class="col-sm-8 col-md-8 col-xs-12 nobottommargin">
+												<label title="Choose a letter to browse">Browse by Letter:</label><br />
+<!-- taglibsIncludeAll.jspf end -->
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2c0-9&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=0-9&amp;vid=UKY" title="show journals starting with 0-9">
+				0-9</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cA&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=A&amp;vid=UKY" title="show journals starting with A">
+				A</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cB&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=B&amp;vid=UKY" title="show journals starting with B">
+				B</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cC&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=C&amp;vid=UKY" title="show journals starting with C">
+				C</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cD&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=D&amp;vid=UKY" title="show journals starting with D">
+				D</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cE&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=E&amp;vid=UKY" title="show journals starting with E">
+				E</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cF&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=F&amp;vid=UKY" title="show journals starting with F">
+				F</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cG&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=G&amp;vid=UKY" title="show journals starting with G">
+				G</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cH&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=H&amp;vid=UKY" title="show journals starting with H">
+				H</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cI&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=I&amp;vid=UKY" title="show journals starting with I">
+				I</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cJ&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=J&amp;vid=UKY" title="show journals starting with J">
+				J</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cK&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=K&amp;vid=UKY" title="show journals starting with K">
+				K</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cL&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=L&amp;vid=UKY" title="show journals starting with L">
+				L</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cM&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=M&amp;vid=UKY" title="show journals starting with M">
+				M</a>
+			<a href="dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cN&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=N&amp;vid=UKY" title="show journals starting with N">
+				N</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cO&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=O&amp;vid=UKY" title="show journals starting with O">
+				O</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cP&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=P&amp;vid=UKY" title="show journals starting with P">
+				P</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cQ&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=Q&amp;vid=UKY" title="show journals starting with Q">
+				Q</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cR&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=R&amp;vid=UKY" title="show journals starting with R">
+				R</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cS&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=S&amp;vid=UKY" title="show journals starting with S">
+				S</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cT&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=T&amp;vid=UKY" title="show journals starting with T">
+				T</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cU&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=U&amp;vid=UKY" title="show journals starting with U">
+				U</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cV&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=V&amp;vid=UKY" title="show journals starting with V">
+				V</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cW&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=W&amp;vid=UKY" title="show journals starting with W">
+				W</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cX&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=X&amp;vid=UKY" title="show journals starting with X">
+				X</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cY&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=Y&amp;vid=UKY" title="show journals starting with Y">
+				Y</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cZ&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=Z&amp;vid=UKY" title="show journals starting with Z">
+				Z</a>
+			<a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cOthers&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=Others&amp;vid=UKY" title="show journals starting with Others">
+				Others</a>
+											</div>
+											<div class="col-sm-4 col-md-4 col-xs-12 nobottommargin">												
+												&nbsp;
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="tab-content clearfix" id="tab-databases">
+									<div class="heading-block nobottomborder bottommargin-sm clearfix">
+										<h4 class="fleft">DATABASES</h4>
+									</div>
+									<form action="dbresults_title.php" id="dbsearch_title_form"
+	name="dbsearch_title_form" method="post" class="nobottommargin">
+										<div class="row">
+											<div class="col-sm-9 col-md-9 col-xs-12 bottommargin-sm">
+												<input name="irname" id="irname" type="text" value="" class="sm-form-control" placeholder="Search for Databases by Title">
+											</div>
+											<div class="col-sm-3 col-md-3 col-xs-12 bottommargin-sm">
+												<button class="button button-3d nomargin rightmargin-sm">Search &rsaquo;</button>
+											</div>
+										</div>
+										<div class="row searchopt">
+											<div class="col-sm-8 col-md-8 col-xs-12 nobottommargin">
+											<a href="http://libraries.uky.edu/DBSearch" title="Search Databases by Keyword">Search by keyword</a> - OR -
+											<label title="Choose a letter to browse">Browse by Letter:</label><br />
+											<a href="dbresults.php?llimit=A" class="ABC">A</a> 
+<a href="dbresults.php?llimit=B" class="ABC">B</a> 
+<a href="dbresults.php?llimit=C" class="ABC">C</a>
+<a href="dbresults.php?llimit=D" class="ABC">D</a>
+<a href="dbresults.php?llimit=E" class="ABC">E</a>
+<a href="dbresults.php?llimit=F" class="ABC">F</a>
+<a href="dbresults.php?llimit=G" class="ABC">G</a>
+<a href="dbresults.php?llimit=H" class="ABC">H</a>
+<a href="dbresults.php?llimit=I" class="ABC">I</a>
+<a href="dbresults.php?llimit=J" class="ABC">J</a>
+<a href="dbresults.php?llimit=K" class="ABC">K</a>
+<a href="dbresults.php?llimit=L" class="ABC">L</a>
+<a href="dbresults.php?llimit=M" class="ABC">M</a>
+<a href="dbresults.php?llimit=N" class="ABC">N</a>
+<a href="dbresults.php?llimit=O" class="ABC">O</a>
+<a href="dbresults.php?llimit=P" class="ABC">P</a>
+<a href="dbresults.php?llimit=Q" class="ABC">Q</a>
+<a href="dbresults.php?llimit=R" class="ABC">R</a>
+<a href="dbresults.php?llimit=S" class="ABC">S</a>
+<a href="dbresults.php?llimit=T" class="ABC">T</a>
+<a href="dbresults.php?llimit=U" class="ABC">U</a>
+<a href="dbresults.php?llimit=V" class="ABC">V</a>
+<a href="dbresults.php?llimit=W" class="ABC">W</a>
+<a href="dbresults.php?llimit=X" class="ABC" onClick="return false">X</a> 
+<a href="dbresults.php?llimit=Y" class="ABC">Y</a>
+<a href="dbresults.php?llimit=Z" class="ABC">Z</a>
+											
+												
+											</div>
+											<div class="col-sm-4 col-md-4 col-xs-12 nobottommargin">
+											 <label title="Choose a selected databases and you will be taken there automatically">Selected Databases:</label>
+							
+			
+			
+			<select onchange="if (this.options[this.selectedIndex].value != 'null')	{ window.open(this.options[this.selectedIndex].value,'_top') }">
+			
+			<option value="#">Choose a database...</option>
+											
+				<option value="/lnkr.php?lir_id=4">Academic Search Complete</option>
+											
+				<option value="/lnkr.php?lir_id=5">Access World News...</option>
+											
+				<option value="/lnkr.php?lir_id=551">ARTstor</option>
+											
+				<option value="/lnkr.php?lir_id=86">Business Source Complete</option>
+											
+				<option value="/lnkr.php?lir_id=159">Dissertations and Theses...</option>
+											
+				<option value="/lnkr.php?lir_id=215">E-Journals A-Z</option>
+											
+				<option value="/lnkr.php?lir_id=326">eBook Collection (from...</option>
+											
+				<option value="/lnkr.php?lir_id=164">EBSCOhost</option>
+											
+				<option value="/lnkr.php?lir_id=2046">Explore UK: Rare and Unique...</option>
+											
+				<option value="/lnkr.php?lir_id=2928">FDsys: Federal Digital System</option>
+											
+				<option value="/lnkr.php?lir_id=266">JSTOR</option>
+											
+				<option value="/lnkr.php?lir_id=268">Kentucky Digital Library (KDL)</option>
+											
+				<option value="/lnkr.php?lir_id=274">Kentucky Virtual Library...</option>
+											
+				<option value="/lnkr.php?lir_id=280">Lexington Herald-Leader</option>
+											
+				<option value="/lnkr.php?lir_id=3">LexisNexis Academic</option>
+											
+				<option value="/lnkr.php?lir_id=571">MEDLINE (EBSCOhost)</option>
+											
+				<option value="/lnkr.php?lir_id=724">Merriam-Webster Dictionary</option>
+											
+				<option value="/lnkr.php?lir_id=314">MLA International...</option>
+											
+				<option value="/lnkr.php?lir_id=330">New York Times Historical...</option>
+											
+				<option value="/lnkr.php?lir_id=816">Notable Kentucky African...</option>
+											
+				<option value="/lnkr.php?lir_id=341">NTIS Database (National...</option>
+											
+				<option value="/lnkr.php?lir_id=1074">Opposing Viewpoints</option>
+											
+				<option value="/lnkr.php?lir_id=469">OvidSP</option>
+											
+				<option value="/lnkr.php?lir_id=355">Oxford English Dictionary...</option>
+											
+				<option value="/lnkr.php?lir_id=671">PsycINFO</option>
+											
+				<option value="/lnkr.php?lir_id=389">PubMed (University of...</option>
+											
+				<option value="/lnkr.php?lir_id=2266">Reference Universe</option>
+											
+				<option value="/lnkr.php?lir_id=2949">SPOKE: Louie B. Nunn Center...</option>
+											
+				<option value="/lnkr.php?lir_id=431">Statistical Insight</option>
+											
+				<option value="/lnkr.php?lir_id=3102">UKnowledge: Collections of...</option>
+											
+				<option value="/lnkr.php?lir_id=3300">Wall Street Journal (final...</option>
+											
+				<option value="/lnkr.php?lir_id=465">Wall Street Journal...</option>
+											
+				<option value="/lnkr.php?lir_id=467">Web of Science Core Collection</option>
+											
+				<option value="/lnkr.php?lir_id=482">WorldCat (FirstSearch)</option>
+						</select>											
+													</div>
+										</div>
+									</form>
+								</div>
+								<div class="tab-content clearfix" id="tab-guides">
+									<div class="heading-block nobottomborder bottommargin-sm clearfix">
+										<h4 class="fleft">RESEARCH GUIDES</h4>
+									</div>
+									<form action="http://libguides.uky.edu/srch.php" method="GET" class="nobottommargin">
+										<div class="row">
+											<div class="col-sm-9 col-md-9 col-xs-12 bottommargin-sm">
+												<input id="s-lg-guide-search" name="q" type="text" value="" class="sm-form-control" placeholder="Enter keyword(s)">
+											</div>
+											<div class="col-sm-3 col-md-3 col-xs-12 bottommargin-sm">
+												<button class="button button-3d nomargin rightmargin-sm">Search &rsaquo;</button>
+											</div>
+										</div>
+										<div class="row searchopt">
+											<div class="col-sm-8 col-md-8 col-xs-12 nobottommargin">
+												<a href="http://libguides.uky.edu" title="Browse All Guides">Browse All Guides</a>												
+											</div>
+											<div class="col-sm-4 col-md-4 col-xs-12 nobottommargin">
+												&nbsp;
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="tab-content clearfix" id="tab-local">
+									<div class="heading-block nobottomborder bottommargin-sm clearfix">
+										<h4 class="fleft">LOCAL COLLECTIONS</h4>
+									</div>									
+									<form id="simpleLocal" name="searchFormLocal" method="get" target="_self" action="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoLocal()">
+										<!-- Customizable Parameters -->
+										<input type="hidden" name="institution" value="UKY">
+										<input type="hidden" name="vid" value="UKY">
+										<input type="hidden" name="tab" value="exploreuk_tab">
+										<input type="hidden" name="search_scope" value="exploreuk_scope">
+										<input type="hidden" name="mode" value="Basic">
+
+										<!-- Fixed parameters -->
+										<input type="hidden" name="displayMode" value="full">
+										<input type="hidden" name="bulkSize" value="20">
+										<input type="hidden" name="highlight" value="true">
+										<input type="hidden" name="dum" value="true">
+										<input type="hidden" name="query" id="primoQueryLocal">
+										<input type="hidden" name="displayField" value="all">
+
+										<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+										<input type="hidden" name="pcAvailabiltyMode" value="true">
+									
+										<div class="row">
+											<div class="col-sm-9 col-md-9 col-xs-12 bottommargin-sm">
+												<input id="primoQueryTempLocal" type="text" value="" class="sm-form-control" placeholder="Enter keyword(s)">
+											</div>
+											<div class="col-sm-3 col-md-3 col-xs-12 bottommargin-sm">
+												<button onclick="searchPrimoLocal()" class="button button-3d nomargin rightmargin-sm">Search &rsaquo;</button>
+											</div>
+										</div>
+										<div class="row searchopt">
+											<div class="col-sm-8 col-md-8 col-xs-12 nobottommargin">
+												<!-- <form action="">
+													<input type="radio" name="search" value="onesearch">&nbsp;One Search&nbsp;&nbsp;&nbsp;
+													<input type="radio" name="search" value="classicsearch">&nbsp;Classic Search
+												</form> -->												
+											</div>
+											<div class="col-sm-4 col-md-4 col-xs-12 nobottommargin">
+												&nbsp;
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>		<!-- Mobile search accordion -->
+		
+		<div class="lg-hide" style="background-color:#000;background: url('images/slider/bg-header.jpg') top center;width: 100%; background-size: cover;">
+			<div class="container clearfix">
+				<div class="accordion clearfix">
+					<div class="acctitle">SEARCH</div>
+					<div class="acc_content clearfix">						
+						<form class="nobotommargin" id="simpleMobile" name="searchFormMobile" method="get" target="_self" action="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoMobile()">
+							<!-- Customizable Parameters -->
+							<input type="hidden" name="institution" value="UKY">
+							<input type="hidden" name="vid" value="UKY">
+							<!-- input type="hidden" name="tab" value="<TAB CODE>" -->
+							<input type="hidden" name="search_scope" value="default_scope">
+							<input type="hidden" name="mode" value="Basic">
+
+							<!-- Fixed parameters -->
+							<input type="hidden" name="displayMode" value="full">
+							<input type="hidden" name="bulkSize" value="10">
+							<input type="hidden" name="highlight" value="true">
+							<input type="hidden" name="dum" value="true">
+							<input type="hidden" name="query" id="primoQueryMobile">
+							<input type="hidden" name="displayField" value="all">
+
+							<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+							<input type="hidden" name="pcAvailabiltyMode" value="false">
+						
+							<div class="row">
+								<div class="col-xs-12 bottommargin-sm">
+									<input id="primoQueryTempMobile" type="text" value="" class="sm-form-control"  placeholder="Search InfoKat Discovery">
+								</div>
+							</div>
+							<div class="row">	
+								<div class="col-xs-12 bottommargin-sm">
+									<button onclick="searchPrimo()" class="button button-3d">Search &rsaquo;</button>
+								</div>
+							</div>
+							<div class="row searchopt">
+								<div class="col-xs-12 bottommargin-sm">
+<a <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'IKD Advanced Search Mobile']);" href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&ct=AdvancedSearch&vid=UKY" title="InfoKat Discovery Advanced Search">Advanced Search</a>
+									<!-- <form action="">
+										<input type="radio" name="search" value="onesearch">&nbsp;One Search&nbsp;&nbsp;&nbsp;
+										<input type="radio" name="search" value="classicsearch">&nbsp;Classic Search
+									</form>  -->											
+								</div>
+								<div class="col-xs-12 bottommargin-sm">
+									<!--  -->
+									<!-- <select>
+									  <option value="selecteddatabases">Selected Databases</option>
+									  <option value="a">A</option>
+									  <option value="b">B</option>
+									  <option value="c">C</option>
+									</select>  -->
+								</div>
+							</div>
+						</form>	
+						<div style="position: absolute; right: 12px; bottom: 5px;"><a class="ss-help" data-toggle="tooltip" data-placement="top" title="What's this searching?" href="http://libguides.uky.edu/c.php?g=457383&p=3126835"></a></div>							
+					</div>
+
+					<div class="acctitle">LIBRARY CATALOG</div>
+					<div class="acc_content clearfix">						
+						<form action="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do" id="simpleCatalogMobile" name="searchFormCatalogMobile" method="get" class="nobottommargin" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoCatalogMobile()">
+										<!-- Customizable Parameters -->
+										<input type="hidden" name="institution" value="UKY">
+										<input type="hidden" name="vid" value="UKY">
+										<input type="hidden" name="tab" value="alma_tab">
+										<input type="hidden" name="search_scope" value="alma_scope">
+										<input type="hidden" name="mode" value="Basic">
+
+										<!-- Fixed parameters -->
+										<input type="hidden" name="displayMode" value="full">
+										<input type="hidden" name="bulkSize" value="20">
+										<input type="hidden" name="highlight" value="true">
+										<input type="hidden" name="dum" value="true">
+										<input type="hidden" name="query" id="primoQueryCatalogMobile">
+										<input type="hidden" name="displayField" value="all">
+										
+										<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+										<input type="hidden" name="pcAvailabiltyMode" value="true">
+						
+							<div class="row">
+								<div class="col-xs-12 bottommargin-sm">
+									<input id="primoQueryTempCatalogMobile" type="text" value="" class="sm-form-control" placeholder="Search UK Libraries holdings">
+								</div>
+							</div>
+							<div class="row">	
+								<div class="col-xs-12 bottommargin-sm">
+									<button onclick="searchPrimoCatalogMobile()" class="button button-3d">Search &rsaquo;</button>
+								</div>
+							</div>
+							<div class="row searchopt">
+								<div class="col-xs-12 bottommargin-sm">
+									<a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'IKD Library Catalog Advanced Search Mobile']);" href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&ct=AdvancedSearch&vid=UKY&tab=alma_tab&dscnt=0&dstmp=1454006534229" title="InfoKat Discovery Library Catalog Advanced Search">Advanced Search</a>											
+								</div>
+								<div class="col-xs-12 bottommargin-sm">
+									<!-- <select>
+												  <option value="selecteddatabases">Selected Databases</option>
+												  <option value="a">A</option>
+												  <option value="b">B</option>
+												  <option value="c">C</option>
+												</select> -->
+								</div>
+							</div>
+						</form>								
+					</div>
+					
+					<div class="acctitle">E-JOURNALS</div>
+					<div class="acc_content clearfix">
+						<form id="simpleJournalMobile" name="searchFormJournalMobile" method="get" target="_self" action="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoJournalMobile()">
+										<input type="hidden" name="institution" value="UKY" />
+										<input type="hidden" name="vid" value="UKY" />
+										<input type="hidden" name="indx" value="1" />
+										<input type="hidden" name="bulkSize" value="30" />
+										<input type="hidden" name="dym" value="false" />
+										<input type="hidden" name="loc" value="local,scope:(AZUKY)" />
+										<input type="hidden" name="fn" value="goAlmaAz" />
+										<input type="hidden" name="almaAzSearch" value="true" />
+										<input id="initialSearch" type="hidden" value="true" name="initialSearch">
+							<div class="row">
+								<div class="col-xs-12 bottommargin-sm">
+									<input name="vl(freeText0)" id="search_field" type="text" value="" class="sm-form-control" placeholder="Search for E-Journals by Title">
+								</div>
+							</div>
+							<div class="row">	
+								<div class="col-xs-12 bottommargin-sm">
+									<button onclick="searchPrimoJournalMobile()" class="button button-3d">Search &rsaquo;</button>
+								</div>
+							</div>							
+							<div class="row searchopt">
+								<div class="col-xs-12 bottommargin-sm">
+<label title="Choose a letter to browse">Browse by Letter:</label>								
+		
+<select id="ejournalselectbox" name="ejournalselectbox" onchange="javascript:location.href = this.value;">
+<option value="">Select a letter</option>
+<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2c0-9&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=0-9&amp;vid=UKY" title="show journals starting with 0-9">
+				0-9</option>
+
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cA&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=A&amp;vid=UKY" title="show journals starting with A">
+				A</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cB&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=B&amp;vid=UKY" title="show journals starting with B">
+				B</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cC&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=C&amp;vid=UKY" title="show journals starting with C">
+				C</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cD&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=D&amp;vid=UKY" title="show journals starting with D">
+				D</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cE&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=E&amp;vid=UKY" title="show journals starting with E">
+				E</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cF&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=F&amp;vid=UKY" title="show journals starting with F">
+				F</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cG&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=G&amp;vid=UKY" title="show journals starting with G">
+				G</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cH&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=H&amp;vid=UKY" title="show journals starting with H">
+				H</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cI&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=I&amp;vid=UKY" title="show journals starting with I">
+				I</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cJ&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=J&amp;vid=UKY" title="show journals starting with J">
+				J</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cK&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=K&amp;vid=UKY" title="show journals starting with K">
+				K</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cL&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=L&amp;vid=UKY" title="show journals starting with L">
+				L</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cM&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=M&amp;vid=UKY" title="show journals starting with M">
+				M</option>
+			<option value="dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cN&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=N&amp;vid=UKY" title="show journals starting with N">
+				N</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cO&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=O&amp;vid=UKY" title="show journals starting with O">
+				O</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cP&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=P&amp;vid=UKY" title="show journals starting with P">
+				P</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cQ&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=Q&amp;vid=UKY" title="show journals starting with Q">
+				Q</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cR&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=R&amp;vid=UKY" title="show journals starting with R">
+				R</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cS&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=S&amp;vid=UKY" title="show journals starting with S">
+				S</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cT&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=T&amp;vid=UKY" title="show journals starting with T">
+				T</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cU&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=U&amp;vid=UKY" title="show journals starting with U">
+				U</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cV&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=V&amp;vid=UKY" title="show journals starting with V">
+				V</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cW&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=W&amp;vid=UKY" title="show journals starting with W">
+				W</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cX&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=X&amp;vid=UKY" title="show journals starting with X">
+				X</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cY&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=Y&amp;vid=UKY" title="show journals starting with Y">
+				Y</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cZ&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=Z&amp;vid=UKY" title="show journals starting with Z">
+				Z</option>
+			<option value="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&amp;query=facet_atoz%2cexact%2cOthers&amp;indx=1&amp;bulkSize=30&amp;dym=false&amp;loc=local%2cscope%3a(%22AZUKY%22)&amp;fn=goAlmaAz&amp;sortField=stitle&amp;almaAzSearch=true&amp;azSearch=true&amp;selectedAzAlmaLetter=Others&amp;vid=UKY" title="show journals starting with Others">
+				Others</option>
+
+
+</select>
+<noscript>
+<input type="submit" value="Go">
+
+</noscript>									
+								</div>
+								<div class="col-xs-12 bottommargin-sm">
+									<!-- <select>
+												  <option value="selecteddatabases">Selected Databases</option>
+												  <option value="a">A</option>
+												  <option value="b">B</option>
+												  <option value="c">C</option>
+												</select> -->
+								</div>
+							</div>
+						</form>								
+					</div>
+
+					<div class="acctitle">DATABASES</div>
+					<div class="acc_content clearfix">						
+						<form action="dbresults_title.php" id="dbsearch_title_form" name="dbsearch_title_form" method="post" class="nobottommargin">
+							<div class="row">
+								<div class="col-xs-12 bottommargin-sm">
+									<input name="irname" id="irname" type="text" value="" class="sm-form-control" placeholder="Search for Databases by Title">
+								</div>
+							</div>
+							<div class="row">	
+								<div class="col-xs-12 bottommargin-sm">
+									<button class="button button-3d">Search &rsaquo;</button>
+								</div>
+							</div>
+							</form>	
+							<div class="row searchopt">
+								<div class="col-xs-12 bottommargin-sm">
+<label title="Choose a letter to browse">Browse by Letter:</label>								
+<form action="dbresults.php" method="GET" name="letters_form" id="letters_form">
+<input type="hidden" name="mobile_type" value="all">			
+<select name="llimit" onchange="document.letters_form.submit();">
+<option value="">Select a letter</option>
+<option value="A" class="mobile_letter_links">A</option> 
+<option value="B" class="mobile_letter_links">B</option> 
+<option value="C" class="mobile_letter_links">C</option>
+<option value="D" class="mobile_letter_links">D</option>
+<option value="E" class="mobile_letter_links">E</option>
+<option value="F" class="mobile_letter_links">F</option>
+<option value="G" class="mobile_letter_links">G</option>
+<option value="H" class="mobile_letter_links">H</option>
+<option value="I" class="mobile_letter_links">I</option>
+<option value="J" class="mobile_letter_links">J</option>
+<option value="K" class="mobile_letter_links">K</option>
+<option value="L" class="mobile_letter_links">L</option>
+<option value="M" class="mobile_letter_links">M</option>
+<option value="N" class="mobile_letter_links">N</option>
+<option value="O" class="mobile_letter_links">O</option>
+<option value="P" class="mobile_letter_links">P</option>
+<option value="Q" class="mobile_letter_links">Q</option>
+<option value="R" class="mobile_letter_links">R</option>
+<option value="S" class="mobile_letter_links">S</option>
+<option value="T" class="mobile_letter_links">T</option>
+<option value="U" class="mobile_letter_links">U</option>
+<option value="V" class="mobile_letter_links">V</option>
+<option value="W" class="mobile_letter_links">W</option>
+<option value="X" class="mobile_letter_links">X</option> 
+<option value="Y" class="mobile_letter_links">Y</option>
+<option value="Z" class="mobile_letter_links">Z</option>
+</select>
+<noscript>
+<input type="submit" value="Go">
+
+</noscript>
+</form>
+								</div>
+								<div class="col-xs-12 bottommargin-sm">
+								<form><label title="Choose a selected databases and you will be taken there automatically">Selected Databases:</label>
+							
+			
+			
+			<select onchange="if (this.options[this.selectedIndex].value != 'null')	{ window.open(this.options[this.selectedIndex].value,'_top') }">
+			
+			<option value="#">Choose a database...</option>
+											
+				<option value="/lnkr.php?lir_id=4">Academic Search Complete</option>
+											
+				<option value="/lnkr.php?lir_id=5">Access World News...</option>
+											
+				<option value="/lnkr.php?lir_id=551">ARTstor</option>
+											
+				<option value="/lnkr.php?lir_id=86">Business Source Complete</option>
+											
+				<option value="/lnkr.php?lir_id=159">Dissertations and Theses...</option>
+											
+				<option value="/lnkr.php?lir_id=215">E-Journals A-Z</option>
+											
+				<option value="/lnkr.php?lir_id=326">eBook Collection (from...</option>
+											
+				<option value="/lnkr.php?lir_id=164">EBSCOhost</option>
+											
+				<option value="/lnkr.php?lir_id=2046">Explore UK: Rare and Unique...</option>
+											
+				<option value="/lnkr.php?lir_id=2928">FDsys: Federal Digital System</option>
+											
+				<option value="/lnkr.php?lir_id=266">JSTOR</option>
+											
+				<option value="/lnkr.php?lir_id=268">Kentucky Digital Library (KDL)</option>
+											
+				<option value="/lnkr.php?lir_id=274">Kentucky Virtual Library...</option>
+											
+				<option value="/lnkr.php?lir_id=280">Lexington Herald-Leader</option>
+											
+				<option value="/lnkr.php?lir_id=3">LexisNexis Academic</option>
+											
+				<option value="/lnkr.php?lir_id=571">MEDLINE (EBSCOhost)</option>
+											
+				<option value="/lnkr.php?lir_id=724">Merriam-Webster Dictionary</option>
+											
+				<option value="/lnkr.php?lir_id=314">MLA International...</option>
+											
+				<option value="/lnkr.php?lir_id=330">New York Times Historical...</option>
+											
+				<option value="/lnkr.php?lir_id=816">Notable Kentucky African...</option>
+											
+				<option value="/lnkr.php?lir_id=341">NTIS Database (National...</option>
+											
+				<option value="/lnkr.php?lir_id=1074">Opposing Viewpoints</option>
+											
+				<option value="/lnkr.php?lir_id=469">OvidSP</option>
+											
+				<option value="/lnkr.php?lir_id=355">Oxford English Dictionary...</option>
+											
+				<option value="/lnkr.php?lir_id=671">PsycINFO</option>
+											
+				<option value="/lnkr.php?lir_id=389">PubMed (University of...</option>
+											
+				<option value="/lnkr.php?lir_id=2266">Reference Universe</option>
+											
+				<option value="/lnkr.php?lir_id=2949">SPOKE: Louie B. Nunn Center...</option>
+											
+				<option value="/lnkr.php?lir_id=431">Statistical Insight</option>
+											
+				<option value="/lnkr.php?lir_id=3102">UKnowledge: Collections of...</option>
+											
+				<option value="/lnkr.php?lir_id=3300">Wall Street Journal (final...</option>
+											
+				<option value="/lnkr.php?lir_id=465">Wall Street Journal...</option>
+											
+				<option value="/lnkr.php?lir_id=467">Web of Science Core Collection</option>
+											
+				<option value="/lnkr.php?lir_id=482">WorldCat (FirstSearch)</option>
+						</select>											
+		</form>
+									<!-- <select>
+												  <option value="selecteddatabases">Selected Databases</option>
+												  <option value="a">A</option>
+												  <option value="b">B</option>
+												  <option value="c">C</option>
+												</select> -->
+								</div>
+							</div>
+													
+					</div>
+
+					<div class="acctitle">RESEARCH GUIDES</div>
+					<div class="acc_content clearfix">						
+						<form action="http://libguides.uky.edu/srch.php" method="GET" class="nobottommargin">
+							<div class="row">
+								<div class="col-xs-12 bottommargin-sm">
+									<input id="s-lg-guide-search" name="q" type="text" value="" class="sm-form-control" placeholder="Enter keyword(s)">
+								</div>
+							</div>
+							<div class="row">	
+								<div class="col-xs-12 bottommargin-sm">
+									<button class="button button-3d">Search &rsaquo;</button>
+								</div>
+							</div>
+							<div class="row searchopt">
+								<div class="col-xs-12 bottommargin-sm">
+									<a href="http://libguides.uky.edu" title="Browse All Guides">Browse All Guides</a>												
+								</div>
+								<div class="col-xs-12 bottommargin-sm">
+									<!-- <select>
+												  <option value="selecteddatabases">Selected Databases</option>
+												  <option value="a">A</option>
+												  <option value="b">B</option>
+												  <option value="c">C</option>
+												</select> -->
+								</div>
+							</div>
+						</form>								
+					</div>
+
+					<div class="acctitle">LOCAL COLLECTIONS</div>
+					<div class="acc_content clearfix">					
+							<form id="simpleLocalMobile" name="searchFormLocalMobile" method="get" target="_self" action="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoLocalMobile()">
+										<!-- Customizable Parameters -->
+										<input type="hidden" name="institution" value="UKY">
+										<input type="hidden" name="vid" value="UKY">
+										<input type="hidden" name="tab" value="exploreuk_tab">
+										<input type="hidden" name="search_scope" value="exploreuk_scope">
+										<input type="hidden" name="mode" value="Basic">
+
+										<!-- Fixed parameters -->
+										<input type="hidden" name="displayMode" value="full">
+										<input type="hidden" name="bulkSize" value="20">
+										<input type="hidden" name="highlight" value="true">
+										<input type="hidden" name="dum" value="true">
+										<input type="hidden" name="query" id="primoQueryLocalMobile">
+										<input type="hidden" name="displayField" value="all">
+
+										<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+										<input type="hidden" name="pcAvailabiltyMode" value="true">
+						
+							<div class="row">
+								<div class="col-xs-12 bottommargin-sm">
+									<input id="primoQueryTempLocalMobile" type="text" value="" class="sm-form-control" placeholder="Search UK Libraries' rare/unique materials and archival collection guides">
+								</div>
+							</div>
+							<div class="row">	
+								<div class="col-xs-12 bottommargin-sm">
+									<button onclick="searchPrimoLocalMobile()" class="button button-3d">Search &rsaquo;</button>
+								</div>
+							</div>
+							<div class="row searchopt">
+								<div class="col-xs-12 bottommargin-sm">
+									<!-- <form action="">
+													<input type="radio" name="search" value="onesearch">&nbsp;One Search&nbsp;&nbsp;&nbsp;
+													<input type="radio" name="search" value="classicsearch">&nbsp;Classic Search
+												</form> -->											
+								</div>
+								<div class="col-xs-12 bottommargin-sm">
+									<!-- <select>
+												  <option value="selecteddatabases">Selected Databases</option>
+												  <option value="a">A</option>
+												  <option value="b">B</option>
+												  <option value="c">C</option>
+												</select> -->
+								</div>
+							</div>
+						</form>								
+					</div>					
+				</div>
+			</div>
+		</div>
+		<!-- end Mobile search accordion -->
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<!-- 3 blocks -->
+			<div class="content-wrap home">
+				<div class="section bottommargin-sm header-stick">
+					<div class="container clear-bottommargin clearfix">
+						<div class="row topmargin-sm bottommargin-sm equal-four">
+                        	
+	                        <div class="col_one_third panel panel-default lg-hide">
+	                            <div class="panel-heading">
+	<h2 class="panel-title">HOURS <span class="ital">for July 5, 2016</span></h2>
+</div>
+<div class="panel-body">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 nobottommargin">
+		<ul class="iconlist">
+			<li><i class="ss-locations"><img src="images/locations/icon-aic.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Agricultural Information Center" href="libhours.php?llib_id=1">AIC</a><br /><span class="hours">Now Closed</span></li>
+			<li><i class="ss-locations"><img src="images/locations/icon-design.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Design" href="libhours.php?llib_id=2">Design</a><br /><span class="hours">Now Closed</span></li>
+			<li><i class="ss-locations"><img src="images/locations/icon-education.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Education" href="libhours.php?llib_id=6">Education</a><br /><span class="hours">Now Closed</span></li>
+			<!-- <li><i class="ss-locations"><img src="images/locations/icon-engineering.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Shaver Engineering" href="libhours.php?llib_id=5">Engineering</a><br /><span class="hours">Closed</span></li> -->
+			<li class="last"><i class="ss-locations"><img src="images/locations/icon-finearts.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Lucille Little Fine Arts" href="libhours.php?llib_id=7">Fine Arts</a><br /><span class="hours">8:00am - 8:00pm</span></li>			
+		</ul>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 nobottommargin">
+		<ul class="iconlist">								
+			<li><i class="ss-locations"><img src="images/locations/icon-medcenter.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Medical Center" href="libhours.php?llib_id=12">Medical Center</a><br /><span class="hours">8:00am - Midnight</span></li>
+			<li><i class="ss-locations"><img src="images/locations/icon-science.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Science" href="libhours.php?llib_id=19">Science & Engineering</a><br /><span class="hours">Now Closed</span></li>
+			<li><i class="ss-locations"><img src="images/locations/icon-scrc.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Special Collections Research Center" href="libhours.php?llib_id=13">SCRC</a><br /><span class="hours">Now Closed</span></li>
+			<li><i class="ss-locations"><img src="images/locations/icon-young.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for William T. Young" href="libhours.php?llib_id=14">W.T. Young</a><br /><span class="hours">7:00am - 10:00pm</span></li>
+			<li class="last last-no-border"><span class="hours"><a data-toggle="tooltip" data-placement="top" title="Click for more hours info" href="Hours">More Hours Information</a></span></li>
+		</ul>
+	</div>
+</div>	                       	                        </div>
+	                        
+                        	<div class="col_one_third panel panel-default">
+                            	<div class="panel-heading">
+                                	<h2 class="panel-title">RESEARCH & COLLECTIONS</h2>
+                            	</div>
+								<div class="panel-body">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 nobottommargin">
+										<ul class="iconlist">
+											<li><i class="ss-draw"></i> <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://libguides.uky.edu/courseguides']);" href="http://libguides.uky.edu/courseguides" data-toggle="tooltip" data-placement="top" title="Course Guides">Course Guides</a></li>
+											<li><i class="ss-database"></i> <a href="DBSearch" data-toggle="tooltip" data-placement="top" title="Academic databases provide academic journals, scholarly articles, and more.">Databases</a></li>
+											<!-- <li><i class="ss-ebook"></i> <a href="#" data-toggle="tooltip" data-placement="top" title="An E-Book is an &#39;electronic book&#39;. These books are called &#39;electronic&#39; because they are files that you access on your computer.">E-Books</a></li>  -->
+											<li><i class="ss-notebook"></i> <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'E-Journals - IKD']);" href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/dlSearch.do?institution=UKY&vid=UKY&query=facet_atoz%2cexact%2cA&indx=1&bulkSize=30&dym=false&loc=local%2cscope%3a(AZUKY)&fn=goAlmaAz&sortField=stitle&almaAzSearch=true&azSearch=true&selectedAzAlmaLetter=A" data-toggle="tooltip" data-placement="top" title="Access our E-Journals">E-Journals</a></li>
+											<li><i class="ss-searchbook"></i> <a href="http://exploreuk.uky.edu/" data-toggle="tooltip" data-placement="top" title="Provides online access to selected UK Libraries rare/unique materials and archival collection guides">Explore UK</a></li>
+											<li><i class="ss-newspaper"></i> <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'https://kdnp.uky.edu/']);" href="https://kdnp.uky.edu/" data-toggle="tooltip" data-placement="top" title="Searchable full-text digitized historic and current Kentucky newspapers">KDNP</a></li>
+											<li><i class="ss-page"></i> <a href="page.php?lweb_id=1106" data-toggle="tooltip" data-placement="top" title="Newspapers &amp; Microfilm">Newspapers &amp; Microfilm</a></li>
+											<li class="last"><i class="ss-users"></i> <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://nkaa.uky.edu']);" href="http://nkaa.uky.edu" data-toggle="tooltip" data-placement="top" title="Brief biographies of African Americans in & from KY, includes links to related resources">NKAA</a></li>											
+										</ul>
+									</div>
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 nobottommargin">
+										<ul class="iconlist">
+											
+											<li><i class="ss-books"></i> <a href="http://libguides.uky.edu/" data-toggle="tooltip" data-placement="top" title="Research Guides organize selected resources by academic discipline.">Research Guides</a></li>
+											<li><i class="ss-checkclipboard"></i> <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://libguides.uky.edu/research_data']);" href="http://libguides.uky.edu/research_data" data-toggle="tooltip" data-placement="top" title="Tools and information for researchers to help with data management, data preservation, and data sharing.">Research Data Services</a></li>
+											<li><i class="ss-mic"></i> <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://www.kentuckyoralhistory.org/']);" href="http://www.kentuckyoralhistory.org/" data-toggle="tooltip" data-placement="top" title="Louie B. Nunn Center for Oral History Collection Catalog">SPOKEdb</a></li>
+											<li><i class="ss-banknote"></i> <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://libguides.uky.edu/prsc/']);" href="http://libguides.uky.edu/prsc/" data-toggle="tooltip" data-placement="top" title="Resources to make your academic life easier">Tools and Apps</a></li>
+											<li><i class="ss-browseonline"></i> <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://uknowledge.uky.edu/']);" href="http://uknowledge.uky.edu/" data-toggle="tooltip" data-placement="top" title="Collections of research done at University of Kentucky">UKnowledge</a></li>
+											<li class="last last-no-border"><i class="ss-openbook"></i> <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://www.kentuckypress.com/']);" href="http://www.kentuckypress.com/" data-toggle="tooltip" data-placement="top" title="">University Press of Kentucky</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+	                        <div class="col_one_third panel panel-default">
+	                            <div class="panel-heading">
+	                                <h2 class="panel-title">SERVICES</h2>
+	                            </div>
+	                            <div class="panel-body">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 nobottommargin">
+										<ul class="iconlist">
+											<li><i class="ss-businessuser"></i> <a data-toggle="tooltip" data-placement="top" href="Liaisons" title="Your Academic Liaison is available to provide assistance with your teaching, research, and library collection needs.">Academic Liaisons</a></li>
+											<li><i class="ss-video"></i> <a href="libpage.php?lweb_id=1022&llib_id=14" data-toggle="tooltip" data-placement="top">AV Services</a></li>
+											<li><i class="ss-book"></i> <a href="Borrow" data-toggle="tooltip" data-placement="top" title="Borrowing Information">Borrowing</a></li>
+											<li><i class="ss-basket"></i> <a href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Basic&vid=UKY&tab=cr_tab&" data-toggle="tooltip" data-placement="top" title="Access Course Reserves">Course Reserves</a></li> 
+											<li><i class="ss-wheelchair"></i> <a href="Disability" data-toggle="tooltip" data-placement="top">Disability Services</a></li>
+											<li class="last"><i class="ss-globelocation"></i> <a href="DLLS" data-toggle="tooltip" data-placement="top">Distance Learning</a></li>
+										</ul>
+									</div>
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 nobottommargin">
+										<ul class="iconlist">
+											<li><i class="ss-bookmark"></i> <a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://libguides.uky.edu/infolit101']);" href="http://libguides.uky.edu/infolit" data-toggle="tooltip" data-placement="top" title="We teach research skills!">Information Literacy</a></li>
+											<li><i class="ss-signpost"></i> <a href="ILL" data-toggle="tooltip" data-placement="top" title="Interlibrary Loan and Document Delivery Services">Interlibrary Loan</a></li>
+											<li><i class="ss-search"></i> <a href="Ask" title="Need help? Ask Us" data-toggle="tooltip" data-placement="top">Research Help &amp; Services</a></li>
+											<li><i class="ss-building"></i> <a href="page.php?lweb_id=990" data-toggle="tooltip" data-placement="top">Room Reservations</a></li>
+											<li class="last last-no-border"><i class="ss-print"></i> <a href="http://www.uky.edu/studentprt/" data-toggle="tooltip" data-placement="top" title="Student Printing Services (Ricoh)">Student Printing</a></li>
+										</ul>
+									</div>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="col_one_third panel panel-default xs-hide col_last">
+	                            <div class="panel-heading">
+	<h2 class="panel-title">HOURS <span class="ital">for July 5, 2016</span></h2>
+</div>
+<div class="panel-body">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 nobottommargin">
+		<ul class="iconlist">
+			<li><i class="ss-locations"><img src="images/locations/icon-aic.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Agricultural Information Center" href="libhours.php?llib_id=1">AIC</a><br /><span class="hours">Now Closed</span></li>
+			<li><i class="ss-locations"><img src="images/locations/icon-design.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Design" href="libhours.php?llib_id=2">Design</a><br /><span class="hours">Now Closed</span></li>
+			<li><i class="ss-locations"><img src="images/locations/icon-education.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Education" href="libhours.php?llib_id=6">Education</a><br /><span class="hours">Now Closed</span></li>
+			<!-- <li><i class="ss-locations"><img src="images/locations/icon-engineering.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Shaver Engineering" href="libhours.php?llib_id=5">Engineering</a><br /><span class="hours">Closed</span></li> -->
+			<li class="last"><i class="ss-locations"><img src="images/locations/icon-finearts.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Lucille Little Fine Arts" href="libhours.php?llib_id=7">Fine Arts</a><br /><span class="hours">8:00am - 8:00pm</span></li>			
+		</ul>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 nobottommargin">
+		<ul class="iconlist">								
+			<li><i class="ss-locations"><img src="images/locations/icon-medcenter.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Medical Center" href="libhours.php?llib_id=12">Medical Center</a><br /><span class="hours">8:00am - Midnight</span></li>
+			<li><i class="ss-locations"><img src="images/locations/icon-science.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Science" href="libhours.php?llib_id=19">Science & Engineering</a><br /><span class="hours">Now Closed</span></li>
+			<li><i class="ss-locations"><img src="images/locations/icon-scrc.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for Special Collections Research Center" href="libhours.php?llib_id=13">SCRC</a><br /><span class="hours">Now Closed</span></li>
+			<li><i class="ss-locations"><img src="images/locations/icon-young.png" /></i><a data-toggle="tooltip" data-placement="top" title="Click for more hours info for William T. Young" href="libhours.php?llib_id=14">W.T. Young</a><br /><span class="hours">7:00am - 10:00pm</span></li>
+			<li class="last last-no-border"><span class="hours"><a data-toggle="tooltip" data-placement="top" title="Click for more hours info" href="Hours">More Hours Information</a></span></li>
+		</ul>
+	</div>
+</div>	                       	                        </div>
+	                         
+	                        
+						</div>
+					</div>
+				</div>
+				<!-- end 3 blocks-->
+				<!-- News section -->
+								<!-- News section -->
+				<div class="section news">
+					<div class="container clear-bottommargin bottommargin-sm clearfix">
+						<div class="row topmargin-sm">
+							<div class="fancy-title title-border title-center">
+								<h1>LIBRARY NEWS</h1>
+							</div>
+						</div>
+						<div class="row">
+
+												 
+			
+						  																						
+																								
+								<div class="col-xs-12 col-sm-6 col-md-3 bottommargin-sm">
+								<h3><a href="newsitem.php?lnote_id=863">Citation Trails, a new feature in InfoKat Discovery</a></h3>
+								<span class="date">June 21, 2016</span>
+								<p> On Sunday, June 19 th ,  InfoKat Discovery  added a new feature called  Citation Trails .&nbsp; 
+  According to Ex Libris   Citation Trails  adds "cited" and "cited by" relations to many articles, e</p>
+								<a class="more" href="newsitem.php?lnote_id=863">Read more &rsaquo;</a>
+								</div>
+											
+						  																						
+																								
+								<div class="col-xs-12 col-sm-6 col-md-3 bottommargin-sm">
+								<h3><a href="newsitem.php?lnote_id=860">Accessing Full Text in PubMed</a></h3>
+								<span class="date">June 16, 2016</span>
+								<p> To access full text in PubMed, you must now use the UK Libraries link. Click this link&nbsp;for  instructions .&nbsp; </p>
+								<a class="more" href="newsitem.php?lnote_id=860">Read more &rsaquo;</a>
+								</div>
+											
+						  																						
+																								
+								<div class="col-xs-12 col-sm-6 col-md-3 bottommargin-sm">
+								<h3><a href="newsitem.php?lnote_id=861">Award-Winning Historianâ€™s Books Readily Available Online</a></h3>
+								<span class="date">June  3, 2016</span>
+								<p> Distinguished scholar, State Historian, and recent recipient of UK Libraries&rsquo; Medallion for Intellectual Achievement, Dr. James C. Klotter, is the author of numerous books on Kentucky history.&</p>
+								<a class="more" href="newsitem.php?lnote_id=861">Read more &rsaquo;</a>
+								</div>
+											
+						  																						
+																								
+								<div class="col-xs-12 col-sm-6 col-md-3 bottommargin-sm">
+								<h3><a href="newsitem.php?lnote_id=561">MCL Summer Classes</a></h3>
+								<span class="date">May  9, 2016</span>
+								<p> The Medical Center Library will offer a variety of classes during the summer. All faculty,&nbsp;staff, and students&nbsp;are invited to view the  class calendar  and  register  for sessions of intere</p>
+								<a class="more" href="newsitem.php?lnote_id=561">Read more &rsaquo;</a>
+								</div>
+											
+						  						  <h3><a href="News" title="All news for UK Libraries">All news for UK Libraries&rsaquo;</a></h3>
+							
+						
+						
+						
+						</div> <!-- end row -->
+					</div>						
+				</div>
+				<!-- end News section -->
+				<!-- end News section -->
+				<!-- Library spotlight section -->
+								<div class="section spotlight">
+					<div class="container topmargin-sm clear-bottommargin bottommargin-lg clearfix">
+						<div class="row">
+							<div class="col_one_third">
+								<h3><a href="#">Library Spotlight</a></h3>
+								<p>Keep up to date with the latest from UK Libraries:</p>
+								<!-- <a class="more" href="#">More from UK Libraries &rsaquo;</a>  -->
+							</div>
+
+							<div class="col_two_thirds">
+								<div id="oc-images" class="owl-carousel image-carousel">
+								<!-- 
+									<div class="oc-item">
+										<a href=""><img src="images/Spotlight/" alt=""></a>
+										<span class="lead"></span>
+										<span class="sub">&nbsp;</span>
+									</div>
+								 -->
+									<div class="oc-item">
+										<a href="http://uknow.uky.edu/content/panel-discuss-collaboration-between-instructors-librarians"><img src="images/Spotlight/wtyoung.jpg" alt="Panel to Discuss Collaboration Between Instructors, Librarians"></a>
+										<span class="lead">Panel to Discuss Collaboration Between Instructors, Librarians</span>
+										<span class="sub">&nbsp;</span>
+									</div>
+
+									<div class="oc-item">
+										<a href="http://uklibrariesbirdseye.blogspot.com/2016/03/alternative-textbook-grant-program.html"><img src="images/Spotlight/ukhardware.png" alt="Alternative Textbook Grant program supports student success"></a>
+										<span class="lead">Alternative Textbook Grant program supports student success</span>
+										<span class="sub">&nbsp;</span>
+									</div>
+									<div class="oc-item">
+										<a href="http://uklibrariesbirdseye.blogspot.com/2016/02/uk-libraries-marks-year-of-europe-with.html"><img src="images/Spotlight/europe.jpg" alt="UK Libraries marks 'Year of Europe' with film series and exhibits"></a>
+										<span class="lead">UK Libraries marks "Year of Europe" with film series and exhibits</span>
+										<span class="sub">&nbsp;</span>
+									</div>
+			
+									<div class="oc-item">
+										<a href="http://libraries.uky.edu/forms/FINAL_2015_UK_Libraries_Mini_Magazine_rev3.pdf"><img src="images/Spotlight/magcover.png" alt="Discover @UKLibraries"></a>
+										<span class="lead">Discover @UKLibraries</span>
+										<span class="sub">&nbsp;<!-- Read the first issue of the new UK Libraries magazine, Discover @UKLibraries, online now.  --></span>
+									</div>
+									<div class="oc-item">
+										<a href="http://uknow.uky.edu/content/upk-announces-new-book-series-poetry-and-prose"><img src="images/Spotlight/upklogo.jpg" alt="University Press of Kentucky New Poetry and Prose Series"></a>
+										<span class="lead">University Press of Kentucky New Poetry and Prose Series</span>
+										<span class="sub">&nbsp;</span>
+									</div>
+									<!-- 
+									<div class="oc-item">
+										<a href="http://uklibrariesbirdseye.blogspot.com/2016/01/dean-birdwhistell-appears-on-uk-at-half.html"><img src="images/Spotlight/dean.jpg" alt="Dean Birdwhistell on UK at the Half"></a>
+										<span class="lead">Dean Birdwhistell on <i>UK at the Half</i></span>
+										<span class="sub">&nbsp;</span>
+									</div>
+									<div class="oc-item">
+										<a href="http://uklibrariesbirdseye.blogspot.com/2015/12/scrc-workshop-helps-african-american.html"><img src="images/Spotlight/workshop.jpg" alt="Workshop for clerks and secretaries of African American churches"></a>
+										<span class="lead">Archival workshop for African American churches</span>
+										<span class="sub">&nbsp;</span>
+									</div>
+									-->
+									<div class=“oc-item”>
+									&nbsp;
+									</div>
+									<div class=“oc-item”>
+									&nbsp;
+									</div>
+									
+									<!-- 
+									<div class="oc-item">
+										<a href="#"><img src="images/spotlight/5.jpg" alt="Image 5"></a>
+										<span class="lead">Lorem ipsum dolor sit amet</span>
+										<span class="sub">UT MINIM VERIAM</span>
+									</div>
+									
+									<div class="oc-item">
+										<a href="#"><img src="images/spotlight/6.jpg" alt="Image 6"></a>
+										<span class="lead">Lorem ipsum dolor sit amet</span>
+										<span class="sub">UT MINIM VERIAM</span>
+									</div>
+									<div class="oc-item">
+										<a href="#"><img src="images/spotlight/7.jpg" alt="Image 7"></a>
+										<span class="lead">Lorem ipsum dolor sit amet</span>
+										<span class="sub">UT MINIM VERIAM</span>
+									</div>
+									-->
+								</div>
+								
+								<script type="text/javascript">
+								
+									jQuery(document).ready(function($) {
+			
+										var ocImages = $("#oc-images");
+			
+										ocImages.owlCarousel({
+											margin: 10,
+											nav: true,
+											navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+											autoplay: false,
+											autoplayHoverPause: false,
+											dots: false,
+											navRewind: false,
+											responsive:{
+												0:{ items:2 },
+												600:{ items:3 },
+												1000:{ items:4 },
+												1200:{ items:5 }
+											}
+										});
+			
+									});
+								
+								</script>
+								
+								<div class="clear"></div>
+
+							</div>
+						</div>						
+					</div>						
+				</div>				<!-- end Library spotlight -->
+			</div>
+		</section><!-- #content end -->
+
+		<div id="copyrights">
+			<div class="container clearfix">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6">
+						<img class="seal" src="images/seal.png" />
+					</div>
+					<div class="col-xs-6 col-sm-6 right">
+						<a href="Giving"><img class="support" src="images/button-support.png" data-toggle="tooltip" data-placement="left" title="Support UK Libraries"/></a>
+					</div>
+				</div>
+			</div>
+		</div><!-- #copyrights end -->
+		<!-- Footer
+		============================================= -->
+		<footer id="footer">
+			<div class="container">
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 nobottommargin">
+							<h3>Research Help</h3>
+							<ul>
+								<li><a data-toggle="tooltip" data-placement="top" href="Liaisons" title="Your Academic Liaison is available to provide assistance with your teaching, research, and library collection needs.">Academic Liaisons (Subject Specialists)</a></li>
+								<li><a title="Research Help and Consultations" href="/Help">Ask Us for Research Help</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://libguides.uky.edu/infolit101']);" title="Learn how to do Research" href="http://libguides.uky.edu/infolit101">How to do Research</a></li>
+								<li><a title="How to Find Books and More" href="/page.php?lweb_id=136&ltab_id=337">How to Find Books and More</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://libguides.uky.edu']);" title="Research Guides organized by topic" href="http://libguides.uky.edu">Research Guides</a></li>
+								
+							</ul>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 nobottommargin">
+							<h3>Course Related</h3>
+							<ul>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://libguides.uky.edu/courseguides']);" title="Course Guides" href="http://libguides.uky.edu/courseguides">Course Guides</a></li>
+								<li><a title="Course Reserves (for Instructors)" href="page.php?lweb_id=537&ltab_id=1039#Howto">Course Reserves (for Instructors)</a></li>
+								<li><a title="Course Reserves (Search)" href="http://saa-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Basic&vid=UKY&tab=cr_tab&">Course Reserves (Search)</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://libguides.uky.edu/infolit101']);" href="http://libguides.uky.edu/infolit">Information Literacy</a></li>								
+								<li><a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://libguides.uky.edu/content.php?pid=53054&sid=398977']);" title="Instruction Request" href="http://libguides.uky.edu/content.php?pid=53054&sid=398977">Instruction Request</a></li>
+							</ul>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 nobottommargin">
+							<h3>Library Information</h3>
+							<ul>
+								<li><a title="Information About UK Libraries" href="/About">About UK Libraries</a></li>								
+								<li><a title="Contact UK Libraries" href="/Contact">Contact UK Libraries</a></li>
+								<li><a title="Directory of Faculty &amp; Staff" href="Staff">Directory of Faculty &amp; Staff</a></li>
+								<li><a title="Driving &amp; Parking Information" href="page.php?lweb_id=25">Driving &amp; Parking Info</a></li>
+								<li><a title="Jobs at UK Libraries" href="/Jobs">Employment Opportunities</a></li>
+								<li><a title="Floor Maps" href="/FloorMaps">Floor Maps</a></li>						
+								
+							</ul>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 nobottommargin col_last">
+							<h3>Library Resources</h3>
+							<ul>
+								<li><a title="Borrowing Information" href="/Borrow">Borrowing Information</a></li>	
+								<li><a title="Distance Learning" href="DLLS">Distance Learning</a></li>								
+								<li><a onclick="_gaq.push(['_trackEvent', 'Internal Links', 'Click', 'http://libraries.uky.edu/classes']);" title="Library Classes and Workshops" href="http://libraries.uky.edu/classes">Library Classes and Workshops</a></li>
+								<li><a title="the Hub &#64; WTs" href="libpage.php?lweb_id=1021&llib_id=14">the Hub &#64; WT's</a>															
+								<li><a title="Room Reservations" href="/page.php?lweb_id=990">Room Reservations</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://wrd.as.uky.edu/writing-center']);" data-toggle="tooltip" data-placement="top" href="http://wrd.as.uky.edu/writing-center" title="Writing Center: Graduate students and undergraduate consultants offer individual and group consultations in Face-to-Face, Online, and E-Tutoring Consultations on academic assignments and professional projects. ">Writing Center</a></li>								
+								<!-- <li><a title="UK Libraries Facebook, Twitter, Blogs, and other Social Media" href="/page.php?lweb_id=1016">UK Libraries Social Media</a></li> -->
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<ul class="centered-social">
+							<li><a title="UK Libraries Facebook, Twitter, Blogs, and other Social Media" href="page.php?lweb_id=1016" class="social-icon si-dark si-rounded si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a></li>
+
+							<li><a title="UK Libraries Facebook, Twitter, Blogs, and other Social Media" href="page.php?lweb_id=1016" class="social-icon si-dark si-rounded si-twitter">
+								<i class="icon-twitter"></i>
+								<i class="icon-twitter"></i>
+							</a></li>
+
+							<li><a title="UK Libraries Facebook, Twitter, Blogs, and other Social Media" href="page.php?lweb_id=1016" class="social-icon si-dark si-rounded si-gplus">
+								<i class="icon-gplus"></i>
+								<i class="icon-gplus"></i>
+							</a></li>
+
+							<li><a title="UK Libraries Facebook, Twitter, Blogs, and other Social Media" href="page.php?lweb_id=1016" class="social-icon si-dark si-rounded si-pinterest">
+								<i class="icon-pinterest"></i>
+								<i class="icon-pinterest"></i>
+							</a></li>
+						</div>
+					</div>
+				</div><!-- .footer-widgets-wrap end -->
+			</div>
+			<div class="copyright">
+				<div class="container">				
+					<div class="row">
+						<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 nobottommargin">
+							<p>Copyright &copy; 2015 UK Libraries. For questions or comments about this website contact <a href="byname.php?staff_id=234">Library Web Administration</a> | <a title="Site Index" href="/SiteIndex">Site Index</a></p>
+						</div>
+						<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 nobottommargin col_last">
+							<a onclick="_gaq.push(['_trackEvent', 'Outbound Links', 'Click', 'http://libguides.uky.edu/fedgov']);" href="http://libguides.uky.edu/fedgov"><img src="images/fdlp.png" class="fright" data-toggle="tooltip" data-placement="top" title="This library is a Congressionally designated Regional Depository for U.S. Government Publications. Public access to the federal government publications collection is guaranteed by public law." /></a>
+						</div>
+					</div>	
+				</div>			
+			</div>
+			<!-- Copyrights
+			============================================= -->
+		</footer><!-- #footer end -->
+	</div><!-- #wrapper end -->
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+</body>
+</html>

@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+  
+<!--[if IEMobile 7]>
+<html class="iem7 oldie" lang="en">
+<![endif]-->
+<!--[if (IE 7)&!(IEMobile)]>
+<html class="ie7 oldie" lang="en">
+<![endif]-->
+<!--[if (IE 8)&!(IEMobile)]>
+<html class="ie8 oldie" lang="en">
+<![endif]-->
+<!--[if (IE 9)&!(IEMobile)]>
+<html class="ie9" lang="en">
+<![endif]-->
+<!--[[if (gt IE 9)|(gt IEMobile 7)]>
+<!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!--
+ * UBC CLF (Common Look and Feel) v7.0.2
+ * Copyright 2012 The University of British Columbia
+ * UBC Communications and Marketing
+ * http://brand.ubc.ca/clf
+ */
+-->
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Learning, knowledge, research, insight: welcome to the world of UBC Library, the second-largest academic research library in Canada.">
+  <meta name="author" content="">
+    
+  <!-- CLF Stylesheets -->
+  <link href="https://cdn.ubc.ca/clf/7.0.2/css/ubc-clf-full.min.css" rel="stylesheet">
+  <link href="https://clf.library.ubc.ca/7.0.2/colorbox/colorbox.css" type="text/css" media="screen" rel="stylesheet" />
+  <link href="https://clf.library.ubc.ca/7.0.2/css/unit.css" rel="stylesheet">
+  
+  <!--[if lte IE 7]>
+  <link href="https://cdn.ubc.ca/clf/7.0.2/css/font-awesome-ie7.css" rel="stylesheet">
+  <![endif]-->
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="//cdn.ubc.ca/clf/html5shiv.min.js"></script>
+  <![endif]-->
+  
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="https://cdn.ubc.ca/clf/7.0.2/img/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://cdn.ubc.ca/clf/7.0.2/img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://cdn.ubc.ca/clf/7.0.2/img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://cdn.ubc.ca/clf/7.0.2/img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="https://cdn.ubc.ca/clf/7.0.2/img/apple-touch-icon-57-precomposed.png">
+
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="https://clf.library.ubc.ca/7.0.2/colorbox/jquery.colorbox.js" type="text/javascript"></script>
+  <script src="https://clf.library.ubc.ca/7.0.2/modernizr/modernizr.js" type="text/javascript"></script>
+  <script src="https://cdn.ubc.ca/clf/7.0.2/js/ubc-clf.min.js"></script>
+  <script src="https://clf.library.ubc.ca/7.0.2/js/library-ui.js" type="text/javascript"></script>
+  <script src="https://www.google.com/jsapi?key=ABQIAAAAoRs91XgpKw60K4liNrOHoBStNMhZCa0lqZKLUDgzjZGRsKl38xSnSmVmaulnWVdBLItzW4KsddHCzA" type="text/javascript"></script>
+
+
+<title>University of British Columbia Library | UBC Library Home</title>
+<link rel="stylesheet" media="screen" href="http://clf.library.ubc.ca/css/home.min.css" />
+<script type="text/javascript" src="http://clf.library.ubc.ca/js/jquery.cycle.min.js"></script>
+<script type="text/javascript" src="http://clf.library.ubc.ca/js/jquery.vticker.js"></script>
+<script type="text/javascript" src="http://clf.library.ubc.ca/js/organictabs.jquery.js"></script>
+<script type="text/javascript" src="http://clf.library.ubc.ca/js/home.min.js?8113"></script>
+</head>
+
+<body>
+  
+	<div class="container">
+    
+    <!-- UBC Global Utility Menu -->
+    <div class="collapse expand" id="ubc7-global-menu">
+      <div id="ubc7-search" class="expand">
+        <div id="ubc7-search-box">
+          <form class="form-search" method="get" action="http://www.ubc.ca/search/refine/" role="search">
+            <input type="text" name="q" placeholder="Search this website" class="input-xlarge search-query">
+            <input type="hidden" name="label" value="UBC Library" />
+            <input type="hidden" name="site" value="*.library.ubc.ca" />
+            <button type="submit" class="btn">Search</button>
+          </form>
+        </div>
+      </div>
+      <div id="ubc7-global-header" class="expand">
+        <!-- Global Utility Header from CDN -->
+      </div>
+    </div>
+    <!-- End of UBC Global Utility Menu -->
+   
+    <!-- UBC Header -->
+    <header id="ubc7-header" class="row-fluid expand" role="banner">
+      <div class="span1">
+        <div id="ubc7-logo">
+          <a href="http://www.ubc.ca" title="The University of British Columbia (UBC)">The University of British Columbia</a>
+        </div>
+      </div>
+      <div class="span2">
+        <div id="ubc7-apom">
+          <a href="https://cdn.ubc.ca/clf/ref/aplaceofmind" title="UBC a place of mind">UBC - A Place of Mind</a>                        
+        </div>
+      </div>
+      <div class="span9" id="ubc7-wordmark-block">
+        <div id="ubc7-wordmark">
+          <a href="http://www.ubc.ca" title="The University of British Columbia (UBC)">
+            The University of British Columbia 
+            <!--<span class="ubc7-campus" id="ubc7-vancouver-campus">Vancouver campus</span>-->
+					</a>
+        </div>
+        <div id="ubc7-global-utility">
+          <button type="button" data-toggle="collapse" data-target="#ubc7-global-menu"><span>UBC Search</span></button>
+          <noscript><a id="ubc7-global-utility-no-script" href="http://www.ubc.ca/" title="UBC Search">UBC Search</a></noscript>
+        </div>
+      </div>
+    </header>
+    <!-- End of UBC Header -->
+   
+    <!-- UBC Unit Identifier -->
+    <div id="ubc7-unit" class="row-fluid expand">
+      <div class="span12">
+        <!-- Mobile Menu Icon -->
+        <div class="navbar">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target="#ubc7-unit-navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+        </div>
+        <!-- No Faculty Treatment --><!--<div id="ubc7-unit-name" class="ubc7-single-element"> -->
+        <div id="ubc7-unit-name">
+          <a href="http://www.library.ubc.ca" title="Library"><span id="ubc7-unit-identifier" class="no-umbrella">Library</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- End of UBC Unit Identifier -->
+   
+    <!-- UBC Unit Navigation -->
+    <div id="ubc7-unit-menu" class="navbar expand" role="navigation">
+      <div class="navbar-inner expand">
+        <div class="container">
+          <div class="nav-collapse collapse" id="ubc7-unit-navigation">
+            
+            <ul class="nav">
+              
+              <!-- Library Homepage -->
+              <li id="home-nav"><a href="http://www.library.ubc.ca" title="Library Home">Library Home</a></li>
+              
+              <!-- Search Collections -->
+              <li class="dropdown" id="search-nav">							    
+                <div class="btn-group">
+                  <a class="btn" href="http://search.library.ubc.ca/">Search Collections</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <li class="nav-header">Search</li>
+                    <li><a href="http://search.library.ubc.ca/#general" title="General (Summon)">General (Summon)</a></li>
+                    <li><a href="http://search.library.ubc.ca/#catalogue" title="Books & Media (Catalogue)">Books & Media (Catalogue)</a></li>
+                    <li><a href="http://search.library.ubc.ca/#databases" title="Indexes, Databases & Articles">Indexes, Databases & Articles</a></li>
+                    <li><a href="http://search.library.ubc.ca/#journals" title="Journals">Journals</a></li>
+                    <li><a href="http://search.library.ubc.ca/#guides" title="Research Guides">Research Guides</a></li>
+                    <li><a href="http://search.library.ubc.ca/#research" title="UBC Research">UBC Research</a></li>
+                    <li><a href="http://search.library.ubc.ca/#digital" title="UBC Open Collections">UBC Open Collections</a></li>
+                  </ul>
+                </div>
+              </li>
+              
+              <!-- Hours & Locations -->
+              <li class="dropdown" id="hours-nav">							    
+                <div class="btn-group">
+                  <a class="btn" href="http://hours.library.ubc.ca/">Hours &amp; Locations</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <div class="row-fluid expand">
+                      <div class="span6 no-margin">
+                        <li class="nav-header">UBC Vancouver Campus</li>
+                        <li><a href="http://hours.library.ubc.ca/#view-asian" title="Asian Library">Asian Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-heritagecore" title="Chapman Learning Commons (Heritage Core)">Chapman Learning Commons (Heritage Core)</a></li>  
+                        <li><a href="http://hours.library.ubc.ca/#view-davidlam" title="David Lam Library">David Lam Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-education" title="Education Library">Education Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-ikblc" title="Irving K. Barber Learning Centre">Irving K. Barber Learning Centre</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-chapman" title="Irving K. Barber Learning Centre Information Desk">Irving K. Barber Learning Centre Information Desk</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-koerner" title="Education Library">Koerner Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-law" title="Education Library">Law Library</a></li>
+						<li><a href="http://hours.library.ubc.ca/#view-library" title="Music, Art and Architecture Library">Music, Art and Architecture Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-rbsc" title="Rare Books and Special Collections">Rare Books and Special Collections</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-archives" title="University Archives">University Archives</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-woodward" title="Woodward Library">Woodward Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-xwi7xwa" title="xwi7xwa Library"><u>X</u>wi7<u>x</u>wa Library</a></li>
+                      </div>
+                      <div class="span6 no-margin">
+                        <li class="nav-header">UBC Vancouver Off-Campus</li>
+                        <li><a href="http://hours.library.ubc.ca/#view-biomedical" title="Biomedical Branch Library">Biomedical Branch Library</a></li> 
+                        <li class="nav-header">UBC Okanagan Campus</li>
+                        <li><a href="http://hours.library.ubc.ca/#view-innovation" title="Innovation Library">Innovation Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-okanagan" title="Okanagan Library">Okanagan Library</a></li>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+              
+              <!-- Use The Library -->
+              <li class="dropdown" id="services-nav">							    
+                <div class="btn-group">
+                  <a class="btn" href="http://services.library.ubc.ca/">Use The Library</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <div class="row-fluid expand">
+                      <div class="span6 no-margin">
+                        <li class="nav-header">Borrowing Services</li>
+                        <li><a href="http://services.library.ubc.ca/borrowing-services/library-account/" title="My Library Account">My Library Account</a></li>
+                        <li><a href="http://services.library.ubc.ca/borrowing-services/library-cards/" title="How to Get a Library Card">How to Get a Library Card</a></li>
+                        <li><a href="http://services.library.ubc.ca/#borrowing" title="See More..." class="more">See More...</a></li>
+                        <li class="nav-header">Computers & Technology</li>
+                        <li><a href="http://services.library.ubc.ca/computers-technology/copy-print-scan/" title="Print, Copy, Scan">Print, Copy, Scan</a></li>
+                        <li><a href="http://services.library.ubc.ca/computers-technology/public-computers/" title="Public Computers & Software">Public Computers & Software</a></li>
+                        <li><a href="http://services.library.ubc.ca/#technology" title="See More..." class="more">See More...</a></li>
+				
+			<li class="nav-header">Guides for Library Users</li>
+                        <li><a href="http://services.library.ubc.ca/user-guides/undergraduate-students/" title="Undergraduate Students">Undergraduate Students</a></li>
+                        <li><a href="http://services.library.ubc.ca/user-guides/faculty-instructors/" title="Faculty & Instructors">Faculty & Instructors</a></li>
+                        <li><a href="http://services.library.ubc.ca/#view-user-guides" title="See More..." class="more">See More...</a></li>
+
+                      </div>
+                      <div class="span6 no-margin">				  
+			<li class="nav-header">Facilities</li>
+                        <li><a href="http://services.library.ubc.ca/facilities/group-silent-study-space/" title="Group & Silent Study Spaces">Group & Silent Study Spaces</a></li>
+                        <li><a href="http://services.library.ubc.ca/facilities/technology-spaces/" title="Technology Spaces">Technology Spaces</a></li>
+                        <li><a href="http://services.library.ubc.ca/#facilities" title="See More..." class="more">See More...</a></li>	
+                        <li class="nav-header">Off-Campus Access</li>
+                        <li><a href="http://services.library.ubc.ca/off-campus-access/connect-from-home/" title="Connect from Home">Connect from Home</a></li>
+                        <li><a href="http://services.library.ubc.ca/off-campus-access/connect-from-home/ezproxy-tips-troubleshooting/" title="EZproxy Tips & Troubleshooting">EZproxy Tips & Troubleshooting</a></li>
+                        <li><a href="http://services.library.ubc.ca/#access" title="See More..." class="more">See More...</a></li>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+            
+              <!-- Get Research Help -->
+              <li class="dropdown" id="help-nav">							    
+                <div class="btn-group">
+                  <a class="btn" href="http://help.library.ubc.ca/">Get Research Help</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <div class="row-fluid expand">
+                      <div class="span6 no-margin">					    
+                        
+                        <li class="nav-header">Planning Your Research</li>
+                        <li><a href="http://help.library.ubc.ca/planning-your-research/getting-started-on-your-research/" title="Getting Started on Your Research">Getting Started on Your Research</a></li>
+                        <li><a href="http://help.library.ubc.ca/#planning" title="See More..." class="more">See More...</a></li>
+                        <li class="nav-header">Finding Resources</li>
+                        <li><a href="http://guides.library.ubc.ca/" title="Research Guides">Research Guides</a></li>
+                        <li><a href="http://help.library.ubc.ca/finding-resources/journal-articles/" title="Journal Articles">Journal Articles</a></li>
+                        <li><a href="http://help.library.ubc.ca/#finding" title="See More..." class="more">See More...</a></li>
+                      </div>
+                      <div class="span6 no-margin">
+                        <li class="nav-header">Evaluating & Citing Sources</li>
+                        <li><a href="http://help.library.ubc.ca/evaluating-and-citing-sources/evaluating-information-sources/" title="Evaluating Information Sources">Evaluating Information Sources</a></li>
+                        <li><a href="http://help.library.ubc.ca/evaluating-and-citing-sources/how-to-cite/" title="How to Cite">How to Cite</a></li>
+                        <li><a href="http://help.library.ubc.ca/#evaluating" title="See More..." class="more">See More...</a></li>
+                        <li class="nav-header">Publishing Research</li>
+                        <li><a href="http://help.library.ubc.ca/publishing-research/getting-started-with-circle/" title="Getting Started with cIRcle">Getting Started with cIRcle</a></li>
+                        <li><a href="http://help.library.ubc.ca/publishing-research/building-your-academic-profile/" title="Building Your Academic Profile">Building Your Academic Profile</a></li>
+                        <li><a href="http://help.library.ubc.ca/#publishing" title="See More..." class="more">See More...</a></li>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+              
+              <!-- About Us -->
+              <li class="dropdown" id="about-nav">
+                <div class="btn-group">
+                  <a class="btn" href="http://about.library.ubc.ca/">About Us</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <li class="nav-header">About</li>
+                    <li><a href="http://about.library.ubc.ca/contact-us/" title="Contact Us">Contact Us</a></li>
+                    <li><a href="http://about.library.ubc.ca/news/" title="News">News</a></li>
+                    <li><a href="http://collections.library.ubc.ca" title="Collections">Collections</a></li>
+                    <li><a href="http://support.library.ubc.ca" title="Support Us">Support Us</a></li>
+                    <li><a href="http://about.library.ubc.ca/work-with-us/" title="Work with Us">Work with Us</a></li>
+                    <li><a href="http://about.library.ubc.ca/" title="See More..." class="more">See More...</a></li>
+                  </ul>
+                </div>
+              </li>
+              
+               <!-- Ask Us! -->
+               <li class="colorbox hidden-phone">
+              	<a style="color:white;font-weight:300;font-size:18px;background-color:#f47a20;height:28px;padding:0px 6px !important;margin:8px 18px;line-height:28px;border:1px solid;" class="cboxElement" href="http://www.library.ubc.ca/help/ask-colorbox.html" title="Ask Us">Ask Us!</a></li>              
+                <li class="visible-phone"><a href="http://www.library.ubc.ca/help/ask-colorbox.html" title="Ask Us">Ask Us!</a></li>              
+              
+              <!-- LOGIN -->
+              <li class="dropdown" id="login-nav">
+                <div class="btn-group">
+                  <a class="btn" href="#">LOGIN</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <li class="nav-header">Managing Your Account?</li>
+                    <li><a href="http://webcat.library.ubc.ca/vwebv/myAccount" title="My Library Account Login">My Library Account Login</a></li>
+                    <li class="nav-header">Researching From Home?</li>
+                    <li><a href="http://ezproxy.library.ubc.ca/login?url=http://www.library.ubc.ca" title="Separated link">EZproxy Login</a></li>
+                    <li class="nav-header">Need Citation Management?</li>
+                    <li><a href="http://ezproxy.library.ubc.ca/login?url=http://www.refworks.com/refworks" title="Refworks Account Login">Refworks Account Login</a></li>
+                  </ul>
+                </div>
+              </li>
+            
+            </ul>
+            
+          </div><!-- .nav-collapse -->
+        </div><!-- .container -->
+      </div><!-- .navbar-inner -->
+    </div><!-- .navbar -->
+    <!-- End of UBC Unit Navigation -->
+    
+    <!-- UBC Unit Breadcrumbs - Included Within Applications -->
+    <!-- <ul class="breadcrumb expand">
+      <li><a href="http://www.library.ubc.ca" title="UBC Library">Library Home</a> <span class="divider">/</span></li>
+      <li><a href="#" title="Second Level">Second Level</a> <span class="divider">/</span></li>
+      <li><a href="#" title="Third Level">Third Level</a> <span class="divider">/</span></li>
+      <li class="active">Page Name</li>
+    </ul> -->
+    <!-- End of UBC Unit Breadcrumbs -->
+    
+    <!-- Content Area -->
+    <div class="content expand" role="main">
+      <div class="row-fluid expand">
+  
+      <div class="grid span12">
+        
+        <!-- service notifications, if provided -->
+                
+        <div id="tabs-container" class="row-fluid">
+          
+          <div id="tabs" class="offset1 span7">
+            
+            <!-- tab navigation -->
+            <ul class="navig">
+              <li class="nav-one"><a href="#general" class="current">General <span></span></a></li>
+              <li class="nav-two"><a href="#books">Books &amp; Media <span></span></a></li>
+              <li class="nav-three"><a href="#databases">Indexes &amp; Databases <span></span></a></li>
+              <li class="nav-four"><a href="#journals">Journal Titles <span></span></a></li>
+              <li class="nav-five last"><a href="#site">Library Website <span></span></a></li>
+            </ul>
+            
+            <div class="list-wrap">
+              
+              <select class="navig-alt smallest-size">
+                <option value="general">General Search</option>
+                <option value="books">Books &amp; Media Search</option>
+                <option value="databases">Indexes &amp; Databases Search</option>
+                <option value="journals">Journal Titles Search</option>
+                <option value="site">Library Website Search</option>
+              </select>
+              
+              <!-- first tab, Summon search -->
+              <ul id="general">
+                <li>
+                  <form action="http://ubc.summon.serialssolutions.com/search" method="GET" name="search" class="clear">
+                    <input type="hidden" name="s.cmd" value="addFacetValueFilters(ContentType,Newspaper Article:t)">
+                    <input type="hidden" value="true" name="spellcheck">
+                    <div class="row-fluid">
+                      <div class="span10">
+                        <fieldset class="half-margin-bottom">
+                          <label for="search_field_everything">Find Articles, eBooks, Theses &amp; more in Summon</label>
+                          <input type="text" accesskey="s" value="" name="s.q" id="search_field_everything" placeholder="keywords">
+                        </fieldset>
+                      </div>
+                      <div class="span2">
+                        <input type="submit" title="Search Summon" accesskey="g" value="Search" class="button medium">
+                      </div>
+                    </div><!-- closes row-fluid -->
+                    <div class="row-fluid">
+                      <div class="span5">
+                        <div class="tooltip-top"></div>
+                        <div class="tooltip-inside">
+                          <p>Enter general keywords.</p>
+                        </div>
+                      </div>
+                      <div class="span7">
+                        <p class="advanced"><a title="Open Summon advanced search" class="advSearch external" href="http://ubc.summon.serialssolutions.com/advanced">Advanced Search</a></p>
+                      </div>
+                    </div><!-- closes row-fluid -->
+                  </form>
+                </li>
+              </ul>
+              
+              <!-- second tab, Catalogue search -->
+              <ul id="books" class="hide">
+                <li>
+                  <form id="searchBasic" accept-charset="UTF-8" method="GET" action="http://webcat.library.ubc.ca/vwebv/search" name="searchBasic">
+                    <input type="hidden" name="searchType" value="1">
+                    <input type="hidden" value="GKEY^*" id="searchCode" name="searchCode">
+                    <input type="hidden" value="none" id="limitTo" name="limitTo">
+                    <div class="row-fluid">
+                      <div class="span10">
+                        <fieldset class="half-margin-bottom">
+                          <label for="searchArg">Find Books &amp; Media in the Library Catalogue</label>  
+                          <input id="searchArg" type="text" name="searchArg" accesskey="s" placeholder="keywords">
+                        </fieldset>
+                      </div>  
+                      <div class="span2">
+                        <input class="button medium" type="submit" title="Search UBC Library Catalogue" value="Search">
+                      </div>
+                    </div><!-- closes row-fluid -->
+                    <div class="row-fluid">
+                      <div class="span5">
+                        <div class="tooltip-top"></div>
+                        <div class="tooltip-inside">
+                          <p>Enter book or media keywords.</p>
+                        </div>
+                      </div>
+                      <div class="span7">
+                        <p class="advanced"><a title="Open UBC Library Catalogue advanced search" class="advSearch external" href="http://webcat.library.ubc.ca/vwebv/searchAdvanced">Advanced Search</a></p>
+                      </div>
+                    </div><!-- closes row-fluid -->
+                  </form>
+                </li>
+              </ul>
+              
+              <!-- third tab, Databases search -->
+              <ul id="databases" class="hide">
+                <li>
+                  <form method="get" action="http://resources.library.ubc.ca">
+                    <input type="hidden" value="keywords" name="searchtype">
+                    <div class="row-fluid">
+                      <div class="span10">  
+                        <fieldset class="half-margin-bottom">
+                          <label for="i-d-search">Find an Index or Database to Search</label>
+                          <input type="text" title="Enter search terms" name="search" id="i-d-search" placeholder="keywords">
+                        </fieldset>
+                      </div>
+                      <div class="span2">
+                        <input type="submit" title="Search for indexes and databases" value="Search" class="button medium">
+                      </div>
+                    </div><!-- closes row-fluid -->
+                    <div class="row-fluid">
+                      <div class="span5">  
+                        <div class="tooltip-top"></div>
+                        <div class="tooltip-inside">
+                          <p>Enter keywords to find a database.</p>
+                        </div>
+                      </div>
+                      <div class="span7">
+                        <p class="advanced"><a title="Open indexes and databases advanced search" class="advSearch external" href="http://resources.library.ubc.ca">Advanced Search</a></p>
+                      </div>
+                    </div><!-- closes row-fluid -->
+                  </form>
+                </li>
+              </ul> 
+              
+              <!-- fourth tab, Journals search -->
+              <ul id="journals" class="hide">
+                <li>
+                  <form method="GET" action="http://GW2JH3XR2C.search.serialssolutions.com/" name="search_online" id="search_online">
+                    <input type="hidden" name="SS_searchTypeJournal" value="yes">
+                    <input type="hidden" name="V" value="1.0">
+                    <input type="hidden" name="L" value="GW2JH3XR2C">
+                    <input type="hidden" name="S" value="AC_T_B" id="S">
+                    <div class="row-fluid">
+                      <div class="span10">  
+                        <fieldset class="half-margin-bottom">
+                          <label for="C">Search by Journal Title</label>
+                          <input type="text" title="Enter search terms" name="C" value="" id="C" placeholder="title">
+                        </fieldset>
+                      </div>
+                      <div class="span2">
+                        <input type="submit" title="Search for journals" value="Search" class="button medium">
+                      </div>
+                    </div><!-- closes row-fluid -->
+                    <div class="row-fluid">
+                      <div class="span5">  
+                        <div class="tooltip-top"></div>
+                        <div class="tooltip-inside">
+                          <p>Enter a journal title only.</p>
+                        </div>
+                      </div>
+                      <div class="span7">
+                        <p class="advanced"><a title="Open journals advanced search" class="advSearch external" href="http://search.library.ubc.ca/#journals">Advanced Search</a></p>
+                      </div>
+                    </div><!-- clsoes row-fluid -->                    
+                  </form>
+                </li>
+              </ul>
+              
+              <!-- fifth tab, Google site search -->
+              <ul id="site" class="hide">
+                <li>
+                  <label>Search our web content for research help, library services &amp; more...</label><br class="clear">
+                  <div id="cse-search-form">Loading search...</div>
+                    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+                    <script type="text/javascript"> 
+                      google.load('search', '1', {language : 'en', style : google.loader.themes.V2_DEFAULT});
+                      google.setOnLoadCallback(function() {
+                        var customSearchOptions = {};
+                        var orderByOptions = {};
+                        orderByOptions['keys'] = [{label: 'Relevance', key: ''},{label: 'Date', key: 'date'}];
+                        customSearchOptions['enableOrderBy'] = true;
+                        customSearchOptions['orderByOptions'] = orderByOptions;  var customSearchControl = new google.search.CustomSearchControl(
+                          '016027841023157552002:g86pakgwsek+qtype:1', customSearchOptions);
+                        customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                        var options = new google.search.DrawOptions();
+                        options.setAutoComplete(true);
+                        customSearchControl.setAutoCompletionId('016027841023157552002:g86pakgwsek+qptype:1');
+                        options.enableSearchboxOnly("http://gates.library.ubc.ca/results.php");
+                        customSearchControl.draw('cse-search-form', options);
+                      }, true);
+                    </script>
+                </li>
+              </ul>
+              
+            </div><!-- closes list-wrap -->
+            
+          </div><!-- closes tabs -->
+          
+        </div><!-- closes tabs-container -->
+        
+        <div id="tagline-container">
+          
+          <h1 class="smallest-size">UBC Library</h1>
+          
+          <div id="tagline">
+            
+            <h1>Find The Best</h1>
+            
+            <!-- scrolling portion of tagline -->
+            <div id="sources">
+              <ul>
+                <li>Experts</li>
+                <li>Articles</li>
+                <li>Books</li>
+                <li>Media</li>
+                <li>Journals</li>
+              </ul>
+            </div><!-- closes sources -->
+            
+            <h1>For Your Research</h1>
+            
+          </div><!-- closes tagline -->
+          
+        </div><!-- closes tagline-container -->
+        
+        <div id="slideshow-container">
+
+
+          <!-- slideshow images -->
+          <div id="slideshow">
+            <ul id="slides" class="hidden-phone">
+              <li><div id="img-1"></div></li>
+              <li><div id="img-2"></div></li>
+              <li><div id="img-3"></div></li>
+              <li><div id="img-4"></div></li>
+            </ul>
+          </div><!-- closes slideshow -->
+          
+        </div><!-- closes slideshow-container -->
+        
+        <div class="row-fluid">
+          
+          <!-- begin link garden -->
+          <div class="span4 link box no-margin hidden-phone">
+            <h2><a href="http://services.library.ubc.ca/">Use The Library</a></h2>
+            <ul>
+              <li><a href="http://services.library.ubc.ca/#borrowing">Borrowing Services</a></li>
+              <li><a href="http://services.library.ubc.ca/#facilities">Facilities</a></li>
+              <li><a href="http://services.library.ubc.ca/#technology">Computers &amp; Technology</a></li>
+              <li><a href="http://services.library.ubc.ca/#access">Off-Campus Access</a></li>
+            </ul>
+          </div><!-- closes first column -->
+          
+          <div class="span4 link box hidden-phone">
+            <h2><a href="http://help.library.ubc.ca/">Get Research Help</a></h2>
+            <ul>
+              <li><a href="http://help.library.ubc.ca/#planning">Planning Your Research</a></li>
+              <li><a href="http://help.library.ubc.ca/#finding">Finding Resources</a></li>
+              <li><a href="http://help.library.ubc.ca/#evaluating">Evaluating &amp; Citing Sources</a></li>
+              <li><a href="http://help.library.ubc.ca/#publishing">Publishing Research</a></li>
+            </ul>
+          </div><!-- closes second column -->
+          
+          <div class="span4 link box">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="http://webcat.library.ubc.ca/vwebv/myAccount">Renew Books</a></li>
+              <li><a href="http://services.library.ubc.ca/borrowing-services/course-reserves/">Course Reserves</a></li>
+              <li><a href="http://elred.library.ubc.ca/mrbs/web">Book a Group Study Room</a></li>
+              <li><a href="http://services.library.ubc.ca/#view-user-guides">Guides for Library Users</a></li>
+            </ul>
+          </div><!-- closes third column -->
+          <!-- end link garden -->
+          
+        </div><!-- closes row-fluid -->
+  
+
+        <div class="row-fluid">
+          
+          <!-- events, hours, about us column -->
+          <div class="span6 no-margin">
+            
+            <div class="side box" id="hours">
+              <h3><a href="http://hours.library.ubc.ca/">Today's Hours <span class="visible-phone">- at 6:53am</span></a></h3>
+              <script type="text/javascript" src="http://hours.library.ubc.ca/widget-hours-js.php?display=homepage&1467813208"></script>
+              <p class="see-all"><a href="http://hours.library.ubc.ca/">Hours &amp; Locations &raquo;</a></p>
+            </div><!-- closes second box -->
+            
+            <div class="side box" id="workshops">             
+              <h3><a href="http://events.library.ubc.ca">Workshops &amp; Events</a></h3>
+              
+              <div class="event">
+              
+                <div class="calendar">
+                  <a href="https://events.library.ubc.ca/dashboard/view/6264"><span class="month">Jul</span>
+                  <span class="date">6</span></a>
+                </div>
+               
+                <h4><a href="https://events.library.ubc.ca/dashboard/view/6264">Get to Know Rare Books and Special Collections - 11:00am</a></h4>
+                <p>Have you ever been curious about what we do or what we have at Rare Books and Special Collections at UBC Library (RBSC)? Join our weekly open house / hands-on show-and-tell for an introduction to our space and our unique materials and collections! The event is free and open to the general public, as well as the UBC community. No need to RSVP, just drop in to learn what RBSC is all about!
+
+Rare Books and Special Collections is located on the 1st floor of the Irving K. Barber Learning Centre, 1961 East Mall, UBC Vancouver campus.
+
+For more information, please contact Rare Books and Special Collections at (604) 822-0645 or rare.books@ubc.ca.</p>
+                <p><a href="https://events.library.ubc.ca/dashboard/view/6264"><span class="small dark gray button">Register</span></a></p>
+              
+              </div><!-- closes event -->
+              <div class="event">
+              
+                <div class="calendar">
+                  <a href="https://events.library.ubc.ca/dashboard/view/6277"><span class="month">Jul</span>
+                  <span class="date">7</span></a>
+                </div>
+               
+                <h4><a href="https://events.library.ubc.ca/dashboard/view/6277">Navigating Copyright in the Digital Environment - 10:00am</a></h4>
+                <p>Curious about what you can post on a UBC departmental website, personal blog, shared wiki space, or social media platform? This workshop will cover what to keep in mind when using other people's copyrighted work on publicly available websites.</p>
+                <p><a href="https://events.library.ubc.ca/dashboard/view/6277"><span class="small dark gray button">Register</span></a></p>
+              
+              </div><!-- closes event -->
+              <div class="event">
+              
+                <div class="calendar">
+                  <a href="https://events.library.ubc.ca/dashboard/view/6265"><span class="month">Jul</span>
+                  <span class="date">13</span></a>
+                </div>
+               
+                <h4><a href="https://events.library.ubc.ca/dashboard/view/6265">Get to Know Rare Books and Special Collections - 11:00am</a></h4>
+                <p>Have you ever been curious about what we do or what we have at Rare Books and Special Collections at UBC Library (RBSC)? Join our weekly open house / hands-on show-and-tell for an introduction to our space and our unique materials and collections! The event is free and open to the general public, as well as the UBC community. No need to RSVP, just drop in to learn what RBSC is all about!
+
+Rare Books and Special Collections is located on the 1st floor of the Irving K. Barber Learning Centre, 1961 East Mall, UBC Vancouver campus.
+
+For more information, please contact Rare Books and Special Collections at (604) 822-0645 or rare.books@ubc.ca.</p>
+                <p><a href="https://events.library.ubc.ca/dashboard/view/6265"><span class="small dark gray button">Register</span></a></p>
+              
+              </div><!-- closes event -->              <p class="see-all"><a href="http://events.library.ubc.ca">Workshops &amp; Events &raquo;</a></p>
+            </div><!-- closes first box --->
+            
+            <div class="side box" id="about">
+              <h3><a href="http://about.library.ubc.ca">About UBC Library</a></h3>
+                <ul>
+                  <li><a href="http://about.library.ubc.ca/contact-us/">Contact Us</a></li>
+                  <li><a href="http://about.library.ubc.ca/news/">News</a></li>
+                  <li><a href="http://about.library.ubc.ca/strategic-plan/">Strategic Plan</a></li>
+                  <li><a href="http://about.library.ubc.ca/work-with-us/">Work With Us</a></li>
+                  <li><a href="http://support.library.ubc.ca/">Support Us</a></li> 
+                </ul>
+                <p class="see-all"><a href="http://about.library.ubc.ca/">About Us &raquo;</a></p>
+            </div><!-- closes third box -->
+              
+          </div><!-- closes second column -->
+
+  
+          <!-- blog posts column -->  
+          <div class="span6 blog" id="news">
+            <h2><a href="http://blogs.ubc.ca/library/">News &amp; Highlights</a></h2>            
+            
+            <div class="blog-post">
+              <div class="blog-image featured"><a href="http://about.library.ubc.ca/2016/06/29/nanitch-exhibit-of-uno-langmann-collection-a-great-success/"><img src="http://about.library.ubc.ca/files/2016/06/Nanitch_banner.jpg" alt="Blog Post Image" width="460" height="256" /></a></div>
+              <div class="blog-content featured">
+                <!-- all content removed per Comms request -->
+              </div><!-- closes blog-content -->
+            </div><!-- closes blog-post -->            
+            <div class="blog-post">
+              <div class="blog-image"><img src="http://about.library.ubc.ca/files/2016/06/LibraryAwards.jpg" alt="Blog Post Image" width="460" height="256" /></div>
+              <div class="blog-content">
+                <h3><a href="http://about.library.ubc.ca/2016/06/16/2016-library-staff-awards/">Recipients of 2016 Library Recognition Awards announced</a></h3>
+                <p>Three UBC Library employees have been recognized with the Employee Excellence, Unsung Hero, and Innovation Award.</p>
+                <p><a href="http://about.library.ubc.ca/2016/06/16/2016-library-staff-awards/"><span class="medium dark gray button">Read More</span></a>
+                <span class="quiet posted">Posted on June 16, 2016</span></p>
+              </div><!-- closes blog-content -->
+            </div><!-- closes blog-post -->
+            <div class="blog-post">
+              <div class="blog-image"><img src="http://about.library.ubc.ca/files/2016/03/BookOfHours_sm.jpg" alt="Blog Post Image" width="460" height="256" /></div>
+              <div class="blog-content">
+                <h3><a href="http://about.library.ubc.ca/2016/06/02/friends-spring-2016-newsletter/">Friends – Spring 2016</a></h3>
+                <p>Learn about the latest news from UBC Library in our <i>Friends</i> newsletter, available online.</p>
+                <p><a href="http://about.library.ubc.ca/2016/06/02/friends-spring-2016-newsletter/"><span class="medium dark gray button">Read More</span></a>
+                <span class="quiet posted">Posted on June 2, 2016</span></p>
+              </div><!-- closes blog-content -->
+            </div><!-- closes blog-post -->
+            <div class="blog-post">
+              <div class="blog-image"><img src="http://about.library.ubc.ca/files/2016/06/BSS-JohnThistle.jpg" alt="Blog Post Image" width="460" height="256" /></div>
+              <div class="blog-content">
+                <h3><a href="http://about.library.ubc.ca/2016/06/02/thistle-wins-award/">John Thistle wins 2016 Basil Stuart-Stubbs Book Prize</a></h3>
+                <p>Resettling the Range: Animals, Ecologies, and Human Communities in British Columbia is awarded UBC Library's annual book prize.</p>
+                <p><a href="http://about.library.ubc.ca/2016/06/02/thistle-wins-award/"><span class="medium dark gray button">Read More</span></a>
+                <span class="quiet posted">Posted on June 2, 2016</span></p>
+              </div><!-- closes blog-content -->
+            </div><!-- closes blog-post -->            
+            <p class="see-all"><a href="http://blogs.ubc.ca/library/">All UBC Library Posts &raquo;</a></p>
+          </div><!-- closes second column -->
+            
+        </div><!-- closes row-fluid -->
+        
+      </div><!-- closes grid -->
+      
+      </div><!-- .row-fluid -->
+		</div><!-- .content -->
+    <!-- End of Content Area -->
+    
+    <!-- Footer Area Unit Menu - Mobile Only -->
+    <div id="ubc7-unit-alternate-navigation" class="navbar expand visible-phone" role="navigation">
+      <div class="navbar-inner expand">
+        <div class="container">
+          <div class="nav-collapse collapse">
+            
+            <ul class="nav">
+            
+              <!-- Library Homepage -->
+              <li class="active"><a href="#" title="Library Home">Library Home</a></li>
+              
+              <!-- Search Collections -->
+              <li class="dropdown" id="search-nav-footer">							    
+                <div class="btn-group">
+                  <a class="btn" href="http://search.library.ubc.ca/">Search Collections</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <li class="nav-header">Search</li>
+                    <li><a href="http://search.library.ubc.ca/#general" title="General (Summon)">General (Summon)</a></li>
+                    <li><a href="http://search.library.ubc.ca/#catalogue" title="Books & Media (Catalogue)">Books & Media (Catalogue)</a></li>
+                    <li><a href="http://search.library.ubc.ca/#databases" title="Indexes, Databases & Articles">Indexes, Databases & Articles</a></li>
+                    <li><a href="http://search.library.ubc.ca/#journals" title="Journals">Journals</a></li>
+                    <li><a href="http://search.library.ubc.ca/#guides" title="Research Guides">Research Guides</a></li>
+                    <li><a href="http://search.library.ubc.ca/#research" title="UBC Research">UBC Research</a></li>
+                    <li><a href="http://search.library.ubc.ca/#digital" title="UBC Open Collections">UBC Open Collections</a></li>
+                  </ul>
+                </div>
+              </li>
+              
+              <!-- Hours & Locations -->
+              <li class="dropdown" id="hours-nav-footer">							    
+                <div class="btn-group">
+                  <a class="btn" href="http://hours.library.ubc.ca/">Hours &amp; Locations</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <div class="row-fluid expand">
+                      <div class="span6">
+                        <li class="nav-header">UBC Vancouver Campus</li>
+                        <li><a href="http://hours.library.ubc.ca/#view-asian" title="Asian Library">Asian Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-heritagecore" title="Chapman Learning Commons (Heritage Core)">Chapman Learning Commons (Heritage Core)</a></li>  
+                        <li><a href="http://hours.library.ubc.ca/#view-davidlam" title="David Lam Library">David Lam Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-education" title="Education Library">Education Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-ikblc" title="Irving K. Barber Learning Centre">Irving K. Barber Learning Centre</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-chapman" title="Irving K. Barber Learning Centre Information Desk">Irving K. Barber Learning Centre Information Desk</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-koerner" title="Education Library">Koerner Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-law" title="Education Library">Law Library</a></li>
+						<li><a href="http://hours.library.ubc.ca/#view-library" title="Music, Art and Architecture Library">Music, Art and Architecture Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-rbsc" title="Rare Books and Special Collections">Rare Books and Special Collections</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-archives" title="University Archives">University Archives</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-woodward" title="Woodward Library">Woodward Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-xwi7xwa" title="xwi7xwa Library"><u>X</u>wi7<u>x</u>wa Library</a></li>
+                      </div>
+                      <div class="span6">
+                        <li class="nav-header">UBC Vancouver Off-Campus</li>
+                        <li><a href="http://hours.library.ubc.ca/#view-biomedical" title="Biomedical Branch Library">Biomedical Branch Library</a></li>
+                       
+                        <li class="nav-header">UBC Okanagan Campus</li>
+                         <li><a href="http://hours.library.ubc.ca/#view-innovation" title="Innovation Library">Innovation Library</a></li>
+                        <li><a href="http://hours.library.ubc.ca/#view-okanagan" title="Okanagan Library">Okanagan Library</a></li>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+              
+              <!-- Use The Library -->
+              <li class="dropdown">							    
+                <div class="btn-group">
+                  <a class="btn" href="http://services.library.ubc.ca/">Use The Library</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <div class="row-fluid expand">
+                      <div class="span6">
+                        <li class="nav-header">Borrowing Services</li>
+                        <li><a href="http://services.library.ubc.ca/borrowing-services/library-account/" title="My Library Account">My Library Account</a></li>
+                        <li><a href="http://services.library.ubc.ca/borrowing-services/library-cards/" title="How to Get a Library Card">How to Get a Library Card</a></li>
+                        <li><a href="http://services.library.ubc.ca/#borrowing" title="See More..." class="more">See More...</a></li>
+                        <li class="nav-header">Computers & Technology</li>
+                        <li><a href="http://services.library.ubc.ca/computers-technology/copy-print-scan/" title="Print, Copy, Scan">Print, Copy, Scan</a></li>
+                        <li><a href="http://services.library.ubc.ca/computers-technology/public-computers/" title="Public Computers & Software">Public Computers & Software</a></li>
+                        <li><a href="http://services.library.ubc.ca/#technology" title="See More..." class="more">See More...</a></li>
+			<li class="nav-header">Guides for Library Users</li>
+                        <li><a href="http://services.library.ubc.ca/user-guides/undergraduate-students/" title="Undergraduate Students">Undergraduate Students</a></li>
+                        <li><a href="http://services.library.ubc.ca/user-guides/faculty-instructors/" title="Faculty & Instructors">Faculty & Instructors</a></li>
+                        <li><a href="http://services.library.ubc.ca/#view-user-guides" title="See More..." class="more">See More...</a></li>
+                      </div>
+                      <div class="span6">
+                        <li class="nav-header">Facilities</li>
+                        <li><a href="http://services.library.ubc.ca/facilities/group-silent-study-space/" title="Group & Silent Study Space">Group & Silent Study Spaces</a></li>
+                        <li><a href="http://services.library.ubc.ca/facilities/technology-spaces/" title="Technology Spaces">Technology Spaces</a></li>
+                        <li><a href="http://services.library.ubc.ca/#facilities" title="See More..." class="more">See More...</a></li>
+                        <li class="nav-header">Off-Campus Access</li>
+                        <li><a href="http://services.library.ubc.ca/off-campus-access/connect-from-home/" title="Connect from Home">Connect from Home</a></li>
+                        <li><a href="http://services.library.ubc.ca/off-campus-access/connect-from-home/ezproxy-tips-troubleshooting/" title="EZproxy Tips & Troubleshooting">EZproxy Tips & Troubleshooting</a></li>
+                        <li><a href="http://services.library.ubc.ca/#access" title="See More..." class="more">See More...</a></li>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+              
+              <!-- Get Research Help -->
+              <li class="dropdown">							    
+                <div class="btn-group">
+                  <a class="btn" href="http://help.library.ubc.ca/">Get Research Help</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <div class="row-fluid expand">	
+                      <div class="span6">					    
+                        <li class="nav-header">Planning Your Research</li>
+                        <li><a href="http://help.library.ubc.ca/planning-your-research/getting-started-on-your-research/" title="Getting Started on Your Research">Getting Started on Your Research</a></li>
+                        <li><a href="http://help.library.ubc.ca/#planning" title="See More..." class="more">See More...</a></li>
+                        <li class="nav-header">Finding Resources</li>
+                        <li><a href="http://guides.library.ubc.ca/" title="Research Guides">Research Guides</a></li>
+                        <li><a href="http://help.library.ubc.ca/finding-resources/journal-articles/" title="Journal Articles">Journal Articles</a></li>
+                        <li><a href="http://help.library.ubc.ca/#finding" title="See More..." class="more">See More...</a></li>
+                      </div>
+                      <div class="span6">
+                        <li class="nav-header">Evaluating & Citing Sources</li>
+                        <li><a href="http://help.library.ubc.ca/evaluating-and-citing-sources/evaluating-information-sources/" title="Evaluating Information Sources">Evaluating Information Sources</a></li>
+                        <li><a href="http://help.library.ubc.ca/evaluating-and-citing-sources/how-to-cite/" title="How to Cite">How to Cite</a></li>
+                        <li><a href="http://help.library.ubc.ca/#evaluating" title="See More..." class="more">See More...</a></li>
+                        <li class="nav-header">Publishing Research</li>
+                        <li><a href="http://help.library.ubc.ca/publishing-research/getting-started-with-circle/" title="Getting Started with cIRcle">Getting Started with cIRcle</a></li>
+                        <li><a href="http://help.library.ubc.ca/publishing-research/building-your-academic-profile/" title="Building Your Academic Profile">Building Your Academic Profile</a></li>
+                        <li><a href="http://help.library.ubc.ca/#publishing" title="See More..." class="more">See More...</a></li>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+              
+              <!-- About Us -->
+              <li class="dropdown">
+                <div class="btn-group">
+                  <a class="btn" href="http://about.library.ubc.ca/">About Us</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <li class="nav-header">About</li>
+                    <li><a href="http://about.library.ubc.ca/contact-us/" title="Contact Us">Contact Us</a></li>
+                    <li><a href="http://about.library.ubc.ca/news/" title="News">News</a></li>
+                    <li><a href="http://collections.library.ubc.ca" title="Collections">Collections</a></li>
+		    <li><a href="http://support.library.ubc.ca" title="Support Us">Support Us</a></li>
+                    <li><a href="http://about.library.ubc.ca/work-with-us/" title="Work with Us">Work with Us</a></li>
+                    <li><a href="http://about.library.ubc.ca/" title="See More..." class="more">See More...</a></li>
+                  </ul>
+                </div>
+              </li>
+              
+              <!-- Ask Us! -->
+              <li style="background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);" class="colorbox hidden-phone">
+              	<a style="color: #ffffff; font-weight:300; font-size:18px;" class="cboxElement" href="http://www.library.ubc.ca/help/ask-colorbox.html" title="Ask Us">Ask Us!</a></li>
+              <li class="visible-phone"><a href="http://www.library.ubc.ca/help/ask-colorbox.html" title="Ask Us">Ask Us!</a></li>
+              
+              
+              <!-- LOGIN -->
+              <li class="dropdown">
+                <div class="btn-group">
+                  <a class="btn" href="#">LOGIN</a>
+                  <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
+                  <ul class="dropdown-menu">
+                    <li class="nav-header">Managing Your Account?</li>
+                    <li><a href="http://webcat.library.ubc.ca/vwebv/myAccount" title="My Library Account Login">My Library Account Login</a></li>
+                    <li class="nav-header">Researching From Home?</li>
+                    <li><a href="http://ezproxy.library.ubc.ca/login?url=http://www.library.ubc.ca" title="Separated link">EZproxy Login</a></li>
+                    <li class="nav-header">Need Citation Management?</li>
+                    <li><a href="http://ezproxy.library.ubc.ca/login?url=http://www.refworks.com/refworks" title="Refworks Account Login">Refworks Account Login</a></li>
+                  </ul>
+                </div>
+              </li>
+              
+            </ul>
+          
+          </div><!-- .nav-collapse -->
+        </div><!-- .container -->
+      </div><!-- .navbar-inner -->
+    </div><!-- .navbar -->
+    <!-- End of Footer Area Unit Menu -->
+    
+    <footer id="ubc7-footer" class="expand" role="contentinfo">
+      <div class="row-fluid expand" id="ubc7-unit-footer">
+        <div class="span5" id="ubc7-unit-address">
+          <div id="ubc7-address-unit-name">UBC Library</div>
+          <div id="ubc7-address-campus">Vancouver Campus</div>
+          <div id="ubc7-address-street">1961 East Mall</div>
+          <div id="ubc7-address-location">
+            <span id="ubc7-address-city">Vancouver, </span><span id="ubc7-address-province" title="British Columbia">BC</span> <span id="ubc7-address-country">Canada</span> <span id="ubc7-address-postal">V6T 1Z1</span>
+          </div>
+          <div id="ubc7-address-phone">Phone: 604-822-6375</div>
+					<div id="ubc7-address-phone">Fax: 604-822-3893</div>
+        </div>
+				<div class="span5" id="ubc7-unit-address">
+          <div id="ubc7-address-unit-name">UBC Library</div>
+          <div id="ubc7-address-campus">Okanagan Campus</div>
+          <div id="ubc7-address-street">3333 University Way </div>
+          <div id="ubc7-address-location">
+            <span id="ubc7-address-city">Kelowna, </span><span id="ubc7-address-province" title="British Columbia">BC</span> <span id="ubc7-address-country">Canada</span> <span id="ubc7-address-postal">V1V 1V7</span>
+          </div>
+          <div id="ubc7-address-phone">Phone: 250-807-9107</div>
+          <div id="ubc7-address-phone">Fax: 250-807-8057</div>
+        </div>
+        <div class="span2">
+          <strong>Find Us</strong>
+		  <style>		  
+		  /*.icon-instagram:before {content: "\f16d";}*/
+		  </style>
+          <div id="ubc7-unit-social-icons">
+            <a href="http://www.facebook.com/#!/UBCLibrary" title="Facebook icon"><i class="icon-facebook-sign"></i></a>
+            <a href="http://twitter.com/ubclibrary" title="Twitter icon"><i class="icon-twitter-sign"></i></a>
+        	<a href="http://blogs.ubc.ca/library/feed/" title="RSS icon"><i class="icon-rss"></i></a>
+			<!--<a href="http://instagram.com/ubclibrary/" title="Instagram icon"><i class="icon-instagram"></i></a>-->
+            <a href="http://www.flickr.com/photos/ubclibrary" title="Flickr icon"><i class="icon-flickr"></i></a>
+          </div>
+		 <ul class="unstyled">
+            <li><a href="https://confluence.id.ubc.ca:8443/display/LIBRARY">Staff Site</a></li>
+			<li><a href="http://copyright.ubc.ca/">Copyright Guidelines</a></li>
+			<li><a href="http://about.library.ubc.ca/policies/">Policies</a></li>
+			<li><a href="http://about.library.ubc.ca/contact-us/">Contact Us</a></li>
+		 </ul>
+
+        </div>
+      </div>
+      <div class="row-fluid expand ubc7-back-to-top">
+        <div class="span2">
+          <a href="#" title="Back to top">Back to top <div class="ubc7-arrow up-arrow grey"></div></a>
+        </div>
+      </div>
+      <div class="row-fluid expand" id="ubc7-global-footer">
+        <div class="span5" id="ubc7-signature"><a href="http://www.ubc.ca/" title="The University of British Columbia (UBC)">The University of British Columbia</a></div>
+        <div class="span7" id="ubc7-footer-menu"></div>
+      </div>
+      <div class="row-fluid expand" id="ubc7-minimal-footer">
+        <div class="span12">
+          <ul>
+            <li><a href="https://cdn.ubc.ca/clf/ref/emergency" title="Emergency Procedures">Emergency Procedures</a> <span class="divider">|</span></li>
+            <li><a href="https://cdn.ubc.ca/clf/ref/terms" title="Terms of Use">Terms of Use</a> <span class="divider">|</span></li>
+            <li><a href="https://cdn.ubc.ca/clf/ref/copyright" title="UBC Copyright">Copyright</a> <span class="divider">|</span></li>
+            <li><a href="https://cdn.ubc.ca/clf/ref/accessibility" title="Accessibility">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    
+  </div><!-- .container -->
+
+  <!-- Google Analytics -->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-37159110-1']);
+	  _gaq.push(['_setDomainName', 'library.ubc.ca']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+  
+      <!-- crazy egg code -->
+      <script type="text/javascript">
+        setTimeout(function(){var a=document.createElement("script");
+        var b=document.getElementsByTagName("script")[0];
+        a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0012/7055.js?"+Math.floor(new Date().getTime()/3600000);
+        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+      </script> 
+
+</body>
+</html>

@@ -1,0 +1,1080 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Claremont Colleges Library</title>
+
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+<!--
+
+@import url(/common/css/global.css);
+@import url(/common/css/header.css);
+@import url(/common/css/tabMenu.css);
+@import url(/site/css/main.css);
+@import url(/site/css/home.css);
+@import url(/site/css/screen.css);
+
+-->
+
+/* code for IE-specific styles, visible only to IE browsers: */
+
+</style>
+
+<!--[if IE]>
+<style type="text/css">
+#header h1 a {margin:8px 0 0 38px ;}
+</style>
+<![endif]-->
+
+<!--[if IE 6]>
+<style type="text/css">
+.blob {margin:10px 0 0 0 ;}
+ img.blob {margin:0 ;}
+#hpRightCol {margin-left:-0px;}
+#hpLeftCol {left: 22px;}
+#resources {left: -223px;margin-right:-223px;}
+</style>
+<![endif]-->
+
+<!--[if IE 7]>
+<style type="text/css">
+#tabs hr {display:none;}
+#menu ul ul {position: relative; margin:-.2em 0 0 -.2em ;}
+</style>
+<![endif]-->
+
+<!--[if IE 8]>
+<style type="text/css">
+#tabs {height:1.2em;}
+</style>
+<![endif]-->
+
+<style type="text/css">
+
+
+/******************************************************************************
+ *
+ * WMS (and related) styling stanzas
+ *
+ */
+
+#content #wms-search {
+    margin: 0 50px 15px 50px;
+	text-align: center;
+	width: 641px;
+	/*
+	margin: 0 35px;
+	width: 671px; */
+}
+#content #wms-search {
+    clear: both;
+    overflow: hidden;
+}
+#resources {
+/*  background: none repeat scroll 0 0 #c6cca3; */
+}
+#resources-inner {
+  background: none repeat scroll 0 0 #c6cca3;
+}
+#resources li#wmslg a {
+/*	background: url("/site/images/home/resourcesTop.gif") no-repeat scroll left top #c6cca3; */
+	background: #f0eada;
+	padding-top: 8px;
+}
+#resources li#wmslg a:hover {
+	/* background: url("/site/images/home/resourcesTop-hov.gif") no-repeat scroll left top #e8e8e4; */
+	background: #e8e8e4;
+	padding-top: 8px;
+}
+.ccdl {
+	border-top:0;
+}
+li.mud {
+	padding: 4px 8px;
+	color: #717a3d;
+	background: #c6cca3;
+}
+
+#resources #news {
+	padding-top: 10px;
+}
+#resources #news, 
+#resources #news div.newsstory {
+	background: #fbfbfb;
+}
+#resources #news h2 {
+	display: block;
+}
+#resources .newsblob {
+/*	background: url("/common/images/newsblob-267.jpg") repeat-y scroll left top #e5e2f0; */
+	width: 267px;
+}
+#resources .newsblobtop {
+/*	background: #e5e2f0; */
+  width: 267px;
+}
+#resources .newsblob h2 {
+/*	background: url("/common/images/newsblob-267.jpg") repeat-y scroll left top #e5e2f0; */
+}
+#resources .newsblobbot {
+/*	background: url("/common/images/newsblobbot-267.jpg") no-repeat scroll left bottom #e5e2f0; */
+  width: 267px;
+}
+#resources .newsblob .chicklets {
+	padding-left: 0em;
+	padding: 5px 5px 5px 150px;
+}
+#workshops-calendar {
+	margin-bottom: 10px;
+} 
+#geninfotop, 
+#geninfo, 
+#geninfobot {
+	background: none;
+	background: #ecece9;
+	width: 740px;
+}
+div.search-google {
+	padding: 0 20px;
+}
+input.query,
+input[type="search"] {
+	height: 50px;
+	size: 70;
+}
+div.qwrap input.submit,
+input[type="submit"] {
+	height: 54px;
+	background-color: #d95c2b;
+	color: #fff;
+	font-weight: bold;
+}
+input#gsc-i-id1 {
+	background: #e3e6d2 !important;
+	height: 50px;
+}
+input.gsc-search-button {
+	height: 58px !important;
+}
+input.gsc-input {
+	border-color: #b8bf91 !important;
+}
+
+</style>
+<script src="//ccl.worldcat.org/wcpa/html/searchapi.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="/site/scripts/js/wmsTabs.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	$.preloadImages = function() {
+		for (var i = 0; i < arguments.length; i++) {
+			$("<img />").attr("src", arguments[i]);
+		}
+	}
+
+	$.preloadImages("/site/images/home/Google-Glass_hover.png",
+		"/site/images/home/librarians-matter_hover.png",
+		"/site/images/home/love-your-library_hover.png",
+		"/site/images/home/claremont-discourse_hover.png",
+		"/site/images/home/open-house_hover.png",
+		"/site/images/home/URA_hover.png",
+		"/site/images/home/take-a-study-break_hover.png",
+		"/site/images/home/Holiday-Card_hover.png",
+		"/site/images/home/Annual-Report-homepage-imageHover2015.png",
+		"/site/images/home/under-construction.png",
+		"/site/images/home/under-construction_hover.png");
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- code to make tabbed menu work in IE browsers: -->
+<!--[if IE]>
+<style type="text/css" media="screen">
+ #menu ul li {float: left; width: 100%;}
+
+/* if the browser is IE6 */
+
+#tabs hr {
+display:none;
+}
+
+</style>
+<![endif]-->
+
+<!--[if lt IE 7]>
+<style type="text/css" media="screen">
+body {
+behavior: url(/common/htc/csshover.htc);
+font-size: 100%;
+}
+
+#menu ul li a {height: 1%;} 
+
+#menu a, #menu h2 {
+}
+</style>
+<![endif]-->
+
+
+<!-- Google analytics snippet --><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23288856-1']);
+  _gaq.push(['_setDomainName', '.libraries.claremont.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+
+<!-- opening secion of header: -->
+
+<div id="header">
+	<div id="headerRightBg"></div>
+	<div id="headerFrame">
+			<h1><a href="http://libraries.claremont.edu/"><span>
+				Claremont Colleges Library
+			</span></a></h1>
+			<div id="askus">
+				<h2><a href="http://libraries.claremont.edu/help/askus/"><span>ask us</span></a></h2>
+					<ul class="askus-top">
+					<li class="ask1st"><a href="http://libraries.claremont.edu/help/askus/im-more.asp">chat</a></li>
+					<li><a href="https://ccl.idm.oclc.org/login?url=http://libraries.claremont.edu/form/askalib.asp">email</a></li>
+					<li><a href="http://libraries.claremont.edu/help/askus/byphone.asp">phone</a></li>
+					</ul>
+					<ul>
+					<li class="ask1st"><a href="http://libraries.claremont.edu/help/askus/bytext.asp">text</a></li>
+					</ul>
+				<p class="hide"><a href="#content">Skip main navigation</a></p>
+			</div> <!-- close askus -->
+	</div> <!-- close headFrame -->
+</div> <!-- close header -->
+
+
+
+
+
+<!-- opening secion of tab menu: -->
+<div id="tabMenu">
+	<div id="tabs">
+
+		
+
+<!-- left set of nav, hidden on home page: -->
+<!-- include virtual="/include/home-etc.asp"-->
+
+<!-- standard quick links menu: -->
+
+
+		<div id="menu">
+		<ul>
+		<li class="qlinks"><h2><a href="/quicklinks/">Quick Links</a></h2>
+			<ul>
+			<li><a href="http://emsweb.claremont.edu/CUC/BrowseEvents.aspx">
+				Calendar of Events</a></li>
+			<li><a href="http://www.crl.edu/">
+				Center for Research Libraries</a></li>
+<!--
+			<li><a href="http://faq.libraries.claremont.edu">
+				FAQs</a></li> 
+-->
+                <li><a href="http://libraries.claremont.edu/resources/fastfacts/" title="Online dictionaries, encyclopedias, quotes, maps, &amp; more">
+				Fast Facts</a></li> 
+                <li><a href="http://ry6af4uu9w.search.serialssolutions.com/OpenURL_local?SS_Page=refiner&SS_RefinerEditable=yes&SS_styleselector=0&SS_LibHash=RY6AF4UU9W&url_ver=Z39.88-2004&rfr_id=info:sid/sersol:RefinerQuery">
+				Find article from citation</a></li>
+			
+<!--			<li><a href="http://libraries.claremont.edu/help/media.asp">
+				Find DVDs &amp; Other Media</a></li>
+-->
+            <li><a href="/informationliteracy/">
+				Information Literacy</a></li>
+            <li><a href="http://claremont.libcal.com/libraryworkshops">
+            	(Love Your) Library Workshops</a></li>
+			<li><a href="http://libraries.claremont.edu/contact/maps/">
+				Library Maps &amp; Floorplans</a></li>
+
+			<li><a href="http://libraries.claremont.edu/resources/databases/dbr.asp?id=443">
+				RefWorks</a></li>
+			<li><a href="https://ccl.idm.oclc.org/login?url=https://claremont-illiad-oclc-org.ccl.idm.oclc.org/illiad/illiad.dll" target="_blank">
+				Resource Sharing (ILL) Account</a></li>
+			<li><a href="http://sakai.claremont.edu/">
+				Sakai</a></li>
+                <li><a href="/howto/researchtutorial/begin.html">
+				Start Your Research Tutorial</a></li>
+				<li><a href="https://ccl.on.worldcat.org/myaccount" target="_blank">
+				View Account/Renew Books</a></li>
+			</ul>
+		</li>
+		</ul>
+
+<!-- standard help menu: -->
+
+				
+
+<!-- page-specific Help list: -->
+			
+			<ul>
+			
+			<li class="help"><h2><a href="/help/">Help</a></h2>
+				<ul>
+				<!-- 
+				<li class="IWantTo"><span>I want to...</span></li> -->
+				
+				<li><a href="/contactus.asp">Contact someone at the library</a></li>
+				<!-- 
+				<li><a href="http://libraries.claremont.edu/help/media.asp">Get a DVD/video</a></li>
+				<li><a href="http://libraries.claremont.edu/copyctr/">Make photocopies</a></li>
+				<li><a href="http://libraries.claremont.edu/help/laptop.asp">Use a laptop in the library</a></li> -->
+				<li><a href="/servicesandpolicies/computing/offcampus.asp">Use resources from off-campus</a></li>
+				<li class="pad-bot"><a href="/servicesandpolicies/computing/laptops.asp">Using your laptop (wireless info)</a></li>
+				
+				<li class="bdr-top"><a href="/help/facultyfaq.asp">Faculty FAQs</a></li>
+				
+				<li class="bdr-both"><a href="/form/suggestion.asp">Make a suggestion</a></li>
+				
+				<li class="pad-top"><a href="/help/">Get more help</a></li>
+				</ul>
+			</li>
+			</ul>
+
+<!-- colleges menu: -->
+
+		<ul>
+		<li class="tcc"><h2><a href="http://www.claremont.edu/">The Claremont Colleges</a></h2>
+		
+			<ul>
+			<li><a href="http://www.pomona.edu/">Pomona College</a></li>
+			<li><a href="http://www.cgu.edu/">Claremont Graduate University</a></li>
+			<li><a href="http://www.scrippscollege.edu/">Scripps College</a></li>
+			<li><a href="http://www.claremontmckenna.edu/">Claremont McKenna College</a></li>
+			<li><a href="http://www.hmc.edu/">Harvey Mudd College</a></li>
+			<li><a href="http://www.pitzer.edu/">Pitzer College</a></li>
+			<li><a href="http://www.kgi.edu/">Keck Graduate Institute</a></li>
+			<li><a href="http://www.cuc.claremont.edu/">Claremont University Consortium</a></li>
+			</ul>
+		</li>
+		</ul>
+		</div> <!-- close menu -->
+		
+		<hr />
+		
+
+<!-- ending secion of tab menu: -->
+		
+	</div> <!-- close tabs -->
+</div> <!-- close tabMenu -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- opening secion of body, including openings of "frame" (bg is left mountain image), "frame2" (bg is right mountain image), and "container" (centered white box): -->
+<div id="frame">
+	<div id="frame2">
+
+	<div id="container">
+
+
+
+
+
+
+	<div id="content">
+
+
+
+<!--
+Random image goes below; replace this code with an img tag if a static image is needed instead
+Notes:
+  1. The "blob" class is applied to this image so that it will have the correct margin;
+     if inserting img tag for static image you will need to add class="blob" to the tag.
+  2. The random images live in /site/images/blobimages/random/; you will need to place
+     images in and point to /site/images/blobimages/static/
+  3. Sample image tag (copy and edit):
+     <img src="/site/images/blobimages/static/someImage.jpg" width="275" height="130" alt="description of image" class="blob">
+	 -->
+<!--
+< %
+RANDOMIZE
+Response.write("<img src='/site/images/blobimages/random/blob-image" & INT((11)*RND()) & ".jpg' width='275' height='130' alt='image of libraries' class='blob'>")
+%>
+
+// -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="wms-search">
+	<div id="wcl_searchbox" style="display:none;"></div>
+	<div class="basicPg">
+	<ul id="library-tabs" class="tabs elem-rounded-top">
+		<li class="active elem-rounded-top" title="Search the Claremont Colleges Library and Beyond"><a href="#tab1">Get Started</a></li>
+		<li title="Search for articles" class="elem-rounded-top"><a href="#tab2">Articles</a></li>
+		<li title="Search for Books" class="elem-rounded-top"><a href="#tab3">Books</a></li>
+		<li title="Search the Claremont Colleges Library website" class="elem-rounded-top"><a href="#tab4">Our Website</a></li>	
+		
+	</ul>
+	<div id="library-tab-content" class="tab_container">
+	<div id="tab1" class="tab_content elem-rounded-bot" style="display: none;">
+	<form target="_blank" method="get" id="searchForm" class="library_search" action="http://ccl.on.worldcat.org/external-search">
+	<section>
+	<div class="qwrap">
+		<p>
+			<input type="hidden" value="LIBRARY_PLUS_RELEVANCE" name="sortKey">
+			<input type="text" value="Search Books, Articles, and More at the Claremont Colleges Library and Beyond" title="search" size="70" 
+				onfocus="if (this.value == 'Search Books, Articles, and More at the Claremont Colleges Library and Beyond') {this.value = '';}" 
+				onblur="if (this.value == '') {this.value = 'Search Books, Articles, and More at the Claremont Colleges Library and Beyond';}" 
+				name="queryString" maxlength="256" class="query">		  
+			<input type="submit" value="Search" class="submit">
+		</p>
+		<p>
+			<a href="http://ccl.on.worldcat.org/advancedsearch" target="_blank">Advanced Search</a>&nbsp;|&nbsp;		
+			<a href="/resources/databases/" target="_blank">Databases</a>&nbsp;|&nbsp;
+			<a href="https://ccl.on.worldcat.org/atoztitles/search#journal" target="_blank">
+			Electronic Journals</a>&nbsp;|&nbsp;
+			<a href="http://ccl.on.worldcat.org/myaccount" target="_blank">My Account</a>
+		</p>
+	</div>
+	</section>
+	</form>
+	</div>
+</div><!-- library-tab-content -->
+</div> <!-- basicPg -->
+
+<div id="tab2" class="tab_content elem-rounded-bot" style="display: none;">
+		<form target="_blank" id="searchForm" action="http://ccl.on.worldcat.org/search" method="get">
+		<section>
+		<div class="qwrap">
+		<input type="search" name="queryString" value="Search for articles" title="Search Query" size="70"
+				onfocus="if (this.value == 'Search for articles') {this.value = '';}" 
+				onblur="if (this.value == '') {this.value = 'Search for articles';}" />
+			<!-- <input type="hidden" name="databaseList" value="799,1012,1060,1073,1271,1609,1697,1708,1834,1842,1847,1862,1988,2005,2223,2236,2237,2259,2260,2261,2262,2263,2264,2267,2268,2275,2277,2281,2314,2328,2356,2375,2401,2462,2507,2572,2642,2662,2668,2972,3205,3218,3227,3374,3384,3421,3429" > -->		
+			<input id="dbList" name="format" type="hidden" value="Artchap">
+		<input type="submit" value="Search"/>
+		</div>
+		</section>
+		</form>
+		<p>
+			<a href="http://ccl.on.worldcat.org/advancedsearch" target="_blank">Advanced Search</a>&nbsp;|&nbsp;		
+			<a href="/resources/databases/" target="_blank">Databases</a>&nbsp;|&nbsp;
+			<a href="https://ccl.on.worldcat.org/atoztitles/search#journal" target="_blank">
+			Electronic Journals</a>&nbsp;|&nbsp;
+			<a href="http://ccl.on.worldcat.org/myaccount" target="_blank">My Account</a>
+		</p>
+</div>
+ 		<div id="tab3" class="tab_content elem-rounded-bot" style="display: block;">
+		<form target="_blank" method="get" id="searchForm" class="library_search" 
+			action="https://ccl.on.worldcat.org/search">
+		<section>
+		<div class="qwrap">
+		<p>
+			<input id="dbList" name="format" type="hidden" value="Book">  
+			<!-- <input type="hidden" value="ALL_LIBRARIES" name="scope"> -->
+			<input type="search" value="Search for books" title="search" size="70" 
+				name="queryString" maxlength="256" class="query"
+				onfocus="if(value=='Search for books') value=''" 
+				onblur="if(value=='') value='Search for books'" > 
+			<input type="submit" value="Search" class="submit">  
+		</p>
+		<p>
+			<a href="http://ccl.on.worldcat.org/advancedsearch" target="_blank">Advanced Search</a>&nbsp;|&nbsp;		
+			<a href="/resources/databases/" target="_blank">Databases</a>&nbsp;|&nbsp;
+			<a href="https://ccl.on.worldcat.org/atoztitles/search#journal" target="_blank">
+			Electronic Journals</a>&nbsp;|&nbsp;
+			<a href="http://ccl.on.worldcat.org/myaccount" target="_blank">My Account</a>
+		</p>
+		</div><!-- qwrap -->
+		</section></form>
+	</div><!-- tab1 -->
+	<div id="tab4" class="tab_content elem-rounded-bot" style="display: none;">
+<!-- 	<form title="this is a search of the library's journal titles" target="_blank" name="wclr" method="get" enctype="application/x-www-form-urlencoded" action="//ccl.on.worldcat.org/atoztitles/journals" accept-charset="UTF-8">
+		<input type="hidden" value="matchAll" name="searchType"><input type="text" title="type search terms here" size="70" name="jtitle" maxlength="256" id="jtitle"><input type="submit" value="Search" name="" class="buttonInput">&nbsp;
+	</form>
+	<p>
+		<a target="_blank" href="http://libraryguides.ambs.edu/ambsworldcatjournals">About journal title search</a> | <a target="_blank" href="http://youtu.be/Cci8sdIHe7I">Video intro</a>
+	</p> -->
+
+<div class="search-google">
+<script>
+  (function() {
+    var cx = '007826991652720110987:nt9c-nkksy4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</div>
+	
+	</div>
+ 
+</div><!-- wms-search -->
+
+<div id="resources-coll-howto-geninfo">
+
+	<div id="resources" class="column">
+
+	<div id="#resources-inner">
+
+	<h2>All Things Digital</h2>
+
+	<ul>
+	<li id="wmslg" class="ccdl" >
+		<a href="http://libguides.libraries.claremont.edu/worldsharediscovery" class="pad7px elem-rounded-top" target="_blank" >
+        <span class="resource-name" style="color:#d95c2b;">Get to Know the New Library Search</span>
+		<span class="resource-definition" >
+		How to use the new inclusive search of the <br />
+		library&rsquo;s catalogs,our most popular databases and <br />
+		subscriptions,  as well as resources from libraries <br />
+		around the world!</span>
+        </a>
+		</li>
+	<li id="scdpdi" class="ccdl">
+		<a href="/cdi/" class="pad7px border-top-dadbd3">
+        <span class="resource-name">Claremont Scholarship</span>
+		<span class="resource-definition">Scholarly communication, digital publishing, <br />and digital initiatives</span>
+        </a>
+		</li>
+
+
+
+
+	<li class="coursereserves"><a href="/reserves/" class="pad7px border-top-dadbd3">
+		<span class="resource-name">Course Readings & Reserve</span>
+		<span class="resource-definition">Information for students and faculty</span>
+		</a>
+		</li>
+	<li class="gis"><a href="http://libguides.libraries.claremont.edu/GIS/" class="pad7px border-top-dadbd3">
+		<span class="resource-name">GIS</span><span class="resource-acronym"> &mdash; Geographical Information Systems</span>
+		<span class="resource-definition">Use maps to visualize spatial data</span>
+		</a>
+		</li>
+	<li id="databases" class="pad7px border-top-dadbd3 mud">
+		<span class="resource-name">Most Used Databases</span>
+		<!-- <span class="resource-definition">Search for articles &amp; more</span> --></li>
+	<li id="dbform">
+		<!--  -->
+		<form method="post" action="" >
+			<p>
+			<select name="libraries" onchange="location.href=libraries.options[libraries.selectedIndex].value">
+				<option value="/">Most Used Databases</option>				
+				<option value="/resources/databases/dbr.asp?id=282">Acad. Search Premier</option>
+				<option value="/resources/databases/dbr.asp?id=68">EconLit</option>
+				<option value="/resources/databases/dbr.asp?id=275">Google Scholar</option>
+				<option value="/resources/databases/dbr.asp?id=254">JSTOR</option>
+				<option value="/resources/databases/dbr.asp?id=124">LexisNexis Academic</option>
+				<option value="/resources/databases/dbr.asp?id=143">MLA Int. Bibliography</option>
+				<option value="/resources/databases/dbr.asp?id=163">OmniFile</option>
+				<option value="/resources/databases/dbr.asp?id=178">PsycINFO</option>
+				<option value="/resources/databases/dbr.asp?id=179">PubMed</option>
+				<option value="/resources/databases/dbr.asp?id=207">Web of Science</option>
+			</select>
+			</p>
+			</form>
+		<div id="trials">
+		<a href="/resources/databases/trials.asp"><span>Trial databases</span></a>
+		</div>
+		</li>
+
+	<li class="buffer"><!-- <span><hr></span> --></li>
+
+	<li class="researchyourtopic"><a href="/resources/researchyourtopic/" class="pad7px border-top-dadbd3">
+		<span class="resource-name">Research Guides</span>
+		<span class="resource-definition">Quick guides to research your topic</span>
+		</a>
+		</li>
+		
+	<li id="last"><a href="https://ccl.idm.oclc.org/login?url=https://claremont-illiad-oclc-org.ccl.idm.oclc.org/illiad/illiad.dll" target="_blank" class="pad7px border-top-dadbd3 elem-rounded-bot">
+		<span class="resource-name">Resource Sharing (ILL)</span>
+		<br />
+		<span class="resource-definition">Login to your Interlibrary Loan account.</span>
+		</a>
+		</li>
+	</ul>
+	
+		</div> <!-- close resources-inner div -->
+	
+	
+	
+	<div id="news">
+	<!-- -->
+
+		<div class="newsstory">
+		
+<div class="newsblob elem-rounded"><div class="newsblobtop"><span></span></div><h2>News <span class='chicklets'>	<a href='http://www.facebook.com/honnoldlibrary'>		<img src='/site/images/f_logo_18x18.jpg' alt='Find us on Facebook' title='Like us'/></a>	<a href='http://www.twitter.com/honnoldlibrary'>		<img src='/site/images/twitter_newbird_blue_sm.png' alt='Follow honnoldlibrary on Twitter' title='Follow us'/></a>	<a href='http://news.libraries.claremont.edu/atom.xml'>		<img src='/site/images/SmallRSSButton.png' alt='Subscribe to get the latest news' title='Subscribe'/></a></span></h2><div class="newsblobbot"><span></span></div></div> <!-- close h2newsblob -->
+
+
+<!-- static news story starts here -->
+
+<!--
+<h3><a href ='/news/' class='fwd'>Fake news story</a></h3><p>There are many fake news stories but as fake news stories go, this is one of the better ones...</p>
+			<p class="right"><a href="/news/">More fake news</a></p>
+		</div>
+
+		<div class="newsstory" style="margin-top:1em;"> -->
+
+<!-- static news story ends here -->
+
+<h3><a href ='http://news.libraries.claremont.edu/2016/04/2016-library-undergraduate-res.html' class='fwd'>2016 Library Undergraduate Research Award Winners Selected</a></h3><p>Now in its third year, the Library Undergraduate Research Award (LURA) recognizes undergraduate students who have demonstrated...</p><h3><a href ='http://news.libraries.claremont.edu/2016/04/claremont-discourse-lecture-sh.html' class='fwd'>Claremont Discourse Lecture: Shakespeare's Tragic Relief</a></h3><p>Glenn Simshaw, Assistant Professor of Writing & Director of the Writing Center, Scripps College 4:15PM, Thursday, April...</p><h3><a href ='http://news.libraries.claremont.edu/2016/03/the-claremont-colleges-library-2.html' class='fwd'>The Claremont Colleges Library Joins the Greater Western Library Alliance</a></h3><p>The Claremont Colleges Library has been granted membership into the Greater Western Library Alliance (GWLA), a consortium...</p>
+
+			<div style="text-align: right;">
+			<p><a href="http://news.libraries.claremont.edu/">More news</a></p>
+			</div>
+		</div>
+
+		<div class="newsstory">
+
+
+		</div>
+
+		<div class="newsstory">
+
+
+
+		</div>
+
+	</div> <!-- close news div -->
+
+	
+
+
+	</div> <!-- close resources div -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="hpLeftCol" class="column">
+
+		<div id="libspic">
+<a href="http://libguides.libraries.claremont.edu/libraryspaces"	class="left-column-feature under-construction"><span>North entrance 2nd floor Honnold CLOSED May 18th to August 22nd</span></a>
+		</div> <!-- close of libspic -->
+
+		<div id="collections">
+		<h2>Focused Collections</h2>
+			<ul>
+			<li><a href="http://libguides.libraries.claremont.edu/asianstudies/" class="as">Asian Library</a></li>
+			<li><a href="/gov/" class="gov">Government Publications</a></li>
+			<li><a href="/sc/" class="sc">Special Collections</a></li>
+			</ul>
+		</div> <!-- close of collections -->
+
+		<div id="howto">
+
+		<div id="howtoh2" class="elem-rounded">
+		<div id="howtoh2top"><span></span></div>
+		<h2><span>How to...</span></h2>
+		<div id="howtoh2bot"><span></span></div>
+		</div>
+
+			<ul>
+			<!--  -->
+			<li><a href="/howto/citesources/">Cite Your Sources</a></li>
+			<li><a href="/contact/directories/librarians.asp">Contact a Librarian</a></li>
+            <li><a href="/achontutorial/pages/index.html">Explore Academic Integrity</a></li>
+			<li><a href="/howto/findarticles/">Find Articles</a></li>
+			<li><a href="http://libguides.libraries.claremont.edu/worldsharediscovery">Find Books &amp; More</a></li>
+			<li><a href="/howto/findprimarysources/">Find Primary Sources</a></li>
+			<li><a href="/howto/findstatistics/">Find Statistics &amp; Data</a></li>
+			<li><a href="/howto/researchoffcampus/">Research Off Campus</a></li>
+			<li><a href="/howto/researchtutorial/begin.html">Start Your Research</a></li>
+            <li><a href="https://ccl.on.worldcat.org/myaccount" target="_blank">View Account/Renew Books</a></li>
+			</ul>
+
+		</div> <!-- close of howto -->
+
+	</div> <!-- close of hpLeftCol -->
+
+
+
+
+
+
+
+
+</div> <!-- close leftArea div -->
+
+
+
+
+
+
+<div id="hpRightCol" class="column">
+
+	<div id="hours">
+
+		<div class="newsblob elem-rounded">
+			<div class="newsblobtop"><span></span></div>
+<h2>Hours for Today, 7/5/2016</h2>
+			<div class="newsblobbot"><span></span></div>
+		</div> <!-- closing "newsblob" div -->
+
+<table><tr><td>Honnold/Mudd</td><td class="time">8 a.m. to 6 p.m.</td></tr><tr><td>Special Collections</td><td class="time">1 p.m. to 5 p.m.</td></tr><tr><td>Honnold Caf&eacute;</td><td class="time">9 a.m. to 3 p.m.</td></tr><tr><td>Connection</td><td class="time">9 a.m. to 5 p.m.</td></tr><tr><td colspan="2" class="more"><a href="/about/hours/">More hours</a></td></tr></table>
+	</div> <!-- close "hours" div -->
+
+	<div id="pic">
+
+
+	<a  class="strategic" href="/site/downloads/_strategic-plan/StrategicInitiatives2016-2020.pdf" target="_blank">
+	<span>2016-2020 Strategic Initiatives</span></a>
+
+	<a href="/site/downloads/_annual-report/cuc_tccl_ar_2014-15.pdf" class="annual-report" target="_blank">
+	<span>Annual Report image</span></a>
+	</div>
+
+
+
+
+
+
+
+
+	<div id="workshops-calendar">
+		<div class="newsblob elem-rounded">
+			<div class="newsblobtop"><span></span></div>
+<h2>Upcoming Workshops & Events</h2>
+			<div class="newsblobbot"><span></span></div>
+		</div> <!-- closing "newsblob" div -->
+		<div class="workshops-calendar-inner">
+
+<iframe src="https://api3.libcal.com/embed_mini_calendar.php?mode=month&iid=333&cal_id=1889&l=3&tar=0&h=275&c=&z=" style="border-width:0" width="225" height="275" frameborder="0" scrolling="no"></iframe>
+        
+		<a href="http://claremont.libcal.com/">
+		See all workshops</a>
+		</div>
+	</div> <!-- close -->
+
+
+
+
+
+
+
+
+</div> <!-- close hpRightCol div -->
+
+		<!--
+		<object
+		type="application/x-shockwave-flash" width="1" height="1" data="/site/images/flashcheck.swf">
+		<param name="movie" value="/site/images/flashcheck.swf" />
+		</object> -->
+
+
+
+
+	</div> <!-- close "content" div -->
+
+<!-- end of main page content -->
+
+
+	<div id="geninfotop" class="elem-rounded-top"><span></span></div>
+
+	<div id="geninfo">
+
+
+			<!--  -->
+			<ul class="libinfo">
+				<li><h2>The Claremont Colleges Library</h2>
+
+					<ul class="genmenu">
+
+						<li><a href="/about/libraries/">About the Library</a></li>
+						<li><a href="/servicesandpolicies/">Services &amp; Policies</a></li>
+						<li><a href="/informationliteracy/">Information Literacy</a></li>
+						<!--
+						<li><a href="">Honnold Caf&eacute;</a></li>
+						<li class="last"><a href="">Connection</a></li>
+						-->
+
+						<li><a href="/about/jobs/">Job Opportunities</a></li>
+						<li class="last"><a href="/about/publications/">Publications</a></li>
+					</ul>
+					<ul class="genmenu">
+                        <li class="last"><a href="http://libguides.libraries.claremont.edu/UndergradResearchAward">Undergraduate Research Award</a></li>
+					</ul>
+
+					</li>
+			</ul>
+
+			<!--
+			<div id="libPic">
+			</div> -->
+
+			<ul class="rtPic">
+				<li><h2>Events at the Library</h2>
+					<ul class="genmenu">
+						<li><a href="/informationliteracy/teaching.asp">Workshops</a></li>
+						<!--<li><a href="/schedule/exhibits">Exhibits</a></li>-->
+						<!--<li><a href="/games">Games</a></li>-->
+						<li><a href="/schedule/claremont_discourse">Claremont Discourse</a></li>
+						<!--<li class="last"><a href="/contact/maps/">Study Breaks</a></li>-->
+
+                        <li class="last"><a href="https://emsweb.claremont.edu/CUC/BrowseEvents.aspx">Calendar of Events</a></li>
+					</ul>
+					</li>
+
+
+
+
+
+				<li><h2>Contact &amp; Visitor Information</h2>
+					<ul class="genmenu">
+						<li><a href="/contact/addresses/">Addresses</a></li>
+						<li><a href="/contact/directories/">Directories</a></li>
+						<li><a href="/contact/maps/">Directions &amp; Maps</a></li>
+
+						<li class="last"><a href="/servicesandpolicies/visitors/">Access for Visitors</a></li>
+					</ul>
+					</li>
+				<!--
+				<li><h2>Services &amp; Policies</h2>
+					<ul class="genmenu">
+						<li><a href="/servicesandpolicies/borrowing/">Borrowing privileges</a></li>
+						<li class="last"><a href="http://www.cuc.claremont.edu/copycenter/">The Copy Center</a></li>
+					</ul>
+					<ul class="genmenu">
+						<li class="last"><a href="/servicesandpolicies/">More services &amp; policies</a></li>
+					</ul>
+					</li>
+					-->
+				<li><h2>Affiliated Institutions</h2>
+					<ul class="genmenu">
+						<li><a href="http://www.scrippscollege.edu/denison/">Denison Library at Scripps College</a></li>
+
+						<li>
+<a href="http://claremont.on.worldcat.org/" title="The Claremont School of Theology Library Catalog">
+							CST Library</a></li>
+						<li class="last"><a href="http://www.rsabg.org/library-and-archives">RSABG Library</a></li>
+					</ul>
+
+					</li>
+				<li><h2>Other info</h2>
+					<ul class="genmenu">
+						<li class="sos"><a href="http://libraries.claremont.edu/search/">Search Our Site</a></li>
+					
+						<li><a href="http://libraries.claremont.edu/contactus.asp">Contact Us</a></li>
+						<li class="last"><a href="http://libraries.claremont.edu/form/suggestion.asp">Make a Suggestion</a></li>
+					
+					</ul>
+
+					<ul class="genmenu">
+						<li class="webad"><a href="http://libraries.claremont.edu/form/webadmin.asp">Web Administrator</a></li>		
+						<li><a href="http://www.claremont.edu/">The Claremont Colleges</a></li>
+						<li><a href="http://www.cuc.claremont.edu/"><acronym style="border:0" title="Claremont University Consortium">CUC</acronym></a></li>
+						<li><a href="http://libraries.claremont.edu/copyright.asp">Copyright Info</a></li>
+					</ul>
+					</li>
+			</ul>
+
+			<img src="/site/images/random/home/libpix/libs1.jpg" id="libPic" width="180" height="175" alt="image of libraries" />
+
+
+	</div> <!-- close geninfo div -->
+
+	<div id="geninfobot" class="elem-rounded-bot"><span></span></div>
+
+
+
+
+<!-- footer that appears on all pages -->
+<!-- include virtual="/include/footer.inc"-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Last updated line that appears below footer -->
+<p class="updated">
+Last updated: 
+		
+5/19/2016 12:03:42 PM	
+</p>
+
+
+
+
+
+
+
+
+
+<!-- ending secion of body, including endings of "frame", "frame2", and "container": -->
+	</div> <!-- close container -->
+
+	</div> <!-- close frame2 -->
+</div> <!-- close frame -->
+
+
+
+
+
+<!-- logos for the Colleges and CUC that appear below the central box -->
+<div id="logos">
+
+
+	
+	<div id="institutionList">
+	<ul>
+	<li id="instname-Pomona">
+		<dl><dt class="institutionName">
+			<a href="http://www.pomona.edu/">
+			<span>Pomona College</span></a></dt>
+			<dd class="foundingDate">
+			<span>Founded 1887</span></dd>
+			</dl>
+		</li>
+	<li id="instname-CGU">
+		<dl><dt class="institutionName">
+			<a href="http://www.cgu.edu/">
+			<span>Claremont Graduate University</span></a></dt>
+			<dd class="foundingDate">
+			<span>Founded 1925</span></dd>
+			</dl>
+		</li>
+
+	<li id="instname-Scripps">
+		<dl><dt class="institutionName">
+			<a href="http://www.scrippscollege.edu/">
+			<span>Scripps College</span></a></dt>
+			<dd class="foundingDate">
+			<span>Founded 1926</span></dd>
+			</dl>
+		</li>
+	<li id="instname-CMC">
+		<dl><dt class="institutionName">
+			<a href="http://www.claremontmckenna.edu/">
+			<span>Claremont McKenna College</span></a></dt>
+			<dd class="foundingDate">
+			<span>Founded 1946</span></dd>
+			</dl>
+		</li>
+	<li id="instname-HMC">
+		<dl><dt class="institutionName">
+			<a href="http://www.hmc.edu/">
+			<span>Harvey Mudd College</span></a></dt>
+			<dd class="foundingDate">
+			<span>Founded 1955</span></dd>
+			</dl>
+		</li>
+	<li id="instname-Pitzer">
+		<dl><dt class="institutionName">
+			<a href="http://www.pitzer.edu/">
+			<span>Pitzer College</span></a></dt>
+			<dd class="foundingDate">
+			<span>Founded 1963</span></dd>
+			</dl>
+		</li>
+	<li id="instname-KGI" class="end">
+		<dl><dt class="institutionName">
+			<a href="http://www.kgi.edu/">
+			<span>Keck Graduate Institute</span></a></dt>
+			<dd class="foundingDate">
+			<span>Founded 1997</span></dd>
+			</dl>
+		</li>
+	</ul>
+	</div> <!-- close "institutionList" div -->
+
+	<div id="cuc">
+		<ul>
+		<li class="link">
+			<a href="http://www.cuc.claremont.edu/">
+			<span>Link to CUC</span></a></li>
+		<li class="desc">
+			Claremont Colleges Library is a unit of the Claremont University Consortium 
+			which serves The Claremont Colleges.</li>
+		</ul>
+	</div> <!-- close cuc -->
+
+
+</div> <!-- close logos -->
+
+
+
+
+</body>
+</html>

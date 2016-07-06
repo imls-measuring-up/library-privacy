@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="en" class="index">
+<head>
+<meta charset="UTF-8" />
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
+<meta name="keywords" content="Wayne State University, WSU, Library System, Libraries" />
+<meta name="description" content="The online resources and services of the Wayne State University Libraries" />
+<meta name="author" content="libwebmaster@wayne.edu" />
+<meta name="Copyright" content="Copyright (c) 2016 Wayne State University" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Wayne State University Libraries</title>
+
+<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.4.5/jquery-ui-timepicker-addon.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.4.5/jquery-ui-timepicker-addon.min.css"> -->
+
+<link rel="icon" href="https://library.wayne.edu/img/wsu-shield3.ico" type="image/x-icon" />
+
+<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+<link href='https://library.wayne.edu/css/index.css?date=07/05/2016' rel='stylesheet' type='text/css'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.0.2/css/hover-min.css' rel='stylesheet' type='text/css'>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+<link href='//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
+
+
+
+
+<script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.22/gmaps.min.js"></script>
+<script src="https://library.wayne.edu/js/jquery.dataTables.columnFilter.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/history/2.0.0/History.min.js"></script> -->
+
+<!-- <script src="js/history.js"></script> -->
+
+
+<!-- <script src="http://malsup.github.com/jquery.cycle2.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+<script type='application/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js'></script>
+<script src="https://library.wayne.edu/js/history-js/scripts/bundled/html4+html5/jquery.history.js"></script>
+<script type="text/javascript">
+
+host = "https://library.wayne.edu";
+searchQuery = undefined;
+
+</script>
+<script src="https://library.wayne.edu/js/index.js?date=07/05/2016"></script>
+
+
+
+
+
+<!-- <link href='css/fullcalendar.min.css' rel='stylesheet' />
+<link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='js/moment.min.js'></script>
+<script src='js/fullcalendar.min.js'></script>
+<script src='js/gcal.js'></script> -->
+
+
+
+
+
+
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.www.lib.wayne.edu","*.lib.wayne.edu"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//cgi.lib.wayne.edu/stats/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 10]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//cgi.lib.wayne.edu/stats/piwik/piwik.php?idsite=10" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+
+</head>
+<body>
+
+
+
+
+
+
+<div id="header-mobile">
+  <div id="header-mobile-logoarea">
+    <div id="header-mobile-logoarea-menu">
+      
+    </div>
+    <a id="header-mobile-logoarea-logo" href="https://library.wayne.edu">
+      
+    </a>
+  </div>
+  <div id="header-mobile-searcharea">
+    <!-- <div id="header-mobile-searcharea-search-nest"> -->
+      <div id="header-mobile-searcharea-search-nest-inputwrap">
+        <input id="header-mobile-searcharea-search-nest-input" class="search-field" type="text" placeholder="Find articles, books, journals, databases, our web pages and more">
+        <!-- <input id="header-mobile-searcharea-search-nest-input" class="search-field" type="text"> -->
+      </div>
+      <button class="search-button" id="header-mobile-searcharea-search-nest-button"><!-- Search --></button>
+      <div class="search-suggestions" id="header-mobile-searcharea-search-nest-suggestions"></div>
+    <!-- </div> -->
+  </div>
+</div>
+
+
+
+<div id="header-mobile-menu-wrap">
+  <div id="header-mobile-menu-overlay">
+
+  </div>
+  <div id="header-mobile-menu">
+    
+
+
+    <div class="header-mobile-menu-top">
+      <a class="header-mobile-menu-logo" href="https://library.wayne.edu"></a>
+      <div class="header-mobile-menu-close"></div>
+    </div>
+
+
+    <ul>
+      <li class="mdd mdd-quicklinks">
+        <a>Quick Links</a>
+        <ul class="mddmenu">
+          <li><a class="menu-articledatabases" href="https://library.wayne.edu/resources/article-databases">Article Databases</a></li>
+          <li><a class="menu-catalog" href="http://elibrary.wayne.edu/search/X">Catalog</a></li>
+          <li><a class="menu-ejournals" href="https://library.wayne.edu/resources/journals">eJournals</a></li>
+          <li><a class="menu-googlescholar" href="https://proxy.lib.wayne.edu/login?url=http://scholar.google.com">Google Scholar</a></li>
+          <li><a class="menu-interlibraryloan" href="https://wayne.illiad.oclc.org/illiad/illiad.dll">Interlibrary Loan</a></li>
+          <li><a class="menu-researchguides" href="https://library.wayne.edu/resources/guides">Research Guides</a></li>
+          <li><a class="menu-staffdirectory" href="https://library.wayne.edu/info/staff-directory/">Staff Directory</a></li>
+          <li><a class="menu-summon" href="http://wayne.summon.serialssolutions.com/">Summon</a></li>
+        </ul>
+      </li>
+      <li class="mdd mdd-resources">
+        <a>Resources</a>
+        <ul class="mddmenu">
+          <li><a href="https://library.wayne.edu/resources/article-databases">Article Databases</a></li>
+          <li><a href="http://elibrary.wayne.edu/search/X">Catalog</a></li>
+          <li><a href="http://up7af9tu5s.search.serialssolutions.com/?SS_Page=refiner">Citation Linker</a></li>
+          <li><a href="http://digital.library.wayne.edu/">Digital Collections</a></li>
+          <li><a href="http://digitalcommons.wayne.edu/">Digital Commons</a></li>
+          <li><a href="https://library.wayne.edu/resources/ebooks">eBooks</a></li>
+          <li><a href="https://library.wayne.edu/resources/journals">E-Journals</a></li>
+          <li><a href="http://guides.lib.wayne.edu/content.php?pid=248390">Reference Tools</a></li>
+          <li><a href="https://library.wayne.edu/resources/guides">Research Guides</a></li>
+          <li><a href="http://guides.lib.wayne.edu/friendly.php?action=82&s=SpecialCollections">Special Collections</a></li>
+          <li><a href="http://wayne.summon.serialssolutions.com/">Summon</a></li>
+          <li><a href="https://library.wayne.edu/resources/">All Resources</a></li>
+        </ul>
+      </li>
+      <li class="mdd mdd-services">
+        <a>Services</a>
+        <ul class="mddmenu">
+          <li><a href="https://library.wayne.edu/services/ask-a-librarian">Ask-A-Librarian</a></li>
+          <li><a href="https://library.wayne.edu/services/borrowing">Borrowing</a></li>
+          <li><a href="https://library.wayne.edu/services/classroom">Classroom Support</a></li>
+          <li><a href="https://library.wayne.edu/services/computing">Computing</a></li>
+          <li><a href="http://copyright.wayne.edu/">Copyright@Wayne</a></li>
+          <li><a href="https://library.wayne.edu/services/events">Events Support</a></li>
+          <li><a href="https://wayne.illiad.oclc.org/illiad/illiad.dll">Interlibrary Loan</a></li>
+          <li><a href="https://library.wayne.edu/services/instruction">Instruction</a></li>
+          <li><a href="https://library.wayne.edu/services/reserves">Reserves</a></li>
+          <li><a href="https://library.wayne.edu/services/rooms">Room Reservations</a></li>
+          <li><a href="http://scholarscooperative.wayne.edu/">Scholars Cooperative</a></li>
+          <li><a href="https://library.wayne.edu/services/">All Services</a></li>
+        </ul>
+      </li>
+      <li class="mdd mdd-libraries">
+        <a>Libraries</a>
+        <ul class="mddmenu">
+          <li><a href="https://library.wayne.edu/neef">Arthur Neef Law Library</a></li>
+          <li><a href="https://library.wayne.edu/pk">Purdy/Kresge Library</a></li>
+          <li><a href="https://library.wayne.edu/reuther">Reuther Library</a></li>
+          <li><a href="https://library.wayne.edu/shiffman">Shiffman Medical Library</a></li>
+          <li><a href="https://library.wayne.edu/ugl">Undergraduate Library</a></li>
+          <li><a href="https://library.wayne.edu/info/about">About</a></li>
+          <li><a href="https://library.wayne.edu/info/app-lab">App Lab</a></li>
+          <li><a href="https://library.wayne.edu/info/staff-directory/">Staff Directory</a></li>
+          <li><a href="https://library.wayne.edu/info/hours/">Hours</a></li>
+          <li><a href="https://library.wayne.edu/info/maps-and-directions/">Maps and Directions</a></li>
+          <li><a href="http://www.lib.wayne.edu/blog">News</a></li>
+          <li><a href="https://library.wayne.edu/info/policies">Policies</a></li>
+          <li><a href="https://library.wayne.edu/info/">All Information</a></li>
+        </ul>
+      </li>
+      <li class="mdd mdd-help">
+        <a>Help</a>
+        <ul class="mddmenu">
+          <li><a href="#" jid="waynegenref@chat.libraryh3lp.com" style="display: block;" onclick="window.open('http://libraryh3lp.com/chat/waynegenref@chat.libraryh3lp.com?skin=13780&amp;theme=gtalk&amp;title=Ask-A-Librarian&amp;identity=Librarian&amp;sounds=true', 'chat', 'resizable=1,width=350,height=350'); return false;" data-toggle="modal" data-target="#chatmodal">Chat</a></li>
+          <li><a href="https://library.wayne.edu/services/ask-a-librarian">Ask-A-Librarian</a></li>
+          <li><a href="https://elibrary.wayne.edu/patroninfo">Renew Books</a></li>
+          <li><a href="https://library.wayne.edu/info/hours/">Hours</a></li>
+        </ul>
+      </li>
+      <li class="mdd mdd-signin">
+        <a>Sign In</a>
+        <ul class="mddmenu">
+          <li><a href="http://login.wayne.edu/">Academica</a></li>
+          <li><a href="http://elibrary.wayne.edu/patroninfo">My Library Account</a></li>
+        </ul>
+      </li>
+      <li class="mdd mdd-wayneedu">
+        <a href="http://wayne.edu">back to Wayne.edu</a>
+      </li>
+    </ul>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="header">
+
+  <div class="masthead-search-logo"></div>
+
+  <div class="masthead-search-menu">
+    <div class="masthead-search-menu-title noselect">Menu</div>
+    <div class="masthead-search-menu-content">
+
+      <div class="masthead-search-menu-content-arrow"></div>
+      <div class="masthead-search-menu-content-columns">
+        
+      <div class="masthead-search-menu-content-column">
+        <!-- <h1><div class="icon icon-libraries"></div>Quick Links</h1> -->
+        <h1 class="wicon wicon-quicklinks">Quick Links</h1>
+        <!-- <a href="https://library.wayne.edu/databases.php">Article Databases</a> -->
+        <a class="menu-articledatabases" href="https://library.wayne.edu/resources/article-databases">Article Databases</a>
+        <a class="menu-catalog" href="http://elibrary.wayne.edu/search/X">Catalog</a>
+        <a class="menu-ejournals" href="https://library.wayne.edu/resources/journals">eJournals</a>
+        <a class="menu-googlescholar" href="https://proxy.lib.wayne.edu/login?url=http://scholar.google.com">Google Scholar</a>
+        <a class="menu-interlibraryloan" href="https://wayne.illiad.oclc.org/illiad/illiad.dll">Interlibrary Loan</a>
+        <!-- <a class="menu-referencetools" href="http://guides.lib.wayne.edu/content.php?pid=248390">Reference Tools</a> -->
+        <a class="menu-researchguides" href="https://library.wayne.edu/resources/guides">Research Guides</a>
+        <!-- <a href="https://library.wayne.edu/staff-directory.php">Staff Directory</a> -->
+        <a class="menu-staffdirectory" href="https://library.wayne.edu/info/staff-directory/">Staff Directory</a>
+        <a class="menu-summon" href="http://wayne.summon.serialssolutions.com/">Summon</a>
+      </div>
+      <div class="masthead-search-menu-content-column">
+        <h1 class="wicon wicon-resources">Resources</h1>
+        <!-- <a href="https://library.wayne.edu/databases.php">Article Databases</a> -->
+        <a href="https://library.wayne.edu/resources/article-databases">Article Databases</a>
+        <a href="http://elibrary.wayne.edu/search/X">Catalog</a>
+        <a href="http://up7af9tu5s.search.serialssolutions.com/?SS_Page=refiner">Citation Linker</a>
+        <a href="http://digital.library.wayne.edu/">Digital Collections</a>
+        <a href="http://digitalcommons.wayne.edu/">Digital Commons</a>
+        <a href="https://library.wayne.edu/resources/ebooks">eBooks</a>
+        <a href="https://library.wayne.edu/resources/journals">eJournals</a>
+        <a href="http://guides.lib.wayne.edu/content.php?pid=248390">Reference Tools</a>
+        <a href="https://library.wayne.edu/resources/guides">Research Guides</a>
+        <a href="http://guides.lib.wayne.edu/friendly.php?action=82&s=SpecialCollections">Special Collections</a>
+        <a href="http://wayne.summon.serialssolutions.com/">Summon</a>
+        <div class="separator"></div>
+        <a href="https://library.wayne.edu/resources/">All Resources</a>
+      </div>
+      <div class="masthead-search-menu-content-column">
+        <h1 class="wicon wicon-services">Services</h1>
+        <!-- <a href="https://library.wayne.edu/ask-a-librarian.php">Ask-A-Librarian</a> -->
+        <a href="https://library.wayne.edu/services/ask-a-librarian">Ask-A-Librarian</a>
+        <a href="https://library.wayne.edu/services/borrowing">Borrowing</a>
+        <a href="https://library.wayne.edu/services/classroom">Classroom Support</a>
+        <a href="https://library.wayne.edu/services/computing">Computing</a>
+        <a href="http://copyright.wayne.edu/">Copyright@Wayne</a>
+        <a href="https://library.wayne.edu/services/events">Events Support</a>
+        <!-- <a href="#">Faculty/Grad Research Support</a> -->
+        <a href="https://wayne.illiad.oclc.org/illiad/illiad.dll">Interlibrary Loan</a>
+        <a href="https://library.wayne.edu/services/instruction">Instruction</a>
+        <a href="https://library.wayne.edu/services/reserves">Reserves</a>
+        <a href="https://library.wayne.edu/services/rooms">Room Reservations</a>
+        <a href="http://scholarscooperative.wayne.edu/">Scholars Cooperative</a>
+        <div class="separator"></div>
+        <a href="https://library.wayne.edu/services/">All Services</a>
+      </div>
+      <div class="masthead-search-menu-content-column">
+        <h1 class="wicon wicon-libraries">Libraries</h1>
+<!--         <a href="https://library.wayne.edu/library/neef-law">Arthur Neef Law Library</a>
+        <a href="https://library.wayne.edu/library/purdy-kresge">Purdy/Kresge Library</a>
+        <a href="https://library.wayne.edu/library/reuther">Reuther Library</a>
+        <a href="https://library.wayne.edu/library/shiffman-medical">Shiffman Medical Library</a>
+        <a href="https://library.wayne.edu/library/undergraduate">Undergraduate Library</a> -->
+
+        <a href="https://library.wayne.edu/neef">Arthur Neef Law Library</a>
+        <a href="https://library.wayne.edu/pk">Purdy/Kresge Library</a>
+        <a href="https://library.wayne.edu/reuther">Reuther Library</a>
+        <a href="https://library.wayne.edu/shiffman">Shiffman Medical Library</a>
+        <a href="https://library.wayne.edu/ugl">Undergraduate Library</a>
+
+<!--         <a href="https://library.wayne.edu/library.php?library=neef-law">Arthur Neef Law Library</a>
+        <a href="https://library.wayne.edu/library.php?library=purdy-kresge">Purdy/Kresge Library</a>
+        <a href="https://library.wayne.edu/library.php?library=reuther">Reuther Library</a>
+        <a href="https://library.wayne.edu/library.php?library=shiffman-medical">Shiffman Medical Library</a>
+        <a href="https://library.wayne.edu/library.php?library=undergraduate">Undergraduate Library</a> -->
+
+        <div class="separator"></div>
+
+        <a href="https://library.wayne.edu/info/about">About</a>
+        <a href="https://library.wayne.edu/info/app-lab">App Lab</a>
+        <!-- <a href="#">Contact Info/Staff Directory</a> -->
+        <!-- <a href="https://library.wayne.edu/staff-directory.php">Staff Directory</a> -->
+        <a href="https://library.wayne.edu/info/staff-directory/">Staff Directory</a>
+        <!-- <a href="https://library.wayne.edu/hours.php">Hours</a> -->
+        <a href="https://library.wayne.edu/info/hours/">Hours</a>
+        <!-- <a href="https://library.wayne.edu/maps.php">Maps and Directions</a> -->
+        <a href="https://library.wayne.edu/info/maps-and-directions/">Maps and Directions</a>
+        <a href="http://www.lib.wayne.edu/blog">News</a>
+        <a href="https://library.wayne.edu/info/policies">Policies</a>
+        <div class="separator"></div>
+
+        <a href="https://library.wayne.edu/info/">All Information</a>
+      </div>
+  <!--           <div class="masthead-search-menu-content-column">
+        <h1>Sign In</h1>
+        <a href="#">Academica</a>
+        <a href="#">My Library Account</a>
+      </div> -->
+      <div class="masthead-search-menu-content-column" style="background:#eee;">
+        <h1 class="wicon wicon-help">Help</h1>
+        <a href="#" jid="waynegenref@chat.libraryh3lp.com" style="display: block;" onclick="window.open('http://libraryh3lp.com/chat/waynegenref@chat.libraryh3lp.com?skin=13780&amp;theme=gtalk&amp;title=Ask-A-Librarian&amp;identity=Librarian&amp;sounds=true', 'chat', 'resizable=1,width=350,height=350'); return false;" data-toggle="modal" data-target="#chatmodal">Chat</a>
+        <!-- <a href="https://library.wayne.edu/ask-a-librarian.php">Ask-A-Librarian</a> -->
+        <a href="https://library.wayne.edu/services/ask-a-librarian">Ask-A-Librarian</a>
+        <a href="https://elibrary.wayne.edu/patroninfo">Renew Books</a>
+        <!-- <a href="https://library.wayne.edu/hours.php">Library Hours</a> -->
+        <a href="https://library.wayne.edu/info/hours/">Hours</a>
+        <br>
+        <h1 class="wicon wicon-signin">Sign In</h1>
+        <a href="http://login.wayne.edu/">WSU Login (Academica, BlackBoard, etc.)</a>
+        <a href="http://elibrary.wayne.edu/patroninfo">My Library Account</a>
+      </div>      </div>
+
+    </div>
+  </div>
+
+  <div class="masthead-search-help noselect">
+    <div class="masthead-search-help-title noselect">Help</div>
+    <div class="masthead-search-help-content">
+
+      <div class="masthead-search-help-content-arrow"></div>
+      <div class="masthead-search-help-content-help">
+          <a href="#" jid="waynegenref@chat.libraryh3lp.com" style="display: block;" onclick="window.open('http://libraryh3lp.com/chat/waynegenref@chat.libraryh3lp.com?skin=13780&amp;theme=gtalk&amp;title=Ask-A-Librarian&amp;identity=Librarian&amp;sounds=true', 'chat', 'resizable=1,width=350,height=350'); return false;" data-toggle="modal" data-target="#chatmodal">Chat</a>
+<!-- <a href="https://library.wayne.edu/ask-a-librarian.php">Ask-A-Librarian</a> -->
+<a href="https://library.wayne.edu/services/ask-a-librarian">Ask-A-Librarian</a>
+<a href="https://elibrary.wayne.edu/patroninfo~S47">Renew Books</a>
+<!-- <a href="https://library.wayne.edu/hours.php">Library Hours</a> -->
+<a href="https://library.wayne.edu/info/hours/">Hours</a>      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div id="masthead"  >
+    <div id="masthead-all">
+      <div id="masthead-bgimg">
+
+
+
+
+
+
+
+
+
+
+
+
+<!--         
+        <video autoplay preload="auto" loop="loop" id="myVideo" class="video-playing" style="width:100%;">
+          <source src="https://library.wayne.edu/img/combo4_15.mp4" type="video/mp4">
+        </video>
+
+ -->
+
+
+
+
+
+        <!-- <div id="masthead-progressbar"></div> -->
+<!--         <div id="masthead-arrowleft" class="masthead-arrowleft tparrows tp-leftarrow"><i class="fa fa-angle-left"></i></div>
+        <div id="masthead-arrowright" class="masthead-arrowright tparrows tp-leftarrow"><i class="fa fa-angle-right"></i></div> -->
+        <div id="masthead-arrowleft" class="masthead-arrowleft tparrows tp-leftarrow"></div>
+        <div id="masthead-arrowright" class="masthead-arrowright tparrows tp-leftarrow"></div>
+
+        <div id="cycle-slideshow" class="noselect">
+
+                                      <div>
+                <img src="https://library.wayne.edu/img/Web_CoverPhoto_1_dark.jpg">
+              </div>
+                          <div>
+                <img src="https://library.wayne.edu/img/Web_CoverPhoto_2.jpg">
+              </div>
+                          <div>
+                <img src="https://library.wayne.edu/img/Web_CoverPhoto_3.jpg">
+              </div>
+            
+        </div>
+
+        <!-- 
+        <div id="custom-pager-wrap">
+          <div id="custom-pager"></div>
+        </div>
+         -->
+
+      <!-- </div> -->
+
+
+      </div>
+      <div id="masthead-wsulogo"><a href="http://wayne.edu" target="_blank" style="display:block;width:100%;height:100%;"></a></div>
+      <!-- <div id="masthead-playpause"></div> -->
+    </div>
+    <div id="masthead-search">
+      <div class="masthead-search-logo"></div>
+      <div id="masthead-quicksearch-logo"></div>
+      <div id="masthead-search-nest">
+        <input id="masthead-search-nest-input" class="search-field" type="text" placeholder="Find articles, books, journals, databases, our web pages and more" />
+        <button class="search-button" id="masthead-search-nest-button">Search</button>
+        <div class="search-suggestions"></div>
+      </div>
+
+      <div class="masthead-search-menu" class="noselect">
+        <div class="masthead-search-menu-title noselect">Menu</div>
+
+        <div class="masthead-search-menu-content">
+          <div class="masthead-search-menu-content-arrow"></div>
+          <div class="masthead-search-menu-content-columns">
+            
+      <div class="masthead-search-menu-content-column">
+        <!-- <h1><div class="icon icon-libraries"></div>Quick Links</h1> -->
+        <h1 class="wicon wicon-quicklinks">Quick Links</h1>
+        <!-- <a href="https://library.wayne.edu/databases.php">Article Databases</a> -->
+        <a class="menu-articledatabases" href="https://library.wayne.edu/resources/article-databases">Article Databases</a>
+        <a class="menu-catalog" href="http://elibrary.wayne.edu/search/X">Catalog</a>
+        <a class="menu-ejournals" href="https://library.wayne.edu/resources/journals">eJournals</a>
+        <a class="menu-googlescholar" href="https://proxy.lib.wayne.edu/login?url=http://scholar.google.com">Google Scholar</a>
+        <a class="menu-interlibraryloan" href="https://wayne.illiad.oclc.org/illiad/illiad.dll">Interlibrary Loan</a>
+        <!-- <a class="menu-referencetools" href="http://guides.lib.wayne.edu/content.php?pid=248390">Reference Tools</a> -->
+        <a class="menu-researchguides" href="https://library.wayne.edu/resources/guides">Research Guides</a>
+        <!-- <a href="https://library.wayne.edu/staff-directory.php">Staff Directory</a> -->
+        <a class="menu-staffdirectory" href="https://library.wayne.edu/info/staff-directory/">Staff Directory</a>
+        <a class="menu-summon" href="http://wayne.summon.serialssolutions.com/">Summon</a>
+      </div>
+      <div class="masthead-search-menu-content-column">
+        <h1 class="wicon wicon-resources">Resources</h1>
+        <!-- <a href="https://library.wayne.edu/databases.php">Article Databases</a> -->
+        <a href="https://library.wayne.edu/resources/article-databases">Article Databases</a>
+        <a href="http://elibrary.wayne.edu/search/X">Catalog</a>
+        <a href="http://up7af9tu5s.search.serialssolutions.com/?SS_Page=refiner">Citation Linker</a>
+        <a href="http://digital.library.wayne.edu/">Digital Collections</a>
+        <a href="http://digitalcommons.wayne.edu/">Digital Commons</a>
+        <a href="https://library.wayne.edu/resources/ebooks">eBooks</a>
+        <a href="https://library.wayne.edu/resources/journals">eJournals</a>
+        <a href="http://guides.lib.wayne.edu/content.php?pid=248390">Reference Tools</a>
+        <a href="https://library.wayne.edu/resources/guides">Research Guides</a>
+        <a href="http://guides.lib.wayne.edu/friendly.php?action=82&s=SpecialCollections">Special Collections</a>
+        <a href="http://wayne.summon.serialssolutions.com/">Summon</a>
+        <div class="separator"></div>
+        <a href="https://library.wayne.edu/resources/">All Resources</a>
+      </div>
+      <div class="masthead-search-menu-content-column">
+        <h1 class="wicon wicon-services">Services</h1>
+        <!-- <a href="https://library.wayne.edu/ask-a-librarian.php">Ask-A-Librarian</a> -->
+        <a href="https://library.wayne.edu/services/ask-a-librarian">Ask-A-Librarian</a>
+        <a href="https://library.wayne.edu/services/borrowing">Borrowing</a>
+        <a href="https://library.wayne.edu/services/classroom">Classroom Support</a>
+        <a href="https://library.wayne.edu/services/computing">Computing</a>
+        <a href="http://copyright.wayne.edu/">Copyright@Wayne</a>
+        <a href="https://library.wayne.edu/services/events">Events Support</a>
+        <!-- <a href="#">Faculty/Grad Research Support</a> -->
+        <a href="https://wayne.illiad.oclc.org/illiad/illiad.dll">Interlibrary Loan</a>
+        <a href="https://library.wayne.edu/services/instruction">Instruction</a>
+        <a href="https://library.wayne.edu/services/reserves">Reserves</a>
+        <a href="https://library.wayne.edu/services/rooms">Room Reservations</a>
+        <a href="http://scholarscooperative.wayne.edu/">Scholars Cooperative</a>
+        <div class="separator"></div>
+        <a href="https://library.wayne.edu/services/">All Services</a>
+      </div>
+      <div class="masthead-search-menu-content-column">
+        <h1 class="wicon wicon-libraries">Libraries</h1>
+<!--         <a href="https://library.wayne.edu/library/neef-law">Arthur Neef Law Library</a>
+        <a href="https://library.wayne.edu/library/purdy-kresge">Purdy/Kresge Library</a>
+        <a href="https://library.wayne.edu/library/reuther">Reuther Library</a>
+        <a href="https://library.wayne.edu/library/shiffman-medical">Shiffman Medical Library</a>
+        <a href="https://library.wayne.edu/library/undergraduate">Undergraduate Library</a> -->
+
+        <a href="https://library.wayne.edu/neef">Arthur Neef Law Library</a>
+        <a href="https://library.wayne.edu/pk">Purdy/Kresge Library</a>
+        <a href="https://library.wayne.edu/reuther">Reuther Library</a>
+        <a href="https://library.wayne.edu/shiffman">Shiffman Medical Library</a>
+        <a href="https://library.wayne.edu/ugl">Undergraduate Library</a>
+
+<!--         <a href="https://library.wayne.edu/library.php?library=neef-law">Arthur Neef Law Library</a>
+        <a href="https://library.wayne.edu/library.php?library=purdy-kresge">Purdy/Kresge Library</a>
+        <a href="https://library.wayne.edu/library.php?library=reuther">Reuther Library</a>
+        <a href="https://library.wayne.edu/library.php?library=shiffman-medical">Shiffman Medical Library</a>
+        <a href="https://library.wayne.edu/library.php?library=undergraduate">Undergraduate Library</a> -->
+
+        <div class="separator"></div>
+
+        <a href="https://library.wayne.edu/info/about">About</a>
+        <a href="https://library.wayne.edu/info/app-lab">App Lab</a>
+        <!-- <a href="#">Contact Info/Staff Directory</a> -->
+        <!-- <a href="https://library.wayne.edu/staff-directory.php">Staff Directory</a> -->
+        <a href="https://library.wayne.edu/info/staff-directory/">Staff Directory</a>
+        <!-- <a href="https://library.wayne.edu/hours.php">Hours</a> -->
+        <a href="https://library.wayne.edu/info/hours/">Hours</a>
+        <!-- <a href="https://library.wayne.edu/maps.php">Maps and Directions</a> -->
+        <a href="https://library.wayne.edu/info/maps-and-directions/">Maps and Directions</a>
+        <a href="http://www.lib.wayne.edu/blog">News</a>
+        <a href="https://library.wayne.edu/info/policies">Policies</a>
+        <div class="separator"></div>
+
+        <a href="https://library.wayne.edu/info/">All Information</a>
+      </div>
+  <!--           <div class="masthead-search-menu-content-column">
+        <h1>Sign In</h1>
+        <a href="#">Academica</a>
+        <a href="#">My Library Account</a>
+      </div> -->
+      <div class="masthead-search-menu-content-column" style="background:#eee;">
+        <h1 class="wicon wicon-help">Help</h1>
+        <a href="#" jid="waynegenref@chat.libraryh3lp.com" style="display: block;" onclick="window.open('http://libraryh3lp.com/chat/waynegenref@chat.libraryh3lp.com?skin=13780&amp;theme=gtalk&amp;title=Ask-A-Librarian&amp;identity=Librarian&amp;sounds=true', 'chat', 'resizable=1,width=350,height=350'); return false;" data-toggle="modal" data-target="#chatmodal">Chat</a>
+        <!-- <a href="https://library.wayne.edu/ask-a-librarian.php">Ask-A-Librarian</a> -->
+        <a href="https://library.wayne.edu/services/ask-a-librarian">Ask-A-Librarian</a>
+        <a href="https://elibrary.wayne.edu/patroninfo">Renew Books</a>
+        <!-- <a href="https://library.wayne.edu/hours.php">Library Hours</a> -->
+        <a href="https://library.wayne.edu/info/hours/">Hours</a>
+        <br>
+        <h1 class="wicon wicon-signin">Sign In</h1>
+        <a href="http://login.wayne.edu/">WSU Login (Academica, BlackBoard, etc.)</a>
+        <a href="http://elibrary.wayne.edu/patroninfo">My Library Account</a>
+      </div>          </div>
+        </div>
+      </div>
+
+
+      <div class="masthead-search-help noselect">
+        <div class="masthead-search-help-title noselect">Help</div>
+        <div class="masthead-search-help-content">
+          <div class="masthead-search-help-content-arrow"></div>
+          <div class="masthead-search-help-content-help">
+            <a href="#" jid="waynegenref@chat.libraryh3lp.com" style="display: block;" onclick="window.open('http://libraryh3lp.com/chat/waynegenref@chat.libraryh3lp.com?skin=13780&amp;theme=gtalk&amp;title=Ask-A-Librarian&amp;identity=Librarian&amp;sounds=true', 'chat', 'resizable=1,width=350,height=350'); return false;" data-toggle="modal" data-target="#chatmodal">Chat</a>
+<!-- <a href="https://library.wayne.edu/ask-a-librarian.php">Ask-A-Librarian</a> -->
+<a href="https://library.wayne.edu/services/ask-a-librarian">Ask-A-Librarian</a>
+<a href="https://elibrary.wayne.edu/patroninfo~S47">Renew Books</a>
+<!-- <a href="https://library.wayne.edu/hours.php">Library Hours</a> -->
+<a href="https://library.wayne.edu/info/hours/">Hours</a>          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+
+      <div id="urgentfeed"><a href="https://library.wayne.edu/blog/blog/2016/05/11/feedback/" title="Help us improve this site. Please give us feedback" target="_blank">Help us improve this site. Please give us feedback</a></div>
+<!-- <div id="urgentfeed">
+  <a href="https://library.wayne.edu/blog/blog/2016/05/11/feedback/" title="Help us improve this site. Please give us feedback" target="_blank">Help us improve this site. Please give us feedback</a>
+</div>
+ -->
+
+
+
+
+
+<div id="homepage" >
+  <div id="homepage-nest">
+
+<!--     <div class="homepage-slider">
+      <div class="homepage-slider-lef" style="float:left;">
+        <img src="https://library.wayne.edu/img/rotating/askalib.jpg" />
+      </div>
+      <div style="width:455px;height:329px;float:left;background:#fff;">
+        <div style="font-size:30px;font-weight:300;padding-left:50px;padding-right:50px;padding-top:60px;color:#555;">Ask A Librarian</div>
+        <div style="padding-left:50px;padding-right:50px;padding-top:20px;color:#555;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+      </div>
+    </div> -->
+
+    <div id="homepage-3col">
+                    <div id="homepage-3col-1">
+          <div class="homepage-3col-imgwrap">
+            <img src="https://library.wayne.edu/blog/files/2016/06/stanton-1.jpg" style="width:100%;" />
+          </div>
+          <div class="homepage-3col-caption" style="">
+            <div class="homepage-3col-h1andcaption">
+              <h1>Wayne State looking to identify kids in photos from Detroit’s Black Bottom and Paradise Valley neighborhoods</h1>
+              <div class="homepage-3col-caption-text">
+                Do your Detroit roots run deep? By deep, we mean like 80 years deep -- deep in the historic Black Bottom and Paradise Valley neighborhoods. Wayne State University’s Walter P. Reuther Library is looking to identify the subjects in a large selection of photographs taken by Detroit-born photographer Edward Stanton. The photos were taken in the late 1930s and early 1940s in the eastside neighborhoods, razed in the 1960s and replaced with I-75 and Lafayette Park.              </div>
+            </div>
+            <a class="readmore" href="https://library.wayne.edu/blog/blog/2016/06/13/wayne-state-looking-to-identify-kids-in-photos-from-detroits-black-bottom-and-paradise-valley-neighborhoods/">Read More</a>
+          </div>
+        </div>
+              <div id="homepage-3col-1">
+          <div class="homepage-3col-imgwrap">
+            <img src="https://library.wayne.edu/blog/files/2016/06/July_SOTM_540x329.jpg" style="width:100%;" />
+          </div>
+          <div class="homepage-3col-caption" style="">
+            <div class="homepage-3col-h1andcaption">
+              <h1>July Subject of the Month: Childhood and Play</h1>
+              <div class="homepage-3col-caption-text">
+                "The July display was selected in honor of the fun of being a child. Playing is important for all children to do, as this helps them develop and learn important life skills and lessons. Children from all over the world play games, and many of these games hold similarities. The library has a plethora of resources on play and childhood fun including photographs, graduate theses, videos, books, and many more. Stop by Purdy-Kresge Library to see the display."              </div>
+            </div>
+            <a class="readmore" href="https://library.wayne.edu/blog/blog/2016/06/30/july-subject-of-the-month-childhood-and-play/">Read More</a>
+          </div>
+        </div>
+              <div id="homepage-3col-1">
+          <div class="homepage-3col-imgwrap">
+            <img src="https://library.wayne.edu/blog/files/2015/01/Chat_247_540x329.jpg" style="width:100%;" />
+          </div>
+          <div class="homepage-3col-caption" style="">
+            <div class="homepage-3col-h1andcaption">
+              <h1>Text a librarian anytime, anywhere! 313-228-3WSU</h1>
+              <div class="homepage-3col-caption-text">
+                The Wayne State University Libraries now have a  24/7 chat service so librarians can answer your questions about library services and resources as well as help you with your research questions, projects and assignments anytime that you need it, day or night. To connect with a librarian, visit the Libraries’ home page and click “chat” in the bar at the top right or visit http://library.wayne.edu/services/help/ and choose “chat.” Or, if texting is more your thing, send your questions to 313-228-3WSU. Standard text messaging charges may apply from your wireless provider.
+
+Any time you need us, the Wayne State University Libraries are here to help!              </div>
+            </div>
+            <a class="readmore" href="https://library.wayne.edu/blog/blog/2016/06/30/text-a-librarian-anytime-anywhere-313-228-3wsu/">Read More</a>
+          </div>
+        </div>
+            
+
+<!--       <div id="homepage-3col-1">
+        <div class="homepage-3col-imgwrap">
+          <img src="https://library.wayne.edu/img/rotating/sotm.jpg" style="width:100%;" />
+        </div>
+        <div class="homepage-3col-caption" style="">
+          <div class="homepage-3col-h1andcaption">
+            <h1>National Share A Story Month</h1>
+            <div class="homepage-3col-caption-text">
+              Selectors: Emily Brush and Brittany Hill
+              <br>
+              “Stories you read when you're the right age never quite leave you. You may forget who wrote them or what the story was called. Sometimes you'll forget precisely what happened, but if a story touches you it will stay with you, haunting the places in your mind that you rarely ever visit.”
+              <br>― Neil Gaiman
+            </div>
+          </div>
+          <a class="readmore" href="http://guides.lib.wayne.edu/somd">Read More</a>
+        </div>
+      </div> -->
+<!--       <div id="homepage-3col-1">
+        <div class="homepage-3col-imgwrap">
+          <img src="https://library.wayne.edu/img/Annual_Report_540x329.jpg" style="width:100%;" />
+        </div>
+        <div class="homepage-3col-caption" style="">
+          <div class="homepage-3col-h1andcaption">
+            <h1>Libraries 2015 Annual Report Now Available</h1>
+            <div class="homepage-3col-caption-text">
+              As I reflect on all we have accomplished over
+              the past year, I’m struck by the major role that
+              collaboration and partnerships have played in our
+              success. We could not have accomplished all we did
+              without our collaborators!
+              <br>― Dean Sandra Yee
+            </div>
+          </div>
+          <a class="readmore" href="https://library.wayne.edu/blog/?p=10000">Read More</a>
+        </div>
+      </div> -->
+
+<!--       <div id="homepage-3col-2">
+        <div class="homepage-3col-imgwrap">
+          <img src="https://library.wayne.edu/img/rotating/tim.jpg" style="width:100%;" />
+        </div>
+        <div class="homepage-3col-caption" style="">
+          <div class="homepage-3col-h1andcaption">
+            <h1>Wayne State names Tim Gritten associate dean of libraries</h1>
+            <div class="homepage-3col-caption-text">
+              Tim Gritten was recently named associate dean of the Wayne State University Libraries. The appointment was announced by Dean Sandra Yee, who oversees the Wayne State University Libraries and School of Library and Information Science.
+
+Gritten joins the libraries from the University of Wisconsin-Milwaukee Libraries, where he was the assistant director of libraries for user services. Gritten has more than 20 years of experience in libraries, serving in escalating roles within circulation, collections, acquisitions, technology and administration.
+            </div>
+          </div>
+          <a class="readmore" href="https://library.wayne.edu/blog/?p=9946">Read More</a>
+        </div>
+      </div> -->
+<!--       <div id="homepage-3col-2">
+        <div class="homepage-3col-imgwrap">
+          <img src="https://library.wayne.edu/img/ot_awards.jpg" style="width:100%;" />
+        </div>
+        <div class="homepage-3col-caption" style="">
+          <div class="homepage-3col-h1andcaption">
+            <h1>Open Textbook Adoption Awards Announced</h1>
+            <div class="homepage-3col-caption-text">
+              The Open Textbook Adoption Task Force recently presented four faculty members with Open Textbook Adoption Awards, resulting in approximately $30,000 in savings to students and immediate access to students enrolled in those courses. An open textbook is a textbook licensed under an open copyright license, and made available online to be used freely. Many open textbooks are distributed in either print, e-book or audio formats that may be downloaded or purchased at little or no cost.
+            </div>
+          </div>
+          <a class="readmore" href="https://library.wayne.edu/blog/?p=10038">Read More</a>
+        </div>
+      </div> -->
+
+      <!-- <div id="homepage-3col-3">
+        <div class="homepage-3col-imgwrap">
+          <img src="https://library.wayne.edu/img/rotating/chat.jpg" style="width:100%;" />
+        </div>
+        <div class="homepage-3col-caption" style="">
+          <div class="homepage-3col-h1andcaption">
+            <h1>Ask-A-Librarian</h1>
+            <div class="homepage-3col-caption-text">
+              Pulling an all-nighter and need library help? Now you can chat 24/7 with a librarian!
+              Librarians are available through online chat, email, phone and even SMS text messaging through your mobile device! Use our online forms to ask questions, request appointments with a librarian, and consult with an archivist.
+            </div>
+          </div>
+          <a class="readmore" href="https://library.wayne.edu/services/help/">Read More</a>
+        </div>
+      </div> -->
+<!--       <div id="homepage-3col-3">
+        <div class="homepage-3col-imgwrap">
+          <img src="https://library.wayne.edu/img/June_SOTM_540x329.jpg" style="width:100%;" />
+        </div>
+        <div class="homepage-3col-caption" style="">
+          <div class="homepage-3col-h1andcaption">
+            <h1>June Subject of the Month</h1>
+            <div class="homepage-3col-caption-text">
+              Selector: Monique Oldfield and Elizabeth Clemens
+              <br>
+
+Grace Lee Boggs was a writer, philosopher, mentor, and an outspoken activist for many causes, including civil rights, workers’ rights, black power, environmental justice, feminism and community empowerment. To many, she seemed a force of nature – always working, organizing, teaching, and inspiring others to think critically and improve the world around them. Her philosophies evolved constantly throughout her life, but one thing held true from the beginning to the end: her faith that positive social change was possible if people were willing to work together.
+
+
+            </div>
+          </div>
+          <a class="readmore" href="http://guides.lib.wayne.edu/somd">Read More</a>
+        </div>
+      </div> -->
+
+    </div>
+
+    <div id="viewmorestories">
+      <div id="viewmorestories-div">
+        <a id="viewmorestories-button" href="https://library.wayne.edu/blog/">View More Stories</a>
+      </div>
+    </div>
+
+
+
+<!--     <div class="homepage-slider">
+      <div style="float:left;">
+        <img src="https://library.wayne.edu/img/rotating/firstfolio.jpg" />
+      </div>
+      <div style="width:455px;height:329px;float:left;background:#fff;">
+        <div style="font-size:30px;font-weight:300;padding-left:50px;padding-right:50px;padding-top:60px;color:#555;">Shakespeare's First Folio</div>
+        <div style="padding-left:50px;padding-right:50px;padding-top:20px;color:#555;">Wayne State University to host Shakespeare's First Folio Exhibition in 2016 Folger Shakespeare Library announces 52 host sites across the country for traveling exhibit to mark the 400th Anniversary of Shakespeare's Death. Wayne State University, in collaboration with the Detroit Institute of Arts and the Detroit Public Library, has been selected as the host site for the state of Michigan for First Folio!</div>
+      </div>
+    </div>
+
+    <div class="homepage-slider">
+      <div style="float:left;">
+        <img src="https://library.wayne.edu/img/rotating/dsj.jpg" />
+      </div>
+      <div style="width:455px;height:329px;float:left;background:#fff;">
+        <div style="font-size:30px;font-weight:300;padding-left:50px;padding-right:50px;padding-top:60px;color:#555;">Detroit Sunday Journal</div>
+        <div style="padding-left:50px;padding-right:50px;padding-top:20px;color:#555;">The Detroit Sunday Journal was a weekly tabloid newspaper, published by striking union workers from the Detroit News and Detroit Free Press. The strike began in July, 1995; spanning four years and just over 200 editions, the Sunday Journal was published from November 19, 1995, through November 21, 1999.</div>
+      </div>
+    </div>
+
+    <div class="homepage-slider">
+      <div style="float:left;">
+        <img src="https://library.wayne.edu/img/rotating/sotm.jpg" />
+      </div>
+      <div style="width:455px;height:329px;float:left;background:#fff;">
+        <div style="font-size:30px;font-weight:300;padding-left:50px;padding-right:50px;padding-top:60px;color:#555;">Shakespeare &amp; Women</div>
+        <div style="padding-left:50px;padding-right:50px;padding-top:20px;color:#555;">March is Women's History Month, and it is the time when the Wayne State University Library System, in collaboration with the Detroit Institute of Arts (DIA) and the Detroit Public Library (DPL), is hosting the traveling exhibit, "First Folio! the book that gave us SHAKESPEARE," from the Folger Shakespeare Library. In honor of these two events, the Subject of the Month display for March 2016 is combining a celebration of women with a focus on Shakespeare.</div>
+      </div>
+    </div> -->
+
+<!--     <div class="homepage-slider">
+      <div style="float:left;">
+        <img src="https://library.wayne.edu/img/rotating/askalib.jpg" />
+      </div>
+      <div style="width:455px;height:329px;float:left;background:#fff;">
+        <div style="font-size:30px;font-weight:300;padding-left:50px;padding-right:50px;padding-top:60px;color:#555;">Ask A Librarian</div>
+        <div style="padding-left:50px;padding-right:50px;padding-top:20px;color:#555;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+      </div>
+    </div> -->
+
+    <div style="clear: both;"></div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<div id="searchresults">
+  
+  <div id="searchresults-didyoumean"></div>
+
+  <div id="searchresults-nest">
+    <div id="searchresults-nest-column1">
+      <div id="bentobox-bestbet" class="bentobox">
+        <div class="bentobox-title">Best Bet</div>
+        <div class="bentobox-content"></div>
+        <div class="bentobox-loading"></div>
+      </div>
+      <div id="bentobox-articles" class="bentobox">
+        <div class="bentobox-title">Articles</div>
+        <div class="bentobox-content"></div>
+        <div class="bentobox-loading"></div>
+      </div>
+      <div id="bentobox-databases" class="bentobox">
+        <div class="bentobox-title">Databases</div>
+        <div class="bentobox-content"></div>
+        <div class="bentobox-loading"></div>
+      </div>
+      <div id="bentobox-digitalcommons" class="bentobox">
+        <div class="bentobox-title">Digital Commons @ Wayne State</div>
+        <div class="bentobox-content"></div>
+        <div class="bentobox-loading"></div>
+      </div>
+    </div>
+    <div id="searchresults-nest-column2">
+      <div id="bentobox-booksandmedia" class="bentobox">
+        <div class="bentobox-title">Books and Media</div>
+        <div class="bentobox-content"></div>
+        <div class="bentobox-loading"></div>
+      </div>
+      <div id="bentobox-journals" class="bentobox">
+        <div class="bentobox-title">Journals</div>
+        <div class="bentobox-content"></div>
+        <div class="bentobox-loading"></div>
+      </div>
+      <div id="bentobox-digitalcollections" class="bentobox">
+        <div class="bentobox-title">Digital Collections</div>
+        <div class="bentobox-content"></div>
+        <div class="bentobox-loading"></div>
+      </div>
+    </div>
+    <div id="searchresults-nest-column3">
+      <div id="bentobox-wayneedu" class="bentobox">
+        <div class="bentobox-title">Wayne.edu Search</div>
+        <div class="bentobox-content"></div>
+        <div class="bentobox-loading"></div>
+      </div>
+      <div id="bentobox-researchguides" class="bentobox">
+        <div class="bentobox-title">Research Guides</div>
+        <div class="bentobox-content"></div>
+        <div class="bentobox-loading"></div>
+      </div>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<a id="feedback" href="https://waynestate.az1.qualtrics.com/jfe/form/SV_cMDmV0jcUttMhDf"></a>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="footer">
+	<div id="footer-nest">
+	  <!-- <div id="footer-copyright">&copy; 2016 Wayne State University</div> -->
+	  <div id="footer-copyright">Wayne State University Libraries &copy; 2016 </div>
+	  <div id="footer-socials">
+	  	<a href="https://www.facebook.com/waynestateuniversitylibraries/" target="_blank" id="footer-socials-facebook"></a>
+	  	<a href="https://www.twitter.com/waynestatelib" target="_blank" id="footer-socials-twitter"></a>
+	  	<a href="https://www.youtube.com/wsuinst" target="_blank" id="footer-socials-youtube"></a>
+	  </div>
+	  <!-- <span style="float:left;">fb</span> -->
+	  <div id="footer-links">
+	  	<a href="/info/policies/eresources.php">Acceptable Use</a>
+	  	<a href="/info/policies/privacy.php">Privacy</a>
+	  	<a href="/forms/suggestions.php">Suggestions</a>
+	  </div>
+	  <div style="clear:both;"></div>
+	</div>
+</div>
+
+</body>
+</html>

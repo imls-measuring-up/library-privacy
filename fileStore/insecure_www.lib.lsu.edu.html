@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html  lang="en" dir="ltr"><!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+<link rel="shortcut icon" href="http://www.lib.lsu.edu/sites/all/themes/libtheme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+  <title>LSU Libraries</title>
+
+      <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+
+  <style>
+@import url("http://www.lib.lsu.edu/modules/system/system.base.css?o7smj5");
+</style>
+<style>
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_core/css/panopoly-jquery-ui-theme.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.accordion.min.css?o7smj5");
+</style>
+<style media="screen">
+@import url("http://www.lib.lsu.edu/sites/all/modules/views_slideshow/views_slideshow.css?o7smj5");
+</style>
+<style>
+@import url("http://www.lib.lsu.edu/modules/aggregator/aggregator.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/modules/calendar/css/calendar_multiday.css?o7smj5");
+@import url("http://www.lib.lsu.edu/modules/comment/comment.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/contrib/date/date_api/date.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/contrib/date/date_popup/themes/datepicker.1.7.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/contrib/date/date_repeat_field/date_repeat_field.css?o7smj5");
+@import url("http://www.lib.lsu.edu/modules/field/theme/field.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/modules/google_cse-7.x-2.3/google_cse/google_cse.css?o7smj5");
+@import url("http://www.lib.lsu.edu/modules/node/node.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_admin/panopoly-admin.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_admin/panopoly-admin-navbar.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_core/css/panopoly-dropbutton.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_magic/css/panopoly-magic.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_magic/css/panopoly-modal.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_theme/css/panopoly-featured.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_theme/css/panopoly-accordian.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_theme/css/panopoly-layouts.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_widgets/panopoly-widgets.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_widgets/panopoly-widgets-spotlight.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_wysiwyg/panopoly-wysiwyg.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/contrib/radix_layouts/radix_layouts.css?o7smj5");
+@import url("http://www.lib.lsu.edu/modules/search/search.css?o7smj5");
+@import url("http://www.lib.lsu.edu/modules/user/user.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/contrib/views/css/views.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/contrib/caption_filter/caption-filter.css?o7smj5");
+</style>
+<style>
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/contrib/ctools/css/ctools.css?o7smj5");
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/contrib/panels/css/panels.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/modules/vscc-7.x-1.0/vscc/vscc.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/views_slideshow_cycle.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/modules/responsive_menus/styles/meanMenu/meanmenu.min.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/libraries/superfish/css/superfish.css?o7smj5");
+</style>
+<style>
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/styles.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/responsivefooter.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/responsiveheaders.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/responsive-body.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/mainnav.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/mainpage.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/staff.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/standardpages.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/lc-hours.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/ebooks.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/tables.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/specialcollections.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/forms.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/dig-new.css?o7smj5");
+@import url("http://www.lib.lsu.edu/sites/all/themes/libtheme/css/events.css?o7smj5");
+</style>
+<style>
+@import url("http://www.lib.lsu.edu/profiles/panopoly/modules/panopoly/panopoly_images/panopoly-images.css?o7smj5");
+</style>
+  <script src="http://www.lib.lsu.edu/sites/default/files/js/js_jpJjaUC0z8JMIyav5oQrYykDRUb64rpaUDpB4Y9aklU.js"></script>
+<script src="http://www.lib.lsu.edu/sites/default/files/js/js_LopWIU8bb6e0ZKEjUq9ID5wcNvA4ZOa9DHDXSv_-ThY.js"></script>
+<script src="http://www.lib.lsu.edu/sites/default/files/js/js_GOqQ4kmoVUfTlPt0LDJUcSaznwgZEdZFMTdrrB6OlNw.js"></script>
+<script src="http://www.lib.lsu.edu/sites/default/files/js/js_r3_tzAtMTfuu7kniE0mU0jvkpwrQRjnjPjbGxlACw14.js"></script>
+<script src="http://www.lib.lsu.edu/sites/default/files/js/js_lLQ5Y0b9qXmMTW9C_fKh8jVQD8JKAzKJ1RO-1_eVDFA.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"libtheme","theme_token":"KThhyJzXkZ6Uru5KGxhu4sVcncdxVnYLor-yH6IGcOg","js":{"profiles\/panopoly\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets.js":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.js":1,"profiles\/panopoly\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"profiles\/panopoly\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"profiles\/panopoly\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"profiles\/panopoly\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.tabs.min.js":1,"profiles\/panopoly\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"sites\/all\/modules\/views_slideshow\/js\/views_slideshow.js":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_images\/panopoly-images.js":1,"sites\/all\/modules\/google_cse-7.x-2.3\/google_cse\/google_cse.js":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_admin\/panopoly-admin.js":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_magic\/panopoly-magic.js":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_theme\/js\/panopoly-accordion.js":1,"profiles\/panopoly\/modules\/contrib\/caption_filter\/js\/caption-filter.js":1,"profiles\/panopoly\/libraries\/jquery.imagesloaded\/jquery.imagesloaded.min.js":1,"sites\/all\/modules\/vscc-7.x-1.0\/vscc\/js\/vscc.js":1,"sites\/all\/libraries\/jquery.cycle\/jquery.cycle.all.js":1,"sites\/all\/modules\/views_slideshow\/contrib\/views_slideshow_cycle\/js\/views_slideshow_cycle.js":1,"sites\/all\/modules\/responsive_menus\/styles\/meanMenu\/jquery.meanmenu.min.js":1,"sites\/all\/modules\/responsive_menus\/styles\/meanMenu\/responsive_menus_mean_menu.js":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sftouchscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/modules\/superfish\/superfish.js":1,"sites\/all\/themes\/libtheme\/js\/script.js":1,"sites\/all\/themes\/libtheme\/js\/SpryTabbedPanels.js":1,"sites\/all\/themes\/libtheme\/js\/discoversearch.js":1,"sites\/all\/themes\/libtheme\/js\/TabbedPanel.js":1,"sites\/all\/themes\/libtheme\/js\/inventories.js":1,"sites\/all\/themes\/libtheme\/js\/Catalog.js":1,"sites\/all\/themes\/libtheme\/js\/oralhistory-faqs.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"sites\/all\/modules\/views_slideshow\/views_slideshow.css":1,"modules\/aggregator\/aggregator.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"profiles\/panopoly\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/panopoly\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"profiles\/panopoly\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/google_cse-7.x-2.3\/google_cse\/google_cse.css":1,"modules\/node\/node.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_admin\/panopoly-admin.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_admin\/panopoly-admin-navbar.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_core\/css\/panopoly-dropbutton.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_magic\/css\/panopoly-magic.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_magic\/css\/panopoly-modal.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_theme\/css\/panopoly-featured.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_theme\/css\/panopoly-accordian.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_theme\/css\/panopoly-layouts.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_wysiwyg\/panopoly-wysiwyg.css":1,"profiles\/panopoly\/modules\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"profiles\/panopoly\/modules\/contrib\/views\/css\/views.css":1,"profiles\/panopoly\/modules\/contrib\/caption_filter\/caption-filter.css":1,"profiles\/panopoly\/modules\/contrib\/ctools\/css\/ctools.css":1,"profiles\/panopoly\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/vscc-7.x-1.0\/vscc\/vscc.css":1,"sites\/all\/modules\/views_slideshow\/contrib\/views_slideshow_cycle\/views_slideshow_cycle.css":1,"sites\/all\/modules\/responsive_menus\/styles\/meanMenu\/meanmenu.min.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/themes\/libtheme\/system.menus.css":1,"sites\/all\/themes\/libtheme\/system.messages.css":1,"sites\/all\/themes\/libtheme\/system.theme.css":1,"sites\/all\/themes\/libtheme\/css\/styles.css":1,"sites\/all\/themes\/libtheme\/css\/responsivefooter.css":1,"sites\/all\/themes\/libtheme\/css\/responsiveheaders.css":1,"sites\/all\/themes\/libtheme\/css\/responsive-body.css":1,"sites\/all\/themes\/libtheme\/css\/mainnav.css":1,"sites\/all\/themes\/libtheme\/css\/mainpage.css":1,"sites\/all\/themes\/libtheme\/css\/staff.css":1,"sites\/all\/themes\/libtheme\/css\/standardpages.css":1,"sites\/all\/themes\/libtheme\/css\/lc-hours.css":1,"sites\/all\/themes\/libtheme\/css\/ebooks.css":1,"sites\/all\/themes\/libtheme\/css\/tables.css":1,"sites\/all\/themes\/libtheme\/css\/specialcollections.css":1,"sites\/all\/themes\/libtheme\/css\/forms.css":1,"sites\/all\/themes\/libtheme\/css\/dig-new.css":1,"sites\/all\/themes\/libtheme\/css\/events.css":1,"profiles\/panopoly\/modules\/panopoly\/panopoly_images\/panopoly-images.css":1}},"googleCSE":{"cx":"011494875229405123364:ynlcnghmefy","language":"","resultsWidth":600,"domain":"www.google.com"},"CToolsModal":{"modalSize":{"type":"scale","width":".9","height":".9","addWidth":0,"addHeight":0,"contentRight":25,"contentBottom":75},"modalOptions":{"opacity":".55","background-color":"#FFF"},"animationSpeed":"fast","modalTheme":"CToolsModalDialog","throbberTheme":"CToolsModalThrobber"},"panopoly_magic":{"pane_add_preview_mode":"automatic"},"better_exposed_filters":{"views":{"news_and_notes":{"displays":{"panel_pane_1":{"filters":[]}}},"front_page_slideshow":{"displays":{"panel_pane_1":{"filters":[]}}}}},"viewsSlideshow":{"front_page_slideshow-panel_pane_1":{"methods":{"goToSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"nextSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"pause":["viewsSlideshowControls","viewsSlideshowCycle"],"play":["viewsSlideshowControls","viewsSlideshowCycle"],"previousSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"transitionBegin":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"transitionEnd":[]},"paused":0}},"viewsSlideshowControls":{"front_page_slideshow-panel_pane_1":{"bottom":{"type":"vsccControls"}}},"viewsSlideshowCycle":{"#views_slideshow_cycle_main_front_page_slideshow-panel_pane_1":{"num_divs":4,"id_prefix":"#views_slideshow_cycle_main_","div_prefix":"#views_slideshow_cycle_div_","vss_id":"front_page_slideshow-panel_pane_1","effect":"fade","transition_advanced":0,"timeout":5000,"speed":700,"delay":0,"sync":1,"random":0,"pause":0,"pause_on_click":0,"action_advanced":0,"start_paused":0,"remember_slide":0,"remember_slide_days":1,"pause_in_middle":0,"pause_when_hidden":0,"pause_when_hidden_type":"full","amount_allowed_visible":"","nowrap":0,"fixed_height":1,"items_per_slide":1,"wait_for_image_load":1,"wait_for_image_load_timeout":3000,"cleartype":0,"cleartypenobg":0,"advanced_options":"{}"}},"responsive_menus":[{"selectors":"#navigation","trigger_txt":"Tap for Menu \u003Cspan \/\u003E\u003Cspan \/\u003E\u003Cspan \/\u003E","close_txt":"X","close_size":"1em","position":"right","media_size":"680","show_children":"1","expand_children":"1","expand_txt":"+","contract_txt":"-","remove_attrs":"1","responsive_menus_style":"mean_menu"}],"superfish":{"1":{"id":"1","sf":{"delay":"500","animation":{"opacity":"show"},"speed":"\u0027fast\u0027","autoArrows":true,"dropShadows":false,"disableHI":false},"plugins":{"touchscreen":{"mode":"always_active"},"supposition":true,"bgiframe":false}}}});</script>
+      <!--[if lt IE 9]>
+    <script src="/sites/all/themes/zen/js/html5-respond.js"></script>
+    <![endif]-->
+    
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22589452-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body class="html front not-logged-in no-sidebars page-node page-node- page-node-80388 node-type-main-page region-content page-panels" >
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P2Q342"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P2Q342');</script>
+<!-- End Google Tag Manager -->
+
+
+      <p id="skip-link">
+      <a href="#main" class="element-invisible element-focusable">Skip to content</a>
+    </p>
+      
+
+<div id="page">
+
+  <img src="/sites/all/themes/libtheme/printlogo.jpg" id="printlogo" style="display:none;" alt="" />
+
+<div id="lsuheader">
+
+<div class="mylsu"><a href="http://www.lsu.edu"><strong>LSU.EDU</strong></a>
+</div> <!-- close mylsu -->
+
+<div class="mylsu"><a href="https://mylsu.apps.lsu.edu/group/mycampus/"><strong>MyLSU</strong></a>
+</div> <!-- close mylsu -->
+
+<div class="give"><a href="https://securelb.imodules.com/s/1585/social.aspx?sid=1585&gid=1&pgid=708&cid=1508"><strong><span class="glyphicon glyphicon-gift" aria-hidden="true"></span>Give to LSU Libraries</strong></a>
+</div> 
+ 
+
+<form name="google1" method="get" action="http://www.google.com/search">
+<div class="lsusearchbox">	
+	<label for="searchbox" class="element-invisible">Search lsu.edu</label>
+    <input name="q" id="lsusearchbox" type="text" size="20" placeholder="Search LSU Libraries" onClick="select()"/>
+    
+	<input name="image" type="image" src="/sites/all/themes/libtheme/images/icons/purple/search.png" alt="Go" style="border:0;" />
+
+		<input type="hidden" name="sitesearch" value="lib.lsu.edu" /> 
+
+
+</div> <!-- close lsusearchbox -->
+</form>        
+
+</div> <!-- close lsuheader -->
+
+  <header class="header" id="header" role="banner">
+  
+
+
+    
+    
+    
+      <div class="header__region region region-header">
+    <div id="block-block-1" class="block block-block first last odd">
+
+      
+  <div class="header-mid"><a href="/"><div class="lsulogo"></div></a><span class="motto">Access to Excellence</span></div>
+</div>
+  </div>
+
+  </header>
+
+  <div id="main">
+
+    <div id="content" class="column" role="main">
+                  <a id="main-content"></a>
+                                                
+
+
+
+<div class="panel-display taylor clearfix " >
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 lib-landing-page-header panel-panel">
+        <div class="panel-panel-inner">
+                  </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 lib-landing-page-half panel-panel">
+        <div class="panel-panel-inner">
+          <div class="panel-pane pane-entity-field pane-node-field-lp-search" >
+  
+      
+  
+  <div class="field field-name-field-lp-search field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div id="tabbedsearchbox">
+    <div id="TabbedPanels1" class="TabbedPanels">
+        <ul class="TabbedPanelsTabGroup">
+            <li class="TabbedPanelsTab">Discovery</li>
+            <li class="TabbedPanelsTab">Catalog</li>
+            <li class="TabbedPanelsTab">Databases</li>
+            <li class="TabbedPanelsTab">Reserves</li>
+            <li class="TabbedPanelsTab">Ejournals</li>
+        </ul>
+    
+        <div class="TabbedPanelsContentGroup">
+        
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Discover TAB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="TabbedPanelsContent">
+
+      <!-- EBSCOhost Custom Search Box Begins -->
+<div id="discovery">
+
+<!-- START EDS -->
+<script src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js"></script>
+<script src="/sites/all/themes/libtheme/js/discoversearch.js"></script>
+<form method="post" onSubmit="checkCheckboxes(this); return ebscoHostSearchGo(this);" action="">
+<div>
+
+<input type="hidden" value="http://libezp.lib.lsu.edu/login?url=http://search.ebscohost.com/login.aspx?direct=true&amp;site=eds-live&amp;scope=site&amp;type=0&amp;mode=and&amp;lang=en" name="ebscohosturl" id="ebscohosturl" />
+
+<input type="hidden" value="db" name="ebscohostsearchsrc" id="ebscohostsearchsrc" />
+
+<input type="hidden" value="+AND+" name="ebscohostsearchmode" id="ebscohostsearchmode" />
+
+<input type="hidden" value="" name="ebscohostkeywords" id="ebscohostkeywords" />
+
+                
+<label for="q" class="element-invisible">Discovery</label>
+
+
+</div>
+
+
+<div class="search-wrapper">
+<input type="text" placeholder="Enter search terms..." name="ebscohostsearchtext" id="q" />
+
+<input name="Search" type="submit" value="Search" />
+</div> <!-- close search-wrapper -->
+                
+                
+                
+              
+</div><!--/#search-->
+<div class="limiter-wrapper">                
+
+<div class="search-options-col1">
+<h3>Search By:</h3>
+
+<label for="guidedField_0">
+<input type="radio" checked="checked" value="" id="guidedField_0" name="searchFieldSelector" class="radio" />Keyword </label>
+                        
+<label for="guidedField_2">
+<input type="radio" value="AU" id="guidedField_2" name="searchFieldSelector" class="radio" />Author </label>
+                    
+<label for="guidedField_1">
+<input type="radio" value="TI" id="guidedField_1" name="searchFieldSelector" class="radio" />Title  </label>  
+                     
+</div> <!-- close search-options -->
+
+      
+<div class="search-options-col2">
+
+<h3>Limit To:</h3>
+<label for="physical">
+<input type="radio" id="physical" name="limiterSelector"/>Print Books</label>
+
+<label for="ebooks">
+<input type="radio" id="ebooks" name="limiterSelector"/>E-books</label>
+
+<label for="chkPeerReviewed">
+<input class="limiter" type="radio" id="chkPeerReviewed" name="limiterSelector"/>Peer Reviewed Articles</label>
+
+
+
+</div> <!-- close search-options -->
+</div> <!-- close limiter-wrapper -->
+
+<p class="advanced">
+<a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&amp;custid=s8491974&amp;groupid=main&amp;profid=eds-main">Advanced Search </a>
+
+
+
+
+</p>
+
+
+<p class="mobilelinks">
+<a href="https://lsu.louislibraries.org/uhtbin/cgisirsi/0/0/0/38/X/POWER_SEARCH">Search the Catalog</a>
+  <a href="http://guides.lib.lsu.edu/az.php" target="_blank">Search Databases</a>
+ 
+</p>
+</form>
+            
+</div>        
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CATALOG TAB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ <div class="TabbedPanelsContent" style="display:none;">
+ <div class="catalogtab">
+
+        <form name="searchform" method="post" action="https://lsu.louislibraries.org/uhtbin/cgisirsi/X/0/0/123/">
+
+<div class="search-wrapper">
+ 
+<label for="searchdata1" class="element-invisible">Enter Search Terms</label>
+<input type="text" name="searchdata1" id="searchdata1" maxlength="255"/>    
+<input type="submit" value="Search" />
+
+</div> <!-- close search-wrapper -->
+
+<div class="limiter-wrapper">
+
+       
+            <label for="srchfield1" class="element-invisible">Select a Search Type</label>
+            
+            
+            
+             <select name="srchfield1" id="srchfield1" onChange="javascript:browseswitch();">
+
+                   <option value="GENERAL^SUBJECT^GENERAL^^keywords anywhere">  All Fields</option>
+                   <option value="AU^AUTHOR^AUTHORS^Author Processing^author"> Author</option>
+                   <option value="TI^TITLE^TITLES^Title Processing^title"> Title</option>
+                   <option value="SU^SUBJECT^SUBJECTS^^subject"> Subject</option>
+                   <option value="PER^PERTITLE^TITLES^Title Processing^periodical title"> Periodical Title</option>
+             </select>
+
+              
+              <label for="query_type" class="element-invisible">Select Query Type</label>
+              <select name="query_type" id="query_type">
+              <option value="search" id="keyword" >Keyword</option>
+              <option value="browse" id="browse" >Browse</option>
+              <option value="exact" id="exact" >Exact</option>
+              </select>  <br />  
+              
+<label for="library" class="element-invisible">Select a Library</label>
+<select name="library" id="library">
+<option value="ALL">All Libraries</option>
+<option value="MIDL-MAIN">Middleton Library</option>
+<option value="SPEC_COLL">Special Collections</option>
+<option value="DOCS_MICRO">Government Documents/Microforms</option>
+<option value="MUSIC">Music Resources</option>
+<option value="CIC">Cartographic Information Center</option>
+<option value="EDUCATION">Education Resource Center</option>
+<option value="NONLIBRARY">Collections at LSU but not in LSU Libraries</option>
+<option value="VETMED">Veterinary Medicine Library</option>
+</select>
+ 
+</div> <!-- close limiter-wrapper -->
+             
+
+
+<p class="advanced">
+<a href="https://lsu.louislibraries.org/uhtbin/cgisirsi/0/0/0/38/X/POWER_SEARCH">Advanced Search</a>
+  <a href="http://libezp.lib.lsu.edu/login?url=http://lsulibraries.worldcat.org/" target="_blank">Search WorldCat</a></p>
+
+</form>               
+
+
+</div> <!--close catalogtab-->
+</div> <!--close TabbedPanelsContent-->
+            
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ARTICLES TAB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
+<div class="TabbedPanelsContent" style="display:none;">
+
+<div class="databasestab">
+
+<h3>Search by Database Name</h3>
+ 
+<script>
+springshare_widget_config_1436990136213 = {  };
+</script>
+<div id="s-lg-widget-1436990136213"></div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://lgapi.libapps.com/widgets.php?site_id=5512&widget_type=7&widget_embed_type=1&output_format=1&search_box_type=2&placeholder_text=e.g.%2C+Web+of+Science%2C+JSTOR&button_text=Search&widget_height=&widget_width=250&config_id=1436990136213";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","s-lg-widget-script-1436990136213");</script>
+
+
+<div class="databasesbrowse">
+   
+<h3>Browse Databases</h3>           
+
+
+<a href="http://guides.lib.lsu.edu/az.php?a=a">A</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=b">B</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=c">C</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=d">D</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=e">E</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=f">F</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=g">G</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=h">H</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=i">I</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=j">J</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=k">K</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=l">L</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=m">M</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=n">N</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=o">O</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=p">P</a>
+
+<span class="db-select-letter">Q</span>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=r">R</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=s">S</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=t">T</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=u">U</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=v">V</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=w">W</a>
+
+<span class="db-select-letter">X</span>
+
+<span class="db-select-letter">Y</span>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=z">Z</a>
+
+<a href="http://guides.lib.lsu.edu/az.php?a=pound">#</a>
+
+ 
+
+</div> <!-- close databasesbrowse -->
+<h3></h3>
+
+<div class="databaseslink">
+
+<a href="http://guides.lib.lsu.edu/az.php?t=11403">Frequently Used Databases</a> | <a href="http://guides.lib.lsu.edu/az.php?a=all">All Databases</a>  | <a href="/services/copyright/terms">Terms & Conditions</a>
+
+ </div> <!-- close databaseslink -->
+
+</div> <!--close databases tab -->
+                    
+</div> <!--TabbedPanelsContent -->
+            
+            
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ RESERVES TAB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
+<div class="TabbedPanelsContent" style="display:none;">
+ <script src="https://code.jquery.com/jquery-1.11.0.js"></script>           
+<form method="post" name="searchform" action="https://lsu.louislibraries.org/uhtbin/cgisirsi/X/0/0/79">
+
+<div class="reservestab">
+
+<div class="search-wrapper">
+
+<input type="hidden" name="desk" value="ANY" />
+
+<input type="text" name="searchdata1" title="Search Reserves" />
+
+<input type="submit" value="Search" />
+
+</div> <!-- close search-wrapper -->
+
+<div class="limiter-wrapper">                
+
+<div class="search-options-left">
+<h3>Search By:</h3>
+<label for="RSV_INSTRUCTOR">
+<input type="radio" checked="checked" value="Instructor" name="RSV_INSTRUCTOR" />Instructor Name</label> <br />
+                        
+<label for="RSV_COURSE_NAME">
+<input type="radio" value="Course Name"  name="RSV_COURSE_NAME" />Course Name  </label> <br />
+<label for="RSV_COURSE_ID">
+<input type="radio" value="Course Number"  name="RSV_COURSE_ID" />Course Number </label>
+ 
+                     
+</div> <!-- close search-options -->
+</div> <!-- close limiter-wrapper -->
+
+</div> <!--close reservestabContent    -->
+
+
+</form>        
+</div> <!--close TabbedPanelsContent    -->       
+            
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ejournals tab ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ 
+<div class="TabbedPanelsContent">
+
+ 
+<div id="ejournalstab">
+
+<!-- START EDS -->
+<script src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js"></script>
+<script src="/sites/all/themes/libtheme/js/discoversearch.js"></script>
+<form method="post" onSubmit="checkCheckboxes(this); return ebscoHostSearchGo(this);" action="">
+<div>
+
+<input type="hidden" value="http://libezp.lib.lsu.edu/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=44&db=edspub&mode=bool&authtype=ip,uid" name="ebscohosturl" id="ebscohosturl" />
+
+<input type="hidden" value="db" name="ebscohostsearchsrc" id="ebscohostsearchsrc" />
+
+<input type="hidden" value="+AND+" name="ebscohostsearchmode" id="ebscohostsearchmode" />
+
+<input type="hidden" value="" name="ebscohostkeywords" id="ebscohostkeywords" />
+
+                
+<label for="q" class="element-invisible">Ejournals</label>
+
+
+</div>
+
+
+<div class="search-wrapper">
+<input type="text" placeholder="Enter search terms..." name="ebscohostsearchtext" id="q" />
+
+<input name="Search" type="submit" value="Search" />
+</div> <!-- close search-wrapper -->
+                
+                
+                
+              
+</div><!--/#search-->
+
+ <p class="advanced">
+     <a href="http://libezp.lib.lsu.edu/login?url=http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=pfi">Browse by Discipline</a>
+     <a href="/services/copyright/terms">Terms & Conditions</a>
+     </p>
+
+
+<p class="mobilelinks">
+<a href="https://lsu.louislibraries.org/uhtbin/cgisirsi/0/0/0/38/X/POWER_SEARCH">Search the Catalog</a>
+  <a href="http://guides.lib.lsu.edu/az.php" target="_blank">Search Databases</a>
+ 
+</p>
+</form>
+            
+</div>        
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END OF TAB CONTENT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        </div>
+    </div>
+</div>
+
+<script src="/sites/all/themes/libtheme/js/TabbedPanel.js"></script>
+
+
+</div></div></div>
+  
+  </div>
+        </div>
+      </div>
+      <div class="col-md-3 lib-landing-page-quarter1 panel-panel">
+        <div class="panel-panel-inner">
+          <div class="panel-pane pane-entity-field pane-node-field-lp-contacts" >
+  
+      
+  
+  <div class="field field-name-field-lp-contacts field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="contacts"><h2>Help</h2><div class="linkbox"><ul><li><a href="http://askus.lib.lsu.edu/">Ask Us!</a></li>
+<li><a href="http://lsu.libcal.com/rooms.php?i=2934">Group Study Spaces</a></li>
+<li><a href="http://lsu.libcal.com/booking/individualspaces">Individual Study Spaces</a></li><li><a href="/services/ill">Interlibrary Loan & Delivery Services</a></li><li><a href="https://lsu.louislibraries.org/uhtbin/cgisirsi/0/0/0/1/38/X/BLASTOFF">My Library Account</a></li><li><a href="http://guides.lib.lsu.edu/">Research Guides</a></li><li><a href="about/staff/specialists">Subject Specialists</a></li><li><span style="line-height: 1.5em; background-color: transparent;">Circulation: (225) 578-2058</span></li></ul></div></div></div></div></div>
+  
+  </div>
+        </div>
+      </div>
+      <div class="col-md-3 lib-landing-page-quarter2 panel-panel">
+        <div class="panel-panel-inner">
+          <div class="panel-pane pane-entity-field pane-node-field-lp-hours-block" >
+  
+      
+  
+  <div class="field field-name-field-lp-hours-block field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><div class="hours"> 
+<h2>Today's Hours </h2>
+
+<div id="api_hours_today_iid1486_lid241"></div><script async="async" src="https://api3.libcal.com/api_hours_today.php?iid=1486&lid=241&format=js&context=object"> </script>
+
+<div id="api_hours_today_iid1486_lid236"></div><script async="async" src="https://api3.libcal.com/api_hours_today.php?iid=1486&lid=236&format=js&context=object"> </script>
+
+<div class="weekly"><a href="/about/hours/">More LSU Libraries Hours</a></div>
+
+</div> <!--close hours--></div></div></div>
+  
+  </div>
+        </div>
+      </div>
+    </div>
+    
+    
+        <div class="row">
+      <div class="col-md-6 lib-landing-page-half panel-panel">
+        <div class="panel-panel-inner">
+          <div class="panel-pane pane-views-panes pane-news-and-notes-panel-pane-1" >
+  
+        <h2 class="pane-title">News and Notes</h2>
+    
+  
+  <div class="view view-news-and-notes view-id-news_and_notes view-display-id-panel_pane_1 view-dom-id-44a25f1a041c2f58266750b22c5abd3a">
+        
+  
+  
+      <div class="view-content">
+      <table class="views-table cols-0" >
+       <tbody>
+          <tr >
+                  <td class="views-field views-field-title" >
+            <a href="/content/lsu-libraries-ranked-15th-us-articles-advancing-specialized-librarianship"><a href="http://news.blogs.lib.lsu.edu/2016/06/21/lsu-libraries-ranked-15th-in-us-for-articles-advancing-specialized-librarianship/" target="blank">LSU Libraries ranked 15th in US for articles advancing specialized librarianship</a></a>          </td>
+              </tr>
+          <tr >
+                  <td class="views-field views-field-title" >
+            <a href="/content/exhibition-%E2%80%9C-grand-village-bluff-city-300-years-natchez-history%E2%80%9D"><a href="http://news.blogs.lib.lsu.edu/2016/06/10/exhibition-from-grand-village-to-bluff-city-300-years-of-natchez-history/" target="blank">Exhibition: “From Grand Village to Bluff City: 300 Years of Natchez History”</a></a>          </td>
+              </tr>
+          <tr >
+                  <td class="views-field views-field-title" >
+            <a href="/content/construction-update-math-lab-opens-middleton-library"><a href="http://news.blogs.lib.lsu.edu/2016/06/08/construction-update-math-lab-opens-in-middleton-library/" target="blank">Construction update: Math lab opens in Middleton Library</a></a>          </td>
+              </tr>
+          <tr >
+                  <td class="views-field views-field-title" >
+            <a href="/content/studying-sherlock-russell-mann-sherlock-holmes-research-collection-0"><a href="http://news.blogs.lib.lsu.edu/2016/06/08/studying-sherlock/" target="blank">Studying Sherlock: The Russell Mann Sherlock Holmes Research Collection</a></a>          </td>
+              </tr>
+      </tbody>
+</table>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+       <div class="morelink"><a href="http://news.blogs.lib.lsu.edu/">More News...</a></div>    </div>
+  
+  
+</div>
+  
+  </div>
+        </div>
+      </div>
+      <div class="col-md-6 lib-landing-page-half panel-panel">
+        <div class="panel-panel-inner">
+          <div class="panel-pane pane-views-panes pane-front-page-slideshow-panel-pane-1" >
+  
+      
+  
+  <div class="view view-front-page-slideshow view-id-front_page_slideshow view-display-id-panel_pane_1 view-dom-id-6ef796145dd1749c33d32d4de2bf8254">
+        
+  
+  
+      <div class="view-content">
+      
+  <div class="skin-default">
+    
+    <div id="views_slideshow_cycle_main_front_page_slideshow-panel_pane_1" class="views_slideshow_cycle_main views_slideshow_main"><div id="views_slideshow_cycle_teaser_section_front_page_slideshow-panel_pane_1" class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
+  <div id="views_slideshow_cycle_div_front_page_slideshow-panel_pane_1_0" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-1 views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd views-row-first">
+    
+          <a href="http://exhibitions.blogs.lib.lsu.edu/?page_id=798#LectureHall"><img class="slideshow" src="http://www.lib.lsu.edu/sites/default/files/styles/slideshow/public/slideshow/birdseyeview_hill.jpg?itok=Qsh-4q0v" width="440" height="210" alt="" /></a>  </div>
+</div>
+<div id="views_slideshow_cycle_div_front_page_slideshow-panel_pane_1_1" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-1 views-row-even">
+    
+          <a href="http://exhibitions.blogs.lib.lsu.edu/?page_id=798"><img class="slideshow" src="http://www.lib.lsu.edu/sites/default/files/styles/slideshow/public/slideshow/hill_slide.jpg?itok=Aw0TjjKc" width="440" height="210" alt="" /></a>  </div>
+</div>
+<div id="views_slideshow_cycle_div_front_page_slideshow-panel_pane_1_2" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-2 views-row-odd">
+    
+          <a href="http://news.blogs.lib.lsu.edu/2016/05/09/lsu-libraries-instagram-contest-results/"><img class="slideshow" src="http://www.lib.lsu.edu/sites/default/files/styles/slideshow/public/slideshow/instagramslide.png?itok=wq8UdISa" width="440" height="210" alt="" /></a>  </div>
+</div>
+<div id="views_slideshow_cycle_div_front_page_slideshow-panel_pane_1_3" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-4 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-3 views-row-even views-row-last">
+    
+          <a href="http://news.blogs.lib.lsu.edu/tag/2016_construction/"><img class="slideshow" src="http://www.lib.lsu.edu/sites/default/files/styles/slideshow/public/slideshow/constructionwebpageslideshow.png?itok=PKneBD_z" width="440" height="210" alt="" /></a>  </div>
+</div>
+</div>
+</div>
+          <div class="views-slideshow-controls-bottom clearfix">
+        <div id="vscc_controls_front_page_slideshow-panel_pane_1" class="vscc-controls vscc_controls"><span id="vscc_controls_previous_front_page_slideshow-panel_pane_1" class="vscc_controls_previous"><a href="#!slide"><img src="http://www.lib.lsu.edu/sites/all/modules/vscc-7.x-1.0/vscc/images/black_arrow_left.png" alt="previous" title="previous" /></a></span><span id="vscc_controls_pause_front_page_slideshow-panel_pane_1" class="vscc_controls_pause"><a href="#!slide"><span class="vscc-pause"><img src="http://www.lib.lsu.edu/sites/all/modules/vscc-7.x-1.0/vscc/images/black_pause.png" alt="pause" title="pause" /></span><span class="vscc-resume vscc-disabled"><img src="http://www.lib.lsu.edu/sites/all/modules/vscc-7.x-1.0/vscc/images/black_arrow_right.png" alt="resume" title="resume" /></span></a></span><span id="vscc_controls_next_front_page_slideshow-panel_pane_1" class="vscc_controls_next"><a href="#!slide"><img src="http://www.lib.lsu.edu/sites/all/modules/vscc-7.x-1.0/vscc/images/black_arrow_right.png" alt="next" title="next" /></a></span></div><div id="views_slideshow_slide_counter_front_page_slideshow-panel_pane_1" class="views-slideshow-slide-counter views_slideshow_slide_counter">
+  <span class="num">1</span> of <span class="total">4</span>
+</div>
+      </div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+  
+  </div>
+        </div>
+      </div>
+
+    </div>
+        <div class="row">
+      <div class="col-md-3 lib-landing-page-quarter1 panel-panel">
+        <div class="panel-panel-inner">
+                  </div>
+      </div>
+      <div class="col-md-3 lib-landing-page-quarter2 panel-panel">
+        <div class="panel-panel-inner">
+                  </div>
+      </div>
+      <div class="col-md-3 lib-landing-page-quarter2 panel-panel">
+        <div class="panel-panel-inner">
+                  </div>
+      </div>
+      <div class="col-md-3 lib-landing-page-quarter2 panel-panel">
+        <div class="panel-panel-inner">
+                  </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12 lib-landing-page-footer panel-panel">
+        <div class="panel-panel-inner">
+                  </div>
+      </div>
+    </div>
+  </div>  
+
+</div><!-- /.taylor -->
+          </div>
+
+    <div id="navigation">
+
+      
+        <div class="region region-navigation">
+    <div id="block-superfish-1" class="block block-superfish first last odd">
+
+      
+  <ul id="superfish-1" class="menu sf-menu sf-main-menu sf-horizontal sf-style-none sf-total-items-5 sf-parent-items-4 sf-single-items-1"><li id="menu-1286-1" class="first odd sf-item-1 sf-depth-1 sf-total-children-3 sf-parent-children-3 sf-single-children-0 menuparent"><a href="/about" class="sf-depth-1 menuparent">About the Libraries</a><ul class="sf-megamenu"><li class="sf-megamenu-wrapper first odd sf-item-1 sf-depth-1 sf-total-children-3 sf-parent-children-3 sf-single-children-0 menuparent"><ol><li id="menu-1442-1" class="first odd sf-item-1 sf-depth-2 sf-total-children-6 sf-parent-children-1 sf-single-children-5 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Information</span><ol><li id="menu-3843-1" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="/about" title="" class="sf-depth-3">About the Libraries</a></li><li id="menu-1337-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="/about/hours" class="sf-depth-3">Hours</a></li><li id="menu-1321-1" class="middle odd sf-item-3 sf-depth-3 sf-no-children"><a href="/about/directions" class="sf-depth-3">Directions to LSU Libraries</a></li><li id="menu-1341-1" class="middle even sf-item-4 sf-depth-3 sf-no-children"><a href="/about/jobs" class="sf-depth-3">Employment</a></li><li id="menu-1338-1" class="middle odd sf-item-5 sf-depth-3"><a href="/about/giving" class="sf-depth-3">Giving to the LSU Libraries</a></li><li id="menu-1339-1" class="last even sf-item-6 sf-depth-3 sf-no-children"><a href="/about/policies" class="sf-depth-3">Policies</a></li></ol></div></li><li id="menu-1444-1" class="middle even sf-item-2 sf-depth-2 sf-total-children-4 sf-parent-children-0 sf-single-children-4 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Directory</span><ol><li id="menu-3324-1" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="/about/staff" title="" class="sf-depth-3">All Staff</a></li><li id="menu-3325-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="/about/staff/faculty" title="" class="sf-depth-3">Faculty</a></li><li id="menu-2941-1" class="middle odd sf-item-3 sf-depth-3 sf-no-children"><a href="/about/staff/specialists" title="" class="sf-depth-3">Subject Specialists</a></li><li id="menu-5880-1" class="last even sf-item-4 sf-depth-3 sf-no-children"><a href="/about/staff/departments" title="" class="sf-depth-3">Staff by Department</a></li></ol></div></li><li id="menu-2930-1" class="last odd sf-item-3 sf-depth-2 sf-total-children-4 sf-parent-children-0 sf-single-children-4 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Call Us</span><ol><li id="menu-2931-1" class="first odd sf-item-1 sf-depth-3 sf-no-children"><span class="menu_heading" title="" class="sf-depth-3 nolink">Circulation (fines, borrowing): (225) 578-2058</span></li><li id="menu-2933-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><span class="menu_heading" title="" class="sf-depth-3 nolink">Music Resources: (225) 578-4674</span></li><li id="menu-2932-1" class="middle odd sf-item-3 sf-depth-3 sf-no-children"><span class="menu_heading" title="" class="sf-depth-3 nolink">Research &amp; Instruction: (225) 578-8875</span></li><li id="menu-2934-1" class="last even sf-item-4 sf-depth-3 sf-no-children"><span class="menu_heading" title="" class="sf-depth-3 nolink">Special Collections: (225) 578-6544</span></li></ol></div></li></ol></li></ul></li><li id="menu-1285-1" class="middle even sf-item-2 sf-depth-1 sf-total-children-4 sf-parent-children-4 sf-single-children-0 menuparent"><a href="/collections" title="" class="sf-depth-1 menuparent">Libraries &amp; Collections</a><ul class="sf-megamenu"><li class="sf-megamenu-wrapper middle even sf-item-2 sf-depth-1 sf-total-children-4 sf-parent-children-4 sf-single-children-0 menuparent"><ol><li id="menu-1384-1" class="first odd sf-item-1 sf-depth-2 sf-total-children-3 sf-parent-children-2 sf-single-children-1 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Middleton Library</span><ol><li id="menu-4042-1" class="first odd sf-item-1 sf-depth-3"><a href="/collections/govdocs" class="sf-depth-3">Government Documents</a></li><li id="menu-3924-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="/collections/music" class="sf-depth-3">Music</a></li><li id="menu-5920-1" class="last odd sf-item-3 sf-depth-3"><a href="http://lib.lsu.edu/oralhistory" title="" class="sf-depth-3">Oral History</a></li></ol></div></li><li id="menu-1550-1" class="middle even sf-item-2 sf-depth-2 sf-total-children-6 sf-parent-children-0 sf-single-children-6 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Hill Memorial Library</span><ol><li id="menu-5869-1" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="/special" class="sf-depth-3">Special Collections</a></li><li id="menu-1362-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="/special/CC/book" class="sf-depth-3">Book Collections</a></li><li id="menu-5938-1" class="middle odd sf-item-3 sf-depth-3 sf-no-children"><a href="/special/research/manuscripts" title="" class="sf-depth-3">Manuscript Collections</a></li><li id="menu-1363-1" class="middle even sf-item-4 sf-depth-3 sf-no-children"><a href="/special/CC/LLMVC" class="sf-depth-3">Louisiana &amp; Lower Mississippi Valley Collections</a></li><li id="menu-1364-1" class="middle odd sf-item-5 sf-depth-3 sf-no-children"><a href="/special/CC/louisiana-newspapers" class="sf-depth-3">Louisiana Newspapers</a></li><li id="menu-5940-1" class="last even sf-item-6 sf-depth-3 sf-no-children"><a href="/special/archives" title="" class="sf-depth-3">University Archives</a></li></ol></div></li><li id="menu-1551-1" class="middle odd sf-item-3 sf-depth-2 sf-total-children-3 sf-parent-children-0 sf-single-children-3 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Other Campus Libraries</span><ol><li id="menu-2942-1" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="http://www.cic.lsu.edu/" title="" class="sf-depth-3">Cartographic Information Center</a></li><li id="menu-2898-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="http://www1.law.lsu.edu/library/" title="" class="sf-depth-3">LSU Law Library</a></li><li id="menu-2943-1" class="last odd sf-item-3 sf-depth-3 sf-no-children"><a href="http://www1.vetmed.lsu.edu/Library/index.html" title="" class="sf-depth-3">Veterinary Medicine Library</a></li></ol></div></li><li id="menu-1385-1" class="last even sf-item-4 sf-depth-2 sf-total-children-3 sf-parent-children-0 sf-single-children-3 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">E-Resources</span><ol><li id="menu-1345-1" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="/collections/digital" class="sf-depth-3">Digital Collections</a></li><li id="menu-5298-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="/ebooks" title="" class="sf-depth-3">E-Textbooks for Students</a></li><li id="menu-5877-1" class="last odd sf-item-3 sf-depth-3 sf-no-children"><a href="/ebooks/faculty" class="sf-depth-3">E-Textbooks for Faculty</a></li></ol></div></li></ol></li></ul></li><li id="menu-4022-1" class="middle odd sf-item-3 sf-depth-1 sf-total-children-2 sf-parent-children-2 sf-single-children-0 menuparent"><a href="/research" class="sf-depth-1 menuparent">Research</a><ul class="sf-megamenu"><li class="sf-megamenu-wrapper middle odd sf-item-3 sf-depth-1 sf-total-children-2 sf-parent-children-2 sf-single-children-0 menuparent"><ol><li id="menu-1443-1" class="first odd sf-item-1 sf-depth-2 sf-total-children-6 sf-parent-children-0 sf-single-children-6 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Books &amp; Articles</span><ol><li id="menu-1358-1" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="http://search.ebscohost.com/login.aspx?direct=true&amp;authtype=ip,guest&amp;custid=s8491974&amp;setup=0&amp;groupid=main&amp;profile=eds-main" title="" class="sf-depth-3">Discovery</a></li><li id="menu-3011-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="http://guides.lib.lsu.edu/az.php" title="" class="sf-depth-3">Databases</a></li><li id="menu-3012-1" class="middle odd sf-item-3 sf-depth-3 sf-no-children"><a href="/ebooks" title="" class="sf-depth-3">E-Textbooks</a></li><li id="menu-3013-1" class="middle even sf-item-4 sf-depth-3 sf-no-children"><a href="https://lsu.louislibraries.org/uhtbin/cgisirsi/0/0/0/38/X/POWER_SEARCH" title="" class="sf-depth-3">Online Catalog</a></li><li id="menu-3025-1" class="middle odd sf-item-5 sf-depth-3 sf-no-children"><a href="https://lsu.louislibraries.org/uhtbin/cgisirsi/0/0/0/1/38/X/BLASTOFF" title="" class="sf-depth-3">Library Account</a></li><li id="menu-3014-1" class="last even sf-item-6 sf-depth-3 sf-no-children"><a href="https://lsu.louislibraries.org/uhtbin/cgisirsi/0/0/0/36/73/X/BLASTOFF" title="" class="sf-depth-3">Reserves</a></li></ol></div></li><li id="menu-1552-1" class="last even sf-item-2 sf-depth-2 sf-total-children-3 sf-parent-children-0 sf-single-children-3 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Archival Materials</span><ol><li id="menu-5875-1" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="/special/research/manuscripts" class="sf-depth-3">Manuscripts Collections</a></li><li id="menu-5870-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="/special/archives" class="sf-depth-3">University Archives</a></li><li id="menu-3015-1" class="last odd sf-item-3 sf-depth-3 sf-no-children"><a href="/oralhistory/collections" class="sf-depth-3">Oral Histories</a></li></ol></div></li></ol></li></ul></li><li id="menu-4023-1" class="middle even sf-item-4 sf-depth-1 sf-total-children-4 sf-parent-children-4 sf-single-children-0 menuparent"><a href="/services" title="" class="sf-depth-1 menuparent">Services</a><ul class="sf-megamenu"><li class="sf-megamenu-wrapper middle even sf-item-4 sf-depth-1 sf-total-children-4 sf-parent-children-4 sf-single-children-0 menuparent"><ol><li id="menu-4284-1" class="first odd sf-item-1 sf-depth-2 sf-total-children-7 sf-parent-children-1 sf-single-children-6 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Borrowing</span><ol><li id="menu-4283-1" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="/services/borrowing" title="" class="sf-depth-3">Borrowing From LSU Libraries</a></li><li id="menu-5247-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="/services/borrowing/callnumbers" class="sf-depth-3">Call Number Locations</a></li><li id="menu-1349-1" class="middle odd sf-item-3 sf-depth-3 sf-no-children"><a href="/services/renewing" class="sf-depth-3">Renewing</a></li><li id="menu-5018-1" class="middle even sf-item-4 sf-depth-3 sf-no-children"><a href="/services/recalls" class="sf-depth-3">Recalls &amp; Holds</a></li><li id="menu-5017-1" class="middle odd sf-item-5 sf-depth-3 sf-no-children"><a href="/services/reserves" class="sf-depth-3">Reserves</a></li><li id="menu-5239-1" class="middle even sf-item-6 sf-depth-3 sf-no-children"><a href="/services/loan-periods" class="sf-depth-3">Loan Periods</a></li><li id="menu-5871-1" class="last odd sf-item-7 sf-depth-3"><a href="/services/ill" title="" class="sf-depth-3">Interlibrary Loan &amp; Delivery Services</a></li></ol></div></li><li id="menu-1556-1" class="middle even sf-item-2 sf-depth-2 sf-total-children-9 sf-parent-children-4 sf-single-children-5 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Other</span><ol><li id="menu-5872-1" class="first odd sf-item-1 sf-depth-3"><a href="/services/distance" class="sf-depth-3">Distance Education</a></li><li id="menu-1353-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="http://publications.lib.lsu.edu/" title="" class="sf-depth-3">E-journal Hosting</a></li><li id="menu-1356-1" class="middle odd sf-item-3 sf-depth-3 sf-no-children"><a href="/services/patrons-disabilities" class="sf-depth-3">Patrons with Disabilities</a></li><li id="menu-5225-1" class="middle even sf-item-4 sf-depth-3 sf-no-children"><a href="/services/study-carrels" class="sf-depth-3">Study Carrels</a></li><li id="menu-1357-1" class="middle odd sf-item-5 sf-depth-3 sf-no-children"><a href="/services/study-rooms" class="sf-depth-3">Study Rooms</a></li><li id="menu-5246-1" class="middle even sf-item-6 sf-depth-3"><a href="/services/copyright" class="sf-depth-3">Copyright Help</a></li><li id="menu-5232-1" class="middle odd sf-item-7 sf-depth-3"><a href="/services/digital" class="sf-depth-3">Digital Services</a></li><li id="menu-5962-1" class="middle even sf-item-8 sf-depth-3"><a href="/dsl" class="sf-depth-3">Digital Scholarship Lab</a></li><li id="menu-6034-1" class="last odd sf-item-9 sf-depth-3 sf-no-children"><a href="http://guides.lib.lsu.edu/scholcomm" title="" class="sf-depth-3">Scholarly Communications</a></li></ol></div></li><li id="menu-1549-1" class="middle odd sf-item-3 sf-depth-2 sf-total-children-3 sf-parent-children-1 sf-single-children-2 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Research &amp; Instruction Services</span><ol><li id="menu-1351-1" class="first odd sf-item-1 sf-depth-3"><a href="/services/instruction" class="sf-depth-3">Instruction</a></li><li id="menu-1352-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="/services/reserve-classroom" class="sf-depth-3">Reserve a Classroom</a></li><li id="menu-4021-1" class="last odd sf-item-3 sf-depth-3 sf-no-children"><a href="/services/ris" class="sf-depth-3">Contact Us</a></li></ol></div></li><li id="menu-1555-1" class="last even sf-item-4 sf-depth-2 sf-total-children-3 sf-parent-children-0 sf-single-children-3 sf-megamenu-column menuparent"><div class="sf-megamenu-column"><span class="menu_heading" title="" class="sf-depth-2 menuparent nolink">Technology</span><ol><li id="menu-2862-1" class="first odd sf-item-1 sf-depth-3 sf-no-children"><a href="https://grok.lsu.edu/categories.aspx?parentcategoryid=2787" title="" class="sf-depth-3">ITS Help Desk</a></li><li id="menu-3026-1" class="middle even sf-item-2 sf-depth-3 sf-no-children"><a href="http://grok.lsu.edu/categories.aspx?parentcategoryid=2437" title="" class="sf-depth-3">Print Desk</a></li><li id="menu-3027-1" class="last odd sf-item-3 sf-depth-3 sf-no-children"><a href="http://grok.lsu.edu/categories.aspx?parentcategoryid=1322" title="" class="sf-depth-3">Virtual Lab</a></li></ol></div></li></ol></li></ul></li><li id="menu-5266-1" class="last odd sf-item-5 sf-depth-1 sf-no-children"><a href="/contents" class="sf-depth-1">A to Z</a></li></ul>
+</div>
+  </div>
+
+    </div>
+
+    
+    
+  </div>
+
+    <footer id="footer" class="region region-footer">
+    <div id="block-block-4" class="block block-block first last odd">
+
+      
+  <div class="main-footer">
+ <div class="container footer">
+    <div class="one_fourth">
+    <a href="http://lib.lsu.edu">
+    <img src="/sites/default/files/resize/remote/2b9d5103bc8e58433a984869da781f8a-140x140.png" alt="LSU Libraries" width="140" height="140" /></a>
+      <div id="tweets"></div>
+    </div>
+    <div class="one_fourth">
+      <h3>Key Links</h3>
+      <ul>
+        <li><a href="http://lsu.edu/" title="">LSU</a></li>
+        <li><a href="http://lib.lsu.edu" class="">LSU Libraries</a></li>
+        <li><a href="http://lib.lsu.edu/special/" class="">LSU Libraries Special Collections</a></li>
+        <li><a href="http://www.cwbr.com/" class="">Civil War Book Review</a></li> 
+</ul>
+  
+       
+    </div>
+    <div class="one_fourth">
+    <h3>Contact</h3>
+      <p>LSU Libraries<br />
+	Baton Rouge, LA 70803</p>
+	<p>Tel (225) 578-5652<br />
+	Fax (225) 578-9432</p>
+    
+    <p><a href="http://lib.lsu.edu/about/staff">Contact Us</a></p> 
+    </div><del></del>
+     <div class="one_fourth lastcolumn">
+       <h3>Connect</h3>
+     <a href="https://www.facebook.com/LSULibraries"><img src="/sites/default/files/resize/remote/6c14731492a12deb5a2ae8a4838a493c-25x25.png" alt="Libraries Facebook Page" width="25" height="25" /></a><a href="https://twitter.com/lsulibraries"><img src="/sites/default/files/resize/remote/b2ec9f0d509165690b08d98067feb8e8-25x25.png" alt="Libraries Twitter Page" width="25" height="25" /></a><a href="http://www.youtube.com/playlist?list=PLmPBqhpgpws2YQqSOiJM4ZCt5yNY6SCAk"><img src="/sites/default/files/resize/remote/74bc921c6ddb0f8ac716c83b731a3f1e-25x25.png" alt="Libraries YouTube Page" width="25" height="25" /></a><a href="http://news.blogs.lib.lsu.edu/feed/"><img src="/sites/default/files/resize/remote/aae52dc9cca3c88fc472392a05581b14-25x25.png" alt="Libraries News RSS Feed" width="25" height="25" /> </a>
+<a href="https://instagram.com/lsulibraries/"><img src="/sites/default/files/resize/remote/586f93cb733f1c5f7c705ffeeedb2449-25x25.png" alt="Libraries News RSS Feed" width="25" height="25" /> </a><br /><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=5bhazgoab&amp;p=oi&amp;m=1114771561534">Subscribe to the e-newsletter</a><br />
+<div class="copyright-statement">Copyright &copy; 2015. All Rights Reserved. <br /> Official Web Page of Louisiana State University.</div>
+    </div> 
+ </div> 
+ </div>
+
+</div>
+  </footer>
+
+</div>
+
+  <script src="http://www.lib.lsu.edu/sites/default/files/js/js_29qYXJz8NLGg8Aomg-RZPjJcj9yEdEst1BMZ9gZbs-4.js"></script>
+</body>
+</html>

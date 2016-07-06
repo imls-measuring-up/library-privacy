@@ -1,0 +1,1032 @@
+<!DOCTYPE HTML>
+
+<html>
+
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+<title>Brown University Library</title>
+
+<link href="css_2011/BUL2011.css" rel="stylesheet" type="text/css" />
+<link href="/img_2011/ResponsiveSlides/responsiveslides.css?v=1.5" rel="stylesheet" type="text/css" />
+<link href="/img_2011/ResponsiveSlides/themes/themes.css?v=1.5" rel="stylesheet" type="text/css" />
+
+<!-- script below from http://code.google.com/p/css3-mediaqueries-js/ - forces earlier browsers to interpret CSS media queries -->
+<script type="text/javascript" src="scripts_2011/css3-mediaqueries.js"></script>
+
+<!-- script for subject pop-up menu (within Ask a Librarian module) -->
+<script type="text/javascript">
+function formHandler(form) {
+var URL = document.form.guides.options[document.form.guides.selectedIndex].value; window.location.href = URL;
+}
+</script>
+
+<!-- scripts for multipanel banners -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="/img_2011/ResponsiveSlides/responsiveslides.min.js?v=1.6"></script>
+
+<!-- scripts for Google Ajax Feed API -->
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAl69hMrMPX0hsLyE93DVyTxQBzqpr8JnUHHa00_iYLABa7Jl01hTPFSyvAN6p4kjiYtcotcoxMszxSw"></script>
+
+<script type="text/javascript">
+google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
+</script>
+
+<!-- script for chat widget headshots -->
+<script type="text/javascript">
+function swapImage() {
+theImages = new Array(
+"gateway/portraits/betts.jpg",
+"gateway/portraits/Bordac.jpg",
+"gateway/portraits/boucek.jpg",
+"gateway/portraits/Bouchard.jpg",
+"gateway/portraits/creamer.jpg",
+"gateway/portraits/Cournoyer.jpg",
+"gateway/portraits/croxall.jpg",
+"gateway/portraits/dpo.jpg",
+"gateway/portraits/Figueroa.jpg",
+"gateway/portraits/Geissler.jpg",
+"gateway/portraits/kromer.jpg",
+"gateway/portraits/lappen.jpg",
+"gateway/portraits/mylonas.jpg",
+"gateway/portraits/Noble_125x136.jpg",
+"gateway/portraits/ph2.jpg",
+"gateway/portraits/Quist.jpg",
+"gateway/portraits/Sevetson.jpg",
+"gateway/portraits/Snyder.jpg",
+"gateway/portraits/stokes.jpg",
+"gateway/portraits/straughn_sm.jpg",
+"gateway/portraits/Wang.jpg",
+"gateway/portraits/wm.jpg"
+)
+
+whichImage = Math.floor(Math.random()*theImages.length);
+document.write('<IMG alt="Subject librarian headshot" class="headshot" SRC="' +theImages[whichImage]+ '">');
+
+}
+</script>
+
+<style type="text/css">
+    #feeddiv {
+        font-size : 1em ; 
+        line-height : 1.4 ;
+    }    
+    #feeddiv a {
+        text-decoration : none ;
+        border-bottom : 1px dotted #c81700 ;
+        color : #c81700 ;
+    }
+    #feeddiv p.news_content_item_title {
+        font-size : 1.2em ; 
+        margin-bottom : 4px ; 
+    }        
+    #feeddiv p.news_content_item {
+        margin-bottom : 20px ; 
+    }
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="wrapper">
+
+
+  <div id="header">
+
+    <p class="top_header_links"><a href="http://library.brown.edu/libweb/proxy.php">Off-Campus Access</a> &nbsp;&nbsp;&#124;&nbsp;&nbsp; <a href="http://library.brown.edu/libweb/atoz.php">Library A&ndash;Z</a></p>
+
+        <div class="BUhomelink">
+          <a href="http://www.brown.edu"><img src="http://library.brown.edu/images/spacer.gif" width="50" alt="Brown University Homepage" title="Brown University Homepage" /></a>
+        </div>
+
+        <div class="BULhomelink">
+          <a href="http://library.brown.edu/"><img src="http://library.brown.edu/images/spacer.gif" width="440" height="30" alt="Brown University Library Homepage" title="Brown University Library Homepage" /></a>
+        </div>
+
+  </div> <!-- end #header -->
+
+
+  <div id="search_area">
+
+                     <div class="search_label"><p>Search:</p></div>
+            
+                      <div class="searchHomeContent">
+                        <div class="searchHomeForm">
+                          <div class="searchform">
+                      
+                              <form method="get" action="http://search.library.brown.edu/"  name="searchForm" id="searchForm" class="search">
+                      
+                                  <div>
+                                    <input name="utf8" type="hidden" value="✓">
+
+                                    <input id="searchForm_lookfor" type="text" name="q" size="60" value="Enter keywords to search library resources" onFocus="if (value =='Enter keywords to search library resources'){value =''}" onBlur="if (value ==''){value='Enter keywords to search library resources'}" >  
+                                
+                                    <button type="submit" id="search">
+                                        <span style="font-weight : normal ; font-family : Helvetica ; ">Search</span>
+                                    </button>                                               
+<!--
+                               <input type="submit" name="submit" value="FIND" class="button"/>
+-->
+                                <br />
+                                <div style="margin-top : 5px ; margin-left : 3px ;  line-height : 1.6 ; "><a href="redesign/" style="font-size : 120% ; ">Want to test a new library home page?</a></div>
+                             </div>
+                           
+                               </form>      
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <p class="josiah_link_line">
+                        <a href="http://josiah.brown.edu/">Classic JOSIAH (catalog)</a> <span style="font-weight:normal;color:#ad8d89;">&nbsp;&nbsp;&#124;&nbsp;&nbsp; </span> 
+                        <a href="https://login.revproxy.brown.edu/login?url=http://newfirstsearch.oclc.org/dbname=WorldCat;done=http://library.brown.edu/;FSIP">WorldCat</a>
+                      </p> 
+
+
+<!-- maintenance/announcement banner -->
+
+<!--<div id="alert_bar" style="width : 100% ; padding : 5px ; background-color : #FBC200 ; clear : both ; font-size : 1.3em ; text-align : center ; "><span style="color : #A21610 ; ">Alert</span>: The libraries are closed Monday, 8 February. <a href="http://emergency.brown.edu/" style="color : #000 ; text-decoration : underline ;  ">more &raquo;</a> </div> -->
+
+<!-- end maintenance banner -->
+
+
+  </div> <!-- end #search_area -->
+    
+  <div class="one-third-module-left"> <!-- used for Quick Links -->
+
+      <h1>QUICK LINKS:</h1>
+
+        <div class="quick_links_column_left">
+
+          <p><a href="http://library.brown.edu/borrowing/">Borrowing</a></p>
+          <!--
+          <p><a href="http://libguides.brown.edu/content.php?pid=362222">Databases</a></p>
+          -->
+          <p><a href="http://library.brown.edu/eresources/">Databases</a></p>
+          <p><a href="http://rl3tp7zf5x.search.serialssolutions.com/">eJournals</a></p>
+          <p><a href="http://library.brown.edu/reserves/">Reserves</a></p>
+          <p><a href="http://library.brown.edu/collections/">Collections</a></p>
+          <p><a href="http://library.brown.edu/collatoz/videos.php">DVDs</a> / <a href="http://libguides.brown.edu/newspapers">Newspapers</a></p>
+
+
+        </div>
+
+        <div class="quick_links_column_right">
+
+          <p><a href="http://library.brown.edu/workshops/">Workshops & Tutorials</a></p>
+          <p><a href="http://library.brown.edu/cds/">Center for Digital Scholarship</a></p>
+          <p><a href="https://repository.library.brown.edu/">Brown Digital Repository</a></p>
+          <p><a href="http://libguides.brown.edu/content.php?pid=325491">Medical Connections</a></p>
+          <p><a href="http://library.brown.edu/giving/">Giving</a> / <a href="http://library.brown.edu/alumni/">Alumni</a></p>
+          <p><a href="http://library.brown.edu/about/">About the Library</a></p>
+
+
+        </div>
+
+  </div> <!-- end .one-third-module-left -->
+
+
+  <div class="one-third-module-short-top" style="padding-bottom : 10px ; "> <!-- used for Hours & Locations -->
+
+      <h1 style="-webkit-margin-after : 1em ; ">HOURS &amp; LOCATIONS:</h1>
+
+        <p class="more_info_line">
+          <a class="more_locations" href="http://library.brown.edu/libweb/hours.php">More Locations &gt;</a>
+          <a class="more" href="http://library.brown.edu/libweb/hours.php">More &gt;</a>         </p>
+
+
+        
+﻿
+
+	
+
+	<p><span class="library_location"><a href="http://library.brown.edu/about/rock/">Rockefeller Library</a>: </span>
+	<span class="hours"> 8:30am-9:00pm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></span></p>
+
+	
+
+	<p><span class="library_location"><a href="http://library.brown.edu/about/friedman.php">Friedman Study Center</a>: </span>
+	<span class="hours"> 8:30am-9:00pm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></span></p>
+
+	
+
+
+    </div> <!-- end .one-third-module-short-top -->
+
+
+  <div class="one-third-module-short-bottom" id="exhibits"> <!-- formerly used for computer availability -->
+
+    <h1 style="margin-bottom : 0px ; padding-bottom : 0px ; ">EXHIBITS:</h1>
+
+        <p class="more_info_line" style="margin-bottom : 7px ; padding-bottom : 0px ; "><a href="http://library.brown.edu/exhibits/">More &gt;</a></p>
+
+        <br style="clear : both ; " />
+        
+		
+<div id="pictitle">
+        <a href="https://blogs.brown.edu/libnews/neumann-2016/"><img src="http://library.brown.edu/images/home_exhibits/20160601contemporaryArchitechture.jpg" alt="Works from Contemporary Architecture: A Course with Professor Dietrich Neumann" style="height : 55px ; float : left ; border : 0px solid ; margin : 0px 25px 0px 0px ; padding : 0px ; z-index : 20 ; " /></a><a href="http://blogs.brown.edu/libnews/brown-orchestra/" style="line-height : 1.8 ">Works from<br> Contemporary Architecture</a>
+       </div>
+
+  <!--
+  <h1>COMPUTER AVAILABILITY:</h1>
+
+        <p class="more_info_line"><a href="http://library.brown.edu/services/clusters/lib_mobile/">More &gt;</a></p>
+
+        
+﻿
+
+	
+	
+	      <p><span class="library_location"><a href="http://library.brown.edu/about/rock/">Rockefeller</a>:</span>&nbsp;
+	      In use: <span class="inuse">3</span> 
+	      ; Available: <span class="available">53</span>
+	      <span class="inuse"></span>
+	      </p>
+
+	
+	
+	      <p><span class="library_location"><a href="http://library.brown.edu/about/friedman.php">Friedman</a>:</span>&nbsp;
+	      In use: <span class="inuse">1</span> 
+	      ; Available: <span class="available">79</span>
+	      <span class="inuse"></span>
+	      </p>
+
+	
+	
+	
+
+    -->
+
+    </div> <!-- end .one-third-module-short-bottom -->
+
+
+  <!--div class="one-third-module-right"--> 
+  <div class="one-third-module-right"> <!-- used for Ask A Librarian links -->
+  <!--div class="one-third-module-right" jid="bulchat@chat.libraryh3lp.com"--> <!-- used for Ask A Librarian links -->
+
+      <h1>GET HELP:</h1>
+
+
+
+<p class="ASKaLblurb" style="width:99%;line-height:215%;">
+
+
+<script type="text/javascript">
+swapImage();
+</SCRIPT>
+<NOSCRIPT><img class="headshot" src="gateway/portraits/boucek.jpg" alt="Subject librarian headshot"   /></NOSCRIPT>
+
+
+<!--             <img src="gateway/portraits/boucek.jpg" alt="Subject librarian headshot" class="headshot"> -->
+
+            Not sure where to start?<br>
+      &bull; <a href="http://libguides.brown.edu/research/">Guide to Research</a><br>
+      &bull; <a href="http://library.brown.edu/about/specialists.php">Your Subject Librarian</a>
+
+        </p>
+
+        ﻿<form name="form">
+<select name="guides" onChange="javascript:formHandler()" style="width : 100% ; float : none ; ">
+<option value="">Pick a Research Guide:
+	<option value="http://libguides.brown.edu/research/">General Guide to Research</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=579513">Africana Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/amstudies">American Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=328548&sid=2687884">Anthropology</option>
+
+	
+
+	<option value="http://libguides.brown.edu/appliedmath">Applied Mathematics</option>
+
+	
+
+	<option value="http://libguides.brown.edu/archaeology">Archaeology and the Ancient World</option>
+
+	
+
+	<option value="http://libguides.brown.edu/bioethics">Bio-ethics</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=548251">Biology</option>
+
+	
+
+	<option value="http://libguides.brown.edu/BEO">Business, Entrepreneurship, Organizations</option>
+
+	
+
+	<option value="http://libguides.brown.edu/latinamerica">Caribbean Studies</option>
+
+	
+
+	<option value="http://www.brown.edu/academics/race-ethnicity/">Center for the Study of Race &amp; Ethnicity</option>
+
+	
+
+	<option value=" http://libguides.brown.edu/chemistry">Chemistry</option>
+
+	
+
+	<option value="http://libguides.brown.edu/chinese">Chinese Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/citations">Citation and Copyright</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=490753">Classics</option>
+
+	
+
+	<option value="http://libguides.brown.edu/aecontent.php?pid=381413">Cognitive Sciences</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=490760">Comparative Literature</option>
+
+	
+
+	<option value="http://libguides.brown.edu/cs">Computer Science</option>
+
+	
+
+	<option value="http://libguides.brown.edu/aecontent.php?pid=328562">Copyright</option>
+
+	
+
+	<option value="http://libguides.brown.edu/data-curation">Data Curation</option>
+
+	
+
+	<option value="http://libguides.brown.edu/development">Development Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=490782">Early Cultures</option>
+
+	
+
+	<option value="http://libguides.brown.edu/deeps">Earth, Environmental and Planetary Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=551979">East Asian Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/EEB">Ecology &amp; Evolutionary Biology</option>
+
+	
+
+	<option value="http://libguides.brown.edu/socscidata?p=1957922">Economic and Financial Data</option>
+
+	
+
+	<option value="http://libguides.brown.edu/economics">Economics</option>
+
+	
+
+	<option value="http://libguides.brown.edu/education">Education</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=490785">Egyptology & Ancient Western Asian Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/eng">Engineering</option>
+
+	
+
+	<option value="http://libguides.brown.edu/english">English</option>
+
+	
+
+	<option value="http://libguides.brown.edu/envstudies">Environmental Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/fedgovinfo">Federal Government Information</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=328549">French Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/gender">Gender Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/germanstudies">German Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/globalhealth">Global Health</option>
+
+	
+
+	<option value="http://libguides.brown.edu/fedgovinfo">Government Information</option>
+
+	
+
+	<option value="http://libguides.brown.edu/grants">Grant Resources</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=385981">Haitian Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/latinamerica">Hispanic Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/history">History (American)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=564167">History (British)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=490798">History (Eastern European/Balkans)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=426307">History (France)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/aecontent.php?pid=492035&sid=4039399">History (Germany)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/latinamerica">History (Iberia)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/italian">History (Italy)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=491172">History (Western Europe)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/aecontent.php?pid=309437&sid=2533804">History of Art and Architecture</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=568636&sid=4688612">History of Mathematics</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=568636">History of Science</option>
+
+	
+
+	<option value="http://libguides.brown.edu/aecontent.php?pid=353199">Images</option>
+
+	
+
+	<option value="http://libguides.brown.edu/IR">International Relations</option>
+
+	
+
+	<option value="http://libguides.brown.edu/italian">Italian Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/japanese">Japanese Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/judaic_studies--premodern">Judaic Studies (Ancient &amp; Medieval)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=567505">Judaic Studies (Modern)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/korean">Korean Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/aecontent.php?pid=480186">Language Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=318599">Latin American Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=381413">Linguistics</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=424991">Literary Arts</option>
+
+	
+
+	<option value="http://libguides.brown.edu/math">Mathematics</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=325491">Medical Sciences</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=491185">Medieval Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/MES">Middle Eastern Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/mcm">Modern Culture and Media</option>
+
+	
+
+	<option value="http://libguides.brown.edu/modern_greek">Modern Greek Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/MCB">Molecular Biology, Cell Biology &amp; Biochemistry</option>
+
+	
+
+	<option value="http://libguides.brown.edu/MMI">Molecular Microbiology &amp; Immunology</option>
+
+	
+
+	<option value="http://libguides.brown.edu/MPPB">Molecular Pharmacology, Physiology &amp; Biotech</option>
+
+	
+
+	<option value="http://libguides.brown.edu/music">Music</option>
+
+	
+
+	<option value="http://libguides.brown.edu/neuroscience">Neuroscience</option>
+
+	
+
+	<option value="http://libguides.brown.edu/newspapers">Newspapers</option>
+
+	
+
+	<option value="http://libguides.brown.edu/nonfiction-writing/">Nonfiction Writing Program</option>
+
+	
+
+	<option value="http://libguides.brown.edu/online_video">Online Streaming Video Services</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=491192">Philosophy</option>
+
+	
+
+	<option value="http://libguides.brown.edu/physics">Physics</option>
+
+	
+
+	<option value="http://libguides.brown.edu/politicalscience">Political Science</option>
+
+	
+
+	<option value="http://libguides.brown.edu/socscidata">Population Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/latinamerica">Portuguese and Brazilian Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/PRIME">PRIME</option>
+
+	
+
+	<option value="http://libguides.brown.edu/aecontent.php?pid=381413">Psychology</option>
+
+	
+
+	<option value="http://libguides.brown.edu/PublicHealth">Public Health</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=356245">Public Humanities</option>
+
+	
+
+	<option value="http://libguides.brown.edu/publicpolicy">Public Policy</option>
+
+	
+
+	<option value="http://libguides.brown.edu/c.php?g=293951&p=1957767">Qualitative Analysis</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=500683">Reference</option>
+
+	
+
+	<option value="http://libguides.brown.edu/archives">Reference (John Hay Library)</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=491197">Religious Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=491200">Renaissance &amp; Early Modern Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/c.php?g=293853">Scholarship of Teaching and Learning</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=568636">Science and Society</option>
+
+	
+
+	<option value="http://libguides.brown.edu/Slavic">Slavic Languages</option>
+
+	
+
+	<option value="http://libguides.brown.edu/sociology">Sociology</option>
+
+	
+
+	<option value="http://libguides.brown.edu/content.php?pid=331552">South Asian Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/c.php?g=293951&p=1957986">Spatial Data and GIS</option>
+
+	
+
+	<option value="http://libguides.brown.edu/specialcollections">Special Collections</option>
+
+	
+
+	<option value="http://libguides.brown.edu/Statistics">Statistical Sciences & Biostatistics</option>
+
+	
+
+	<option value="http://libguides.brown.edu/socscidata">Statistics and Data</option>
+
+	
+
+	<option value="http://libguides.brown.edu/TAPS">Theatre Arts and Performance Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/archives">University Archives</option>
+
+	
+
+	<option value="http://libguides.brown.edu/urbanstudies">Urban Studies</option>
+
+	
+
+	<option value="http://libguides.brown.edu/c.php?g=293946">Virtual Reference</option>
+
+	
+
+	<option value="http://libguides.brown.edu/aecontent.php?pid=352791&sid=2886091">Visual Art</option>
+
+	
+	
+<option value="http://library.brown.edu/gateway/classes.php">-- Library Course Guides</option>	
+</select>
+</form>
+    </div> <!-- end .one-third-module-right -->
+
+
+    <div class="two-thirds-module-left"> <!-- used for captioned image banners -->
+
+      <div class="rslides_container">
+
+            <ul class="rslides" id="slider1">
+
+
+
+              <!--
+              <li>
+
+                <div style="position:relative;">
+                
+                  <a href="http://blogs.brown.edu/libnews/lecture-series-elements-of-tradition-and-change-brown-universitys-first-250-years/" target="_blank"><img src="img_2011/2011slider/250-exhibit_1024px.jpg" alt="Elements of Tradition and Change: Brown University's First 250 Years" style="display:block;margin-top:-15%;z-index:5;width:100%;"></a>
+                  
+                  <p class="overlay_caption" style="display:inline;margin-top:-16.5%;padding-top:1%;position:relative;float:left;z-index:9;">
+                    <a href="http://blogs.brown.edu/libnews/lecture-series-elements-of-tradition-and-change-brown-universitys-first-250-years/" target="_blank">Lecture Series &nbsp;&#124;&nbsp; Elements of Tradition and Change: Brown University's First 250 Years</a>
+                  </p>
+                
+                </div>
+
+              </li>
+              -->
+
+             <!-- banner for snow closing  -->
+             <!--
+              <li>
+                <div style="position:relative;background-color:#a6a6a6;">
+
+                  <a href="#"><img src="/img_2011/2011slider/20150126snowClosing.jpg" alt="All University Libraries Closed" style="display:block;margin-top:-23%;z-index:5;width:100%;"></a>
+
+                  <p class="overlay_caption" style="display:inline;margin-top:-43%;padding-top:1%;position:relative;float:left;z-index:9;">
+                    <a href="">Library Closings: <br /><strong>All libraries will be closed Monday, 9 February, due to severe weather</strong></a>
+                  </p>
+
+                </div>
+              </li>
+              -->
+
+
+              <!-- New Digital Studio Now Open -->
+              <!--
+              <li> 
+              
+
+                <div style="position:relative;background-color:#a6a6a6;">
+
+                  <a href="https://library.brown.edu/create/digitalstudio/"><img src="/img_2011/2011slider/20160229digitalStudio.jpg" alt="New Digital Studio" style="display:block;margin-top:-10%;z-index:5;width:100%;"></a>
+
+                  <p class="overlay_caption" style="display:inline;margin-top:-53%;padding-top:1%;position:relative;float:left;z-index:9;">
+                    <a href="https://library.brown.edu/create/digitalstudio/">The New Sidney E. Frank Digital Studio is Now Open</a><br>
+                  </p>
+
+                </div>
+
+              </li>
+              -->
+
+
+
+             <li> <!-- Nytimes -->
+
+                <div style="position:relative;background-color:#a6a6a6;">
+
+                  <a href="http://NYTimes.com/Passes"><img src="/img_2011/2011slider/20150513nyTimes.jpg" alt="NY Times on ipad and computer" style="display:block;margin-top:-10%;z-index:5;width:100%;"></a>
+
+                  <p class="overlay_caption" style="display:inline;margin-top:-53%;padding-top:1%;position:relative;float:left;z-index:9;">
+                    <a href="http://NYTimes.com/Passes">Take the NYTimes.com home. It's free. Sign up at: nytimes.com/passes</a><br>
+                  </p>
+
+                </div>
+
+              </li>
+
+            <li> <!-- sci li renovation -->
+
+                <div style="position:relative;background-color:#a6a6a6;">
+
+                  <a href="http://library.brown.edu/about/scili/renovation.php"><img src="/img_2011/2011slider/20150601sciLi.jpg" alt="The Sciences Library" style="display:block;margin-top:-10%;z-index:5;width:100%;"></a>
+
+                  <p class="overlay_caption" style="display:inline;margin-top:-53%;padding-top:1%;position:relative;float:left;z-index:9;">
+                    <a href="http://library.brown.edu/about/scili/renovation.php">Sciences Library Renovation</a><br>
+                  </p>
+
+                </div>
+
+              </li>
+              
+            <!-- banner for kanopy streaming -->
+            <!--
+            <li> 
+
+                <div style="position:relative;background-color:#a6a6a6;">
+
+                  <a href="http://blogs.brown.edu/libnews/kanopy/"><img src="/img_2011/2011slider/20150728kanopy.jpg" alt="Kanopy Streaming" style="display:block;margin-top:-20%;z-index:5;width:100%;"></a>
+
+                  <p class="overlay_caption" style="display:inline;margin-top:-43%;padding-top:1%;position:relative;float:left;z-index:9;">
+                    <a href="http://brown.kanopystreaming.com">Browse and view over 8500 films at brown.kanopystreaming.com!</a><br>
+                  </p>
+
+                </div>
+
+              </li>
+              -->
+              
+              
+              <!-- banner for citation help -->
+              <!--
+              <li> 
+
+                <div style="position:relative;">
+
+                  <a href=""><img src="/img_2011/2011slider/20150803citations.jpg" alt="Need help with citations?" style="display:block;margin-top:-20%;z-index:5;width:100%;"></a>
+
+                  <p class="overlay_caption" style="display:inline;margin-top:-45%;padding-top:1%;position:relative;float:left;z-index:9;">
+                    Need help with citations, or with EndNote, Mendeley, RefWorks, or Zotero? We can help! Email us at <a href="mailto:Citation-Help-Group@brown.edu">Citation-Help-Group@brown.edu</a>.
+                  </p>
+
+                </div>
+
+              </li>
+              -->
+              
+              
+
+            </ul>
+
+      </div> <!-- end .rslides_container -->
+
+    </div> <!-- end .two-thirds-module-left -->
+
+
+    <!-- script for setting ResponsiveSlides behavior -->
+  <script>
+    $("#slider1").responsiveSlides({
+      auto: true,             // Boolean: Animate automatically, true or false
+      speed: 500,            // Integer: Speed of the transition, in milliseconds
+      timeout: 4500,          // Integer: Time between slide transitions, in milliseconds
+      pager: false,           // Boolean: Show pager, true or false
+      nav: true,             // Boolean: Show navigation, true or false
+      random: false,          // Boolean: Randomize the order of the slides, true or false
+      pause: true,           // Boolean: Pause on hover, true or false
+      pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+      prevText: "Previous",   // String: Text for the "previous" button
+      nextText: "Next",       // String: Text for the "next" button
+      maxwidth: "1024",           // Integer: Max-width of the slideshow, in pixels
+      navContainer: "li",       // Selector: Where controls should be appended to, default is after the 'ul'
+      manualControls: "",     // Selector: Declare custom pager navigation
+      namespace: "centered-btns",   // String: Change the default namespace used
+      before: function(){},   // Function: Before callback
+      after: function(){}     // Function: After callback
+    });
+    </script>
+
+
+  <div class="one-third-module-right-bottom"> <!-- used for blog feed -->
+
+      <h1>EVENTS &amp; ANNOUNCEMENTS:</h1>
+
+        <p class="more_info_line"><a href="http://blogs.brown.edu/libnews/">More &gt;</a></p>
+
+     
+        <div id="feeddiv" class="rss-box">
+            <p class="news_content_item_title"><strong><a href="http://blogs.brown.edu/libnews/dictionarium-sinicum/" title="Dictionarium sinicum and Early Chinese Studies">Dictionarium sinicum and Early Chinese Studies</a></strong><br /><p class="news_content_item">by Man Shun Yeung and Caroline Frank Five years ago John Eng-Wong was looking for art for his office in American Studies, and University Curator Robert Emlen offered him a...&nbsp;&nbsp;&nbsp;&nbsp;<a href=http://blogs.brown.edu/libnews/dictionarium-sinicum/>more &raquo;</a></p><p class="news_content_item_title"><strong><a href="http://blogs.brown.edu/libnews/special-collections-reading-room-closing-early-june-22nd/" title="Special Collections Reading Room Closing Early June 22nd">Special Collections Reading Room Closing Early June 22nd</a></strong><br /><p class="news_content_item">The Special Collections Reading Room of the John Hay Library will close at 3pm on Wednesday June 22nd. Library services will resume at 10am on Thursday June 23rd....&nbsp;&nbsp;&nbsp;&nbsp;<a href=http://blogs.brown.edu/libnews/special-collections-reading-room-closing-early-june-22nd/>more &raquo;</a></p>        </div>   
+
+
+
+     <!-- GOOGLE AJAX FEED API - DEPRECATED -->
+
+<!--
+    <script type="text/javascript">
+
+    var feedcontainer=document.getElementById("feeddiv")
+    var feedurl="http://blogs.brown.edu/libnews/feed/"
+    var feedlimit=4
+    var rssoutput="<ul>"
+
+    function rssfeedsetup(){
+    var feedpointer=new google.feeds.Feed(feedurl) //Google Feed API method
+    feedpointer.setNumEntries(feedlimit) //Google Feed API method
+    feedpointer.load(displayfeed) //Google Feed API method
+    }
+
+    function displayfeed(result){
+    if (!result.error){
+    var thefeeds=result.feed.entries
+    for (var i=0; i<thefeeds.length; i++)
+    rssoutput+="<li class='rss-item'><a class='rss-item' href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+    rssoutput+="</ul>"
+    feedcontainer.innerHTML=rssoutput
+    }
+//     else
+//     alert("Error fetching feeds!")
+    }
+
+    window.onload=function(){
+    rssfeedsetup()
+    }
+
+  </script>
+
+  <p class="RSS_feed_link"><a href="http://blogs.brown.edu/libnews/feed/"><img src="img_2011/RSS_icon.png" alt="RSS icon"></a></p>
+-->
+
+  </div> <!-- end .one-third-module-right-bottom -->
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-3203647-3");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
+
+</div> <!-- end #wrapper -->
+
+
+<div id="footer">
+
+  <div id="footer_contents">
+
+        <div class="social_media_links">
+          <a href="http://mobul.boopsie.com/"><img src="img_2011/moBUL_icon.png" alt="moBUL - Mobile Brown University Library"></a>
+          <a href="http://library.brown.edu/about/public_feeds.php"><img src="img_2011/RSS_footer_icon.png" alt="Brown University Library RSS Feeds"></a>
+          <a href="http://library.brown.edu/enewsletters/"><img src="http://library.brown.edu/img_2011/enewsletter_footer_icon.png" alt="Brown University Library E-Newsletters"></a>
+          <a href="http://library.brown.edu/socialwall/"><img src="../img_2011/socialwall_footer_icon.png" alt="Brown University Library Social Media Wall"></a>          
+          <a href="http://www.facebook.com/pages/Brown-University-Library/278826488901"><img src="img_2011/Facebook_icon.png" alt="Brown University Library Facebook"></a>
+          <a href="http://twitter.com/brownlibrary"><img src="img_2011/twitter_icon.png" alt="Brown University Library Twitter"></a>
+          <a href="http://library.brown.edu/gateway/lrg.php?id=67&task=home"><img src="http://library.brown.edu/images/fdlp_logo_32x29.gif" alt="Federal Depository Library Program"></a>
+        </div>
+
+        <p><a href="http://library.brown.edu/">Brown University Library</a> &nbsp;&#124;&nbsp; Providence,&nbsp;RI&nbsp;02912 &nbsp;&#124;&nbsp; (401)&nbsp;863-2165 &nbsp;&#124;&nbsp; <a href="http://library.brown.edu/about/stafflist.php">Contact</a> &nbsp;&#124;&nbsp; <a href="http://library.brown.edu/forms/comments.php">Comments</a> &nbsp;&#124;&nbsp; <a href="http://library.brown.edu/forms/feedback.php">Website&nbsp;Feedback</a> &nbsp;&#124;&nbsp; <a href="sitemap.php">Site&nbsp;Map</a></p>
+
+<p><a href="http://library.brown.edu/intranet">Library Intranet</a></p>
+
+    </div> <!-- end #footer_contents -->
+
+</div> <!-- end #footer -->
+
+<!-- TL - 8/21/12 - loading the chat widget via AJAX to prevent it from blocking page loads when chat service is down.-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function() {
+        //Connects to libraryh3lp and determines if chat is available.
+        //chat messages
+        var avail = '<p><a href="#" onclick="libraryh3lp.openChat(\'http://libraryh3lp.com/chat/bulchat@chat.libraryh3lp.com?skin=12172&theme=simpletext&title=Ask+a+Librarian&identity=Librarian;&css=http://library.brown.edu/common/chat-overrides.css\', {width: 250, height: 250}); return false;" alt="Open Chat Widget" title="Open Chat Widget">Chat Now</a> or <a href="http://library.brown.edu/libweb/askalib.php">Text, Email, Phone, In Person</a></p>';
+        var not_avail ='<p><a href="http://library.brown.edu/libweb/askalib.php" alt="txt, email, phone, in-person" title="txt, email, phone, in-person">Chat, Text, Email, Phone, In Person</a></p>';
+        //variable to hold location to insert chat messages
+        var chat_spot = $('div.one-third-module-right h1');
+        //presence api
+        var URL = "http://libraryh3lp.com/presence/jid/bulchat/chat.libraryh3lp.com/js?cb=bul";
+        //function to handle ajax call back does nothing because the presence information
+        //is added to the window.
+        function bul(data, status) {
+            //console.debug(this);
+        }
+        //fetch the chat availability
+        $.ajax({
+            url: URL,
+            dataType: 'jsonp',
+            jsonpCallback: 'bul'
+        })
+        .done(function() {
+            //process response from libraryh3lp
+            if (window.jabber_resources[0]['show'] == 'available') {
+                //add the chat widget script.
+                $(chat_spot).after(avail);
+            } else {
+                $(chat_spot).after(not_avail);
+            };
+        })
+        .fail(function () {
+            //add unavailable if api connection fails.
+            $(chat_spot).after(not_avail);
+        });
+    });
+</script>
+<!--<script src="http://libraryh3lp.com/js/libraryh3lp.js?multi,poll,popup" type="text/javascript"></script>-->
+<script type="text/javascript">
+   //TL Nov 5, 2013
+   //From: https://docs.libraryh3lp.com/html-code-samples
+  (function() {
+    var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
+    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "us.libraryh3lp.com/js/libraryh3lp.js?multi,poll,popup";
+    var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
+  })();
+</script>
+<!-- End chat widget -->
+
+<!-- begin crazyegg heatmap script -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0027/2813.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<!-- end crazyegg heatmap script -->
+
+</body>
+
+
+</html>
