@@ -14,24 +14,23 @@ This repository contains the tools and data necessary for conducting the analysi
 
 
 ## Python Scripts
-* `data1_library_members.py` - Scrape HTML of DLF, ARL, and OCLC research library membership pages.
-* `data2_membership_list.py` - Extract research library URLs from membership page's HTML.
-* `Privacy Test Notebook.ipynb` - Calls research library homepage URLs published by DLF, ARL, and OCLC and saves the HTML and data returned by research library web servers. 
-* `Extract Distinct HTML File List.ipynb` - Includes a unique identifer needed for traceability and de-dup of final HTML web pages returned.
-* `1_request_return_log.py` - Step 1 of 3:  Extract, transform, and load data from log.txt into a SQLite database to maintain traceability and de-duplication of pages returned by study population web servers needed to perform analysis
-* `2_return_url_json.py` - Step 2 of 3:  Extract, transform, and load data from result.json into a SQLite database needed to maintain traceability and de-duplication of pages returned by study population web servers.
-* `3_unique-uuid.py` - Step 3 of 3:  Identify and rename unique HTML pages for analysis.
-* `4_test_google_privacy.py` - Audit tests for unique research library home pages returned by the study population web servers.
+1. `data1_library_members.py` - Scrape HTML of DLF, ARL, and OCLC research library membership pages.
+2. `data2_membership_list.py` - Extract research library URLs from membership page's HTML.
+3. `Privacy Test Notebook.ipynb` - Calls research library homepage URLs published by DLF, ARL, and OCLC and saves the HTML and data returned by research library web servers. 
+4. `Extract Distinct HTML File List.ipynb` - Includes a unique identifer needed for traceability and de-dup of final HTML web pages returned.
+5. `1_request_return_log.py` - Step 1 of 3:  Extract, transform, and load data from log.txt into a SQLite database to maintain traceability and de-duplication of pages returned by study population web servers needed to perform analysis
+6. `2_return_url_json.py` - Step 2 of 3:  Extract, transform, and load data from result.json into a SQLite database needed to maintain traceability and de-duplication of pages returned by study population web servers.
+1. `3_unique-uuid.py` - Step 3 of 3:  Identify and rename unique HTML pages for analysis.
+1. `4_test_google_privacy.py` - Audit tests for unique research library home pages returned by the study population web servers.
 
 
 
 ## Raw Data
-* `_data/membership.zip` - Study population defined by DLF, ARL, and OCLC membership.
-* `_data/2016-10-05T14:51:11.452293.zip` - HTML home pages returned by the web servers of study population.
-* `_data/unique-request-uuid.txt` - Schema crosswalk of files returned by study population web servers and unique HTML files used for hypothesis testing.
-* `_data/analysis.zip` - Unique HTML pages used for privacy hypothesis testing of the study population.
+1. `_data/membership.zip` - Study population defined by DLF, ARL, and OCLC membership.
+1. `_data/2016-10-05T14:51:11.452293.zip` - HTML home pages returned by the web servers of study population.
+1. `_data/analysis.zip` - Unique HTML pages used for privacy hypothesis testing of the study population.
     * `_data/analysis/unique-request-uuid.txt` - **NOTE:** this file was generated from exporting the SQL database table `UrlRequests` to `privacydb_log_UrlRequest.csv` and using excel to wrangling the data into a schema crosswalk of files returned by study population web servers and unique HTML files used for hypothesis testing.
-* `results.zip` - Unique HTML home pages that tested positive for Google Analytics and Tag Manager.
+1. `results.zip` - Unique HTML home pages that tested positive for Google Analytics and Tag Manager.
 
 
 
