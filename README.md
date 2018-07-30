@@ -8,9 +8,15 @@
 ## Summary
 
 This repository contains the tools and data necessary for conducting the analysis contained within the paper.  This includes the following:
-* Python scripts for the extraction, transformation, and loading of data needed for the final analysis presented
-* Membership HTML pages from the three organization used to define the study population
-* The research library HTML homepages used for the study
+* Our research dataset based on information gathered from 448 unique URLs associated with 279 North American and international academic library organizations that have membership in one or more of the following organizations: Association of Research Libraries (ARL); Digital Library Federation (DLF); or the OCLC Research Library Partnership. The following Web server responses were recorded for each URL: 
+    * error response
+    * redirect response
+    * resolved URL
+    * HTML cache
+    * request protocol (HTTP or HTTPS). 
+* DLF, ARL and OCLC Research Library Membership HTML pages used to define the study population as of March 2016. 
+* The Python scripts used extract, transform and load the data necessary to make these analyses. 
+* Results of analysis of each URL’s cached HTML used to locate and evaluate the JavaScript snippets associated with third-party web analytics trackers. 
 
 
 ## Python Scripts
