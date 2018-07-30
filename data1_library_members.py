@@ -27,12 +27,12 @@ data_dir = '_data/membership/'  # set path to write file
 def web_page(members):
     for member in members:
         page = 'http://' + member
-        print page
+        print(page)
         request_page = requests.get(page, allow_redirects=True)
         page_html = request_page.content
         file_name_content = data_dir + member.split('/')[0] + '.html'
-        print file_name_content
-        print 'page_html: ', page_html[:200]
+        print(file_name_content)
+        print('page_html: ', page_html[:200])
         f = open(file_name_content, 'w', 1)
         f.write(page_html)
         f.close()
